@@ -20,5 +20,8 @@
 		"arcavias/arcavias-core": "dev-master",
 		"aimeos/extinstaller": "dev-master",
 		"aimeos/ai-symfony2": "dev-master"
-	}
+	},
+    "autoload": {
+        "psr-0": { "Aimeos": "src/" }
+    }
 }
