@@ -1,0 +1,24 @@
+{
+	"name": "aimeos/symfony2-bundle",
+	"type": "symfony-bundle",
+	"description": "Aimeos Symfony2 web shop bundle",
+	"homepage": "http://aimeos.org",
+	"license": "LGPL-3.0",
+	"keywords": ["e-commerce", "shop", "portal", "market place"],
+	"support": {
+		"source": "https://github.com/Aimeos/symfony-bundle",
+		"issues": "https://github.com/Aimeos/symfony-bundle/issues",
+		"forum": "http://help.aimeos.org",
+		"wiki": "http://docs.aimeos.org"
+	},
+	"repositories": [ {
+			"type": "vcs",
+			"url": "https://github.com/nsendetzky/arcavias-core"
+	} ],
+	"require": {
+		"php": ">=5.3.3",
+		"arcavias/arcavias-core": "dev-master",
+		"aimeos/extinstaller": "dev-master",
+		"aimeos/ai-symfony2": "dev-master"
+	}
+}

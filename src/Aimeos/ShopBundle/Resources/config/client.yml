@@ -1,0 +1,59 @@
+parameters:
+    client:
+        html:
+            account:
+                favorite:
+                    url:
+                        target: aimeos_shop_account
+                history:
+                    url:
+                        target: aimeos_shop_account
+                pinned:
+                    url:
+                        target: aimeos_shop_detail
+                watch:
+                    url:
+                        target: aimeos_shop_account
+            catalog:
+                count:
+                    url:
+                        target: aimeos_shop_count
+                detail:
+                    url:
+                        target: aimeos_shop_detail
+                list:
+                    url:
+                        target: aimeos_shop_list
+                listsimple:
+                    url:
+                        target: aimeos_shop_listsimple
+                stock:
+                    url:
+                        target: aimeos_shop_stock
+            common:
+                content:
+                    baseurl: ../bundles/aimeosshop/uploads
+                template:
+                    baseurl: ../bundles/aimeosshop/classic
+            basket:
+                standard:
+                    url:
+                        target: aimeos_shop_basket
+            checkout:
+                confirm:
+                    url:
+                        target: aimeos_shop_confirm
+                standard:
+                    url:
+                        target: aimeos_shop_checkout
+                    summary:
+                        option:
+                            terms:
+                                url:
+                                    target: aimeos_shop_terms
+                                privacy:
+                                    url:
+                                        target: aimeos_shop_privacy
+                update:
+                    url:
+                        target: aimeos_shop_update

@@ -1,0 +1,14 @@
+parameters:
+    apc.enable: 1
+    apc.prefix: "shop:"
+    resource:
+        db:
+            adapter: mysql
+            host: %database_host%
+            port: %database_port%
+            database: %database_name%
+            username: %database_user%
+            password: %database_password%
+            stmt: ["SET NAMES 'utf8'", "SET SESSION sql_mode='ANSI'"]
+            limit: 2
+            opt-persistent: 0
