@@ -33,6 +33,7 @@ Make sure that the database is set up and it is configured in your config.yml. T
             ...
         ],
         "post-update-cmd": [
+            "Aimeos\\ShopBundle\\Composer\\ScriptHandler::installBundle",
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateDatabase",
             ...
         ]
