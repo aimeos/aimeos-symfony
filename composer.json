@@ -21,7 +21,16 @@
 		"aimeos/extinstaller": "dev-master",
 		"aimeos/ai-symfony2": "dev-master"
 	},
-    "autoload": {
-        "psr-0": { "Aimeos": "src/" }
-    }
+	"autoload": {
+		"psr-0": { "Aimeos": "src/" }
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateDatabase",
+			"Aimeos\\ShopBundle\\Composer\\ScriptHandler::installBundle"
+		],
+		"post-update-cmd": [
+			"Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateDatabase"
+		]
+	}
 }
