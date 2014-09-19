@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
+ * @copyright Aimeos (aimeos.org), 2014
+ */
+
+
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle;
@@ -103,12 +109,12 @@ abstract class AbstractController
 			}
 
 			$local = array(
-					'classes' => $this->container->getParameter( 'classes' ),
-					'client' => $this->container->getParameter( 'client' ),
-					'controller' => $this->container->getParameter( 'controller' ),
-					'madmin' => $this->container->getParameter( 'madmin' ),
-					'mshop' => $this->container->getParameter( 'mshop' ),
-					'resource' => $this->container->getParameter( 'resource' ),
+				'classes' => $this->container->getParameter( 'classes' ),
+				'client' => $this->container->getParameter( 'client' ),
+				'controller' => $this->container->getParameter( 'controller' ),
+				'madmin' => $this->container->getParameter( 'madmin' ),
+				'mshop' => $this->container->getParameter( 'mshop' ),
+				'resource' => $this->container->getParameter( 'resource' ),
 			);
 
 			self::$config = new \MW_Config_Decorator_Memory( $conf, $local );
