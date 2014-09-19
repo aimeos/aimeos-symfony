@@ -56,7 +56,6 @@ class ScriptHandler
 		}
 
 		self::updateConfigFile( $options['symfony-app-dir'] . '/config/config.yml' );
-		self::updateKernelFile( $options['symfony-app-dir'] . '/AppKernel.php' );
 	}
 
 
@@ -170,35 +169,6 @@ class ScriptHandler
 				$fs = new Filesystem();
 				$fs->dumpFile( $filename, $content );
 			}
-		}
-	}
-
-
-	/**
-	 * Adds the Aimeos shop bundle to the AppKernel file of the application.
-	 *
-	 * @param string $filename Name of the AppKernel file
-	 * @throws \RuntimeException If file is not found
-	 */
-	protected static function updateKernelFile( $filename )
-	{
-		$ref = '$bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();';
-		$bundleDeclaration = '$bundles[] = new Aimeos\ShopBundle\AimeosShopBundle();';
-
-		if( ( $content = file_get_contents( $filename ) ) === false ) {
-			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
-		}
-
-		if( strpos( $content, $bundleDeclaration ) === false )
-		{
-			$new = str_replace( $ref, $bundleDeclaration . "\n            " . $ref, $content );
-
-			if( $content === $new ) {
-				throw new \RuntimeException( 'Unable to patch %s', $filename );
-			}
-
-			$fs = new Filesystem();
-			$fs->dumpFile( $filename, $new );
 		}
 	}
 }
