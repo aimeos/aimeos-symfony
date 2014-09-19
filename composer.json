@@ -11,10 +11,6 @@
 		"forum": "http://help.aimeos.org",
 		"wiki": "http://docs.aimeos.org"
 	},
-	"repositories": [ {
-			"type": "vcs",
-			"url": "https://github.com/nsendetzky/arcavias-core"
-	} ],
 	"require": {
 		"php": ">=5.3.3",
 		"arcavias/arcavias-core": "dev-master",
@@ -24,13 +20,4 @@
 	"autoload": {
 		"psr-0": { "Aimeos": "src/" }
 	},
-	"scripts": {
-		"post-install-cmd": [
-			"Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateDatabase",
-			"Aimeos\\ShopBundle\\Composer\\ScriptHandler::installBundle"
-		],
-		"post-update-cmd": [
-			"Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateDatabase"
-		]
-	}
 }
