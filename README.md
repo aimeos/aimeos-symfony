@@ -44,6 +44,63 @@ Afterwards, install the Aimeos shop bundle using `composer update`
 
 ## Usage
 
-If the setup was successfull and the tables were created in the database, you should be able to call the catalog list page in your browser using
+In your `app/config/routing.yml` file you need to add these lines to add the pre-defined routes from the Aimeos shop bundle:
+
+```
+aimeos_shop:
+    resource: "@AimeosShopBundle/Resources/config/routing.yml"
+    prefix:   /
+```
+
+To see all components and get everything working, you also need to adapt your Twig base template in `app/Resources/view`. This is a working example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/getting-started/#download):
+
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block header %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <title>{% block title %}Aimeos shop{% endblock %}</title>
+{% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <div class="navbar navbar-static" role="navigation">
+{% block head %}{% endblock %}
+        </div>
+{% if block('nav') %}
+        <div class="col-xs-12 col-sm-3">
+            {% block nav %}{% endblock %}
+        </div>
+{% endif %}
+{% if block('nav') or block('aside') %}
+        <div class="col-xs-12 col-sm-9">
+{% else %}
+        <div class="col-xs-12">
+{% endif %}
+            {% block stage %}{% endblock %}
+            {% block body %}{% endblock %}
+        </div>
+{% if block('aside') %}
+        <div class="col-xs-12 col-sm-3">
+            {% block aside %}{% endblock %}
+        </div>
+{% endif %}
+{% block javascripts %}{% endblock %}
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    </body>
+</html>
+```
+
+Copy the
+
+* css/
+* js/
+* fonts/
+
+directories from the bootstrap .zip package into the web/ directory of your Symfony2 application. Then, you should be able to call the catalog list page in your browser using
 
 ```http://<your web root>/app.php/list```
