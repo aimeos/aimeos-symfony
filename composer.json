@@ -19,5 +19,5 @@
 	},
 	"autoload": {
 		"psr-0": { "Aimeos": "src/" }
-	},
+	}
 }
