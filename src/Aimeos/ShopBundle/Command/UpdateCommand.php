@@ -8,17 +8,16 @@
 
 namespace Aimeos\ShopBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 
 /**
  * Performs the database initialization and update.
  */
-class UpdateCommand extends ContainerAwareCommand
+class UpdateCommand extends Command
 {
 	/**
 	 * Configures the command name and description.
@@ -45,16 +44,19 @@ class UpdateCommand extends ContainerAwareCommand
 		$extDir = $input->getOption( 'extdir' );
 		$arcavias = new \Arcavias( ( $extDir ? (array) $extDir : array() ) );
 
-
+		$i18nPaths = $arcavias->getI18nPaths();
 		$configPaths = $arcavias->getConfigPaths( 'mysql' );
 
 		if( ( $confPath = $input->getOption( 'config' ) ) !== null ) {
 			$confPaths[] = $confPath;
 		}
 
-		$ctx = $this->getContext( $configPaths );
-		$dbconfig = $this->updateConfig( $ctx->getConfig(), $input );
+		$ctx = $this->getContext( $configPaths, $i18nPaths );
+		$config = $ctx->getConfig();
 
+		$config->set( 'setup/site', $input->getArgument( 'site' ) );
+		$dbconfig = $this->getDbConfig( $config, $input );
+		$this->setOptions( $config, $input );
 
 		$taskPaths = $arcavias->getSetupPaths( $input->getArgument( 'site' ) );
 
@@ -65,42 +67,42 @@ class UpdateCommand extends ContainerAwareCommand
 			throw new Exception( 'Unable to extend include path' );
 		}
 
-
 		$manager = new \MW_Setup_Manager_Multiple( $ctx->getDatabaseManager(), $dbconfig, $taskPaths, $ctx );
 		$manager->run( 'mysql' );
 	}
 
 
 	/**
-	 * Returns a new context object.
+	 * Returns the list of translation objects for the available languages.
 	 *
-	 * @param array List of file system paths to the configuration directories
-	 * @return \MShop_Context_Item_Interface Context object
+	 * @param  \MShop_Context_Item_Interface $context Context object
+	 * @param array $i18nPaths List of file system directories containing translation files
+	 * @return \MW_Translation_Interface[] List of translation objects
 	 */
-	protected function getContext( array $configPaths )
+	protected function createI18n( \MShop_Context_Item_Interface $context, array $i18nPaths )
 	{
-		$ctx = new \MShop_Context_Item_Default();
-
-		$local = array(
-			'resource' => $this->getContainer()->getParameter( 'resource' ),
-		);
-
-		$conf = new \MW_Config_Array( array(), $configPaths );
-		$conf = new \MW_Config_Decorator_Memory( $conf, $local );
-		$ctx->setConfig( $conf );
+		return array();
+	}
 
 
-		$dbm = new \MW_DB_Manager_PDO( $conf );
-		$ctx->setDatabaseManager( $dbm );
+	/**
+	 * Returns the database configuration from the config object.
+	 *
+	 * @param \MW_Config_Interface $conf Config object
+	 * @return array Multi-dimensional associative list of database configuration parameters
+	 */
+	protected function getDbConfig( \MW_Config_Interface $conf )
+	{
+		$dbconfig = $conf->get( 'resource', array() );
 
-		$logger = new \MW_Logger_Errorlog( \MW_Logger_ABSTRACT::INFO );
-		$ctx->setLogger( $logger );
+		foreach( $dbconfig as $rname => $dbconf )
+		{
+			if( strncmp( $rname, 'db', 2 ) !== 0 ) {
+				unset( $dbconfig[$rname] );
+			}
+		}
 
-		$session = new \MW_Session_None();
-		$ctx->setSession( $session );
-
-
-		return $ctx;
+		return $dbconfig;
 	}
 
 
@@ -112,11 +114,8 @@ class UpdateCommand extends ContainerAwareCommand
 	 * @param array Associative list of database configurations
 	 * @throws \RuntimeException If the format of the options is invalid
 	 */
-	protected function updateConfig( \MW_Config_Interface $conf, InputInterface $input )
+	protected function setOptions( \MW_Config_Interface $conf, InputInterface $input )
 	{
-		$conf->set( 'setup/site', $input->getArgument( 'site' ) );
-
-
 		foreach( (array) $input->getOption( 'option' ) as $option )
 		{
 			$parts = explode( ':', $option );
@@ -127,19 +126,5 @@ class UpdateCommand extends ContainerAwareCommand
 
 			$conf->set( $parts[0], $parts[1] );
 		}
-
-
-		$dbconfig = $conf->get( 'resource', array() );
-
-		foreach( $dbconfig as $rname => $dbconf )
-		{
-			if( strncmp( $rname, 'db', 2 ) !== 0 ) {
-				unset( $dbconfig[$rname] );
-			} else {
-				$conf->set( "resource/$rname/limit", 2 );
-			}
-		}
-
-		return $dbconfig;
 	}
 }
