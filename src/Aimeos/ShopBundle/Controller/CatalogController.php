@@ -3,14 +3,27 @@
 /**
  * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
  * @copyright Aimeos (aimeos.org), 2014
+ * @package symfony2-bundle
+ * @subpackage Controller
  */
 
 
 namespace Aimeos\ShopBundle\Controller;
 
 
+/**
+ * Aimeos controller for catalog related functionality.
+ *
+ * @package symfony2-bundle
+ * @subpackage Controller
+ */
 class CatalogController extends AbstractController
 {
+	/**
+	 * Returns the view for the XHR response with the counts for the facetted search.
+	 *
+	 * @return string XHR response with the counts for the facetted search
+	 */
 	public function countAction()
 	{
 		parent::init();
@@ -27,6 +40,11 @@ class CatalogController extends AbstractController
 	}
 
 
+	/**
+	 * Returns the view for the product detail page.
+	 *
+	 * @return string Page for the detailed product view
+	 */
 	public function detailAction()
 	{
 		parent::init();
@@ -65,6 +83,11 @@ class CatalogController extends AbstractController
 	}
 
 
+	/**
+	 * Returns the view for the XHR response with the product information for the search suggestion.
+	 *
+	 * @return string XHR response with the product information for the search suggestion
+	 */
 	public function listsimpleAction()
 	{
 		parent::init();
@@ -81,6 +104,11 @@ class CatalogController extends AbstractController
 	}
 
 
+	/**
+	 * Returns the view for the product list page.
+	 *
+	 * @return string Page for the product list view
+	 */
 	public function listAction()
 	{
 		parent::init();
@@ -119,6 +147,11 @@ class CatalogController extends AbstractController
 	}
 
 
+	/**
+	 * Returns the view for the XHR response with the product stock level information.
+	 *
+	 * @return string XHR response with the product stock level information
+	 */
 	public function stockAction()
 	{
 		parent::init();

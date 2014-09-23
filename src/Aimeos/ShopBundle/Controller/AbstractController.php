@@ -3,6 +3,8 @@
 /**
  * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
  * @copyright Aimeos (aimeos.org), 2014
+ * @package symfony2-bundle
+ * @subpackage Controller
  */
 
 
@@ -11,6 +13,12 @@ namespace Aimeos\ShopBundle\Controller;
 use Symfony\Bundle\FrameworkBundle;
 
 
+/**
+ * Common class for all Aimeos controller.
+ *
+ * @package symfony2-bundle
+ * @subpackage Controller
+ */
 abstract class AbstractController
 	extends FrameworkBundle\Controller\Controller
 {

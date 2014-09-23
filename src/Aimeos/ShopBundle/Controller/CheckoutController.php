@@ -3,14 +3,27 @@
 /**
  * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
  * @copyright Aimeos (aimeos.org), 2014
+ * @package symfony2-bundle
+ * @subpackage Controller
  */
 
 
 namespace Aimeos\ShopBundle\Controller;
 
 
+/**
+ * Aimeos controller for checkout related functionality.
+ *
+ * @package symfony2-bundle
+ * @subpackage Controller
+ */
 class CheckoutController extends AbstractController
 {
+	/**
+	 * Returns the HTML view for the checkout process page.
+	 *
+	 * @return string HTML page for the checkout process
+	 */
 	public function indexAction()
 	{
 		parent::init();
@@ -32,6 +45,11 @@ class CheckoutController extends AbstractController
 	}
 
 
+	/**
+	 * Returns the HTML view for the checkout confirmation page.
+	 *
+	 * @return string HTML page for the checkout confirmation
+	 */
 	public function confirmAction()
 	{
 		parent::init();
@@ -53,6 +71,11 @@ class CheckoutController extends AbstractController
 	}
 
 
+	/**
+	 * Returns the view for the order update page.
+	 *
+	 * @return string Page for the order update
+	 */
 	public function updateAction()
 	{
 		parent::init();

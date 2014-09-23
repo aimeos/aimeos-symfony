@@ -3,14 +3,27 @@
 /**
  * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
  * @copyright Aimeos (aimeos.org), 2014
+ * @package symfony2-bundle
+ * @subpackage Controller
  */
 
 
 namespace Aimeos\ShopBundle\Controller;
 
 
+/**
+ * Aimeos controller for "My account" functionality.
+ *
+ * @package symfony2-bundle
+ * @subpackage Controller
+ */
 class AccountController extends AbstractController
 {
+	/**
+	 * Returns the view for the "My account" page.
+	 *
+	 * @return string Page for the "My account" area
+	 */
 	public function indexAction()
 	{
 		parent::init();
