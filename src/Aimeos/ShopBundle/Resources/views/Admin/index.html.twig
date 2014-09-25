@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Aimeos admin interface</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+{% for cssFile in cssFiles %}
+        <link rel="stylesheet" href="{{ asset(cssFile) }}" />
+{% endfor %}
+
+        <script type="text/javascript">
+        window.MShop = {
+
+            i18n: {
+                locale: '{{locale}}',
+                content: {{i18nContent|raw}}
+            },
+
+            config: {
+                site: {{site|raw}},
+                data: {{config|raw}},
+                smd: {{smd|raw}},
+                itemschema: {{itemSchemas|raw}},
+                searchschema: {{searchSchemas|raw}},
+                urlTemplate: '{{urlTemplate|raw}}',
+                activeTab: {{activeTab}},
+
+                baseurl: {
+                    content: '{{ asset('uploads') }}'
+                }
+            }
+        }
+        </script>
+
+{% for jsFile in jsFiles %}
+        <script type="text/javascript" src="{{ asset(jsFile) }}"></script>
+{% endfor %}
+
+    </head>
+    <body>
+        <noscript><p>You need to enable javascript!</p></noscript>
+    </body>
+</html>

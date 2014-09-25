@@ -1,3 +1,11 @@
+aimeos_shop_admin_json:
+    path:   /admin/do
+    defaults: { _controller: AimeosShopBundle:Admin:do }
+
+aimeos_shop_admin:
+    path:   /admin/{site}/{tab}
+    defaults: { _controller: AimeosShopBundle:Admin:index, site: default, tab: 0 }
+
 aimeos_shop_account:
     path:   /my-account
     defaults: { _controller: AimeosShopBundle:Account:index }
