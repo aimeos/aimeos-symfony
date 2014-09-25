@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle;
+use Symfony\Component\HttpFoundation\Request;
 
 
 /**
@@ -32,10 +33,11 @@ abstract class AbstractController
 	/**
 	 * Creates the view object for the HTML client.
 	 *
+	 * @param Request $request Symfony request object
 	 * @param array $params Parameters injected by routes
 	 * @return MW_View_Interface View object
 	 */
-	protected function createView( array $params = array() )
+	protected function createView( Request $request, array $params = array() )
 	{
 		$context = $this->getContext();
 		$config = $context->getConfig();
@@ -43,7 +45,7 @@ abstract class AbstractController
 		$langid = $context->getLocale()->getLanguageId();
 		$i18n = $this->getI18n( array( $langid ) );
 
-		$params += $this->getRequest()->request->all() + $this->getRequest()->query->all();
+		$params += $request->request->all() + $request->query->all();
 
 		// required for reloading to the current page
 		$params['target'] = $this->container->get( 'request' )->get( '_route' );
@@ -87,7 +89,11 @@ abstract class AbstractController
 		if( self::$arcavias === null )
 		{
 			// Hook for processing extension directories
-			$extDirs = array();
+			$extDirs = array( '../ext' );
+
+			if( $this->container->hasParameter( 'extdir' ) ) {
+				$extDirs = array( $this->container->hasParameter( 'extdir' ) );
+			}
 
 			self::$arcavias = new \Arcavias( $extDirs, false );
 		}

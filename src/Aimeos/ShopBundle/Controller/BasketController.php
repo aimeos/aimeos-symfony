@@ -10,6 +10,8 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * Aimeos controller for standard basket functionality.
@@ -22,9 +24,10 @@ class BasketController extends AbstractController
 	/**
 	 * Returns the view for the standard basket page.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return string Page for the standard basket
 	 */
-	public function indexAction()
+	public function indexAction( Request $request )
 	{
 		parent::init();
 
@@ -33,7 +36,7 @@ class BasketController extends AbstractController
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
 		$basket = \Client_Html_Basket_Standard_Factory::createClient( $context, $templatePaths );
-		$basket->setView( $this->createView() );
+		$basket->setView( $this->createView( $request ) );
 		$basket->process();
 
 		$parts = array(

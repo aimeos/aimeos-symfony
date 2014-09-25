@@ -10,6 +10,8 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * Aimeos controller for "My account" functionality.
@@ -22,9 +24,10 @@ class AccountController extends AbstractController
 	/**
 	 * Returns the view for the "My account" page.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return string Page for the "My account" area
 	 */
-	public function indexAction()
+	public function indexAction( Request $request )
 	{
 		parent::init();
 
@@ -33,23 +36,23 @@ class AccountController extends AbstractController
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
 		$minibasket = \Client_Html_Basket_Mini_Factory::createClient( $context, $templatePaths );
-		$minibasket->setView( $this->createView() );
+		$minibasket->setView( $this->createView( $request ) );
 		$minibasket->process();
 
 		$history = \Client_Html_Account_History_Factory::createClient( $context, $templatePaths );
-		$history->setView( $this->createView() );
+		$history->setView( $this->createView( $request ) );
 		$history->process();
 
 		$favorite = \Client_Html_Account_Favorite_Factory::createClient( $context, $templatePaths );
-		$favorite->setView( $this->createView() );
+		$favorite->setView( $this->createView( $request ) );
 		$favorite->process();
 
 		$watch = \Client_Html_Account_Watch_Factory::createClient( $context, $templatePaths );
-		$watch->setView( $this->createView() );
+		$watch->setView( $this->createView( $request ) );
 		$watch->process();
 
 		$session = \Client_Html_Catalog_Session_Factory::createClient( $context, $templatePaths );
-		$session->setView( $this->createView() );
+		$session->setView( $this->createView( $request ) );
 		$session->process();
 
 		$header = $minibasket->getHeader() . $history->getHeader()

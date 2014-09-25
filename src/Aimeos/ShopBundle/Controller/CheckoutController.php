@@ -10,6 +10,8 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * Aimeos controller for checkout related functionality.
@@ -22,9 +24,10 @@ class CheckoutController extends AbstractController
 	/**
 	 * Returns the HTML view for the checkout process page.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return string HTML page for the checkout process
 	 */
-	public function indexAction()
+	public function indexAction( Request $request )
 	{
 		parent::init();
 
@@ -33,7 +36,7 @@ class CheckoutController extends AbstractController
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
 		$checkout = \Client_Html_Checkout_Standard_Factory::createClient( $context, $templatePaths );
-		$checkout->setView( $this->createView() );
+		$checkout->setView( $this->createView( $request ) );
 		$checkout->process();
 
 		$parts = array(
@@ -48,9 +51,10 @@ class CheckoutController extends AbstractController
 	/**
 	 * Returns the HTML view for the checkout confirmation page.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return string HTML page for the checkout confirmation
 	 */
-	public function confirmAction()
+	public function confirmAction( Request $request )
 	{
 		parent::init();
 
@@ -59,7 +63,7 @@ class CheckoutController extends AbstractController
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
 		$confirm = \Client_Html_Checkout_Confirm_Factory::createClient( $context, $templatePaths );
-		$confirm->setView( $this->createView() );
+		$confirm->setView( $this->createView( $request ) );
 		$confirm->process();
 
 		$parts = array(
@@ -74,9 +78,10 @@ class CheckoutController extends AbstractController
 	/**
 	 * Returns the view for the order update page.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return string Page for the order update
 	 */
-	public function updateAction()
+	public function updateAction( Request $request )
 	{
 		parent::init();
 
@@ -85,7 +90,7 @@ class CheckoutController extends AbstractController
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
 		$update = \Client_Html_Checkout_Update_Factory::createClient( $context, $templatePaths );
-		$update->setView( $this->createView() );
+		$update->setView( $this->createView( $request ) );
 		$update->process();
 
 		$parts = array(

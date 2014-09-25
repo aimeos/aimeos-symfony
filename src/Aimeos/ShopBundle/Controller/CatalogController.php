@@ -10,6 +10,8 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+
 
 /**
  * Aimeos controller for catalog related functionality.
@@ -22,9 +24,10 @@ class CatalogController extends AbstractController
 	/**
 	 * Returns the view for the XHR response with the counts for the facetted search.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return string XHR response with the counts for the facetted search
 	 */
-	public function countAction()
+	public function countAction( Request $request )
 	{
 		parent::init();
 
@@ -33,7 +36,7 @@ class CatalogController extends AbstractController
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
 		$count = \Client_Html_Catalog_Count_Factory::createClient( $context, $templatePaths );
-		$count->setView( $this->createView() );
+		$count->setView( $this->createView( $request ) );
 		$count->process();
 
 		return $this->render( 'AimeosShopBundle:Catalog:xhr.html.twig', array( 'output' => $count->getBody() ) );
@@ -43,9 +46,10 @@ class CatalogController extends AbstractController
 	/**
 	 * Returns the view for the product detail page.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return string Page for the detailed product view
 	 */
-	public function detailAction()
+	public function detailAction( Request $request )
 	{
 		parent::init();
 
@@ -54,19 +58,19 @@ class CatalogController extends AbstractController
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
 		$minibasket = \Client_Html_Basket_Mini_Factory::createClient( $context, $templatePaths );
-		$minibasket->setView( $this->createView() );
+		$minibasket->setView( $this->createView( $request ) );
 		$minibasket->process();
 
 		$stage = \Client_Html_Catalog_Stage_Factory::createClient( $context, $templatePaths );
-		$stage->setView( $this->createView() );
+		$stage->setView( $this->createView( $request ) );
 		$stage->process();
 
 		$detail = \Client_Html_Catalog_Detail_Factory::createClient( $context, $templatePaths );
-		$detail->setView( $this->createView() );
+		$detail->setView( $this->createView( $request ) );
 		$detail->process();
 
 		$session = \Client_Html_Catalog_Session_Factory::createClient( $context, $templatePaths );
-		$session->setView( $this->createView() );
+		$session->setView( $this->createView( $request ) );
 		$session->process();
 
 		$header = $minibasket->getHeader() . $session->getHeader() . $detail->getHeader() . $stage->getHeader();
@@ -86,9 +90,10 @@ class CatalogController extends AbstractController
 	/**
 	 * Returns the view for the XHR response with the product information for the search suggestion.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return string XHR response with the product information for the search suggestion
 	 */
-	public function listsimpleAction()
+	public function listsimpleAction( Request $request )
 	{
 		parent::init();
 
@@ -97,7 +102,7 @@ class CatalogController extends AbstractController
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
 		$count = \Client_Html_Catalog_List_Factory::createClient( $context, $templatePaths, 'Simple' );
-		$count->setView( $this->createView() );
+		$count->setView( $this->createView( $request ) );
 		$count->process();
 
 		return $this->render( 'AimeosShopBundle:Catalog:xhr.html.twig', array( 'output' => $count->getBody() ) );
@@ -107,9 +112,10 @@ class CatalogController extends AbstractController
 	/**
 	 * Returns the view for the product list page.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return string Page for the product list view
 	 */
-	public function listAction()
+	public function listAction( Request $request )
 	{
 		parent::init();
 
@@ -118,19 +124,19 @@ class CatalogController extends AbstractController
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
 		$minibasket = \Client_Html_Basket_Mini_Factory::createClient( $context, $templatePaths );
-		$minibasket->setView( $this->createView() );
+		$minibasket->setView( $this->createView( $request ) );
 		$minibasket->process();
 
 		$filter = \Client_Html_Catalog_Filter_Factory::createClient( $context, $templatePaths );
-		$filter->setView( $this->createView() );
+		$filter->setView( $this->createView( $request ) );
 		$filter->process();
 
 		$stage = \Client_Html_Catalog_Stage_Factory::createClient( $context, $templatePaths );
-		$stage->setView( $this->createView() );
+		$stage->setView( $this->createView( $request ) );
 		$stage->process();
 
 		$list = \Client_Html_Catalog_List_Factory::createClient( $context, $templatePaths );
-		$list->setView( $this->createView() );
+		$list->setView( $this->createView( $request ) );
 		$list->process();
 
 		$header = $minibasket->getHeader() . $filter->getHeader() . $stage->getHeader() . $list->getHeader();
@@ -150,9 +156,10 @@ class CatalogController extends AbstractController
 	/**
 	 * Returns the view for the XHR response with the product stock level information.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return string XHR response with the product stock level information
 	 */
-	public function stockAction()
+	public function stockAction( Request $request )
 	{
 		parent::init();
 
@@ -161,7 +168,7 @@ class CatalogController extends AbstractController
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
 		$stock = \Client_Html_Catalog_Stock_Factory::createClient( $context, $templatePaths );
-		$stock->setView( $this->createView() );
+		$stock->setView( $this->createView( $request ) );
 		$stock->process();
 
 		return $this->render( 'AimeosShopBundle:Catalog:xhr.html.twig', array( 'output' => $stock->getBody() ) );
