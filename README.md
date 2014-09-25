@@ -42,6 +42,11 @@ Make sure that the database is set up and it is configured in your config.yml. T
 
 Afterwards, install the Aimeos shop bundle using `composer update`
 
+The last step executed in the directory of your Symfony2 application installs the assets (CSS, Javascript, images, etc.) of the bundles into the web/bundles/ directory so they are publically available:
+
+`php app/console assets:install`
+
+
 ## Usage
 
 In your `app/config/routing.yml` file you need to add these lines to add the pre-defined routes from the Aimeos shop bundle:
