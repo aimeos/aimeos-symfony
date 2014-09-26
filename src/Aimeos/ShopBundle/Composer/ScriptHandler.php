@@ -81,7 +81,7 @@ class ScriptHandler
 			$console .= ' --ansi';
 		}
 
-		$process = new Process( $php . ' ' . $console . ' ' . $cmd . implode( ' ', $options ), null, null, null, 3600 );
+		$process = new Process( $php . ' ' . $console . ' ' . $cmd . ' ' . implode( ' ', $options ), null, null, null, 3600 );
 
 		$process->run( function( $type, $buffer ) use ( $event ) {
 			$event->getIO()->write( $buffer, false );
