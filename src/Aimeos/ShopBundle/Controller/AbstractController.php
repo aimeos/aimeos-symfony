@@ -91,8 +91,8 @@ abstract class AbstractController
 			// Hook for processing extension directories
 			$extDirs = array( '../ext' );
 
-			if( $this->container->hasParameter( 'extdir' ) ) {
-				$extDirs = array( $this->container->hasParameter( 'extdir' ) );
+			if( $this->container->hasParameter( 'aimeos.extdir' ) ) {
+				$extDirs = array( $this->container->getParameter( 'aimeos.extdir' ) );
 			}
 
 			self::$arcavias = new \Arcavias( $extDirs, false );
