@@ -15,8 +15,9 @@
         window.MShop = {
 
             i18n: {
-                locale: '{{locale}}',
-                content: {{i18nContent|raw}}
+                lang: '{{lang}}',
+                content: {{i18nContent|raw}},
+                available: {{languages|raw}}
             },
 
             config: {
@@ -29,7 +30,7 @@
                 activeTab: {{activeTab}},
 
                 baseurl: {
-                    content: '{{ asset('uploads') }}'
+                    content: '{{ asset(uploaddir) }}'
                 }
             }
         }

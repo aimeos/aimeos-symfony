@@ -32,9 +32,9 @@ parameters:
                         target: aimeos_shop_stock
             common:
                 content:
-                    baseurl: ../bundles/aimeosshop/uploads
+                    baseurl: uploads
                 template:
-                    baseurl: ../bundles/aimeosshop/classic
+                    baseurl: bundles/aimeosshop/classic
             basket:
                 standard:
                     url:
