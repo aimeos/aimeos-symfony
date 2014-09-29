@@ -1,5 +1,5 @@
 aimeos_shop_admin_json:
-    path:   /admin/do
+    path: /admin/do
     defaults: { _controller: AimeosShopBundle:Admin:do }
 
 aimeos_shop_admin:
@@ -7,49 +7,49 @@ aimeos_shop_admin:
     defaults: { _controller: AimeosShopBundle:Admin:index, site: default, lang: en, tab: 0 }
 
 aimeos_shop_account:
-    path:   /my-account
+    path: /my-account
     defaults: { _controller: AimeosShopBundle:Account:index }
 
 aimeos_shop_basket:
-    path:   /basket
+    path: /basket
     defaults: { _controller: AimeosShopBundle:Basket:index }
 
 aimeos_shop_count:
-    path:   /count
+    path: /count
     defaults: { _controller: AimeosShopBundle:Catalog:count, _format: json }
 
 aimeos_shop_detail:
-    path:   /detail
+    path: /detail
     defaults: { _controller: AimeosShopBundle:Catalog:detail }
 
 aimeos_shop_list:
-    path:   /list
+    path: /list
     defaults: { _controller: AimeosShopBundle:Catalog:list }
 
 aimeos_shop_listsimple:
-    path:   /suggest
-    defaults: { _controller: AimeosShopBundle:Catalog:listsimple }
+    path: /suggest
+    defaults: { _controller: AimeosShopBundle:Catalog:listsimple, _format: json }
 
 aimeos_shop_stock:
-    path:   /stock
+    path: /stock
     defaults: { _controller: AimeosShopBundle:Catalog:stock, _format: json }
 
 aimeos_shop_checkout:
-    path:   /checkout
+    path: /checkout
     defaults: { _controller: AimeosShopBundle:Checkout:index }
 
 aimeos_shop_confirm:
-    path:   /confirm
+    path: /confirm
     defaults: { _controller: AimeosShopBundle:Checkout:confirm }
 
 aimeos_shop_update:
-    path:   /update
+    path: /update
     defaults: { _controller: AimeosShopBundle:Checkout:update }
 
 aimeos_shop_terms:
-    path:   /terms
+    path: /terms
     defaults: { _controller: AimeosShopBundle:Checkout:index }
 
 aimeos_shop_privacy:
-    path:   /privacy
+    path: /privacy
     defaults: { _controller: AimeosShopBundle:Checkout:index }
