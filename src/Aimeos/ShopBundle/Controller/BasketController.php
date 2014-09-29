@@ -25,18 +25,22 @@ class BasketController extends AbstractController
 	 * Returns the view for the standard basket page.
 	 *
 	 * @param Request $request Symfony request object
+	 * @param string $site Unique site code
+	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
+	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
 	 * @return string Page for the standard basket
 	 */
-	public function indexAction( Request $request )
+	public function indexAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
 	{
-		parent::init();
+		$this->init( $site, $lang, $currency );
 
 		$context = $this->getContext();
 		$arcavias = $this->getArcavias();
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
+		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
 
 		$basket = \Client_Html_Basket_Standard_Factory::createClient( $context, $templatePaths );
-		$basket->setView( $this->createView( $request ) );
+		$basket->setView( $this->createView( $request, $params ) );
 		$basket->process();
 
 		$parts = array(

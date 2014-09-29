@@ -25,18 +25,22 @@ class CheckoutController extends AbstractController
 	 * Returns the HTML view for the checkout process page.
 	 *
 	 * @param Request $request Symfony request object
+	 * @param string $site Unique site code
+	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
+	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
 	 * @return string HTML page for the checkout process
 	 */
-	public function indexAction( Request $request )
+	public function indexAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
 	{
-		parent::init();
+		$this->init( $site, $lang, $currency );
 
 		$context = $this->getContext();
 		$arcavias = $this->getArcavias();
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
+		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
 
 		$checkout = \Client_Html_Checkout_Standard_Factory::createClient( $context, $templatePaths );
-		$checkout->setView( $this->createView( $request ) );
+		$checkout->setView( $this->createView( $request, $params ) );
 		$checkout->process();
 
 		$parts = array(
@@ -52,18 +56,22 @@ class CheckoutController extends AbstractController
 	 * Returns the HTML view for the checkout confirmation page.
 	 *
 	 * @param Request $request Symfony request object
+	 * @param string $site Unique site code
+	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
+	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
 	 * @return string HTML page for the checkout confirmation
 	 */
-	public function confirmAction( Request $request )
+	public function confirmAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
 	{
-		parent::init();
+		$this->init( $site, $lang, $currency );
 
 		$context = $this->getContext();
 		$arcavias = $this->getArcavias();
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
+		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
 
 		$confirm = \Client_Html_Checkout_Confirm_Factory::createClient( $context, $templatePaths );
-		$confirm->setView( $this->createView( $request ) );
+		$confirm->setView( $this->createView( $request, $params ) );
 		$confirm->process();
 
 		$parts = array(
@@ -79,18 +87,22 @@ class CheckoutController extends AbstractController
 	 * Returns the view for the order update page.
 	 *
 	 * @param Request $request Symfony request object
+	 * @param string $site Unique site code
+	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
+	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
 	 * @return string Page for the order update
 	 */
-	public function updateAction( Request $request )
+	public function updateAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
 	{
-		parent::init();
+		$this->init( $site, $lang, $currency );
 
 		$context = $this->getContext();
 		$arcavias = $this->getArcavias();
 		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
+		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
 
 		$update = \Client_Html_Checkout_Update_Factory::createClient( $context, $templatePaths );
-		$update->setView( $this->createView( $request ) );
+		$update->setView( $this->createView( $request, $params ) );
 		$update->process();
 
 		$parts = array(

@@ -37,7 +37,7 @@ abstract class AbstractController
 	 * @param array $params Parameters injected by routes
 	 * @return MW_View_Interface View object
 	 */
-	protected function createView( Request $request, array $params = array() )
+	protected function createView( Request $request, array $urlparams = array() )
 	{
 		$context = $this->getContext();
 		$config = $context->getConfig();
@@ -45,14 +45,14 @@ abstract class AbstractController
 		$langid = $context->getLocale()->getLanguageId();
 		$i18n = $this->getI18n( array( $langid ) );
 
-		$params += $request->request->all() + $request->query->all();
+		$params = $urlparams + $request->request->all() + $request->query->all();
 
 		// required for reloading to the current page
 		$params['target'] = $this->container->get( 'request' )->get( '_route' );
 
 		$view = new \MW_View_Default();
 
-		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->container->get( 'router' ) );
+		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->container->get( 'router' ), $urlparams );
 		$view->addHelper( 'url', $helper );
 
 		$helper = new \MW_View_Helper_Translate_Default( $view, $i18n[$langid] );
@@ -215,17 +215,17 @@ abstract class AbstractController
 
 	/**
 	 * Initializes the object for the action.
+	 *
+	 * @param string $site Unique site code
+	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
+	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
 	 */
-	protected function init()
+	protected function init( $site, $lang, $currency )
 	{
 		$context = $this->getContext();
 
-		$langid = 'en';
-		$currency = 'EUR';
-		$sitecode = 'default';
-
 		$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
-		$locale = $localeManager->bootstrap( $sitecode, $langid, $currency );
+		$locale = $localeManager->bootstrap( $site, $lang, $currency );
 
 		$context->setLocale( $locale );
 		$context->setI18n( $this->getI18n( array( $locale->getLanguageId() ) ) );
