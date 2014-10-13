@@ -1,5 +1,5 @@
 {
-	"name": "aimeos/symfony2-bundle",
+	"name": "aimeos/aimeos-symfony2",
 	"type": "symfony-bundle",
 	"description": "Aimeos Symfony2 web shop bundle",
 	"homepage": "http://aimeos.org",
