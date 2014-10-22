@@ -1,7 +1,4 @@
-parameters:
-#    aimeos_shop.example.class: Aimeos\ShopBundle\Example
-
 services:
-#    aimeos_shop.example:
-#        class: %aimeos_shop.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    aimeos_context:
+        class: Aimeos\ShopBundle\Service\ContextManager
+        arguments: ["@request_stack","@service_container","@session","@router"]
