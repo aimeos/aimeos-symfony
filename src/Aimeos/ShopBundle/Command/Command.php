@@ -58,7 +58,7 @@ abstract class Command extends ContainerAwareCommand
 		$helper = new \MW_View_Helper_Config_Default( $view, $config );
 		$view->addHelper( 'config', $helper );
 
-		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->getContainer()->get( 'router' ) );
+		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->getContainer()->get( 'router' ), array() );
 		$view->addHelper( 'url', $helper );
 
 		$helper = new \MW_View_Helper_Encoder_Default( $view );
