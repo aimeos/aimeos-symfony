@@ -24,24 +24,19 @@ class AdminController extends AbstractController
 	/**
 	 * Returns the initial HTML view for the admin interface.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang Language ID the admin interface should be shown
 	 * @param integer $tab Number of the currently active tab
 	 * @return string HTML page for the admin interface
 	 */
-	public function indexAction( Request $request, $site, $lang, $tab )
+	public function indexAction( $site, $locale, $tab )
 	{
-		$this->init( $site, $lang, null );
+		$cm = $this->get( 'aimeos_context' );
+		$context = $cm->getContext( false );
+		$context = $this->setLocale( $context, $locale );
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$i18nPaths = $arcavias->getI18nPaths();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
+		$arcavias = $cm->getArcavias();
 		$cntlPaths = $arcavias->getCustomPaths( 'controller/extjs' );
-		$cssFiles = $jsFiles = array();
-
 		$controller = new \Controller_ExtJS_JsonRpc( $context, $cntlPaths );
+		$cssFiles = $jsFiles = array();
 
 		foreach( $arcavias->getCustomPaths( 'client/extjs' ) as $base => $paths )
 		{
@@ -61,17 +56,17 @@ class AdminController extends AbstractController
 		}
 
 		$vars = array(
-			'lang' => $lang,
+			'lang' => $locale,
 			'jsFiles' => $jsFiles,
 			'cssFiles' => $cssFiles,
 			'languages' => $this->getJsonLanguages( $context),
 			'config' => $this->getJsonClientConfig( $context ),
 			'site' => $this->getJsonSiteItem( $context, $site ),
-			'i18nContent' => $this->getJsonClientI18n( $i18nPaths, $lang ),
+			'i18nContent' => $this->getJsonClientI18n( $arcavias->getI18nPaths(), $locale ),
 			'searchSchemas' => $controller->getJsonSearchSchemas(),
 			'itemSchemas' => $controller->getJsonItemSchemas(),
 			'smd' => $controller->getJsonSmd( '/admin/do' ),
-			'urlTemplate' => '/admin/{site}/{lang}/{tab}',
+			'urlTemplate' => '/admin/{site}/{locale}/{tab}',
 			'uploaddir' => $this->getUploadDir(),
 			'activeTab' => $tab,
 		);
@@ -88,10 +83,11 @@ class AdminController extends AbstractController
 	 */
 	public function doAction( Request $request )
 	{
-		$this->init( null, null, null );
+		$cm = $this->get( 'aimeos_context' );
 
-		$context = $this->getContext();
-		$cntlPaths = $this->getArcavias()->getCustomPaths( 'controller/extjs' );
+		$context = $cm->getContext( false );
+		$context = $this->setLocale( $context );
+		$cntlPaths = $cm->getArcavias()->getCustomPaths( 'controller/extjs' );
 
 		$controller = new \Controller_ExtJS_JsonRpc( $context, $cntlPaths );
 
@@ -109,7 +105,7 @@ class AdminController extends AbstractController
 	public function getJsonLanguages( \MShop_Context_Item_Interface $context )
 	{
 		$languageManager = \MShop_Factory::createManager( $context, 'locale/language' );
-		$paths = $this->getArcavias()->getI18nPaths();
+		$paths = $this->get( 'aimeos_context' )->getArcavias()->getI18nPaths();
 		$langs = $result = array();
 
 		if( isset( $paths['client/extjs'] ) )
@@ -216,20 +212,21 @@ class AdminController extends AbstractController
 
 
 	/**
-	 * Initializes the object for the action.
+	 * Sets the locale item in the given context
 	 *
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
+	 * @param \MShop_Context_Item_Interface $context Context object
+	 * @param string $locale ISO language code, e.g. "en" or "en_GB"
+	 * @return MShop_Context_Item_Interface Modified context object
 	 */
-	protected function init( $site, $lang, $currency )
+	protected function setLocale( \MShop_Context_Item_Interface $context, $locale = null )
 	{
-		$context = $this->getContext();
+		$localeManager = \MShop_Factory::createManager( $context, 'locale' );
 
-		$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
 		$localeItem = $localeManager->createItem();
-		$localeItem->setLanguageId( $lang );
+		$localeItem->setLanguageId( $locale );
 
 		$context->setLocale( $localeItem );
+
+		return $context;
 	}
 }
