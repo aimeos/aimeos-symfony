@@ -1,0 +1,24 @@
+ {% extends 'AimeosShopBundle::base.html.twig' %}
+
+ {% block header %}
+     {{ render(controller('AimeosShopBundle:Basket:miniHeader')) }}
+     {{ render(controller('AimeosShopBundle:Catalog:filterHeader')) }}
+     {{ render(controller('AimeosShopBundle:Catalog:stageHeader')) }}
+     {{ render(controller('AimeosShopBundle:Catalog:listHeader')) }}
+ {% endblock %}
+
+ {% block head %}
+     {{ render(controller('AimeosShopBundle:Basket:miniBody')) }}
+ {% endblock %}
+ 
+ {% block nav %}
+     {{ render(controller('AimeosShopBundle:Catalog:filterBody')) }}
+ {% endblock %}
+
+ {% block stage %}
+     {{ render(controller('AimeosShopBundle:Catalog:stageBody')) }}
+ {% endblock %}
+
+ {% block body %}
+     {{ render(controller('AimeosShopBundle:Catalog:listBody')) }}
+ {% endblock %}
