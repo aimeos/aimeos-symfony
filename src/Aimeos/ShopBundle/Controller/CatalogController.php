@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -24,173 +25,168 @@ class CatalogController extends AbstractController
 	/**
 	 * Returns the view for the XHR response with the counts for the facetted search.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
-	 * @return string XHR response with the counts for the facetted search
+	 * @return Response Response object containing the generated output
 	 */
-	public function countAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
+	public function countAction()
 	{
-		$this->init( $site, $lang, $currency );
+		$output = $this->getClient( '\\Client_Html_Catalog_Count_Factory' )->getBody();
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
-		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
-
-		$count = \Client_Html_Catalog_Count_Factory::createClient( $context, $templatePaths );
-		$count->setView( $this->createView( $request, $params ) );
-		$count->process();
-
-		return $this->render( 'AimeosShopBundle:Catalog:xhr.html.twig', array( 'output' => $count->getBody() ) );
+		return $this->render( 'AimeosShopBundle:Catalog:count.html.twig', array( 'output' => $output ) );
 	}
 
 
 	/**
-	 * Returns the view for the product detail page.
+	 * Returns the body for the catalog detail part.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
-	 * @return string Page for the detailed product view
+	 * @return Response Response object containing the generated output
 	 */
-	public function detailAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
+	public function detailBodyAction()
 	{
-		$this->init( $site, $lang, $currency );
+		$client = $this->getClient( '\\Client_Html_Catalog_Detail_Factory' );
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
-		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
+		return new Response( $client->getBody() );
+	}
 
-		$minibasket = \Client_Html_Basket_Mini_Factory::createClient( $context, $templatePaths );
-		$minibasket->setView( $this->createView( $request, $params ) );
-		$minibasket->process();
 
-		$stage = \Client_Html_Catalog_Stage_Factory::createClient( $context, $templatePaths );
-		$stage->setView( $this->createView( $request, $params ) );
-		$stage->process();
+	/**
+	 * Returns the header for the catalog detail part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function detailHeaderAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Catalog_Detail_Factory' );
 
-		$detail = \Client_Html_Catalog_Detail_Factory::createClient( $context, $templatePaths );
-		$detail->setView( $this->createView( $request, $params ) );
-		$detail->process();
+		return new Response( $client->getHeader() );
+	}
 
-		$session = \Client_Html_Catalog_Session_Factory::createClient( $context, $templatePaths );
-		$session->setView( $this->createView( $request, $params ) );
-		$session->process();
 
-		$header = $minibasket->getHeader() . $session->getHeader() . $detail->getHeader() . $stage->getHeader();
+	/**
+	 * Returns the body for the catalog filter part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function filterBodyAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Catalog_Filter_Factory' );
 
-		$parts = array(
-			'header' => $header,
-			'minibasket' => $minibasket->getBody(),
-			'session' => $session->getBody(),
-			'detail' => $detail->getBody(),
-			'stage' => $stage->getBody(),
-		);
+		return new Response( $client->getBody() );
+	}
 
-		return $this->render( 'AimeosShopBundle:Catalog:detail.html.twig', $parts );
+
+	/**
+	 * Returns the header for the catalog filter part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function filterHeaderAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Catalog_Filter_Factory' );
+
+		return new Response( $client->getHeader() );
+	}
+
+
+	/**
+	 * Returns the body for the catalog list part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function listBodyAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Catalog_List_Factory' );
+
+		return new Response( $client->getBody() );
+	}
+
+
+	/**
+	 * Returns the header for the catalog list part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function listHeaderAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Catalog_List_Factory' );
+
+		return new Response( $client->getHeader() );
 	}
 
 
 	/**
 	 * Returns the view for the XHR response with the product information for the search suggestion.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
-	 * @return string XHR response with the product information for the search suggestion
+	 * @return Response Response object containing the generated output
 	 */
-	public function listsimpleAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
+	public function listSimpleAction()
 	{
-		$this->init( $site, $lang, $currency );
+		$output = $this->getClient( '\\Client_Html_Catalog_List_Factory', 'Simple' )->getBody();
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
-		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
-
-		$count = \Client_Html_Catalog_List_Factory::createClient( $context, $templatePaths, 'Simple' );
-		$count->setView( $this->createView( $request, $params ) );
-		$count->process();
-
-		return $this->render( 'AimeosShopBundle:Catalog:xhr.html.twig', array( 'output' => $count->getBody() ) );
+		return $this->render( 'AimeosShopBundle:Catalog:listsimple.html.twig', array( 'output' => $output ) );
 	}
 
 
 	/**
-	 * Returns the view for the product list page.
+	 * Returns the body for the user related session part.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
-	 * @return string Page for the product list view
+	 * @return Response Response object containing the generated output
 	 */
-	public function listAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
+	public function sessionBodyAction()
 	{
-		$this->init( $site, $lang, $currency );
+		$client = $this->getClient( '\\Client_Html_Catalog_Session_Factory' );
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
-		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
-
-		$minibasket = \Client_Html_Basket_Mini_Factory::createClient( $context, $templatePaths );
-		$minibasket->setView( $this->createView( $request, $params ) );
-		$minibasket->process();
-
-		$filter = \Client_Html_Catalog_Filter_Factory::createClient( $context, $templatePaths );
-		$filter->setView( $this->createView( $request, $params ) );
-		$filter->process();
-
-		$stage = \Client_Html_Catalog_Stage_Factory::createClient( $context, $templatePaths );
-		$stage->setView( $this->createView( $request, $params ) );
-		$stage->process();
-
-		$list = \Client_Html_Catalog_List_Factory::createClient( $context, $templatePaths );
-		$list->setView( $this->createView( $request, $params ) );
-		$list->process();
-
-		$header = $minibasket->getHeader() . $filter->getHeader() . $stage->getHeader() . $list->getHeader();
-
-		$parts = array(
-			'header' => $header,
-			'minibasket' => $minibasket->getBody(),
-			'filter' => $filter->getBody(),
-			'stage' => $stage->getBody(),
-			'list' => $list->getBody(),
-		);
-
-		return $this->render( 'AimeosShopBundle:Catalog:list.html.twig', $parts );
+		return new Response( $client->getBody() );
 	}
 
 
 	/**
-	 * Returns the view for the XHR response with the product stock level information.
+	 * Returns the header for the user related session part.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
-	 * @return string XHR response with the product stock level information
+	 * @return Response Response object containing the generated output
 	 */
-	public function stockAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
+	public function sessionHeaderAction()
 	{
-		$this->init( $site, $lang, $currency );
+		$client = $this->getClient( '\\Client_Html_Catalog_Session_Factory' );
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
-		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
+		return new Response( $client->getHeader() );
+	}
 
-		$stock = \Client_Html_Catalog_Stock_Factory::createClient( $context, $templatePaths );
-		$stock->setView( $this->createView( $request, $params ) );
-		$stock->process();
 
-		return $this->render( 'AimeosShopBundle:Catalog:xhr.html.twig', array( 'output' => $stock->getBody() ) );
+	/**
+	 * Returns the body for the catalog stage part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function stageBodyAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Catalog_Stage_Factory' );
+
+		return new Response( $client->getBody() );
+	}
+
+
+	/**
+	 * Returns the header for the catalog stage part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function stageHeaderAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Catalog_Stage_Factory' );
+
+		return new Response( $client->getHeader() );
+	}
+
+
+	/**
+	 * Returns the html body part for the catalog stock page.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function stockAction()
+	{
+		$output = $this->getClient( '\\Client_Html_Catalog_Stock_Factory' )->getBody();
+
+		return $this->render( 'AimeosShopBundle:Catalog:stock.html.twig', array( 'output' => $output ) );
 	}
 }

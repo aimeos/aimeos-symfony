@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -22,32 +23,53 @@ use Symfony\Component\HttpFoundation\Request;
 class BasketController extends AbstractController
 {
 	/**
-	 * Returns the view for the standard basket page.
+	 * Returns the body for the basket standard part.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
-	 * @return string Page for the standard basket
+	 * @return Response Response object containing the generated output
 	 */
-	public function indexAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
+	public function standardBodyAction()
 	{
-		$this->init( $site, $lang, $currency );
+		$client = $this->getClient( '\\Client_Html_Basket_Standard_Factory' );
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
-		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
+		return new Response( $client->getBody() );
+	}
 
-		$basket = \Client_Html_Basket_Standard_Factory::createClient( $context, $templatePaths );
-		$basket->setView( $this->createView( $request, $params ) );
-		$basket->process();
 
-		$parts = array(
-			'header' => $basket->getHeader(),
-			'basket' => $basket->getBody(),
-		);
+	/**
+	 * Returns the header for the basket standard part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function standardHeaderAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Basket_Standard_Factory' );
 
-		return $this->render( 'AimeosShopBundle:Basket:index.html.twig', $parts );
+		return new Response( $client->getHeader() );
+	}
+
+
+	/**
+	 * Returns the body for the basket mini part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function miniBodyAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Basket_Mini_Factory' );
+
+		return new Response( $client->getBody() );
+	}
+
+
+	/**
+	 * Returns the header for the basket mini part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function miniHeaderAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Basket_Mini_Factory' );
+
+		return new Response( $client->getHeader() );
 	}
 }

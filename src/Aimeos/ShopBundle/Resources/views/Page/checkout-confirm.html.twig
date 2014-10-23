@@ -1,0 +1,9 @@
+ {% extends 'AimeosShopBundle::base.html.twig' %}
+
+ {% block header %}
+     {{ render(controller('AimeosShopBundle:Checkout:confirmHeader')) }}
+ {% endblock %}
+
+ {% block body %}
+     {{ render(controller('AimeosShopBundle:Checkout:confirmBody')) }}
+ {% endblock %}

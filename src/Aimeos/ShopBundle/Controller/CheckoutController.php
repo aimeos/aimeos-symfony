@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -22,94 +23,66 @@ use Symfony\Component\HttpFoundation\Request;
 class CheckoutController extends AbstractController
 {
 	/**
-	 * Returns the HTML view for the checkout process page.
+	 * Returns the view for the standard checkout page.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
-	 * @return string HTML page for the checkout process
+	 * @return Response Response object containing the generated output
 	 */
-	public function indexAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
+	public function standardBodyAction()
 	{
-		$this->init( $site, $lang, $currency );
+		$client = $this->getClient( '\\Client_Html_Checkout_Standard_Factory' );
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
-		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
-
-		$checkout = \Client_Html_Checkout_Standard_Factory::createClient( $context, $templatePaths );
-		$checkout->setView( $this->createView( $request, $params ) );
-		$checkout->process();
-
-		$parts = array(
-			'header' => $checkout->getHeader(),
-			'checkout' => $checkout->getBody(),
-		);
-
-		return $this->render( 'AimeosShopBundle:Checkout:index.html.twig', $parts );
+		return new Response( $client->getBody() );
 	}
 
 
 	/**
-	 * Returns the HTML view for the checkout confirmation page.
+	 * Returns the view for the standard checkout page.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
-	 * @return string HTML page for the checkout confirmation
+	 * @return Response Response object containing the generated output
 	 */
-	public function confirmAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
+	public function standardHeaderAction()
 	{
-		$this->init( $site, $lang, $currency );
+		$client = $this->getClient( '\\Client_Html_Checkout_Standard_Factory' );
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
-		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
+		return new Response( $client->getHeader() );
+	}
 
-		$confirm = \Client_Html_Checkout_Confirm_Factory::createClient( $context, $templatePaths );
-		$confirm->setView( $this->createView( $request, $params ) );
-		$confirm->process();
 
-		$parts = array(
-			'header' => $confirm->getHeader(),
-			'confirm' => $confirm->getBody(),
-		);
+	/**
+	 * Returns the view for the order confirm page.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function confirmBodyAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Checkout_Confirm_Factory' );
 
-		return $this->render( 'AimeosShopBundle:Checkout:confirm.html.twig', $parts );
+		return new Response( $client->getBody() );
+	}
+
+
+	/**
+	 * Returns the view for the order confirm page.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function confirmHeaderAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Checkout_Confirm_Factory' );
+
+		return new Response( $client->getHeader() );
 	}
 
 
 	/**
 	 * Returns the view for the order update page.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
-	 * @return string Page for the order update
+	 * @return Response Response object containing the generated output
 	 */
-	public function updateAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
+	public function updateAction()
 	{
-		$this->init( $site, $lang, $currency );
+		$output = $this->getClient( '\\Client_Html_Checkout_Update_Factory' )->getBody();
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
-		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
-
-		$update = \Client_Html_Checkout_Update_Factory::createClient( $context, $templatePaths );
-		$update->setView( $this->createView( $request, $params ) );
-		$update->process();
-
-		$parts = array(
-			'header' => $update->getHeader(),
-			'update' => $update->getBody(),
-		);
-
-		return $this->render( 'AimeosShopBundle:Checkout:update.html.twig', $parts );
+		return $this->render( 'AimeosShopBundle:Checkout:update.html.twig', array( 'output' => $output ) );
 	}
 }

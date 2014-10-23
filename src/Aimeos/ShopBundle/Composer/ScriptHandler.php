@@ -155,8 +155,20 @@ class ScriptHandler
 	 */
 	protected static function updateConfigFile( $filename )
 	{
+		$update = false;
+
 		if( ( $content = file_get_contents( $filename ) ) === false ) {
 			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
+		}
+
+		if( preg_match( "#imports:\n    - \{ resource: \"@AimeosShopBundle/Resources/config/services.yml\" \}#smU", $content ) !== 1 )
+		{
+			$search = array( "/imports:/" );
+			$replace = array( "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/services.yml\" }" );
+
+			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
+				$update = true;
+			}
 		}
 
 		if( preg_match( "/    bundles:[ ]*\[.*'AimeosShopBundle'.*\]/", $content ) !== 1 )
@@ -164,11 +176,15 @@ class ScriptHandler
 			$search = array( "/    bundles:[ ]*\[([^\]]+)\]/", "/    bundles:[ ]*\[([ ]*)\]/" );
 			$replace = array( "    bundles: [$1,'AimeosShopBundle']", "    bundles: ['AimeosShopBundle']" );
 
-			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null )
-			{
-				$fs = new Filesystem();
-				$fs->dumpFile( $filename, $content );
+			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
+				$update = true;
 			}
+		}
+
+		if( $update === true )
+		{
+			$fs = new Filesystem();
+			$fs->dumpFile( $filename, $content );
 		}
 	}
 }

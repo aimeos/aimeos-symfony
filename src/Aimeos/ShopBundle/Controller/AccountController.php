@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -22,55 +23,79 @@ use Symfony\Component\HttpFoundation\Request;
 class AccountController extends AbstractController
 {
 	/**
-	 * Returns the view for the "My account" page.
+	 * Returns the body for the account favorite part.
 	 *
-	 * @param Request $request Symfony request object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @param string $currency Three letter ISO currency code, e.g. "EUR"
-	 * @return string Page for the "My account" area
+	 * @return Response Response object containing the generated output
 	 */
-	public function indexAction( Request $request, $site = 'default', $lang = 'en', $currency = 'EUR' )
+	public function favoriteBodyAction()
 	{
-		$this->init( $site, $lang, $currency );
+		$client = $this->getClient( '\\Client_Html_Account_Favorite_Factory' );
 
-		$context = $this->getContext();
-		$arcavias = $this->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
-		$params = array( 'site' => $site, 'lang' => $lang, 'currency' => $currency );
+		return new Response( $client->getBody() );
+	}
 
-		$minibasket = \Client_Html_Basket_Mini_Factory::createClient( $context, $templatePaths );
-		$minibasket->setView( $this->createView( $request, $params ) );
-		$minibasket->process();
 
-		$history = \Client_Html_Account_History_Factory::createClient( $context, $templatePaths );
-		$history->setView( $this->createView( $request, $params ) );
-		$history->process();
+	/**
+	 * Returns the header for the account favorite part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function favoriteHeaderAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Account_Favorite_Factory' );
 
-		$favorite = \Client_Html_Account_Favorite_Factory::createClient( $context, $templatePaths );
-		$favorite->setView( $this->createView( $request, $params ) );
-		$favorite->process();
+		return new Response( $client->getHeader() );
+	}
 
-		$watch = \Client_Html_Account_Watch_Factory::createClient( $context, $templatePaths );
-		$watch->setView( $this->createView( $request, $params ) );
-		$watch->process();
 
-		$session = \Client_Html_Catalog_Session_Factory::createClient( $context, $templatePaths );
-		$session->setView( $this->createView( $request, $params ) );
-		$session->process();
+	/**
+	 * Returns the body for the account history part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function historyBodyAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Account_History_Factory' );
 
-		$header = $minibasket->getHeader() . $history->getHeader()
-			. $favorite->getHeader() . $watch->getHeader() . $session->getHeader();
+		return new Response( $client->getBody() );
+	}
 
-		$parts = array(
-			'header' => $header,
-			'minibasket' => $minibasket->getBody(),
-			'favorite' => $favorite->getBody(),
-			'history' => $history->getBody(),
-			'watch' => $watch->getBody(),
-			'session' => $session->getBody(),
-		);
 
-		return $this->render( 'AimeosShopBundle:Account:index.html.twig', $parts );
+	/**
+	 * Returns the header for the account history part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function historyHeaderAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Account_History_Factory' );
+
+		return new Response( $client->getHeader() );
+	}
+
+
+	/**
+	 * Returns the body for the account watch list part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function watchBodyAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Account_Watch_Factory' );
+
+		return new Response( $client->getBody() );
+	}
+
+
+	/**
+	 * Returns the header for the account watch list part.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function watchHeaderAction()
+	{
+		$client = $this->getClient( '\\Client_Html_Account_Watch_Factory' );
+
+		return new Response( $client->getHeader() );
 	}
 }
