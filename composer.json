@@ -16,6 +16,7 @@
 		"arcavias/arcavias-core": "dev-master",
 		"aimeos/extinstaller": "dev-master",
 		"aimeos/ai-symfony2": "dev-master",
+		"aimeos/ai-monolog": "dev-master",
 		"aimeos/ai-zend2-i18n": "dev-master",
 		"aimeos/ai-swiftmailer": "dev-master"
 	},
