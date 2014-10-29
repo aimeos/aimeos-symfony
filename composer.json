@@ -15,7 +15,9 @@
 		"php": ">=5.3.3",
 		"arcavias/arcavias-core": "dev-master",
 		"aimeos/extinstaller": "dev-master",
-		"aimeos/ai-symfony2": "dev-master"
+		"aimeos/ai-symfony2": "dev-master",
+		"aimeos/ai-zend2-i18n": "dev-master",
+		"aimeos/ai-swiftmailer": "dev-master"
 	},
 	"autoload": {
 		"psr-0": { "Aimeos": "src/" }
