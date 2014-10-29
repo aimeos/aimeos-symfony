@@ -104,7 +104,7 @@ class ContextManager
 	/**
 	 * Returns the Arcavias object.
 	 *
-	 * @return Arcavias Arcavias object
+	 * @return \Arcavias Arcavias object
 	 */
 	public function getArcavias()
 	{

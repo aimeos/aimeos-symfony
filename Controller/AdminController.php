@@ -25,7 +25,7 @@ class AdminController extends AbstractController
 	 * Returns the initial HTML view for the admin interface.
 	 *
 	 * @param integer $tab Number of the currently active tab
-	 * @return string HTML page for the admin interface
+	 * @return \Symfony\Component\HttpFoundation\Response HTML page for the admin interface
 	 */
 	public function indexAction( $site, $locale, $tab )
 	{
@@ -79,7 +79,7 @@ class AdminController extends AbstractController
 	 * Single entry point for all JSON admin requests.
 	 *
 	 * @param Request $request Symfony request object
-	 * @return JSON 2.0 RPC message response
+	 * @return \Symfony\Component\HttpFoundation\Response 2.0 RPC message response
 	 */
 	public function doAction( Request $request )
 	{
@@ -216,7 +216,7 @@ class AdminController extends AbstractController
 	 *
 	 * @param \MShop_Context_Item_Interface $context Context object
 	 * @param string $locale ISO language code, e.g. "en" or "en_GB"
-	 * @return MShop_Context_Item_Interface Modified context object
+	 * @return \MShop_Context_Item_Interface Modified context object
 	 */
 	protected function setLocale( \MShop_Context_Item_Interface $context, $locale = null )
 	{
