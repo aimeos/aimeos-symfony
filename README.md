@@ -1,5 +1,6 @@
 Aimeos Symfony2 bundle
 ======================
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/?branch=master)
 
 Aimeos Symfony2 web shop bundle
 
