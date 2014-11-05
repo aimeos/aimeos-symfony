@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
+ * @license MIT, http://opensource.org/licenses/MIT
  * @copyright Aimeos (aimeos.org), 2014
  * @package symfony2-bundle
  * @subpackage Controller
@@ -30,7 +30,7 @@ abstract class AbstractController
 	 * Returns the html client created by the given factory name.
 	 *
 	 * @param string $factoryname Name of the html client factory
-	 * @return Client_Html_Interface Html client object
+	 * @return \Client_Html_Interface Html client object
 	 */
 	protected function getClient( $factoryname, $name = null )
 	{

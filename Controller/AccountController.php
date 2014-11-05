@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
+ * @license MIT, http://opensource.org/licenses/MIT
  * @copyright Aimeos (aimeos.org), 2014
  * @package symfony2-bundle
  * @subpackage Controller
