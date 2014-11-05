@@ -111,7 +111,8 @@ class ContextManager
 		if( $this->arcavias === null )
 		{
 			// Hook for processing extension directories
-			$extDirs = array( '../ext' );
+			$dir = $this->container->getParameter( 'kernel.root_dir' );
+			$extDirs = array( dirname( $dir ) . '/ext' );
 
 			if( $this->container->hasParameter( 'aimeos.extdir' ) ) {
 				$extDirs = array( $this->container->getParameter( 'aimeos.extdir' ) );
