@@ -11,7 +11,6 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle;
-use Symfony\Component\HttpFoundation\Request;
 
 
 /**
@@ -30,6 +29,7 @@ abstract class AbstractController
 	 * Returns the html client created by the given factory name.
 	 *
 	 * @param string $factoryname Name of the html client factory
+	 * @param string $name Name of the implementation or "Default" if null
 	 * @return \Client_Html_Interface Html client object
 	 */
 	protected function getClient( $factoryname, $name = null )
