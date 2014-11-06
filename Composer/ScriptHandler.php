@@ -27,10 +27,11 @@ class ScriptHandler
 	 */
 	public static function updateDatabase( CommandEvent $event )
 	{
-		$options = array(
-			'--extdir=./ext/',
-			'--option=setup/default/demo:1',
-		);
+		$options = array( '--extdir=./ext/' );
+
+		if( $event->isDevMode() ) {
+			$options[] = '--option=setup/default/demo:1';
+		}
 
 		self::executeCommand( $event, 'aimeos:update', $options );
 	}

@@ -41,7 +41,13 @@ Make sure that the database is set up and it is configured in your config.yml. T
     }
 ```
 
-Afterwards, install the Aimeos shop bundle using `composer update`
+Afterwards, install the Aimeos shop bundle using
+
+`composer update`
+
+In a production environment of if you don't want that the demo data gets installed, use the --no-dev option:
+
+`composer update --no-dev`
 
 The last step executed in the directory of your Symfony2 application installs the assets (CSS, Javascript, images, etc.) of the bundles into the web/bundles/ directory so they are publically available:
 
