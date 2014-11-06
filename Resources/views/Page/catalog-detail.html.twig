@@ -1,5 +1,15 @@
  {% extends 'AimeosShopBundle::base.html.twig' %}
 
+ {% block javascripts %}
+    {{ parent() }}
+    {% javascripts 'bundles/aimeosshop/classic/js/arcavias-image.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {% javascripts 'bundles/aimeosshop/classic/js/arcavias-detail.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+ {% endblock %}
+
  {% block header %}
      {{ render(controller('AimeosShopBundle:Basket:miniHeader')) }}
      {{ render(controller('AimeosShopBundle:Catalog:stageHeader')) }}
