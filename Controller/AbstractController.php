@@ -22,9 +22,6 @@ use Symfony\Bundle\FrameworkBundle;
 abstract class AbstractController
 	extends FrameworkBundle\Controller\Controller
 {
-	static private $clients = array();
-
-
 	/**
 	 * Returns the html client created by the given factory name.
 	 *
@@ -34,22 +31,15 @@ abstract class AbstractController
 	 */
 	protected function getClient( $factoryname, $name = null )
 	{
-		$hash = $factoryname . $name;
+		$cm = $this->get( 'aimeos_context' );
+		$context = $cm->getContext();
+		$arcavias = $cm->getArcavias();
+		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
 
-		if( !isset( self::$clients[$hash] ) )
-		{
-			$cm = $this->get( 'aimeos_context' );
-			$context = $cm->getContext();
-			$arcavias = $cm->getArcavias();
-			$templatePaths = $arcavias->getCustomPaths( 'client/html' );
+		$client = $factoryname::createClient( $context, $templatePaths, $name );
+		$client->setView( $cm->createView() );
+		$client->process();
 
-			$client = $factoryname::createClient( $context, $templatePaths, $name );
-			$client->setView( $cm->createView() );
-			$client->process();
-
-			self::$clients[$hash] = $client;
-		}
-
-		return self::$clients[$hash];
+		return $client;
 	}
 }
