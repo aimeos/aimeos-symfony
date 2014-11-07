@@ -2,8 +2,10 @@
 
  {% block header %}
      {{ render(controller('AimeosShopBundle:Basket:standardHeader')) }}
+     {{ render(controller('AimeosShopBundle:Basket:relatedHeader')) }}
  {% endblock %}
 
  {% block body %}
      {{ render(controller('AimeosShopBundle:Basket:standardBody')) }}
+     {{ render(controller('AimeosShopBundle:Basket:relatedBody')) }}
  {% endblock %}
