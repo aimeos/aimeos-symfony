@@ -83,32 +83,7 @@ class BasketController extends AbstractController
 	public function relatedBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Basket_Related_Factory' );
-
-		return new Response( $client->getBody() );
-	}
-
-
-	/**
-	 * Returns the header for the basket related part.
-	 *
-	 * @return Response Response object containing the generated output
-	 */
-	public function relatedHeaderAction()
-	{
-		$client = $this->getClient( '\\Client_Html_Basket_Related_Factory' );
-
-		return new Response( $client->getHeader() );
-	}
-
-
-	/**
-	 * Returns the body for the basket related part.
-	 *
-	 * @return Response Response object containing the generated output
-	 */
-	public function relatedBodyAction()
-	{
-		$client = $this->getClient( '\\Client_Html_Basket_Related_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
