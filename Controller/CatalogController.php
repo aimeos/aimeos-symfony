@@ -28,9 +28,11 @@ class CatalogController extends AbstractController
 	 */
 	public function countAction()
 	{
-		$output = $this->getClient( '\\Client_Html_Catalog_Count_Factory' )->getBody();
+		$client = $this->getClient( '\\Client_Html_Catalog_Count_Factory' );
+		$client->process();
 
-		return $this->render( 'AimeosShopBundle:Catalog:count.html.twig', array( 'output' => $output ) );
+		$params = array( 'output' => $client->getBody() );
+		return $this->render( 'AimeosShopBundle:Catalog:count.html.twig', $params );
 	}
 
 
@@ -42,6 +44,7 @@ class CatalogController extends AbstractController
 	public function detailBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Catalog_Detail_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
@@ -68,6 +71,7 @@ class CatalogController extends AbstractController
 	public function filterBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Catalog_Filter_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
@@ -94,6 +98,7 @@ class CatalogController extends AbstractController
 	public function listBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Catalog_List_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
@@ -119,9 +124,11 @@ class CatalogController extends AbstractController
 	 */
 	public function listSimpleAction()
 	{
-		$output = $this->getClient( '\\Client_Html_Catalog_List_Factory', 'Simple' )->getBody();
+		$client = $this->getClient( '\\Client_Html_Catalog_List_Factory', 'Simple' );
+		$client->process();
 
-		return $this->render( 'AimeosShopBundle:Catalog:listsimple.html.twig', array( 'output' => $output ) );
+		$params = array( 'output' => $client->getBody() );
+		return $this->render( 'AimeosShopBundle:Catalog:listsimple.html.twig', $params );
 	}
 
 
@@ -133,6 +140,7 @@ class CatalogController extends AbstractController
 	public function sessionBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Catalog_Session_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
@@ -159,6 +167,7 @@ class CatalogController extends AbstractController
 	public function stageBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Catalog_Stage_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
@@ -184,8 +193,10 @@ class CatalogController extends AbstractController
 	 */
 	public function stockAction()
 	{
-		$output = $this->getClient( '\\Client_Html_Catalog_Stock_Factory' )->getBody();
+		$client = $this->getClient( '\\Client_Html_Catalog_Stock_Factory' );
+		$client->process();
 
-		return $this->render( 'AimeosShopBundle:Catalog:stock.html.twig', array( 'output' => $output ) );
+		$params = array( 'output' => $client->getBody() );
+		return $this->render( 'AimeosShopBundle:Catalog:stock.html.twig', $params );
 	}
 }

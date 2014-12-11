@@ -29,6 +29,7 @@ class CheckoutController extends AbstractController
 	public function standardBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Checkout_Standard_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
@@ -55,6 +56,7 @@ class CheckoutController extends AbstractController
 	public function confirmBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Checkout_Confirm_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
@@ -80,8 +82,10 @@ class CheckoutController extends AbstractController
 	 */
 	public function updateAction()
 	{
-		$output = $this->getClient( '\\Client_Html_Checkout_Update_Factory' )->getBody();
+		$client = $this->getClient( '\\Client_Html_Checkout_Update_Factory' );
+		$client->process();
 
-		return $this->render( 'AimeosShopBundle:Checkout:update.html.twig', array( 'output' => $output ) );
+		$params = array( 'output' => $client->getBody() );
+		return $this->render( 'AimeosShopBundle:Checkout:update.html.twig', $params );
 	}
 }

@@ -29,6 +29,7 @@ class AccountController extends AbstractController
 	public function favoriteBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Account_Favorite_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
@@ -55,6 +56,7 @@ class AccountController extends AbstractController
 	public function historyBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Account_History_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
@@ -81,6 +83,7 @@ class AccountController extends AbstractController
 	public function watchBodyAction()
 	{
 		$client = $this->getClient( '\\Client_Html_Account_Watch_Factory' );
+		$client->process();
 
 		return new Response( $client->getBody() );
 	}
