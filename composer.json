@@ -11,6 +11,13 @@
 		"forum": "http://help.aimeos.org",
 		"wiki": "http://docs.aimeos.org"
 	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/aimeos/arcavias-core"
+		}
+	],
+    "minimum-stability": "dev",
 	"require": {
 		"php": ">=5.3.3",
 		"arcavias/arcavias-core": "dev-master",
