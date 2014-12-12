@@ -28,6 +28,6 @@
 		"aimeos/ai-swiftmailer": "dev-master"
 	},
 	"autoload": {
-		"psr-0": { "Aimeos": "src/" }
+		"psr-4": { "Aimeos\\ShopBundle\\": "" }
 	}
 }
