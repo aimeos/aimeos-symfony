@@ -29,14 +29,14 @@
 		"symfony/symfony": "2.5.*"
 	},
 	"require-dev": {
-        "doctrine/orm": "~2.2,>=2.2.3",
-        "doctrine/doctrine-bundle": "~1.2",
+		"doctrine/orm": "~2.2,>=2.2.3",
+		"doctrine/doctrine-bundle": "~1.2",
 		"symfony/monolog-bundle": "~2.3",
 		"symfony/swiftmailer-bundle": "~2.3",
 		"sensio/framework-extra-bundle": "~2.3",
-        "symfony/assetic-bundle": "~2.3",
+		"symfony/assetic-bundle": "~2.3",
 		"symfony/twig-bundle": "~2.1",
-        "twig/extensions": "~1.0"
+		"twig/extensions": "~1.0"
 	},
 	"autoload": {
 		"psr-4": { "Aimeos\\ShopBundle\\": "" }

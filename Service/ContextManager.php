@@ -70,7 +70,7 @@ class ContextManager
 
 		// required for reloading to the current page
 		$params['target'] = $request->get( '_route' );
-		
+
 
 		$view = new \MW_View_Default();
 
@@ -166,18 +166,18 @@ class ContextManager
 		if( $locale && $this->locale === null )
 		{
 			$attr = $this->requestStack->getMasterRequest()->attributes;
-				
+
 			$currency = $attr->get( 'currency', 'EUR' );
 			$site = $attr->get( 'site', 'default' );
 			$lang = $attr->get( 'locale', 'en' );
 
 			$localeManager = \MShop_Locale_Manager_Factory::createManager( $this->context );
 			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, false );
-		
+
 			$this->context->setLocale( $this->locale );
 			$this->context->setI18n( $this->getI18n( array( $this->locale->getLanguageId() ) ) );
 		}
-		
+
 		return $this->context;
 	}
 

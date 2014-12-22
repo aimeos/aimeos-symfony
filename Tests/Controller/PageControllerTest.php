@@ -15,11 +15,11 @@ class PageControllerTest extends WebTestCase
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-filter-search' )->count() );
-		
+
 		$form = $crawler->filter( '.catalog-filter-search button' )->form();
 		$form['f-search-text'] = 'Unit';
 		$crawler = $client->submit( $form );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Test Selection")' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Empty Selection")' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->count() );
@@ -41,7 +41,7 @@ class PageControllerTest extends WebTestCase
 
 		$link = $crawler->filter( '.catalog-filter-tree .coffee a.cat-item' )->link();
 		$crawler = $client->click( $link );
-		
+
 		$this->assertEquals( 3, $crawler->filter( '.catalog-stage-breadcrumb li' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-promo .product a:contains("Cafe Noire Expresso")' )->count() );
 	}
@@ -60,7 +60,7 @@ class PageControllerTest extends WebTestCase
 		$form = $crawler->filter( '.catalog-filter .btn-action' )->form();
 		$form['f-attr-id'] = array( $id => $id );
 		$crawler = $client->submit( $form );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Cappuccino")' )->count() );
 	}
@@ -70,7 +70,7 @@ class PageControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
 
@@ -78,7 +78,7 @@ class PageControllerTest extends WebTestCase
 
 		$link = $crawler->filter( '.catalog-stage-breadcrumb a' )->link();
 		$crawler = $client->click( $link );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Cappuccino")' )->count() );
@@ -89,22 +89,22 @@ class PageControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Test Selection")' )->link();
 		$crawler = $client->click( $link );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unittest: Test Selection")' )->count() );
 
 		$link = $crawler->filter( '.catalog-stage-navigator a.next' )->link();
 		$crawler = $client->click( $link );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unittest: Empty Selection")' )->count() );
 
 		$link = $crawler->filter( '.catalog-stage-navigator a.prev' )->link();
 		$crawler = $client->click( $link );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unittest: Test Selection")' )->count() );
 	}
@@ -117,14 +117,14 @@ class PageControllerTest extends WebTestCase
 
 		$link = $crawler->filter( '.catalog-list-pagination .option-name' )->link();
 		$crawler = $client->click( $link );
-		
+
 		$products = $crawler->filter( '.catalog-list-items .product' );
 		$this->assertEquals( 1, $products->eq( 0 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
 		$this->assertEquals( 1, $products->eq( 1 )->filter( 'h2:contains("Unittest: Empty Selection")' )->count() );
 
 		$link = $crawler->filter( '.catalog-list-pagination .option-name' )->link();
 		$crawler = $client->click( $link );
-		
+
 		$products = $crawler->filter( '.catalog-list-items .product' );
 		$count = $products->count();
 
@@ -132,6 +132,7 @@ class PageControllerTest extends WebTestCase
 		$this->assertEquals( 1, $products->eq( $count -2 )->filter( 'h2:contains("Unittest: Empty Selection")' )->count() );
 		$this->assertEquals( 1, $products->eq( $count - 1 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
 	}
+
 
 	public function testCatalogListSortationPrice()
 	{
@@ -143,7 +144,7 @@ class PageControllerTest extends WebTestCase
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
 		$count = $products->count();
-		
+
 		$this->assertGreaterThan( 2, $count );
 		$this->assertEquals( 1, $products->eq( $count - 2 )->filter( '.value:contains("18.00 €")' )->count() );
 		$this->assertEquals( 1, $products->eq( $count - 1 )->filter( '.value:contains("600.00 €")' )->count() );
@@ -161,7 +162,7 @@ class PageControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
 
@@ -176,7 +177,7 @@ class PageControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
 
@@ -188,13 +189,13 @@ class PageControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
 		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
 		$crawler = $client->submit( $form );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.basket-standard' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.basket:contains("Unittest: Bundle")' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.basket .product .quantity .value' )->attr('value') );
@@ -205,7 +206,7 @@ class PageControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -249,7 +250,7 @@ class PageControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -293,7 +294,7 @@ class PageControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -324,7 +325,7 @@ class PageControllerTest extends WebTestCase
 		$form = $crawler->filter( '.basket-standard-coupon .coupon-new button' )->form();
 		$form['b-coupon'] = '90AB';
 		$crawler = $client->submit( $form );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.basket-standard .product:contains("Geldwerter Nachlass")' )->count() );
 
 
@@ -339,13 +340,13 @@ class PageControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
 		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
 		$crawler = $client->submit( $form );
-		
+
 		$this->assertEquals( 2, $crawler->filter( '.basket-related-bought .bought-item' )->count() );
 	}
 
@@ -354,7 +355,7 @@ class PageControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -375,7 +376,7 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -384,38 +385,38 @@ class PageControllerTest extends WebTestCase
 
 		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
 		$crawler = $client->click( $link );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .current:contains("Adresse")' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .basket a' )->count() );
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .address a' )->count() );
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .delivery a' )->count() );
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .payment a' )->count() );
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .summary a' )->count() );
-		
+
 
 		$form = $crawler->filter( '.checkout-standard-address form' )->form();
 		$form['ca-billing-option']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .basket a' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .address a' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .current:contains("Versand")' )->count() );
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .delivery a' )->count() );
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .payment a' )->count() );
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .summary a' )->count() );
-		
+
 
 		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
 		$form['c-delivery-option']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
-				
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .basket a' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .address a' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .delivery a' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .current:contains("Zahlung")' )->count() );
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .payment a' )->count() );
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .summary a' )->count() );
-		
+
 
 		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
 		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
@@ -442,7 +443,7 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -463,8 +464,8 @@ class PageControllerTest extends WebTestCase
 		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
 		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
-		
-		
+
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
 
@@ -512,7 +513,7 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -533,11 +534,11 @@ class PageControllerTest extends WebTestCase
 		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
 		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
-		
-		
+
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
-		
+
 		$link = $crawler->filter( '.checkout-standard .common-summary-address .payment .modify' )->link();
 		$crawler = $client->click( $link );
 
@@ -552,7 +553,7 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -573,11 +574,11 @@ class PageControllerTest extends WebTestCase
 		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
 		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
-		
-		
+
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
-		
+
 		$link = $crawler->filter( '.checkout-standard .common-summary-address .delivery .modify' )->link();
 		$crawler = $client->click( $link );
 
@@ -592,7 +593,7 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -613,11 +614,11 @@ class PageControllerTest extends WebTestCase
 		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
 		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
-		
-		
+
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
-		
+
 		$link = $crawler->filter( '.checkout-standard .common-summary-service .delivery .modify' )->link();
 		$crawler = $client->click( $link );
 
@@ -632,7 +633,7 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -653,8 +654,8 @@ class PageControllerTest extends WebTestCase
 		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
 		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
-		
-		
+
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
 
@@ -672,7 +673,7 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -693,8 +694,8 @@ class PageControllerTest extends WebTestCase
 		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
 		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
-		
-		
+
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
 
@@ -712,7 +713,7 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
-		
+
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
@@ -729,7 +730,7 @@ class PageControllerTest extends WebTestCase
 		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
 		$form['c-delivery-option']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
-		
+
 		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
 		$payId = $crawler->filter( '.checkout-standard-payment .item-service' )->eq( 1 )->filter( 'input' )->attr( 'value' );
 		$form['c-payment-option']->select( $payId );
@@ -738,7 +739,7 @@ class PageControllerTest extends WebTestCase
 		$form['c-payment[' . $payId . '][directdebit.bankcode]'] = '67890';
 		$form['c-payment[' . $payId . '][directdebit.bankname]'] = 'test bank';
 		$crawler = $client->submit( $form );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
 
@@ -749,10 +750,10 @@ class PageControllerTest extends WebTestCase
 		$form = $crawler->filter( '.checkout-standard .btn-action' )->form();
 		$form['cs-option-terms-value']->tick();
 		$crawler = $client->submit( $form );
-		
+
 		$link = $crawler->filter( '.checkout-standard-order a:contains("Weiter")' )->link();
 		$crawler = $client->click( $link );
-		
+
 		$this->assertEquals( 1, $crawler->filter( '.checkout-confirm' )->count() );
 	}
 }
