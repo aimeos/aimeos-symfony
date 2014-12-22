@@ -90,7 +90,7 @@ class JobsCommand extends Command
 		$expr = array();
 
 		if( ( $codes = $input->getArgument( 'site' ) ) != null ) {
-			$expr[] = $seach->compare( '==', 'locale.site.code', explode( ' ', $codes ) );
+			$expr[] = $search->compare( '==', 'locale.site.code', explode( ' ', $codes ) );
 		}
 
 		$expr[] = $search->getConditions();

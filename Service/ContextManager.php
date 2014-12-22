@@ -70,7 +70,7 @@ class ContextManager
 
 		// required for reloading to the current page
 		$params['target'] = $request->get( '_route' );
-
+		
 
 		$view = new \MW_View_Default();
 
@@ -151,30 +151,34 @@ class ContextManager
 			$logger = \MAdmin_Log_Manager_Factory::createManager( $context );
 			$context->setLogger( $logger );
 
-			$context->setEditor( 'guest' );
-			$context->setUserId( null );
+			$user = $this->container->get('security.context')->getToken()->getUser();
+
+			if( is_object( $user ) ) {
+				$context->setEditor( $user->getUsername() );
+				$context->setUserId( $user->getId() );
+			} else {
+				$context->setEditor( $user );
+			}
 
 			$this->context = $context;
 		}
 
-		$context = $this->context;
-
 		if( $locale && $this->locale === null )
 		{
 			$attr = $this->requestStack->getMasterRequest()->attributes;
-
+				
 			$currency = $attr->get( 'currency', 'EUR' );
 			$site = $attr->get( 'site', 'default' );
 			$lang = $attr->get( 'locale', 'en' );
 
-			$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
-			$locale = $localeManager->bootstrap( $site, $lang, $currency );
-
-			$context->setLocale( $locale );
-			$context->setI18n( $this->getI18n( array( $locale->getLanguageId() ) ) );
+			$localeManager = \MShop_Locale_Manager_Factory::createManager( $this->context );
+			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, false );
+		
+			$this->context->setLocale( $this->locale );
+			$this->context->setI18n( $this->getI18n( array( $this->locale->getLanguageId() ) ) );
 		}
-
-		return $context;
+		
+		return $this->context;
 	}
 
 
@@ -256,16 +260,16 @@ class ContextManager
 		$urlparams = array();
 		$attr = $this->requestStack->getMasterRequest()->attributes;
 
-		if( ( $currency = $attr->get( 'currency' ) ) !== null ) {
-			$urlparams['currency'] = $currency;
-		}
-
 		if( ( $site = $attr->get( 'site' ) ) !== null ) {
 			$urlparams['site'] = $site;
 		}
 
 		if( ( $lang = $attr->get( 'locale' ) ) !== null ) {
 			$urlparams['locale'] = $lang;
+		}
+
+		if( ( $currency = $attr->get( 'currency' ) ) !== null ) {
+			$urlparams['currency'] = $currency;
 		}
 
 		return $urlparams;

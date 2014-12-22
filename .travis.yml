@@ -15,6 +15,7 @@ env:
   - SYMFONY_VERSION=2.7.*@dev
 
 before_script:
+  - mysql -e "create database symfony2; grant all on *.* to 'aimeos'@'localhost' identified by 'aimeos'"
   - composer require symfony/symfony:${SYMFONY_VERSION} --no-update
   - composer install --dev --prefer-source
 

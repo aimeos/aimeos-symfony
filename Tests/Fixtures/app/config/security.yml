@@ -1,0 +1,21 @@
+security:
+    firewalls:
+        secured_area:
+            pattern:   ^/
+            anonymous: ~
+            http_basic:
+                realm: "Shop administration"
+
+    access_control:
+        - { path: ^/unittest/de/checkout, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }
+
+    encoders:
+        Aimeos\ShopBundle\Entity\User:
+            algorithm: sha1
+            encode_as_base64: false
+            iterations: 1
+
+    providers:
+        administrators:
+            entity: { class: AimeosShopBundle:User, property: username }

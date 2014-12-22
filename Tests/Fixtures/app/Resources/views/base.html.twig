@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+{% block header %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <title>{% block title %}Aimeos shop{% endblock %}</title>
+{% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <div class="navbar navbar-static" role="navigation">
+{% block head %}{% endblock %}
+        </div>
+{% if block('nav') %}
+        <div class="col-xs-12 col-sm-3">
+            {% block nav %}{% endblock %}
+        </div>
+{% endif %}
+{% if block('nav') or block('aside') %}
+        <div class="col-xs-12 col-sm-9">
+{% else %}
+        <div class="col-xs-12">
+{% endif %}
+            {% block stage %}{% endblock %}
+            {% block body %}{% endblock %}
+        </div>
+{% if block('aside') %}
+        <div class="col-xs-12 col-sm-3">
+            {% block aside %}{% endblock %}
+        </div>
+{% endif %}
+{% block javascripts %}{% endblock %}
+    </body>
+</html>
