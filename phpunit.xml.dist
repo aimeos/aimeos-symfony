@@ -16,7 +16,8 @@
 
 	<testsuites>
 		<testsuite name="command">
-			<directory>./Tests/Command</directory>
+			<file>./Tests/Command/UpdateCommandTest.php</file>
+			<file>./Tests/Command/JobsCommandTest.php</file>
 		</testsuite>
 		<testsuite name="controller">
 			<directory>./Tests/Controller</directory>
