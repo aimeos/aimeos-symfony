@@ -54,7 +54,7 @@ class ContextManager
 	/**
 	 * Creates the view object for the HTML client.
 	 *
-	 * @return MW_View_Interface View object
+	 * @return \MW_View_Interface View object
 	 */
 	public function createView()
 	{
@@ -128,7 +128,7 @@ class ContextManager
 	/**
 	 * Returns the current context.
 	 *
-	 * @return MShop_Context_Item_Interface Context object
+	 * @return \MShop_Context_Item_Interface Context object
 	 */
 	public function getContext( $locale = true )
 	{
@@ -185,7 +185,7 @@ class ContextManager
 	/**
 	 * Creates a new configuration object.
 	 *
-	 * @return MW_Config_Interface Configuration object
+	 * @return \MW_Config_Interface Configuration object
 	 */
 	protected function getConfig()
 	{
@@ -216,8 +216,8 @@ class ContextManager
 	/**
 	 * Creates new translation objects.
 	 *
-	 * @param array $langIds List of two letter ISO language IDs
-	 * @return array List of translation objects implementing MW_Translation_Interface
+	 * @param array $languageIds List of two letter ISO language IDs
+	 * @return \MW_Translation_Interface[] List of translation objects
 	 */
 	protected function getI18n( array $languageIds )
 	{
