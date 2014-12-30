@@ -3,8 +3,6 @@
 namespace Aimeos\ShopBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\HttpFoundation\Session\Session;
-use Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage;
 
 
 class PageControllerTest extends WebTestCase
@@ -90,11 +88,14 @@ class PageControllerTest extends WebTestCase
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
 
-		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Test Selection")' )->link();
+		$link = $crawler->filter( '.catalog-list-pagination .option-name' )->link();
+		$crawler = $client->click( $link );
+
+		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail' )->count() );
-		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unittest: Test Selection")' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unittest: Bundle")' )->count() );
 
 		$link = $crawler->filter( '.catalog-stage-navigator a.next' )->link();
 		$crawler = $client->click( $link );
@@ -106,7 +107,7 @@ class PageControllerTest extends WebTestCase
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail' )->count() );
-		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unittest: Test Selection")' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unittest: Bundle")' )->count() );
 	}
 
 
@@ -341,13 +342,13 @@ class PageControllerTest extends WebTestCase
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/list' );
 
-		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
+		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
 
 		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
 		$crawler = $client->submit( $form );
 
-		$this->assertEquals( 2, $crawler->filter( '.basket-related-bought .bought-item' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.basket-related-bought .bought-item' )->count() );
 	}
 
 
@@ -442,29 +443,8 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
 
-		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
-		$crawler = $client->submit( $form );
-
-		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.checkout-standard-address form' )->form();
-		$form['ca-billing-option']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
-		$form['c-delivery-option']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
-		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
+		$crawler = $this->_goToSummary( $client );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
@@ -512,29 +492,8 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
 
-		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
-		$crawler = $client->submit( $form );
-
-		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.checkout-standard-address form' )->form();
-		$form['ca-billing-option']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
-		$form['c-delivery-option']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
-		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
+		$crawler = $this->_goToSummary( $client );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
@@ -552,29 +511,8 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
 
-		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
-		$crawler = $client->submit( $form );
-
-		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.checkout-standard-address form' )->form();
-		$form['ca-billing-option']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
-		$form['c-delivery-option']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
-		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
+		$crawler = $this->_goToSummary( $client );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
@@ -592,29 +530,8 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
 
-		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
-		$crawler = $client->submit( $form );
-
-		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.checkout-standard-address form' )->form();
-		$form['ca-billing-option']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
-		$form['c-delivery-option']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
-		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
+		$crawler = $this->_goToSummary( $client );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
@@ -632,29 +549,8 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
 
-		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
-		$crawler = $client->submit( $form );
-
-		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.checkout-standard-address form' )->form();
-		$form['ca-billing-option']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
-		$form['c-delivery-option']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
-		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
+		$crawler = $this->_goToSummary( $client );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
@@ -672,29 +568,8 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
 
-		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
-		$crawler = $client->submit( $form );
-
-		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
-		$crawler = $client->click( $link );
-
-		$form = $crawler->filter( '.checkout-standard-address form' )->form();
-		$form['ca-billing-option']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
-		$form['c-delivery-option']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
-		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
-		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
-		$crawler = $client->submit( $form );
-
+		$crawler = $this->_goToSummary( $client );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard-summary' )->count() );
 
@@ -755,5 +630,40 @@ class PageControllerTest extends WebTestCase
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-confirm' )->count() );
+	}
+
+
+	/**
+	 * Moves forward to the summary page
+	 *
+	 * @param \Symfony\Bundle\FrameworkBundle\Client $client HTTP test client
+	 * @return \Symfony\Component\DomCrawler\Crawler Crawler HTTP crawler
+	 */
+	protected function _goToSummary( $client )
+	{
+		$crawler = $client->request( 'GET', '/unittest/de/list' );
+
+		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
+		$crawler = $client->click( $link );
+
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$crawler = $client->submit( $form );
+
+		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
+		$crawler = $client->click( $link );
+
+		$form = $crawler->filter( '.checkout-standard-address form' )->form();
+		$form['ca-billing-option']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
+		$crawler = $client->submit( $form );
+
+		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
+		$form['c-delivery-option']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
+		$crawler = $client->submit( $form );
+
+		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
+		$form['c-payment-option']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
+		$crawler = $client->submit( $form );
+
+		return $crawler;
 	}
 }
