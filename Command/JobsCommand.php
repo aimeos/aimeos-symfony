@@ -51,7 +51,7 @@ class JobsCommand extends Command
 		$configPaths = $arcavias->getConfigPaths( $adapter );
 
 		if( ( $confPath = $input->getOption( 'config' ) ) !== null ) {
-			$confPaths[] = $confPath;
+			$configPaths[] = $confPath;
 		}
 
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
