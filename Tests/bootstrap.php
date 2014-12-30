@@ -1,5 +1,8 @@
 <?php
 
+use Doctrine\Common\Annotations\AnnotationRegistry;
+
+
 setlocale( LC_ALL, 'en_US.UTF-8' );
 
 // if the bundle is within a symfony project, try to reuse the project's autoload
@@ -26,8 +29,5 @@ if( !$autoload )
 	Visit http://getcomposer.org/ for more information.\n"
 	);
 }
-
-use Doctrine\Common\Annotations\AnnotationRegistry;
-use Composer\Autoload\ClassLoader;
 
 AnnotationRegistry::registerLoader( array( $autoload, 'loadClass' ) );
