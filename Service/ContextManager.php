@@ -157,8 +157,8 @@ class ContextManager
 			if( is_object( $token ) )
 			{
 				if( is_object( $token->getUser() ) ) {
-					$username =  $context->setEditor( $token->getUser()->getUsername() );
 					$context->setUserId( $token->getUser()->getId() );
+					$username =  $token->getUser()->getUsername();
 				} else {
 					$username = $token->getUser();
 				}
