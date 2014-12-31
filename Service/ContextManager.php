@@ -151,14 +151,20 @@ class ContextManager
 			$logger = \MAdmin_Log_Manager_Factory::createManager( $context );
 			$context->setLogger( $logger );
 
-			$user = $this->container->get('security.context')->getToken()->getUser();
+			$username = 'guest';
+			$token = $this->container->get('security.context')->getToken();
 
-			if( is_object( $user ) ) {
-				$context->setEditor( $user->getUsername() );
-				$context->setUserId( $user->getId() );
-			} else {
-				$context->setEditor( $user );
+			if( is_object( $token ) )
+			{
+				if( is_object( $token->getUser() ) ) {
+					$username =  $context->setEditor( $token->getUser()->getUsername() );
+					$context->setUserId( $token->getUser()->getId() );
+				} else {
+					$username = $token->getUser();
+				}
 			}
+
+			$context->setEditor( $username );
 
 			$this->context = $context;
 		}
