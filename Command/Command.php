@@ -95,6 +95,7 @@ abstract class Command extends ContainerAwareCommand
 			);
 
 			$config = new \MW_Config_Decorator_Memory( $config, $local );
+			$context->setConfig( $config );
 
 			$dbm = new \MW_DB_Manager_PDO( $config );
 			$context->setDatabaseManager( $dbm );
@@ -114,12 +115,9 @@ abstract class Command extends ContainerAwareCommand
 			$context->setView( $this->createView( $config ) );
 			$context->setI18n( $this->createI18n( $context, $i18nPaths ) );
 		}
-
-		$context->setConfig( $config );
-		$context->setEditor( 'jobs' );
-
-		if( $bare === true )
+		else
 		{
+			$context->setConfig( $config );
 			$i18n = array( 'en' => new \MW_Translation_Zend2( $i18nPaths, 'gettext', 'en', array( 'disableNotices' => true ) ) );
 
 			$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
@@ -130,6 +128,7 @@ abstract class Command extends ContainerAwareCommand
 			$context->setI18n( $i18n );
 		}
 
+		$context->setEditor( 'jobs' );
 
 		return $context;
 	}
