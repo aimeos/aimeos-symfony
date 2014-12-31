@@ -1,0 +1,55 @@
+aimeos_shop_admin_json:
+    path: /admin/do
+    defaults: { _controller: AimeosShopBundle:Admin:do, _format: json }
+
+aimeos_shop_admin:
+    path: /admin/{site}/{locale}/{tab}
+    defaults: { _controller: AimeosShopBundle:Admin:index, site: default, locale: en, tab: 0 }
+
+aimeos_shop_account:
+    path: /{site}/{locale}/my-account
+    defaults: { _controller: AimeosShopBundle:Page:account, site: default, locale: en }
+
+aimeos_shop_basket:
+    path: /{site}/{locale}/basket
+    defaults: { _controller: AimeosShopBundle:Page:basketStandard, site: default, locale: en }
+
+aimeos_shop_count:
+    path: /{site}/{locale}/count
+    defaults: { _controller: AimeosShopBundle:Catalog:count, site: default, locale: en, _format: js }
+
+aimeos_shop_detail:
+    path: /{site}/{locale}/detail
+    defaults: { _controller: AimeosShopBundle:Page:catalogDetail, site: default, locale: en }
+
+aimeos_shop_list:
+    path: /{site}/{locale}/list
+    defaults: { _controller: AimeosShopBundle:Page:catalogList, site: default, locale: en }
+
+aimeos_shop_listsimple:
+    path: /{site}/{locale}/suggest
+    defaults: { _controller: AimeosShopBundle:Catalog:listSimple, site: default, locale: en, _format: json }
+
+aimeos_shop_stock:
+    path: /{site}/{locale}/stock
+    defaults: { _controller: AimeosShopBundle:Catalog:stock, site: default, locale: en, _format: js }
+
+aimeos_shop_checkout:
+    path: /{site}/{locale}/checkout
+    defaults: { _controller: AimeosShopBundle:Page:checkoutStandard, site: default, locale: en }
+
+aimeos_shop_confirm:
+    path: /{site}/{locale}/confirm
+    defaults: { _controller: AimeosShopBundle:Page:checkoutConfirm, site: default, locale: en }
+
+aimeos_shop_update:
+    path: /{site}/{locale}/update
+    defaults: { _controller: AimeosShopBundle:Checkout:update, site: default, locale: en }
+
+aimeos_shop_terms:
+    path: /{locale}/terms
+    defaults: { _controller: AimeosShopBundle:Page:terms, locale: en }
+
+aimeos_shop_privacy:
+    path: /{locale}/privacy
+    defaults: { _controller: AimeosShopBundle:Page:privacy, locale: en }

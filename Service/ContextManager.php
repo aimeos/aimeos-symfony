@@ -54,7 +54,7 @@ class ContextManager
 	/**
 	 * Creates the view object for the HTML client.
 	 *
-	 * @return MW_View_Interface View object
+	 * @return \MW_View_Interface View object
 	 */
 	public function createView()
 	{
@@ -128,7 +128,7 @@ class ContextManager
 	/**
 	 * Returns the current context.
 	 *
-	 * @return MShop_Context_Item_Interface Context object
+	 * @return \MShop_Context_Item_Interface Context object
 	 */
 	public function getContext( $locale = true )
 	{
@@ -151,13 +151,17 @@ class ContextManager
 			$logger = \MAdmin_Log_Manager_Factory::createManager( $context );
 			$context->setLogger( $logger );
 
-			$context->setEditor( 'guest' );
-			$context->setUserId( null );
+			$user = $this->container->get('security.context')->getToken()->getUser();
+
+			if( is_object( $user ) ) {
+				$context->setEditor( $user->getUsername() );
+				$context->setUserId( $user->getId() );
+			} else {
+				$context->setEditor( $user );
+			}
 
 			$this->context = $context;
 		}
-
-		$context = $this->context;
 
 		if( $locale && $this->locale === null )
 		{
@@ -167,21 +171,21 @@ class ContextManager
 			$site = $attr->get( 'site', 'default' );
 			$lang = $attr->get( 'locale', 'en' );
 
-			$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
-			$locale = $localeManager->bootstrap( $site, $lang, $currency );
+			$localeManager = \MShop_Locale_Manager_Factory::createManager( $this->context );
+			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, false );
 
-			$context->setLocale( $locale );
-			$context->setI18n( $this->getI18n( array( $locale->getLanguageId() ) ) );
+			$this->context->setLocale( $this->locale );
+			$this->context->setI18n( $this->getI18n( array( $this->locale->getLanguageId() ) ) );
 		}
 
-		return $context;
+		return $this->context;
 	}
 
 
 	/**
 	 * Creates a new configuration object.
 	 *
-	 * @return MW_Config_Interface Configuration object
+	 * @return \MW_Config_Interface Configuration object
 	 */
 	protected function getConfig()
 	{
@@ -212,8 +216,8 @@ class ContextManager
 	/**
 	 * Creates new translation objects.
 	 *
-	 * @param array $langIds List of two letter ISO language IDs
-	 * @return array List of translation objects implementing MW_Translation_Interface
+	 * @param array $languageIds List of two letter ISO language IDs
+	 * @return \MW_Translation_Interface[] List of translation objects
 	 */
 	protected function getI18n( array $languageIds )
 	{
@@ -256,16 +260,16 @@ class ContextManager
 		$urlparams = array();
 		$attr = $this->requestStack->getMasterRequest()->attributes;
 
-		if( ( $currency = $attr->get( 'currency' ) ) !== null ) {
-			$urlparams['currency'] = $currency;
-		}
-
 		if( ( $site = $attr->get( 'site' ) ) !== null ) {
 			$urlparams['site'] = $site;
 		}
 
 		if( ( $lang = $attr->get( 'locale' ) ) !== null ) {
 			$urlparams['locale'] = $lang;
+		}
+
+		if( ( $currency = $attr->get( 'currency' ) ) !== null ) {
+			$urlparams['currency'] = $currency;
 		}
 
 		return $urlparams;

@@ -48,14 +48,14 @@ class UpdateCommand extends Command
 		$configPaths = $arcavias->getConfigPaths( 'mysql' );
 
 		if( ( $confPath = $input->getOption( 'config' ) ) !== null ) {
-			$confPaths[] = $confPath;
+			$configPaths[] = $confPath;
 		}
 
 		$ctx = $this->getContext( $configPaths, $i18nPaths );
 		$config = $ctx->getConfig();
 
 		$config->set( 'setup/site', $input->getArgument( 'site' ) );
-		$dbconfig = $this->getDbConfig( $config, $input );
+		$dbconfig = $this->getDbConfig( $config );
 		$this->setOptions( $config, $input );
 
 		$taskPaths = $arcavias->getSetupPaths( $input->getArgument( 'site' ) );

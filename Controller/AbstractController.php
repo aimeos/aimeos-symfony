@@ -38,7 +38,6 @@ abstract class AbstractController
 
 		$client = $factoryname::createClient( $context, $templatePaths, $name );
 		$client->setView( $cm->createView() );
-		$client->process();
 
 		return $client;
 	}

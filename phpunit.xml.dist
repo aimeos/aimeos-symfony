@@ -9,10 +9,18 @@
 	stopOnFailure="false"
 	syntaxCheck="false"
 	bootstrap="Tests/bootstrap.php">
+	
+	<php>
+		<server name="KERNEL_DIR" value="./Tests/Fixtures/app/" />
+	</php>
 
 	<testsuites>
-		<testsuite name="ShopBundle Test Suite">
-			<directory>./Tests</directory>
+		<testsuite name="command">
+			<file>./Tests/Command/UpdateCommandTest.php</file>
+			<file>./Tests/Command/JobsCommandTest.php</file>
+		</testsuite>
+		<testsuite name="controller">
+			<directory>./Tests/Controller</directory>
 		</testsuite>
 	</testsuites>
 
