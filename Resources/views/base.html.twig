@@ -1,19 +1,22 @@
  {% extends '::base.html.twig' %}
 
  {% block stylesheets %}
-    {% stylesheets 'bundles/aimeosshop/classic/css/arcavias.css' filter='cssrewrite' %}
+    {% stylesheets
+        'bundles/aimeosshop/themes/elegance/common.css'
+        'bundles/aimeosshop/themes/elegance/aimeos.css'
+        filter='cssrewrite'
+    %}
         <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
  {% endblock %}
 
  {% block javascripts %}
-    {% javascripts 'bundles/aimeosshop/classic/js/jquery.min.js' %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-    {% javascripts 'bundles/aimeosshop/classic/js/jquery-ui.custom.min.js' %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-    {% javascripts 'bundles/aimeosshop/classic/js/arcavias.js' %}
+    {% javascripts
+        'bundles/aimeosshop/themes/jquery.min.js'
+        'bundles/aimeosshop/themes/jquery-migrate.min.js'
+        'bundles/aimeosshop/themes/jquery-ui.custom.min.js'
+        'bundles/aimeosshop/themes/elegance/aimeos.js'
+    %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
  {% endblock %}
