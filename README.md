@@ -77,26 +77,24 @@ To see all components and get everything working, you also need to adapt your Tw
     </head>
     <body>
         <div class="navbar navbar-static" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+          </div>
 {% block head %}{% endblock %}
         </div>
-{% if block('nav') %}
-        <div class="col-xs-12 col-sm-3">
-            {% block nav %}{% endblock %}
-        </div>
-{% endif %}
-{% if block('nav') or block('aside') %}
-        <div class="col-xs-12 col-sm-9">
-{% else %}
         <div class="col-xs-12">
-{% endif %}
+            {% block nav %}{% endblock %}
             {% block stage %}{% endblock %}
             {% block body %}{% endblock %}
-        </div>
-{% if block('aside') %}
-        <div class="col-xs-12 col-sm-3">
             {% block aside %}{% endblock %}
         </div>
-{% endif %}
 {% block javascripts %}{% endblock %}
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     </body>
@@ -111,7 +109,7 @@ Copy the
 
 directories from the bootstrap .zip package into the web/ directory of your Symfony2 application. Then, you should be able to call the catalog list page in your browser using
 
-```http://<your web root>/app.php/list```
+```http://<your web root>/app_dev.php/list```
 
 To simplify development, you should configure to use no content cache. You can do this in the ./app/config/config_dev.yml file of your Symfony application by adding these lines:
 
