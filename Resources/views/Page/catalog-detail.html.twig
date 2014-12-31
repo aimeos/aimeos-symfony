@@ -2,10 +2,7 @@
 
  {% block javascripts %}
     {{ parent() }}
-    {% javascripts 'bundles/aimeosshop/classic/js/arcavias-image.js' %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-    {% javascripts 'bundles/aimeosshop/classic/js/arcavias-detail.js' %}
+    {% javascripts 'bundles/aimeosshop/themes/aimeos-detail.js' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
  {% endblock %}
