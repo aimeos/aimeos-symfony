@@ -20,7 +20,7 @@ Make sure that the database is set up and it is configured in your config.yml. T
 ```
     "repositories": [ {
         "type": "vcs",
-        "url": "https://github.com/nsendetzky/arcavias-core"
+        "url": "https://github.com/aimeos/arcavias-core"
     } ],
     "minimum-stability": "dev",
     "require": {
@@ -45,13 +45,9 @@ Afterwards, install the Aimeos shop bundle using
 
 `composer update`
 
-In a production environment of if you don't want that the demo data gets installed, use the --no-dev option:
+In a production environment or if you don't want that the demo data gets installed, use the --no-dev option:
 
 `composer update --no-dev`
-
-The last step executed in the directory of your Symfony2 application installs the assets (CSS, Javascript, images, etc.) of the bundles into the web/bundles/ directory so they are publically available:
-
-`php app/console assets:install`
 
 
 ## Usage
@@ -64,7 +60,7 @@ aimeos_shop:
     prefix:   /
 ```
 
-To see all components and get everything working, you also need to adapt your Twig base template in `app/Resources/view`. This is a working example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/getting-started/#download):
+To see all components and get everything working, you also need to adapt your Twig base template in `app/Resources/views/base.html.twig`. This is a working example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/getting-started/#download):
 
 ```
 <!DOCTYPE html>
@@ -116,3 +112,13 @@ Copy the
 directories from the bootstrap .zip package into the web/ directory of your Symfony2 application. Then, you should be able to call the catalog list page in your browser using
 
 ```http://<your web root>/app.php/list```
+
+To simplify development, you should configure to use no content cache. You can do this in the ./app/config/config_dev.yml file of your Symfony application by adding these lines:
+
+```
+parameters:
+    classes:
+        cache:
+            manager:
+                name: None
+```
