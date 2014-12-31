@@ -56,6 +56,7 @@ class ScriptHandler
 		}
 
 		self::updateConfigFile( $options['symfony-app-dir'] . '/config/config.yml' );
+		self::updateRoutingFile( $options['symfony-app-dir'] . '/config/routing.yml' );
 	}
 
 
@@ -179,6 +180,37 @@ class ScriptHandler
 			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
 				$update = true;
 			}
+		}
+
+		if( $update === true )
+		{
+			$fs = new Filesystem();
+			$fs->dumpFile( $filename, $content );
+		}
+	}
+
+
+	/**
+	 * Adds the Aimeos shop bundle to the routing file of the application.
+	 *
+	 * @param string $filename Name of the YAML config file
+	 * @throws \RuntimeException If file is not found
+	 */
+	protected static function updateRoutingFile( $filename )
+	{
+		$update = false;
+
+		if( ( $content = file_get_contents( $filename ) ) === false ) {
+			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
+		}
+
+		if( preg_match( "#aimeos_shop:#smU", $content ) !== 1 )
+		{
+			$content += "\n" . 'aimeos_shop:
+    resource: "@AimeosShopBundle/Resources/config/routing.yml"
+    prefix:   /';
+
+			$update = true;
 		}
 
 		if( $update === true )
