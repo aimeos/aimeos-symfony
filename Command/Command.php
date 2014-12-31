@@ -73,44 +73,63 @@ abstract class Command extends ContainerAwareCommand
 	 *
 	 * @param array List of file system paths to the configuration directories
 	 * @param array List of file system paths to the translation directories
+	 * @param boolean $bare Create only a context object with absolutely necessary objects
 	 * @return \MShop_Context_Item_Interface Context object
 	 */
-	protected function getContext( array $configPaths, array $i18nPaths )
+	protected function getContext( array $configPaths, array $i18nPaths, $bare = false )
 	{
-		$container = $this->getContainer();
 		$context = new \MShop_Context_Item_Default();
+		$config = new \MW_Config_Array( array(), $configPaths );
 
-		$local = array(
+		if( $bare === false )
+		{
+			$container = $this->getContainer();
+
+			$local = array(
 				'classes' => $container->getParameter( 'classes' ),
 				'client' => $container->getParameter( 'client' ),
 				'controller' => $container->getParameter( 'controller' ),
 				'madmin' => $container->getParameter( 'madmin' ),
 				'mshop' => $container->getParameter( 'mshop' ),
 				'resource' => $container->getParameter( 'resource' ),
-		);
+			);
 
-		$config = new \MW_Config_Array( array(), $configPaths );
-		$config = new \MW_Config_Decorator_Memory( $config, $local );
+			$config = new \MW_Config_Decorator_Memory( $config, $local );
+
+			$dbm = new \MW_DB_Manager_PDO( $config );
+			$context->setDatabaseManager( $dbm );
+
+			$mail = new \MW_Mail_Swift( $this->getContainer()->get( 'swiftmailer.mailer' ) );
+			$context->setMail( $mail );
+
+			$logger = new \MAdmin_Log_Manager_Default( $context );
+			$context->setLogger( $logger );
+
+			$cache = new \MW_Cache_None();
+			$context->setCache( $cache );
+
+			$session = new \MW_Session_None();
+			$context->setSession( $session );
+
+			$context->setView( $this->createView( $config ) );
+			$context->setI18n( $this->createI18n( $context, $i18nPaths ) );
+		}
+
 		$context->setConfig( $config );
-
-		$dbm = new \MW_DB_Manager_PDO( $config );
-		$context->setDatabaseManager( $dbm );
-
-		$logger = new \MAdmin_Log_Manager_Default( $context );
-		$context->setLogger( $logger );
-
-		$mail = new \MW_Mail_Swift( $this->getContainer()->get( 'swiftmailer.mailer' ) );
-		$context->setMail( $mail );
-
-		$cache = new \MW_Cache_None();
-		$context->setCache( $cache );
-
-		$session = new \MW_Session_None();
-		$context->setSession( $session );
-
-		$context->setI18n( $this->createI18n( $context, $i18nPaths ) );
-		$context->setView( $this->createView( $config ) );
 		$context->setEditor( 'jobs' );
+
+		if( $bare === true )
+		{
+			$i18n = array( 'en' => new \MW_Translation_Zend2( $i18nPaths, 'gettext', 'en', array( 'disableNotices' => true ) ) );
+
+			$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
+			$localeItem = $localeManager->createItem();
+			$localeItem->setLanguageId( 'en' );
+
+			$context->setLocale( $localeItem );
+			$context->setI18n( $i18n );
+		}
+
 
 		return $context;
 	}

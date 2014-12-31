@@ -24,12 +24,26 @@ class JobsCommand extends Command
 	 */
 	protected function configure()
 	{
+		$names = '';
+		$arcavias = new \Arcavias( array() );
+
+		$i18nPaths = $arcavias->getI18nPaths();
+		$configPaths = $arcavias->getConfigPaths( 'mysql' );
+		$cntlPaths = $arcavias->getCustomPaths( 'controller/jobs' );
+		$context = $this->getContext( $configPaths, $i18nPaths, true );
+		$controllers = \Controller_Jobs_Factory::getControllers( $context, $arcavias, $cntlPaths );
+
+		foreach( $controllers as $key => $controller ) {
+			$names .= str_pad( $key, 30 ) . $controller->getName() . PHP_EOL;
+		}
+
 		$this->setName( 'aimeos:jobs' );
 		$this->setDescription( 'Executes the job controllers' );
 		$this->addArgument( 'jobs', InputArgument::REQUIRED, 'One or more job controller names like "admin/job customer/email/watch"' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to execute the jobs for like "default unittest" (none for all)' );
 		$this->addOption( 'extdir', null, InputOption::VALUE_OPTIONAL, 'Directory containing additional Aimeos extensions' );
 		$this->addOption( 'config', null, InputOption::VALUE_OPTIONAL, 'Directory containing additional configuration' );
+		$this->setHelp( "Available jobs are:\n" . $names );
 	}
 
 
