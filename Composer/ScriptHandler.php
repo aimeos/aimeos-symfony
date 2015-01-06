@@ -162,10 +162,20 @@ class ScriptHandler
 			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
 		}
 
-		if( preg_match( "#imports:\n    - \{ resource: \"@AimeosShopBundle/Resources/config/services.yml\" \}#smU", $content ) !== 1 )
+		if( preg_match( "#    - \{ resource: \"@AimeosShopBundle/Resources/config/services.yml\" \}#", $content ) !== 1 )
 		{
 			$search = array( "/imports:/" );
 			$replace = array( "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/services.yml\" }" );
+
+			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
+				$update = true;
+			}
+		}
+
+		if( preg_match( "#    - \{ resource: \"@AimeosShopBundle/Resources/config/config.yml\" \}#", $content ) !== 1 )
+		{
+			$search = array( "/imports:/" );
+			$replace = array( "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/config.yml\" }" );
 
 			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
 				$update = true;
@@ -204,11 +214,11 @@ class ScriptHandler
 			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
 		}
 
-		if( preg_match( "#aimeos_shop:#smU", $content ) !== 1 )
+		if( strpos( $content, 'aimeos_shop:' ) === false )
 		{
-			$content += "\n" . 'aimeos_shop:
+			$content .= "\n" . 'aimeos_shop:
     resource: "@AimeosShopBundle/Resources/config/routing.yml"
-    prefix:   /';
+    prefix: /';
 
 			$update = true;
 		}
