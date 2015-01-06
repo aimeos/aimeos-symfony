@@ -1,4 +1,6 @@
 imports:
+    - { resource: "@AimeosShopBundle/Resources/config/config.yml" }
+    - { resource: "@AimeosShopBundle/Resources/config/services.yml" }
     - { resource: security.yml }
     - { resource: database.yml }
 
@@ -45,7 +47,7 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
 
-parameters:
+aimeos_shop:
     classes:
         cache:
             manager:

@@ -19,18 +19,28 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
-    /**
-     * {@inheritDoc}
-     */
-    public function getConfigTreeBuilder()
-    {
-        $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('aimeos_shop');
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getConfigTreeBuilder()
+	{
+		$treeBuilder = new TreeBuilder();
+		$rootNode = $treeBuilder->root( 'aimeos_shop' );
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+		$rootNode
+			->children()
+				->booleanNode('apc_enable')->defaultValue( true )->end()
+				->scalarNode('apc_prefix')->defaultValue( 'shop:' )->end()
+				->variableNode('classes')->defaultValue( array() )->end()
+				->variableNode('client')->defaultValue( array() )->end()
+				->variableNode('controller')->defaultValue( array() )->end()
+				->variableNode('i18n')->defaultValue( array() )->end()
+				->variableNode('madmin')->defaultValue( array() )->end()
+				->variableNode('mshop')->defaultValue( array() )->end()
+				->variableNode('resource')->defaultValue( array() )->end()
+			->end()
+		;
 
-        return $treeBuilder;
+		return $treeBuilder;
     }
 }

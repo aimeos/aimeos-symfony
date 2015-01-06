@@ -86,12 +86,12 @@ abstract class Command extends ContainerAwareCommand
 			$container = $this->getContainer();
 
 			$local = array(
-				'classes' => $container->getParameter( 'classes' ),
-				'client' => $container->getParameter( 'client' ),
-				'controller' => $container->getParameter( 'controller' ),
-				'madmin' => $container->getParameter( 'madmin' ),
-				'mshop' => $container->getParameter( 'mshop' ),
-				'resource' => $container->getParameter( 'resource' ),
+				'classes' => $container->getParameter( 'aimeos_shop.classes' ),
+				'client' => $container->getParameter( 'aimeos_shop.client' ),
+				'controller' => $container->getParameter( 'aimeos_shop.controller' ),
+				'madmin' => $container->getParameter( 'aimeos_shop.madmin' ),
+				'mshop' => $container->getParameter( 'aimeos_shop.mshop' ),
+				'resource' => $container->getParameter( 'aimeos_shop.resource' ),
 			);
 
 			$config = new \MW_Config_Decorator_Memory( $config, $local );

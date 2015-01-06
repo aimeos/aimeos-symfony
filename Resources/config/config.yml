@@ -1,4 +1,78 @@
-parameters:
+aimeos_shop:
+
+    resource:
+        db:
+            adapter: mysql
+            host: %database_host%
+            port: %database_port%
+            database: %database_name%
+            username: %database_user%
+            password: %database_password%
+            stmt: ["SET NAMES 'utf8'", "SET SESSION sql_mode='ANSI'"]
+            limit: 2
+            opt-persistent: 0
+
+    classes:
+
+    client:
+        html:
+            account:
+                favorite:
+                    url:
+                        target: aimeos_shop_account
+                history:
+                    url:
+                        target: aimeos_shop_account
+                pinned:
+                    url:
+                        target: aimeos_shop_detail
+                watch:
+                    url:
+                        target: aimeos_shop_account
+            catalog:
+                count:
+                    url:
+                        target: aimeos_shop_count
+                detail:
+                    url:
+                        target: aimeos_shop_detail
+                list:
+                    url:
+                        target: aimeos_shop_list
+                listsimple:
+                    url:
+                        target: aimeos_shop_listsimple
+                stock:
+                    url:
+                        target: aimeos_shop_stock
+            common:
+                content:
+                    baseurl: uploads
+                template:
+                    baseurl: bundles/aimeosshop/classic
+            basket:
+                standard:
+                    url:
+                        target: aimeos_shop_basket
+            checkout:
+                confirm:
+                    url:
+                        target: aimeos_shop_confirm
+                standard:
+                    url:
+                        target: aimeos_shop_checkout
+                    summary:
+                        option:
+                            terms:
+                                url:
+                                    target: aimeos_shop_terms
+                                privacy:
+                                    url:
+                                        target: aimeos_shop_privacy
+                update:
+                    url:
+                        target: aimeos_shop_update
+
     controller:
         extjs:
             attribute:
@@ -88,3 +162,9 @@ parameters:
                         default:
                             downloaddir: uploads
                             exportdir: uploads
+
+    i18n:
+
+    madmin:
+
+    mshop:

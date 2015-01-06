@@ -8,10 +8,10 @@
 
 namespace Aimeos\ShopBundle\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 
 /**
@@ -21,23 +21,41 @@ use Symfony\Component\DependencyInjection\Loader;
  */
 class AimeosShopExtension extends Extension
 {
-    /**
-     * {@inheritDoc}
-     */
-    public function load( array $configs, ContainerBuilder $container )
-    {
-        $configuration = new Configuration();
-        $this->processConfiguration( $configuration, $configs );
+	/**
+	 * {@inheritDoc}
+	 */
+	public function load( array $configs, ContainerBuilder $container )
+	{
+		$configuration = new Configuration();
+		$config = $this->processConfiguration( $configuration, $configs );
+		
+		foreach( $configs as $list ) {
+			$this->merge( $config, $list );
+		}
 
-        $loader = new Loader\YamlFileLoader( $container, new FileLocator( __DIR__ . '/../Resources/config' ) );
+		foreach( $config as $key => $value ) {
+			$container->setParameter( 'aimeos_shop.' . $key, $value );
+		}
+	}
 
-        $loader->load( 'classes.yml' );
-        $loader->load( 'client.yml' );
-        $loader->load( 'controller.yml' );
-        $loader->load( 'i18n.yml' );
-        $loader->load( 'madmin.yml' );
-        $loader->load( 'mshop.yml' );
-        $loader->load( 'resource.yml' );
-        $loader->load( 'services.yml' );
-    }
+
+	/**
+	 * Merges the second array into the first overruling its values
+	 *
+	 * @param array &$original Associative list of original values
+	 * @param array $overrule Associative list of new values
+	 */
+	protected function merge( array &$original, array $overrule )
+	{
+		foreach( array_keys( $overrule ) as $key )
+		{
+			if( isset( $original[$key] ) && is_array( $original[$key] ) ) {
+				if( is_array( $overrule[$key] ) ) {
+					$this->merge( $original[$key], $overrule[$key] );
+				}
+			} elseif( isset( $overrule[$key] ) ) {
+				$original[$key] = $overrule[$key];
+			}
+		}
+	}
 }

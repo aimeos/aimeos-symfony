@@ -114,8 +114,8 @@ class ContextManager
 			$dir = $this->container->getParameter( 'kernel.root_dir' );
 			$extDirs = array( dirname( $dir ) . '/ext' );
 
-			if( $this->container->hasParameter( 'aimeos.extdir' ) ) {
-				$extDirs = array( $this->container->getParameter( 'aimeos.extdir' ) );
+			if( $this->container->hasParameter( 'aimeos_shop.extdir' ) ) {
+				$extDirs = array( $this->container->getParameter( 'aimeos_shop.extdir' ) );
 			}
 
 			$this->arcavias = new \Arcavias( $extDirs, false );
@@ -199,20 +199,20 @@ class ContextManager
 
 		$conf = new \MW_Config_Array( array(), $configPaths );
 
-		$apc = $this->container->getParameter( 'apc.enable' );
-		$prefix = $this->container->getParameter( 'apc.prefix' );
+		$apc = $this->container->getParameter( 'aimeos_shop.apc_enable' );
+		$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
 
 		if( function_exists( 'apc_store' ) === true && $apc == true ) {
 			$conf = new \MW_Config_Decorator_APC( $conf, $prefix );
 		}
 
 		$local = array(
-			'classes' => $this->container->getParameter( 'classes' ),
-			'client' => $this->container->getParameter( 'client' ),
-			'controller' => $this->container->getParameter( 'controller' ),
-			'madmin' => $this->container->getParameter( 'madmin' ),
-			'mshop' => $this->container->getParameter( 'mshop' ),
-			'resource' => $this->container->getParameter( 'resource' ),
+			'classes' => $this->container->getParameter( 'aimeos_shop.classes' ),
+			'client' => $this->container->getParameter( 'aimeos_shop.client' ),
+			'controller' => $this->container->getParameter( 'aimeos_shop.controller' ),
+			'madmin' => $this->container->getParameter( 'aimeos_shop.madmin' ),
+			'mshop' => $this->container->getParameter( 'aimeos_shop.mshop' ),
+			'resource' => $this->container->getParameter( 'aimeos_shop.resource' ),
 		);
 
 		return new \MW_Config_Decorator_Memory( $conf, $local );
@@ -235,17 +235,17 @@ class ContextManager
 			{
 				$i18n = new \MW_Translation_Zend2( $i18nPaths, 'gettext', $langid, array( 'disableNotices' => true ) );
 
-				$apc = $this->container->getParameter( 'apc.enable' );
-				$prefix = $this->container->getParameter( 'apc.prefix' );
+				$apc = $this->container->getParameter( 'aimeos_shop.apc_enable' );
+				$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
 
 				if( function_exists( 'apc_store' ) === true && $apc == true ) {
 					$i18n = new \MW_Translation_Decorator_APC( $i18n, $prefix );
 				}
 
-				$translations = $this->container->getParameter( 'i18n' );
+				$translations = $this->container->getParameter( 'aimeos_shop.i18n' );
 
 				if( isset( $translations[$langid] ) ) {
-					$i18n = new \MW_Translation_Decorator_Memory( $i18n, $translations );
+					$i18n = new \MW_Translation_Decorator_Memory( $i18n, $translations[$langid] );
 				}
 
 				$this->i18n[$langid] = $i18n;
