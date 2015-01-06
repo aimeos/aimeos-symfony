@@ -162,34 +162,16 @@ class ScriptHandler
 			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
 		}
 
-		if( preg_match( "#    - \{ resource: \"@AimeosShopBundle/Resources/config/services.yml\" \}#", $content ) !== 1 )
-		{
-			$search = array( "/imports:/" );
-			$replace = array( "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/services.yml\" }" );
-
-			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
-				$update = true;
-			}
+		if( self::importServices( $content ) === true ) {
+			$update = true;
 		}
 
-		if( preg_match( "#    - \{ resource: \"@AimeosShopBundle/Resources/config/config.yml\" \}#", $content ) !== 1 )
-		{
-			$search = array( "/imports:/" );
-			$replace = array( "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/config.yml\" }" );
-
-			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
-				$update = true;
-			}
+		if( self::importConfig( $content ) === true ) {
+			$update = true;
 		}
 
-		if( preg_match( "/    bundles:[ ]*\[.*'AimeosShopBundle'.*\]/", $content ) !== 1 )
-		{
-			$search = array( "/    bundles:[ ]*\[([^\]]+)\]/", "/    bundles:[ ]*\[([ ]*)\]/" );
-			$replace = array( "    bundles: [$1,'AimeosShopBundle']", "    bundles: ['AimeosShopBundle']" );
-
-			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
-				$update = true;
-			}
+		if( self::addAsseticBundle( $content ) === true ) {
+			$update = true;
 		}
 
 		if( $update === true )
@@ -228,5 +210,71 @@ class ScriptHandler
 			$fs = new Filesystem();
 			$fs->dumpFile( $filename, $content );
 		}
+	}
+
+
+	/**
+	 * Adds the config.yml to the config file
+	 *
+	 * @param string &$content Content of the config.yml file
+	 * @return boolean True if modified, false if not
+	 */
+	protected static function importConfig( &$content )
+	{
+		if( preg_match( "#    - \{ resource: \"@AimeosShopBundle/Resources/config/config.yml\" \}#", $content ) !== 1 )
+		{
+			$search = array( "/imports:/" );
+			$replace = array( "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/config.yml\" }" );
+
+			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+
+	/**
+	 * Adds the services.yml to the config file
+	 *
+	 * @param string &$content Content of the config.yml file
+	 * @return boolean True if modified, false if not
+	 */
+	protected static function importServices( &$content )
+	{
+		if( preg_match( "#    - \{ resource: \"@AimeosShopBundle/Resources/config/services.yml\" \}#", $content ) !== 1 )
+		{
+			$search = array( "/imports:/" );
+			$replace = array( "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/services.yml\" }" );
+
+			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+
+	/**
+	 * Adds the AimeosShopBundle to the assetic section of the config file
+	 *
+	 * @param string &$content Content of the config.yml file
+	 * @return boolean True if modified, false if not
+	 */
+	protected static function addAsseticBundle( &$content )
+	{
+		if( preg_match( "/    bundles:[ ]*\[.*'AimeosShopBundle'.*\]/", $content ) !== 1 )
+		{
+			$search = array( "/    bundles:[ ]*\[([^\]]+)\]/", "/    bundles:[ ]*\[([ ]*)\]/" );
+			$replace = array( "    bundles: [$1,'AimeosShopBundle']", "    bundles: ['AimeosShopBundle']" );
+
+			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

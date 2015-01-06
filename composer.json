@@ -6,8 +6,8 @@
 	"license": "MIT",
 	"keywords": ["aimeos", "symfony", "e-commerce", "shop", "portal", "market place"],
 	"support": {
-		"source": "https://github.com/Aimeos/symfony-bundle",
-		"issues": "https://github.com/Aimeos/symfony-bundle/issues",
+		"source": "https://github.com/Aimeos/aimeos-symfony",
+		"issues": "https://github.com/Aimeos/aimeos-symfony/issues",
 		"forum": "http://help.aimeos.org",
 		"wiki": "http://docs.aimeos.org"
 	},
@@ -17,6 +17,7 @@
 			"url": "https://github.com/aimeos/arcavias-core"
 		}
 	],
+	"prefer-stable": true,
     "minimum-stability": "dev",
 	"require": {
 		"php": ">=5.3.3",
@@ -26,7 +27,7 @@
 		"aimeos/ai-monolog": "dev-master",
 		"aimeos/ai-zend2-i18n": "dev-master",
 		"aimeos/ai-swiftmailer": "dev-master",
-		"symfony/symfony": "2.5.*"
+		"symfony/symfony": ">=2.4"
 	},
 	"require-dev": {
 		"doctrine/orm": "~2.2,>=2.2.3",
