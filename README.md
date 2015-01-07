@@ -53,14 +53,6 @@ In a production environment or if you don't want that the demo data gets install
 
 ## Usage
 
-In your `app/config/routing.yml` file you need to add these lines to add the pre-defined routes from the Aimeos shop bundle:
-
-```
-aimeos_shop:
-    resource: "@AimeosShopBundle/Resources/config/routing.yml"
-    prefix:   /
-```
-
 To see all components and get everything working, you also need to adapt your Twig base template in `app/Resources/views/base.html.twig`. This is a working example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/getting-started/#download):
 
 ```
