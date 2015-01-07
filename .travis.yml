@@ -16,8 +16,8 @@ env:
 
 before_script:
   - mysql -e "create database symfony;"
-  - composer require symfony/symfony:${SYMFONY_VERSION} --no-update
-  - composer install --dev --prefer-source
+  - composer require "symfony/symfony:${SYMFONY_VERSION}" --no-update
+  - composer install --dev
 
 script: phpunit
 
