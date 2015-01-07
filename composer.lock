@@ -211,12 +211,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/arcavias-core.git",
-                "reference": "717d06d1b3cabf9eab1476eeb523347fb4bcd70c"
+                "reference": "b21da73445b5e02a96164923a4af47a1947248dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/717d06d1b3cabf9eab1476eeb523347fb4bcd70c",
-                "reference": "717d06d1b3cabf9eab1476eeb523347fb4bcd70c",
+                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/b21da73445b5e02a96164923a4af47a1947248dd",
+                "reference": "b21da73445b5e02a96164923a4af47a1947248dd",
                 "shasum": ""
             },
             "require": {
@@ -283,7 +283,7 @@
                 "forum": "https://forum.arcavias.com",
                 "wiki": "https://docs.arcavias.com"
             },
-            "time": "2015-01-02 23:00:06"
+            "time": "2015-01-07 13:58:03"
         },
         {
             "name": "doctrine/annotations",
@@ -853,23 +853,23 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.6.1",
+            "version": "v2.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "d805dfd67950848ec0338b4acd75777b340977b7"
+                "reference": "bfd8e114413a5ef35df4f77cf79e10e3d924a921"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/d805dfd67950848ec0338b4acd75777b340977b7",
-                "reference": "d805dfd67950848ec0338b4acd75777b340977b7",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/bfd8e114413a5ef35df4f77cf79e10e3d924a921",
+                "reference": "bfd8e114413a5ef35df4f77cf79e10e3d924a921",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.2",
+                "doctrine/common": "~2.3",
                 "php": ">=5.3.3",
                 "psr/log": "~1.0",
-                "twig/twig": "~1.12"
+                "twig/twig": "~1.12,>=1.12.3"
             },
             "replace": {
                 "symfony/browser-kit": "self.version",
@@ -925,7 +925,7 @@
                 "egulias/email-validator": "~1.2",
                 "ircmaxell/password-compat": "~1.0",
                 "monolog/monolog": "~1.11",
-                "ocramius/proxy-manager": ">=0.3.1,<0.6-dev",
+                "ocramius/proxy-manager": "~0.4|~1.0",
                 "propel/propel1": "~1.6"
             },
             "type": "library",
@@ -965,7 +965,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-12-03 16:40:43"
+            "time": "2015-01-07 14:05:59"
         },
         {
             "name": "twig/twig",
