@@ -1,3 +1,11 @@
 aimeos_shop:
-    resource: "@AimeosShopBundle/Resources/config/routing_multisite.yml"
-    prefix:   /
+    resource: "@AimeosShopBundle/Resources/config/routing.yml"
+    prefix:   /{site}/{locale}
+
+aimeos_shop_admin_json:
+    path: /admin/do
+    defaults: { _controller: AimeosShopBundle:Admin:do, _format: json }
+
+aimeos_shop_admin:
+    path: /admin/{site}/{locale}/{tab}
+    defaults: { _controller: AimeosShopBundle:Admin:index, site: default, locale: en, tab: 0 }

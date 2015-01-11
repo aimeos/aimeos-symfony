@@ -46,16 +46,3 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
-
-aimeos_shop:
-    classes:
-        cache:
-            manager:
-                name: None
-    mshop:
-        customer:
-            manager:
-                default:
-                    password:
-                        options:
-                            format: "%%1$s{%%2$s}"

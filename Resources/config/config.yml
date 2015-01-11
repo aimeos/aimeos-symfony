@@ -171,3 +171,9 @@ aimeos_shop:
     madmin:
 
     mshop:
+        customer:
+            manager:
+                default:
+                    password:
+                        options:
+                            format: "%%1$s{%%2$s}"
