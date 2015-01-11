@@ -108,36 +108,26 @@ class AdminController extends AbstractController
 	 */
 	public function getJsonLanguages( \MShop_Context_Item_Interface $context )
 	{
-		$languageManager = \MShop_Factory::createManager( $context, 'locale/language' );
 		$paths = $this->get( 'aimeos_context' )->getArcavias()->getI18nPaths();
-		$langs = $result = array();
+		$langs = array();
 
-		if( isset( $paths['client/extjs'] ) )
+		if( isset( $paths['client/extjs'] ) ) {
+			return json_encode( array() );
+		}
+
+		foreach( $paths['client/extjs'] as $path )
 		{
-			foreach( $paths['client/extjs'] as $path )
+			$iter = new \DirectoryIterator( $path );
+
+			foreach( $iter as $file )
 			{
-				if( ( $scan = scandir( $path ) ) !== false )
-				{
-					foreach( $scan as $file )
-					{
-						if( preg_match('/^[a-z]{2,3}(_[A-Z]{2})?$/', $file ) ) {
-							$langs[$file] = null;
-						}
-					}
+				if( preg_match('/^[a-z]{2,3}(_[A-Z]{2})?$/', $file ) ) {
+					$langs[$file] = null;
 				}
 			}
 		}
 
-		$search = $languageManager->createSearch();
-		$search->setConditions( $search->compare('==', 'locale.language.id', array_keys( $langs ) ) );
-		$search->setSortations( array( $search->sort( '-', 'locale.language.status' ), $search->sort( '+', 'locale.language.label' ) ) );
-		$langItems = $languageManager->searchItems( $search );
-
-		foreach( $langItems as $id => $item ) {
-			$result[] = array( 'id' => $id, 'label' => $item->getLabel() );
-		}
-
-		return json_encode( $result );
+		return json_encode( $this->getLanguages( $context, array_keys( $langs ) ) );
 	}
 
 
@@ -195,6 +185,31 @@ class AdminController extends AbstractController
 		}
 
 		return json_encode( $item->toArray() );
+	}
+
+
+	/**
+	 * Returns a list of arrays with "id" and "label"
+	 *
+	 * @param \MShop_Context_Item_Interface $context Context object
+	 * @param array $langIds List of language IDs
+	 * @return array List of associative lists with "id" and "label" as keys
+	 */
+	protected function getLanguages( \MShop_Context_Item_Interface $context, array $langIds )
+	{
+		$languageManager = \MShop_Factory::createManager( $context, 'locale/language' );
+		$result = array();
+
+		$search = $languageManager->createSearch();
+		$search->setConditions( $search->compare('==', 'locale.language.id', $langIds ) );
+		$search->setSortations( array( $search->sort( '-', 'locale.language.status' ), $search->sort( '+', 'locale.language.label' ) ) );
+		$langItems = $languageManager->searchItems( $search );
+
+		foreach( $langItems as $id => $item ) {
+			$result[] = array( 'id' => $id, 'label' => $item->getLabel() );
+		}
+
+		return $result;
 	}
 
 
