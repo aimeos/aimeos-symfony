@@ -56,9 +56,22 @@ class ContextManager
 	 *
 	 * @return \MW_View_Interface View object
 	 */
-	public function createView()
+	public function createView( $useParams = true )
 	{
-		$request = $this->requestStack->getMasterRequest();
+		$params = $urlParams = array();
+
+		if( $useParams === true )
+		{
+			$request = $this->requestStack->getMasterRequest();
+			$params = $request->request->all() + $request->query->all();
+
+			// required for reloading to the current page
+			$params['target'] = $request->get( '_route' );
+
+			$urlParams = $this->getUrlParams();
+		}
+
+
 		$context = $this->getContext();
 		$config = $context->getConfig();
 
@@ -66,15 +79,9 @@ class ContextManager
 		$i18n = $this->getI18n( array( $langid ) );
 
 
-		$params = $request->request->all() + $request->query->all();
-
-		// required for reloading to the current page
-		$params['target'] = $request->get( '_route' );
-
-
 		$view = new \MW_View_Default();
 
-		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->router, $this->getUrlParams() );
+		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->router, $urlParams );
 		$view->addHelper( 'url', $helper );
 
 		$helper = new \MW_View_Helper_Translate_Default( $view, $i18n[$langid] );
@@ -110,7 +117,6 @@ class ContextManager
 	{
 		if( $this->arcavias === null )
 		{
-			// Hook for processing extension directories
 			$dir = $this->container->getParameter( 'kernel.root_dir' );
 			$extDirs = array( dirname( $dir ) . '/ext' );
 
@@ -142,7 +148,7 @@ class ContextManager
 			$dbm = new \MW_DB_Manager_PDO( $config );
 			$context->setDatabaseManager( $dbm );
 
-			$cache = new \MAdmin_Cache_Proxy_Default( $context );
+			$cache = new \MW_Cache_None();
 			$context->setCache( $cache );
 
 			$session = new \MW_Session_Symfony2( $this->session );
@@ -151,43 +157,50 @@ class ContextManager
 			$logger = \MAdmin_Log_Manager_Factory::createManager( $context );
 			$context->setLogger( $logger );
 
-			$username = 'guest';
-			$token = $this->container->get('security.context')->getToken();
-
-			if( is_object( $token ) )
-			{
-				if( method_exists( $token->getUser(), 'getId' ) ) {
-					$context->setUserId( $token->getUser()->getId() );
-				}
-
-				if( is_object( $token->getUser() ) ) {
-					$username =  $token->getUser()->getUsername();
-				} else {
-					$username = $token->getUser();
-				}
-			}
-
-			$context->setEditor( $username );
+			$this->addUser( $context );
 
 			$this->context = $context;
 		}
 
-		if( $locale && $this->locale === null )
+		if( $locale === true )
 		{
-			$attr = $this->requestStack->getMasterRequest()->attributes;
+			$locale = $this->getLocale( $this->context );
 
-			$currency = $attr->get( 'currency', 'EUR' );
-			$site = $attr->get( 'site', 'default' );
-			$lang = $attr->get( 'locale', 'en' );
+			$this->context->setLocale( $locale );
+			$this->context->setI18n( $this->getI18n( array( $locale->getLanguageId() ) ) );
 
-			$localeManager = \MShop_Locale_Manager_Factory::createManager( $this->context );
-			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, false );
-
-			$this->context->setLocale( $this->locale );
-			$this->context->setI18n( $this->getI18n( array( $this->locale->getLanguageId() ) ) );
+			$cache = new \MAdmin_Cache_Proxy_Default( $this->context );
+			$this->context->setCache( $cache );
 		}
 
 		return $this->context;
+	}
+
+
+	/**
+	 * Adds the user ID and name if available
+	 *
+	 * @param \MShop_Context_Item_Interface $context Context object
+	 */
+	protected function addUser( \MShop_Context_Item_Interface $context )
+	{
+		$username = 'guest';
+		$token = $this->container->get('security.context')->getToken();
+
+		if( is_object( $token ) )
+		{
+			if( method_exists( $token->getUser(), 'getId' ) ) {
+				$context->setUserId( $token->getUser()->getId() );
+			}
+
+			if( is_object( $token->getUser() ) ) {
+				$username =  $token->getUser()->getUsername();
+			} else {
+				$username = $token->getUser();
+			}
+		}
+
+		$context->setEditor( $username );
 	}
 
 
@@ -256,6 +269,30 @@ class ContextManager
 		}
 
 		return $this->i18n;
+	}
+
+
+	/**
+	 * Returns the locale item for the current request
+	 *
+	 * @param \MShop_Context_Item_Interface $context Context object
+	 * @return \MShop_Locale_Item_Interface Locale item object
+	 */
+	protected function getLocale( \MShop_Context_Item_Interface $context )
+	{
+		if( $this->locale === null )
+		{
+			$attr = $this->requestStack->getMasterRequest()->attributes;
+
+			$currency = $attr->get( 'currency', 'EUR' );
+			$site = $attr->get( 'site', 'default' );
+			$lang = $attr->get( 'locale', 'en' );
+
+			$localeManager = \MShop_Locale_Manager_Factory::createManager( $this->context );
+			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, false );
+		}
+
+		return $this->locale;
 	}
 
 
