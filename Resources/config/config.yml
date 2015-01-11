@@ -16,6 +16,9 @@ aimeos_shop:
 
     client:
         html:
+            common:
+                content:
+                    baseurl: /uploads
             account:
                 favorite:
                     url:
@@ -79,24 +82,24 @@ aimeos_shop:
                 import:
                     text:
                         default:
-                            uploaddir: uploads
+                            uploaddir: /uploads
                             fileperms: 0660
                 export:
                     text:
                         default:
-                            downloaddir: uploads
-                            exportdir: uploads
+                            downloaddir: /uploads
+                            exportdir: /uploads
             catalog:
                 import:
                     text:
                         default:
-                            uploaddir: uploads
+                            uploaddir: /uploads
                             fileperms: 0660
                 export:
                     text:
                         default:
-                            downloaddir: uploads
-                            exportdir: uploads
+                            downloaddir: /uploads
+                            exportdir: /uploads
             media:
                 default:
                     # Base directory to the document root of the website
@@ -104,7 +107,7 @@ aimeos_shop:
                     # Upload related settings
                     upload:
                         # Media directory where the uploaded files will be stored, must be relative to the path in "basedir"
-                        directory: uploads
+                        directory: /uploads
                         # Directory permissions (in octal notation) which are applied to newly created directories
                         # dirperms: 0775
                         # File permissions (in octal notation) which are applied to newly created files
@@ -155,13 +158,13 @@ aimeos_shop:
                 import:
                     text:
                         default:
-                            uploaddir: uploads
+                            uploaddir: /uploads
                             fileperms: 0660
                 export:
                     text:
                         default:
-                            downloaddir: uploads
-                            exportdir: uploads
+                            downloaddir: /uploads
+                            exportdir: /uploads
 
     i18n:
 
