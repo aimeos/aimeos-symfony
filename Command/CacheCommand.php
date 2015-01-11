@@ -27,8 +27,6 @@ class CacheCommand extends Command
 		$this->setName( 'aimeos:cache' );
 		$this->setDescription( 'Clears the content cache' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to clear the cache like "default unittest" (none for all)' );
-		$this->addOption( 'extdir', null, InputOption::VALUE_OPTIONAL, 'Directory containing additional Aimeos extensions' );
-		$this->addOption( 'config', null, InputOption::VALUE_OPTIONAL, 'Directory containing additional configuration' );
 	}
 
 
@@ -40,20 +38,11 @@ class CacheCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$extDir = $input->getOption( 'extdir' );
-		$arcavias = new \Arcavias( ( $extDir ? (array) $extDir : array() ) );
+		$cm = $this->getContainer()->get( 'aimeos_context' );
 
-		$adapter = $this->getContainer()->getParameter( 'database_driver' );
-		$adapter = str_replace( 'pdo_', '', $adapter );
+		$context = $cm->getContext( false );
+		$context->setEditor( 'aimeos:cache' );
 
-		$i18nPaths = $arcavias->getI18nPaths();
-		$configPaths = $arcavias->getConfigPaths( $adapter );
-
-		if( ( $confPath = $input->getOption( 'config' ) ) !== null ) {
-			$configPaths[] = $confPath;
-		}
-
-		$context = $this->getContext( $configPaths, $i18nPaths );
 		$localeManager = \MShop_Factory::createManager( $context, 'locale' );
 
 		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
@@ -63,28 +52,10 @@ class CacheCommand extends Command
 			$lcontext = clone $context;
 			$lcontext->setLocale( $localeItem );
 
+			$cache = new \MAdmin_Cache_Proxy_Default( $lcontext );
+			$lcontext->setCache( $cache );
+
 			\MAdmin_Cache_Manager_Factory::createManager( $lcontext )->getCache()->flush();
 		}
-	}
-
-
-	/**
-	 * Returns the enabled site items which may be limited by the input arguments.
-	 *
-	 * @param \MShop_Context_Item_Interface $context Context item object
-	 * @param InputInterface $input Input object
-	 * @return \MShop_Locale_Item_Site_Interface[] List of site items
-	 */
-	protected function getSiteItems( \MShop_Context_Item_Interface $context, InputInterface $input )
-	{
-		$manager = \MShop_Factory::createManager( $context, 'locale/site' );
-		$search = $manager->createSearch();
-		$expr = array();
-
-		if( ( $codes = $input->getArgument( 'site' ) ) != null ) {
-			$search->setConditions( $search->compare( '==', 'locale.site.code', explode( ' ', $codes ) ) );
-		}
-
-		return $manager->searchItems( $search );
 	}
 }

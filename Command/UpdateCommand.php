@@ -27,8 +27,6 @@ class UpdateCommand extends Command
 		$this->setName( 'aimeos:update');
 		$this->setDescription( 'Performs the database initialization and update' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site for updating database entries', 'default' );
-		$this->addOption( 'extdir', null, InputOption::VALUE_OPTIONAL, 'Directory containing additional Aimeos extensions' );
-		$this->addOption( 'config', null, InputOption::VALUE_OPTIONAL, 'Directory containing configuration' );
 		$this->addOption( 'option', null, InputOption::VALUE_OPTIONAL, 'Optional config settings', array() );
 	}
 
@@ -41,24 +39,19 @@ class UpdateCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$extDir = $input->getOption( 'extdir' );
-		$arcavias = new \Arcavias( ( $extDir ? (array) $extDir : array() ) );
+		$cm = $this->getContainer()->get( 'aimeos_context' );
 
-		$i18nPaths = $arcavias->getI18nPaths();
-		$configPaths = $arcavias->getConfigPaths( 'mysql' );
+		$ctx = $cm->getContext( false );
+		$ctx->setEditor( 'aimeos:update' );
 
-		if( ( $confPath = $input->getOption( 'config' ) ) !== null ) {
-			$configPaths[] = $confPath;
-		}
-
-		$ctx = $this->getContext( $configPaths, $i18nPaths );
 		$config = $ctx->getConfig();
+		$site = $input->getArgument( 'site' );
 
-		$config->set( 'setup/site', $input->getArgument( 'site' ) );
+		$config->set( 'setup/site', $site );
 		$dbconfig = $this->getDbConfig( $config );
 		$this->setOptions( $config, $input );
 
-		$taskPaths = $arcavias->getSetupPaths( $input->getArgument( 'site' ) );
+		$taskPaths = $cm->getArcavias()->getSetupPaths( $site );
 
 		$includePaths = $taskPaths;
 		$includePaths[] = get_include_path();
@@ -69,19 +62,6 @@ class UpdateCommand extends Command
 
 		$manager = new \MW_Setup_Manager_Multiple( $ctx->getDatabaseManager(), $dbconfig, $taskPaths, $ctx );
 		$manager->run( 'mysql' );
-	}
-
-
-	/**
-	 * Returns the list of translation objects for the available languages.
-	 *
-	 * @param  \MShop_Context_Item_Interface $context Context object
-	 * @param array $i18nPaths List of file system directories containing translation files
-	 * @return \MW_Translation_Interface[] List of translation objects
-	 */
-	protected function createI18n( \MShop_Context_Item_Interface $context, array $i18nPaths )
-	{
-		return array();
 	}
 
 

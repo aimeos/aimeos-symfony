@@ -26,12 +26,8 @@ class JobsCommand extends Command
 	{
 		$names = '';
 		$arcavias = new \Arcavias( array() );
-
-		$i18nPaths = $arcavias->getI18nPaths();
-		$configPaths = $arcavias->getConfigPaths( 'mysql' );
 		$cntlPaths = $arcavias->getCustomPaths( 'controller/jobs' );
-		$context = $this->getContext( $configPaths, $i18nPaths, true );
-		$controllers = \Controller_Jobs_Factory::getControllers( $context, $arcavias, $cntlPaths );
+		$controllers = \Controller_Jobs_Factory::getControllers( $this->getContext(), $arcavias, $cntlPaths );
 
 		foreach( $controllers as $key => $controller ) {
 			$names .= str_pad( $key, 30 ) . $controller->getName() . PHP_EOL;
@@ -41,8 +37,6 @@ class JobsCommand extends Command
 		$this->setDescription( 'Executes the job controllers' );
 		$this->addArgument( 'jobs', InputArgument::REQUIRED, 'One or more job controller names like "admin/job customer/email/watch"' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to execute the jobs for like "default unittest" (none for all)' );
-		$this->addOption( 'extdir', null, InputOption::VALUE_OPTIONAL, 'Directory containing additional Aimeos extensions' );
-		$this->addOption( 'config', null, InputOption::VALUE_OPTIONAL, 'Directory containing additional configuration' );
 		$this->setHelp( "Available jobs are:\n" . $names );
 	}
 
@@ -55,21 +49,13 @@ class JobsCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$extDir = $input->getOption( 'extdir' );
-		$arcavias = new \Arcavias( ( $extDir ? (array) $extDir : array() ) );
+		$cm = $this->getContainer()->get( 'aimeos_context' );
 
-		$adapter = $this->getContainer()->getParameter( 'database_driver' );
-		$adapter = str_replace( 'pdo_', '', $adapter );
+		$context = $cm->getContext( false );
+		$context->setEditor( 'aimeos:jobs' );
 
-		$i18nPaths = $arcavias->getI18nPaths();
-		$configPaths = $arcavias->getConfigPaths( $adapter );
-
-		if( ( $confPath = $input->getOption( 'config' ) ) !== null ) {
-			$configPaths[] = $confPath;
-		}
-
+		$arcavias = $cm->getArcavias();
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
-		$context = $this->getContext( $configPaths, $i18nPaths );
 		$localeManager = \MShop_Factory::createManager( $context, 'locale' );
 
 		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
@@ -81,35 +67,35 @@ class JobsCommand extends Command
 			$lcontext = clone $context;
 			$lcontext->setLocale( $localeItem );
 
-			foreach( $jobs as $jobname )
-			{
-				$cntl = \Controller_Jobs_Factory::createController( $lcontext, $arcavias, $jobname );
-				$cntl->run();
+			$cache = new \MAdmin_Cache_Proxy_Default( $lcontext );
+			$lcontext->setCache( $cache );
+
+			foreach( $jobs as $jobname ) {
+				\Controller_Jobs_Factory::createController( $lcontext, $arcavias, $jobname )->run();
 			}
 		}
 	}
 
 
 	/**
-	 * Returns the enabled site items which may be limited by the input arguments.
+	 * Returns a bare context object
 	 *
-	 * @param \MShop_Context_Item_Interface $context Context item object
-	 * @param InputInterface $input Input object
-	 * @return \MShop_Locale_Item_Site_Interface[] List of site items
+	 * @return \MShop_Context_Item_Default Context object containing only the most necessary dependencies
 	 */
-	protected function getSiteItems( \MShop_Context_Item_Interface $context, InputInterface $input )
+	protected function getContext()
 	{
-		$manager = \MShop_Factory::createManager( $context, 'locale/site' );
-		$search = $manager->createSearch( true );
-		$expr = array();
+		$ctx = new \MShop_Context_Item_Default();
 
-		if( ( $codes = $input->getArgument( 'site' ) ) != null ) {
-			$expr[] = $search->compare( '==', 'locale.site.code', explode( ' ', $codes ) );
-		}
+		$conf = new \MW_Config_Array( array(), array() );
+		$ctx->setConfig( $conf );
 
-		$expr[] = $search->getConditions();
-		$search->setConditions( $search->combine( '&&', $expr ) );
+		$locale = \MShop_Locale_Manager_Factory::createManager( $ctx )->createItem();
+		$locale->setLanguageId( 'en' );
+		$ctx->setLocale( $locale );
 
-		return $manager->searchItems( $search );
+		$i18n = new \MW_Translation_Zend2( array(), 'gettext', 'en', array( 'disableNotices' => true ) );
+		$ctx->setI18n( array( 'en' => $i18n ) );
+
+		return $ctx;
 	}
 }

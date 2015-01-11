@@ -9,6 +9,8 @@
 namespace Aimeos\ShopBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputInterface;
+
 
 
 /**
@@ -17,119 +19,21 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 abstract class Command extends ContainerAwareCommand
 {
 	/**
-	 * Returns the list of translation objects for the available languages.
+	 * Returns the enabled site items which may be limited by the input arguments.
 	 *
-	 * @param  \MShop_Context_Item_Interface $context Context object
-	 * @param array $i18nPaths List of file system directories containing translation files
-	 * @return \MW_Translation_Interface[] List of translation objects
+	 * @param \MShop_Context_Item_Interface $context Context item object
+	 * @param InputInterface $input Input object
+	 * @return \MShop_Locale_Item_Site_Interface[] List of site items
 	 */
-	protected function createI18n( \MShop_Context_Item_Interface $context, array $i18nPaths )
+	protected function getSiteItems( \MShop_Context_Item_Interface $context, InputInterface $input )
 	{
-		$i18nList = array();
-		$langManager = \MShop_Factory::createManager( $context, 'locale/language' );
+		$manager = \MShop_Factory::createManager( $context, 'locale/site' );
+		$search = $manager->createSearch();
 
-		foreach( $langManager->searchItems( $langManager->createSearch( true ) ) as $id => $langItem )
-		{
-			$i18n = new \MW_Translation_Zend2( $i18nPaths, 'gettext', $id, array( 'disableNotices' => true ) );
-			$i18n = new \MW_Translation_Decorator_Memory( $i18n );
-			$i18nList[$id] = $i18n;
+		if( ( $codes = $input->getArgument( 'site' ) ) != null ) {
+			$search->setConditions( $search->compare( '==', 'locale.site.code', explode( ' ', $codes ) ) );
 		}
 
-		return $i18nList;
-	}
-
-
-	/**
-	 * Creates the view object for the HTML clients.
-	 *
-	 * @param \MW_Config_Interface $config Config object
-	 * @return \MW_View_Interface View object
-	 */
-	protected function createView( \MW_Config_Interface $config )
-	{
-		$view = new \MW_View_Default();
-
-		$sepDec = $config->get( 'client/html/common/format/seperatorDecimal', '.' );
-		$sep1000 = $config->get( 'client/html/common/format/seperator1000', ' ' );
-
-		$helper = new \MW_View_Helper_Number_Default( $view, $sepDec, $sep1000 );
-		$view->addHelper( 'number', $helper );
-
-		$helper = new \MW_View_Helper_Config_Default( $view, $config );
-		$view->addHelper( 'config', $helper );
-
-		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->getContainer()->get( 'router' ), array() );
-		$view->addHelper( 'url', $helper );
-
-		$helper = new \MW_View_Helper_Encoder_Default( $view );
-		$view->addHelper( 'encoder', $helper );
-
-		return $view;
-	}
-
-
-	/**
-	 * Returns a new context object.
-	 *
-	 * @param array List of file system paths to the configuration directories
-	 * @param array List of file system paths to the translation directories
-	 * @param boolean $bare Create only a context object with absolutely necessary objects
-	 * @return \MShop_Context_Item_Interface Context object
-	 */
-	protected function getContext( array $configPaths, array $i18nPaths, $bare = false )
-	{
-		$context = new \MShop_Context_Item_Default();
-		$config = new \MW_Config_Array( array(), $configPaths );
-
-		if( $bare === false )
-		{
-			$container = $this->getContainer();
-
-			$local = array(
-				'classes' => $container->getParameter( 'aimeos_shop.classes' ),
-				'client' => $container->getParameter( 'aimeos_shop.client' ),
-				'controller' => $container->getParameter( 'aimeos_shop.controller' ),
-				'madmin' => $container->getParameter( 'aimeos_shop.madmin' ),
-				'mshop' => $container->getParameter( 'aimeos_shop.mshop' ),
-				'resource' => $container->getParameter( 'aimeos_shop.resource' ),
-			);
-
-			$config = new \MW_Config_Decorator_Memory( $config, $local );
-			$context->setConfig( $config );
-
-			$dbm = new \MW_DB_Manager_PDO( $config );
-			$context->setDatabaseManager( $dbm );
-
-			$mail = new \MW_Mail_Swift( $this->getContainer()->get( 'swiftmailer.mailer' ) );
-			$context->setMail( $mail );
-
-			$logger = new \MAdmin_Log_Manager_Default( $context );
-			$context->setLogger( $logger );
-
-			$cache = new \MW_Cache_None();
-			$context->setCache( $cache );
-
-			$session = new \MW_Session_None();
-			$context->setSession( $session );
-
-			$context->setView( $this->createView( $config ) );
-			$context->setI18n( $this->createI18n( $context, $i18nPaths ) );
-		}
-		else
-		{
-			$context->setConfig( $config );
-			$i18n = array( 'en' => new \MW_Translation_Zend2( $i18nPaths, 'gettext', 'en', array( 'disableNotices' => true ) ) );
-
-			$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
-			$localeItem = $localeManager->createItem();
-			$localeItem->setLanguageId( 'en' );
-
-			$context->setLocale( $localeItem );
-			$context->setI18n( $i18n );
-		}
-
-		$context->setEditor( 'jobs' );
-
-		return $context;
+		return $manager->searchItems( $search );
 	}
 }
