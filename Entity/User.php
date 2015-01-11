@@ -40,7 +40,7 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(name="status", type="integer")
      */
-    private $isActive = true;
+    private $isActive;
 
 
     /**
@@ -118,6 +118,6 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
-        ) = unserialize($serialized);
+        ) = unserialize( $serialized );
     }
 }
