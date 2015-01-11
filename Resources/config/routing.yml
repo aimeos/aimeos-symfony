@@ -7,7 +7,7 @@ aimeos_shop_admin:
     defaults: { _controller: AimeosShopBundle:Admin:index, site: default, locale: en, tab: 0 }
 
 aimeos_shop_account:
-    path: /my-account
+    path: /myaccount
     defaults: { _controller: AimeosShopBundle:Page:account }
 
 aimeos_shop_basket:
