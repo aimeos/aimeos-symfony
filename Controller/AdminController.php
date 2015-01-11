@@ -55,6 +55,10 @@ class AdminController extends AbstractController
 			}
 		}
 
+		$params = array( 'site' => '{site}', 'lang' => '{lang}', 'tab' => '{tab}' );
+		$adminUrl = $this->generateUrl( 'aimeos_shop_admin', $params );
+		$jsonUrl = $this->generateUrl( 'aimeos_shop_admin_json' );
+
 		$vars = array(
 			'lang' => $locale,
 			'jsFiles' => $jsFiles,
@@ -65,8 +69,8 @@ class AdminController extends AbstractController
 			'i18nContent' => $this->getJsonClientI18n( $arcavias->getI18nPaths(), $locale ),
 			'searchSchemas' => $controller->getJsonSearchSchemas(),
 			'itemSchemas' => $controller->getJsonItemSchemas(),
-			'smd' => $controller->getJsonSmd( '/admin/do' ),
-			'urlTemplate' => '/admin/{site}/{locale}/{tab}',
+			'smd' => $controller->getJsonSmd( $jsonUrl ),
+			'urlTemplate' => urldecode( $adminUrl ),
 			'uploaddir' => $this->getUploadDir(),
 			'activeTab' => $tab,
 		);
