@@ -55,8 +55,33 @@ class ScriptHandler
 			throw new \RuntimeException( sprintf( $msg, 'symfony-app-dir', $options['symfony-app-dir'] ) );
 		}
 
+		if( !isset( $options['symfony-web-dir'] ) || !is_dir( $options['symfony-web-dir'] ) )
+		{
+			$msg = 'An error occurred because the "%1$s" option or the "%2$s" directory isn\'t available';
+			throw new \RuntimeException( sprintf( $msg, 'symfony-web-dir', $options['symfony-web-dir'] ) );
+		}
+
 		self::updateConfigFile( $options['symfony-app-dir'] . '/config/config.yml' );
 		self::updateRoutingFile( $options['symfony-app-dir'] . '/config/routing.yml' );
+		self::createDirectory( $options['symfony-web-dir'] . '/uploads' );
+	}
+
+
+	/**
+	 * Creates a new directory if it doesn't exist yet
+	 *
+	 * @param string $dir Absolute path of the new directory
+	 * @throws \RuntimeException If directory couldn't be created
+	 */
+	protected static function createDirectory( $dir )
+	{
+		$perm = 0755;
+
+		if( !is_dir( $dir ) && !mkdir( $dir, $perm, true ) )
+		{
+			$msg = 'Unable to create directory "%1$s" with permission "%2$s"';
+			throw new \RuntimeException( sprintf( $msg, $dir, $perm ) );
+		}
 	}
 
 
