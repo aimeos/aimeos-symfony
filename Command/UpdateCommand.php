@@ -27,7 +27,7 @@ class UpdateCommand extends Command
 		$this->setName( 'aimeos:update');
 		$this->setDescription( 'Performs the database initialization and update' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site for updating database entries', 'default' );
-		$this->addOption( 'option', null, InputOption::VALUE_OPTIONAL, 'Optional config settings', array() );
+		$this->addOption( 'option', null, InputOption::VALUE_REQUIRED, 'Optional setup configuration, name and value are separated by ":" like "setup/default/demo:1"', array() );
 	}
 
 
