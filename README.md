@@ -5,17 +5,7 @@ Aimeos Symfony2 bundle
 
 ## Installation
 
-The Aimeos Symfony2 web shop bundle is a composer based library that can be installed easiest by using [Composer](https://getcomposer.org). Insert the line ```"aimeos/aimeos-symfony2": "dev-master"``` at the end of the existing "require" section of your composer.json:
-
-```
-    "require": {
-        ...,
-        "aimeos/aimeos-symfony2": "dev-master"
-    },
-```
-
-Don't forget to add a comma at the end of the previous line!
-Then, the main bundle class must be known by the `registerBundles()` method in the `app/AppKernel.php` file:
+The Aimeos Symfony2 web shop bundle is a composer based library that can be installed easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the composer post install/update scripts won't fail:
 
 ```
     $bundles = array(
