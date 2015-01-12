@@ -27,8 +27,6 @@ class ScriptHandler
 	 */
 	public static function updateDatabase( CommandEvent $event )
 	{
-		$options = array( '--extdir=./ext/' );
-
 		if( $event->isDevMode() ) {
 			$options[] = '--option=setup/default/demo:1';
 		}
