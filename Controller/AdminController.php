@@ -111,7 +111,7 @@ class AdminController extends AbstractController
 		$paths = $this->get( 'aimeos_context' )->getArcavias()->getI18nPaths();
 		$langs = array();
 
-		if( isset( $paths['client/extjs'] ) ) {
+		if( !isset( $paths['client/extjs'] ) ) {
 			return json_encode( array() );
 		}
 
@@ -121,8 +121,10 @@ class AdminController extends AbstractController
 
 			foreach( $iter as $file )
 			{
-				if( preg_match('/^[a-z]{2,3}(_[A-Z]{2})?$/', $file ) ) {
-					$langs[$file] = null;
+				$name = $file->getFilename();
+
+				if( preg_match('/^[a-z]{2,3}(_[A-Z]{2})?$/', $name ) ) {
+					$langs[$name] = null;
 				}
 			}
 		}
