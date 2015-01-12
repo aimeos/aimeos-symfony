@@ -147,7 +147,7 @@ class PageControllerTest extends WebTestCase
 		$count = $products->count();
 
 		$this->assertGreaterThan( 2, $count );
-		$this->assertEquals( 1, $products->eq( $count - 2 )->filter( '.value:contains("18.00 €")' )->count() );
+		$this->assertEquals( 1, $products->eq( $count - 2 )->filter( '.value:contains("580.00 €")' )->count() );
 		$this->assertEquals( 1, $products->eq( $count - 1 )->filter( '.value:contains("600.00 €")' )->count() );
 
 		$link = $crawler->filter( '.catalog-list-pagination .option-price' )->link();
@@ -155,7 +155,7 @@ class PageControllerTest extends WebTestCase
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
 		$this->assertEquals( 1, $products->eq( 0 )->filter( '.value:contains("600.00 €")' )->count() );
-		$this->assertEquals( 1, $products->eq( 1 )->filter( '.value:contains("18.00 €")' )->count() );
+		$this->assertEquals( 1, $products->eq( 1 )->filter( '.value:contains("580.00 €")' )->count() );
 	}
 
 
