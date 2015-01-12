@@ -288,7 +288,7 @@ class ContextManager
 			$site = $attr->get( 'site', 'default' );
 			$lang = $attr->get( 'locale', 'en' );
 
-			$localeManager = \MShop_Locale_Manager_Factory::createManager( $this->context );
+			$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
 			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, false );
 		}
 
