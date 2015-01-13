@@ -62,9 +62,9 @@ To see all components and get everything working, you also need to adapt your Tw
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 {% block header %}{% endblock %}
+        <title>{% block title %}Aimeos shop{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-        <title>{% block title %}Aimeos shop{% endblock %}</title>
 {% block stylesheets %}{% endblock %}
     </head>
     <body>
@@ -87,8 +87,10 @@ To see all components and get everything working, you also need to adapt your Tw
             {% block body %}{% endblock %}
             {% block aside %}{% endblock %}
         </div>
-{% block javascripts %}{% endblock %}
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+{% block javascripts %}{% endblock %}
     </body>
 </html>
 ```
