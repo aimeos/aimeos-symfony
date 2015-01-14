@@ -13,8 +13,8 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
-		$crawler = $client->request( 'GET', '/admin' );
-
+		$crawler = $client->request( 'GET', '/admin/unittest/de/0' );
+		
 		$this->assertEquals( 1, $crawler->filter( 'head:contains("/admin/{site}/{lang}/{tab}")' )->count() );
 		$this->assertEquals( 1, $crawler->filter( 'body:contains("You need to enable javascript!")' )->count() );
 	}
