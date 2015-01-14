@@ -28,7 +28,7 @@ class AimeosShopExtension extends Extension
 	{
 		$configuration = new Configuration();
 		$config = $this->processConfiguration( $configuration, $configs );
-		
+
 		foreach( $configs as $list ) {
 			$this->merge( $config, $list );
 		}

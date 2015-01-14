@@ -117,13 +117,7 @@ class ContextManager
 	{
 		if( $this->arcavias === null )
 		{
-			$dir = $this->container->getParameter( 'kernel.root_dir' );
-			$extDirs = array( dirname( $dir ) . '/ext' );
-
-			if( $this->container->hasParameter( 'aimeos_shop.extdir' ) ) {
-				$extDirs = array( $this->container->getParameter( 'aimeos_shop.extdir' ) );
-			}
-
+			$extDirs = (array) $this->container->getParameter( 'aimeos_shop.extdir' );
 			$this->arcavias = new \Arcavias( $extDirs, false );
 		}
 

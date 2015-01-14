@@ -31,6 +31,7 @@ class Configuration implements ConfigurationInterface
 			->children()
 				->booleanNode('apc_enable')->defaultValue( true )->end()
 				->scalarNode('apc_prefix')->defaultValue( 'shop:' )->end()
+				->scalarNode('extdir')->defaultValue( '%kernel.root_dir%/../ext' )->end()
 				->variableNode('classes')->defaultValue( array() )->end()
 				->variableNode('client')->defaultValue( array() )->end()
 				->variableNode('controller')->defaultValue( array() )->end()
