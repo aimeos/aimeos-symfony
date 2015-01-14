@@ -1,5 +1,5 @@
-language: php
 sudo: false
+language: php
 
 php:
   - 5.3
@@ -19,7 +19,10 @@ before_script:
   - composer require "symfony/symfony:${SYMFONY_VERSION}" --no-update
   - composer install --dev
 
-script: phpunit
+script: phpunit --coverage-clover coverage.xml
+
+after_script:
+  - php vendor/bin/coveralls
 
 matrix:
   fast_finish: true

@@ -15,6 +15,10 @@
 		{
 			"type": "vcs",
 			"url": "https://github.com/aimeos/arcavias-core"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/aimeos/php-coveralls.git"
 		}
 	],
 	"prefer-stable": true,
@@ -30,6 +34,7 @@
 		"symfony/symfony": ">=2.4"
 	},
 	"require-dev": {
+		"satooshi/php-coveralls": "dev-master",
 		"doctrine/orm": "~2.2,>=2.2.3",
 		"doctrine/doctrine-bundle": "~1.2",
 		"symfony/monolog-bundle": "~2.3",

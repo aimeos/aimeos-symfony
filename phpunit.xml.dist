@@ -27,13 +27,12 @@
 
 	<filter>
 		<whitelist>
-			<directory>./</directory>
+			<directory suffix=".php">./</directory>
 			<exclude>
 				<directory>./Tests/</directory>
 				<directory>./Resources/</directory>
-				<directory>./DependencyInjection/</directory>
 				<directory>./vendor/</directory>
-				<directory>./coverage/</directory>
+				<directory>./ext/</directory>
 			</exclude>
 		</whitelist>
 	</filter>
