@@ -1,6 +1,6 @@
 aimeos_shop:
     resource: "@AimeosShopBundle/Resources/config/routing.yml"
-    prefix:   /{site}/{locale}
+    prefix:   /{site}/{locale}/{currency}
 
 aimeos_shop_admin_json:
     path: /admin/do

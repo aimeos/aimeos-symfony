@@ -46,3 +46,11 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+
+aimeos_shop:
+    resource:
+        nosql: test
+    i18n:
+        en:
+            "client/html":
+                "Attributes": ["Filter"]

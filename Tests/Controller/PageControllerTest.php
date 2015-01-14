@@ -10,7 +10,7 @@ class PageControllerTest extends WebTestCase
 	public function testCatalogFilterSearch()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-filter-search' )->count() );
 
@@ -27,7 +27,7 @@ class PageControllerTest extends WebTestCase
  	public function testCatalogFilterTree()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-filter-tree' )->count() );
 
@@ -48,7 +48,7 @@ class PageControllerTest extends WebTestCase
 	public function testCatalogFilterAttribute()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-filter-attribute' )->count() );
 
@@ -67,7 +67,7 @@ class PageControllerTest extends WebTestCase
 	public function testCatalogStageBreadcrumb()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
@@ -86,7 +86,7 @@ class PageControllerTest extends WebTestCase
 	public function testCatalogStageNavigator()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-pagination .option-name' )->link();
 		$crawler = $client->click( $link );
@@ -114,7 +114,7 @@ class PageControllerTest extends WebTestCase
 	public function testCatalogListSortationName()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-pagination .option-name' )->link();
 		$crawler = $client->click( $link );
@@ -138,7 +138,7 @@ class PageControllerTest extends WebTestCase
 	public function testCatalogListSortationPrice()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-pagination .option-price' )->link();
 		$crawler = $client->click( $link );
@@ -147,7 +147,7 @@ class PageControllerTest extends WebTestCase
 		$count = $products->count();
 
 		$this->assertGreaterThan( 2, $count );
-		$this->assertEquals( 1, $products->eq( $count - 2 )->filter( '.value:contains("580.00 €")' )->count() );
+		$this->assertEquals( 1, $products->eq( $count - 2 )->filter( '.value:contains("600.00 €")' )->count() );
 		$this->assertEquals( 1, $products->eq( $count - 1 )->filter( '.value:contains("600.00 €")' )->count() );
 
 		$link = $crawler->filter( '.catalog-list-pagination .option-price' )->link();
@@ -155,14 +155,14 @@ class PageControllerTest extends WebTestCase
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
 		$this->assertEquals( 1, $products->eq( 0 )->filter( '.value:contains("600.00 €")' )->count() );
-		$this->assertEquals( 1, $products->eq( 1 )->filter( '.value:contains("580.00 €")' )->count() );
+		$this->assertEquals( 1, $products->eq( 1 )->filter( '.value:contains("600.00 €")' )->count() );
 	}
 
 
 	public function testCatalogDetailPinned()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
@@ -177,7 +177,7 @@ class PageControllerTest extends WebTestCase
 	public function testCatalogDetailLastSeen()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
@@ -189,7 +189,7 @@ class PageControllerTest extends WebTestCase
 	public function testBasketStandardAdd()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
@@ -206,7 +206,7 @@ class PageControllerTest extends WebTestCase
 	public function testBasketStandardAddQuantity()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
@@ -224,7 +224,7 @@ class PageControllerTest extends WebTestCase
 	public function testBasketStandardAddTwice()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
@@ -250,7 +250,7 @@ class PageControllerTest extends WebTestCase
 	public function testBasketStandardDelete()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
@@ -269,7 +269,7 @@ class PageControllerTest extends WebTestCase
 	public function testBasketStandardEdit()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
@@ -294,7 +294,7 @@ class PageControllerTest extends WebTestCase
 	public function testBasketStandardUpdate()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
@@ -314,7 +314,7 @@ class PageControllerTest extends WebTestCase
 	public function testBasketStandardCoupon()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
@@ -340,7 +340,7 @@ class PageControllerTest extends WebTestCase
 	public function testBasketStandardRelated()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
@@ -355,7 +355,7 @@ class PageControllerTest extends WebTestCase
 	public function testBasketStandardBack()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
@@ -376,7 +376,7 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
@@ -587,7 +587,7 @@ class PageControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
@@ -641,7 +641,7 @@ class PageControllerTest extends WebTestCase
 	 */
 	protected function _goToSummary( $client )
 	{
-		$crawler = $client->request( 'GET', '/unittest/de/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
