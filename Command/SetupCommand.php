@@ -17,14 +17,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Performs the database initialization and update.
  */
-class UpdateCommand extends Command
+class SetupCommand extends Command
 {
 	/**
 	 * Configures the command name and description.
 	 */
 	protected function configure()
 	{
-		$this->setName( 'aimeos:update');
+		$this->setName( 'aimeos:setup');
 		$this->setDescription( 'Performs the database initialization and update' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site for updating database entries', 'default' );
 		$this->addOption( 'option', null, InputOption::VALUE_REQUIRED, 'Optional setup configuration, name and value are separated by ":" like "setup/default/demo:1"', array() );
@@ -42,7 +42,7 @@ class UpdateCommand extends Command
 		$cm = $this->getContainer()->get( 'aimeos_context' );
 
 		$ctx = $cm->getContext( false );
-		$ctx->setEditor( 'aimeos:update' );
+		$ctx->setEditor( 'aimeos:setup' );
 
 		$config = $ctx->getConfig();
 		$site = $input->getArgument( 'site' );
@@ -98,13 +98,8 @@ class UpdateCommand extends Command
 	{
 		foreach( (array) $input->getOption( 'option' ) as $option )
 		{
-			$parts = explode( ':', $option );
-
-			if( count( $parts ) !== 2 ) {
-				throw new \RuntimeException( sprintf( 'Invalid option format "%1$s"', $option ) );
-			}
-
-			$conf->set( $parts[0], $parts[1] );
+			list( $name, $value ) = explode( ':', $option );
+			$conf->set( $name, $value );
 		}
 	}
 }

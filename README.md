@@ -30,12 +30,12 @@ Make sure that the database is set up and it is configured in your config.yml. T
     "scripts": {
         "post-install-cmd": [
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::installBundle",
-            "Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateDatabase",
+            "Aimeos\\ShopBundle\\Composer\\ScriptHandler::setupDatabase",
             ...
         ],
         "post-update-cmd": [
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::installBundle",
-            "Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateDatabase",
+            "Aimeos\\ShopBundle\\Composer\\ScriptHandler::setupDatabase",
             ...
         ]
     }

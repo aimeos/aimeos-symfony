@@ -20,18 +20,18 @@ use Composer\Script\CommandEvent;
 class ScriptHandler
 {
 	/**
-	 * Updates the shop database.
+	 * Sets up the shop database.
 	 *
 	 * @param CommandEvent $event CommandEvent instance
 	 * @throws \RuntimeException If an error occured
 	 */
-	public static function updateDatabase( CommandEvent $event )
+	public static function setupDatabase( CommandEvent $event )
 	{
 		if( $event->isDevMode() ) {
 			$options[] = '--option=setup/default/demo:1';
 		}
 
-		self::executeCommand( $event, 'aimeos:update', $options );
+		self::executeCommand( $event, 'aimeos:setup', $options );
 	}
 
 

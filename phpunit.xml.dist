@@ -16,7 +16,7 @@
 
 	<testsuites>
 		<testsuite name="command">
-			<file>./Tests/Command/UpdateCommandTest.php</file>
+			<file>./Tests/Command/SetupCommandTest.php</file>
 			<file>./Tests/Command/CacheCommandTest.php</file>
 			<file>./Tests/Command/JobsCommandTest.php</file>
 		</testsuite>
