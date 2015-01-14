@@ -27,11 +27,11 @@ class AdminController extends AbstractController
 	 * @param integer $tab Number of the currently active tab
 	 * @return \Symfony\Component\HttpFoundation\Response HTML page for the admin interface
 	 */
-	public function indexAction( $site, $locale, $tab )
+	public function indexAction( $site, $lang, $tab )
 	{
 		$cm = $this->get( 'aimeos_context' );
 		$context = $cm->getContext( false );
-		$context = $this->setLocale( $context, $locale );
+		$context = $this->setLocale( $context, $lang );
 
 		$arcavias = $cm->getArcavias();
 		$cntlPaths = $arcavias->getCustomPaths( 'controller/extjs' );
@@ -60,13 +60,13 @@ class AdminController extends AbstractController
 		$jsonUrl = $this->generateUrl( 'aimeos_shop_admin_json' );
 
 		$vars = array(
-			'lang' => $locale,
+			'lang' => $lang,
 			'jsFiles' => $jsFiles,
 			'cssFiles' => $cssFiles,
 			'languages' => $this->getJsonLanguages( $context),
 			'config' => $this->getJsonClientConfig( $context ),
 			'site' => $this->getJsonSiteItem( $context, $site ),
-			'i18nContent' => $this->getJsonClientI18n( $arcavias->getI18nPaths(), $locale ),
+			'i18nContent' => $this->getJsonClientI18n( $arcavias->getI18nPaths(), $lang ),
 			'searchSchemas' => $controller->getJsonSearchSchemas(),
 			'itemSchemas' => $controller->getJsonItemSchemas(),
 			'smd' => $controller->getJsonSmd( $jsonUrl ),
