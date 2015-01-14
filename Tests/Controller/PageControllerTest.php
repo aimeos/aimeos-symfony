@@ -7,6 +7,19 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class PageControllerTest extends WebTestCase
 {
+	public function testAdmin()
+	{
+		$client = static::createClient(array(), array(
+			'PHP_AUTH_USER' => 'admin',
+			'PHP_AUTH_PW'   => 'adminpass',
+		) );
+		$crawler = $client->request( 'GET', '/admin' );
+
+		$this->assertEquals( 1, $crawler->filter( 'head:contains("/admin/{site}/{lang}/{tab}")' )->count() );
+		$this->assertEquals( 1, $crawler->filter( 'body:contains("You need to enable javascript!")' )->count() );
+	}
+
+
 	public function testCatalogFilterSearch()
 	{
 		$client = static::createClient();
@@ -630,6 +643,24 @@ class PageControllerTest extends WebTestCase
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-confirm' )->count() );
+	}
+
+
+	public function testTerms()
+	{
+		$client = static::createClient();
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/terms' );
+
+		$this->assertEquals( 1, $crawler->filter( 'body:contains("Terms")' )->count() );
+	}
+
+
+	public function testPrivacy()
+	{
+		$client = static::createClient();
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/privacy' );
+
+		$this->assertEquals( 1, $crawler->filter( 'body:contains("Privacy")' )->count() );
 	}
 
 
