@@ -666,7 +666,7 @@ class PageControllerTest extends WebTestCase
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/myaccount' );
 
-		$this->assertEquals( 'aimeos account-history', $client->getResponse()->getContent() );
+		$this->assertContains( 'aimeos account-history', $client->getResponse()->getContent() );
 	}
 
 
