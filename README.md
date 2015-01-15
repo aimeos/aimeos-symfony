@@ -1,6 +1,7 @@
 Aimeos Symfony2 bundle
 ======================
 [![Build Status](https://travis-ci.org/aimeos/aimeos-symfony2.svg?branch=master)](https://travis-ci.org/aimeos/aimeos-symfony2)
+[![Coverage Status](https://coveralls.io/repos/aimeos/aimeos-symfony2/badge.svg?branch=master)](https://coveralls.io/r/aimeos/aimeos-symfony2?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/?branch=master)
 
 ## Installation
