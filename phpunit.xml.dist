@@ -29,6 +29,7 @@
 		<whitelist>
 			<directory suffix=".php">./</directory>
 			<exclude>
+				<directory>./Composer/</directory>
 				<directory>./Tests/</directory>
 				<directory>./Resources/</directory>
 				<directory>./vendor/</directory>

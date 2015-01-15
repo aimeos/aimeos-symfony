@@ -71,7 +71,7 @@ class AdminController extends AbstractController
 			'itemSchemas' => $controller->getJsonItemSchemas(),
 			'smd' => $controller->getJsonSmd( $jsonUrl ),
 			'urlTemplate' => urldecode( $adminUrl ),
-			'uploaddir' => $this->getUploadDir(),
+			'uploaddir' => $this->container->getParameter( 'aimeos_shop.uploaddir' ),
 			'activeTab' => $tab,
 		);
 
@@ -106,7 +106,7 @@ class AdminController extends AbstractController
 	 * @param \MShop_Context_Item_Interface $context Context object
 	 * @return array List of language IDs with labels
 	 */
-	public function getJsonLanguages( \MShop_Context_Item_Interface $context )
+	protected function getJsonLanguages( \MShop_Context_Item_Interface $context )
 	{
 		$paths = $this->get( 'aimeos_context' )->getArcavias()->getI18nPaths();
 		$langs = array();
@@ -212,23 +212,6 @@ class AdminController extends AbstractController
 		}
 
 		return $result;
-	}
-
-
-	/**
-	 * Returns the path to the upload directory relative to the web root.
-	 *
-	 * @return string Path to the upload directory
-	 */
-	protected function getUploadDir()
-	{
-		$dir = './';
-
-		if( $this->container->hasParameter( 'aimeos.uploaddir' ) ) {
-			$dir = $this->container->getParameter( 'aimeos.uploaddir' );
-		}
-
-		return $dir;
 	}
 
 
