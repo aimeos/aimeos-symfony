@@ -19,12 +19,12 @@ aimeos_shop_count:
     defaults: { _controller: AimeosShopBundle:Catalog:count, _format: js }
 
 aimeos_shop_detail:
-    path: /detail
-    defaults: { _controller: AimeosShopBundle:Page:catalogDetail }
+    path: /detail/{d_prodid}/{d_name}/{l_pos}
+    defaults: { _controller: AimeosShopBundle:Page:catalogDetail, a_name: '', l_pos: '' }
 
 aimeos_shop_list:
-    path: /list
-    defaults: { _controller: AimeosShopBundle:Page:catalogList }
+    path: /list/{f_catid}/{f_name}/{f_sort}/{l_page}
+    defaults: { _controller: AimeosShopBundle:Page:catalogList, a_name: '', f_sort: relevance, l_page: 1 }
 
 aimeos_shop_listsimple:
     path: /suggest
@@ -35,8 +35,8 @@ aimeos_shop_stock:
     defaults: { _controller: AimeosShopBundle:Catalog:stock, _format: js }
 
 aimeos_shop_checkout:
-    path: /checkout
-    defaults: { _controller: AimeosShopBundle:Page:checkoutStandard }
+    path: /checkout/{c_step}
+    defaults: { _controller: AimeosShopBundle:Page:checkoutStandard, c_step: summary }
 
 aimeos_shop_confirm:
     path: /confirm
