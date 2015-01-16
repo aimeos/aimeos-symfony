@@ -63,7 +63,7 @@ class ContextManager
 		if( $useParams === true )
 		{
 			$request = $this->requestStack->getMasterRequest();
-			$params = $request->request->all() + $request->query->all();
+			$params = $request->request->all() + $request->query->all() + $request->attributes->get( '_route_params' );
 
 			// required for reloading to the current page
 			$params['target'] = $request->get( '_route' );
