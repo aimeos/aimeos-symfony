@@ -1,4 +1,6 @@
 aimeos_shop:
+    extdir: %kernel.root_dir%/../ext
+    uploaddir: %kernel.root_dir%/../web/uploads
 
     resource:
         db:
