@@ -4,6 +4,8 @@ Aimeos Symfony2 bundle
 [![Coverage Status](https://coveralls.io/repos/aimeos/aimeos-symfony2/badge.svg?branch=master)](https://coveralls.io/r/aimeos/aimeos-symfony2?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/?branch=master)
 
+[![Aimeos Symfony2 demo](http://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony2.demo.aimeos.org/)
+
 ## Installation
 
 The Aimeos Symfony2 web shop bundle is a composer based library that can be installed easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the composer post install/update scripts won't fail:
