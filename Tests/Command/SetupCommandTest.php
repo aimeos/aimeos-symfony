@@ -19,7 +19,7 @@ class SetupCommandTest extends WebTestCase
 
 		$command = $application->find( 'aimeos:setup' );
 		$commandTester = new CommandTester( $command );
-		$commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest' ), array( 'option' => 'setup/default/demo:0' ) );
+		$commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest', '--option' => 'setup/default/demo:0' ) );
 
 		$this->assertEquals( 0, $commandTester->getStatusCode() );
 	}
