@@ -84,7 +84,7 @@ class PageControllerTest extends WebTestCase
 		$id = $nodes->parents()->filter( '.attr-item' )->attr( 'data-id');
 
 		$form = $crawler->filter( '.catalog-filter .btn-action' )->form();
-		$form['f_attrid'] = array( $id => $id );
+		$form['f_attrid'] = array( $id => 'xs' );
 		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->count() );
