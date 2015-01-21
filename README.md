@@ -111,7 +111,7 @@ directories from the bootstrap .zip package into the web/ directory of your Symf
 To simplify development, you should configure to use no content cache. You can do this in the ./app/config/config_dev.yml file of your Symfony application by adding these lines:
 
 ```
-parameters:
+aimeos_shop:
     classes:
         cache:
             manager:
