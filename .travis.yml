@@ -20,6 +20,8 @@ before_script:
 
 script:
   - phpunit --coverage-clover coverage.xml
+
+after_success:
   - php vendor/bin/coveralls
 
 matrix:
