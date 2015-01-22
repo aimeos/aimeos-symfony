@@ -7,6 +7,7 @@ Aimeos Symfony2 bundle
 [![Build Status](https://travis-ci.org/aimeos/aimeos-symfony2.svg?branch=master)](https://travis-ci.org/aimeos/aimeos-symfony2)
 [![Coverage Status](https://coveralls.io/repos/aimeos/aimeos-symfony2/badge.svg?branch=master)](https://coveralls.io/r/aimeos/aimeos-symfony2?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/?branch=master)
+[![HHVM Status](http://hhvm.h4cc.de/badge/aimeos/ai-symfony2.svg)](http://hhvm.h4cc.de/package/aimeos/ai-symfony2)
 
 The repository contains the Symfony2 web shop bundle integrating the Aimeos e-commerce library into Symfony. The bundle provides controllers for e.g. faceted filter, product lists and detail views, for searching products as well as baskets and the checkout process. A full set of pages including routing is also available for a quick start.
 
