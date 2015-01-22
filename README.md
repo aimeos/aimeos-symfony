@@ -1,12 +1,26 @@
+<a href="http://aimeos.org/">
+    <img src="http://aimeos.org/fileadmin/template/icons/logo.png" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
+</a>
+
 Aimeos Symfony2 bundle
 ======================
 [![Build Status](https://travis-ci.org/aimeos/aimeos-symfony2.svg?branch=master)](https://travis-ci.org/aimeos/aimeos-symfony2)
 [![Coverage Status](https://coveralls.io/repos/aimeos/aimeos-symfony2/badge.svg?branch=master)](https://coveralls.io/r/aimeos/aimeos-symfony2?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/?branch=master)
 
+The repository contains the Symfony2 web shop bundle integrating the Aimeos e-commerce library into Symfony. The bundle provides controllers for e.g. faceted filter, product lists and detail views, for searching products as well as baskets and the checkout process. A full set of pages including routing is also available for a quick start.
+
 [![Aimeos Symfony2 demo](http://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony2.demo.aimeos.org/)
 
-## Installation
+# Table of content
+
+- [Installation](#installation)
+- [Setup](#setup)
+- [Hints](#hints)
+- [License](#license)
+- [Links](#links)
+
+# Installation
 
 The Aimeos Symfony2 web shop bundle is a composer based library that can be installed easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the composer post install/update scripts won't fail:
 
@@ -53,7 +67,7 @@ In a production environment or if you don't want that the demo data gets install
 `composer update --no-dev`
 
 
-## Usage
+# Setup
 
 To see all components and get everything working, you also need to adapt your Twig base template in `app/Resources/views/base.html.twig`. This is a working example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/getting-started/#download):
 
@@ -108,6 +122,8 @@ directories from the bootstrap .zip package into the web/ directory of your Symf
 
 ```http://<your web root>/app_dev.php/list```
 
+# Hints
+
 To simplify development, you should configure to use no content cache. You can do this in the ./app/config/config_dev.yml file of your Symfony application by adding these lines:
 
 ```
@@ -117,3 +133,15 @@ aimeos_shop:
             manager:
                 name: None
 ```
+
+# License
+
+The Aimeos Symfony2 bundle is licensed under the terms of the MIT license and is available for free.
+
+# Links
+
+* [Web site](http://aimeos.org/app/symfony-shop-bundle/)
+* [Documentation](http://docs.aimeos.org/Symfony)
+* [Help](http://help.aimeos.org/)
+* [Issue tracker](https://github.com/aimeos/aimeos-symfony2/issues)
+* [Source code](https://github.com/aimeos/aimeos-symfony2)
