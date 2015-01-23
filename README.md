@@ -13,7 +13,7 @@ The repository contains the Symfony2 web shop bundle integrating the Aimeos e-co
 
 [![Aimeos Symfony2 demo](http://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony2.demo.aimeos.org/)
 
-# Table of content
+## Table of content
 
 - [Installation](#installation)
 - [Setup](#setup)
@@ -21,7 +21,7 @@ The repository contains the Symfony2 web shop bundle integrating the Aimeos e-co
 - [License](#license)
 - [Links](#links)
 
-# Installation
+## Installation
 
 The Aimeos Symfony2 web shop bundle is a composer based library that can be installed easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the composer post install/update scripts won't fail:
 
@@ -68,7 +68,7 @@ In a production environment or if you don't want that the demo data gets install
 `composer update --no-dev`
 
 
-# Setup
+## Setup
 
 To see all components and get everything working, you also need to adapt your Twig base template in `app/Resources/views/base.html.twig`. This is a working example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/getting-started/#download):
 
@@ -123,7 +123,7 @@ directories from the bootstrap .zip package into the web/ directory of your Symf
 
 ```http://<your web root>/app_dev.php/list```
 
-# Hints
+## Hints
 
 To simplify development, you should configure to use no content cache. You can do this in the ./app/config/config_dev.yml file of your Symfony application by adding these lines:
 
@@ -135,11 +135,11 @@ aimeos_shop:
                 name: None
 ```
 
-# License
+## License
 
 The Aimeos Symfony2 bundle is licensed under the terms of the MIT license and is available for free.
 
-# Links
+## Links
 
 * [Web site](http://aimeos.org/app/symfony-shop-bundle/)
 * [Documentation](http://docs.aimeos.org/Symfony)
