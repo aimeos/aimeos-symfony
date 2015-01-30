@@ -175,7 +175,6 @@ aimeos_shop:
     mshop:
         customer:
             manager:
-                default:
-                    password:
-                        options:
-                            format: "%%1$s{%%2$s}"
+                password:
+                    options:
+                        format: "%%1$s{%%2$s}"
