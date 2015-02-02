@@ -10,6 +10,18 @@ aimeos_shop_account:
     path: /myaccount
     defaults: { _controller: AimeosShopBundle:Page:account }
 
+aimeos_shop_account_pinned:
+    path: /{site}/detail/pin/{pin_action}/{pin_id}/{d_name}/{d_prodid}
+    defaults: { _controller: AimeosShopBundle:Page:catalogDetail, d_name: '', l_pos: 0 }
+
+aimeos_shop_account_favorite:
+    path: /{site}/myaccount/favorite/{fav_action}/{fav_id}/{d_name}
+    defaults: { _controller: AimeosShopBundle:Page:account, fav_action: '', fav_id: '', d_name: '', d_prodid: '', l_pos: 0 }
+
+aimeos_shop_account_watch:
+    path: /{site}/myaccount/watch/{wat_action}/{wat_id}/{d_name}
+    defaults: { _controller: AimeosShopBundle:Page:account, wat_action: '', wat_id: '', d_name: '', d_prodid: '', l_pos: 0 }
+
 aimeos_shop_basket:
     path: /basket
     defaults: { _controller: AimeosShopBundle:Page:basketStandard }

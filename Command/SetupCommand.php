@@ -20,6 +20,33 @@ use Symfony\Component\Console\Output\OutputInterface;
 class SetupCommand extends Command
 {
 	/**
+	 * Loads the requested setup task class
+	 *
+	 * @param string $classname Name of the setup task class
+	 * @return boolean True if class is found, false if not
+	 */
+	public static function autoload( $classname )
+	{
+		if( strncmp( $classname, 'MW_Setup_Task_', 14 ) === 0 )
+		{
+		    $fileName = substr( $classname, 14 ) . '.php';
+			$paths = explode( PATH_SEPARATOR, get_include_path() );
+
+			foreach( $paths as $path )
+			{
+				$file = $path . DIRECTORY_SEPARATOR . $fileName;
+
+				if( file_exists( $file ) === true && ( include_once $file ) !== false ) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
+
+	/**
 	 * Configures the command name and description.
 	 */
 	protected function configure()

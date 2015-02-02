@@ -22,18 +22,18 @@ aimeos_shop:
                 content:
                     baseurl: /uploads
             account:
-                favorite:
-                    url:
-                        target: aimeos_shop_account
                 history:
                     url:
                         target: aimeos_shop_account
+                favorite:
+                    url:
+                        target: aimeos_shop_account_favorite
                 pinned:
                     url:
-                        target: aimeos_shop_detail
+                        target: aimeos_shop_account_pinned
                 watch:
                     url:
-                        target: aimeos_shop_account
+                        target: aimeos_shop_account_watch
             catalog:
                 count:
                     url:
