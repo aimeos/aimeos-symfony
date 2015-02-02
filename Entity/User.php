@@ -25,22 +25,147 @@ class User implements UserInterface, \Serializable
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
-     * @ORM\Column(name="code", type="string", length=32, unique=true)
+     * @ORM\Column(name="siteid", type="integer")
      */
-    private $username;
+    protected $siteid;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $password;
+    protected $label;
 
     /**
-     * @ORM\Column(name="status", type="integer")
+     * @ORM\Column(name="code", type="string", length=32, unique=true)
      */
-    private $isActive;
+    protected $username;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $password;
+
+    /**
+     * @ORM\Column(name="status", type="smallint")
+     */
+    protected $isActive;
+
+    /**
+     * @ORM\Column(name="salutation", type="string", length=8)
+     */
+    protected $salutation = '';
+
+    /**
+     * @ORM\Column(name="company", type="string", length=100)
+     */
+    protected $company = '';
+
+    /**
+     * @ORM\Column(name="vatid", type="string", length=32)
+     */
+    protected $vatid = '';
+
+    /**
+     * @ORM\Column(name="title", type="string", length=64)
+     */
+    protected $title = '';
+
+    /**
+     * @ORM\Column(name="firstname", type="string", length=64)
+     */
+    protected $firstname = '';
+
+    /**
+     * @ORM\Column(name="lastname", type="string", length=64)
+     */
+    protected $lastname = '';
+
+    /**
+     * @ORM\Column(name="address1", type="string", length=255)
+     */
+    protected $address1 = '';
+
+    /**
+     * @ORM\Column(name="address2", type="string", length=255)
+     */
+    protected $address2 = '';
+
+    /**
+     * @ORM\Column(name="address3", type="string", length=255)
+     */
+    protected $address3 = '';
+
+    /**
+     * @ORM\Column(name="postal", type="string", length=16)
+     */
+    protected $postal = '';
+
+    /**
+     * @ORM\Column(name="city", type="string", length=255)
+     */
+    protected $city = '';
+
+    /**
+     * @ORM\Column(name="state", type="string", length=255)
+     */
+    protected $state = '';
+
+    /**
+     * @ORM\Column(name="langid", type="string", length=5, nullable=true)
+     */
+    protected $langid = '';
+
+    /**
+     * @ORM\Column(name="countryid", type="string", length=2, nullable=true)
+     */
+    protected $countryid = '';
+
+    /**
+     * @ORM\Column(name="telephone", type="string", length=32)
+     */
+    protected $telephone = '';
+
+    /**
+     * @ORM\Column(name="telefax", type="string", length=255)
+     */
+    protected $telefax = '';
+
+    /**
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    protected $email = '';
+
+    /**
+     * @ORM\Column(name="website", type="string", length=255)
+     */
+    protected $website = '';
+
+    /**
+     * @ORM\Column(name="birthday", type="date", nullable=true)
+     */
+    protected $birthday;
+
+    /**
+     * @ORM\Column(name="vdate", type="date", nullable=true)
+     */
+    protected $vdate;
+
+    /**
+     * @ORM\Column(name="ctime", type="datetime")
+     */
+    protected $ctime;
+
+    /**
+     * @ORM\Column(name="mtime", type="datetime")
+     */
+    protected $mtime;
+
+    /**
+     * @ORM\Column(name="editor", type="string", length=255)
+     */
+    protected $editor = '';
 
 
     /**
@@ -59,7 +184,7 @@ class User implements UserInterface, \Serializable
     {
     	return $this->username;
     }
-    
+
 
     /**
      * @inheritDoc
@@ -108,7 +233,7 @@ class User implements UserInterface, \Serializable
         ) );
     }
 
-    
+
     /**
      * @see \Serializable::unserialize()
      */

@@ -33,6 +33,7 @@
 		"symfony/symfony": ">=2.4"
 	},
 	"require-dev": {
+		"friendsofsymfony/user-bundle": "~2.0@dev",
 		"satooshi/php-coveralls": "dev-master",
 		"doctrine/orm": "~2.2,>=2.2.3",
 		"doctrine/doctrine-bundle": "~1.2",

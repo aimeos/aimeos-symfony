@@ -20,6 +20,9 @@
 			<file>./Tests/Command/CacheCommandTest.php</file>
 			<file>./Tests/Command/JobsCommandTest.php</file>
 		</testsuite>
+		<testsuite name="entity">
+			<directory>./Tests/Entity</directory>
+		</testsuite>
 		<testsuite name="controller">
 			<directory>./Tests/Controller</directory>
 		</testsuite>

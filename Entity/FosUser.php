@@ -220,7 +220,17 @@ class FosUser extends BaseUser
      */
     public function setSalutation($salutation)
     {
-        $this->_checkSalutation( $salutation );
+        switch( $salutation )
+        {
+            case \MShop_Common_Item_Address_Abstract::SALUTATION_UNKNOWN:
+            case \MShop_Common_Item_Address_Abstract::SALUTATION_COMPANY:
+            case \MShop_Common_Item_Address_Abstract::SALUTATION_MRS:
+            case \MShop_Common_Item_Address_Abstract::SALUTATION_MISS:
+            case \MShop_Common_Item_Address_Abstract::SALUTATION_MR:
+                break;
+            default:
+                throw new \Exception( sprintf( 'Address salutation "%1$s" not within allowed range', $value ) );
+        }
 
         $this->salutation = (string) $salutation;
     }
@@ -310,7 +320,7 @@ class FosUser extends BaseUser
      */
     public function setAddress1($address1)
     {
-        $this->address1;
+        $this->address1 = (string) $address1;
     }
 
 
@@ -354,7 +364,7 @@ class FosUser extends BaseUser
      */
     public function setAddress3($address3)
     {
-        $this->address3;
+        $this->address3 = (string) $address3;
     }
 
 
