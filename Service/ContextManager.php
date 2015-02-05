@@ -178,19 +178,23 @@ class ContextManager
 	 */
 	protected function addUser( \MShop_Context_Item_Interface $context )
 	{
-		$username = 'guest';
-		$token = $this->container->get('security.context')->getToken();
+		$username = '';
 
-		if( is_object( $token ) )
+		if( $this->container->has( 'security.context' ) )
 		{
-			if( method_exists( $token->getUser(), 'getId' ) ) {
-				$context->setUserId( $token->getUser()->getId() );
-			}
+			$token = $this->container->get( 'security.context' )->getToken();
 
-			if( is_object( $token->getUser() ) ) {
-				$username =  $token->getUser()->getUsername();
-			} else {
-				$username = $token->getUser();
+			if( is_object( $token ) )
+			{
+				if( method_exists( $token->getUser(), 'getId' ) ) {
+					$context->setUserId( $token->getUser()->getId() );
+				}
+
+				if( is_object( $token->getUser() ) ) {
+					$username =  $token->getUser()->getUsername();
+				} else {
+					$username = $token->getUser();
+				}
 			}
 		}
 

@@ -8,7 +8,7 @@
 
 namespace Aimeos\ShopBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
+use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -229,7 +229,7 @@ class FosUser extends BaseUser
             case \MShop_Common_Item_Address_Abstract::SALUTATION_MR:
                 break;
             default:
-                throw new \Exception( sprintf( 'Address salutation "%1$s" not within allowed range', $value ) );
+                throw new \Exception( sprintf( 'Address salutation "%1$s" is unknown', $value ) );
         }
 
         $this->salutation = (string) $salutation;
