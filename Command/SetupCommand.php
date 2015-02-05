@@ -52,7 +52,7 @@ class SetupCommand extends Command
 	protected function configure()
 	{
 		$this->setName( 'aimeos:setup');
-		$this->setDescription( 'Performs the database initialization and update' );
+		$this->setDescription( 'Initialize or update the Aimeos database tables' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site for updating database entries', 'default' );
 		$this->addOption( 'option', null, InputOption::VALUE_REQUIRED, 'Optional setup configuration, name and value are separated by ":" like "setup/default/demo:1"', array() );
 	}
@@ -88,6 +88,9 @@ class SetupCommand extends Command
 		}
 
 		$manager = new \MW_Setup_Manager_Multiple( $ctx->getDatabaseManager(), $dbconfig, $taskPaths, $ctx );
+
+		$output->writeln( sprintf( 'Initializing or updating the Aimeos database tables for site <info>%1$s</info>', $site ) );
+
 		$manager->run( 'mysql' );
 	}
 

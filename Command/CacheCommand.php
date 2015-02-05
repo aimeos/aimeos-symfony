@@ -54,6 +54,8 @@ class CacheCommand extends Command
 			$cache = new \MAdmin_Cache_Proxy_Default( $lcontext );
 			$lcontext->setCache( $cache );
 
+			$output->writeln( sprintf( 'Clearing the Aimeos cache for site <info>%1$s</info>', $siteItem->getCode() ) );
+
 			\MAdmin_Cache_Manager_Factory::createManager( $lcontext )->getCache()->flush();
 		}
 	}

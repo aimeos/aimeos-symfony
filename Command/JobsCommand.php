@@ -70,6 +70,8 @@ class JobsCommand extends Command
 			$cache = new \MAdmin_Cache_Proxy_Default( $lcontext );
 			$lcontext->setCache( $cache );
 
+			$output->writeln( sprintf( 'Executing the Aimeos jobs "<info>%s</info>"', $input->getArgument( 'jobs' ) ) );
+
 			foreach( $jobs as $jobname ) {
 				\Controller_Jobs_Factory::createController( $lcontext, $arcavias, $jobname )->run();
 			}
