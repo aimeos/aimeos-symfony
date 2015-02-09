@@ -1451,10 +1451,7 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	text-transform: uppercase;
 	text-align: left;
 	font-weight: normal;
-	font-size: 1em;
-	line-height: 2em;
-	height: 2em;
-	padding: 0 1em;
+	padding: 0.5em 1em;
 	color: #555;
 }
 
@@ -1660,8 +1657,10 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 }
 
 .checkout-confirm-basic,
-.account-history-detail-service,
-.account-history-detail-basket {
+.checkout-confirm-order-service,
+.checkout-confirm-order-detail,
+.account-history-order-service,
+.account-history-order-detail {
 	padding: 0 1em 1em 1em;
 	border: solid 1px #D0D0D0;
 	margin: 0 0 8px 0;
@@ -2060,14 +2059,15 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 
 /* Checkout summary */
 .checkout-standard-summary h3,
-.account-history-detail h3 {
+.checkout-confirm-order h3,
+.account-history-order h3 {
 	display: inline-block;
 	font-size: 1em;
 	margin: 0;
 }
 
 .checkout-standard-summary a:hover,
-.account-history-detail a:hover {
+.account-history-order a:hover {
 	text-decoration: underline;
 }
 
@@ -2169,11 +2169,12 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	content: ": ";
 }
 
-.account-history-detail h2 {
+.checkout-confirm-order h2,
+.account-history-order h2 {
 	margin: 0.5em 0;
 }
 
-.account-history-detail .modify {
+.account-history-order .modify {
 	float: right;
 	margin: 0.5em 1em;
 }
