@@ -50,32 +50,54 @@ class JobsCommand extends Command
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
 		$cm = $this->getContainer()->get( 'aimeos_context' );
+		$arcavias = $cm->getArcavias();
 
 		$context = $cm->getContext( false );
+		$context->setI18n( $this->createI18n( $context, $arcavias->getI18nPaths() ) );
 		$context->setEditor( 'aimeos:jobs' );
 
-		$arcavias = $cm->getArcavias();
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
 		$localeManager = \MShop_Factory::createManager( $context, 'locale' );
 
 		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
 		{
-			$localeItem = $localeManager->bootstrap( $siteItem->getCode(), '', '', false );
-			$localeItem->setLanguageId( null );
-			$localeItem->setCurrencyId( null );
-
-			$lcontext = clone $context;
-			$lcontext->setLocale( $localeItem );
-
-			$cache = new \MAdmin_Cache_Proxy_Default( $lcontext );
-			$lcontext->setCache( $cache );
+			$localeItem = $localeManager->bootstrap( $siteItem->getCode(), 'en', '', false );
+			$context->setLocale( $localeItem );
 
 			$output->writeln( sprintf( 'Executing the Aimeos jobs "<info>%s</info>"', $input->getArgument( 'jobs' ) ) );
 
 			foreach( $jobs as $jobname ) {
-				\Controller_Jobs_Factory::createController( $lcontext, $arcavias, $jobname )->run();
+				\Controller_Jobs_Factory::createController( $context, $arcavias, $jobname )->run();
 			}
 		}
+	}
+
+
+	/**
+	 * Creates new translation objects
+	 *
+	 * @param MShop_Context_Item_Interface $context Context object
+	 * @param array List of paths to the i18n files
+	 * @return array List of translation objects implementing MW_Translation_Interface
+	 */
+	protected function createI18n( \MShop_Context_Item_Interface $context, array $i18nPaths )
+	{
+		$list = array();
+		$translations = $this->getContainer()->getParameter( 'aimeos_shop.i18n' );
+		$langManager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'language' );
+
+		foreach( $langManager->searchItems( $langManager->createSearch( true ) ) as $id => $langItem )
+		{
+			$i18n = new \MW_Translation_Zend2( $i18nPaths, 'gettext', $id, array( 'disableNotices' => true ) );
+
+			if( isset( $translations[$id] ) ) {
+				$i18n = new \MW_Translation_Decorator_Memory( $i18n, $translations[$id] );
+			}
+
+			$list[$id] = $i18n;
+		}
+
+		return $list;
 	}
 
 

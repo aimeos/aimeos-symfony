@@ -1,6 +1,6 @@
 aimeos_shop:
     extdir: %kernel.root_dir%/../ext
-    uploaddir: %kernel.root_dir%/../web/uploads
+    uploaddir: /.
 
     resource:
         db:
@@ -18,9 +18,6 @@ aimeos_shop:
 
     client:
         html:
-            common:
-                content:
-                    baseurl: /uploads
             account:
                 history:
                     url:
@@ -54,7 +51,7 @@ aimeos_shop:
                 content:
                     baseurl: uploads
                 template:
-                    baseurl: bundles/aimeosshop/classic
+                    baseurl: bundles/aimeosshop/elegance
             basket:
                 standard:
                     url:
@@ -84,32 +81,32 @@ aimeos_shop:
                 import:
                     text:
                         default:
-                            uploaddir: /uploads
+                            uploaddir: %kernel.root_dir%/../web/uploads
                             fileperms: 0660
                 export:
                     text:
                         default:
+                            exportdir: %kernel.root_dir%/../web/uploads
                             downloaddir: /uploads
-                            exportdir: /uploads
             catalog:
                 import:
                     text:
                         default:
-                            uploaddir: /uploads
+                            uploaddir: %kernel.root_dir%/../web/uploads
                             fileperms: 0660
                 export:
                     text:
                         default:
+                            exportdir: %kernel.root_dir%/../web/uploads
                             downloaddir: /uploads
-                            exportdir: /uploads
             media:
                 default:
                     # Base directory to the document root of the website
-                    basedir: .
+                    basedir: %kernel.root_dir%/../web
                     # Upload related settings
                     upload:
                         # Media directory where the uploaded files will be stored, must be relative to the path in "basedir"
-                        directory: /uploads
+                        directory: uploads
                         # Directory permissions (in octal notation) which are applied to newly created directories
                         # dirperms: 0775
                         # File permissions (in octal notation) which are applied to newly created files
@@ -160,13 +157,13 @@ aimeos_shop:
                 import:
                     text:
                         default:
-                            uploaddir: /uploads
+                            uploaddir: %kernel.root_dir%/../web/uploads
                             fileperms: 0660
                 export:
                     text:
                         default:
+                            exportdir: %kernel.root_dir%/../web/uploads
                             downloaddir: /uploads
-                            exportdir: /uploads
 
     i18n:
 
