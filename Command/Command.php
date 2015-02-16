@@ -27,7 +27,7 @@ abstract class Command extends ContainerAwareCommand
 	 */
 	protected function getSiteItems( \MShop_Context_Item_Interface $context, InputInterface $input )
 	{
-		$manager = \MShop_Factory::createManager( $context, 'locale/site' );
+		$manager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'site' );
 		$search = $manager->createSearch();
 
 		if( ( $codes = $input->getArgument( 'site' ) ) != null ) {

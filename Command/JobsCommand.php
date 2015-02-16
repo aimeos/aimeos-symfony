@@ -53,11 +53,13 @@ class JobsCommand extends Command
 		$aimeos = $cm->getAimeos();
 
 		$context = $cm->getContext( false );
+
 		$context->setI18n( $this->createI18n( $context, $aimeos->getI18nPaths() ) );
+		$context->setView( $cm->createView( false ) );
 		$context->setEditor( 'aimeos:jobs' );
 
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
-		$localeManager = \MShop_Factory::createManager( $context, 'locale' );
+		$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
 
 		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
 		{
@@ -84,7 +86,7 @@ class JobsCommand extends Command
 	{
 		$list = array();
 		$translations = $this->getContainer()->getParameter( 'aimeos_shop.i18n' );
-		$langManager = \MShop_Factory::createManager( $context, 'locale/language' );
+		$langManager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'language' );
 
 		foreach( $langManager->searchItems( $langManager->createSearch( true ) ) as $id => $langItem )
 		{

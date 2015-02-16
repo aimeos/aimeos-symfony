@@ -54,13 +54,14 @@ class ContextManager
 	/**
 	 * Creates the view object for the HTML client.
 	 *
+	 * @param boolean $locale True to add locale object to context, false if not
 	 * @return \MW_View_Interface View object
 	 */
-	public function createView( $useParams = true )
+	public function createView( $locale = true )
 	{
 		$params = $urlParams = array();
 
-		if( $useParams === true )
+		if( $locale === true )
 		{
 			$request = $this->requestStack->getMasterRequest();
 			$params = $request->request->all() + $request->query->all() + $request->attributes->get( '_route_params' );
@@ -72,20 +73,14 @@ class ContextManager
 		}
 
 
-		$context = $this->getContext();
+		$context = $this->getContext( $locale );
 		$config = $context->getConfig();
-
-		$langid = $context->getLocale()->getLanguageId();
-		$i18n = $this->getI18n( array( $langid ) );
 
 
 		$view = new \MW_View_Default();
 
 		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->router, $urlParams );
 		$view->addHelper( 'url', $helper );
-
-		$helper = new \MW_View_Helper_Translate_Default( $view, $i18n[$langid] );
-		$view->addHelper( 'translate', $helper );
 
 		$helper = new \MW_View_Helper_Parameter_Default( $view, $params );
 		$view->addHelper( 'param', $helper );
@@ -103,6 +98,15 @@ class ContextManager
 
 		$helper = new \MW_View_Helper_Encoder_Default( $view );
 		$view->addHelper( 'encoder', $helper );
+
+		if( $locale === true )
+		{
+			$langid = $context->getLocale()->getLanguageId();
+			$i18n = $this->getI18n( array( $langid ) );
+
+			$helper = new \MW_View_Helper_Translate_Default( $view, $i18n[$langid] );
+			$view->addHelper( 'translate', $helper );
+		}
 
 		return $view;
 	}
