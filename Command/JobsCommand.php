@@ -25,9 +25,9 @@ class JobsCommand extends Command
 	protected function configure()
 	{
 		$names = '';
-		$arcavias = new \Arcavias( array() );
-		$cntlPaths = $arcavias->getCustomPaths( 'controller/jobs' );
-		$controllers = \Controller_Jobs_Factory::getControllers( $this->getContext(), $arcavias, $cntlPaths );
+		$aimeos = new \Arcavias( array() );
+		$cntlPaths = $aimeos->getCustomPaths( 'controller/jobs' );
+		$controllers = \Controller_Jobs_Factory::getControllers( $this->getContext(), $aimeos, $cntlPaths );
 
 		foreach( $controllers as $key => $controller ) {
 			$names .= str_pad( $key, 30 ) . $controller->getName() . PHP_EOL;
@@ -50,10 +50,10 @@ class JobsCommand extends Command
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
 		$cm = $this->getContainer()->get( 'aimeos_context' );
-		$arcavias = $cm->getArcavias();
+		$aimeos = $cm->getAimeos();
 
 		$context = $cm->getContext( false );
-		$context->setI18n( $this->createI18n( $context, $arcavias->getI18nPaths() ) );
+		$context->setI18n( $this->createI18n( $context, $aimeos->getI18nPaths() ) );
 		$context->setEditor( 'aimeos:jobs' );
 
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
@@ -67,7 +67,7 @@ class JobsCommand extends Command
 			$output->writeln( sprintf( 'Executing the Aimeos jobs "<info>%s</info>"', $input->getArgument( 'jobs' ) ) );
 
 			foreach( $jobs as $jobname ) {
-				\Controller_Jobs_Factory::createController( $context, $arcavias, $jobname )->run();
+				\Controller_Jobs_Factory::createController( $context, $aimeos, $jobname )->run();
 			}
 		}
 	}
@@ -84,7 +84,7 @@ class JobsCommand extends Command
 	{
 		$list = array();
 		$translations = $this->getContainer()->getParameter( 'aimeos_shop.i18n' );
-		$langManager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'language' );
+		$langManager = \MShop_Factory::createManager( $context, 'locale/language' );
 
 		foreach( $langManager->searchItems( $langManager->createSearch( true ) ) as $id => $langItem )
 		{
@@ -113,7 +113,7 @@ class JobsCommand extends Command
 		$conf = new \MW_Config_Array( array(), array() );
 		$ctx->setConfig( $conf );
 
-		$locale = \MShop_Locale_Manager_Factory::createManager( $ctx )->createItem();
+		$locale = \MShop_Factory::createManager( $ctx, 'locale' )->createItem();
 		$locale->setLanguageId( 'en' );
 		$ctx->setLocale( $locale );
 

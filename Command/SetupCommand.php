@@ -78,7 +78,7 @@ class SetupCommand extends Command
 		$dbconfig = $this->getDbConfig( $config );
 		$this->setOptions( $config, $input );
 
-		$taskPaths = $cm->getArcavias()->getSetupPaths( $site );
+		$taskPaths = $cm->getAimeos()->getSetupPaths( $site );
 
 		$includePaths = $taskPaths;
 		$includePaths[] = get_include_path();

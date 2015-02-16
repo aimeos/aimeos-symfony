@@ -33,8 +33,8 @@ abstract class AbstractController
 	{
 		$cm = $this->get( 'aimeos_context' );
 		$context = $cm->getContext();
-		$arcavias = $cm->getArcavias();
-		$templatePaths = $arcavias->getCustomPaths( 'client/html' );
+		$aimeos = $cm->getAimeos();
+		$templatePaths = $aimeos->getCustomPaths( 'client/html' );
 
 		$client = $factoryname::createClient( $context, $templatePaths, $name );
 		$client->setView( $cm->createView() );

@@ -33,12 +33,12 @@ class AdminController extends AbstractController
 		$context = $cm->getContext( false );
 		$context = $this->setLocale( $context, $lang );
 
-		$arcavias = $cm->getArcavias();
-		$cntlPaths = $arcavias->getCustomPaths( 'controller/extjs' );
+		$aimeos = $cm->getAimeos();
+		$cntlPaths = $aimeos->getCustomPaths( 'controller/extjs' );
 		$controller = new \Controller_ExtJS_JsonRpc( $context, $cntlPaths );
 		$cssFiles = $jsFiles = array();
 
-		foreach( $arcavias->getCustomPaths( 'client/extjs' ) as $base => $paths )
+		foreach( $aimeos->getCustomPaths( 'client/extjs' ) as $base => $paths )
 		{
 			foreach( $paths as $path )
 			{
@@ -66,7 +66,7 @@ class AdminController extends AbstractController
 			'languages' => $this->getJsonLanguages( $context),
 			'config' => $this->getJsonClientConfig( $context ),
 			'site' => $this->getJsonSiteItem( $context, $site ),
-			'i18nContent' => $this->getJsonClientI18n( $arcavias->getI18nPaths(), $lang ),
+			'i18nContent' => $this->getJsonClientI18n( $aimeos->getI18nPaths(), $lang ),
 			'searchSchemas' => $controller->getJsonSearchSchemas(),
 			'itemSchemas' => $controller->getJsonItemSchemas(),
 			'smd' => $controller->getJsonSmd( $jsonUrl ),
@@ -91,7 +91,7 @@ class AdminController extends AbstractController
 
 		$context = $cm->getContext( false );
 		$context = $this->setLocale( $context );
-		$cntlPaths = $cm->getArcavias()->getCustomPaths( 'controller/extjs' );
+		$cntlPaths = $cm->getAimeos()->getCustomPaths( 'controller/extjs' );
 
 		$controller = new \Controller_ExtJS_JsonRpc( $context, $cntlPaths );
 
@@ -108,7 +108,7 @@ class AdminController extends AbstractController
 	 */
 	protected function getJsonLanguages( \MShop_Context_Item_Interface $context )
 	{
-		$paths = $this->get( 'aimeos_context' )->getArcavias()->getI18nPaths();
+		$paths = $this->get( 'aimeos_context' )->getAimeos()->getI18nPaths();
 		$langs = array();
 
 		if( !isset( $paths['client/extjs'] ) ) {

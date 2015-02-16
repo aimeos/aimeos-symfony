@@ -30,7 +30,7 @@ class ContextManager
 	private $router;
 	private $locale;
 	private $context;
-	private $arcavias;
+	private $aimeos;
 	private $i18n = array();
 
 
@@ -113,15 +113,15 @@ class ContextManager
 	 *
 	 * @return \Arcavias Arcavias object
 	 */
-	public function getArcavias()
+	public function getAimeos()
 	{
-		if( $this->arcavias === null )
+		if( $this->aimeos === null )
 		{
 			$extDirs = (array) $this->container->getParameter( 'aimeos_shop.extdir' );
-			$this->arcavias = new \Arcavias( $extDirs, false );
+			$this->aimeos = new \Arcavias( $extDirs, false );
 		}
 
-		return $this->arcavias;
+		return $this->aimeos;
 	}
 
 
@@ -209,7 +209,7 @@ class ContextManager
 	 */
 	protected function getConfig()
 	{
-		$configPaths = $this->getArcavias()->getConfigPaths( 'mysql' );
+		$configPaths = $this->getAimeos()->getConfigPaths( 'mysql' );
 
 		$conf = new \MW_Config_Array( array(), $configPaths );
 
@@ -241,7 +241,7 @@ class ContextManager
 	 */
 	protected function getI18n( array $languageIds )
 	{
-		$i18nPaths = $this->getArcavias()->getI18nPaths();
+		$i18nPaths = $this->getAimeos()->getI18nPaths();
 
 		foreach( $languageIds as $langid )
 		{
