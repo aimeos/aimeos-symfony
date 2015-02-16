@@ -29,8 +29,9 @@ class Configuration implements ConfigurationInterface
 
 		$rootNode
 			->children()
-				->booleanNode('apc_enable')->defaultValue( true )->end()
-				->scalarNode('apc_prefix')->defaultValue( 'shop:' )->end()
+				->booleanNode('disable_sites')->defaultValue( true )->end()
+				->booleanNode('apc_enable')->defaultValue( false )->end()
+				->scalarNode('apc_prefix')->defaultValue( 'sf2:' )->end()
 				->scalarNode('extdir')->end()
 				->scalarNode('uploaddir')->end()
 				->variableNode('classes')->defaultValue( array() )->end()

@@ -48,6 +48,7 @@ doctrine:
         auto_mapping: true
 
 aimeos_shop:
+    disable_sites: false
     resource:
         nosql: test
     i18n:

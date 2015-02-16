@@ -280,6 +280,7 @@ class ContextManager
 	{
 		if( $this->locale === null )
 		{
+			$status = $this->container->getParameter( 'aimeos_shop.disable_sites' );
 			$attr = $this->requestStack->getMasterRequest()->attributes;
 
 			$currency = $attr->get( 'currency', 'EUR' );
@@ -287,7 +288,7 @@ class ContextManager
 			$lang = $attr->get( 'locale', 'en' );
 
 			$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
-			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, false );
+			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, $status );
 		}
 
 		return $this->locale;
