@@ -1,11 +1,11 @@
  {% extends 'AimeosShopBundle::base.html.twig' %}
 
  {% block header %}
-     {{ render(controller('AimeosShopBundle:Basket:standardHeader')) }}
-     {{ render(controller('AimeosShopBundle:Basket:relatedHeader')) }}
+     {{ header['basket/standard']|raw }}
+     {{ header['basket/related']|raw }}
  {% endblock %}
 
  {% block body %}
-     {{ render(controller('AimeosShopBundle:Basket:standardBody')) }}
-     {{ render(controller('AimeosShopBundle:Basket:relatedBody')) }}
+     {{ body['basket/standard']|raw }}
+     {{ body['basket/related']|raw }}
  {% endblock %}

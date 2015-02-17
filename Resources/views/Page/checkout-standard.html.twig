@@ -1,9 +1,9 @@
  {% extends 'AimeosShopBundle::base.html.twig' %}
 
  {% block header %}
-     {{ render(controller('AimeosShopBundle:Checkout:standardHeader')) }}
+     {{ header['checkout/standard']|raw }}
  {% endblock %}
 
  {% block body %}
-     {{ render(controller('AimeosShopBundle:Checkout:standardBody')) }}
+     {{ body['checkout/standard']|raw }}
  {% endblock %}

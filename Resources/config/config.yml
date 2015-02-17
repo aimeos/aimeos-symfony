@@ -2,6 +2,14 @@ aimeos_shop:
     extdir: %kernel.root_dir%/../ext
     uploaddir: /.
 
+    pages:
+        account: ['account/history','account/favorite','account/watch','basket/mini','catalog/session']
+        basket-standard: ['basket/standard','basket/related']
+        catalog-detail: ['basket/mini','catalog/stage','catalog/detail','catalog/session']
+        catalog-list: ['basket/mini','catalog/filter','catalog/stage','catalog/list']
+        checkout-confirm: ['checkout/confirm']
+        checkout-standard: ['checkout/standard']
+
     resource:
         db:
             adapter: mysql

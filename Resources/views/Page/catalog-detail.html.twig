@@ -8,24 +8,24 @@
  {% endblock %}
 
  {% block header %}
-     {{ render(controller('AimeosShopBundle:Basket:miniHeader')) }}
-     {{ render(controller('AimeosShopBundle:Catalog:stageHeader')) }}
-     {{ render(controller('AimeosShopBundle:Catalog:detailHeader')) }}
-     {{ render(controller('AimeosShopBundle:Catalog:sessionHeader')) }}
+     {{ header['basket/mini']|raw }}
+     {{ header['catalog/stage']|raw }}
+     {{ header['catalog/detail']|raw }}
+     {{ header['catalog/session']|raw }}
  {% endblock %}
 
  {% block head %}
-     {{ render(controller('AimeosShopBundle:Basket:miniBody')) }}
+     {{ body['basket/mini']|raw }}
  {% endblock %}
 
  {% block stage %}
-     {{ render(controller('AimeosShopBundle:Catalog:stageBody')) }}
+     {{ body['catalog/stage']|raw }}
  {% endblock %}
 
  {% block body %}
-     {{ render(controller('AimeosShopBundle:Catalog:detailBody')) }}
+     {{ body['catalog/detail']|raw }}
  {% endblock %}
  
  {% block aside %}
-     {{ render(controller('AimeosShopBundle:Catalog:sessionBody')) }}
+     {{ body['catalog/session']|raw }}
  {% endblock %}

@@ -1,4 +1,4 @@
 services:
     aimeos_context:
         class: Aimeos\ShopBundle\Service\ContextManager
-        arguments: ["@request_stack","@service_container","@session","@router"]
+        arguments: ["@request_stack","@service_container"]

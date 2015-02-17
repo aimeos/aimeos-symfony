@@ -41,6 +41,7 @@ class Configuration implements ConfigurationInterface
 				->variableNode('madmin')->defaultValue( array() )->end()
 				->variableNode('mshop')->defaultValue( array() )->end()
 				->variableNode('resource')->defaultValue( array() )->end()
+				->variableNode('pages')->defaultValue( array() )->end()
 			->end()
 		;
 

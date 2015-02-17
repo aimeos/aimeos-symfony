@@ -24,12 +24,10 @@ use Symfony\Component\Routing\Router;
  */
 class ContextManager
 {
+	private static $context;
 	private $requestStack;
 	private $container;
-	private $session;
-	private $router;
 	private $locale;
-	private $context;
 	private $aimeos;
 	private $i18n = array();
 
@@ -39,76 +37,11 @@ class ContextManager
 	 *
 	 * @param RequestStack $requestStack Current request stack
 	 * @param Container $container Container object to access parameters
-	 * @param Session $session Session object for context
-	 * @param Router $router Router object for generating URLs
 	 */
-	public function __construct( RequestStack $requestStack, Container $container, Session $session, Router $router )
+	public function __construct( RequestStack $requestStack, Container $container )
 	{
 		$this->requestStack = $requestStack;
 		$this->container = $container;
-		$this->session = $session;
-		$this->router = $router;
-	}
-
-
-	/**
-	 * Creates the view object for the HTML client.
-	 *
-	 * @param boolean $locale True to add locale object to context, false if not
-	 * @return \MW_View_Interface View object
-	 */
-	public function createView( $locale = true )
-	{
-		$params = $urlParams = array();
-
-		if( $locale === true )
-		{
-			$request = $this->requestStack->getMasterRequest();
-			$params = $request->request->all() + $request->query->all() + $request->attributes->get( '_route_params' );
-
-			// required for reloading to the current page
-			$params['target'] = $request->get( '_route' );
-
-			$urlParams = $this->getUrlParams();
-		}
-
-
-		$context = $this->getContext( $locale );
-		$config = $context->getConfig();
-
-
-		$view = new \MW_View_Default();
-
-		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->router, $urlParams );
-		$view->addHelper( 'url', $helper );
-
-		$helper = new \MW_View_Helper_Parameter_Default( $view, $params );
-		$view->addHelper( 'param', $helper );
-
-		$helper = new \MW_View_Helper_Config_Default( $view, $config );
-		$view->addHelper( 'config', $helper );
-
-		$sepDec = $config->get( 'client/html/common/format/seperatorDecimal', '.' );
-		$sep1000 = $config->get( 'client/html/common/format/seperator1000', ' ' );
-		$helper = new \MW_View_Helper_Number_Default( $view, $sepDec, $sep1000 );
-		$view->addHelper( 'number', $helper );
-
-		$helper = new \MW_View_Helper_FormParam_Default( $view, array() );
-		$view->addHelper( 'formparam', $helper );
-
-		$helper = new \MW_View_Helper_Encoder_Default( $view );
-		$view->addHelper( 'encoder', $helper );
-
-		if( $locale === true )
-		{
-			$langid = $context->getLocale()->getLanguageId();
-			$i18n = $this->getI18n( array( $langid ) );
-
-			$helper = new \MW_View_Helper_Translate_Default( $view, $i18n[$langid] );
-			$view->addHelper( 'translate', $helper );
-		}
-
-		return $view;
 	}
 
 
@@ -136,7 +69,7 @@ class ContextManager
 	 */
 	public function getContext( $locale = true )
 	{
-		if( $this->context === null )
+		if( self::$context === null )
 		{
 			$context = new \MShop_Context_Item_Default();
 
@@ -149,29 +82,37 @@ class ContextManager
 			$cache = new \MW_Cache_None();
 			$context->setCache( $cache );
 
-			$session = new \MW_Session_Symfony2( $this->session );
-			$context->setSession( $session );
+			$mail = new \MW_Mail_Swift( $this->container->get( 'mailer' ) );
+			$context->setMail( $mail );
 
 			$logger = \MAdmin_Log_Manager_Factory::createManager( $context );
 			$context->setLogger( $logger );
 
-			$this->addUser( $context );
-
-			$this->context = $context;
+			self::$context = $context;
 		}
+
+		$context = self::$context;
 
 		if( $locale === true )
 		{
-			$locale = $this->getLocale( $this->context );
+			$localeItem = $this->getLocale( $context );
 
-			$this->context->setLocale( $locale );
-			$this->context->setI18n( $this->getI18n( array( $locale->getLanguageId() ) ) );
+			$context->setLocale( $localeItem );
+			$context->setI18n( $this->getI18n( array( $localeItem->getLanguageId() ) ) );
 
-			$cache = new \MAdmin_Cache_Proxy_Default( $this->context );
-			$this->context->setCache( $cache );
+			$cache = new \MAdmin_Cache_Proxy_Default( $context );
+			$context->setCache( $cache );
 		}
 
-		return $this->context;
+		$session = new \MW_Session_Symfony2( $this->container->get( 'session' ) );
+		$context->setSession( $session );
+
+		$view = $this->createView( $context, $locale );
+		$context->setView( $view );
+
+		$this->addUser( $context );
+
+		return $context;
 	}
 
 
@@ -203,6 +144,67 @@ class ContextManager
 		}
 
 		$context->setEditor( $username );
+	}
+
+
+	/**
+	 * Creates the view object for the HTML client.
+	 *
+	 * @param boolean $locale True to add locale object to context, false if not
+	 * @return \MW_View_Interface View object
+	 */
+	public function createView( \MShop_Context_Item_Interface $context, $locale = true )
+	{
+		$params = $urlParams = array();
+		$config = $context->getConfig();
+
+		if( $locale === true )
+		{
+			$request = $this->requestStack->getMasterRequest();
+			$params = $request->request->all() + $request->query->all() + $request->attributes->get( '_route_params' );
+
+			// required for reloading to the current page
+			$params['target'] = $request->get( '_route' );
+
+			$urlParams = $this->getUrlParams();
+
+			$langid = $context->getLocale()->getLanguageId();
+			$i18n = $this->getI18n( array( $langid ) );
+
+			$translation = $i18n[$langid];
+		}
+		else
+		{
+			$translation = new \MW_Translation_None( 'en' );
+		}
+
+
+		$view = new \MW_View_Default();
+
+		$helper = new \MW_View_Helper_Translate_Default( $view, $translation );
+		$view->addHelper( 'translate', $helper );
+
+		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->container->get( 'router' ), $urlParams );
+		$view->addHelper( 'url', $helper );
+
+		$helper = new \MW_View_Helper_Parameter_Default( $view, $params );
+		$view->addHelper( 'param', $helper );
+
+		$helper = new \MW_View_Helper_Config_Default( $view, $config );
+		$view->addHelper( 'config', $helper );
+
+		$sepDec = $config->get( 'client/html/common/format/seperatorDecimal', '.' );
+		$sep1000 = $config->get( 'client/html/common/format/seperator1000', ' ' );
+		$helper = new \MW_View_Helper_Number_Default( $view, $sepDec, $sep1000 );
+		$view->addHelper( 'number', $helper );
+
+		$helper = new \MW_View_Helper_FormParam_Default( $view, array() );
+		$view->addHelper( 'formparam', $helper );
+
+		$helper = new \MW_View_Helper_Encoder_Default( $view );
+		$view->addHelper( 'encoder', $helper );
+
+		return $view;
 	}
 
 

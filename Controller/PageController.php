@@ -28,7 +28,7 @@ class PageController extends AbstractController
 	 */
 	public function accountAction()
 	{
-		return $this->render( 'AimeosShopBundle:Page:account.html.twig' );
+		return $this->render( 'AimeosShopBundle:Page:account.html.twig', $this->getPageSections( 'account' ) );
 	}
 
 
@@ -39,7 +39,7 @@ class PageController extends AbstractController
 	 */
 	public function basketStandardAction()
 	{
-		return $this->render( 'AimeosShopBundle:Page:basket-standard.html.twig' );
+		return $this->render( 'AimeosShopBundle:Page:basket-standard.html.twig', $this->getPageSections( 'basket-standard' ) );
 	}
 
 
@@ -50,7 +50,7 @@ class PageController extends AbstractController
 	 */
 	public function catalogDetailAction()
 	{
-		return $this->render( 'AimeosShopBundle:Page:catalog-detail.html.twig' );
+		return $this->render( 'AimeosShopBundle:Page:catalog-detail.html.twig', $this->getPageSections( 'catalog-detail' ) );
 	}
 
 
@@ -61,7 +61,7 @@ class PageController extends AbstractController
 	 */
 	public function catalogListAction()
 	{
-		return $this->render( 'AimeosShopBundle:Page:catalog-list.html.twig' );
+		return $this->render( 'AimeosShopBundle:Page:catalog-list.html.twig', $this->getPageSections( 'catalog-list' ) );
 	}
 
 
@@ -72,7 +72,7 @@ class PageController extends AbstractController
 	 */
 	public function checkoutConfirmAction()
 	{
-		return $this->render( 'AimeosShopBundle:Page:checkout-confirm.html.twig' );
+		return $this->render( 'AimeosShopBundle:Page:checkout-confirm.html.twig', $this->getPageSections( 'checkout-confirm' ) );
 	}
 
 
@@ -83,7 +83,7 @@ class PageController extends AbstractController
 	 */
 	public function checkoutStandardAction()
 	{
-		return $this->render( 'AimeosShopBundle:Page:checkout-standard.html.twig' );
+		return $this->render( 'AimeosShopBundle:Page:checkout-standard.html.twig', $this->getPageSections( 'checkout-standard' ) );
 	}
 
 
@@ -106,5 +106,37 @@ class PageController extends AbstractController
 	public function termsAction()
 	{
 		return $this->render( 'AimeosShopBundle:Page:terms.html.twig' );
+	}
+
+
+	/**
+	 * Returns the body and header sections created by the clients configured for the given page name.
+	 *
+	 * @param string $name Name of the configured page
+	 * @return array Associative list with body and header output separated by client name
+	 */
+	protected function getPageSections( $pageName )
+	{
+		$cm = $this->get( 'aimeos_context' );
+		$context = $cm->getContext();
+		$aimeos = $cm->getAimeos();
+		$templatePaths = $aimeos->getCustomPaths( 'client/html' );
+		$pagesConfig = $this->container->getParameter( 'aimeos_shop.pages' );
+		$result = array( 'body' => array(), 'header' => array() );
+
+		if( isset( $pagesConfig[$pageName] ) )
+		{
+			foreach( (array) $pagesConfig[$pageName] as $clientName )
+			{
+				$client = \Client_Html_Factory::createClient( $context, $templatePaths, $clientName );
+				$client->setView( $context->getView() );
+				$client->process();
+
+				$result['body'][$clientName] = $client->getBody();
+				$result['header'][$clientName] = $client->getHeader();
+			}
+		}
+
+		return $result;
 	}
 }

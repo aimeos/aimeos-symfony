@@ -55,7 +55,6 @@ class JobsCommand extends Command
 		$context = $cm->getContext( false );
 
 		$context->setI18n( $this->createI18n( $context, $aimeos->getI18nPaths() ) );
-		$context->setView( $cm->createView( false ) );
 		$context->setEditor( 'aimeos:jobs' );
 
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );

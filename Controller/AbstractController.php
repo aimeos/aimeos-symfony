@@ -37,7 +37,7 @@ abstract class AbstractController
 		$templatePaths = $aimeos->getCustomPaths( 'client/html' );
 
 		$client = $factoryname::createClient( $context, $templatePaths, $name );
-		$client->setView( $cm->createView() );
+		$client->setView( $context->getView() );
 
 		return $client;
 	}
