@@ -121,7 +121,7 @@ class PageController extends AbstractController
 		$context = $cm->getContext();
 		$aimeos = $cm->getAimeos();
 		$templatePaths = $aimeos->getCustomPaths( 'client/html' );
-		$pagesConfig = $this->container->getParameter( 'aimeos_shop.pages' );
+		$pagesConfig = $this->container->getParameter( 'aimeos_shop.page' );
 		$result = array( 'body' => array(), 'header' => array() );
 
 		if( isset( $pagesConfig[$pageName] ) )
