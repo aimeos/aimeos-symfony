@@ -15,8 +15,7 @@ env:
 
 before_script:
   - mysql -e "create database symfony;"
-  - composer require "symfony/symfony:${SYMFONY_VERSION}" --no-update
-  - composer install --dev
+  - composer require "symfony/symfony:${SYMFONY_VERSION}"
 
 script:
   - phpunit --coverage-clover coverage.xml
@@ -26,3 +25,6 @@ after_success:
 
 matrix:
   fast_finish: true
+  allow_failures:
+    - php: 5.3
+      env: SYMFONY_VERSION=2.4.*
