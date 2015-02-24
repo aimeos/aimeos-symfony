@@ -48,7 +48,7 @@ aimeos_shop_stock:
 
 aimeos_shop_checkout:
     path: /checkout/{c_step}
-    defaults: { _controller: AimeosShopBundle:Checkout:index, c_step: summary }
+    defaults: { _controller: AimeosShopBundle:Checkout:index, c_step: '' }
 
 aimeos_shop_confirm:
     path: /confirm
