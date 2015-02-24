@@ -79,11 +79,11 @@ To see all components and get everything working, you also need to adapt your Tw
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-{% block header %}{% endblock %}
+{% block aimeos_header %}{% endblock %}
         <title>{% block title %}Aimeos shop{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-{% block stylesheets %}{% endblock %}
+{% block aimeos_styles %}{% endblock %}
     </head>
     <body>
         <div class="navbar navbar-static" role="navigation">
@@ -97,18 +97,18 @@ To see all components and get everything working, you also need to adapt your Tw
               </button>
             </div>
           </div>
-{% block head %}{% endblock %}
+{% block aimeos_head %}{% endblock %}
         </div>
         <div class="col-xs-12">
-            {% block nav %}{% endblock %}
-            {% block stage %}{% endblock %}
-            {% block body %}{% endblock %}
-            {% block aside %}{% endblock %}
+            {% block aimeos_nav %}{% endblock %}
+            {% block aimeos_stage %}{% endblock %}
+            {% block aimeos_body %}{% endblock %}
+            {% block aimeos_aside %}{% endblock %}
         </div>
         <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-{% block javascripts %}{% endblock %}
+{% block aimeos_scripts %}{% endblock %}
     </body>
 </html>
 ```
