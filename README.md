@@ -70,7 +70,7 @@ In a production environment or if you don't want that the demo data gets install
 
 ## Setup
 
-To see all components and get everything working, you also need to adapt your Twig base template in `app/Resources/views/base.html.twig`. This is a working example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/getting-started/#download):
+To see all components and get everything working, you also need to adapt your Twig base template in `app/Resources/views/base.html.twig`. This is a working example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/):
 
 ```
 <!DOCTYPE html>
@@ -82,7 +82,7 @@ To see all components and get everything working, you also need to adapt your Tw
 {% block aimeos_header %}{% endblock %}
         <title>{% block title %}Aimeos shop{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
 {% block aimeos_styles %}{% endblock %}
     </head>
     <body>
@@ -105,21 +105,15 @@ To see all components and get everything working, you also need to adapt your Tw
             {% block aimeos_body %}{% endblock %}
             {% block aimeos_aside %}{% endblock %}
         </div>
-        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 {% block aimeos_scripts %}{% endblock %}
     </body>
 </html>
 ```
 
-Copy the
-
-* css/
-* js/
-* fonts/
-
-directories from the bootstrap .zip package into the web/ directory of your Symfony2 application. Then, you should be able to call the catalog list page in your browser using
+Then, you should be able to call the catalog list page in your browser using
 
 ```http://<your web root>/app_dev.php/list```
 
