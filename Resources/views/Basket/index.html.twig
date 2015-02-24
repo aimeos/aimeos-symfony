@@ -1,0 +1,11 @@
+ {% extends 'AimeosShopBundle::base.html.twig' %}
+
+ {% block aimeos_header %}
+     {{ aiheader['basket/standard']|raw }}
+     {{ aiheader['basket/related']|raw }}
+ {% endblock %}
+
+ {% block aimeos_body %}
+     {{ aibody['basket/standard']|raw }}
+     {{ aibody['basket/related']|raw }}
+ {% endblock %}

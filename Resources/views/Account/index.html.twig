@@ -1,0 +1,23 @@
+ {% extends 'AimeosShopBundle::base.html.twig' %}
+
+ {% block aimeos_header %}
+     {{ aiheader['basket/mini']|raw }}
+     {{ aiheader['account/history']|raw }}
+     {{ aiheader['account/favorite']|raw }}
+     {{ aiheader['account/watch']|raw }}
+     {{ aiheader['catalog/session']|raw }}
+ {% endblock %}
+
+ {% block aimeos_head %}
+     {{ aibody['basket/mini']|raw }}
+ {% endblock %}
+
+ {% block aimeos_body %}
+     {{ aibody['account/history']|raw }}
+     {{ aibody['account/favorite']|raw }}
+     {{ aibody['account/watch']|raw }}
+ {% endblock %}
+ 
+ {% block aimeos_aside %}
+     {{ aibody['catalog/session']|raw }}
+ {% endblock %}

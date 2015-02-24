@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-{% block header %}{% endblock %}
+{% block aimeos_header %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <title>{% block title %}Aimeos shop{% endblock %}</title>
-{% block stylesheets %}{% endblock %}
+{% block aimeos_styles %}{% endblock %}
     </head>
     <body>
         <div class="navbar navbar-static" role="navigation">
-{% block head %}{% endblock %}
+{% block aimeos_head %}{% endblock %}
         </div>
-{% if block('nav') %}
+{% if block('aimeos_nav') %}
         <div class="col-xs-12 col-sm-3">
-            {% block nav %}{% endblock %}
+            {% block aimeos_nav %}{% endblock %}
         </div>
 {% endif %}
-{% if block('nav') or block('aside') %}
+{% if block('aimeos_nav') or block('aimeos_aside') %}
         <div class="col-xs-12 col-sm-9">
 {% else %}
         <div class="col-xs-12">
 {% endif %}
-            {% block stage %}{% endblock %}
-            {% block body %}{% endblock %}
+            {% block aimeos_stage %}{% endblock %}
+            {% block aimeos_body %}{% endblock %}
         </div>
-{% if block('aside') %}
+{% if block('aimeos_aside') %}
         <div class="col-xs-12 col-sm-3">
-            {% block aside %}{% endblock %}
+            {% block aimeos_aside %}{% endblock %}
         </div>
 {% endif %}
-{% block javascripts %}{% endblock %}
+{% block aimeos_scripts %}{% endblock %}
     </body>
 </html>

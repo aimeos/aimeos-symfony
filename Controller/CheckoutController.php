@@ -10,7 +10,7 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
 /**
@@ -19,8 +19,32 @@ use Symfony\Component\HttpFoundation\Response;
  * @package symfony2-bundle
  * @subpackage Controller
  */
-class CheckoutController extends AbstractController
+class CheckoutController extends Controller
 {
+	/**
+	 * Returns the html for the checkout confirmation page.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function confirmAction()
+	{
+		$params = $this->get( 'aimeos_context' )->getPageSections( 'checkout-confirm' );
+		return $this->render( 'AimeosShopBundle:Checkout:confirm.html.twig', $params );
+	}
+
+
+	/**
+	 * Returns the html for the standard checkout page.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function indexAction()
+	{
+		$params = $this->get( 'aimeos_context' )->getPageSections( 'checkout-index' );
+		return $this->render( 'AimeosShopBundle:Checkout:index.html.twig', $params );
+	}
+
+
 	/**
 	 * Returns the view for the order update page.
 	 *
@@ -28,10 +52,7 @@ class CheckoutController extends AbstractController
 	 */
 	public function updateAction()
 	{
-		$client = $this->getClient( '\\Client_Html_Checkout_Update_Factory' );
-		$client->process();
-
-		$params = array( 'output' => $client->getBody() );
+		$params = $this->get( 'aimeos_context' )->getPageSections( 'checkout-update' );
 		return $this->render( 'AimeosShopBundle:Checkout:update.html.twig', $params );
 	}
 }

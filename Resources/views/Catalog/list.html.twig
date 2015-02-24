@@ -1,0 +1,24 @@
+ {% extends 'AimeosShopBundle::base.html.twig' %}
+
+ {% block aimeos_header %}
+     {{ aiheader['basket/mini']|raw }}
+     {{ aiheader['catalog/filter']|raw }}
+     {{ aiheader['catalog/stage']|raw }}
+     {{ aiheader['catalog/list']|raw }}
+ {% endblock %}
+
+ {% block aimeos_head %}
+     {{ aibody['basket/mini']|raw }}
+ {% endblock %}
+ 
+ {% block aimeos_nav %}
+     {{ aibody['catalog/filter']|raw }}
+ {% endblock %}
+
+ {% block aimeos_stage %}
+     {{ aibody['catalog/stage']|raw }}
+ {% endblock %}
+
+ {% block aimeos_body %}
+     {{ aibody['catalog/list']|raw }}
+ {% endblock %}

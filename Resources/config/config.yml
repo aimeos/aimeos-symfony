@@ -3,12 +3,16 @@ aimeos_shop:
     uploaddir: /.
 
     page:
-        account: ['account/history','account/favorite','account/watch','basket/mini','catalog/session']
-        basket-standard: ['basket/standard','basket/related']
+        account-index: ['account/history','account/favorite','account/watch','basket/mini','catalog/session']
+        basket-index: ['basket/standard','basket/related']
+        catalog-count: ['catalog/count']
         catalog-detail: ['basket/mini','catalog/stage','catalog/detail','catalog/session']
         catalog-list: ['basket/mini','catalog/filter','catalog/stage','catalog/list']
+        catalog-suggest: ['catalog/suggest']
+        catalog-stock: ['catalog/stock']
         checkout-confirm: ['checkout/confirm']
-        checkout-standard: ['checkout/standard']
+        checkout-index: ['checkout/standard']
+        checkout-update: ['checkout/update']
 
     resource:
         db:
@@ -49,12 +53,12 @@ aimeos_shop:
                 list:
                     url:
                         target: aimeos_shop_list
-                listsimple:
-                    url:
-                        target: aimeos_shop_listsimple
                 stock:
                     url:
                         target: aimeos_shop_stock
+                suggest:
+                    url:
+                        target: aimeos_shop_suggest
             common:
                 content:
                     baseurl: uploads

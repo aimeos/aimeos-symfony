@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
 /**
@@ -19,7 +20,7 @@ use Symfony\Component\HttpFoundation\Request;
  * @package symfony2-bundle
  * @subpackage Controller
  */
-class AdminController extends AbstractController
+class AdminController extends Controller
 {
 	/**
 	 * Returns the initial HTML view for the admin interface.
@@ -48,7 +49,7 @@ class AdminController extends AbstractController
 					throw new Exception( sprintf( 'JSB2 file "%1$s" not found', $jsbAbsPath ) );
 				}
 
-				$jsb2 = new \MW_Jsb2_Default( $jsbAbsPath, 'bundles/aimeosshop/' . dirname( $path ) );
+				$jsb2 = new \MW_Jsb2_Default( $jsbAbsPath, dirname( $path ) );
 
 				$cssFiles = array_merge( $cssFiles, $jsb2->getUrls( 'css' ) );
 				$jsFiles = array_merge( $jsFiles, $jsb2->getUrls( 'js' ) );

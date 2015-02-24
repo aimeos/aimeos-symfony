@@ -117,6 +117,37 @@ class ContextManager
 
 
 	/**
+	 * Returns the body and header sections created by the clients configured for the given page name.
+	 *
+	 * @param string $name Name of the configured page
+	 * @return array Associative list with body and header output separated by client name
+	 */
+	public function getPageSections( $pageName )
+	{
+		$context = $this->getContext();
+		$aimeos = $this->getAimeos();
+		$templatePaths = $aimeos->getCustomPaths( 'client/html' );
+		$pagesConfig = $this->container->getParameter( 'aimeos_shop.page' );
+		$result = array( 'aibody' => array(), 'aiheader' => array() );
+
+		if( isset( $pagesConfig[$pageName] ) )
+		{
+			foreach( (array) $pagesConfig[$pageName] as $clientName )
+			{
+				$client = \Client_Html_Factory::createClient( $context, $templatePaths, $clientName );
+				$client->setView( $context->getView() );
+				$client->process();
+
+				$result['aibody'][$clientName] = $client->getBody();
+				$result['aiheader'][$clientName] = $client->getHeader();
+			}
+		}
+
+		return $result;
+	}
+
+
+	/**
 	 * Adds the user ID and name if available
 	 *
 	 * @param \MShop_Context_Item_Interface $context Context object
@@ -153,9 +184,9 @@ class ContextManager
 	 * @param boolean $locale True to add locale object to context, false if not
 	 * @return \MW_View_Interface View object
 	 */
-	public function createView( \MShop_Context_Item_Interface $context, $locale = true )
+	protected function createView( \MShop_Context_Item_Interface $context, $locale = true )
 	{
-		$params = $urlParams = array();
+		$params = $fixed = array();
 		$config = $context->getConfig();
 
 		if( $locale === true )
@@ -166,7 +197,7 @@ class ContextManager
 			// required for reloading to the current page
 			$params['target'] = $request->get( '_route' );
 
-			$urlParams = $this->getUrlParams();
+			$fixed = $this->getFixedParams();
 
 			$langid = $context->getLocale()->getLanguageId();
 			$i18n = $this->getI18n( array( $langid ) );
@@ -184,7 +215,7 @@ class ContextManager
 		$helper = new \MW_View_Helper_Translate_Default( $view, $translation );
 		$view->addHelper( 'translate', $helper );
 
-		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->container->get( 'router' ), $urlParams );
+		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->container->get( 'router' ), $fixed );
 		$view->addHelper( 'url', $helper );
 
 		$helper = new \MW_View_Helper_Parameter_Default( $view, $params );
@@ -306,7 +337,7 @@ class ContextManager
 	 *
 	 * @return array Associative list of parameters with "site", "locale" and "currency" if available
 	 */
-	protected function getUrlParams()
+	protected function getFixedParams()
 	{
 		$urlparams = array();
 		$attr = $this->requestStack->getMasterRequest()->attributes;

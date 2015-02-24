@@ -8,23 +8,23 @@ aimeos_shop_admin:
 
 aimeos_shop_account:
     path: /myaccount
-    defaults: { _controller: AimeosShopBundle:Page:account }
+    defaults: { _controller: AimeosShopBundle:Account:index }
 
 aimeos_shop_account_pinned:
     path: /detail/pin/{pin_action}/{pin_id}/{d_name}/{d_prodid}
-    defaults: { _controller: AimeosShopBundle:Page:catalogDetail, d_name: '', l_pos: 0 }
+    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '', l_pos: 0 }
 
 aimeos_shop_account_favorite:
     path: /myaccount/favorite/{fav_action}/{fav_id}/{d_name}
-    defaults: { _controller: AimeosShopBundle:Page:account, fav_action: '', fav_id: '', d_name: '', d_prodid: '', l_pos: 0 }
+    defaults: { _controller: AimeosShopBundle:Account:index, fav_action: '', fav_id: '', d_name: '', d_prodid: '', l_pos: 0 }
 
 aimeos_shop_account_watch:
     path: /myaccount/watch/{wat_action}/{wat_id}/{d_name}
-    defaults: { _controller: AimeosShopBundle:Page:account, wat_action: '', wat_id: '', d_name: '', d_prodid: '', l_pos: 0 }
+    defaults: { _controller: AimeosShopBundle:Account:index, wat_action: '', wat_id: '', d_name: '', d_prodid: '', l_pos: 0 }
 
 aimeos_shop_basket:
     path: /basket
-    defaults: { _controller: AimeosShopBundle:Page:basketStandard }
+    defaults: { _controller: AimeosShopBundle:Basket:index }
 
 aimeos_shop_count:
     path: /count
@@ -32,15 +32,15 @@ aimeos_shop_count:
 
 aimeos_shop_detail:
     path: /detail/{d_prodid}/{d_name}/{l_pos}
-    defaults: { _controller: AimeosShopBundle:Page:catalogDetail, d_name: '', l_pos: 0 }
+    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '', l_pos: 0 }
 
 aimeos_shop_list:
     path: /list/{f_catid}/{f_name}
-    defaults: { _controller: AimeosShopBundle:Page:catalogList, f_catid: '', f_name: '' }
+    defaults: { _controller: AimeosShopBundle:Catalog:list, f_catid: '', f_name: '' }
 
-aimeos_shop_listsimple:
+aimeos_shop_suggest:
     path: /suggest
-    defaults: { _controller: AimeosShopBundle:Catalog:listSimple, _format: json }
+    defaults: { _controller: AimeosShopBundle:Catalog:suggest, _format: json }
 
 aimeos_shop_stock:
     path: /stock
@@ -48,11 +48,11 @@ aimeos_shop_stock:
 
 aimeos_shop_checkout:
     path: /checkout/{c_step}
-    defaults: { _controller: AimeosShopBundle:Page:checkoutStandard, c_step: summary }
+    defaults: { _controller: AimeosShopBundle:Checkout:index, c_step: summary }
 
 aimeos_shop_confirm:
     path: /confirm
-    defaults: { _controller: AimeosShopBundle:Page:checkoutConfirm }
+    defaults: { _controller: AimeosShopBundle:Checkout:confirm }
 
 aimeos_shop_update:
     path: /update

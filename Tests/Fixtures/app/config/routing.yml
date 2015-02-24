@@ -4,7 +4,7 @@ aimeos_shop:
 
 aimeos_shop_admin_json:
     path: /admin/do
-    defaults: { _controller: AimeosShopBundle:Admin:do, _format: json }
+    defaults: { _controller: AimeosShopBundle:Admin:do }
 
 aimeos_shop_admin:
     path: /admin/{site}/{lang}/{tab}
