@@ -50,9 +50,10 @@ class JobsCommand extends Command
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
 		$cm = $this->getContainer()->get( 'aimeos_context' );
-		$aimeos = $cm->getAimeos();
 
-		$context = $cm->getContext( false );
+		$aimeos = $cm->getAimeos();
+		$templatePaths = $aimeos->getCustomPaths( 'controller/jobs/layouts' );
+		$context = $cm->getContext( $templatePaths, false );
 
 		$context->setI18n( $this->createI18n( $context, $aimeos->getI18nPaths() ) );
 		$context->setEditor( 'aimeos:jobs' );

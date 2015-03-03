@@ -31,7 +31,7 @@ class AdminController extends Controller
 	public function indexAction( $site, $lang, $tab )
 	{
 		$cm = $this->get( 'aimeos_context' );
-		$context = $cm->getContext( false );
+		$context = $cm->getContext( array(), false );
 		$context = $this->setLocale( $context, $lang );
 
 		$aimeos = $cm->getAimeos();
@@ -90,7 +90,7 @@ class AdminController extends Controller
 	{
 		$cm = $this->get( 'aimeos_context' );
 
-		$context = $cm->getContext( false );
+		$context = $cm->getContext( array(), false );
 		$context = $this->setLocale( $context );
 		$cntlPaths = $cm->getAimeos()->getCustomPaths( 'controller/extjs' );
 

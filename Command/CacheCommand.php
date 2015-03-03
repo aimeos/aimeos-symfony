@@ -39,7 +39,7 @@ class CacheCommand extends Command
 	{
 		$cm = $this->getContainer()->get( 'aimeos_context' );
 
-		$context = $cm->getContext( false );
+		$context = $cm->getContext( array(), false );
 		$context->setEditor( 'aimeos:cache' );
 
 		$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
