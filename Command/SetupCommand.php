@@ -68,7 +68,7 @@ class SetupCommand extends Command
 	{
 		$cm = $this->getContainer()->get( 'aimeos_context' );
 
-		$ctx = $cm->getContext( false );
+		$ctx = $cm->getContext( array(), false );
 		$ctx->setEditor( 'aimeos:setup' );
 
 		$config = $ctx->getConfig();

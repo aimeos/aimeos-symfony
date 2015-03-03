@@ -65,9 +65,11 @@ class ContextManager
 	/**
 	 * Returns the current context.
 	 *
+	 * @param array $templatePaths List of base path names with relative template paths as key/value pairs
+	 * @param boolean $locale True to add locale object to context, false if not
 	 * @return \MShop_Context_Item_Interface Context object
 	 */
-	public function getContext( $locale = true )
+	public function getContext( array $templatePaths = array(), $locale = true )
 	{
 		if( self::$context === null )
 		{
@@ -107,7 +109,7 @@ class ContextManager
 		$session = new \MW_Session_Symfony2( $this->container->get( 'session' ) );
 		$context->setSession( $session );
 
-		$view = $this->createView( $context, $locale );
+		$view = $this->createView( $context, $templatePaths, $locale );
 		$context->setView( $view );
 
 		$this->addUser( $context );
@@ -124,11 +126,11 @@ class ContextManager
 	 */
 	public function getPageSections( $pageName )
 	{
-		$context = $this->getContext();
 		$aimeos = $this->getAimeos();
 		$templatePaths = $aimeos->getCustomPaths( 'client/html' );
 		$pagesConfig = $this->container->getParameter( 'aimeos_shop.page' );
 		$result = array( 'aibody' => array(), 'aiheader' => array() );
+		$context = $this->getContext( $templatePaths );
 
 		if( isset( $pagesConfig[$pageName] ) )
 		{
@@ -181,10 +183,12 @@ class ContextManager
 	/**
 	 * Creates the view object for the HTML client.
 	 *
+	 * @param \MShop_Context_Item_Interface $context Context object
+	 * @param array $templatePaths List of base path names with relative template paths as key/value pairs
 	 * @param boolean $locale True to add locale object to context, false if not
 	 * @return \MW_View_Interface View object
 	 */
-	protected function createView( \MShop_Context_Item_Interface $context, $locale = true )
+	protected function createView( \MShop_Context_Item_Interface $context, array $templatePaths, $locale )
 	{
 		$params = $fixed = array();
 		$config = $context->getConfig();
@@ -217,6 +221,9 @@ class ContextManager
 
 		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->container->get( 'router' ), $fixed );
 		$view->addHelper( 'url', $helper );
+
+		$helper = new \MW_View_Helper_Partial_Default( $view, $config, $templatePaths );
+		$view->addHelper( 'partial', $helper );
 
 		$helper = new \MW_View_Helper_Parameter_Default( $view, $params );
 		$view->addHelper( 'param', $helper );
