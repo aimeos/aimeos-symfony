@@ -42,10 +42,11 @@ class View
 	 * Creates the view object for the HTML client.
 	 *
 	 * @param \MW_Config_Interface $config Configuration object
+	 * @param array $templatePaths List of base path names with relative template paths as key/value pairs
 	 * @param string|null $locale Code of the current language or null for no translation
 	 * @return \MW_View_Interface View object
 	 */
-	public function create( \MW_Config_Interface $config, $locale = null )
+	public function create( \MW_Config_Interface $config, array $templatePaths, $locale = null )
 	{
 		$params = $fixed = array();
 
@@ -72,6 +73,9 @@ class View
 
 		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->container->get( 'router' ), $fixed );
 		$view->addHelper( 'url', $helper );
+
+		$helper = new \MW_View_Helper_Partial_Default( $view, $config, $templatePaths );
+		$view->addHelper( 'partial', $helper );
 
 		$helper = new \MW_View_Helper_Parameter_Default( $view, $params );
 		$view->addHelper( 'param', $helper );

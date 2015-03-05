@@ -44,15 +44,18 @@ class Page
 	{
 		$context = $this->container->get('aimeos_context')->get();
 		$pagesConfig = $this->container->getParameter( 'aimeos_shop.page' );
-		$templatePaths = $this->container->get('aimeos')->get()->getCustomPaths( 'client/html' );
 		$result = array( 'aibody' => array(), 'aiheader' => array() );
+
+		$langid = $context->getLocale()->getLanguageId();
+		$tmplPaths = $this->container->get('aimeos')->get()->getCustomPaths( 'client/html' );
+		$view = $this->container->get('aimeos_view')->create( $context->getConfig(), $tmplPaths, $langid );
 
 		if( isset( $pagesConfig[$pageName] ) )
 		{
 			foreach( (array) $pagesConfig[$pageName] as $clientName )
 			{
-				$client = \Client_Html_Factory::createClient( $context, $templatePaths, $clientName );
-				$client->setView( $context->getView() );
+				$client = \Client_Html_Factory::createClient( $context, $tmplPaths, $clientName );
+				$client->setView( clone $view );
 				$client->process();
 
 				$result['aibody'][$clientName] = $client->getBody();

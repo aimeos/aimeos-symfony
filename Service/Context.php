@@ -89,9 +89,6 @@ class Context
 		$session = new \MW_Session_Symfony2( $this->container->get( 'session' ) );
 		$context->setSession( $session );
 
-		$view = $this->container->get('aimeos_view')->create( $context->getConfig(), $langid );
-		$context->setView( $view );
-
 		$this->addUser( $context );
 
 		return $context;

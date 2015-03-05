@@ -27,7 +27,7 @@ class JobsCommand extends Command
 		$names = '';
 		$aimeos = new \Arcavias( array() );
 		$cntlPaths = $aimeos->getCustomPaths( 'controller/jobs' );
-		$controllers = \Controller_Jobs_Factory::getControllers( $this->getContext(), $aimeos, $cntlPaths );
+		$controllers = \Controller_Jobs_Factory::getControllers( $this->getBareContext(), $aimeos, $cntlPaths );
 
 		foreach( $controllers as $key => $controller ) {
 			$names .= str_pad( $key, 30 ) . $controller->getName() . PHP_EOL;
@@ -49,15 +49,8 @@ class JobsCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
+		$context = $this->getContext();
 		$aimeos = $this->getContainer()->get( 'aimeos' )->get();
-		$context = $this->getContainer()->get( 'aimeos_context' )->get( false );
-
-		$langManager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'language' );
-		$langids = array_keys( $langManager->searchItems( $langManager->createSearch( true ) ) );
-		$i18n = $this->getContainer()->get( 'aimeos_i18n' )->get( $langids );
-
-		$context->setI18n( $i18n );
-		$context->setEditor( 'aimeos:jobs' );
 
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
 		$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
@@ -81,7 +74,7 @@ class JobsCommand extends Command
 	 *
 	 * @return \MShop_Context_Item_Default Context object containing only the most necessary dependencies
 	 */
-	protected function getContext()
+	protected function getBareContext()
 	{
 		$ctx = new \MShop_Context_Item_Default();
 
@@ -96,5 +89,30 @@ class JobsCommand extends Command
 		$ctx->setI18n( array( 'en' => $i18n ) );
 
 		return $ctx;
+	}
+
+
+	/**
+	 * Returns a context object
+	 *
+	 * @return \MShop_Context_Item_Default Context object
+	 */
+	protected function getContext()
+	{
+		$container = $this->getContainer();
+		$context = $container->get( 'aimeos_context' )->get( false );
+
+		$tmplPaths = $container->get('aimeos')->get()->getCustomPaths( 'controller/jobs/layouts' );
+		$view = $container->get('aimeos_view')->create( $context->getConfig(), $tmplPaths );
+
+		$langManager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'language' );
+		$langids = array_keys( $langManager->searchItems( $langManager->createSearch( true ) ) );
+		$i18n = $this->getContainer()->get( 'aimeos_i18n' )->get( $langids );
+
+		$context->setEditor( 'aimeos:jobs' );
+		$context->setView( $view );
+		$context->setI18n( $i18n );
+
+		return $context;
 	}
 }

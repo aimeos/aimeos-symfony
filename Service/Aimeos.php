@@ -21,6 +21,7 @@ use Symfony\Component\DependencyInjection\Container;
 class Aimeos
 {
 	private $object;
+	private $container;
 
 
 	/**
