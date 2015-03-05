@@ -28,7 +28,7 @@ class CheckoutController extends Controller
 	 */
 	public function confirmAction()
 	{
-		$params = $this->get( 'aimeos_context' )->getPageSections( 'checkout-confirm' );
+		$params = $this->get( 'aimeos_page' )->getSections( 'checkout-confirm' );
 		return $this->render( 'AimeosShopBundle:Checkout:confirm.html.twig', $params );
 	}
 
@@ -40,7 +40,7 @@ class CheckoutController extends Controller
 	 */
 	public function indexAction()
 	{
-		$params = $this->get( 'aimeos_context' )->getPageSections( 'checkout-index' );
+		$params = $this->get( 'aimeos_page' )->getSections( 'checkout-index' );
 		return $this->render( 'AimeosShopBundle:Checkout:index.html.twig', $params );
 	}
 
@@ -52,7 +52,7 @@ class CheckoutController extends Controller
 	 */
 	public function updateAction()
 	{
-		$params = $this->get( 'aimeos_context' )->getPageSections( 'checkout-update' );
+		$params = $this->get( 'aimeos_page' )->getSections( 'checkout-update' );
 		return $this->render( 'AimeosShopBundle:Checkout:update.html.twig', $params );
 	}
 }

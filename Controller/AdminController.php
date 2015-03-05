@@ -30,11 +30,10 @@ class AdminController extends Controller
 	 */
 	public function indexAction( $site, $lang, $tab )
 	{
-		$cm = $this->get( 'aimeos_context' );
-		$context = $cm->getContext( false );
+		$context = $this->get( 'aimeos_context' )->get( false );
 		$context = $this->setLocale( $context, $lang );
 
-		$aimeos = $cm->getAimeos();
+		$aimeos = $this->get( 'aimeos' )->get();
 		$cntlPaths = $aimeos->getCustomPaths( 'controller/extjs' );
 		$controller = new \Controller_ExtJS_JsonRpc( $context, $cntlPaths );
 		$cssFiles = $jsFiles = array();
@@ -88,11 +87,9 @@ class AdminController extends Controller
 	 */
 	public function doAction( Request $request )
 	{
-		$cm = $this->get( 'aimeos_context' );
-
-		$context = $cm->getContext( false );
+		$cntlPaths = $this->get( 'aimeos' )->get()->getCustomPaths( 'controller/extjs' );
+		$context = $this->get( 'aimeos_context' )->get( false );
 		$context = $this->setLocale( $context );
-		$cntlPaths = $cm->getAimeos()->getCustomPaths( 'controller/extjs' );
 
 		$controller = new \Controller_ExtJS_JsonRpc( $context, $cntlPaths );
 
@@ -109,7 +106,7 @@ class AdminController extends Controller
 	 */
 	protected function getJsonLanguages( \MShop_Context_Item_Interface $context )
 	{
-		$paths = $this->get( 'aimeos_context' )->getAimeos()->getI18nPaths();
+		$paths = $this->get( 'aimeos' )->get()->getI18nPaths();
 		$langs = array();
 
 		if( !isset( $paths['client/extjs'] ) ) {

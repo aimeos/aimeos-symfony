@@ -28,7 +28,7 @@ class CatalogController extends Controller
 	 */
 	public function countAction()
 	{
-		$params = $this->get( 'aimeos_context' )->getPageSections( 'catalog-count' );
+		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-count' );
 		return $this->render( 'AimeosShopBundle:Catalog:count.html.twig', $params );
 	}
 
@@ -40,11 +40,11 @@ class CatalogController extends Controller
 	 */
 	public function detailAction()
 	{
-		$params = $this->get( 'aimeos_context' )->getPageSections( 'catalog-detail' );
+		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-detail' );
 		return $this->render( 'AimeosShopBundle:Catalog:detail.html.twig', $params );
 	}
-	
-	
+
+
 	/**
 	 * Returns the html for the catalog list page.
 	 *
@@ -52,7 +52,7 @@ class CatalogController extends Controller
 	 */
 	public function listAction()
 	{
-		$params = $this->get( 'aimeos_context' )->getPageSections( 'catalog-list' );
+		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-list' );
 		return $this->render( 'AimeosShopBundle:Catalog:list.html.twig', $params );
 	}
 
@@ -64,7 +64,7 @@ class CatalogController extends Controller
 	 */
 	public function stockAction()
 	{
-		$params = $this->get( 'aimeos_context' )->getPageSections( 'catalog-stock' );
+		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-stock' );
 		return $this->render( 'AimeosShopBundle:Catalog:stock.html.twig', $params );
 	}
 
@@ -76,7 +76,7 @@ class CatalogController extends Controller
 	 */
 	public function suggestAction()
 	{
-		$params = $this->get( 'aimeos_context' )->getPageSections( 'catalog-suggest' );
+		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-suggest' );
 		return $this->render( 'AimeosShopBundle:Catalog:suggest.html.twig', $params );
 	}
 }

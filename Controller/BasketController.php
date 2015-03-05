@@ -28,7 +28,7 @@ class BasketController extends Controller
 	 */
 	public function indexAction()
 	{
-		$params = $this->get( 'aimeos_context' )->getPageSections( 'basket-index' );
+		$params = $this->get( 'aimeos_page' )->getSections( 'basket-index' );
 		return $this->render( 'AimeosShopBundle:Basket:index.html.twig', $params );
 	}
 }

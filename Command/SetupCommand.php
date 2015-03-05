@@ -66,9 +66,7 @@ class SetupCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$cm = $this->getContainer()->get( 'aimeos_context' );
-
-		$ctx = $cm->getContext( false );
+		$ctx = $this->getContainer()->get( 'aimeos_context' )->get( false );
 		$ctx->setEditor( 'aimeos:setup' );
 
 		$config = $ctx->getConfig();
@@ -78,7 +76,7 @@ class SetupCommand extends Command
 		$dbconfig = $this->getDbConfig( $config );
 		$this->setOptions( $config, $input );
 
-		$taskPaths = $cm->getAimeos()->getSetupPaths( $site );
+		$taskPaths = $this->getContainer()->get( 'aimeos' )->get()->getSetupPaths( $site );
 
 		$includePaths = $taskPaths;
 		$includePaths[] = get_include_path();

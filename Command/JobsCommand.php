@@ -49,12 +49,14 @@ class JobsCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$cm = $this->getContainer()->get( 'aimeos_context' );
-		$aimeos = $cm->getAimeos();
+		$aimeos = $this->getContainer()->get( 'aimeos' )->get();
+		$context = $this->getContainer()->get( 'aimeos_context' )->get( false );
 
-		$context = $cm->getContext( false );
+		$langManager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'language' );
+		$langids = array_keys( $langManager->searchItems( $langManager->createSearch( true ) ) );
+		$i18n = $this->getContainer()->get( 'aimeos_i18n' )->get( $langids );
 
-		$context->setI18n( $this->createI18n( $context, $aimeos->getI18nPaths() ) );
+		$context->setI18n( $i18n );
 		$context->setEditor( 'aimeos:jobs' );
 
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
@@ -71,34 +73,6 @@ class JobsCommand extends Command
 				\Controller_Jobs_Factory::createController( $context, $aimeos, $jobname )->run();
 			}
 		}
-	}
-
-
-	/**
-	 * Creates new translation objects
-	 *
-	 * @param MShop_Context_Item_Interface $context Context object
-	 * @param array List of paths to the i18n files
-	 * @return array List of translation objects implementing MW_Translation_Interface
-	 */
-	protected function createI18n( \MShop_Context_Item_Interface $context, array $i18nPaths )
-	{
-		$list = array();
-		$translations = $this->getContainer()->getParameter( 'aimeos_shop.i18n' );
-		$langManager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'language' );
-
-		foreach( $langManager->searchItems( $langManager->createSearch( true ) ) as $id => $langItem )
-		{
-			$i18n = new \MW_Translation_Zend2( $i18nPaths, 'gettext', $id, array( 'disableNotices' => true ) );
-
-			if( isset( $translations[$id] ) ) {
-				$i18n = new \MW_Translation_Decorator_Memory( $i18n, $translations[$id] );
-			}
-
-			$list[$id] = $i18n;
-		}
-
-		return $list;
 	}
 
 

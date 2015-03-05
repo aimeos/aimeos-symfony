@@ -28,7 +28,7 @@ class AccountController extends Controller
 	 */
 	public function indexAction()
 	{
-		$params = $this->get( 'aimeos_context' )->getPageSections( 'account-index' );
+		$params = $this->get( 'aimeos_page' )->getSections( 'account-index' );
 		return $this->render( 'AimeosShopBundle:Account:index.html.twig', $params );
 	}
 }
