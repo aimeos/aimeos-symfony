@@ -71,7 +71,6 @@ class Context
 			self::$context = $context;
 		}
 
-		$langid = null;
 		$context = self::$context;
 
 		if( $locale === true )
