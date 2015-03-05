@@ -65,7 +65,7 @@ class JobsCommand extends Command
 			$localeItem = $localeManager->bootstrap( $siteItem->getCode(), 'en', '', false );
 			$context->setLocale( $localeItem );
 
-			$output->writeln( sprintf( 'Executing the Aimeos jobs "<info>%s</info>"', $input->getArgument( 'jobs' ) ) );
+			$output->writeln( sprintf( 'Executing the Aimeos jobs for "<info>%s</info>"', $siteItem->getCode() ) );
 
 			foreach( $jobs as $jobname ) {
 				\Controller_Jobs_Factory::createController( $context, $aimeos, $jobname )->run();
