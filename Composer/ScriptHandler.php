@@ -27,6 +27,8 @@ class ScriptHandler
 	 */
 	public static function setupDatabase( CommandEvent $event )
 	{
+		$options = array();
+
 		if( $event->isDevMode() ) {
 			$options[] = '--option=setup/default/demo:1';
 		}

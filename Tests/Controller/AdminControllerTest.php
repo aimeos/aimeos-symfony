@@ -26,7 +26,7 @@ class AdminControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
-		$crawler = $client->request( 'GET', '/admin/invalid/de/0' );
+		$client->request( 'GET', '/admin/invalid/de/0' );
 
 		$this->assertEquals( 500, $client->getResponse()->getStatusCode() );
 	}
@@ -38,7 +38,7 @@ class AdminControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
-		$crawler = $client->request( 'POST', '/admin/do' /*,
+		$client->request( 'POST', '/admin/do' /*,
 			array(), array(), array('CONTENT_TYPE' => 'application/json'),
 			'[{"jsonrpc":"2.0","method":"Product_Type.searchItems","params":{"site":"unittest"},"id":2}]' */
 		);

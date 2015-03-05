@@ -10,7 +10,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testCount()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/count' );
+		$client->request( 'GET', '/unittest/de/EUR/count' );
 		$content = $client->getResponse()->getContent();
 
 		$this->assertContains( '".catalog-filter-count li.cat-item"', $content );
@@ -200,7 +200,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testSuggest()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/suggest' );
+		$client->request( 'GET', '/unittest/de/EUR/suggest' );
 		$content = $client->getResponse()->getContent();
 
 		$this->assertStringStartsWith( '[{', $content );
@@ -210,7 +210,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testStock()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/stock' );
+		$client->request( 'GET', '/unittest/de/EUR/stock' );
 		$content = $client->getResponse()->getContent();
 
 		$this->assertContains( '.aimeos .product .stock', $content );

@@ -10,9 +10,7 @@
 namespace Aimeos\ShopBundle\Service;
 
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\DependencyInjection\Container;
-use Symfony\Component\Routing\Router;
 
 
 /**
@@ -120,7 +118,7 @@ class ContextManager
 	/**
 	 * Returns the body and header sections created by the clients configured for the given page name.
 	 *
-	 * @param string $name Name of the configured page
+	 * @param string $pageName Name of the configured page
 	 * @return array Associative list with body and header output separated by client name
 	 */
 	public function getPageSections( $pageName )
