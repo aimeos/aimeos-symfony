@@ -1,5 +1,4 @@
 coveralls.json
 coverage.xml
-composer.lock
 vendor/
 ext/
