@@ -6,10 +6,10 @@
 	"license": "MIT",
 	"keywords": ["aimeos", "symfony", "e-commerce", "shop", "portal", "market place"],
 	"support": {
-		"source": "https://github.com/Aimeos/aimeos-symfony",
-		"issues": "https://github.com/Aimeos/aimeos-symfony/issues",
-		"forum": "http://help.aimeos.org",
-		"wiki": "http://docs.aimeos.org"
+		"source": "https://github.com/Aimeos/aimeos-symfony2",
+		"issues": "https://github.com/Aimeos/aimeos-symfony2/issues",
+		"forum": "http://aimeos.org/help",
+		"wiki": "http://aimeos.org/docs"
 	},
 	"repositories": [
 		{
