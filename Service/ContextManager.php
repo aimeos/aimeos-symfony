@@ -65,6 +65,7 @@ class ContextManager
 	/**
 	 * Returns the current context.
 	 *
+	 * @param boolean $locale True to add locale object to context, false if not
 	 * @return \MShop_Context_Item_Interface Context object
 	 */
 	public function getContext( $locale = true )
