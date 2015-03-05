@@ -11,7 +11,7 @@ aimeos_shop_account:
     defaults: { _controller: AimeosShopBundle:Account:index }
 
 aimeos_shop_account_pinned:
-    path: /detail/pin/{pin_action}/{pin_id}/{d_name}/{d_prodid}
+    path: /detail/pin/{pin_action}/{pin_id}/{d_prodid}/{d_name}
     defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '', l_pos: 0 }
 
 aimeos_shop_account_favorite:
