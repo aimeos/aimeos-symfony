@@ -38,9 +38,9 @@ class AdminControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
-		$client->request( 'POST', '/admin/do' /*,
+		$client->request( 'POST', '/admin/do' ,
 			array(), array(), array('CONTENT_TYPE' => 'application/json'),
-			'[{"jsonrpc":"2.0","method":"Product_Type.searchItems","params":{"site":"unittest"},"id":2}]' */
+			'[{"jsonrpc":"2.0","method":"Product_Type.searchItems","params":{"site":"unittest"},"id":2}]'
 		);
 
 		$this->assertStringStartsWith( '{', $client->getResponse()->getContent() );
