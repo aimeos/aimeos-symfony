@@ -8,7 +8,7 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
 {% for cssFile in cssFiles %}
-        <link rel="stylesheet" href="bundles/aimeoshop{{ asset(cssFile) }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/aimeosshop/' ~ cssFile) }}" />
 {% endfor %}
 
         <script type="text/javascript">
@@ -37,7 +37,7 @@
         </script>
 
 {% for jsFile in jsFiles %}
-        <script type="text/javascript" src="bundles/aimeoshop{{ asset(jsFile) }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/aimeosshop/' ~ jsFile) }}"></script>
 {% endfor %}
 
     </head>
