@@ -25,12 +25,12 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.3.3",
-		"arcavias/arcavias-core": "dev-master",
-		"aimeos/ai-symfony2": "dev-master",
-		"aimeos/ai-monolog": "dev-master",
-		"aimeos/ai-zend2-i18n": "dev-master",
-		"aimeos/ai-swiftmailer": "dev-master",
-		"symfony/symfony": ">=2.4"
+		"arcavias/arcavias-core": "2015.03.*",
+		"aimeos/ai-symfony2": "2015.03.*",
+		"aimeos/ai-monolog": "2015.03.*",
+		"aimeos/ai-zend2-i18n": "2015.03.*",
+		"aimeos/ai-swiftmailer": "2015.03.*",
+		"symfony/symfony": "~2.4"
 	},
 	"require-dev": {
 		"friendsofsymfony/user-bundle": "~1.3",

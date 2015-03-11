@@ -4,11 +4,11 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "567a40e69c46463a556b84bc12855021",
+    "hash": "beda7cc9a9479b9cc4e3c8598f6c6dc2",
     "packages": [
         {
             "name": "aimeos/ai-monolog",
-            "version": "dev-master",
+            "version": "2015.03.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
@@ -52,16 +52,16 @@
         },
         {
             "name": "aimeos/ai-swiftmailer",
-            "version": "dev-master",
+            "version": "2015.03.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "7e1f810f0e7a063031e6376530159a073ffe4e52"
+                "reference": "bb3be5c47869430aec4fd5a127f464784b7ede8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/7e1f810f0e7a063031e6376530159a073ffe4e52",
-                "reference": "7e1f810f0e7a063031e6376530159a073ffe4e52",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/bb3be5c47869430aec4fd5a127f464784b7ede8b",
+                "reference": "bb3be5c47869430aec4fd5a127f464784b7ede8b",
                 "shasum": ""
             },
             "require": {
@@ -91,11 +91,11 @@
                 "mail",
                 "swiftmailer"
             ],
-            "time": "2015-01-28 17:30:00"
+            "time": "2015-03-11 08:19:19"
         },
         {
             "name": "aimeos/ai-symfony2",
-            "version": "dev-master",
+            "version": "2015.03.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony2.git",
@@ -138,7 +138,7 @@
         },
         {
             "name": "aimeos/ai-zend2-i18n",
-            "version": "dev-master",
+            "version": "2015.03.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-zend2-i18n.git",
@@ -181,16 +181,16 @@
         },
         {
             "name": "arcavias/arcavias-core",
-            "version": "dev-master",
+            "version": "2015.03.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/arcavias-core.git",
-                "reference": "46510b3eedc8e61c85d4b5e4af58763150ebf153"
+                "reference": "c8a7d4a0a4b4e5c8a45c9364c907852126657d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/46510b3eedc8e61c85d4b5e4af58763150ebf153",
-                "reference": "46510b3eedc8e61c85d4b5e4af58763150ebf153",
+                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/c8a7d4a0a4b4e5c8a45c9364c907852126657d9f",
+                "reference": "c8a7d4a0a4b4e5c8a45c9364c907852126657d9f",
                 "shasum": ""
             },
             "require": {
@@ -259,7 +259,7 @@
                 "forum": "https://forum.arcavias.com",
                 "wiki": "https://docs.arcavias.com"
             },
-            "time": "2015-03-09 13:28:57"
+            "time": "2015-03-11 08:09:40"
         },
         {
             "name": "composer/installers",
@@ -2213,11 +2213,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "arcavias/arcavias-core": 20,
-        "aimeos/ai-symfony2": 20,
-        "aimeos/ai-monolog": 20,
-        "aimeos/ai-zend2-i18n": 20,
-        "aimeos/ai-swiftmailer": 20,
         "satooshi/php-coveralls": 20
     },
     "prefer-stable": true,
