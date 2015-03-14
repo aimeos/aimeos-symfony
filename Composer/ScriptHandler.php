@@ -27,14 +27,16 @@ class ScriptHandler
 	 */
 	public static function setupDatabase( CommandEvent $event )
 	{
-		$options = array();
+		$options = $env = array();
 
 		if( $event->isDevMode() ) {
 			$options[] = '--option=setup/default/demo:1';
+		} else {
+			$env[] = '--env=prod';
 		}
 
-		self::executeCommand( $event, 'aimeos:setup', $options );
-		self::executeCommand( $event, 'aimeos:cache' );
+		self::executeCommand( $event, 'aimeos:setup', $options + $env );
+		self::executeCommand( $event, 'aimeos:cache', $env );
 	}
 
 
