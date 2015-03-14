@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "eb2e0db4bba8914bf563d7c2fbae51baeed1f087"
+                "reference": "106281bcc17ec2a880e535fabe9a49e7ef3cca1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/eb2e0db4bba8914bf563d7c2fbae51baeed1f087",
-                "reference": "eb2e0db4bba8914bf563d7c2fbae51baeed1f087",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/106281bcc17ec2a880e535fabe9a49e7ef3cca1b",
+                "reference": "106281bcc17ec2a880e535fabe9a49e7ef3cca1b",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 "log",
                 "monolog"
             ],
-            "time": "2015-01-28 17:31:53"
+            "time": "2015-03-11 08:39:16"
         },
         {
             "name": "aimeos/ai-swiftmailer",
@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "7e1f810f0e7a063031e6376530159a073ffe4e52"
+                "reference": "ba9a4366e9b4baabb9c4d2eb3b934cd7e7e31426"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/7e1f810f0e7a063031e6376530159a073ffe4e52",
-                "reference": "7e1f810f0e7a063031e6376530159a073ffe4e52",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/ba9a4366e9b4baabb9c4d2eb3b934cd7e7e31426",
+                "reference": "ba9a4366e9b4baabb9c4d2eb3b934cd7e7e31426",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +91,7 @@
                 "mail",
                 "swiftmailer"
             ],
-            "time": "2015-01-28 17:30:00"
+            "time": "2015-03-11 08:40:05"
         },
         {
             "name": "aimeos/ai-symfony2",
@@ -142,12 +142,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-zend2-i18n.git",
-                "reference": "c9be407f5dc91f766d6d5e7709c74efad39173e5"
+                "reference": "9ff833e8a499aea959578f360e1d286c8ed46156"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/c9be407f5dc91f766d6d5e7709c74efad39173e5",
-                "reference": "c9be407f5dc91f766d6d5e7709c74efad39173e5",
+                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/9ff833e8a499aea959578f360e1d286c8ed46156",
+                "reference": "9ff833e8a499aea959578f360e1d286c8ed46156",
                 "shasum": ""
             },
             "require": {
@@ -177,7 +177,7 @@
                 "translate",
                 "zend"
             ],
-            "time": "2015-01-19 10:22:28"
+            "time": "2015-03-11 08:34:50"
         },
         {
             "name": "arcavias/arcavias-core",
@@ -185,12 +185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/arcavias-core.git",
-                "reference": "46510b3eedc8e61c85d4b5e4af58763150ebf153"
+                "reference": "cc5fba315cd5cca6792b94e1539279f76a35c485"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/46510b3eedc8e61c85d4b5e4af58763150ebf153",
-                "reference": "46510b3eedc8e61c85d4b5e4af58763150ebf153",
+                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/cc5fba315cd5cca6792b94e1539279f76a35c485",
+                "reference": "cc5fba315cd5cca6792b94e1539279f76a35c485",
                 "shasum": ""
             },
             "require": {
@@ -259,7 +259,7 @@
                 "forum": "https://forum.arcavias.com",
                 "wiki": "https://docs.arcavias.com"
             },
-            "time": "2015-03-09 13:28:57"
+            "time": "2015-03-14 11:39:24"
         },
         {
             "name": "composer/installers",
@@ -763,16 +763,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.13.0",
+            "version": "1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "c41c218e239b50446fd883acb1ecfd4b770caeae"
+                "reference": "c31a2c4e8db5da8b46c74cf275d7f109c0f249ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c41c218e239b50446fd883acb1ecfd4b770caeae",
-                "reference": "c41c218e239b50446fd883acb1ecfd4b770caeae",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c31a2c4e8db5da8b46c74cf275d7f109c0f249ac",
+                "reference": "c31a2c4e8db5da8b46c74cf275d7f109c0f249ac",
                 "shasum": ""
             },
             "require": {
@@ -832,7 +832,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-03-05 01:12:12"
+            "time": "2015-03-09 09:58:04"
         },
         {
             "name": "psr/log",
@@ -874,16 +874,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.3.1",
+            "version": "v5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "c5f963e7f9d6f6438fda4f22d5cc2db296ec621a"
+                "reference": "31454f258f10329ae7c48763eb898a75c39e0a9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/c5f963e7f9d6f6438fda4f22d5cc2db296ec621a",
-                "reference": "c5f963e7f9d6f6438fda4f22d5cc2db296ec621a",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/31454f258f10329ae7c48763eb898a75c39e0a9f",
+                "reference": "31454f258f10329ae7c48763eb898a75c39e0a9f",
                 "shasum": ""
             },
             "require": {
@@ -895,7 +895,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.3-dev"
+                    "dev-master": "5.4-dev"
                 }
             },
             "autoload": {
@@ -922,7 +922,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2014-12-05 14:17:14"
+            "time": "2015-03-14 06:06:39"
         },
         {
             "name": "symfony/symfony",
