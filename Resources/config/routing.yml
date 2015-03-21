@@ -16,11 +16,11 @@ aimeos_shop_account_pinned:
 
 aimeos_shop_account_favorite:
     path: /myaccount/favorite/{fav_action}/{fav_id}/{d_name}
-    defaults: { _controller: AimeosShopBundle:Account:index, fav_action: '', fav_id: '', d_name: '', d_prodid: '', l_pos: 0 }
+    defaults: { _controller: AimeosShopBundle:Account:index, fav_action: '', fav_id: null, d_name: '', d_prodid: null, l_pos: 0 }
 
 aimeos_shop_account_watch:
     path: /myaccount/watch/{wat_action}/{wat_id}/{d_name}
-    defaults: { _controller: AimeosShopBundle:Account:index, wat_action: '', wat_id: '', d_name: '', d_prodid: '', l_pos: 0 }
+    defaults: { _controller: AimeosShopBundle:Account:index, wat_action: '', wat_id: null, d_name: '', d_prodid: null, l_pos: 0 }
 
 aimeos_shop_basket:
     path: /basket
@@ -36,7 +36,7 @@ aimeos_shop_detail:
 
 aimeos_shop_list:
     path: /list/{f_catid}/{f_name}
-    defaults: { _controller: AimeosShopBundle:Catalog:list, f_catid: '', f_name: '' }
+    defaults: { _controller: AimeosShopBundle:Catalog:list, f_catid: null, f_name: '' }
 
 aimeos_shop_suggest:
     path: /suggest
@@ -48,7 +48,7 @@ aimeos_shop_stock:
 
 aimeos_shop_checkout:
     path: /checkout/{c_step}
-    defaults: { _controller: AimeosShopBundle:Checkout:index, c_step: '' }
+    defaults: { _controller: AimeosShopBundle:Checkout:index, c_step: null }
 
 aimeos_shop_confirm:
     path: /confirm
