@@ -99,12 +99,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony2.git",
-                "reference": "e30b913da84b79ce0c981a0e010605e9854f05d4"
+                "reference": "b62834fc91c2dfd8eef62c2c062e250c997d62ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/e30b913da84b79ce0c981a0e010605e9854f05d4",
-                "reference": "e30b913da84b79ce0c981a0e010605e9854f05d4",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/b62834fc91c2dfd8eef62c2c062e250c997d62ca",
+                "reference": "b62834fc91c2dfd8eef62c2c062e250c997d62ca",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "aimeos",
                 "symfony"
             ],
-            "time": "2015-03-19 10:19:49"
+            "time": "2015-03-19 16:27:19"
         },
         {
             "name": "aimeos/ai-zend2-i18n",
@@ -185,12 +185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/arcavias-core.git",
-                "reference": "4c0f9c3d28b4d912cb2d59d322f708609eeac4cf"
+                "reference": "2c3e75065636d8c451fbd6123c3d3d5ee07cc3df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/4c0f9c3d28b4d912cb2d59d322f708609eeac4cf",
-                "reference": "4c0f9c3d28b4d912cb2d59d322f708609eeac4cf",
+                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/2c3e75065636d8c451fbd6123c3d3d5ee07cc3df",
+                "reference": "2c3e75065636d8c451fbd6123c3d3d5ee07cc3df",
                 "shasum": ""
             },
             "require": {
@@ -259,7 +259,7 @@
                 "forum": "https://forum.arcavias.com",
                 "wiki": "https://docs.arcavias.com"
             },
-            "time": "2015-03-19 10:42:01"
+            "time": "2015-03-21 15:06:40"
         },
         {
             "name": "composer/installers",
