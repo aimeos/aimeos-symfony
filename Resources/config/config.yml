@@ -37,9 +37,6 @@ aimeos_shop:
                 favorite:
                     url:
                         target: aimeos_shop_account_favorite
-                pinned:
-                    url:
-                        target: aimeos_shop_account_pinned
                 watch:
                     url:
                         target: aimeos_shop_account_watch
@@ -53,6 +50,10 @@ aimeos_shop:
                 list:
                     url:
                         target: aimeos_shop_list
+                session:
+                    pinned:
+                        url:
+                            target: aimeos_shop_session_pinned
                 stock:
                     url:
                         target: aimeos_shop_stock
