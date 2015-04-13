@@ -11,6 +11,9 @@
 	bootstrap="Tests/bootstrap.php">
 	
 	<php>
+		<!-- disable E_USER_DEPRECATED -->
+		<!-- -16385 is the same as -1 & ~E_USER_DEPRECATED -->
+		<ini name="error_reporting" value="-16385"/>
 		<server name="KERNEL_DIR" value="./Tests/Fixtures/app/" />
 	</php>
 

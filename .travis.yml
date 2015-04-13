@@ -12,17 +12,17 @@ env:
   - SYMFONY_VERSION=2.4.*
   - SYMFONY_VERSION=2.5.*
   - SYMFONY_VERSION=2.6.*
+  - SYMFONY_VERSION=2.7.*
 
 before_script:
   - mysql -e "create database symfony;"
   - composer require "symfony/symfony:${SYMFONY_VERSION}"
 
 script:
-#  - phpunit --coverage-clover coverage.xml
-  - phpunit
+  - phpunit --coverage-clover coverage.xml
 
 after_success:
-#  - php vendor/bin/coveralls
+  - php vendor/bin/coveralls
 
 matrix:
   fast_finish: true
