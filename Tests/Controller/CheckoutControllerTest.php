@@ -13,6 +13,8 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
@@ -80,6 +82,7 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
+		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -129,6 +132,7 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
+		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -148,6 +152,7 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
+		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -167,6 +172,7 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
+		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -186,6 +192,7 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
+		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -205,6 +212,7 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
+		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -224,6 +232,8 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
