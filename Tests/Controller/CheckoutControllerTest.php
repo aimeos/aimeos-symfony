@@ -283,6 +283,8 @@ class CheckoutControllerTest extends WebTestCase
 	public function testUpdate()
 	{
 		$client = static::createClient();
+		$client->insulate();
+
 		$client->request( 'GET', '/unittest/de/EUR/update' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
