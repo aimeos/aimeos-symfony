@@ -2,13 +2,13 @@
 
 <phpunit backupGlobals="false"
 	backupStaticAttributes="false"
+	bootstrap="Tests/bootstrap.php"
 	convertErrorsToExceptions="true"
 	convertNoticesToExceptions="true"
 	convertWarningsToExceptions="true"
 	processIsolation="false"
 	stopOnFailure="false"
-	syntaxCheck="false"
-	bootstrap="Tests/bootstrap.php">
+	syntaxCheck="false">
 	
 	<php>
 		<server name="KERNEL_DIR" value="./Tests/Fixtures/app/" />
