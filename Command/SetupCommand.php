@@ -85,6 +85,8 @@ class SetupCommand extends Command
 			throw new Exception( 'Unable to extend include path' );
 		}
 
+		spl_autoload_register( '\Aimeos\ShopBundle\Command\SetupCommand::autoload', true );
+
 		$manager = new \MW_Setup_Manager_Multiple( $ctx->getDatabaseManager(), $dbconfig, $taskPaths, $ctx );
 
 		$output->writeln( sprintf( 'Initializing or updating the Aimeos database tables for site <info>%1$s</info>', $site ) );
