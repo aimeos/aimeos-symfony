@@ -46,5 +46,15 @@
 	},
 	"autoload": {
 		"psr-4": { "Aimeos\\ShopBundle\\": "" }
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"cp -r vendor/arcavias/arcavias-core/client/extjs/* Resources/public/client/extjs/",
+			"cp -r vendor/arcavias/arcavias-core/client/html/themes/* Resources/public/themes/"
+		],
+		"post-update-cmd": [
+			"cp -r vendor/arcavias/arcavias-core/client/extjs/* Resources/public/client/extjs/",
+			"cp -r vendor/arcavias/arcavias-core/client/html/themes/* Resources/public/themes/"
+		]
 	}
 }
