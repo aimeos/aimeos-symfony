@@ -598,6 +598,10 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	clear: both;
 }
 
+.catalog-stage-image img {
+	width: 100%;
+}
+
 .catalog-stage-breadcrumb {
 	color: #555;
 }
@@ -1522,17 +1526,12 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 
 /* Basket */
 .checkout-standard,
-.checkout-confirm,
-.account-history {
+.checkout-confirm {
 	min-width: 240px;
 	margin: 0 auto;
 }
 
-.checkout-confirm-basic,
-.checkout-confirm-order-service,
-.checkout-confirm-order-detail,
-.account-history-order-service,
-.account-history-order-detail {
+.checkout-confirm-basic {
 	padding: 0 1em 1em 1em;
 	border: solid 1px #D0D0D0;
 	margin: 0 0 8px 0;
@@ -1769,8 +1768,7 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 }
 
 .checkout-standard .item-service .description h2,
-.checkout-standard .item-service .description p,
-.checkout-standard .item-service .icons {
+.checkout-standard .item-service .description p {
 	margin: 0 1em;
 }
 
@@ -1781,6 +1779,7 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 
 .checkout-standard .item-service .icons img {
 	max-height: 4em;
+	margin: 0 1em;
 }
 
 .checkout-standard .item-service .option {
@@ -1930,16 +1929,13 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 }
 
 /* Checkout summary */
-.checkout-standard-summary h3,
-.checkout-confirm-order h3,
-.account-history-order h3 {
+.checkout-standard-summary h3 {
 	display: inline-block;
 	font-size: 1em;
 	margin: 0;
 }
 
-.checkout-standard-summary a:hover,
-.account-history-order a:hover {
+.checkout-standard-summary a:hover {
 	text-decoration: underline;
 }
 
@@ -1947,7 +1943,7 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	padding: 0 0 1em 0;
 }
 
-.checkout-standard-summary .button-group a.standardbutton{
+.checkout-standard-summary .button-group a.standardbutton {
 	margin: 0 1em 0 0;
 }
 
@@ -2010,7 +2006,12 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	content: ": ";
 }
 
-/* Order history */
+/* Account history */
+.account-history {
+	min-width: 240px;
+	margin: 0 auto;
+}
+
 .account-history-list .history-list {
 	padding: 0;
 }
@@ -2027,7 +2028,9 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 
 .account-history-list li.attr-item {
 	display: inline-block;
-	margin: 0.25em 1em;
+	padding: 0.25em 1em;
+	margin: 0;
+	width: 50%;
 }
 
 .account-history-list li.attr-item .name,
@@ -2041,16 +2044,24 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	content: ": ";
 }
 
-.checkout-confirm-order h2,
-.account-history-order h2 {
-	margin: 0.5em 0;
+.account-history-order a:hover {
+	text-decoration: underline;
 }
 
 .account-history-order .modify {
 	float: right;
-	margin: 0.5em 1em;
+	margin: 0 1em;
 }
 
+.account-history-order h2 {
+	margin: 0.5em 0;
+}
+
+.account-history-order h3 {
+	display: inline-block;
+	font-size: 1em;
+	margin: 0;
+ }
 
 
 /*! jQuery UI - v1.10.0 - 2013-01-17

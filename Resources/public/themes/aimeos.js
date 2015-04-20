@@ -198,7 +198,7 @@ AimeosAccountHistory = {
 	
 		$(".account-history .history-item").on("click", "a", function(ev) {
 		
-		    var details = $(".account-history-detail", ev.delegateTarget);
+		    var details = $(".account-history-order", ev.delegateTarget);
 		
 		    if(details.length === 0) {
 		
@@ -207,16 +207,16 @@ AimeosAccountHistory = {
 		            var doc = document.createElement("html");
 		            doc.innerHTML = data;
 		
-		            var node = $(".account-history-detail", doc);
+		            var node = $(".account-history-order", doc);
 		            node.css("display", "none");
 		            $(ev.delegateTarget).append(node);
 		            node.slideDown();
 		        });
-		
+
 		    } else {
 		        details.slideToggle();
 		    }
-		
+
 		    return false;
 		});
 	},
@@ -228,7 +228,7 @@ AimeosAccountHistory = {
 	setupOrderClose: function() {
 	
 		$(".account-history .history-item").on("click", ".btn-close", function(ev) {
-		    $(".account-history-detail", ev.delegateTarget).slideUp();
+		    $(".account-history-order", ev.delegateTarget).slideUp();
 		    return false;
 		});
 	},
@@ -579,18 +579,6 @@ AimeosCatalogFilter = {
 	
 	
 	/**
-	 * Submits the form when clicking on filter attribute input fields
-	 */
-	setupAttributeInputSubmit: function() {
-	
-		$(".catalog-filter-attribute input.attr-item").on("click", function() {
-		    $(this).parents(".catalog-filter form").submit();
-		    $(".catalog-list").fadeTo(1000, 0.5);
-		});
-	},
-	
-	
-	/**
 	 * Initialize the catalog filter actions
 	 */
 	init: function() {
@@ -601,7 +589,6 @@ AimeosCatalogFilter = {
 		this.setupListFadeout();
 
 		this.setupAttributeItemSubmit();
-		this.setupAttributeInputSubmit();
 
 		this.setupFormChecks();
 		this.setupSearchAutocompletion();
