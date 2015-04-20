@@ -10,6 +10,8 @@ class BasketControllerTest extends WebTestCase
 	public function testStandardAdd()
 	{
 		$client = static::createClient();
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
@@ -27,6 +29,8 @@ class BasketControllerTest extends WebTestCase
 	public function testStandardAddQuantity()
 	{
 		$client = static::createClient();
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
@@ -45,6 +49,8 @@ class BasketControllerTest extends WebTestCase
 	public function testStandardAddTwice()
 	{
 		$client = static::createClient();
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
@@ -71,6 +77,8 @@ class BasketControllerTest extends WebTestCase
 	public function testStandardDelete()
 	{
 		$client = static::createClient();
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
@@ -90,6 +98,8 @@ class BasketControllerTest extends WebTestCase
 	public function testStandardEdit()
 	{
 		$client = static::createClient();
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
@@ -115,6 +125,8 @@ class BasketControllerTest extends WebTestCase
 	public function testStandardUpdate()
 	{
 		$client = static::createClient();
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
@@ -135,6 +147,8 @@ class BasketControllerTest extends WebTestCase
 	public function testStandardCoupon()
 	{
 		$client = static::createClient();
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
@@ -161,6 +175,8 @@ class BasketControllerTest extends WebTestCase
 	public function testStandardRelated()
 	{
 		$client = static::createClient();
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
@@ -176,6 +192,8 @@ class BasketControllerTest extends WebTestCase
 	public function testStandardBack()
 	{
 		$client = static::createClient();
+		$client->insulate();
+
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
