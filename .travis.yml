@@ -16,6 +16,7 @@ env:
 
 before_script:
   - mysql -e "create database symfony;"
+  - mysql -e "set global wait_timeout=600"
   - composer require "symfony/symfony:${SYMFONY_VERSION}"
 
 script:
