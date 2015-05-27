@@ -67,6 +67,23 @@ In a production environment or if you don't want that the demo data gets install
 
 `composer update --no-dev`
 
+**Note:** Alternatively to running the `post-install-cmd` and `post-update-cmd` scripts automatically, you can add the lines required for installing the bundle manually. In your `config.yml` file you need the following lines:
+
+```
+imports:
+    - { resource: "@AimeosShopBundle/Resources/config/config.yml" }
+
+assetic:
+    bundles:        ['AimeosShopBundle']
+```
+
+For setting up the database, please run the following commands afterwards:
+ 
+```
+php app/console aimeos:setup
+php app/console aimeos:cache
+```
+
 
 ## Setup
 
