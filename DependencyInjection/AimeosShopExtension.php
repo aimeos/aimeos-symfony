@@ -37,7 +37,7 @@ class AimeosShopExtension extends Extension
 			$container->setParameter( 'aimeos_shop.' . $key, $value );
 		}
 
-		$loader = new Loader\YamlFileLoader( $container, new FileLocator( __DIR__ . '/../Resources/config' ) );
+		$loader = new Loader\YamlFileLoader( $container, new FileLocator( dirname( __DIR__ ) . '/Resources/config' ) );
 		$loader->load( 'services.yml' );
 	}
 

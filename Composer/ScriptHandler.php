@@ -190,10 +190,6 @@ class ScriptHandler
 			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
 		}
 
-		if( self::importServices( $content ) === true ) {
-			$update = true;
-		}
-
 		if( self::importConfig( $content ) === true ) {
 			$update = true;
 		}
@@ -251,30 +247,13 @@ class ScriptHandler
 	{
 		if( preg_match( "#    - \{ resource: \"@AimeosShopBundle/Resources/config/config.yml\" \}#", $content ) !== 1 )
 		{
-			$search = array( "/imports:/" );
-			$replace = array( "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/config.yml\" }" );
+			$search = "/imports:/";
+			$replace = "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/config.yml\" }";
 
-			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
+			if( strpos( $content, 'imports:' ) === false ) {
+				$content = $replace . $content;
 				return true;
 			}
-		}
-
-		return false;
-	}
-
-
-	/**
-	 * Adds the services.yml to the config file
-	 *
-	 * @param string &$content Content of the config.yml file
-	 * @return boolean True if modified, false if not
-	 */
-	protected static function importServices( &$content )
-	{
-		if( preg_match( "#    - \{ resource: \"@AimeosShopBundle/Resources/config/services.yml\" \}#", $content ) !== 1 )
-		{
-			$search = array( "/imports:/" );
-			$replace = array( "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/services.yml\" }" );
 
 			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
 				return true;
