@@ -34,7 +34,7 @@ class CheckoutControllerTest extends WebTestCase
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .summary a' )->count() );
 
 
-		$form = $crawler->filter( '.checkout-standard-address form' )->form();
+		$form = $crawler->filter( '.checkout-standard form' )->form();
 		$form['ca_billingoption']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
@@ -46,7 +46,7 @@ class CheckoutControllerTest extends WebTestCase
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .summary a' )->count() );
 
 
-		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
+		$form = $crawler->filter( '.checkout-standard form' )->form();
 		$form['c_deliveryoption']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
@@ -58,7 +58,7 @@ class CheckoutControllerTest extends WebTestCase
 		$this->assertEquals( 0, $crawler->filter( '.checkout-standard .steps .summary a' )->count() );
 
 
-		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
+		$form = $crawler->filter( '.checkout-standard form' )->form();
 		$form['c_paymentoption']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
@@ -245,15 +245,15 @@ class CheckoutControllerTest extends WebTestCase
 		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.checkout-standard-address form' )->form();
+		$form = $crawler->filter( '.checkout-standard form' )->form();
 		$form['ca_billingoption']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
-		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
+		$form = $crawler->filter( '.checkout-standard form' )->form();
 		$form['c_deliveryoption']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
-		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
+		$form = $crawler->filter( '.checkout-standard form' )->form();
 		$payId = $crawler->filter( '.checkout-standard-payment .item-service' )->eq( 1 )->filter( 'input' )->attr( 'value' );
 		$form['c_paymentoption']->select( $payId );
 		$form['c_payment[' . $payId . '][directdebit.accountowner]'] = 'test user';
@@ -310,15 +310,15 @@ class CheckoutControllerTest extends WebTestCase
 		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.checkout-standard-address form' )->form();
+		$form = $crawler->filter( '.checkout-standard form' )->form();
 		$form['ca_billingoption']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
-		$form = $crawler->filter( '.checkout-standard-delivery form' )->form();
+		$form = $crawler->filter( '.checkout-standard form' )->form();
 		$form['c_deliveryoption']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
-		$form = $crawler->filter( '.checkout-standard-payment form' )->form();
+		$form = $crawler->filter( '.checkout-standard form' )->form();
 		$form['c_paymentoption']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
