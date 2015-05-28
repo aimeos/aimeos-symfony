@@ -67,21 +67,36 @@ In a production environment or if you don't want that the demo data gets install
 
 `composer update --no-dev`
 
-**Note:** Alternatively to running the `post-install-cmd` and `post-update-cmd` scripts automatically, you can add the lines required for installing the bundle manually. In your `config.yml` file you need the following lines:
-
+**Note:** Alternatively to running the `post-install-cmd` and `post-update-cmd` scripts automatically, you can add the lines required for installing the bundle manually. In your `./app/config/config.yml` file you need to add "AimeosShopBundle" to the list of bundles managed by the assetic bundle:
 ```
-imports:
-    - { resource: "@AimeosShopBundle/Resources/config/config.yml" }
-
 assetic:
+    # ...
     bundles:        ['AimeosShopBundle']
 ```
 
-For setting up the database, please run the following commands afterwards:
- 
+Furthermore, add the Aimeos routes to your ```./app/config/routing.yml```
+```
+aimeos_shop:
+    resource: "@AimeosShopBundle/Resources/config/routing.yml"
+    prefix: /
+```
+
+For setting up the database, please run the following commands afterwards: 
 ```
 php app/console aimeos:setup
 php app/console aimeos:cache
+```
+
+Finally, create the ```./web/uploads/``` directory and make sure it's writeable by the web server:
+```
+mkdir ./web/uploads/
+chmod 777 ./web/uploads/
+```
+In your production environment, you should use these commands as root instead:
+```
+mkdir ./web/uploads/
+chmod 755 ./web/uploads/
+chown www-data:www-data ./web/uploads/
 ```
 
 
