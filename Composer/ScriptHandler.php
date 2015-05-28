@@ -184,22 +184,11 @@ class ScriptHandler
 	 */
 	protected static function updateConfigFile( $filename )
 	{
-		$update = false;
-
 		if( ( $content = file_get_contents( $filename ) ) === false ) {
 			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
 		}
 
-		if( self::importConfig( $content ) === true ) {
-			$update = true;
-		}
-
 		if( self::addAsseticBundle( $content ) === true ) {
-			$update = true;
-		}
-
-		if( $update === true )
-		{
 			$fs = new Filesystem();
 			$fs->dumpFile( $filename, $content );
 		}
@@ -234,33 +223,6 @@ class ScriptHandler
 			$fs = new Filesystem();
 			$fs->dumpFile( $filename, $content );
 		}
-	}
-
-
-	/**
-	 * Adds the config.yml to the config file
-	 *
-	 * @param string &$content Content of the config.yml file
-	 * @return boolean True if modified, false if not
-	 */
-	protected static function importConfig( &$content )
-	{
-		if( preg_match( "#    - \{ resource: \"@AimeosShopBundle/Resources/config/config.yml\" \}#", $content ) !== 1 )
-		{
-			$search = "/imports:/";
-			$replace = "imports:\n    - { resource: \"@AimeosShopBundle/Resources/config/config.yml\" }";
-
-			if( strpos( $content, 'imports:' ) === false ) {
-				$content = $replace . $content;
-				return true;
-			}
-
-			if( ( $content = preg_replace( $search, $replace, $content ) ) !== null ) {
-				return true;
-			}
-		}
-
-		return false;
 	}
 
 
