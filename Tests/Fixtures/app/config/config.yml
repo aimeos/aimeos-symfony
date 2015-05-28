@@ -1,5 +1,4 @@
 imports:
-    - { resource: "@AimeosShopBundle/Resources/config/config.yml" }
     - { resource: security.yml }
     - { resource: database.yml }
 

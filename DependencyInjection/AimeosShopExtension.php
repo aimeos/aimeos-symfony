@@ -8,10 +8,13 @@
 
 namespace Aimeos\ShopBundle\DependencyInjection;
 
+use Symfony\Component\Yaml\Yaml;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 
 
 /**
@@ -19,7 +22,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class AimeosShopExtension extends Extension
+class AimeosShopExtension extends Extension implements PrependExtensionInterface
 {
 	/**
 	 * {@inheritDoc}
@@ -39,6 +42,21 @@ class AimeosShopExtension extends Extension
 
 		$loader = new Loader\YamlFileLoader( $container, new FileLocator( dirname( __DIR__ ) . '/Resources/config' ) );
 		$loader->load( 'services.yml' );
+	}
+
+
+	/**
+	 * Allows an extension to prepend the extension configurations.
+	 *
+	 * @param ContainerBuilder $container ContainerBuilder object
+	 */
+	public function prepend( ContainerBuilder $container )
+	{
+		$configFile = dirname( __DIR__ ) . '/Resources/config/aimeos_shop.yml';
+		$config = Yaml::parse( file_get_contents( $configFile ) );
+
+		$container->prependExtensionConfig( 'aimeos_shop', $config );
+		$container->addResource( new FileResource( $configFile ) );
 	}
 
 
