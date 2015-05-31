@@ -87,6 +87,12 @@ aimeos_shop:
                 update:
                     url:
                         target: aimeos_shop_update
+            locale:
+                select:
+                    currency:
+                        param-name: currency
+                    language:
+                        param-name: locale
 
     controller:
         extjs:
