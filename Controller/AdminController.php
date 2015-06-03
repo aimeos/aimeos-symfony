@@ -31,7 +31,7 @@ class AdminController extends Controller
 	public function indexAction( $site, $lang, $tab )
 	{
 		$context = $this->get( 'aimeos_context' )->get( false );
-		$context = $this->setLocale( $context, $lang );
+		$context = $this->setLocale( $context, $site, $lang );
 
 		$aimeos = $this->get( 'aimeos' )->get();
 		$cntlPaths = $aimeos->getCustomPaths( 'controller/extjs' );
@@ -217,15 +217,19 @@ class AdminController extends Controller
 	 * Sets the locale item in the given context
 	 *
 	 * @param \MShop_Context_Item_Interface $context Context object
+	 * @param string $sitecode Unique site code
 	 * @param string $locale ISO language code, e.g. "en" or "en_GB"
 	 * @return \MShop_Context_Item_Interface Modified context object
 	 */
-	protected function setLocale( \MShop_Context_Item_Interface $context, $locale = null )
+	protected function setLocale( \MShop_Context_Item_Interface $context, $sitecode = 'default', $locale = null )
 	{
 		$localeManager = \MShop_Factory::createManager( $context, 'locale' );
 
-		$localeItem = $localeManager->createItem();
-		$localeItem->setLanguageId( $locale );
+		try {
+			$localeItem = $localeManager->bootstrap( $sitecode, $locale, '', false );
+		} catch( \MShop_Locale_Exception $e ) {
+			$localeItem = $localeManager->createItem();
+		}
 
 		$context->setLocale( $localeItem );
 

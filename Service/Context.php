@@ -59,14 +59,14 @@ class Context
 			$dbm = new \MW_DB_Manager_PDO( $config );
 			$context->setDatabaseManager( $dbm );
 
-			$cache = new \MW_Cache_None();
-			$context->setCache( $cache );
-
 			$mail = new \MW_Mail_Swift( $this->container->get( 'mailer' ) );
 			$context->setMail( $mail );
 
 			$logger = \MAdmin_Log_Manager_Factory::createManager( $context );
 			$context->setLogger( $logger );
+
+			$cache = new \MAdmin_Cache_Proxy_Default( $context );
+			$context->setCache( $cache );
 
 			self::$context = $context;
 		}
@@ -80,9 +80,6 @@ class Context
 
 			$context->setLocale( $localeItem );
 			$context->setI18n( $this->container->get('aimeos_i18n')->get( array( $langid ) ) );
-
-			$cache = new \MAdmin_Cache_Proxy_Default( $context );
-			$context->setCache( $cache );
 		}
 
 		$session = new \MW_Session_Symfony2( $this->container->get( 'session' ) );
