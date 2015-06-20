@@ -94,6 +94,10 @@ class View
 		$helper = new \MW_View_Helper_Encoder_Default( $view );
 		$view->addHelper( 'encoder', $helper );
 
+		$token = $this->container->get( 'security.csrf.token_manager' )->getToken( '_token' );
+		$helper = new \MW_View_Helper_Csrf_Default( $view, '_token', $token->getValue() );
+		$view->addHelper( 'csrf', $helper );
+
 		return $view;
 	}
 

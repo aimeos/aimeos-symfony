@@ -57,7 +57,9 @@ class AdminController extends Controller
 
 		$params = array( 'site' => '{site}', 'lang' => '{lang}', 'tab' => '{tab}' );
 		$adminUrl = $this->generateUrl( 'aimeos_shop_admin', $params );
-		$jsonUrl = $this->generateUrl( 'aimeos_shop_admin_json' );
+
+		$token = $this->get( 'security.csrf.token_manager' )->getToken( '_aimeos_admin_token' )->getValue();
+		$jsonUrl = $this->generateUrl( 'aimeos_shop_admin_json', array( '_aimeos_admin_token' => $token ) );
 
 		$vars = array(
 			'lang' => $lang,
@@ -87,6 +89,12 @@ class AdminController extends Controller
 	 */
 	public function doAction( Request $request )
 	{
+		$csrfProvider = $this->get('form.csrf_provider');
+
+		if( $csrfProvider->isCsrfTokenValid( '_aimeos_admin_token', $request->query->get( '_token' ) ) !== true ) {
+			throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException( 'CSRF token is invalid' );
+		}
+
 		$cntlPaths = $this->get( 'aimeos' )->get()->getCustomPaths( 'controller/extjs' );
 		$context = $this->get( 'aimeos_context' )->get( false );
 		$context = $this->setLocale( $context );

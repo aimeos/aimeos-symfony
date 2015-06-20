@@ -1,10 +1,12 @@
 aimeos_shop_admin_json:
     path: /admin/do
     defaults: { _controller: AimeosShopBundle:Admin:do }
+    requirements: { _method: POST }
 
 aimeos_shop_admin:
     path: /admin/{site}/{lang}/{tab}
     defaults: { _controller: AimeosShopBundle:Admin:index, site: default, lang: en, tab: 0 }
+    requirements: { _method: GET }
 
 aimeos_shop_account:
     path: /myaccount
