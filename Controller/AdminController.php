@@ -58,8 +58,8 @@ class AdminController extends Controller
 		$params = array( 'site' => '{site}', 'lang' => '{lang}', 'tab' => '{tab}' );
 		$adminUrl = $this->generateUrl( 'aimeos_shop_admin', $params );
 
-		$token = $this->get( 'security.csrf.token_manager' )->getToken( '_aimeos_admin_token' )->getValue();
-		$jsonUrl = $this->generateUrl( 'aimeos_shop_admin_json', array( '_aimeos_admin_token' => $token ) );
+		$token = $this->get( 'security.csrf.token_manager' )->getToken( 'aimeos_admin_token' )->getValue();
+		$jsonUrl = $this->generateUrl( 'aimeos_shop_admin_json', array( '_token' => $token ) );
 
 		$vars = array(
 			'lang' => $lang,
@@ -91,7 +91,7 @@ class AdminController extends Controller
 	{
 		$csrfProvider = $this->get('form.csrf_provider');
 
-		if( $csrfProvider->isCsrfTokenValid( '_aimeos_admin_token', $request->query->get( '_token' ) ) !== true ) {
+		if( $csrfProvider->isCsrfTokenValid( 'aimeos_admin_token', $request->query->get( '_token' ) ) !== true ) {
 			throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException( 'CSRF token is invalid' );
 		}
 

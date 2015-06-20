@@ -38,7 +38,10 @@ class AdminControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
-		$client->request( 'POST', '/admin/do' ,
+
+		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( 'aimeos_admin_token' );
+
+		$client->request( 'POST', '/admin/do?_token=' . $token->getValue(),
 			array(), array(), array('CONTENT_TYPE' => 'application/json'),
 			'[{"jsonrpc":"2.0","method":"Product_Type.searchItems","params":{"site":"unittest"},"id":2}]'
 		);

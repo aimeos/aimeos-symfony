@@ -4,6 +4,8 @@ imports:
 
 framework:
     secret: aimeos
+    form:            ~
+    csrf_protection: ~
     test: ~
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
