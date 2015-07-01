@@ -72,6 +72,7 @@ class AdminController extends Controller
 			'smd' => $controller->getJsonSmd( $jsonUrl ),
 			'urlTemplate' => urldecode( $adminUrl ),
 			'uploaddir' => $this->container->getParameter( 'aimeos_shop.uploaddir' ),
+			'version' => $this->getVersion(),
 			'activeTab' => $tab,
 		);
 
@@ -210,6 +211,30 @@ class AdminController extends Controller
 		}
 
 		return $result;
+	}
+
+
+	/**
+	 * Returns the version of the Aimeos package
+	 *
+	 * @return string Version string
+	 */
+	protected function getVersion()
+	{
+		$filename = dirname( $this->get( 'kernel' )->getRootDir() ) . DIRECTORY_SEPARATOR . 'composer.lock';
+
+		if( ( $content = @file_get_contents( $filename ) ) !== false
+			&& ( $content = json_decode( $content, true ) ) !== null && isset( $content['packages'] )
+		) {
+			foreach( (array) $content['packages'] as $item )
+			{
+				if( $item['name'] === 'aimeos/aimeos-laravel' ) {
+					return $item['version'];
+				}
+			}
+		}
+
+		return '';
 	}
 
 
