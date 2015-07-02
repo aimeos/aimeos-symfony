@@ -273,8 +273,8 @@ class CheckoutControllerTest extends WebTestCase
 		$form['cs_option_terms_value']->tick();
 		$crawler = $client->submit( $form );
 
-		$link = $crawler->filter( '.checkout-standard-order a:contains("Weiter")' )->link();
-		$crawler = $client->click( $link );
+		$form = $crawler->filter( '.checkout-standard .btn-action' )->form();
+		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-confirm' )->count() );
 	}
