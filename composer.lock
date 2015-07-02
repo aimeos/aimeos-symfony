@@ -185,12 +185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/arcavias-core.git",
-                "reference": "fa2ca7d1680621521d7c22431287ebd8e72f53c3"
+                "reference": "8c605c933c361215a6c06dd0abd9627eb1df9643"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/fa2ca7d1680621521d7c22431287ebd8e72f53c3",
-                "reference": "fa2ca7d1680621521d7c22431287ebd8e72f53c3",
+                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/8c605c933c361215a6c06dd0abd9627eb1df9643",
+                "reference": "8c605c933c361215a6c06dd0abd9627eb1df9643",
                 "shasum": ""
             },
             "require": {
@@ -259,7 +259,7 @@
                 "forum": "https://forum.arcavias.com",
                 "wiki": "https://docs.arcavias.com"
             },
-            "time": "2015-07-01 15:41:22"
+            "time": "2015-07-02 15:22:25"
         },
         {
             "name": "composer/installers",
