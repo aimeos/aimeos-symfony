@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e494630ec622ef3f8bd02c155c30ccff",
+    "hash": "49c9b407e63a4b47bf43c48bfed29460",
     "packages": [
         {
             "name": "aimeos/ai-monolog",
@@ -180,17 +180,17 @@
             "time": "2015-06-16 11:46:04"
         },
         {
-            "name": "arcavias/arcavias-core",
+            "name": "aimeos/aimeos-core",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/aimeos/arcavias-core.git",
-                "reference": "8c605c933c361215a6c06dd0abd9627eb1df9643"
+                "url": "https://github.com/aimeos/aimeos-core.git",
+                "reference": "5dae769342ad5c1e95525b03066107763e49e67f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/arcavias-core/zipball/8c605c933c361215a6c06dd0abd9627eb1df9643",
-                "reference": "8c605c933c361215a6c06dd0abd9627eb1df9643",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/5dae769342ad5c1e95525b03066107763e49e67f",
+                "reference": "5dae769342ad5c1e95525b03066107763e49e67f",
                 "shasum": ""
             },
             "require": {
@@ -242,24 +242,19 @@
                     "Arcavias.php"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "LGPL-3.0"
             ],
             "description": "e-commerce framework for web shops, portals and market places",
-            "homepage": "http://www.arcavias.com/en",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "e-commerce",
                 "market place",
                 "portal",
                 "shop"
             ],
-            "support": {
-                "source": "https://github.com/Arcavias/arcavias-core",
-                "issues": "https://bugs.arcavias.com",
-                "forum": "https://forum.arcavias.com",
-                "wiki": "https://docs.arcavias.com"
-            },
-            "time": "2015-07-02 15:22:25"
+            "time": "2015-07-10 16:15:13"
         },
         {
             "name": "composer/installers",
@@ -2284,7 +2279,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "arcavias/arcavias-core": 20,
+        "aimeos/aimeos-core": 20,
         "aimeos/ai-symfony2": 20,
         "aimeos/ai-monolog": 20,
         "aimeos/ai-zend2-i18n": 20,
