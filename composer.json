@@ -1,21 +1,17 @@
 {
 	"name": "aimeos/aimeos-symfony2",
 	"description": "Aimeos Symfony2 web shop bundle",
-	"homepage": "http://aimeos.org",
+	"homepage": "https://aimeos.org",
 	"type": "symfony-bundle",
 	"license": "MIT",
 	"keywords": ["aimeos", "symfony", "e-commerce", "shop", "portal", "market place"],
 	"support": {
 		"source": "https://github.com/Aimeos/aimeos-symfony2",
 		"issues": "https://github.com/Aimeos/aimeos-symfony2/issues",
-		"forum": "http://aimeos.org/help",
-		"wiki": "http://aimeos.org/docs"
+		"forum": "https://aimeos.org/help",
+		"wiki": "https://aimeos.org/docs"
 	},
 	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/aimeos/arcavias-core"
-		},
 		{
 			"type": "vcs",
 			"url": "https://github.com/aimeos/php-coveralls.git"
@@ -25,7 +21,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.3.3",
-		"arcavias/arcavias-core": "2015.03.*",
+		"aimeos/aimeos-core": "2015.03.*",
 		"aimeos/ai-symfony2": "2015.03.*",
 		"aimeos/ai-monolog": "2015.03.*",
 		"aimeos/ai-zend2-i18n": "2015.03.*",
@@ -49,12 +45,12 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
-			"cp -r vendor/arcavias/arcavias-core/client/extjs/* Resources/public/client/extjs/",
-			"cp -r vendor/arcavias/arcavias-core/client/html/themes/* Resources/public/themes/"
+			"cp -r vendor/aimeos/aimeos-core/client/extjs/* Resources/public/client/extjs/",
+			"cp -r vendor/aimeos/aimeos-core/client/html/themes/* Resources/public/themes/"
 		],
 		"post-update-cmd": [
-			"cp -r vendor/arcavias/arcavias-core/client/extjs/* Resources/public/client/extjs/",
-			"cp -r vendor/arcavias/arcavias-core/client/html/themes/* Resources/public/themes/"
+			"cp -r vendor/aimeos/aimeos-core/client/extjs/* Resources/public/client/extjs/",
+			"cp -r vendor/aimeos/aimeos-core/client/html/themes/* Resources/public/themes/"
 		]
 	}
 }
