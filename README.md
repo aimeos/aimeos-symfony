@@ -1,5 +1,5 @@
 <a href="http://aimeos.org/">
-    <img src="http://aimeos.org/fileadmin/template/icons/logo.png" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
+    <img src="https://aimeos.org/fileadmin/template/icons/logo.png" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
 </a>
 
 Aimeos Symfony2 bundle
@@ -11,7 +11,7 @@ Aimeos Symfony2 bundle
 
 The repository contains the Symfony2 web shop bundle integrating the Aimeos e-commerce library into Symfony. The bundle provides controllers for e.g. faceted filter, product lists and detail views, for searching products as well as baskets and the checkout process. A full set of pages including routing is also available for a quick start.
 
-[![Aimeos Symfony2 demo](http://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony2.demo.aimeos.org/)
+[![Aimeos Symfony2 demo](https://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony2.demo.aimeos.org/)
 
 ## Table of content
 
@@ -35,10 +35,6 @@ The Aimeos Symfony2 web shop bundle is a composer based library that can be inst
 Make sure that the database is set up and it is configured in your config.yml. Then add these lines to your composer.json of your Symfony2 project:
 
 ```
-    "repositories": [ {
-        "type": "vcs",
-        "url": "https://github.com/aimeos/arcavias-core"
-    } ],
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
@@ -167,8 +163,8 @@ The Aimeos Symfony2 bundle is licensed under the terms of the MIT license and is
 
 ## Links
 
-* [Web site](http://aimeos.org/app/symfony-shop-bundle/)
-* [Documentation](http://docs.aimeos.org/Symfony)
-* [Help](http://help.aimeos.org/)
+* [Web site](https://aimeos.org/Symfony)
+* [Documentation](https://aimeos.org/docs/Symfony)
+* [Help](https://aimeos.org/help/symfony-bundle-f17/)
 * [Issue tracker](https://github.com/aimeos/aimeos-symfony2/issues)
 * [Source code](https://github.com/aimeos/aimeos-symfony2)
