@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "89fbb2d98e369429add1a1c2d136bbd51467db41"
+                "reference": "80ae8ae274e4cc1a3e967225e74c1a7c971188dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/89fbb2d98e369429add1a1c2d136bbd51467db41",
-                "reference": "89fbb2d98e369429add1a1c2d136bbd51467db41",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/80ae8ae274e4cc1a3e967225e74c1a7c971188dc",
+                "reference": "80ae8ae274e4cc1a3e967225e74c1a7c971188dc",
                 "shasum": ""
             },
             "require": {
@@ -41,14 +41,14 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos Monolog extension",
-            "homepage": "http://aimeos.org",
+            "homepage": "https://aimeos.org",
             "keywords": [
                 "adapter",
                 "aimeos",
                 "log",
                 "monolog"
             ],
-            "time": "2015-05-08 10:07:36"
+            "time": "2015-07-11 10:32:13"
         },
         {
             "name": "aimeos/ai-swiftmailer",
@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "ba9a4366e9b4baabb9c4d2eb3b934cd7e7e31426"
+                "reference": "29d7f9f8066d6e707776542203503faa0715d0a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/ba9a4366e9b4baabb9c4d2eb3b934cd7e7e31426",
-                "reference": "ba9a4366e9b4baabb9c4d2eb3b934cd7e7e31426",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/29d7f9f8066d6e707776542203503faa0715d0a7",
+                "reference": "29d7f9f8066d6e707776542203503faa0715d0a7",
                 "shasum": ""
             },
             "require": {
@@ -84,14 +84,14 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos SwiftMailer adapter",
-            "homepage": "http://aimeos.org",
+            "homepage": "https://aimeos.org",
             "keywords": [
                 "adapter",
                 "aimeos",
                 "mail",
                 "swiftmailer"
             ],
-            "time": "2015-03-11 08:40:05"
+            "time": "2015-07-11 10:32:20"
         },
         {
             "name": "aimeos/ai-symfony2",
@@ -99,12 +99,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony2.git",
-                "reference": "938adde31b6072407dd95e08c572e857f4fe4889"
+                "reference": "041b24fb3f3aebc1de59a5d1db52c1db3622b398"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/938adde31b6072407dd95e08c572e857f4fe4889",
-                "reference": "938adde31b6072407dd95e08c572e857f4fe4889",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/041b24fb3f3aebc1de59a5d1db52c1db3622b398",
+                "reference": "041b24fb3f3aebc1de59a5d1db52c1db3622b398",
                 "shasum": ""
             },
             "require": {
@@ -128,13 +128,13 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos extension for utilizing Symfony 2 components",
-            "homepage": "http://aimeos.org",
+            "homepage": "https://aimeos.org",
             "keywords": [
                 "adapter",
                 "aimeos",
                 "symfony"
             ],
-            "time": "2015-04-13 08:23:37"
+            "time": "2015-07-11 10:32:24"
         },
         {
             "name": "aimeos/ai-zend2-i18n",
@@ -185,12 +185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "5dae769342ad5c1e95525b03066107763e49e67f"
+                "reference": "9ad8f1f7e83038b373fa1a3ac08fbd3b993cf985"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/5dae769342ad5c1e95525b03066107763e49e67f",
-                "reference": "5dae769342ad5c1e95525b03066107763e49e67f",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/9ad8f1f7e83038b373fa1a3ac08fbd3b993cf985",
+                "reference": "9ad8f1f7e83038b373fa1a3ac08fbd3b993cf985",
                 "shasum": ""
             },
             "require": {
@@ -254,7 +254,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-07-10 16:15:13"
+            "time": "2015-07-11 09:41:06"
         },
         {
             "name": "composer/installers",
