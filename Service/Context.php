@@ -59,7 +59,8 @@ class Context
 			$dbm = new \MW_DB_Manager_PDO( $config );
 			$context->setDatabaseManager( $dbm );
 
-			$mail = new \MW_Mail_Swift( $this->container->get( 'mailer' ) );
+			$container = $this->container;
+			$mail = new \MW_Mail_Swift( function() use ( $container) { return $container->get( 'mailer' ); } );
 			$context->setMail( $mail );
 
 			$logger = \MAdmin_Log_Manager_Factory::createManager( $context );
