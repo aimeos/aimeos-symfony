@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "29d7f9f8066d6e707776542203503faa0715d0a7"
+                "reference": "270f2b6934f0553ce81ba1e7563f731b3422bca1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/29d7f9f8066d6e707776542203503faa0715d0a7",
-                "reference": "29d7f9f8066d6e707776542203503faa0715d0a7",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/270f2b6934f0553ce81ba1e7563f731b3422bca1",
+                "reference": "270f2b6934f0553ce81ba1e7563f731b3422bca1",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +91,7 @@
                 "mail",
                 "swiftmailer"
             ],
-            "time": "2015-07-11 10:32:20"
+            "time": "2015-07-14 12:19:05"
         },
         {
             "name": "aimeos/ai-symfony2",
@@ -142,12 +142,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-zend2-i18n.git",
-                "reference": "0811bdb34f3ff27fed7b0d3628f143e2c7fc4c2e"
+                "reference": "fbb47dc8b4b5d4d1763c900d41b61eff6ebe0342"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/0811bdb34f3ff27fed7b0d3628f143e2c7fc4c2e",
-                "reference": "0811bdb34f3ff27fed7b0d3628f143e2c7fc4c2e",
+                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/fbb47dc8b4b5d4d1763c900d41b61eff6ebe0342",
+                "reference": "fbb47dc8b4b5d4d1763c900d41b61eff6ebe0342",
                 "shasum": ""
             },
             "require": {
@@ -169,7 +169,7 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos Zend Framework 2 translation extension",
-            "homepage": "http://aimeos.org",
+            "homepage": "https://aimeos.org",
             "keywords": [
                 "adapter",
                 "aimeos",
@@ -177,7 +177,7 @@
                 "translate",
                 "zend"
             ],
-            "time": "2015-06-16 11:46:04"
+            "time": "2015-07-11 11:08:36"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -185,12 +185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "9ad8f1f7e83038b373fa1a3ac08fbd3b993cf985"
+                "reference": "08785311f4aa7c0f1b93c75286494c5e5779ed39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/9ad8f1f7e83038b373fa1a3ac08fbd3b993cf985",
-                "reference": "9ad8f1f7e83038b373fa1a3ac08fbd3b993cf985",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/08785311f4aa7c0f1b93c75286494c5e5779ed39",
+                "reference": "08785311f4aa7c0f1b93c75286494c5e5779ed39",
                 "shasum": ""
             },
             "require": {
@@ -254,7 +254,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-07-11 09:41:06"
+            "time": "2015-07-14 12:54:46"
         },
         {
             "name": "composer/installers",
@@ -751,16 +751,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.14.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "b287fbbe1ca27847064beff2bad7fb6920bf08cc"
+                "reference": "dc5150cc608f2334c72c3b6a553ec9668a4156b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/b287fbbe1ca27847064beff2bad7fb6920bf08cc",
-                "reference": "b287fbbe1ca27847064beff2bad7fb6920bf08cc",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/dc5150cc608f2334c72c3b6a553ec9668a4156b0",
+                "reference": "dc5150cc608f2334c72c3b6a553ec9668a4156b0",
                 "shasum": ""
             },
             "require": {
@@ -797,7 +797,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.14.x-dev"
+                    "dev-master": "1.15.x-dev"
                 }
             },
             "autoload": {
@@ -823,7 +823,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-06-19 13:29:54"
+            "time": "2015-07-12 13:54:09"
         },
         {
             "name": "psr/log",
@@ -918,16 +918,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.1",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "932b6e7499c670f4db6d0b871477a4a3ca161e74"
+                "reference": "969d709ad428076bf1084e386dc26dd904d9fb84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/932b6e7499c670f4db6d0b871477a4a3ca161e74",
-                "reference": "932b6e7499c670f4db6d0b871477a4a3ca161e74",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/969d709ad428076bf1084e386dc26dd904d9fb84",
+                "reference": "969d709ad428076bf1084e386dc26dd904d9fb84",
                 "shasum": ""
             },
             "require": {
@@ -1036,7 +1036,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-06-11 21:15:28"
+            "time": "2015-07-13 19:27:49"
         },
         {
             "name": "twig/twig",
