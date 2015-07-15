@@ -49,13 +49,12 @@ class View
 	public function create( \MW_Config_Interface $config, array $templatePaths, $locale = null )
 	{
 		$params = $fixed = array();
+		$request = $this->requestStack->getMasterRequest();
 
 		if( $locale !== null ) {
 			$fixed = $this->getFixedParams();
 
-			$request = $this->requestStack->getMasterRequest();
 			$params = $request->request->all() + $request->query->all() + $request->attributes->get( '_route_params' );
-
 			// required for reloading to the current page
 			$params['target'] = $request->get( '_route' );
 
@@ -93,6 +92,12 @@ class View
 
 		$helper = new \MW_View_Helper_Encoder_Default( $view );
 		$view->addHelper( 'encoder', $helper );
+
+		if( $request !== null )
+		{
+			$helper = new \MW_View_Helper_Request_Symfony2( $view, $request );
+			$view->addHelper( 'request', $helper );
+		}
 
 		$token = $this->container->get( 'security.csrf.token_manager' )->getToken( '_token' );
 		$helper = new \MW_View_Helper_Csrf_Default( $view, '_token', $token->getValue() );
