@@ -22,7 +22,7 @@ aimeos_shop_account_watch:
 
 aimeos_shop_basket:
     path: /basket/{b_action}
-    defaults: { _controller: AimeosShopBundle:Basket:index }
+    defaults: { _controller: AimeosShopBundle:Basket:index, b_action: null }
 
 aimeos_shop_count:
     path: /count
