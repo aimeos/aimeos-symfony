@@ -21,7 +21,7 @@ aimeos_shop_account_watch:
     defaults: { _controller: AimeosShopBundle:Account:index, wat_action: '', wat_id: null, d_name: '', d_prodid: null, l_pos: 0 }
 
 aimeos_shop_basket:
-    path: /basket
+    path: /basket/{b_action}
     defaults: { _controller: AimeosShopBundle:Basket:index }
 
 aimeos_shop_count:
@@ -53,12 +53,12 @@ aimeos_shop_checkout:
     defaults: { _controller: AimeosShopBundle:Checkout:index, c_step: null }
 
 aimeos_shop_confirm:
-    path: /confirm
-    defaults: { _controller: AimeosShopBundle:Checkout:confirm }
+    path: /confirm/{code}/{orderid}
+    defaults: { _controller: AimeosShopBundle:Checkout:confirm, code: null, orderid: null }
 
 aimeos_shop_update:
-    path: /update
-    defaults: { _controller: AimeosShopBundle:Checkout:update }
+    path: /update/{code}/{orderid}
+    defaults: { _controller: AimeosShopBundle:Checkout:update, code: null, orderid: null }
 
 aimeos_shop_terms:
     path: /terms
