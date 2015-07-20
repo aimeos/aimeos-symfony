@@ -21,11 +21,11 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.3.3",
-		"aimeos/aimeos-core": "dev-master",
-		"aimeos/ai-symfony2": "dev-master",
-		"aimeos/ai-monolog": "dev-master",
-		"aimeos/ai-zend2-i18n": "dev-master",
-		"aimeos/ai-swiftmailer": "dev-master",
+		"aimeos/aimeos-core": "2015.07.*",
+		"aimeos/ai-symfony2": "2015.07.*",
+		"aimeos/ai-monolog": "2015.07.*",
+		"aimeos/ai-zend2-i18n": "2015.07.*",
+		"aimeos/ai-swiftmailer": "2015.07.*",
 		"symfony/symfony": ">=2.4"
 	},
 	"require-dev": {

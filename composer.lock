@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "49c9b407e63a4b47bf43c48bfed29460",
+    "hash": "99a45b10643647e53ce1458da5e970d6",
     "packages": [
         {
             "name": "aimeos/ai-monolog",
-            "version": "dev-master",
+            "version": "2015.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "1b6175663cc01c877228a2185ee3cd695c4e1fd2"
+                "reference": "fa7bfb256bb84d4653a646aab2d94805af67631d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/1b6175663cc01c877228a2185ee3cd695c4e1fd2",
-                "reference": "1b6175663cc01c877228a2185ee3cd695c4e1fd2",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/fa7bfb256bb84d4653a646aab2d94805af67631d",
+                "reference": "fa7bfb256bb84d4653a646aab2d94805af67631d",
                 "shasum": ""
             },
             "require": {
@@ -48,20 +48,20 @@
                 "log",
                 "monolog"
             ],
-            "time": "2015-07-14 18:32:41"
+            "time": "2015-07-20 09:07:03"
         },
         {
             "name": "aimeos/ai-swiftmailer",
-            "version": "dev-master",
+            "version": "2015.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "6e477e5e8973233bdc2db61d174525254db42d39"
+                "reference": "182cfb586cb051efbe635c9401ca5f1a9dad7b45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/6e477e5e8973233bdc2db61d174525254db42d39",
-                "reference": "6e477e5e8973233bdc2db61d174525254db42d39",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/182cfb586cb051efbe635c9401ca5f1a9dad7b45",
+                "reference": "182cfb586cb051efbe635c9401ca5f1a9dad7b45",
                 "shasum": ""
             },
             "require": {
@@ -91,20 +91,20 @@
                 "mail",
                 "swiftmailer"
             ],
-            "time": "2015-07-14 17:42:51"
+            "time": "2015-07-20 09:08:01"
         },
         {
             "name": "aimeos/ai-symfony2",
-            "version": "dev-master",
+            "version": "2015.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony2.git",
-                "reference": "6862981e2cf2f9acbfec5dfe7ee2e7c963bef168"
+                "reference": "30987944df3c4404958849299f4689d42a78e9a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/6862981e2cf2f9acbfec5dfe7ee2e7c963bef168",
-                "reference": "6862981e2cf2f9acbfec5dfe7ee2e7c963bef168",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/30987944df3c4404958849299f4689d42a78e9a1",
+                "reference": "30987944df3c4404958849299f4689d42a78e9a1",
                 "shasum": ""
             },
             "require": {
@@ -134,20 +134,20 @@
                 "aimeos",
                 "symfony"
             ],
-            "time": "2015-07-15 21:23:35"
+            "time": "2015-07-20 09:08:36"
         },
         {
             "name": "aimeos/ai-zend2-i18n",
-            "version": "dev-master",
+            "version": "2015.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-zend2-i18n.git",
-                "reference": "9fc825df59ec995938fc366d658859f40879077e"
+                "reference": "4cd384cf096e6ba1b59f3b6d828a864299f68fff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/9fc825df59ec995938fc366d658859f40879077e",
-                "reference": "9fc825df59ec995938fc366d658859f40879077e",
+                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/4cd384cf096e6ba1b59f3b6d828a864299f68fff",
+                "reference": "4cd384cf096e6ba1b59f3b6d828a864299f68fff",
                 "shasum": ""
             },
             "require": {
@@ -177,20 +177,20 @@
                 "translate",
                 "zend"
             ],
-            "time": "2015-07-14 18:32:04"
+            "time": "2015-07-20 09:09:19"
         },
         {
             "name": "aimeos/aimeos-core",
-            "version": "dev-master",
+            "version": "2015.07.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "4d24953b5c7eaa8f38ed108fa61ae34a80aaa959"
+                "reference": "689db9eab56f286034c9af67ef8a66a73242f3d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/4d24953b5c7eaa8f38ed108fa61ae34a80aaa959",
-                "reference": "4d24953b5c7eaa8f38ed108fa61ae34a80aaa959",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/689db9eab56f286034c9af67ef8a66a73242f3d5",
+                "reference": "689db9eab56f286034c9af67ef8a66a73242f3d5",
                 "shasum": ""
             },
             "require": {
@@ -254,7 +254,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-07-17 09:00:33"
+            "time": "2015-07-17 09:01:36"
         },
         {
             "name": "composer/installers",
@@ -2279,11 +2279,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "aimeos/aimeos-core": 20,
-        "aimeos/ai-symfony2": 20,
-        "aimeos/ai-monolog": 20,
-        "aimeos/ai-zend2-i18n": 20,
-        "aimeos/ai-swiftmailer": 20,
         "satooshi/php-coveralls": 20
     },
     "prefer-stable": true,
