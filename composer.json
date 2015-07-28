@@ -1,7 +1,7 @@
 {
 	"name": "aimeos/aimeos-symfony2",
-	"description": "Aimeos Symfony2 web shop bundle",
-	"homepage": "https://aimeos.org",
+	"description": "Aimeos Symfony2 web shop and e-commerce bundle",
+	"homepage": "https://aimeos.org/Symfony",
 	"type": "symfony-bundle",
 	"license": "MIT",
 	"keywords": ["aimeos", "symfony", "e-commerce", "ecommerce", "shop", "portal", "market place"],
