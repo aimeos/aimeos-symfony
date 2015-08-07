@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "49c9b407e63a4b47bf43c48bfed29460",
+    "hash": "bc19b4aa4382d62c03e2ea9047ef4aca",
     "packages": [
         {
             "name": "aimeos/ai-monolog",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "1b6175663cc01c877228a2185ee3cd695c4e1fd2"
+                "reference": "b1fc9760920a72d811c289d2207a018f39cf2574"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/1b6175663cc01c877228a2185ee3cd695c4e1fd2",
-                "reference": "1b6175663cc01c877228a2185ee3cd695c4e1fd2",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/b1fc9760920a72d811c289d2207a018f39cf2574",
+                "reference": "b1fc9760920a72d811c289d2207a018f39cf2574",
                 "shasum": ""
             },
             "require": {
@@ -40,15 +40,17 @@
             "license": [
                 "LGPL-3.0"
             ],
-            "description": "Aimeos Monolog extension",
+            "description": "Monolog adapter for Aimeos web shops and e-commerce solutions",
             "homepage": "https://aimeos.org",
             "keywords": [
                 "adapter",
                 "aimeos",
+                "e-commerce",
                 "log",
-                "monolog"
+                "monolog",
+                "shop"
             ],
-            "time": "2015-07-14 18:32:41"
+            "time": "2015-07-28 10:04:48"
         },
         {
             "name": "aimeos/ai-swiftmailer",
@@ -56,12 +58,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "6e477e5e8973233bdc2db61d174525254db42d39"
+                "reference": "f0f463fb9232ce8141f3bec0a7c499de5277cc50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/6e477e5e8973233bdc2db61d174525254db42d39",
-                "reference": "6e477e5e8973233bdc2db61d174525254db42d39",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/f0f463fb9232ce8141f3bec0a7c499de5277cc50",
+                "reference": "f0f463fb9232ce8141f3bec0a7c499de5277cc50",
                 "shasum": ""
             },
             "require": {
@@ -83,15 +85,17 @@
             "license": [
                 "LGPL-3.0"
             ],
-            "description": "Aimeos SwiftMailer adapter",
+            "description": "SwiftMailer adapter for Aimeos web shops and e-commerce solutions",
             "homepage": "https://aimeos.org",
             "keywords": [
                 "adapter",
                 "aimeos",
+                "e-commerce",
                 "mail",
+                "shop",
                 "swiftmailer"
             ],
-            "time": "2015-07-14 17:42:51"
+            "time": "2015-07-28 10:04:50"
         },
         {
             "name": "aimeos/ai-symfony2",
@@ -99,12 +103,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony2.git",
-                "reference": "6862981e2cf2f9acbfec5dfe7ee2e7c963bef168"
+                "reference": "ec708309f6094d9cc64e85086fb946c0961cfe2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/6862981e2cf2f9acbfec5dfe7ee2e7c963bef168",
-                "reference": "6862981e2cf2f9acbfec5dfe7ee2e7c963bef168",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/ec708309f6094d9cc64e85086fb946c0961cfe2a",
+                "reference": "ec708309f6094d9cc64e85086fb946c0961cfe2a",
                 "shasum": ""
             },
             "require": {
@@ -127,14 +131,16 @@
             "license": [
                 "LGPL-3.0"
             ],
-            "description": "Aimeos extension for utilizing Symfony 2 components",
-            "homepage": "https://aimeos.org",
+            "description": "Symfony 2 adapter for Aimeos web shops and e-commerce solutions",
+            "homepage": "https://aimeos.org/Symfony",
             "keywords": [
                 "adapter",
                 "aimeos",
+                "e-commerce",
+                "shop",
                 "symfony"
             ],
-            "time": "2015-07-15 21:23:35"
+            "time": "2015-08-06 07:38:05"
         },
         {
             "name": "aimeos/ai-zend2-i18n",
@@ -142,12 +148,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-zend2-i18n.git",
-                "reference": "9fc825df59ec995938fc366d658859f40879077e"
+                "reference": "74e328a78c3bb68fba0cf06afd43223bb0de51b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/9fc825df59ec995938fc366d658859f40879077e",
-                "reference": "9fc825df59ec995938fc366d658859f40879077e",
+                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/74e328a78c3bb68fba0cf06afd43223bb0de51b5",
+                "reference": "74e328a78c3bb68fba0cf06afd43223bb0de51b5",
                 "shasum": ""
             },
             "require": {
@@ -168,16 +174,18 @@
             "license": [
                 "LGPL-3.0"
             ],
-            "description": "Aimeos Zend Framework 2 translation extension",
+            "description": "Zend Framework 2 adapter for Aimeos web shops and e-commerce solutions",
             "homepage": "https://aimeos.org",
             "keywords": [
                 "adapter",
                 "aimeos",
+                "e-commerce",
                 "i18n",
+                "shop",
                 "translate",
                 "zend"
             ],
-            "time": "2015-07-14 18:32:04"
+            "time": "2015-07-28 10:04:54"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -185,12 +193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "4d24953b5c7eaa8f38ed108fa61ae34a80aaa959"
+                "reference": "a8e6884a3beaf6d75b70a5f0715427f32a972c34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/4d24953b5c7eaa8f38ed108fa61ae34a80aaa959",
-                "reference": "4d24953b5c7eaa8f38ed108fa61ae34a80aaa959",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/a8e6884a3beaf6d75b70a5f0715427f32a972c34",
+                "reference": "a8e6884a3beaf6d75b70a5f0715427f32a972c34",
                 "shasum": ""
             },
             "require": {
@@ -246,7 +254,7 @@
             "license": [
                 "LGPL-3.0"
             ],
-            "description": "e-commerce framework for web shops, portals and market places",
+            "description": "Full-featured e-commerce framework for high performance web shops",
             "homepage": "https://aimeos.org/",
             "keywords": [
                 "e-commerce",
@@ -254,7 +262,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-07-17 09:00:33"
+            "time": "2015-08-07 18:42:09"
         },
         {
             "name": "composer/installers",
@@ -918,16 +926,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.2",
+            "version": "v2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "969d709ad428076bf1084e386dc26dd904d9fb84"
+                "reference": "a9af4708b4bb650c4897e9b8dfbfbdb2ea5f0486"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/969d709ad428076bf1084e386dc26dd904d9fb84",
-                "reference": "969d709ad428076bf1084e386dc26dd904d9fb84",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/a9af4708b4bb650c4897e9b8dfbfbdb2ea5f0486",
+                "reference": "a9af4708b4bb650c4897e9b8dfbfbdb2ea5f0486",
                 "shasum": ""
             },
             "require": {
@@ -1036,20 +1044,20 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-07-13 19:27:49"
+            "time": "2015-07-31 13:24:45"
         },
         {
             "name": "twig/twig",
-            "version": "v1.18.2",
+            "version": "v1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "e8e6575abf6102af53ec283f7f14b89e304fa602"
+                "reference": "edbeaf43b0a606cdaadc32a11d2673614a377b90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/e8e6575abf6102af53ec283f7f14b89e304fa602",
-                "reference": "e8e6575abf6102af53ec283f7f14b89e304fa602",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/edbeaf43b0a606cdaadc32a11d2673614a377b90",
+                "reference": "edbeaf43b0a606cdaadc32a11d2673614a377b90",
                 "shasum": ""
             },
             "require": {
@@ -1058,7 +1066,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.18-dev"
+                    "dev-master": "1.19-dev"
                 }
             },
             "autoload": {
@@ -1093,7 +1101,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-06-06 23:31:24"
+            "time": "2015-07-31 13:45:26"
         },
         {
             "name": "zendframework/zend-i18n",
