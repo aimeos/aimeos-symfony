@@ -107,8 +107,15 @@ class Context
 
 			if( is_object( $token ) )
 			{
-				if( method_exists( $token->getUser(), 'getId' ) ) {
-					$context->setUserId( $token->getUser()->getId() );
+				if( method_exists( $token->getUser(), 'getId' ) )
+				{
+					$userid = $token->getUser()->getId();
+					$context->setUserId( $userid );
+					$context->setGroupIds( function() use ( $context, $userid )
+					{
+						$manager = \MShop_Factory::createManager( $context, 'customer' );
+						return $manager->getItem( $userid, array( 'customer/group' ) )->getGroups();
+					} );
 				}
 
 				if( is_object( $token->getUser() ) ) {
