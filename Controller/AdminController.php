@@ -231,7 +231,7 @@ class AdminController extends Controller
 	{
 		$filename = dirname( $this->get( 'kernel' )->getRootDir() ) . DIRECTORY_SEPARATOR . 'composer.lock';
 
-		if( ( $content = file_get_contents( $filename ) ) !== false
+		if( file_exists( $filename ) === true && ( $content = file_get_contents( $filename ) ) !== false
 			&& ( $content = json_decode( $content, true ) ) !== null && isset( $content['packages'] )
 		) {
 			foreach( (array) $content['packages'] as $item )
