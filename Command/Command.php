@@ -30,7 +30,7 @@ abstract class Command extends ContainerAwareCommand
 		$manager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'site' );
 		$search = $manager->createSearch();
 
-		if( ( $codes = $input->getArgument( 'site' ) ) != null ) {
+		if( ( $codes = (string) $input->getArgument( 'site' ) ) !== '' ) {
 			$search->setConditions( $search->compare( '==', 'locale.site.code', explode( ' ', $codes ) ) );
 		}
 

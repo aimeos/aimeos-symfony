@@ -51,10 +51,10 @@ class I18n
 			{
 				$i18n = new \MW_Translation_Zend2( $i18nPaths, 'gettext', $langid, array( 'disableNotices' => true ) );
 
-				$apc = $this->container->getParameter( 'aimeos_shop.apc_enable' );
+				$apc = (bool) $this->container->getParameter( 'aimeos_shop.apc_enable' );
 				$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
 
-				if( function_exists( 'apc_store' ) === true && $apc == true ) {
+				if( function_exists( 'apc_store' ) === true && $apc === true ) {
 					$i18n = new \MW_Translation_Decorator_APC( $i18n, $prefix );
 				}
 
