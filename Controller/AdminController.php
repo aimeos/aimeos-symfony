@@ -45,7 +45,7 @@ class AdminController extends Controller
 				$jsbAbsPath = $base . '/' . $path;
 
 				if( !is_file( $jsbAbsPath ) ) {
-					throw new Exception( sprintf( 'JSB2 file "%1$s" not found', $jsbAbsPath ) );
+					throw new \Exception( sprintf( 'JSB2 file "%1$s" not found', $jsbAbsPath ) );
 				}
 
 				$jsb2 = new \MW_Jsb2_Default( $jsbAbsPath, dirname( $path ) );
@@ -93,7 +93,7 @@ class AdminController extends Controller
 		$csrfProvider = $this->get('form.csrf_provider');
 
 		if( $csrfProvider->isCsrfTokenValid( 'aimeos_admin_token', $request->query->get( '_token' ) ) !== true ) {
-			throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException( 'CSRF token is invalid' );
+			throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedException( 'CSRF token is invalid' );
 		}
 
 		$cntlPaths = $this->get( 'aimeos' )->get()->getCustomPaths( 'controller/extjs' );
@@ -231,7 +231,7 @@ class AdminController extends Controller
 	{
 		$filename = dirname( $this->get( 'kernel' )->getRootDir() ) . DIRECTORY_SEPARATOR . 'composer.lock';
 
-		if( ( $content = @file_get_contents( $filename ) ) !== false
+		if( ( $content = file_get_contents( $filename ) ) !== false
 			&& ( $content = json_decode( $content, true ) ) !== null && isset( $content['packages'] )
 		) {
 			foreach( (array) $content['packages'] as $item )
