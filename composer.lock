@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b11f052672cca6b195ddc934bc34b527",
+    "hash": "55d435a783d7e3f2ac0c32c921597452",
     "packages": [
         {
             "name": "aimeos/ai-monolog",
@@ -193,12 +193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "fb09d4eb17f6de376df843e9994180a7b6cce67f"
+                "reference": "582aa1bdcb6d9d42214157d6b4d1ca5ce6340efe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/fb09d4eb17f6de376df843e9994180a7b6cce67f",
-                "reference": "fb09d4eb17f6de376df843e9994180a7b6cce67f",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/582aa1bdcb6d9d42214157d6b4d1ca5ce6340efe",
+                "reference": "582aa1bdcb6d9d42214157d6b4d1ca5ce6340efe",
                 "shasum": ""
             },
             "require": {
@@ -262,7 +262,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-09-03 14:29:59"
+            "time": "2015-09-05 10:03:18"
         },
         {
             "name": "composer/installers",
