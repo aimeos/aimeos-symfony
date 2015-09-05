@@ -48,4 +48,17 @@ class AdminControllerTest extends WebTestCase
 
 		$this->assertStringStartsWith( '{', $client->getResponse()->getContent() );
 	}
+
+
+	public function testAdminFile()
+	{
+		$client = static::createClient(array(), array(
+			'PHP_AUTH_USER' => 'admin',
+			'PHP_AUTH_PW'   => 'adminpass',
+		) );
+
+		$client->request( 'GET', '/admin/file' );
+
+		$this->assertContains( 'EXTUTIL', $client->getResponse()->getContent() );
+	}
 }

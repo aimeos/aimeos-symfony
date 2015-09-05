@@ -1,3 +1,8 @@
+aimeos_shop_admin_file:
+    path: /admin/file
+    defaults: { _controller: AimeosShopBundle:Admin:file }
+    requirements: { _method: GET }
+
 aimeos_shop_admin_json:
     path: /admin/do
     defaults: { _controller: AimeosShopBundle:Admin:do }

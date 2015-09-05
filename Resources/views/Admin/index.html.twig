@@ -41,9 +41,7 @@
         }
         </script>
 
-{% for jsFile in jsFiles %}
-        <script type="text/javascript" src="{{ asset('bundles/aimeosshop/' ~ jsFile) }}"></script>
-{% endfor %}
+        <script type="text/javascript" src="{{ path('aimeos_shop_admin_file') }}"></script>
 
     </head>
     <body>
