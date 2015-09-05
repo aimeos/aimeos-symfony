@@ -167,4 +167,5 @@ The Aimeos Symfony2 bundle is licensed under the terms of the MIT license and is
 * [Documentation](https://aimeos.org/docs/Symfony)
 * [Help](https://aimeos.org/help/symfony-bundle-f17/)
 * [Issue tracker](https://github.com/aimeos/aimeos-symfony2/issues)
+* [Composer packages](https://packagist.org/packages/aimeos/aimeos-symfony2)
 * [Source code](https://github.com/aimeos/aimeos-symfony2)
