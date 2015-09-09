@@ -131,8 +131,8 @@ class CatalogControllerTest extends WebTestCase
 		$crawler = $client->click( $link );
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
-		$this->assertEquals( 1, $products->eq( 0 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
-		$this->assertEquals( 1, $products->eq( 1 )->filter( 'h2:contains("Unittest: Empty Selection")' )->count() );
+		$this->assertEquals( 1, $products->eq( 1 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
+		$this->assertEquals( 1, $products->eq( 2 )->filter( 'h2:contains("Unittest: Empty Selection")' )->count() );
 
 		$link = $crawler->filter( '.catalog-list-pagination .option-name' )->link();
 		$crawler = $client->click( $link );
@@ -141,8 +141,8 @@ class CatalogControllerTest extends WebTestCase
 		$count = $products->count();
 
 		$this->assertGreaterThan( 2, $count );
-		$this->assertEquals( 1, $products->eq( $count -2 )->filter( 'h2:contains("Unittest: Empty Selection")' )->count() );
-		$this->assertEquals( 1, $products->eq( $count - 1 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
+		$this->assertEquals( 1, $products->eq( $count - 3 )->filter( 'h2:contains("Unittest: Empty Selection")' )->count() );
+		$this->assertEquals( 1, $products->eq( $count - 2 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
 	}
 
 
