@@ -49,6 +49,7 @@ class Page
 		$langid = $context->getLocale()->getLanguageId();
 		$tmplPaths = $this->container->get('aimeos')->get()->getCustomPaths( 'client/html' );
 		$view = $this->container->get('aimeos_view')->create( $context->getConfig(), $tmplPaths, $langid );
+		$context->setView( $view );
 
 		if( isset( $pagesConfig[$pageName] ) )
 		{
