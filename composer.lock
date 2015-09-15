@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "55d435a783d7e3f2ac0c32c921597452",
+    "content-hash": "bb8ba0d2be74eaaed978b93a87f3938b",
     "packages": [
         {
             "name": "aimeos/ai-monolog",
@@ -58,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "f0f463fb9232ce8141f3bec0a7c499de5277cc50"
+                "reference": "352626a714c6f762e256de4a1608bcb085d80ec2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/f0f463fb9232ce8141f3bec0a7c499de5277cc50",
-                "reference": "f0f463fb9232ce8141f3bec0a7c499de5277cc50",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/352626a714c6f762e256de4a1608bcb085d80ec2",
+                "reference": "352626a714c6f762e256de4a1608bcb085d80ec2",
                 "shasum": ""
             },
             "require": {
@@ -95,7 +96,7 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2015-07-28 10:04:50"
+            "time": "2015-09-14 15:39:08"
         },
         {
             "name": "aimeos/ai-symfony2",
@@ -193,12 +194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "582aa1bdcb6d9d42214157d6b4d1ca5ce6340efe"
+                "reference": "e03154489c99a44e4c100e5c2004d0bf25eae5e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/582aa1bdcb6d9d42214157d6b4d1ca5ce6340efe",
-                "reference": "582aa1bdcb6d9d42214157d6b4d1ca5ce6340efe",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/e03154489c99a44e4c100e5c2004d0bf25eae5e9",
+                "reference": "e03154489c99a44e4c100e5c2004d0bf25eae5e9",
                 "shasum": ""
             },
             "require": {
@@ -262,7 +263,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-09-05 10:03:18"
+            "time": "2015-09-15 12:26:30"
         },
         {
             "name": "composer/installers",
@@ -926,23 +927,23 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.3",
+            "version": "v2.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "a9af4708b4bb650c4897e9b8dfbfbdb2ea5f0486"
+                "reference": "1fdf23fe28876844b887b0e1935c9adda43ee645"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/a9af4708b4bb650c4897e9b8dfbfbdb2ea5f0486",
-                "reference": "a9af4708b4bb650c4897e9b8dfbfbdb2ea5f0486",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/1fdf23fe28876844b887b0e1935c9adda43ee645",
+                "reference": "1fdf23fe28876844b887b0e1935c9adda43ee645",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.3",
                 "php": ">=5.3.9",
                 "psr/log": "~1.0",
-                "twig/twig": "~1.18"
+                "twig/twig": "~1.20|~2.0"
             },
             "replace": {
                 "symfony/asset": "self.version",
@@ -1044,20 +1045,20 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-07-31 13:24:45"
+            "time": "2015-09-08 14:26:39"
         },
         {
             "name": "twig/twig",
-            "version": "v1.21.1",
+            "version": "v1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "ca8d3aa90b6a01c82e07909fe815d6b443e75a23"
+                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ca8d3aa90b6a01c82e07909fe815d6b443e75a23",
-                "reference": "ca8d3aa90b6a01c82e07909fe815d6b443e75a23",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b7fc2469fa009897871fb95b68237286fc54a5ad",
+                "reference": "b7fc2469fa009897871fb95b68237286fc54a5ad",
                 "shasum": ""
             },
             "require": {
@@ -1070,7 +1071,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.21-dev"
+                    "dev-master": "1.22-dev"
                 }
             },
             "autoload": {
@@ -1105,7 +1106,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-08-26 08:58:31"
+            "time": "2015-09-15 06:50:16"
         },
         {
             "name": "zendframework/zend-i18n",
