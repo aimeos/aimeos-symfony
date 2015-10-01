@@ -24,7 +24,7 @@ class JobsCommand extends Command
 	protected function configure()
 	{
 		$names = '';
-		$aimeos = new \Arcavias( array() );
+		$aimeos = new \Aimeos( array() );
 		$cntlPaths = $aimeos->getCustomPaths( 'controller/jobs' );
 		$controllers = \Controller_Jobs_Factory::getControllers( $this->getBareContext(), $aimeos, $cntlPaths );
 
