@@ -13,16 +13,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "51d71a1ebdddde0e32b074253208eff1605fc3c3"
+                "reference": "d81158ab2415aba5ad34082ffa5a1c258a72b03d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/51d71a1ebdddde0e32b074253208eff1605fc3c3",
-                "reference": "51d71a1ebdddde0e32b074253208eff1605fc3c3",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/d81158ab2415aba5ad34082ffa5a1c258a72b03d",
+                "reference": "d81158ab2415aba5ad34082ffa5a1c258a72b03d",
                 "shasum": ""
             },
             "require": {
-                "monolog/monolog": "1.*",
+                "monolog/monolog": "~1.0",
                 "php": ">=5.2.0"
             },
             "require-dev": {
@@ -51,7 +51,7 @@
                 "monolog",
                 "shop"
             ],
-            "time": "2015-09-30 09:43:43"
+            "time": "2015-10-01 10:07:47"
         },
         {
             "name": "aimeos/ai-swiftmailer",
@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "dbe341a5eacf7fe66195953267feb562bc45eac9"
+                "reference": "7d0d3246a10d75b48d816f6c29ee2c54a74b0739"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/dbe341a5eacf7fe66195953267feb562bc45eac9",
-                "reference": "dbe341a5eacf7fe66195953267feb562bc45eac9",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/7d0d3246a10d75b48d816f6c29ee2c54a74b0739",
+                "reference": "7d0d3246a10d75b48d816f6c29ee2c54a74b0739",
                 "shasum": ""
             },
             "require": {
@@ -96,7 +96,7 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2015-09-30 09:43:43"
+            "time": "2015-10-01 10:07:47"
         },
         {
             "name": "aimeos/ai-symfony2",
@@ -104,12 +104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony2.git",
-                "reference": "3ab1f90639f071399e4cda61064b60e65db11bbc"
+                "reference": "7c3ad0f1468c97d43c2bc172815227653e0f33fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/3ab1f90639f071399e4cda61064b60e65db11bbc",
-                "reference": "3ab1f90639f071399e4cda61064b60e65db11bbc",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/7c3ad0f1468c97d43c2bc172815227653e0f33fd",
+                "reference": "7c3ad0f1468c97d43c2bc172815227653e0f33fd",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +141,7 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2015-09-30 09:43:43"
+            "time": "2015-10-01 10:07:47"
         },
         {
             "name": "aimeos/ai-zend2-i18n",
@@ -149,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-zend2-i18n.git",
-                "reference": "3b6cd3f9d4f6c8149470336553a5866faf9c4141"
+                "reference": "7e9bf9bb07b6802e5d2335ae696543a95a2093f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/3b6cd3f9d4f6c8149470336553a5866faf9c4141",
-                "reference": "3b6cd3f9d4f6c8149470336553a5866faf9c4141",
+                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/7e9bf9bb07b6802e5d2335ae696543a95a2093f9",
+                "reference": "7e9bf9bb07b6802e5d2335ae696543a95a2093f9",
                 "shasum": ""
             },
             "require": {
@@ -186,7 +186,7 @@
                 "translate",
                 "zend"
             ],
-            "time": "2015-09-30 09:43:43"
+            "time": "2015-10-01 10:07:47"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -194,12 +194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "b7cefadda1da9a4d635147ae2fc5c0efa402a292"
+                "reference": "cdfd37fa54757dac6984ea3a5eb4a5dca1f84a19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/b7cefadda1da9a4d635147ae2fc5c0efa402a292",
-                "reference": "b7cefadda1da9a4d635147ae2fc5c0efa402a292",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/cdfd37fa54757dac6984ea3a5eb4a5dca1f84a19",
+                "reference": "cdfd37fa54757dac6984ea3a5eb4a5dca1f84a19",
                 "shasum": ""
             },
             "require": {
@@ -263,7 +263,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-09-29 22:34:02"
+            "time": "2015-10-01 10:08:42"
         },
         {
             "name": "composer/installers",
