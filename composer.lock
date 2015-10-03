@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "55d435a783d7e3f2ac0c32c921597452",
-    "content-hash": "bb8ba0d2be74eaaed978b93a87f3938b",
+    "hash": "b64b64ab4f33109c041cf0d732940efa",
+    "content-hash": "b8ddfaa0a867d9d23f84e0dbcf6a3a7e",
     "packages": [
         {
             "name": "aimeos/ai-monolog",
