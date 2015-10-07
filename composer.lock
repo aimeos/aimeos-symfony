@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "69c39280ea8ddb36c459b8d2835d4bb20ea29da5"
+                "reference": "6e7ea52f00d9b58186b5641cf1df8e89db58be4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/69c39280ea8ddb36c459b8d2835d4bb20ea29da5",
-                "reference": "69c39280ea8ddb36c459b8d2835d4bb20ea29da5",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/6e7ea52f00d9b58186b5641cf1df8e89db58be4f",
+                "reference": "6e7ea52f00d9b58186b5641cf1df8e89db58be4f",
                 "shasum": ""
             },
             "require": {
@@ -51,7 +51,7 @@
                 "monolog",
                 "shop"
             ],
-            "time": "2015-10-02 21:48:08"
+            "time": "2015-10-07 16:02:29"
         },
         {
             "name": "aimeos/ai-swiftmailer",
@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "9ac5782c99d1b050c5b4218d69c26a81de652e2e"
+                "reference": "18e0b12e6f159cc0751306de8f79c936410e66d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/9ac5782c99d1b050c5b4218d69c26a81de652e2e",
-                "reference": "9ac5782c99d1b050c5b4218d69c26a81de652e2e",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/18e0b12e6f159cc0751306de8f79c936410e66d0",
+                "reference": "18e0b12e6f159cc0751306de8f79c936410e66d0",
                 "shasum": ""
             },
             "require": {
@@ -96,7 +96,7 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2015-10-02 21:48:09"
+            "time": "2015-10-07 16:02:29"
         },
         {
             "name": "aimeos/ai-symfony2",
@@ -104,12 +104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony2.git",
-                "reference": "b7ca787c7f49fde75ae5c6e37042750a1d963a8c"
+                "reference": "ac263d9c6738e150b86106748dedfcb4a5010905"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/b7ca787c7f49fde75ae5c6e37042750a1d963a8c",
-                "reference": "b7ca787c7f49fde75ae5c6e37042750a1d963a8c",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/ac263d9c6738e150b86106748dedfcb4a5010905",
+                "reference": "ac263d9c6738e150b86106748dedfcb4a5010905",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +141,7 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2015-10-02 21:48:09"
+            "time": "2015-10-07 16:02:29"
         },
         {
             "name": "aimeos/ai-zend2-i18n",
@@ -149,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-zend2-i18n.git",
-                "reference": "912af5db936bdc38a3b0442e8bb146dbdd810b88"
+                "reference": "70ad759a0232d573851b25726e8693464b47cd5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/912af5db936bdc38a3b0442e8bb146dbdd810b88",
-                "reference": "912af5db936bdc38a3b0442e8bb146dbdd810b88",
+                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/70ad759a0232d573851b25726e8693464b47cd5b",
+                "reference": "70ad759a0232d573851b25726e8693464b47cd5b",
                 "shasum": ""
             },
             "require": {
@@ -186,7 +186,7 @@
                 "translate",
                 "zend"
             ],
-            "time": "2015-10-02 21:48:09"
+            "time": "2015-10-07 16:02:29"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -194,12 +194,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "cdd65a9fa2754f24a197b2bda252a19b46a9db1b"
+                "reference": "4aa493c8d15876d99201f0c4fc171828da674878"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/cdd65a9fa2754f24a197b2bda252a19b46a9db1b",
-                "reference": "cdd65a9fa2754f24a197b2bda252a19b46a9db1b",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/4aa493c8d15876d99201f0c4fc171828da674878",
+                "reference": "4aa493c8d15876d99201f0c4fc171828da674878",
                 "shasum": ""
             },
             "require": {
@@ -212,7 +212,7 @@
                 "ext-pdo": "*",
                 "ext-pdo_mysql": "*",
                 "ext-zip": "*",
-                "php": ">=5.2.0"
+                "php": ">=5.3.3"
             },
             "require-dev": {
                 "phing/phing": "2.4.*",
@@ -225,19 +225,17 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "MShop": "lib/mshoplib/src",
-                    "MAdmin": "lib/mshoplib/src",
-                    "MW": "lib/mwlib/src",
-                    "Client_Html": "client/html/src",
-                    "Controller_Common": "controller/common/src",
-                    "Controller_Frontend": "controller/frontend/src",
-                    "Controller_ExtJS": "controller/extjs/src",
-                    "Controller_Jobs": "controller/jobs/src",
-                    "": [
-                        "lib/mwlib/lib",
-                        "."
-                    ]
+                "psr-4": {
+                    "Aimeos\\MW\\": "lib/mwlib/src/MW/",
+                    "Aimeos\\MShop\\": "lib/mshoplib/src/MShop/",
+                    "Aimeos\\MAdmin\\": "lib/mshoplib/src/MAdmin/",
+                    "Aimeos\\Client\\Html\\": "client/html/src/Client/Html/",
+                    "Aimeos\\Controller\\Common\\": "controller/common/src/Controller/Common/",
+                    "Aimeos\\Controller\\Frontend\\": "controller/frontend/src/Controller/Frontend/",
+                    "Aimeos\\Controller\\ExtJS\\": "controller/extjs/src/Controller/ExtJS/",
+                    "Aimeos\\Controller\\Jobs\\": "controller/jobs/src/Controller/Jobs/",
+                    "Aimeos\\": ".",
+                    "\\": "lib/mwlib/lib/"
                 },
                 "classmap": [
                     "lib/mshoplib/src",
@@ -248,7 +246,7 @@
                     "controller/frontend/src",
                     "controller/extjs/src",
                     "controller/jobs/src",
-                    "Aimeos.php"
+                    "Bootstrap.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -263,7 +261,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-10-02 21:55:58"
+            "time": "2015-10-07 17:11:43"
         },
         {
             "name": "composer/installers",
