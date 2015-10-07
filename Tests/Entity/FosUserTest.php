@@ -37,20 +37,20 @@ class FosUserTest extends \PHPUnit_Framework_TestCase
 
 	public function testGetSetSalutation()
 	{
-		$this->object->setSalutation( \MShop_Common_Item_Address_Abstract::SALUTATION_UNKNOWN );
-		$this->assertEquals( \MShop_Common_Item_Address_Abstract::SALUTATION_UNKNOWN, $this->object->getSalutation() );
+		$this->object->setSalutation( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_UNKNOWN );
+		$this->assertEquals( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_UNKNOWN, $this->object->getSalutation() );
 
-		$this->object->setSalutation( \MShop_Common_Item_Address_Abstract::SALUTATION_COMPANY );
-		$this->assertEquals( \MShop_Common_Item_Address_Abstract::SALUTATION_COMPANY, $this->object->getSalutation() );
+		$this->object->setSalutation( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_COMPANY );
+		$this->assertEquals( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_COMPANY, $this->object->getSalutation() );
 
-		$this->object->setSalutation( \MShop_Common_Item_Address_Abstract::SALUTATION_MRS );
-		$this->assertEquals( \MShop_Common_Item_Address_Abstract::SALUTATION_MRS, $this->object->getSalutation() );
+		$this->object->setSalutation( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MRS );
+		$this->assertEquals( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MRS, $this->object->getSalutation() );
 
-		$this->object->setSalutation( \MShop_Common_Item_Address_Abstract::SALUTATION_MISS );
-		$this->assertEquals( \MShop_Common_Item_Address_Abstract::SALUTATION_MISS, $this->object->getSalutation() );
+		$this->object->setSalutation( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MISS );
+		$this->assertEquals( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MISS, $this->object->getSalutation() );
 
-		$this->object->setSalutation( \MShop_Common_Item_Address_Abstract::SALUTATION_MR );
-		$this->assertEquals( \MShop_Common_Item_Address_Abstract::SALUTATION_MR, $this->object->getSalutation() );
+		$this->object->setSalutation( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MR );
+		$this->assertEquals( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MR, $this->object->getSalutation() );
 	}
 
 

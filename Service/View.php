@@ -41,12 +41,12 @@ class View
 	/**
 	 * Creates the view object for the HTML client.
 	 *
-	 * @param \MW_Config_Interface $config Configuration object
+	 * @param \Aimeos\MW\Config\Iface $config Configuration object
 	 * @param array $templatePaths List of base path names with relative template paths as key/value pairs
 	 * @param string|null $locale Code of the current language or null for no translation
-	 * @return \MW_View_Interface View object
+	 * @return \Aimeos\MW\View\Iface View object
 	 */
-	public function create( \MW_Config_Interface $config, array $templatePaths, $locale = null )
+	public function create( \Aimeos\MW\Config\Iface $config, array $templatePaths, $locale = null )
 	{
 		$params = $fixed = array();
 		$request = $this->requestStack->getMasterRequest();
@@ -61,46 +61,46 @@ class View
 			$i18n = $this->container->get('aimeos_i18n')->get( array( $locale ) );
 			$translation = $i18n[$locale];
 		} else {
-			$translation = new \MW_Translation_None( 'en' );
+			$translation = new \Aimeos\MW\Translation\None( 'en' );
 		}
 
 
-		$view = new \MW_View_Default();
+		$view = new \Aimeos\MW\View\Standard();
 
-		$helper = new \MW_View_Helper_Translate_Default( $view, $translation );
+		$helper = new \Aimeos\MW\View\Helper\Translate\Standard( $view, $translation );
 		$view->addHelper( 'translate', $helper );
 
-		$helper = new \MW_View_Helper_Url_Symfony2( $view, $this->container->get( 'router' ), $fixed );
+		$helper = new \Aimeos\MW\View\Helper\Url\Symfony2( $view, $this->container->get( 'router' ), $fixed );
 		$view->addHelper( 'url', $helper );
 
-		$helper = new \MW_View_Helper_Partial_Default( $view, $config, $templatePaths );
+		$helper = new \Aimeos\MW\View\Helper\Partial\Standard( $view, $config, $templatePaths );
 		$view->addHelper( 'partial', $helper );
 
-		$helper = new \MW_View_Helper_Parameter_Default( $view, $params );
+		$helper = new \Aimeos\MW\View\Helper\Parameter\Standard( $view, $params );
 		$view->addHelper( 'param', $helper );
 
-		$helper = new \MW_View_Helper_Config_Default( $view, $config );
+		$helper = new \Aimeos\MW\View\Helper\Config\Standard( $view, $config );
 		$view->addHelper( 'config', $helper );
 
 		$sepDec = $config->get( 'client/html/common/format/seperatorDecimal', '.' );
 		$sep1000 = $config->get( 'client/html/common/format/seperator1000', ' ' );
-		$helper = new \MW_View_Helper_Number_Default( $view, $sepDec, $sep1000 );
+		$helper = new \Aimeos\MW\View\Helper\Number\Standard( $view, $sepDec, $sep1000 );
 		$view->addHelper( 'number', $helper );
 
-		$helper = new \MW_View_Helper_FormParam_Default( $view, array() );
+		$helper = new \Aimeos\MW\View\Helper\FormParam\Standard( $view, array() );
 		$view->addHelper( 'formparam', $helper );
 
-		$helper = new \MW_View_Helper_Encoder_Default( $view );
+		$helper = new \Aimeos\MW\View\Helper\Encoder\Standard( $view );
 		$view->addHelper( 'encoder', $helper );
 
 		if( $request !== null )
 		{
-			$helper = new \MW_View_Helper_Request_Symfony2( $view, $request );
+			$helper = new \Aimeos\MW\View\Helper\Request\Symfony2( $view, $request );
 			$view->addHelper( 'request', $helper );
 		}
 
 		$token = $this->container->get( 'security.csrf.token_manager' )->getToken( '_token' );
-		$helper = new \MW_View_Helper_Csrf_Default( $view, '_token', $token->getValue() );
+		$helper = new \Aimeos\MW\View\Helper\Csrf\Standard( $view, '_token', $token->getValue() );
 		$view->addHelper( 'csrf', $helper );
 
 		return $view;

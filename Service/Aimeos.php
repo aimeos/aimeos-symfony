@@ -45,7 +45,7 @@ class Aimeos
 		if( $this->object === null )
 		{
 			$extDirs = (array) $this->container->getParameter( 'aimeos_shop.extdir' );
-			$this->object = new \Aimeos( $extDirs, false );
+			$this->object = new \Aimeos\Bootstrap( $extDirs, false );
 		}
 
 		return $this->object;

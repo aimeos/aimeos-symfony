@@ -24,9 +24,9 @@ class JobsCommand extends Command
 	protected function configure()
 	{
 		$names = '';
-		$aimeos = new \Aimeos( array() );
+		$aimeos = new \Aimeos\Bootstrap( array() );
 		$cntlPaths = $aimeos->getCustomPaths( 'controller/jobs' );
-		$controllers = \Controller_Jobs_Factory::getControllers( $this->getBareContext(), $aimeos, $cntlPaths );
+		$controllers = \Aimeos\Controller\Jobs\Factory::getControllers( $this->getBareContext(), $aimeos, $cntlPaths );
 
 		foreach( $controllers as $key => $controller ) {
 			$names .= str_pad( $key, 30 ) . $controller->getName() . PHP_EOL;
@@ -52,7 +52,7 @@ class JobsCommand extends Command
 		$aimeos = $this->getContainer()->get( 'aimeos' )->get();
 
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
-		$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
+		$localeManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context );
 
 		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
 		{
@@ -62,7 +62,7 @@ class JobsCommand extends Command
 			$output->writeln( sprintf( 'Executing the Aimeos jobs for "<info>%s</info>"', $siteItem->getCode() ) );
 
 			foreach( $jobs as $jobname ) {
-				\Controller_Jobs_Factory::createController( $context, $aimeos, $jobname )->run();
+				\Aimeos\Controller\Jobs\Factory::createController( $context, $aimeos, $jobname )->run();
 			}
 		}
 	}
@@ -71,20 +71,20 @@ class JobsCommand extends Command
 	/**
 	 * Returns a bare context object
 	 *
-	 * @return \MShop_Context_Item_Default Context object containing only the most necessary dependencies
+	 * @return \Aimeos\MShop\Context\Item\Standard Context object containing only the most necessary dependencies
 	 */
 	protected function getBareContext()
 	{
-		$ctx = new \MShop_Context_Item_Default();
+		$ctx = new \Aimeos\MShop\Context\Item\Standard();
 
-		$conf = new \MW_Config_Array( array(), array() );
+		$conf = new \Aimeos\MW\Config\PHPArray( array(), array() );
 		$ctx->setConfig( $conf );
 
-		$locale = \MShop_Factory::createManager( $ctx, 'locale' )->createItem();
+		$locale = \Aimeos\MShop\Factory::createManager( $ctx, 'locale' )->createItem();
 		$locale->setLanguageId( 'en' );
 		$ctx->setLocale( $locale );
 
-		$i18n = new \MW_Translation_Zend2( array(), 'gettext', 'en', array( 'disableNotices' => true ) );
+		$i18n = new \Aimeos\MW\Translation\Zend2( array(), 'gettext', 'en', array( 'disableNotices' => true ) );
 		$ctx->setI18n( array( 'en' => $i18n ) );
 
 		return $ctx;
@@ -94,7 +94,7 @@ class JobsCommand extends Command
 	/**
 	 * Returns a context object
 	 *
-	 * @return \MShop_Context_Item_Default Context object
+	 * @return \Aimeos\MShop\Context\Item\Standard Context object
 	 */
 	protected function getContext()
 	{
@@ -104,7 +104,7 @@ class JobsCommand extends Command
 		$tmplPaths = $container->get('aimeos')->get()->getCustomPaths( 'controller/jobs/layouts' );
 		$view = $container->get('aimeos_view')->create( $context->getConfig(), $tmplPaths );
 
-		$langManager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'language' );
+		$langManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context )->getSubManager( 'language' );
 		$langids = array_keys( $langManager->searchItems( $langManager->createSearch( true ) ) );
 		$i18n = $this->getContainer()->get( 'aimeos_i18n' )->get( $langids );
 

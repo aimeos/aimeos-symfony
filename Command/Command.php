@@ -21,13 +21,13 @@ abstract class Command extends ContainerAwareCommand
 	/**
 	 * Returns the enabled site items which may be limited by the input arguments.
 	 *
-	 * @param \MShop_Context_Item_Interface $context Context item object
+	 * @param \Aimeos\MShop\Context\Item\Iface $context Context item object
 	 * @param InputInterface $input Input object
-	 * @return \MShop_Locale_Item_Site_Interface[] List of site items
+	 * @return \Aimeos\MShop\Locale\Item\Site\Interface[] List of site items
 	 */
-	protected function getSiteItems( \MShop_Context_Item_Interface $context, InputInterface $input )
+	protected function getSiteItems( \Aimeos\MShop\Context\Item\Iface $context, InputInterface $input )
 	{
-		$manager = \MShop_Locale_Manager_Factory::createManager( $context )->getSubManager( 'site' );
+		$manager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context )->getSubManager( 'site' );
 		$search = $manager->createSearch();
 
 		if( ( $codes = (string) $input->getArgument( 'site' ) ) !== '' ) {

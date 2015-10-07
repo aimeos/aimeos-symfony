@@ -205,28 +205,28 @@ class FosUser extends BaseUser
     /**
      * Returns the salutation constant for the person described by the address.
      *
-     * @return string Saluatation constant defined in \MShop_Common_Item_Address_Abstract
+     * @return string Saluatation constant defined in \Aimeos\MShop\Common\Item\Address\Base
      */
     public function getSalutation()
     {
-        return ( isset( $this->salutation ) ? (string) $this->salutation : \MShop_Common_Item_Address_Abstract::SALUTATION_UNKNOWN );
+        return ( isset( $this->salutation ) ? (string) $this->salutation : \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_UNKNOWN );
     }
 
 
     /**
      * Sets the new salutation for the person described by the address.
      *
-     * @param string $salutation Salutation constant defined in \MShop_Common_Item_Address_Abstract
+     * @param string $salutation Salutation constant defined in \Aimeos\MShop\Common\Item\Address\Base
      */
     public function setSalutation($salutation)
     {
         switch( $salutation )
         {
-            case \MShop_Common_Item_Address_Abstract::SALUTATION_UNKNOWN:
-            case \MShop_Common_Item_Address_Abstract::SALUTATION_COMPANY:
-            case \MShop_Common_Item_Address_Abstract::SALUTATION_MRS:
-            case \MShop_Common_Item_Address_Abstract::SALUTATION_MISS:
-            case \MShop_Common_Item_Address_Abstract::SALUTATION_MR:
+            case \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_UNKNOWN:
+            case \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_COMPANY:
+            case \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MRS:
+            case \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MISS:
+            case \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MR:
                 break;
             default:
                 throw new \Exception( sprintf( 'Address salutation "%1$s" is unknown', $value ) );

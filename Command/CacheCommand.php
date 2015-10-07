@@ -40,7 +40,7 @@ class CacheCommand extends Command
 		$context = $this->getContainer()->get( 'aimeos_context' )->get( false );
 		$context->setEditor( 'aimeos:cache' );
 
-		$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
+		$localeManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context );
 
 		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
 		{
@@ -49,12 +49,12 @@ class CacheCommand extends Command
 			$lcontext = clone $context;
 			$lcontext->setLocale( $localeItem );
 
-			$cache = new \MAdmin_Cache_Proxy_Default( $lcontext );
+			$cache = new \Aimeos\MAdmin\Cache\Proxy\Standard( $lcontext );
 			$lcontext->setCache( $cache );
 
 			$output->writeln( sprintf( 'Clearing the Aimeos cache for site <info>%1$s</info>', $siteItem->getCode() ) );
 
-			\MAdmin_Cache_Manager_Factory::createManager( $lcontext )->getCache()->flush();
+			\Aimeos\MAdmin\Cache\Manager\Factory::createManager( $lcontext )->getCache()->flush();
 		}
 	}
 }

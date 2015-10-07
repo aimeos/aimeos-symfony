@@ -45,28 +45,28 @@ class Context
 	 * Returns the current context.
 	 *
 	 * @param boolean $locale True to add locale object to context, false if not
-	 * @return \MShop_Context_Item_Interface Context object
+	 * @return \Aimeos\MShop\Context\Item\Iface Context object
 	 */
 	public function get( $locale = true )
 	{
 		if( self::$context === null )
 		{
-			$context = new \MShop_Context_Item_Default();
+			$context = new \Aimeos\MShop\Context\Item\Standard();
 
 			$config = $this->getConfig();
 			$context->setConfig( $config );
 
-			$dbm = new \MW_DB_Manager_PDO( $config );
+			$dbm = new \Aimeos\MW\DB\Manager\PDO( $config );
 			$context->setDatabaseManager( $dbm );
 
 			$container = $this->container;
-			$mail = new \MW_Mail_Swift( function() use ( $container) { return $container->get( 'mailer' ); } );
+			$mail = new \Aimeos\MW\Mail\Swift( function() use ( $container) { return $container->get( 'mailer' ); } );
 			$context->setMail( $mail );
 
-			$logger = \MAdmin_Log_Manager_Factory::createManager( $context );
+			$logger = \Aimeos\MAdmin\Log\Manager\Factory::createManager( $context );
 			$context->setLogger( $logger );
 
-			$cache = new \MAdmin_Cache_Proxy_Default( $context );
+			$cache = new \Aimeos\MAdmin\Cache\Proxy\Standard( $context );
 			$context->setCache( $cache );
 
 			self::$context = $context;
@@ -83,7 +83,7 @@ class Context
 			$context->setI18n( $this->container->get('aimeos_i18n')->get( array( $langid ) ) );
 		}
 
-		$session = new \MW_Session_Symfony2( $this->container->get( 'session' ) );
+		$session = new \Aimeos\MW\Session\Symfony2( $this->container->get( 'session' ) );
 		$context->setSession( $session );
 
 		$this->addUser( $context );
@@ -95,9 +95,9 @@ class Context
 	/**
 	 * Adds the user ID and name if available
 	 *
-	 * @param \MShop_Context_Item_Interface $context Context object
+	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
 	 */
-	protected function addUser( \MShop_Context_Item_Interface $context )
+	protected function addUser( \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		$username = '';
 
@@ -113,7 +113,7 @@ class Context
 					$context->setUserId( $userid );
 					$context->setGroupIds( function() use ( $context, $userid )
 					{
-						$manager = \MShop_Factory::createManager( $context, 'customer' );
+						$manager = \Aimeos\MShop\Factory::createManager( $context, 'customer' );
 						return $manager->getItem( $userid, array( 'customer/group' ) )->getGroups();
 					} );
 				}
@@ -133,19 +133,19 @@ class Context
 	/**
 	 * Creates a new configuration object.
 	 *
-	 * @return \MW_Config_Interface Configuration object
+	 * @return \Aimeos\MW\Config\Iface Configuration object
 	 */
 	protected function getConfig()
 	{
 		$configPaths = $this->container->get('aimeos')->get()->getConfigPaths( 'mysql' );
 
-		$conf = new \MW_Config_Array( array(), $configPaths );
+		$conf = new \Aimeos\MW\Config\PHPArray( array(), $configPaths );
 
 		$apc = (bool) $this->container->getParameter( 'aimeos_shop.apc_enable' );
 		$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
 
 		if( function_exists( 'apc_store' ) === true && $apc === true ) {
-			$conf = new \MW_Config_Decorator_APC( $conf, $prefix );
+			$conf = new \Aimeos\MW\Config\Decorator\APC( $conf, $prefix );
 		}
 
 		$local = array(
@@ -157,17 +157,17 @@ class Context
 			'resource' => $this->container->getParameter( 'aimeos_shop.resource' ),
 		);
 
-		return new \MW_Config_Decorator_Memory( $conf, $local );
+		return new \Aimeos\MW\Config\Decorator\Memory( $conf, $local );
 	}
 
 
 	/**
 	 * Returns the locale item for the current request
 	 *
-	 * @param \MShop_Context_Item_Interface $context Context object
-	 * @return \MShop_Locale_Item_Interface Locale item object
+	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
+	 * @return \Aimeos\MShop\Locale\Item\Iface Locale item object
 	 */
-	protected function getLocale( \MShop_Context_Item_Interface $context )
+	protected function getLocale( \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		if( $this->locale === null )
 		{
@@ -178,7 +178,7 @@ class Context
 			$lang = $attr->get( 'locale', '' );
 			$currency = $attr->get( 'currency', '' );
 
-			$localeManager = \MShop_Locale_Manager_Factory::createManager( $context );
+			$localeManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context );
 			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, $status );
 		}
 

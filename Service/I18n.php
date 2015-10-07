@@ -39,7 +39,7 @@ class I18n
 	 * Creates new translation objects.
 	 *
 	 * @param array $languageIds List of two letter ISO language IDs
-	 * @return \MW_Translation_Interface[] List of translation objects
+	 * @return \Aimeos\MW\Translation\Interface[] List of translation objects
 	 */
 	public function get( array $languageIds )
 	{
@@ -49,19 +49,19 @@ class I18n
 		{
 			if( !isset( $this->i18n[$langid] ) )
 			{
-				$i18n = new \MW_Translation_Zend2( $i18nPaths, 'gettext', $langid, array( 'disableNotices' => true ) );
+				$i18n = new \Aimeos\MW\Translation\Zend2( $i18nPaths, 'gettext', $langid, array( 'disableNotices' => true ) );
 
 				$apc = (bool) $this->container->getParameter( 'aimeos_shop.apc_enable' );
 				$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
 
 				if( function_exists( 'apc_store' ) === true && $apc === true ) {
-					$i18n = new \MW_Translation_Decorator_APC( $i18n, $prefix );
+					$i18n = new \Aimeos\MW\Translation\Decorator\APC( $i18n, $prefix );
 				}
 
 				$translations = $this->container->getParameter( 'aimeos_shop.i18n' );
 
 				if( isset( $translations[$langid] ) ) {
-					$i18n = new \MW_Translation_Decorator_Memory( $i18n, $translations[$langid] );
+					$i18n = new \Aimeos\MW\Translation\Decorator\Memory( $i18n, $translations[$langid] );
 				}
 
 				$this->i18n[$langid] = $i18n;
