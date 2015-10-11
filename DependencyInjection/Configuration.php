@@ -34,7 +34,6 @@ class Configuration implements ConfigurationInterface
 				->scalarNode('apc_prefix')->defaultValue( 'sf2:' )->end()
 				->scalarNode('extdir')->end()
 				->scalarNode('uploaddir')->end()
-				->variableNode('classes')->defaultValue( array() )->end()
 				->variableNode('client')->defaultValue( array() )->end()
 				->variableNode('controller')->defaultValue( array() )->end()
 				->variableNode('i18n')->defaultValue( array() )->end()

@@ -149,7 +149,6 @@ class Context
 		}
 
 		$local = array(
-			'classes' => $this->container->getParameter( 'aimeos_shop.classes' ),
 			'client' => $this->container->getParameter( 'aimeos_shop.client' ),
 			'controller' => $this->container->getParameter( 'aimeos_shop.controller' ),
 			'madmin' => $this->container->getParameter( 'aimeos_shop.madmin' ),

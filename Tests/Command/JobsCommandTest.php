@@ -19,7 +19,7 @@ class JobsCommandTest extends WebTestCase
 
         $command = $application->find( 'aimeos:jobs' );
         $commandTester = new CommandTester( $command );
-        $commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest', 'jobs' => 'catalog/index/rebuild' ) );
+        $commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest', 'jobs' => 'index/rebuild' ) );
 
         $this->assertEquals( 0, $commandTester->getStatusCode() );
     }

@@ -200,7 +200,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testSuggest()
 	{
 		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/suggest' );
+		$client->request( 'GET', '/unittest/de/EUR/suggest', array( 'f_search' => 'unit' ) );
 		$content = $client->getResponse()->getContent();
 
 		$this->assertStringStartsWith( '[{', $content );
