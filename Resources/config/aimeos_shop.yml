@@ -194,5 +194,11 @@ mshop:
     index:
         manager:
             name: MySQL
+            attribute:
+                name: MySQL
+            catalog:
+                name: MySQL
+            price:
+                name: MySQL
             text:
                 name: MySQL
