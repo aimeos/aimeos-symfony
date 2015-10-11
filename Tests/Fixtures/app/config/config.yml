@@ -55,10 +55,3 @@ aimeos_shop:
         en:
             "client/html":
                 "Attributes": ["Filter"]
-    mshop:
-        index:
-            manager:
-                name: Standard
-                text:
-                    name: Standard
-                
