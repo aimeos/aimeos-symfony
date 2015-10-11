@@ -58,7 +58,7 @@ aimeos_shop:
     mshop:
         index:
             manager:
-                name: Default
+                name: Standard
                 text:
-                    name: Default
+                    name: Standard
                 
