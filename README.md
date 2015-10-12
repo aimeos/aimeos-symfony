@@ -38,7 +38,7 @@ Make sure that the database is set up and it is configured in your config.yml. T
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony2": "dev-master",
+        "aimeos/aimeos-symfony2": "~1.2",
         ...
     },
     "scripts": {
