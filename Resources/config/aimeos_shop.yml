@@ -26,6 +26,18 @@ resource:
         opt-persistent: 0
 
 classes:
+    catalog:
+        manager:
+	        index:
+                name: MySQL
+                attribute:
+                    name: MySQL
+                catalog:
+                    name: MySQL
+                price:
+                    name: MySQL
+                text:
+                    name: MySQL
 
 client:
     html:
