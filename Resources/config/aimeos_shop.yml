@@ -28,7 +28,7 @@ resource:
 classes:
     catalog:
         manager:
-	        index:
+            index:
                 name: MySQL
                 attribute:
                     name: MySQL
