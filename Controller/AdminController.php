@@ -91,7 +91,7 @@ class AdminController extends Controller
 		$csrfProvider = $this->get('form.csrf_provider');
 
 		if( $csrfProvider->isCsrfTokenValid( 'aimeos_admin_token', $request->query->get( '_token' ) ) !== true ) {
-			throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedException( 'CSRF token is invalid' );
+			throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException( 'CSRF token is invalid' );
 		}
 
 		$cntlPaths = $this->get( 'aimeos' )->get()->getCustomPaths( 'controller/extjs' );
