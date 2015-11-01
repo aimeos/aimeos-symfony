@@ -13,15 +13,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "984f9e0057e90860ae7a85448c4a9e82bfca564a"
+                "reference": "f8e2feacbd21048c1432633953acf352d6de1445"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/984f9e0057e90860ae7a85448c4a9e82bfca564a",
-                "reference": "984f9e0057e90860ae7a85448c4a9e82bfca564a",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/f8e2feacbd21048c1432633953acf352d6de1445",
+                "reference": "f8e2feacbd21048c1432633953acf352d6de1445",
                 "shasum": ""
             },
             "require": {
+                "composer/installers": "~1.0",
                 "monolog/monolog": "~1.0",
                 "php": ">=5.3.3"
             },
@@ -51,7 +52,7 @@
                 "monolog",
                 "shop"
             ],
-            "time": "2015-10-11 12:40:04"
+            "time": "2015-10-20 13:55:27"
         },
         {
             "name": "aimeos/ai-swiftmailer",
@@ -59,15 +60,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "fdbdf4e66b63a77fc2638fb603a885a7e5ee8a06"
+                "reference": "e531dbacb03ed0189d2b925efe714c3da893e3b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/fdbdf4e66b63a77fc2638fb603a885a7e5ee8a06",
-                "reference": "fdbdf4e66b63a77fc2638fb603a885a7e5ee8a06",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/e531dbacb03ed0189d2b925efe714c3da893e3b4",
+                "reference": "e531dbacb03ed0189d2b925efe714c3da893e3b4",
                 "shasum": ""
             },
             "require": {
+                "composer/installers": "~1.0",
                 "php": ">=5.3.3",
                 "swiftmailer/swiftmailer": ">=4.0"
             },
@@ -97,7 +99,7 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2015-10-11 12:40:04"
+            "time": "2015-10-20 13:55:28"
         },
         {
             "name": "aimeos/ai-symfony2",
@@ -105,15 +107,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony2.git",
-                "reference": "21bf9d03642abbed5be28b4e455fc7bcf3a3f12d"
+                "reference": "e6e496bb8d120d301bd4d67d657a858a48806f02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/21bf9d03642abbed5be28b4e455fc7bcf3a3f12d",
-                "reference": "21bf9d03642abbed5be28b4e455fc7bcf3a3f12d",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/e6e496bb8d120d301bd4d67d657a858a48806f02",
+                "reference": "e6e496bb8d120d301bd4d67d657a858a48806f02",
                 "shasum": ""
             },
             "require": {
+                "composer/installers": "~1.0",
                 "php": ">=5.3.3",
                 "symfony/symfony": "~2.4"
             },
@@ -142,7 +145,7 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2015-10-11 12:40:04"
+            "time": "2015-10-20 13:55:28"
         },
         {
             "name": "aimeos/ai-zend2-i18n",
@@ -150,15 +153,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-zend2-i18n.git",
-                "reference": "608d03dff1aba30efb7651ba46c3b050b8a6dc04"
+                "reference": "065470ade014094467d767a76c7b1c48bf8bcfa7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/608d03dff1aba30efb7651ba46c3b050b8a6dc04",
-                "reference": "608d03dff1aba30efb7651ba46c3b050b8a6dc04",
+                "url": "https://api.github.com/repos/aimeos/ai-zend2-i18n/zipball/065470ade014094467d767a76c7b1c48bf8bcfa7",
+                "reference": "065470ade014094467d767a76c7b1c48bf8bcfa7",
                 "shasum": ""
             },
             "require": {
+                "composer/installers": "~1.0",
                 "php": ">=5.3.3",
                 "zendframework/zend-i18n": "2.3.*",
                 "zendframework/zend-servicemanager": "2.3.*"
@@ -187,7 +191,7 @@
                 "translate",
                 "zend"
             ],
-            "time": "2015-10-11 12:40:04"
+            "time": "2015-10-20 13:55:28"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -195,16 +199,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "8446dbea1da32e8e5dc1d7acfa374216afbdb471"
+                "reference": "e827805bc72703f031e2e925b16b009db1a8a95d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/8446dbea1da32e8e5dc1d7acfa374216afbdb471",
-                "reference": "8446dbea1da32e8e5dc1d7acfa374216afbdb471",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/e827805bc72703f031e2e925b16b009db1a8a95d",
+                "reference": "e827805bc72703f031e2e925b16b009db1a8a95d",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0",
                 "ext-curl": "*",
                 "ext-dom": "*",
                 "ext-json": "*",
@@ -262,21 +265,24 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-10-11 13:10:13"
+            "time": "2015-11-01 15:04:51"
         },
         {
             "name": "composer/installers",
-            "version": "v1.0.21",
+            "version": "v1.0.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45"
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
-                "reference": "d64e23fce42a4063d63262b19b8e7c0f3b5e4c45",
+                "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
                 "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0"
             },
             "replace": {
                 "roundcube/plugin-installer": "*",
@@ -286,9 +292,9 @@
                 "composer/composer": "1.0.*@dev",
                 "phpunit/phpunit": "4.1.*"
             },
-            "type": "composer-installer",
+            "type": "composer-plugin",
             "extra": {
-                "class": "Composer\\Installers\\Installer",
+                "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
@@ -357,7 +363,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2015-02-18 17:17:01"
+            "time": "2015-10-29 23:28:48"
         },
         {
             "name": "doctrine/annotations",
@@ -429,16 +435,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.4.2",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca"
+                "reference": "eb8a73619af4f1c8711e2ce482f5de3643258a1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/8c434000f420ade76a07c64cbe08ca47e5c101ca",
-                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/eb8a73619af4f1c8711e2ce482f5de3643258a1f",
+                "reference": "eb8a73619af4f1c8711e2ce482f5de3643258a1f",
                 "shasum": ""
             },
             "require": {
@@ -459,8 +465,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Cache\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Cache\\": "lib/Doctrine/Common/Cache"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -495,7 +501,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-08-31 12:36:41"
+            "time": "2015-10-28 11:27:45"
         },
         {
             "name": "doctrine/collections",
@@ -759,16 +765,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.17.1",
+            "version": "1.17.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "0524c87587ab85bc4c2d6f5b41253ccb930a5422"
+                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/0524c87587ab85bc4c2d6f5b41253ccb930a5422",
-                "reference": "0524c87587ab85bc4c2d6f5b41253ccb930a5422",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
+                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
                 "shasum": ""
             },
             "require": {
@@ -782,10 +788,11 @@
                 "aws/aws-sdk-php": "^2.4.9",
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
+                "jakub-onderka/php-parallel-lint": "0.9",
                 "php-console/php-console": "^3.1.3",
                 "phpunit/phpunit": "~4.5",
                 "phpunit/phpunit-mock-objects": "2.3.0",
-                "raven/raven": "~0.11",
+                "raven/raven": "^0.13",
                 "ruflin/elastica": ">=0.90 <3.0",
                 "swiftmailer/swiftmailer": "~5.3",
                 "videlalvaro/php-amqplib": "~2.4"
@@ -831,7 +838,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-08-31 09:17:37"
+            "time": "2015-10-14 12:51:02"
         },
         {
             "name": "psr/log",
@@ -926,16 +933,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.5",
+            "version": "v2.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "619528a274647cffc1792063c3ea04c4fa8266a0"
+                "reference": "66b2e9662c44d478b69e48278aa54079a006eb42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/619528a274647cffc1792063c3ea04c4fa8266a0",
-                "reference": "619528a274647cffc1792063c3ea04c4fa8266a0",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/66b2e9662c44d478b69e48278aa54079a006eb42",
+                "reference": "66b2e9662c44d478b69e48278aa54079a006eb42",
                 "shasum": ""
             },
             "require": {
@@ -998,8 +1005,7 @@
                 "egulias/email-validator": "~1.2",
                 "ircmaxell/password-compat": "~1.0",
                 "monolog/monolog": "~1.11",
-                "ocramius/proxy-manager": "~0.4|~1.0",
-                "symfony/phpunit-bridge": "self.version"
+                "ocramius/proxy-manager": "~0.4|~1.0"
             },
             "type": "library",
             "extra": {
@@ -1044,20 +1050,20 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-09-25 11:16:52"
+            "time": "2015-10-27 19:07:24"
         },
         {
             "name": "twig/twig",
-            "version": "v1.22.2",
+            "version": "v1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "79249fc8c9ff62e41e217e0c630e2e00bcadda6a"
+                "reference": "5868cd822fd6cf626d5f805439575f9c323cee2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/79249fc8c9ff62e41e217e0c630e2e00bcadda6a",
-                "reference": "79249fc8c9ff62e41e217e0c630e2e00bcadda6a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5868cd822fd6cf626d5f805439575f9c323cee2a",
+                "reference": "5868cd822fd6cf626d5f805439575f9c323cee2a",
                 "shasum": ""
             },
             "require": {
@@ -1070,7 +1076,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.22-dev"
+                    "dev-master": "1.23-dev"
                 }
             },
             "autoload": {
@@ -1105,7 +1111,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-09-22 13:59:32"
+            "time": "2015-10-29 23:29:01"
         },
         {
             "name": "zendframework/zend-i18n",
@@ -1856,16 +1862,16 @@
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "56cb5d6dec9e7a68a4da2fa89844f39d41092f31"
+                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/56cb5d6dec9e7a68a4da2fa89844f39d41092f31",
-                "reference": "56cb5d6dec9e7a68a4da2fa89844f39d41092f31",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
+                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
                 "shasum": ""
             },
             "require": {
@@ -1901,7 +1907,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -1930,7 +1936,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2015-08-31 19:07:16"
+            "time": "2015-10-15 01:33:42"
         },
         {
             "name": "satooshi/php-coveralls",
