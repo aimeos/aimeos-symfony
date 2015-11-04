@@ -54,7 +54,7 @@ class SetupCommand extends Command
 		$this->setName( 'aimeos:setup');
 		$this->setDescription( 'Initialize or update the Aimeos database tables' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site for updating database entries', 'default' );
-		$this->addArgument( 'tplsite', InputArgument::OPTIONAL, 'Template site for creating or updating database entries', null );
+		$this->addArgument( 'tplsite', InputArgument::OPTIONAL, 'Template site for creating or updating database entries', 'default' );
 		$this->addOption( 'option', null, InputOption::VALUE_REQUIRED, 'Optional setup configuration, name and value are separated by ":" like "setup/default/demo:1"', array() );
 	}
 
@@ -72,7 +72,7 @@ class SetupCommand extends Command
 
 		$config = $ctx->getConfig();
 		$site = $input->getArgument( 'site' );
-		$tplsite = ( $input->getArgument( 'tplsite' ) ? : $site );
+		$tplsite = $input->getArgument( 'tplsite' );
 
 		$config->set( 'setup/site', $site );
 		$dbconfig = $this->getDbConfig( $config );
