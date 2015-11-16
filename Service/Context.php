@@ -103,6 +103,8 @@ class Context
 
 		if( $this->container->has( 'security.context' ) )
 		{
+			// Required for Symfony 3.0
+			// $token = $this->container->get( 'security.token_storage' )->getToken();
 			$token = $this->container->get( 'security.context' )->getToken();
 
 			if( is_object( $token ) )
