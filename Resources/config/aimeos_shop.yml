@@ -180,6 +180,12 @@ controller:
                     default:
                         exportdir: %kernel.root_dir%/../web/uploads
                         downloaddir: /uploads
+    jsonadm:
+        url:
+            target: aimeos_shop_jsonadm_get
+            config:
+                absoluteUri: true
+
 
 i18n:
 

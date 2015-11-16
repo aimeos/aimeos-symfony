@@ -13,6 +13,55 @@ aimeos_shop_admin:
     defaults: { _controller: AimeosShopBundle:Admin:index, site: default, lang: en, tab: 0 }
     requirements: { _method: GET }
 
+
+aimeos_shop_jsonadm_delete:
+    path: /jsonadm/{resource}/{id}
+    defaults: { _controller: AimeosShopBundle:Jsonadm:delete, id: null }
+    requirements:
+        _method: DELETE
+        resource: '[^0-9]+'
+        id: '[0-9]*'
+
+aimeos_shop_jsonadm_get:
+    path: /jsonadm/{resource}/{id}
+    defaults: { _controller: AimeosShopBundle:Jsonadm:get, id: null }
+    requirements:
+        _method: GET
+        resource: '[^0-9]+'
+        id: '[0-9]*'
+
+aimeos_shop_jsonadm_patch:
+    path: /jsonadm/{resource}/{id}
+    defaults: { _controller: AimeosShopBundle:Jsonadm:patch, id: null }
+    requirements:
+        _method: PATCH
+        resource: '[^0-9]+'
+        id: '[0-9]*'
+
+aimeos_shop_jsonadm_post:
+    path: /jsonadm/{resource}/{id}
+    defaults: { _controller: AimeosShopBundle:Jsonadm:post, id: null }
+    requirements:
+        _method: POST
+        resource: '[^0-9]+'
+        id: '[0-9]*'
+
+aimeos_shop_jsonadm_put:
+    path: /jsonadm/{resource}/{id}
+    defaults: { _controller: AimeosShopBundle:Jsonadm:put, id: null }
+    requirements:
+        _method: PUT
+        resource: '[^0-9]+'
+        id: '[0-9]*'
+
+aimeos_shop_jsonadm_options:
+    path: /jsonadm/{resource}
+    defaults: { _controller: AimeosShopBundle:Jsonadm:options, resource: null }
+    requirements:
+        _method: OPTIONS
+        resource: '.*'
+
+
 aimeos_shop_account:
     path: /myaccount
     defaults: { _controller: AimeosShopBundle:Account:index }
@@ -24,6 +73,7 @@ aimeos_shop_account_favorite:
 aimeos_shop_account_watch:
     path: /myaccount/watch/{wat_action}/{wat_id}/{d_name}
     defaults: { _controller: AimeosShopBundle:Account:index, wat_action: '', wat_id: null, d_name: '', d_prodid: null, l_pos: 0 }
+
 
 aimeos_shop_basket:
     path: /basket/{b_action}
