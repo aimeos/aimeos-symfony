@@ -143,12 +143,12 @@ class JsonadmControllerTest extends WebTestCase
 		$this->assertEquals( 2, $json['meta']['total'] );
 
 
-		$getParams = ['filter' => ['&&' => [
-			['=~' => ['product.stock.warehouse.code' => 'symfony']],
-			['==' => ['product.stock.warehouse.label' => 'symfony2']]
-			]],
-			'sort' => 'product.stock.warehouse.code', 'page' => ['offset' => 0, 'limit' => 3]
-		];
+		$getParams = array( 'filter' => array( '&&' => array(
+			array( '=~' => array( 'product.stock.warehouse.code' => 'symfony' ) ),
+			array( '==' => array( 'product.stock.warehouse.label' => 'symfony2' ) )
+			) ),
+			'sort' => 'product.stock.warehouse.code', 'page' => array( 'offset' => 0, 'limit' => 3 )
+		);
 		$client->request( 'GET', '/unittest/jsonadm/product/stock/warehouse', $getParams );
 		$response = $client->getResponse();
 
