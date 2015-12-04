@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b64b64ab4f33109c041cf0d732940efa",
-    "content-hash": "b8ddfaa0a867d9d23f84e0dbcf6a3a7e",
+    "hash": "9f9a8218f646ff1dd265c66c80d99f54",
+    "content-hash": "de72bb2d0fec49ad13325c240fec61f0",
     "packages": [
         {
             "name": "aimeos/ai-monolog",
@@ -199,12 +199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "35cce9c088e5cef11b554e4763e8e2ab9b066cea"
+                "reference": "23cdfc896a0bed4f0764da3d42c68a85bd360fe6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/35cce9c088e5cef11b554e4763e8e2ab9b066cea",
-                "reference": "35cce9c088e5cef11b554e4763e8e2ab9b066cea",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/23cdfc896a0bed4f0764da3d42c68a85bd360fe6",
+                "reference": "23cdfc896a0bed4f0764da3d42c68a85bd360fe6",
                 "shasum": ""
             },
             "require": {
@@ -267,7 +267,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-12-01 16:02:02"
+            "time": "2015-12-03 21:01:30"
         },
         {
             "name": "composer/installers",
@@ -437,16 +437,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.5.1",
+            "version": "v1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e"
+                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
-                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/47c7128262da274f590ae6f86eb137a7a64e82af",
+                "reference": "47c7128262da274f590ae6f86eb137a7a64e82af",
                 "shasum": ""
             },
             "require": {
@@ -503,7 +503,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-11-02 18:35:48"
+            "time": "2015-12-03 10:50:37"
         },
         {
             "name": "doctrine/collections",
