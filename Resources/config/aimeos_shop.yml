@@ -24,6 +24,14 @@ resource:
         stmt: ["SET NAMES 'utf8'", "SET SESSION sql_mode='ANSI'"]
         limit: 2
         opt-persistent: 0
+    fs:
+        adapter: Standard
+        basedir: %kernel.root_dir%/../web
+        tempdir: %kernel.root_dir%/cache
+    fs-admin:
+        adapter: Standard
+        basedir: %kernel.root_dir%/../web/uploads
+        tempdir: %kernel.root_dir%/cache
 
 client:
     html:
@@ -94,39 +102,17 @@ client:
 controller:
     extjs:
         attribute:
-            import:
-                text:
-                    default:
-                        uploaddir: %kernel.root_dir%/../web/uploads
-                        fileperms: 0660
             export:
                 text:
                     default:
-                        exportdir: %kernel.root_dir%/../web/uploads
                         downloaddir: /uploads
         catalog:
-            import:
-                text:
-                    default:
-                        uploaddir: %kernel.root_dir%/../web/uploads
-                        fileperms: 0660
             export:
                 text:
                     default:
-                        exportdir: %kernel.root_dir%/../web/uploads
                         downloaddir: /uploads
         media:
             default:
-                # Base directory to the document root of the website
-                basedir: %kernel.root_dir%/../web
-                # Upload related settings
-                upload:
-                    # Media directory where the uploaded files will be stored, must be relative to the path in "basedir"
-                    directory: uploads
-                    # Directory permissions (in octal notation) which are applied to newly created directories
-                    # dirperms: 0775
-                    # File permissions (in octal notation) which are applied to newly created files
-                    #fileperms: 0664
                 # Mime icon related settings
                 mimeicon:
                     # Directory where icons for the mime types stored. Must be relative to the path in "basedir"
@@ -170,15 +156,9 @@ controller:
                     # in the "maxwidth" parameter
                     # maxheight: 280
         product:
-            import:
-                text:
-                    default:
-                        uploaddir: %kernel.root_dir%/../web/uploads
-                        fileperms: 0660
             export:
                 text:
                     default:
-                        exportdir: %kernel.root_dir%/../web/uploads
                         downloaddir: /uploads
     jsonadm:
         url:

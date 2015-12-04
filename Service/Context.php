@@ -59,6 +59,9 @@ class Context
 			$dbm = new \Aimeos\MW\DB\Manager\PDO( $config );
 			$context->setDatabaseManager( $dbm );
 
+			$fs = new \Aimeos\MW\Filesystem\Manager\Standard( $config );
+			$context->setFilesystemManager( $fs );
+
 			$container = $this->container;
 			$mail = new \Aimeos\MW\Mail\Swift( function() use ( $container) { return $container->get( 'mailer' ); } );
 			$context->setMail( $mail );
