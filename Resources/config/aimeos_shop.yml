@@ -27,11 +27,11 @@ resource:
     fs:
         adapter: Standard
         basedir: %kernel.root_dir%/../web
-        tempdir: %kernel.root_dir%/cache
+        tempdir: %kernel.cache_dir%
     fs-admin:
         adapter: Standard
         basedir: %kernel.root_dir%/../web/uploads
-        tempdir: %kernel.root_dir%/cache
+        tempdir: %kernel.cache_dir%
 
 client:
     html:
