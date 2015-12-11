@@ -65,16 +65,13 @@ class View
 		}
 
 
-		$view = new \Aimeos\MW\View\Standard();
+		$view = new \Aimeos\MW\View\Standard( $templatePaths );
 
 		$helper = new \Aimeos\MW\View\Helper\Translate\Standard( $view, $translation );
 		$view->addHelper( 'translate', $helper );
 
 		$helper = new \Aimeos\MW\View\Helper\Url\Symfony2( $view, $this->container->get( 'router' ), $fixed );
 		$view->addHelper( 'url', $helper );
-
-		$helper = new \Aimeos\MW\View\Helper\Partial\Standard( $view, $config, $templatePaths );
-		$view->addHelper( 'partial', $helper );
 
 		$helper = new \Aimeos\MW\View\Helper\Parameter\Standard( $view, $params );
 		$view->addHelper( 'param', $helper );
@@ -89,9 +86,6 @@ class View
 
 		$helper = new \Aimeos\MW\View\Helper\FormParam\Standard( $view, array() );
 		$view->addHelper( 'formparam', $helper );
-
-		$helper = new \Aimeos\MW\View\Helper\Encoder\Standard( $view );
-		$view->addHelper( 'encoder', $helper );
 
 		if( $request !== null )
 		{
