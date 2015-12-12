@@ -107,12 +107,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony2.git",
-                "reference": "8abd7dde1c03b63695cae260a5d90be801e8876f"
+                "reference": "4a939838befca936786b4bcfefb601dd8bd4d694"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/8abd7dde1c03b63695cae260a5d90be801e8876f",
-                "reference": "8abd7dde1c03b63695cae260a5d90be801e8876f",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony2/zipball/4a939838befca936786b4bcfefb601dd8bd4d694",
+                "reference": "4a939838befca936786b4bcfefb601dd8bd4d694",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +145,7 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2015-12-04 11:23:22"
+            "time": "2015-12-12 16:14:06"
         },
         {
             "name": "aimeos/ai-zend2-i18n",
@@ -199,12 +199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "8df0634c17fe885f074e8b3d35c6893be2fc5a6a"
+                "reference": "5b49dde0dcfd25418b60a18e108e4358b44e2360"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/8df0634c17fe885f074e8b3d35c6893be2fc5a6a",
-                "reference": "8df0634c17fe885f074e8b3d35c6893be2fc5a6a",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/5b49dde0dcfd25418b60a18e108e4358b44e2360",
+                "reference": "5b49dde0dcfd25418b60a18e108e4358b44e2360",
                 "shasum": ""
             },
             "require": {
@@ -234,6 +234,7 @@
                     "Aimeos\\MShop\\": "lib/mshoplib/src/MShop/",
                     "Aimeos\\MAdmin\\": "lib/mshoplib/src/MAdmin/",
                     "Aimeos\\Client\\Html\\": "client/html/src/Client/Html/",
+                    "Aimeos\\Client\\JQAdm\\": "client/jqadm/src/Client/JQAdm/",
                     "Aimeos\\Controller\\Common\\": "controller/common/src/Controller/Common/",
                     "Aimeos\\Controller\\Frontend\\": "controller/frontend/src/Controller/Frontend/",
                     "Aimeos\\Controller\\JsonAdm\\": "controller/jobs/src/Controller/JsonAdm/",
@@ -247,6 +248,7 @@
                     "lib/mwlib/lib",
                     "lib/mwlib/src",
                     "client/html/src",
+                    "client/jqadm/src",
                     "controller/common/src",
                     "controller/frontend/src",
                     "controller/jsonadm/src",
@@ -267,7 +269,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-12-11 12:08:53"
+            "time": "2015-12-12 16:10:31"
         },
         {
             "name": "composer/installers",

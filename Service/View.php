@@ -51,16 +51,16 @@ class View
 		$params = $fixed = array();
 		$request = $this->requestStack->getMasterRequest();
 
-		if( $locale !== null ) {
-			$fixed = $this->getFixedParams();
-
+		if( $locale !== null )
+		{
 			$params = $request->request->all() + $request->query->all() + $request->attributes->get( '_route_params' );
-			// required for reloading to the current page
-			$params['target'] = $request->get( '_route' );
+			$fixed = $this->getFixedParams();
 
 			$i18n = $this->container->get('aimeos_i18n')->get( array( $locale ) );
 			$translation = $i18n[$locale];
-		} else {
+		}
+		else
+		{
 			$translation = new \Aimeos\MW\Translation\None( 'en' );
 		}
 
@@ -73,7 +73,7 @@ class View
 		$helper = new \Aimeos\MW\View\Helper\Url\Symfony2( $view, $this->container->get( 'router' ), $fixed );
 		$view->addHelper( 'url', $helper );
 
-		$helper = new \Aimeos\MW\View\Helper\Parameter\Standard( $view, $params );
+		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, $params );
 		$view->addHelper( 'param', $helper );
 
 		$helper = new \Aimeos\MW\View\Helper\Config\Standard( $view, $config );
@@ -83,9 +83,6 @@ class View
 		$sep1000 = $config->get( 'client/html/common/format/seperator1000', ' ' );
 		$helper = new \Aimeos\MW\View\Helper\Number\Standard( $view, $sepDec, $sep1000 );
 		$view->addHelper( 'number', $helper );
-
-		$helper = new \Aimeos\MW\View\Helper\FormParam\Standard( $view, array() );
-		$view->addHelper( 'formparam', $helper );
 
 		if( $request !== null )
 		{

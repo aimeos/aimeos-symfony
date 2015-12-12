@@ -47,7 +47,7 @@ class Page
 		$result = array( 'aibody' => array(), 'aiheader' => array() );
 
 		$langid = $context->getLocale()->getLanguageId();
-		$tmplPaths = $this->container->get('aimeos')->get()->getCustomPaths( 'client/html' );
+		$tmplPaths = $this->container->get('aimeos')->get()->getCustomPaths( 'client/html/templates' );
 		$view = $this->container->get('aimeos_view')->create( $context->getConfig(), $tmplPaths, $langid );
 		$context->setView( $view );
 
