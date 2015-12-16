@@ -13,13 +13,7 @@ framework:
         storage_id: session.storage.mock_file
     templating:
         engines: [twig]
-
-assetic:
-    debug:          "%kernel.debug%"
-    use_controller: false
-    bundles:        ['AimeosShopBundle']
-    filters:
-        cssrewrite: ~
+    assets:
 
 monolog:
     handlers:

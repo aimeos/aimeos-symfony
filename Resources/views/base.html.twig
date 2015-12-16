@@ -1,21 +1,12 @@
  {% extends '::base.html.twig' %}
 
  {% block aimeos_styles %}
-    {% stylesheets
-        'bundles/aimeosshop/themes/elegance/common.css'
-        'bundles/aimeosshop/themes/elegance/aimeos.css'
-        filter='cssrewrite'
-    %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/aimeosshop/themes/elegance/common.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/aimeosshop/themes/elegance/aimeos.css') }}" />
  {% endblock %}
 
  {% block aimeos_scripts %}
-    {% javascripts
-        'bundles/aimeosshop/themes/jquery-ui.custom.min.js'
-        'bundles/aimeosshop/themes/aimeos.js'
-        'bundles/aimeosshop/themes/elegance/aimeos.js'
-    %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/aimeosshop/themes/jquery-ui.custom.min.js' ) }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/aimeosshop/themes/aimeos.js' ) }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/aimeosshop/themes/elegance/aimeos.js' ) }}"></script>
  {% endblock %}
