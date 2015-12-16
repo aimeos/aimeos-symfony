@@ -102,32 +102,33 @@ class Context
 	 */
 	protected function addUser( \Aimeos\MShop\Context\Item\Iface $context )
 	{
+		$token = null;
 		$username = '';
 
-		if( $this->container->has( 'security.context' ) )
-		{
-			// Required for Symfony 3.0
-			// $token = $this->container->get( 'security.token_storage' )->getToken();
+		if( $this->container->has( 'security.token_storage' ) ) {
+			$token = $this->container->get( 'security.token_storage' )->getToken();
+		}
+		else if( $this->container->has( 'security.context' ) ) {
 			$token = $this->container->get( 'security.context' )->getToken();
+		}
 
-			if( is_object( $token ) )
+		if( is_object( $token ) )
+		{
+			if( method_exists( $token->getUser(), 'getId' ) )
 			{
-				if( method_exists( $token->getUser(), 'getId' ) )
+				$userid = $token->getUser()->getId();
+				$context->setUserId( $userid );
+				$context->setGroupIds( function() use ( $context, $userid )
 				{
-					$userid = $token->getUser()->getId();
-					$context->setUserId( $userid );
-					$context->setGroupIds( function() use ( $context, $userid )
-					{
-						$manager = \Aimeos\MShop\Factory::createManager( $context, 'customer' );
-						return $manager->getItem( $userid, array( 'customer/group' ) )->getGroups();
-					} );
-				}
+					$manager = \Aimeos\MShop\Factory::createManager( $context, 'customer' );
+					return $manager->getItem( $userid, array( 'customer/group' ) )->getGroups();
+				} );
+			}
 
-				if( is_object( $token->getUser() ) ) {
-					$username =  $token->getUser()->getUsername();
-				} else {
-					$username = $token->getUser();
-				}
+			if( is_object( $token->getUser() ) ) {
+				$username =  $token->getUser()->getUsername();
+			} else {
+				$username = $token->getUser();
 			}
 		}
 
