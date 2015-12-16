@@ -12,6 +12,7 @@ namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -88,9 +89,9 @@ class AdminController extends Controller
 	 */
 	public function doAction( Request $request )
 	{
-		$csrfProvider = $this->get('form.csrf_provider');
+		$csrfProvider = $this->get('security.csrf.token_manager');
 
-		if( $csrfProvider->isCsrfTokenValid( 'aimeos_admin_token', $request->query->get( '_token' ) ) !== true ) {
+		if( $csrfProvider->isTokenValid( new CsrfToken( 'aimeos_admin_token',  $request->query->get( '_token' ) ) ) !== true ) {
 			throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException( 'CSRF token is invalid' );
 		}
 
