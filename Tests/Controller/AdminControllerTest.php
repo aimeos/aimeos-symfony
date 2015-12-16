@@ -20,18 +20,6 @@ class AdminControllerTest extends WebTestCase
 	}
 
 
-	public function testAdminIndexInvalidSite()
-	{
-		$client = static::createClient(array(), array(
-			'PHP_AUTH_USER' => 'admin',
-			'PHP_AUTH_PW'   => 'adminpass',
-		) );
-		$client->request( 'GET', '/admin/invalid/de/0' );
-
-		$this->assertEquals( 500, $client->getResponse()->getStatusCode() );
-	}
-
-
 	public function testAdminDo()
 	{
 		$client = static::createClient(array(), array(

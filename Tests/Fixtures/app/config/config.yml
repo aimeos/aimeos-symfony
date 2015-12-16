@@ -13,7 +13,6 @@ framework:
         storage_id: session.storage.mock_file
     templating:
         engines: [twig]
-    assets:
 
 monolog:
     handlers:
