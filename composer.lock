@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3c2069848c5dc7adb74927c4237a884e",
-    "content-hash": "0fd34038e38ce094f066db9ff78b5bb1",
+    "hash": "5e758e11010818a4892a190107912894",
+    "content-hash": "1a6278d1a96dc4c47306fc9732ba1e54",
     "packages": [
         {
             "name": "aimeos/ai-monolog",
@@ -199,12 +199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "f641d5e73ac0e91f9c1b5e3e791ab252279db178"
+                "reference": "47154363918517de1eed21b0b6116ecbe627f46a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/f641d5e73ac0e91f9c1b5e3e791ab252279db178",
-                "reference": "f641d5e73ac0e91f9c1b5e3e791ab252279db178",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/47154363918517de1eed21b0b6116ecbe627f46a",
+                "reference": "47154363918517de1eed21b0b6116ecbe627f46a",
                 "shasum": ""
             },
             "require": {
@@ -233,13 +233,13 @@
                     "Aimeos\\MW\\": "lib/mwlib/src/MW/",
                     "Aimeos\\MShop\\": "lib/mshoplib/src/MShop/",
                     "Aimeos\\MAdmin\\": "lib/mshoplib/src/MAdmin/",
-                    "Aimeos\\Client\\Html\\": "client/html/src/Client/Html/",
-                    "Aimeos\\Client\\JQAdm\\": "client/jqadm/src/Client/JQAdm/",
                     "Aimeos\\Controller\\Common\\": "controller/common/src/Controller/Common/",
                     "Aimeos\\Controller\\Frontend\\": "controller/frontend/src/Controller/Frontend/",
                     "Aimeos\\Controller\\JsonAdm\\": "controller/jobs/src/Controller/JsonAdm/",
                     "Aimeos\\Controller\\ExtJS\\": "controller/extjs/src/Controller/ExtJS/",
                     "Aimeos\\Controller\\Jobs\\": "controller/jobs/src/Controller/Jobs/",
+                    "Aimeos\\Client\\Html\\": "client/html/src/Client/Html/",
+                    "Aimeos\\Admin\\JQAdm\\": "admin/jqadm/src/Admin/JQAdm/",
                     "Aimeos\\": ".",
                     "\\": "lib/mwlib/lib/"
                 },
@@ -247,13 +247,13 @@
                     "lib/mshoplib/src",
                     "lib/mwlib/lib",
                     "lib/mwlib/src",
-                    "client/html/src",
-                    "client/jqadm/src",
                     "controller/common/src",
                     "controller/frontend/src",
                     "controller/jsonadm/src",
                     "controller/extjs/src",
                     "controller/jobs/src",
+                    "client/html/src",
+                    "admin/jqadm/src",
                     "Bootstrap.php"
                 ]
             },
@@ -269,7 +269,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2015-12-15 18:22:04"
+            "time": "2015-12-18 20:55:28"
         },
         {
             "name": "composer/installers",
@@ -2395,16 +2395,16 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.11",
+            "version": "v3.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "a79e205737b58d557c05caef6dfa8f94d8084bca"
+                "reference": "3e8936fe13aa4086644977d334d8fcd275f50357"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/a79e205737b58d557c05caef6dfa8f94d8084bca",
-                "reference": "a79e205737b58d557c05caef6dfa8f94d8084bca",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/3e8936fe13aa4086644977d334d8fcd275f50357",
+                "reference": "3e8936fe13aa4086644977d334d8fcd275f50357",
                 "shasum": ""
             },
             "require": {
@@ -2446,62 +2446,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2015-10-28 15:47:04"
-        },
-        {
-            "name": "symfony/phpunit-bridge",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "9ed531e9b5c7bf904a320dc96eebd7b39baf634f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/9ed531e9b5c7bf904a320dc96eebd7b39baf634f",
-                "reference": "9ed531e9b5c7bf904a320dc96eebd7b39baf634f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "suggest": {
-                "symfony/debug": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
-            },
-            "type": "symfony-bridge",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ],
-                "psr-4": {
-                    "Symfony\\Bridge\\PhpUnit\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony PHPUnit Bridge",
-            "homepage": "https://symfony.com",
-            "time": "2015-12-15 02:03:25"
+            "time": "2015-12-18 17:39:27"
         }
     ],
     "aliases": [],
@@ -2512,8 +2457,7 @@
         "aimeos/ai-monolog": 20,
         "aimeos/ai-zend2-i18n": 20,
         "aimeos/ai-swiftmailer": 20,
-        "satooshi/php-coveralls": 20,
-        "symfony/phpunit-bridge": 20
+        "satooshi/php-coveralls": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
