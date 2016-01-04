@@ -1,13 +1,13 @@
 {
-	"name": "aimeos/aimeos-symfony2",
+	"name": "aimeos/aimeos-symfony",
 	"description": "Full-featured Symfony web shop bundle and e-commerce solution for high performance shops",
 	"homepage": "https://aimeos.org/Symfony",
 	"type": "symfony-bundle",
 	"license": "MIT",
 	"keywords": ["aimeos", "symfony", "e-commerce", "ecommerce", "shop", "portal", "market place"],
 	"support": {
-		"source": "https://github.com/Aimeos/aimeos-symfony2",
-		"issues": "https://github.com/Aimeos/aimeos-symfony2/issues",
+		"source": "https://github.com/Aimeos/aimeos-symfony",
+		"issues": "https://github.com/Aimeos/aimeos-symfony/issues",
 		"forum": "https://aimeos.org/help",
 		"wiki": "https://aimeos.org/docs"
 	},
@@ -22,7 +22,7 @@
 	"require": {
 		"php": ">=5.3.3",
 		"aimeos/aimeos-core": "dev-master",
-		"aimeos/ai-symfony2": "dev-master",
+		"aimeos/ai-symfony": "dev-master",
 		"aimeos/ai-monolog": "dev-master",
 		"aimeos/ai-zend2-i18n": "dev-master",
 		"aimeos/ai-swiftmailer": "dev-master",
