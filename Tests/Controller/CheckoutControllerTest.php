@@ -13,7 +13,6 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$client->insulate();
 
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
@@ -82,7 +81,6 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -132,7 +130,6 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -152,7 +149,6 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -172,7 +168,6 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -192,7 +187,6 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -212,7 +206,6 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$client->insulate();
 
 		$crawler = $this->_goToSummary( $client );
 
@@ -232,7 +225,6 @@ class CheckoutControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-		$client->insulate();
 
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
@@ -283,7 +275,6 @@ class CheckoutControllerTest extends WebTestCase
 	public function testUpdate()
 	{
 		$client = static::createClient();
-		$client->insulate();
 
 		$client->request( 'GET', '/unittest/de/EUR/update' );
 
