@@ -2,14 +2,14 @@
     <img src="https://aimeos.org/fileadmin/template/icons/logo.png" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
 </a>
 
-Aimeos Symfony 2&3 bundle
+Aimeos Symfony bundle
 ======================
-[![Build Status](https://travis-ci.org/aimeos/aimeos-symfony2.svg?branch=master)](https://travis-ci.org/aimeos/aimeos-symfony2)
-[![Coverage Status](https://coveralls.io/repos/aimeos/aimeos-symfony2/badge.svg?branch=master)](https://coveralls.io/r/aimeos/aimeos-symfony2?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony2/?branch=master)
-[![HHVM Status](http://hhvm.h4cc.de/badge/aimeos/aimeos-symfony2.svg)](http://hhvm.h4cc.de/package/aimeos/aimeos-symfony2)
+[![Build Status](https://travis-ci.org/aimeos/aimeos-symfony.svg?branch=master)](https://travis-ci.org/aimeos/aimeos-symfony)
+[![Coverage Status](https://coveralls.io/repos/aimeos/aimeos-symfony/badge.svg?branch=master)](https://coveralls.io/r/aimeos/aimeos-symfony?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/?branch=master)
+[![HHVM Status](http://hhvm.h4cc.de/badge/aimeos/aimeos-symfony.svg)](http://hhvm.h4cc.de/package/aimeos/aimeos-symfony)
 
-The repository contains the Symfony2 web shop bundle integrating the Aimeos e-commerce library into Symfony. The bundle provides controllers for e.g. faceted filter, product lists and detail views, for searching products as well as baskets and the checkout process. A full set of pages including routing is also available for a quick start.
+The repository contains the Symfony e-commerce bundle integrating the Aimeos e-commerce library into Symfony 2 and 3. The bundle provides controllers for e.g. faceted filter, product lists and detail views, for searching products as well as baskets and the checkout process. A full set of pages including routing is also available for a quick start.
 
 [![Aimeos Symfony2 demo](https://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony2.demo.aimeos.org/)
 
@@ -23,7 +23,7 @@ The repository contains the Symfony2 web shop bundle integrating the Aimeos e-co
 
 ## Installation
 
-The Aimeos Symfony2 web shop bundle is a composer based library that can be installed easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the composer post install/update scripts won't fail:
+The Aimeos Symfony e-commerce bundle is a composer based library that can be installed easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the composer post install/update scripts won't fail:
 
 ```
     $bundles = array(
@@ -38,7 +38,7 @@ Make sure that the database is set up and it is configured in your config.yml. T
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony2": "~1.2",
+        "aimeos/aimeos-symfony": "~1.2",
         ...
     },
     "scripts": {
@@ -159,7 +159,7 @@ aimeos_shop:
 
 ## License
 
-The Aimeos Symfony2 bundle is licensed under the terms of the MIT license and is available for free.
+The Aimeos Symfony bundle is licensed under the terms of the MIT license and is available for free.
 
 ## Links
 
