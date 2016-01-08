@@ -9,18 +9,18 @@ use Aimeos\ShopBundle\Command;
 
 class CacheCommandTest extends WebTestCase
 {
-    public function testCacheCommand()
-    {
-        $kernel = $this->createKernel();
-        $kernel->boot();
+	public function testCacheCommand()
+	{
+		$kernel = $this->createKernel();
+		$kernel->boot();
 
-        $application = new Application( $kernel );
-        $application->add( new Command\CacheCommand() );
+		$application = new Application( $kernel );
+		$application->add( new Command\CacheCommand() );
 
-        $command = $application->find( 'aimeos:cache' );
-        $commandTester = new CommandTester( $command );
-        $commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest' ) );
+		$command = $application->find( 'aimeos:cache' );
+		$commandTester = new CommandTester( $command );
+		$commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest' ) );
 
-        $this->assertEquals( 0, $commandTester->getStatusCode() );
-    }
+		$this->assertEquals( 0, $commandTester->getStatusCode() );
+	}
 }

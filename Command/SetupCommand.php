@@ -29,7 +29,7 @@ class SetupCommand extends Command
 	{
 		if( strncmp( $classname, 'Aimeos\\MW\\Setup\\Task\\', 21 ) === 0 )
 		{
-		    $fileName = substr( $classname, 21 ) . '.php';
+			$fileName = substr( $classname, 21 ) . '.php';
 			$paths = explode( PATH_SEPARATOR, get_include_path() );
 
 			foreach( $paths as $path )

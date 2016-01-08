@@ -9,18 +9,18 @@ use Aimeos\ShopBundle\Command;
 
 class JobsCommandTest extends WebTestCase
 {
-    public function testJobsCommand()
-    {
-        $kernel = $this->createKernel();
-        $kernel->boot();
+	public function testJobsCommand()
+	{
+		$kernel = $this->createKernel();
+		$kernel->boot();
 
-        $application = new Application( $kernel );
-        $application->add( new Command\JobsCommand() );
+		$application = new Application( $kernel );
+		$application->add( new Command\JobsCommand() );
 
-        $command = $application->find( 'aimeos:jobs' );
-        $commandTester = new CommandTester( $command );
-        $commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest', 'jobs' => 'index/rebuild' ) );
+		$command = $application->find( 'aimeos:jobs' );
+		$commandTester = new CommandTester( $command );
+		$commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest', 'jobs' => 'index/rebuild' ) );
 
-        $this->assertEquals( 0, $commandTester->getStatusCode() );
-    }
+		$this->assertEquals( 0, $commandTester->getStatusCode() );
+	}
 }
