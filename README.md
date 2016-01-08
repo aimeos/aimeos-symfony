@@ -61,7 +61,7 @@ Afterwards, install the Aimeos shop bundle using
 
 In a production environment or if you don't want that the demo data gets installed, use the --no-dev option:
 
-`composer update --no-dev`
+`SYMFONY_ENV=prod composer update --no-dev`
 
 **Note:** Alternatively to running the `post-install-cmd` and `post-update-cmd` scripts automatically, you can add the lines required for installing the bundle manually. In your `./app/config/config.yml` file you need to add "AimeosShopBundle" to the list of bundles managed by the assetic bundle:
 ```
