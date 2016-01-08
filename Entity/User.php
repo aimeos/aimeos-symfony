@@ -20,229 +20,229 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User implements UserInterface, \Serializable
 {
-    /**
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
+	/**
+	 * @ORM\Column(type="integer")
+	 * @ORM\Id
+	 * @ORM\GeneratedValue(strategy="AUTO")
+	 */
+	protected $id;
 
-    /**
-     * @ORM\Column(name="siteid", type="integer")
-     */
-    protected $siteid;
+	/**
+	 * @ORM\Column(name="siteid", type="integer")
+	 */
+	protected $siteid;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    protected $label;
+	/**
+	 * @ORM\Column(type="string", length=255)
+	 */
+	protected $label;
 
-    /**
-     * @ORM\Column(name="code", type="string", length=32)
-     */
-    protected $username;
+	/**
+	 * @ORM\Column(name="code", type="string", length=32)
+	 */
+	protected $username;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    protected $password;
+	/**
+	 * @ORM\Column(type="string", length=255)
+	 */
+	protected $password;
 
-    /**
-     * @ORM\Column(name="status", type="smallint")
-     */
-    protected $isActive;
+	/**
+	 * @ORM\Column(name="status", type="smallint")
+	 */
+	protected $isActive;
 
-    /**
-     * @ORM\Column(name="salutation", type="string", length=8)
-     */
-    protected $salutation = '';
+	/**
+	 * @ORM\Column(name="salutation", type="string", length=8)
+	 */
+	protected $salutation = '';
 
-    /**
-     * @ORM\Column(name="company", type="string", length=100)
-     */
-    protected $company = '';
+	/**
+	 * @ORM\Column(name="company", type="string", length=100)
+	 */
+	protected $company = '';
 
-    /**
-     * @ORM\Column(name="vatid", type="string", length=32)
-     */
-    protected $vatid = '';
+	/**
+	 * @ORM\Column(name="vatid", type="string", length=32)
+	 */
+	protected $vatid = '';
 
-    /**
-     * @ORM\Column(name="title", type="string", length=64)
-     */
-    protected $title = '';
+	/**
+	 * @ORM\Column(name="title", type="string", length=64)
+	 */
+	protected $title = '';
 
-    /**
-     * @ORM\Column(name="firstname", type="string", length=64)
-     */
-    protected $firstname = '';
+	/**
+	 * @ORM\Column(name="firstname", type="string", length=64)
+	 */
+	protected $firstname = '';
 
-    /**
-     * @ORM\Column(name="lastname", type="string", length=64)
-     */
-    protected $lastname = '';
+	/**
+	 * @ORM\Column(name="lastname", type="string", length=64)
+	 */
+	protected $lastname = '';
 
-    /**
-     * @ORM\Column(name="address1", type="string", length=255)
-     */
-    protected $address1 = '';
+	/**
+	 * @ORM\Column(name="address1", type="string", length=255)
+	 */
+	protected $address1 = '';
 
-    /**
-     * @ORM\Column(name="address2", type="string", length=255)
-     */
-    protected $address2 = '';
+	/**
+	 * @ORM\Column(name="address2", type="string", length=255)
+	 */
+	protected $address2 = '';
 
-    /**
-     * @ORM\Column(name="address3", type="string", length=255)
-     */
-    protected $address3 = '';
+	/**
+	 * @ORM\Column(name="address3", type="string", length=255)
+	 */
+	protected $address3 = '';
 
-    /**
-     * @ORM\Column(name="postal", type="string", length=16)
-     */
-    protected $postal = '';
+	/**
+	 * @ORM\Column(name="postal", type="string", length=16)
+	 */
+	protected $postal = '';
 
-    /**
-     * @ORM\Column(name="city", type="string", length=255)
-     */
-    protected $city = '';
+	/**
+	 * @ORM\Column(name="city", type="string", length=255)
+	 */
+	protected $city = '';
 
-    /**
-     * @ORM\Column(name="state", type="string", length=255)
-     */
-    protected $state = '';
+	/**
+	 * @ORM\Column(name="state", type="string", length=255)
+	 */
+	protected $state = '';
 
-    /**
-     * @ORM\Column(name="langid", type="string", length=5, nullable=true)
-     */
-    protected $langid = '';
+	/**
+	 * @ORM\Column(name="langid", type="string", length=5, nullable=true)
+	 */
+	protected $langid = '';
 
-    /**
-     * @ORM\Column(name="countryid", type="string", length=2, nullable=true)
-     */
-    protected $countryid = '';
+	/**
+	 * @ORM\Column(name="countryid", type="string", length=2, nullable=true)
+	 */
+	protected $countryid = '';
 
-    /**
-     * @ORM\Column(name="telephone", type="string", length=32)
-     */
-    protected $telephone = '';
+	/**
+	 * @ORM\Column(name="telephone", type="string", length=32)
+	 */
+	protected $telephone = '';
 
-    /**
-     * @ORM\Column(name="telefax", type="string", length=255)
-     */
-    protected $telefax = '';
+	/**
+	 * @ORM\Column(name="telefax", type="string", length=255)
+	 */
+	protected $telefax = '';
 
-    /**
-     * @ORM\Column(name="email", type="string", length=255)
-     */
-    protected $email = '';
+	/**
+	 * @ORM\Column(name="email", type="string", length=255)
+	 */
+	protected $email = '';
 
-    /**
-     * @ORM\Column(name="website", type="string", length=255)
-     */
-    protected $website = '';
+	/**
+	 * @ORM\Column(name="website", type="string", length=255)
+	 */
+	protected $website = '';
 
-    /**
-     * @ORM\Column(name="birthday", type="date", nullable=true)
-     */
-    protected $birthday;
+	/**
+	 * @ORM\Column(name="birthday", type="date", nullable=true)
+	 */
+	protected $birthday;
 
-    /**
-     * @ORM\Column(name="vdate", type="date", nullable=true)
-     */
-    protected $vdate;
+	/**
+	 * @ORM\Column(name="vdate", type="date", nullable=true)
+	 */
+	protected $vdate;
 
-    /**
-     * @ORM\Column(name="ctime", type="datetime")
-     */
-    protected $ctime;
+	/**
+	 * @ORM\Column(name="ctime", type="datetime")
+	 */
+	protected $ctime;
 
-    /**
-     * @ORM\Column(name="mtime", type="datetime")
-     */
-    protected $mtime;
+	/**
+	 * @ORM\Column(name="mtime", type="datetime")
+	 */
+	protected $mtime;
 
-    /**
-     * @ORM\Column(name="editor", type="string", length=255)
-     */
-    protected $editor = '';
-
-
-    /**
-     * @inheritDoc
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+	/**
+	 * @ORM\Column(name="editor", type="string", length=255)
+	 */
+	protected $editor = '';
 
 
-    /**
-     * @inheritDoc
-     */
-    public function getUsername()
-    {
-    	return $this->username;
-    }
+	/**
+	 * @inheritDoc
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
 
 
-    /**
-     * @inheritDoc
-     */
-    public function getSalt()
-    {
-        return 'mshop';
-    }
+	/**
+	 * @inheritDoc
+	 */
+	public function getUsername()
+	{
+		return $this->username;
+	}
 
 
-    /**
-     * @inheritDoc
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
+	/**
+	 * @inheritDoc
+	 */
+	public function getSalt()
+	{
+		return 'mshop';
+	}
 
 
-    /**
-     * @inheritDoc
-     */
-    public function getRoles()
-    {
-        return array( 'ROLE_USER' );
-    }
+	/**
+	 * @inheritDoc
+	 */
+	public function getPassword()
+	{
+		return $this->password;
+	}
 
 
-    /**
-     * @inheritDoc
-     */
-    public function eraseCredentials()
-    {
-    }
+	/**
+	 * @inheritDoc
+	 */
+	public function getRoles()
+	{
+		return array( 'ROLE_USER' );
+	}
 
 
-    /**
-     * @see \Serializable::serialize()
-     */
-    public function serialize()
-    {
-        return serialize( array(
-            $this->id,
-            $this->username,
-            $this->password,
-        ) );
-    }
+	/**
+	 * @inheritDoc
+	 */
+	public function eraseCredentials()
+	{
+	}
 
 
-    /**
-     * @see \Serializable::unserialize()
-     */
-    public function unserialize( $serialized )
-    {
-        list (
-            $this->id,
-            $this->username,
-            $this->password,
-        ) = unserialize( $serialized );
-    }
+	/**
+	 * @see \Serializable::serialize()
+	 */
+	public function serialize()
+	{
+		return serialize( array(
+			$this->id,
+			$this->username,
+			$this->password,
+		) );
+	}
+
+
+	/**
+	 * @see \Serializable::unserialize()
+	 */
+	public function unserialize( $serialized )
+	{
+		list (
+			$this->id,
+			$this->username,
+			$this->password,
+		) = unserialize( $serialized );
+	}
 }
