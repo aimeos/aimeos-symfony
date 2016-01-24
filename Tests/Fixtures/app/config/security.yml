@@ -15,6 +15,12 @@ security:
             iterations: 1
 
     firewalls:
+        login_firewall:
+            pattern:   ^/admin$
+            provider: in_memory
+            anonymous: ~
+            http_basic:
+                realm: "Admin Area"
         aimeos_extadm:
             pattern:    ^/unittest/extadm
             provider: in_memory
@@ -39,4 +45,6 @@ security:
 
     access_control:
         - { path: ^/unittest/extadm, roles: ROLE_ADMIN }
+        - { path: ^/unittest/jqadm, roles: ROLE_ADMIN }
+        - { path: ^/unittest/jsonadm, roles: ROLE_ADMIN }
         - { path: ^/unittest/de/EUR/checkout, roles: ROLE_USER }
