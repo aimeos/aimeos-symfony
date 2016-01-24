@@ -11,7 +11,6 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -26,11 +25,11 @@ class JqadmController extends Controller
 	/**
 	 * Returns the HTML code for a copy of a resource object
 	 *
-	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
+	 * @param Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
 	 * @param integer $id Unique resource ID
 	 * @param string $site Unique site code
-	 * @return string Generated output
+	 * @return Response Generated output
 	 */
 	public function copyAction( Request $request, $resource, $id, $site = 'default' )
 	{
@@ -42,10 +41,10 @@ class JqadmController extends Controller
 	/**
 	 * Returns the HTML code for a new resource object
 	 *
-	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
+	 * @param Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
 	 * @param string $site Unique site code
-	 * @return string Generated output
+	 * @return Response Generated output
 	 */
 	public function createAction( Request $request, $resource, $site = 'default' )
 	{
@@ -57,11 +56,11 @@ class JqadmController extends Controller
 	/**
 	 * Deletes the resource object or a list of resource objects
 	 *
-	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
+	 * @param Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
 	 * @param integer $id Unique resource ID
 	 * @param string $site Unique site code
-	 * @return string Generated output
+	 * @return Response Generated output
 	 */
 	public function deleteAction( Request $request, $resource, $id, $site = 'default' )
 	{
@@ -73,11 +72,11 @@ class JqadmController extends Controller
 	/**
 	 * Returns the HTML code for the requested resource object
 	 *
-	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
+	 * @param Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
 	 * @param integer $id Unique resource ID
 	 * @param string $site Unique site code
-	 * @return string Generated output
+	 * @return Response Generated output
 	 */
 	public function getAction( Request $request, $resource, $id, $site = 'default' )
 	{
@@ -89,10 +88,10 @@ class JqadmController extends Controller
 	/**
 	 * Saves a new resource object
 	 *
-	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
+	 * @param Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
 	 * @param string $site Unique site code
-	 * @return string Generated output
+	 * @return Response Generated output
 	 */
 	public function saveAction( Request $request, $resource, $site = 'default' )
 	{
@@ -104,10 +103,10 @@ class JqadmController extends Controller
 	/**
 	 * Returns the HTML code for a list of resource objects
 	 *
-	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
+	 * @param Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
 	 * @param string $site Unique site code
-	 * @return string Generated output
+	 * @return Response Generated output
 	 */
 	public function searchAction( Request $request, $resource, $site = 'default' )
 	{
@@ -119,10 +118,10 @@ class JqadmController extends Controller
 	/**
 	 * Returns the resource controller
 	 *
-	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
+	 * @param Request $request Symfony request object
 	 * @param string $site Unique site code
 	 * @param string $resource Resource location, e.g. "product"
-	 * @return \Aimeos\MShop\Context\Item\Iface Context item
+	 * @return \Aimeos\Admin\JQAdm\Iface Context item
 	 */
 	protected function createClient( Request $request, $site, $resource )
 	{
@@ -145,7 +144,7 @@ class JqadmController extends Controller
 	 * Returns the generated HTML code
 	 *
 	 * @param string $content Content from admin client
-	 * @return \Illuminate\Contracts\View\View View for rendering the output
+	 * @return Response View for rendering the output
 	 */
 	protected function getHtml( $content )
 	{

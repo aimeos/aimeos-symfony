@@ -172,7 +172,7 @@ class JsonadmController extends Controller
 	 * @param string $content Body of the HTTP response
 	 * @param integer $status HTTP status
 	 * @param array $header List of HTTP headers
-	 * @return \Illuminate\Http\Response HTTP response object
+	 * @return Response HTTP response object
 	 */
 	protected function createResponse( $content, $status, array $header )
 	{
