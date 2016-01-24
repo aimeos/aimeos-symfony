@@ -30,10 +30,10 @@ class AdminController extends Controller
 	 */
 	public function indexAction( Request $request )
 	{
-		if( $this->has( 'security.authorization_checker' ) && ( $service = $this->get( 'security.authorization_checker' ) )
-			&& $this->get( 'security.token_storage' )->getToken() && $service->isGranted( 'ROLE_ADMIN' )
-			|| $this->has( 'security.context' ) && ( $service = $this->get( 'security.context' ) )
-			&& $service->getToken() && $service->isGranted( 'ROLE_ADMIN' )
+		if( $this->has( 'security.authorization_checker' ) && $this->get( 'security.token_storage' )->getToken()
+			&& $this->get( 'security.authorization_checker' )->isGranted( 'ROLE_ADMIN' )
+			|| $this->has( 'security.context' ) && $this->get( 'security.context' )->getToken()
+			&& $this->get( 'security.context' )->isGranted( 'ROLE_ADMIN' )
 		) {
 			$params = array( 'site' => 'default', 'resource' => 'product', 'lang' => 'en' );
 			return $this->redirect( $this->generateUrl( 'aimeos_shop_jqadm_search', $params ) );

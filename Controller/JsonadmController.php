@@ -28,11 +28,10 @@ class JsonadmController extends Controller
 	 *
 	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
 	 * @param string Resource location, e.g. "product/stock/wareshouse"
-	 * @param string $sitecode Unique site code
-	 * @param integer|null $id Unique resource ID
+	 * @param string $site Unique site code
 	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
 	 */
-	public function deleteAction( Request $request, $resource, $site = 'default', $id = null )
+	public function deleteAction( Request $request, $resource, $site = 'default' )
 	{
 		$status = 500;
 		$header = $request->headers->all();
@@ -49,11 +48,10 @@ class JsonadmController extends Controller
 	 *
 	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
 	 * @param string Resource location, e.g. "product/stock/wareshouse"
-	 * @param string $sitecode Unique site code
-	 * @param integer|null $id Unique resource ID
+	 * @param string $site Unique site code
 	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
 	 */
-	public function getAction( Request $request, $resource, $site = 'default', $id = null )
+	public function getAction( Request $request, $resource, $site = 'default' )
 	{
 		$status = 500;
 		$header = $request->headers->all();
@@ -70,11 +68,10 @@ class JsonadmController extends Controller
 	 *
 	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
 	 * @param string Resource location, e.g. "product/stock/wareshouse"
-	 * @param string $sitecode Unique site code
-	 * @param integer|null $id Unique resource ID
+	 * @param string $site Unique site code
 	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
 	 */
-	public function patchAction( Request $request, $resource, $site = 'default', $id = null )
+	public function patchAction( Request $request, $resource, $site = 'default' )
 	{
 		$status = 500;
 		$header = $request->headers->all();
@@ -91,11 +88,10 @@ class JsonadmController extends Controller
 	 *
 	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
 	 * @param string Resource location, e.g. "product/stock/wareshouse"
-	 * @param string $sitecode Unique site code
-	 * @param integer $id Unique ID of the resource
+	 * @param string $site Unique site code
 	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
 	 */
-	public function postAction( Request $request, $resource, $site = 'default', $id = null )
+	public function postAction( Request $request, $resource, $site = 'default' )
 	{
 		$status = 500;
 		$header = $request->headers->all();
@@ -112,11 +108,10 @@ class JsonadmController extends Controller
 	 *
 	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
 	 * @param string Resource location, e.g. "product/stock/wareshouse"
-	 * @param string $sitecode Unique site code
-	 * @param integer|null $id Unique resource ID
+	 * @param string $site Unique site code
 	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
 	 */
-	public function putAction( Request $request, $resource, $site = 'default', $id = null )
+	public function putAction( Request $request, $resource, $site = 'default' )
 	{
 		$status = 500;
 		$header = $request->headers->all();
@@ -133,7 +128,7 @@ class JsonadmController extends Controller
 	 *
 	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
 	 * @param string Resource location, e.g. "product/stock/wareshouse"
-	 * @param string $sitecode Unique site code
+	 * @param string $site Unique site code
 	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
 	 */
 	public function optionsAction( Request $request, $resource = '', $site = 'default' )
@@ -151,18 +146,18 @@ class JsonadmController extends Controller
 	/**
 	 * Returns the resource controller
 	 *
-	 * @param string $sitecode Unique site code
+	 * @param string $site Unique site code
 	 * @param string Resource location, e.g. "product/stock/wareshouse"
 	 * @param string $lang Language code
 	 * @return \Aimeos\MShop\Context\Item\Iface Context item
 	 */
-	protected function createController( $sitecode, $resource, $lang )
+	protected function createController( $site, $resource, $lang )
 	{
 		$aimeos = $this->get( 'aimeos' )->get();
 		$templatePaths = $aimeos->getCustomPaths( 'controller/jsonadm/templates' );
 
 		$context = $this->get( 'aimeos_context' )->get( false );
-		$context = $this->setLocale( $context, $sitecode, $lang );
+		$context = $this->setLocale( $context, $site, $lang );
 
 		$view = $this->get('aimeos_view')->create( $context->getConfig(), $templatePaths, $lang );
 		$context->setView( $view );
@@ -197,17 +192,17 @@ class JsonadmController extends Controller
 	 * Sets the locale item in the given context
 	 *
 	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
-	 * @param string $sitecode Unique site code
+	 * @param string $site Unique site code
 	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
 	 * @return \Aimeos\MShop\Context\Item\Iface Modified context object
 	 */
-	protected function setLocale( \Aimeos\MShop\Context\Item\Iface $context, $sitecode, $lang )
+	protected function setLocale( \Aimeos\MShop\Context\Item\Iface $context, $site, $lang )
 	{
 		$localeManager = \Aimeos\MShop\Factory::createManager( $context, 'locale' );
 
 		try
 		{
-			$localeItem = $localeManager->bootstrap( $sitecode, '', '', false );
+			$localeItem = $localeManager->bootstrap( $site, '', '', false );
 			$localeItem->setLanguageId( null );
 			$localeItem->setCurrencyId( null );
 		}

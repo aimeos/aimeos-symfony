@@ -68,7 +68,7 @@ class ExtadmController extends Controller
 		$vars = array(
 			'lang' => $lang,
 			'cssFiles' => $cssFiles,
-			'languages' => $this->getJsonLanguages( $context),
+			'languages' => $this->getJsonLanguages(),
 			'config' => $this->getJsonClientConfig( $context ),
 			'site' => $this->getJsonSiteItem( $context, $site ),
 			'i18nContent' => $this->getJsonClientI18n( $bootstrap->getI18nPaths(), $lang ),
@@ -148,10 +148,9 @@ class ExtadmController extends Controller
 	/**
 	 * Creates a list of all available translations.
 	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
 	 * @return array List of language IDs with labels
 	 */
-	protected function getJsonLanguages( \Aimeos\MShop\Context\Item\Iface $context )
+	protected function getJsonLanguages()
 	{
 		$result = array();
 

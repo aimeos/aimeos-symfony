@@ -29,13 +29,13 @@ class JqadmController extends Controller
 	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
 	 * @param integer $id Unique resource ID
-	 * @param string $sitecode Unique site code
+	 * @param string $site Unique site code
 	 * @return string Generated output
 	 */
 	public function copyAction( Request $request, $resource, $id, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $site, $cntl->copy( $id ) );
+		return $this->getHtml( $cntl->copy() );
 	}
 
 
@@ -44,13 +44,13 @@ class JqadmController extends Controller
 	 *
 	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
-	 * @param string $sitecode Unique site code
+	 * @param string $site Unique site code
 	 * @return string Generated output
 	 */
 	public function createAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $site, $cntl->create() );
+		return $this->getHtml( $cntl->create() );
 	}
 
 
@@ -60,13 +60,13 @@ class JqadmController extends Controller
 	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
 	 * @param integer $id Unique resource ID
-	 * @param string $sitecode Unique site code
+	 * @param string $site Unique site code
 	 * @return string Generated output
 	 */
 	public function deleteAction( Request $request, $resource, $id, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $site, $cntl->delete( $id ) . $cntl->search() );
+		return $this->getHtml( $cntl->delete() . $cntl->search() );
 	}
 
 
@@ -76,13 +76,13 @@ class JqadmController extends Controller
 	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
 	 * @param integer $id Unique resource ID
-	 * @param string $sitecode Unique site code
+	 * @param string $site Unique site code
 	 * @return string Generated output
 	 */
 	public function getAction( Request $request, $resource, $id, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $site, $cntl->get( $id ) );
+		return $this->getHtml( $cntl->get() );
 	}
 
 
@@ -91,13 +91,13 @@ class JqadmController extends Controller
 	 *
 	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
-	 * @param string $sitecode Unique site code
+	 * @param string $site Unique site code
 	 * @return string Generated output
 	 */
 	public function saveAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $site, ( $cntl->save() ? : $cntl->search() ) );
+		return $this->getHtml( ( $cntl->save() ? : $cntl->search() ) );
 	}
 
 
@@ -106,13 +106,13 @@ class JqadmController extends Controller
 	 *
 	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
-	 * @param string $sitecode Unique site code
+	 * @param string $site Unique site code
 	 * @return string Generated output
 	 */
 	public function searchAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $site, $cntl->search() );
+		return $this->getHtml( $cntl->search() );
 	}
 
 
@@ -120,11 +120,11 @@ class JqadmController extends Controller
 	 * Returns the resource controller
 	 *
 	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
-	 * @param string $sitecode Unique site code
-	 * @param string Resource location, e.g. "product"
+	 * @param string $site Unique site code
+	 * @param string $resource Resource location, e.g. "product"
 	 * @return \Aimeos\MShop\Context\Item\Iface Context item
 	 */
-	protected function createClient( Request $request, $sitecode, $resource )
+	protected function createClient( Request $request, $site, $resource )
 	{
 		$lang = $request->get( 'lang', 'en' );
 
@@ -132,7 +132,7 @@ class JqadmController extends Controller
 		$templatePaths = $aimeos->getCustomPaths( 'admin/jqadm/templates' );
 
 		$context = $this->get( 'aimeos_context' )->get( false );
-		$context = $this->setLocale( $context, $sitecode, $lang );
+		$context = $this->setLocale( $context, $site, $lang );
 
 		$view = $this->get( 'aimeos_view' )->create( $context->getConfig(), $templatePaths, $lang );
 		$context->setView( $view );
@@ -144,11 +144,10 @@ class JqadmController extends Controller
 	/**
 	 * Returns the generated HTML code
 	 *
-	 * @param string $site Unique site code
 	 * @param string $content Content from admin client
 	 * @return \Illuminate\Contracts\View\View View for rendering the output
 	 */
-	protected function getHtml( $site, $content )
+	protected function getHtml( $content )
 	{
 		$version = $this->get( 'aimeos' )->getVersion();
 		$content = str_replace( array( '{type}', '{version}' ), array( 'Symfony', $version ), $content );
@@ -161,17 +160,17 @@ class JqadmController extends Controller
 	 * Sets the locale item in the given context
 	 *
 	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
-	 * @param string $sitecode Unique site code
+	 * @param string $site Unique site code
 	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
 	 * @return \Aimeos\MShop\Context\Item\Iface Modified context object
 	 */
-	protected function setLocale( \Aimeos\MShop\Context\Item\Iface $context, $sitecode = 'default', $lang = null )
+	protected function setLocale( \Aimeos\MShop\Context\Item\Iface $context, $site = 'default', $lang = null )
 	{
 		$localeManager = \Aimeos\MShop\Factory::createManager( $context, 'locale' );
 
 		try
 		{
-			$localeItem = $localeManager->bootstrap( $sitecode, '', '', false );
+			$localeItem = $localeManager->bootstrap( $site, '', '', false );
 			$localeItem->setLanguageId( null );
 			$localeItem->setCurrencyId( null );
 		}
