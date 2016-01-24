@@ -28,11 +28,10 @@ class JqadmController extends Controller
 	 *
 	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
-	 * @param integer $id Unique resource ID
 	 * @param string $site Unique site code
 	 * @return string Generated output
 	 */
-	public function copyAction( Request $request, $resource, $id, $site = 'default' )
+	public function copyAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
 		return $this->getHtml( $cntl->copy() );
@@ -59,11 +58,10 @@ class JqadmController extends Controller
 	 *
 	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
-	 * @param integer $id Unique resource ID
 	 * @param string $site Unique site code
 	 * @return string Generated output
 	 */
-	public function deleteAction( Request $request, $resource, $id, $site = 'default' )
+	public function deleteAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
 		return $this->getHtml( $cntl->delete() . $cntl->search() );
@@ -75,11 +73,10 @@ class JqadmController extends Controller
 	 *
 	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
 	 * @param string $resource Resource location, e.g. "product"
-	 * @param integer $id Unique resource ID
 	 * @param string $site Unique site code
 	 * @return string Generated output
 	 */
-	public function getAction( Request $request, $resource, $id, $site = 'default' )
+	public function getAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
 		return $this->getHtml( $cntl->get() );
