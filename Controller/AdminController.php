@@ -32,15 +32,11 @@ class AdminController extends Controller
 	{
 		if( $this->has( 'security.authorization_checker' ) && ( $service = $this->get( 'security.authorization_checker' ) )
 			&& $this->get( 'security.token_storage' )->getToken() && $service->isGranted( 'ROLE_ADMIN' )
-		) {
-			$params = array( 'site' => 'default', 'resource' => 'product', 'lang' => 'en' );
-			return $this->redirectToRoute( 'aimeos_shop_jqadm_search', $params );
-		}
-		elseif( $this->has( 'security.context' ) && ( $service = $this->get( 'security.context' ) )
+			|| $this->has( 'security.context' ) && ( $service = $this->get( 'security.context' ) )
 			&& $service->getToken() && $service->isGranted( 'ROLE_ADMIN' )
 		) {
 			$params = array( 'site' => 'default', 'resource' => 'product', 'lang' => 'en' );
-			return $this->redirectToRoute( 'aimeos_shop_jqadm_search', $params );
+			return $this->redirect( $this->generateUrl( 'aimeos_shop_jqadm_search', $params ) );
 		}
 
 		return $this->render( 'AimeosShopBundle:Admin:index.html.twig', array( 'email' => $request->get( 'email' ) ) );
