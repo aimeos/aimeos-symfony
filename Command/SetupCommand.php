@@ -2,7 +2,9 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014
+ * @copyright Aimeos (aimeos.org), 2014-2016
+ * @package symfony
+ * @subpackage Command
  */
 
 
@@ -16,6 +18,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Performs the database initialization and update.
+ *
+ * @package symfony
+ * @subpackage Command
  */
 class SetupCommand extends Command
 {

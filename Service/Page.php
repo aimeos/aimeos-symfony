@@ -2,8 +2,8 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2015
- * @package symfony2-bundle
+ * @copyright Aimeos (aimeos.org), 2015-2016
+ * @package symfony
  * @subpackage Service
  */
 
@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\Container;
 /**
  * Service providing the page object
  *
- * @package symfony2-bundle
+ * @package symfony
  * @subpackage Service
  */
 class Page

@@ -2,17 +2,68 @@ aimeos_shop:
     resource: "@AimeosShopBundle/Resources/config/routing.yml"
     prefix:   /{site}/{locale}/{currency}
 
-aimeos_shop_admin_file:
-    path: /admin/file
-    defaults: { _controller: AimeosShopBundle:Admin:file }
 
-aimeos_shop_admin_json:
-    path: /admin/do
-    defaults: { _controller: AimeosShopBundle:Admin:do }
+aimeos_shop_extadm_file:
+    path: /{site}/extadm/file
+    defaults: { _controller: AimeosShopBundle:Extadm:file }
+    methods: [GET]
 
-aimeos_shop_admin:
-    path: /admin/{site}/{lang}/{tab}
-    defaults: { _controller: AimeosShopBundle:Admin:index, site: default, lang: en, tab: 0 }
+aimeos_shop_extadm_json:
+    path: /{site}/extadm/do
+    defaults: { _controller: AimeosShopBundle:Extadm:do }
+    methods: [POST]
+
+aimeos_shop_extadm:
+    path: /{site}/extadm/{lang}/{tab}
+    defaults: { _controller: AimeosShopBundle:Extadm:index, lang: en, tab: 0 }
+    methods: [GET]
+
+
+aimeos_shop_jqadm_copy:
+    path: /{site}/jqadm/copy/{resource}/{id}
+    defaults: { _controller: AimeosShopBundle:Jqadm:copy }
+    methods: [GET, POST]
+    requirements:
+        resource: '[^0-9]+'
+        id: '[0-9]+'
+
+aimeos_shop_jqadm_create:
+    path: /{site}/jqadm/create/{resource}
+    defaults: { _controller: AimeosShopBundle:Jqadm:create }
+    methods: [GET, POST]
+    requirements:
+        resource: '[^0-9]+'
+
+aimeos_shop_jqadm_delete:
+    path: /{site}/jqadm/delete/{resource}/{id}
+    defaults: { _controller: AimeosShopBundle:Jqadm:delete }
+    methods: [GET, POST]
+    requirements:
+        resource: '[^0-9]+'
+        id: '[0-9]+'
+
+aimeos_shop_jqadm_get:
+    path: /{site}/jqadm/get/{resource}/{id}
+    defaults: { _controller: AimeosShopBundle:Jqadm:get }
+    methods: [GET]
+    requirements:
+        resource: '[^0-9]+'
+        id: '[0-9]+'
+
+aimeos_shop_jqadm_save:
+    path: /{site}/jqadm/save/{resource}/{id}
+    defaults: { _controller: AimeosShopBundle:Jqadm:save, id: null }
+    methods: [POST]
+    requirements:
+        resource: '[^0-9]+'
+        id: '[0-9]*'
+
+aimeos_shop_jqadm_search:
+    path: /{site}/jqadm/search/{resource}
+    defaults: { _controller: AimeosShopBundle:Jqadm:search }
+    methods: [GET, POST]
+    requirements:
+        resource: '[^0-9]+'
 
 
 aimeos_shop_jsonadm_delete:

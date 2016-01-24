@@ -42,14 +42,10 @@
 		"psr-4": { "Aimeos\\ShopBundle\\": "" }
 	},
 	"scripts": {
-		"post-install-cmd": [
-			"cp -r vendor/aimeos/aimeos-core/admin/extjs/resources/* Resources/public/admin/extjs/resources/",
-			"cp -r vendor/aimeos/aimeos-core/admin/extjs/lib/* Resources/public/admin/extjs/lib/",
-			"cp -r vendor/aimeos/aimeos-core/client/html/themes/* Resources/public/themes/"
-		],
 		"post-update-cmd": [
 			"cp -r vendor/aimeos/aimeos-core/admin/extjs/resources/* Resources/public/admin/extjs/resources/",
 			"cp -r vendor/aimeos/aimeos-core/admin/extjs/lib/* Resources/public/admin/extjs/lib/",
+			"cp -r vendor/aimeos/aimeos-core/admin/jqadm/themes/* Resources/public/themes/",
 			"cp -r vendor/aimeos/aimeos-core/client/html/themes/* Resources/public/themes/"
 		]
 	}

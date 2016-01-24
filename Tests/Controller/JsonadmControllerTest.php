@@ -9,7 +9,10 @@ class JsonadmControllerTest extends WebTestCase
 {
 	public function testOptionsAction()
 	{
-		$client = static::createClient();
+		$client = static::createClient(array(), array(
+			'PHP_AUTH_USER' => 'admin',
+			'PHP_AUTH_PW'   => 'adminpass',
+		) );
 
 
 		$client->request( 'OPTIONS', '/unittest/jsonadm/product' );
@@ -37,7 +40,10 @@ class JsonadmControllerTest extends WebTestCase
 
 	public function testActionsSingle()
 	{
-		$client = static::createClient();
+		$client = static::createClient(array(), array(
+			'PHP_AUTH_USER' => 'admin',
+			'PHP_AUTH_PW'   => 'adminpass',
+		) );
 
 
 		$content = '{"data":{"type":"product/stock/warehouse","attributes":{"product.stock.warehouse.code":"symfony","product.stock.warehouse.label":"symfony"}}}';
@@ -98,7 +104,10 @@ class JsonadmControllerTest extends WebTestCase
 
 	public function testActionsBulk()
 	{
-		$client = static::createClient();
+		$client = static::createClient(array(), array(
+			'PHP_AUTH_USER' => 'admin',
+			'PHP_AUTH_PW'   => 'adminpass',
+		) );
 
 
 		$content = '{"data":[

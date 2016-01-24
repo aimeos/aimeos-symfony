@@ -2,8 +2,8 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014
- * @package symfony2-bundle
+ * @copyright Aimeos (aimeos.org), 2014-2016
+ * @package symfony
  * @subpackage Controller
  */
 
@@ -19,28 +19,32 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 /**
  * Controller providing the administration interface.
  *
- * @package symfony2-bundle
+ * @package symfony
  * @subpackage Controller
  */
-class AdminController extends Controller
+class ExtadmController extends Controller
 {
 	/**
 	 * Returns the initial HTML view for the admin interface.
 	 *
+	 * @param string $site Unique site code
+	 * @param string $lang ISO language code
 	 * @param integer $tab Number of the currently active tab
 	 * @return \Symfony\Component\HttpFoundation\Response HTML page for the admin interface
 	 */
-	public function indexAction( $site, $lang, $tab )
+	public function indexAction( $site = 'default', $lang, $tab )
 	{
 		$context = $this->get( 'aimeos_context' )->get( false );
 		$context = $this->setLocale( $context, $site, $lang );
 
-		$aimeos = $this->get( 'aimeos' )->get();
-		$cntlPaths = $aimeos->getCustomPaths( 'controller/extjs' );
+		$aimeos = $this->get( 'aimeos' );
+		$bootstrap = $aimeos->get();
+
+		$cntlPaths = $bootstrap->getCustomPaths( 'controller/extjs' );
 		$controller = new \Aimeos\Controller\ExtJS\JsonRpc( $context, $cntlPaths );
 		$cssFiles = array();
 
-		foreach( $aimeos->getCustomPaths( 'admin/extjs' ) as $base => $paths )
+		foreach( $bootstrap->getCustomPaths( 'admin/extjs' ) as $base => $paths )
 		{
 			foreach( $paths as $path )
 			{
@@ -56,10 +60,10 @@ class AdminController extends Controller
 		}
 
 		$params = array( 'site' => '{site}', 'lang' => '{lang}', 'tab' => '{tab}' );
-		$adminUrl = $this->generateUrl( 'aimeos_shop_admin', $params );
+		$adminUrl = $this->generateUrl( 'aimeos_shop_extadm', $params );
 
 		$token = $this->get( 'security.csrf.token_manager' )->getToken( 'aimeos_admin_token' )->getValue();
-		$jsonUrl = $this->generateUrl( 'aimeos_shop_admin_json', array( '_token' => $token ) );
+		$jsonUrl = $this->generateUrl( 'aimeos_shop_extadm_json', array( '_token' => $token, 'site' => $site ) );
 
 		$vars = array(
 			'lang' => $lang,
@@ -67,24 +71,24 @@ class AdminController extends Controller
 			'languages' => $this->getJsonLanguages( $context),
 			'config' => $this->getJsonClientConfig( $context ),
 			'site' => $this->getJsonSiteItem( $context, $site ),
-			'i18nContent' => $this->getJsonClientI18n( $aimeos->getI18nPaths(), $lang ),
+			'i18nContent' => $this->getJsonClientI18n( $bootstrap->getI18nPaths(), $lang ),
 			'searchSchemas' => $controller->getJsonSearchSchemas(),
 			'itemSchemas' => $controller->getJsonItemSchemas(),
 			'smd' => $controller->getJsonSmd( $jsonUrl ),
 			'urlTemplate' => urldecode( $adminUrl ),
 			'uploaddir' => $this->container->getParameter( 'aimeos_shop.uploaddir' ),
-			'version' => $this->getVersion(),
+			'version' => $aimeos->getVersion(),
 			'activeTab' => $tab,
 		);
 
-		return $this->render( 'AimeosShopBundle:Admin:index.html.twig', $vars );
+		return $this->render( 'AimeosShopBundle:Extadm:index.html.twig', $vars );
 	}
 
 
 	/**
 	 * Single entry point for all JSON admin requests.
 	 *
-	 * @param Request $request Symfony request object
+	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
 	 * @return \Symfony\Component\HttpFoundation\Response 2.0 RPC message response
 	 */
 	public function doAction( Request $request )
@@ -102,7 +106,7 @@ class AdminController extends Controller
 		$controller = new \Aimeos\Controller\ExtJS\JsonRpc( $context, $cntlPaths );
 
 		$response = $controller->process( $request->request->all(), 'php://input' );
-		return $this->render( 'AimeosShopBundle:Admin:do.html.twig', array( 'output' => $response ) );
+		return $this->render( 'AimeosShopBundle:Extadm:do.html.twig', array( 'output' => $response ) );
 	}
 
 
@@ -123,7 +127,7 @@ class AdminController extends Controller
 			{
 				$jsbAbsPath = $base . '/' . $path;
 				$jsb2 = new \Aimeos\MW\Jsb2\Standard( $jsbAbsPath, dirname( $jsbAbsPath ) );
-				$jsFiles = array_merge( $jsFiles, $jsb2->getUrls( 'js', '' ) );
+				$jsFiles = array_merge( $jsFiles, $jsb2->getFiles( 'js' ) );
 			}
 		}
 
@@ -149,28 +153,13 @@ class AdminController extends Controller
 	 */
 	protected function getJsonLanguages( \Aimeos\MShop\Context\Item\Iface $context )
 	{
-		$paths = $this->get( 'aimeos' )->get()->getI18nPaths();
-		$langs = array();
+		$result = array();
 
-		if( !isset( $paths['admin'] ) ) {
-			return json_encode( array() );
+		foreach( $this->get( 'aimeos' )->get()->getI18nList( 'admin' ) as $id ) {
+			$result[] = array( 'id' => $id, 'label' => $id );
 		}
 
-		foreach( $paths['admin'] as $path )
-		{
-			$iter = new \DirectoryIterator( $path );
-
-			foreach( $iter as $file )
-			{
-				$name = $file->getFilename();
-
-				if( preg_match('/^[a-z]{2,3}(_[A-Z]{2})?$/', $name ) ) {
-					$langs[$name] = null;
-				}
-			}
-		}
-
-		return json_encode( $this->getLanguages( $context, array_keys( $langs ) ) );
+		return json_encode( $result );
 	}
 
 
@@ -228,55 +217,6 @@ class AdminController extends Controller
 		}
 
 		return json_encode( $item->toArray() );
-	}
-
-
-	/**
-	 * Returns a list of arrays with "id" and "label"
-	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
-	 * @param array $langIds List of language IDs
-	 * @return array List of associative lists with "id" and "label" as keys
-	 */
-	protected function getLanguages( \Aimeos\MShop\Context\Item\Iface $context, array $langIds )
-	{
-		$languageManager = \Aimeos\MShop\Factory::createManager( $context, 'locale/language' );
-		$result = array();
-
-		$search = $languageManager->createSearch();
-		$search->setConditions( $search->compare('==', 'locale.language.id', $langIds ) );
-		$search->setSortations( array( $search->sort( '-', 'locale.language.status' ), $search->sort( '+', 'locale.language.label' ) ) );
-		$langItems = $languageManager->searchItems( $search );
-
-		foreach( $langItems as $id => $item ) {
-			$result[] = array( 'id' => $id, 'label' => $item->getLabel() );
-		}
-
-		return $result;
-	}
-
-
-	/**
-	 * Returns the version of the Aimeos package
-	 *
-	 * @return string Version string
-	 */
-	protected function getVersion()
-	{
-		$filename = dirname( $this->get( 'kernel' )->getRootDir() ) . DIRECTORY_SEPARATOR . 'composer.lock';
-
-		if( file_exists( $filename ) === true && ( $content = file_get_contents( $filename ) ) !== false
-			&& ( $content = json_decode( $content, true ) ) !== null && isset( $content['packages'] )
-		) {
-			foreach( (array) $content['packages'] as $item )
-			{
-				if( $item['name'] === 'aimeos/aimeos-symfony2' ) {
-					return $item['version'];
-				}
-			}
-		}
-
-		return '';
 	}
 
 

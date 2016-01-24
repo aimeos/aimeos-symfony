@@ -15,18 +15,28 @@ security:
             iterations: 1
 
     firewalls:
+        aimeos_extadm:
+            pattern:    ^/unittest/extadm
+            provider: in_memory
+            http_basic:
+                realm: "Admin Area"
+        aimeos_jqadm:
+            pattern:    ^/unittest/jqadm
+            provider: in_memory
+            http_basic:
+                realm: "Admin Area"
+        aimeos_jsonadm:
+            pattern:    ^/unittest/jsonadm
+            provider: in_memory
+            http_basic:
+                realm: "Admin Area"
         secured_area:
             pattern:   ^/unittest
             provider: default
             anonymous: ~
             http_basic:
                 realm: "Default"
-        aimeos_admin:
-            pattern:    ^/admin
-            provider: in_memory
-            http_basic:
-                realm: "Admin Area"
 
     access_control:
+        - { path: ^/unittest/extadm, roles: ROLE_ADMIN }
         - { path: ^/unittest/de/EUR/checkout, roles: ROLE_USER }
-        - { path: ^/admin, roles: ROLE_ADMIN }

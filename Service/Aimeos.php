@@ -2,8 +2,8 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014
- * @package symfony2-bundle
+ * @copyright Aimeos (aimeos.org), 2014-2016
+ * @package symfony
  * @subpackage Service
  */
 
@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\Container;
 /**
  * Service providing the Aimeos object
  *
- * @package symfony2-bundle
+ * @package symfony
  * @subpackage Service
  */
 class Aimeos
@@ -49,5 +49,29 @@ class Aimeos
 		}
 
 		return $this->object;
+	}
+
+
+	/**
+	 * Returns the version of the Aimeos package
+	 *
+	 * @return string Version string
+	 */
+	public function getVersion()
+	{
+		$filename = dirname( $this->container->get( 'kernel' )->getRootDir() ) . DIRECTORY_SEPARATOR . 'composer.lock';
+
+		if( file_exists( $filename ) === true && ( $content = file_get_contents( $filename ) ) !== false
+			&& ( $content = json_decode( $content, true ) ) !== null && isset( $content['packages'] )
+		) {
+			foreach( (array) $content['packages'] as $item )
+			{
+				if( $item['name'] === 'aimeos/aimeos-symfony2' ) {
+					return $item['version'];
+				}
+			}
+		}
+
+		return '';
 	}
 }

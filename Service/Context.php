@@ -2,8 +2,8 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014
- * @package symfony2-bundle
+ * @copyright Aimeos (aimeos.org), 2014-2016
+ * @package symfony
  * @subpackage Service
  */
 
@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\Container;
  * Service providing the context based objects
  *
  * @author Garret Watkins <garwat82@gmail.com>
- * @package symfony2-bundle
+ * @package symfony
  * @subpackage Service
  */
 class Context
@@ -155,6 +155,7 @@ class Context
 		}
 
 		$local = array(
+			'admin' => $this->container->getParameter( 'aimeos_shop.admin' ),
 			'client' => $this->container->getParameter( 'aimeos_shop.client' ),
 			'controller' => $this->container->getParameter( 'aimeos_shop.controller' ),
 			'madmin' => $this->container->getParameter( 'aimeos_shop.madmin' ),

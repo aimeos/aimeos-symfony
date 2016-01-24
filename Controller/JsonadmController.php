@@ -2,8 +2,8 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2015
- * @package symfony2-bundle
+ * @copyright Aimeos (aimeos.org), 2015-2016
+ * @package symfony
  * @subpackage Controller
  */
 
@@ -18,7 +18,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 /**
  * Aimeos controller for the JSON REST API
  *
- * @package symfony2-bundle
+ * @package symfony
  * @subpackage Controller
  */
 class JsonadmController extends Controller

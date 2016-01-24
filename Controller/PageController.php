@@ -2,8 +2,8 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014
- * @package symfony2-bundle
+ * @copyright Aimeos (aimeos.org), 2014-2016
+ * @package symfony
  * @subpackage Controller
  */
 
@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 /**
  * Aimeos controller for all page request.
  *
- * @package symfony2-bundle
+ * @package symfony
  * @subpackage Controller
  */
 class PageController extends Controller

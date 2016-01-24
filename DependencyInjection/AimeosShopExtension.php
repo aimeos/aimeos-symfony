@@ -2,7 +2,9 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014
+ * @copyright Aimeos (aimeos.org), 2014-2016
+ * @package symfony
+ * @subpackage DependencyInjection
  */
 
 
@@ -21,6 +23,8 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
  * This is the class that loads and manages your bundle configuration
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
+ * @package symfony
+ * @subpackage DependencyInjection
  */
 class AimeosShopExtension extends Extension implements PrependExtensionInterface
 {

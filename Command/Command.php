@@ -2,7 +2,9 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014
+ * @copyright Aimeos (aimeos.org), 2014-2016
+ * @package symfony
+ * @subpackage Command
  */
 
 
@@ -15,6 +17,9 @@ use Symfony\Component\Console\Input\InputInterface;
 
 /**
  * Abstract command class with common methods.
+ *
+ * @package symfony
+ * @subpackage Command
  */
 abstract class Command extends ContainerAwareCommand
 {

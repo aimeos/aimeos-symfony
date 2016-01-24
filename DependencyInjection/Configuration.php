@@ -2,7 +2,9 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014
+ * @copyright Aimeos (aimeos.org), 2014-2016
+ * @package symfony
+ * @subpackage DependencyInjection
  */
 
 
@@ -16,6 +18,8 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  * This is the class that validates and merges configuration from your app/config files
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class}
+ * @package symfony
+ * @subpackage DependencyInjection
  */
 class Configuration implements ConfigurationInterface
 {
@@ -34,6 +38,7 @@ class Configuration implements ConfigurationInterface
 				->scalarNode('apc_prefix')->defaultValue( 'sf2:' )->end()
 				->scalarNode('extdir')->end()
 				->scalarNode('uploaddir')->end()
+				->variableNode('admin')->defaultValue( array() )->end()
 				->variableNode('client')->defaultValue( array() )->end()
 				->variableNode('controller')->defaultValue( array() )->end()
 				->variableNode('i18n')->defaultValue( array() )->end()

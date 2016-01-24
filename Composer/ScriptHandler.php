@@ -2,7 +2,8 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014
+ * @copyright Aimeos (aimeos.org), 2014-2016
+ * @package symfony
  */
 
 
@@ -16,6 +17,8 @@ use Composer\Script\CommandEvent;
 
 /**
  * Performs bundle setup during composer installs
+ *
+ * @package symfony
  */
 class ScriptHandler
 {
