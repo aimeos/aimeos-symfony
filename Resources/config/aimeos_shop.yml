@@ -88,7 +88,7 @@ client:
                     target: aimeos_shop_suggest
         common:
             content:
-                baseurl: uploads
+                baseurl: /
             template:
                 baseurl: bundles/aimeosshop/elegance
         basket:
