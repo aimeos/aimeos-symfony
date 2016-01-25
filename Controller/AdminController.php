@@ -29,18 +29,15 @@ class AdminController extends Controller
 	 */
 	public function indexAction()
 	{
-		if( $this->has( 'security.authorization_checker' ) && $this->get( 'security.token_storage' )->getToken()
-			&& $this->get( 'security.authorization_checker' )->isGranted( 'ROLE_ADMIN' )
-			|| $this->has( 'security.context' ) && $this->get( 'security.context' )->getToken()
-			&& $this->get( 'security.context' )->isGranted( 'ROLE_ADMIN' )
-		) {
+		if( $this->isAdmin() )
+		{
 			$params = array( 'site' => 'default', 'resource' => 'product', 'lang' => 'en' );
 			return $this->redirect( $this->generateUrl( 'aimeos_shop_jqadm_search', $params ) );
 		}
 
 		$param = array();
 
-		if( $this->get( 'security.authentication_utils' ) )
+		if( $this->has( 'security.authentication_utils' ) )
 		{
 			$auth = $this->get( 'security.authentication_utils' );
 
@@ -49,5 +46,24 @@ class AdminController extends Controller
 		}
 
 		return $this->render( 'AimeosShopBundle:Admin:index.html.twig', $param );
+	}
+
+
+	/**
+	 * Checks if the used is authenticated and has the admin role
+	 *
+	 * @return boolean True if authenticated and is admin, false if not
+	 */
+	protected function isAdmin()
+	{
+		if( $this->has( 'security.authorization_checker' ) && $this->get( 'security.token_storage' )->getToken()
+			&& $this->get( 'security.authorization_checker' )->isGranted( 'ROLE_ADMIN' )
+			|| $this->has( 'security.context' ) && $this->get( 'security.context' )->getToken()
+			&& $this->get( 'security.context' )->isGranted( 'ROLE_ADMIN' )
+		) {
+			return true;
+		}
+
+		return false;
 	}
 }
