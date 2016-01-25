@@ -30,7 +30,7 @@ class ExtadmController extends Controller
 	 * @param string $site Unique site code
 	 * @param string $lang ISO language code
 	 * @param integer $tab Number of the currently active tab
-	 * @return \Symfony\Component\HttpFoundation\Response HTML page for the admin interface
+	 * @return Response Generated output for the admin interface
 	 */
 	public function indexAction( $site = 'default', $lang, $tab )
 	{
@@ -89,7 +89,7 @@ class ExtadmController extends Controller
 	 * Single entry point for all JSON admin requests.
 	 *
 	 * @param Request $request Symfony request object
-	 * @return \Symfony\Component\HttpFoundation\Response 2.0 RPC message response
+	 * @return Response JSON RPC message response
 	 */
 	public function doAction( Request $request )
 	{
