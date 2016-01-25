@@ -1,5 +1,7 @@
 <?php
 
+namespace Aimeos\ShopBundle\Tests\Entity;
+
 
 use Aimeos\ShopBundle\Entity\FosUser;
 

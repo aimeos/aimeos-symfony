@@ -1,5 +1,7 @@
 <?php
 
+namespace Aimeos\ShopBundle\Tests\Command;
+
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
