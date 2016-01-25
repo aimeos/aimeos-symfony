@@ -1,7 +1,6 @@
 aimeos_shop_admin:
     path: /admin
     defaults: { _controller: AimeosShopBundle:Admin:index }
-    methods: [GET, POST]
 
 aimeos_shop_admin_check:
     path: /admin_check

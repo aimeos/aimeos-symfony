@@ -1,7 +1,3 @@
-login_check:
-    path: /login_check
-
-
 aimeos_shop:
     resource: "@AimeosShopBundle/Resources/config/routing.yml"
     prefix:   /{site}/{locale}/{currency}
@@ -10,7 +6,10 @@ aimeos_shop:
 aimeos_shop_admin:
     path: /admin
     defaults: { _controller: AimeosShopBundle:Admin:index }
-    methods: [GET, POST]
+
+aimeos_shop_admin_check:
+    path: /admin_check
+
 
 
 aimeos_shop_extadm_file:
