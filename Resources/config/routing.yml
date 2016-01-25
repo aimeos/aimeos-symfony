@@ -3,6 +3,9 @@ aimeos_shop_admin:
     defaults: { _controller: AimeosShopBundle:Admin:index }
     methods: [GET, POST]
 
+aimeos_shop_admin_login_check:
+    path: /admin/login_check
+
 
 aimeos_shop_extadm_file:
     path: /extadm/file

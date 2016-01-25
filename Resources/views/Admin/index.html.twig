@@ -27,12 +27,12 @@
 		</div>
 {% endif %}
 
-		<form class="login" method="POST" action="{{ path('login_check') }}" >
+		<form class="login" method="POST" action="{{ path('aimeos_shop_admin_login_check') }}" >
 			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
 			<input type="hidden" name="_target_path" value="aimeos_shop_admin" />
 			<div class="form-group input-group input-group-lg">
 				<span class="input-group-addon fa fa-user" id="user-addon"></span>
-				<input class="form-control" type="text" name="_username" required="required" placeholder="User name" aria-describedby="user-addon" value="{{ username }}">
+				<input class="form-control" type="text" name="_username" required="required" placeholder="User name" aria-describedby="user-addon" value="{{ username }}" autofocus />
 			</div>
 			<div class="form-group input-group input-group-lg">
 				<span class="input-group-addon fa fa-lock" id="password-addon"></span>
