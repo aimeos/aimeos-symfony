@@ -88,7 +88,7 @@ class ExtadmController extends Controller
 	/**
 	 * Single entry point for all JSON admin requests.
 	 *
-	 * @param Symfony\Component\HttpFoundation\Request $request Symfony request object
+	 * @param Request $request Symfony request object
 	 * @return \Symfony\Component\HttpFoundation\Response 2.0 RPC message response
 	 */
 	public function doAction( Request $request )
