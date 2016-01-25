@@ -19,11 +19,20 @@
 	</head>
 	<body>
 
+{% if error %}
+		<div class="container">
+			<ul class="error-list alert alert-danger" role="alert">
+				<li class="error-item">{{ error }}</li>
+			</ul>
+		</div>
+{% endif %}
+
 		<form class="login" method="POST" action="{{ path('login_check') }}" >
 			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+			<input type="hidden" name="_target_path" value="aimeos_shop_admin" />
 			<div class="form-group input-group input-group-lg">
-				<span class="input-group-addon fa fa-at" id="email-addon"></span>
-				<input class="form-control" type="email" name="_username" required="required" placeholder="Email" aria-describedby="email-addon" value="{{ username }}">
+				<span class="input-group-addon fa fa-user" id="user-addon"></span>
+				<input class="form-control" type="text" name="_username" required="required" placeholder="User name" aria-describedby="user-addon" value="{{ username }}">
 			</div>
 			<div class="form-group input-group input-group-lg">
 				<span class="input-group-addon fa fa-lock" id="password-addon"></span>

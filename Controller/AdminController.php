@@ -39,7 +39,12 @@ class AdminController extends Controller
 			return $this->redirect( $this->generateUrl( 'aimeos_shop_jqadm_search', $params ) );
 		}
 
-		$param = array( 'username' => $request->get( '_username' ) );
+		$auth = $this->get( 'security.authentication_utils' );
+		$param = array(
+			'error' => $auth->getLastAuthenticationError(),
+			'username' => $auth->getLastUsername(),
+		);
+
 		return $this->render( 'AimeosShopBundle:Admin:index.html.twig', $param );
 	}
 }
