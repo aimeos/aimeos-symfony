@@ -9,7 +9,10 @@ Aimeos Symfony bundle
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/?branch=master)
 [![HHVM Status](http://hhvm.h4cc.de/badge/aimeos/aimeos-symfony.svg)](http://hhvm.h4cc.de/package/aimeos/aimeos-symfony)
 
-The repository contains the Symfony e-commerce bundle integrating the Aimeos e-commerce library into Symfony 2 and 3. The bundle provides controllers for e.g. faceted filter, product lists and detail views, for searching products as well as baskets and the checkout process. A full set of pages including routing is also available for a quick start.
+The repository contains the Symfony e-commerce bundle integrating the Aimeos e-commerce
+library into Symfony 2 and 3. The bundle provides controllers for e.g. faceted filter,
+product lists and detail views, for searching products as well as baskets and the
+checkout process. A full set of pages including routing is also available for a quick start.
 
 [![Aimeos Symfony2 demo](https://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony2.demo.aimeos.org/)
 
@@ -17,13 +20,17 @@ The repository contains the Symfony e-commerce bundle integrating the Aimeos e-c
 
 - [Installation](#installation)
 - [Setup](#setup)
+- [Admin](#admin)
 - [Hints](#hints)
 - [License](#license)
 - [Links](#links)
 
 ## Installation
 
-The Aimeos Symfony e-commerce bundle is a composer based library that can be installed easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the composer post install/update scripts won't fail:
+The Aimeos Symfony e-commerce bundle is a composer based library that can be installed
+easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class
+must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the
+composer post install/update scripts won't fail:
 
 ```
     $bundles = array(
@@ -59,11 +66,15 @@ Afterwards, install the Aimeos shop bundle using
 
 `composer update`
 
-In a production environment or if you don't want that the demo data gets installed, use the --no-dev option:
+In a production environment or if you don't want that the demo data gets installed,
+use the --no-dev option:
 
 `SYMFONY_ENV=prod composer update --no-dev`
 
-**Note:** Alternatively to running the `post-install-cmd` and `post-update-cmd` scripts automatically, you can add the lines required for installing the bundle manually. In your `./app/config/config.yml` file you need to add "AimeosShopBundle" to the list of bundles managed by the assetic bundle:
+**Note:** Alternatively to running the `post-install-cmd` and `post-update-cmd`
+scripts automatically, you can add the lines required for installing the bundle
+manually. In your `./app/config/config.yml` file you need to add "AimeosShopBundle"
+to the list of bundles managed by the assetic bundle:
 ```
 assetic:
     # ...
@@ -95,10 +106,11 @@ chmod 755 ./web/uploads/
 chown www-data:www-data ./web/uploads/
 ```
 
-
 ## Setup
 
-To see all components and get everything working, you also need to adapt your Twig base template in `app/Resources/views/base.html.twig`. This is a working example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/):
+To see all components and get everything working, you also need to adapt your
+Twig base template in `app/Resources/views/base.html.twig`. This is a working
+example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/):
 
 ```
 <!DOCTYPE html>
@@ -145,10 +157,55 @@ Then, you should be able to call the catalog list page in your browser using
 
 ```http://<your web root>/app_dev.php/list```
 
+## Admin
+
+Setting up the administration interface is a matter of configuring the Symfony
+firewall to restrict access to the admin URLs.
+
+**Caution: ** If you forget the protect the URLs of the administraiton interface,
+everybody will be able to change or delete any content in your shop!
+
+A basic firewall setup in the ```config/security.yml``` file can look like this one:
+```
+security:
+    providers:
+        admin:
+            memory:
+                users:
+                    admin: { password: secret, roles: [ 'ROLE_ADMIN' ] }
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    firewalls:
+        aimeos_admin:
+            pattern:   ^/(admin|extadm|jqadm|jsonadm)
+            anonymous: ~
+            provider: admin
+            form_login:
+                login_path: /admin
+                check_path: /admin_check
+        main:
+            anonymous: ~
+
+    access_control:
+        - { path: ^/(extadm|jqadm|jsonadm), roles: ROLE_ADMIN }
+```
+
+These settings will protect the ```/extadm``` (ExtJS), the ```/jqadm``` (JQuery+Bootstrap)
+and ```/jsonadm``` (JSON API) URLs from unauthorized access from someone without
+admin privileges. There's only one user/password combination defined, which is
+rather inflexible. As alternative, you can use on of the other Symfony user provider
+to authenticate against.
+
+A bit more detailed explanation of the authentication is available in the
+[Aimeos docs](https://aimeos.org/docs/Symfony/Configure_admin_myaccount_login)
+
 ## Hints
 
-To simplify development, you should configure to use no content cache. You can do this in the ./app/config/config_dev.yml file of your Symfony application by adding these lines:
-
+To simplify development, you should configure to use no content cache. You can
+do this in the ./app/config/config_dev.yml file of your Symfony application by
+adding these lines:
 ```
 aimeos_shop:
     classes:
