@@ -35,7 +35,7 @@ class AdminController extends Controller
 			return $this->redirect( $this->generateUrl( 'aimeos_shop_jqadm_search', $params ) );
 		}
 
-		$param = array();
+		$param = array( 'error' => '', 'username' => '' );
 
 		if( $this->has( 'security.authentication_utils' ) )
 		{
