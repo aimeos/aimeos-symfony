@@ -27,7 +27,7 @@
 		</div>
 {% endif %}
 
-		<form class="login" method="POST" action="{{ path('aimeos_shop_admin_login_check') }}" >
+		<form class="login" method="POST" action="{{ path('aimeos_shop_admin_check') }}" >
 			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
 			<input type="hidden" name="_target_path" value="aimeos_shop_admin" />
 			<div class="form-group input-group input-group-lg">
