@@ -25,10 +25,9 @@ class AdminController extends Controller
 	/**
 	 * Returns the initial HTML view for the admin interface.
 	 *
-	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
-	 * @return \Symfony\Component\HttpFoundation\Response HTML page for the admin interface
+	 * @return Response Generated HTML page for the admin interface
 	 */
-	public function indexAction( Request $request )
+	public function indexAction()
 	{
 		if( $this->has( 'security.authorization_checker' ) && $this->get( 'security.token_storage' )->getToken()
 			&& $this->get( 'security.authorization_checker' )->isGranted( 'ROLE_ADMIN' )
