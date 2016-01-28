@@ -27,13 +27,14 @@ class ExtadmController extends Controller
 	/**
 	 * Returns the initial HTML view for the admin interface.
 	 *
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code
-	 * @param integer $tab Number of the currently active tab
+	 * @param Request $request Symfony request object
 	 * @return Response Generated output for the admin interface
 	 */
-	public function indexAction( $site = 'default', $lang, $tab )
+	public function indexAction( Request $request )
 	{
+		$site = $request->attributes->get( 'site', 'default' );
+		$lang = $request->query->get( 'lang', 'en' );
+
 		$context = $this->get( 'aimeos_context' )->get( false );
 		$context = $this->setLocale( $context, $site, $lang );
 
@@ -65,6 +66,8 @@ class ExtadmController extends Controller
 		$token = $this->get( 'security.csrf.token_manager' )->getToken( 'aimeos_admin_token' )->getValue();
 		$jsonUrl = $this->generateUrl( 'aimeos_shop_extadm_json', array( '_token' => $token, 'site' => $site ) );
 
+		$jqadmUrl = $this->generateUrl( 'aimeos_shop_jqadm_search', array( 'site' => $site, 'resource' => 'product' ) );
+
 		$vars = array(
 			'lang' => $lang,
 			'cssFiles' => $cssFiles,
@@ -77,8 +80,9 @@ class ExtadmController extends Controller
 			'smd' => $controller->getJsonSmd( $jsonUrl ),
 			'urlTemplate' => urldecode( $adminUrl ),
 			'uploaddir' => $this->container->getParameter( 'aimeos_shop.uploaddir' ),
+			'activeTab' => $request->query->get( 'tab', 0 ),
 			'version' => $aimeos->getVersion(),
-			'activeTab' => $tab,
+			'jqadmurl' => $jqadmUrl,
 		);
 
 		return $this->render( 'AimeosShopBundle:Extadm:index.html.twig', $vars );
