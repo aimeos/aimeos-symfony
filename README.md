@@ -172,7 +172,7 @@ firewall to restrict access to the admin URLs.
 **Caution:** If you forget the protect the URLs of the administraiton interface,
 everybody will be able to change or delete any content in your shop!
 
-A basic firewall setup in the ```config/security.yml``` file can look like this one:
+A basic firewall setup in the ```./app/config/security.yml``` file can look like this one:
 ```
 security:
     providers:
