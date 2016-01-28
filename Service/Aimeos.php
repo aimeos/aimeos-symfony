@@ -66,7 +66,7 @@ class Aimeos
 		) {
 			foreach( (array) $content['packages'] as $item )
 			{
-				if( $item['name'] === 'aimeos/aimeos-symfony2' ) {
+				if( $item['name'] === 'aimeos/aimeos-symfony' ) {
 					return $item['version'];
 				}
 			}
