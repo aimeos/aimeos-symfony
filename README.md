@@ -153,16 +153,20 @@ example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/):
 </html>
 ```
 
+Start the PHP web server in the base directory of your application to do some quick tests:
+
+```php -S 127.0.0.1:8000 -t web```
+
 Then, you should be able to call the catalog list page in your browser using
 
-```http://<your web root>/app_dev.php/list```
+```http://127.0.0.1:8000/app_dev.php/list ```
 
 ## Admin
 
 Setting up the administration interface is a matter of configuring the Symfony
 firewall to restrict access to the admin URLs.
 
-**Caution: ** If you forget the protect the URLs of the administraiton interface,
+**Caution:** If you forget the protect the URLs of the administraiton interface,
 everybody will be able to change or delete any content in your shop!
 
 A basic firewall setup in the ```config/security.yml``` file can look like this one:
