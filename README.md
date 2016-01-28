@@ -27,6 +27,9 @@ checkout process. A full set of pages including routing is also available for a 
 
 ## Installation
 
+This document is for the latest Aimeos Symfony **beta release**, for production
+there's a [stable/LTS release](https://github.com/aimeos/aimeos-symfony/tree/1.2).
+
 The Aimeos Symfony e-commerce bundle is a composer based library that can be installed
 easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class
 must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the
@@ -45,7 +48,7 @@ Make sure that the database is set up and it is configured in your config.yml. T
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~1.2",
+        "aimeos/aimeos-symfony": "~2016.01",
         ...
     },
     "scripts": {
@@ -153,19 +156,23 @@ example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/):
 </html>
 ```
 
+Start the PHP web server in the base directory of your application to do some quick tests:
+
+```php -S 127.0.0.1:8000 -t web```
+
 Then, you should be able to call the catalog list page in your browser using
 
-```http://<your web root>/app_dev.php/list```
+```http://127.0.0.1:8000/app_dev.php/list ```
 
 ## Admin
 
 Setting up the administration interface is a matter of configuring the Symfony
 firewall to restrict access to the admin URLs.
 
-**Caution: ** If you forget the protect the URLs of the administraiton interface,
+**Caution:** If you forget the protect the URLs of the administraiton interface,
 everybody will be able to change or delete any content in your shop!
 
-A basic firewall setup in the ```config/security.yml``` file can look like this one:
+A basic firewall setup in the ```./app/config/security.yml``` file can look like this one:
 ```
 security:
     providers:
@@ -173,6 +180,8 @@ security:
             memory:
                 users:
                     admin: { password: secret, roles: [ 'ROLE_ADMIN' ] }
+        in_memory:
+            memory: ~
 
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
@@ -197,6 +206,10 @@ and ```/jsonadm``` (JSON API) URLs from unauthorized access from someone without
 admin privileges. There's only one user/password combination defined, which is
 rather inflexible. As alternative, you can use on of the other Symfony user provider
 to authenticate against.
+
+**Caution:** The order of the configuration settings in this file is important!
+If you place the `in_memory` or `main` section before the Aimeos related sections,
+authentication will fail!
 
 A bit more detailed explanation of the authentication is available in the
 [Aimeos docs](https://aimeos.org/docs/Symfony/Configure_admin_myaccount_login)
