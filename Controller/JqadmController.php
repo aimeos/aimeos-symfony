@@ -160,7 +160,7 @@ class JqadmController extends Controller
 	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
 	 * @return \Aimeos\MShop\Context\Item\Iface Modified context object
 	 */
-	protected function setLocale( \Aimeos\MShop\Context\Item\Iface $context, $site = 'default', $lang = null )
+	protected function setLocale( \Aimeos\MShop\Context\Item\Iface $context, $site, $lang )
 	{
 		$localeManager = \Aimeos\MShop\Factory::createManager( $context, 'locale' );
 
@@ -176,7 +176,7 @@ class JqadmController extends Controller
 		}
 
 		$context->setLocale( $localeItem );
-		$context->setI18n( $this->get( 'aimeos_i18n' )->get( array( $lang ) ) );
+		$context->setI18n( $this->get( 'aimeos_i18n' )->get( array( $lang, 'en' ) ) );
 
 		return $context;
 	}
