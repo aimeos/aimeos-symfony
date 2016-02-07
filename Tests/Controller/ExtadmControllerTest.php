@@ -50,6 +50,6 @@ class ExtadmControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/extadm/file' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'EXTUTIL', $client->getResponse()->getContent() );
+		$this->assertContains( 'Ext.', $client->getResponse()->getContent() );
 	}
 }
