@@ -199,12 +199,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "3f4912e38702baa5bf362ff0297dfdb0723d4895"
+                "reference": "ffd291ac0c2360931b41298336d7fec32c1e7b97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/3f4912e38702baa5bf362ff0297dfdb0723d4895",
-                "reference": "3f4912e38702baa5bf362ff0297dfdb0723d4895",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/ffd291ac0c2360931b41298336d7fec32c1e7b97",
+                "reference": "ffd291ac0c2360931b41298336d7fec32c1e7b97",
                 "shasum": ""
             },
             "require": {
@@ -269,7 +269,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2016-02-11 11:05:30"
+            "time": "2016-02-13 11:53:06"
         },
         {
             "name": "composer/installers",
