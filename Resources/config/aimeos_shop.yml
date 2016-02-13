@@ -4,6 +4,7 @@ extdir: %kernel.root_dir%/../ext
 uploaddir: /.
 
 page:
+    account-download: ['account/download']
     account-index: ['account/history','account/favorite','account/watch','basket/mini','catalog/session']
     basket-index: ['basket/standard','basket/related']
     catalog-count: ['catalog/count']
@@ -33,6 +34,10 @@ resource:
     fs-admin:
         adapter: Standard
         basedir: %kernel.root_dir%/../web/uploads
+        tempdir: %kernel.cache_dir%
+    fs-secure:
+        adapter: Standard
+        basedir: %kernel.root_dir%/secure
         tempdir: %kernel.cache_dir%
 
 admin:
@@ -66,6 +71,9 @@ client:
             watch:
                 url:
                     target: aimeos_shop_account_watch
+            download:
+                url:
+                    target: aimeos_shop_account_download
         catalog:
             count:
                 url:

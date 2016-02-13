@@ -129,6 +129,10 @@ aimeos_shop_account_watch:
     path: /myaccount/watch/{wat_action}/{wat_id}/{d_name}
     defaults: { _controller: AimeosShopBundle:Account:index, wat_action: '', wat_id: null, d_name: '', d_prodid: null, l_pos: 0 }
 
+aimeos_shop_account_download:
+    path: /myaccount/download/{dl_id}
+    defaults: { _controller: AimeosShopBundle:Account:download }
+
 
 aimeos_shop_basket:
     path: /basket/{b_action}

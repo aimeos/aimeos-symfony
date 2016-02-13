@@ -14,4 +14,13 @@ class AccountControllerTest extends WebTestCase
 
 		$this->assertContains( 'aimeos account-history', $client->getResponse()->getContent() );
 	}
+
+
+	public function testDownload()
+	{
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/myaccount/download/0' );
+
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+	}
 }

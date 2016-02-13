@@ -31,4 +31,16 @@ class AccountController extends Controller
 		$params = $this->get( 'aimeos_page' )->getSections( 'account-index' );
 		return $this->render( 'AimeosShopBundle:Account:index.html.twig', $params );
 	}
+
+
+	/**
+	 * Returns the html for the "My account" download page.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function downloadAction()
+	{
+		$params = $this->get( 'aimeos_page' )->getSections( 'account-download' );
+		return $this->render( 'AimeosShopBundle:Account:download.html.twig', $params );
+	}
 }
