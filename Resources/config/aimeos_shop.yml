@@ -4,7 +4,6 @@ extdir: %kernel.root_dir%/../ext
 uploaddir: /.
 
 page:
-    account-download: ['account/download']
     account-index: ['account/history','account/favorite','account/watch','basket/mini','catalog/session']
     basket-index: ['basket/standard','basket/related']
     catalog-count: ['catalog/count']

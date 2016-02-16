@@ -21,6 +21,6 @@ class AccountControllerTest extends WebTestCase
 		$client = static::createClient();
 		$client->request( 'GET', '/unittest/de/EUR/myaccount/download/0' );
 
-		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertEquals( 401, $client->getResponse()->getStatusCode() );
 	}
 }

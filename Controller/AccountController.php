@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 
 /**
@@ -40,7 +41,17 @@ class AccountController extends Controller
 	 */
 	public function downloadAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'account-download' );
-		return $this->render( 'AimeosShopBundle:Account:download.html.twig', $params );
+		$context = $this->container->get('aimeos_context')->get();
+		$langid = $context->getLocale()->getLanguageId();
+
+		$view = $this->container->get('aimeos_view')->create( $context->getConfig(), array(), $langid );
+		$context->setView( $view );
+
+		$client = \Aimeos\Client\Html\Factory::createClient( $context, array(), 'account/download' );
+		$client->setView( $view );
+		$client->process();
+
+		$response = $view->response();
+		return new Response( (string) $response->getBody(), $response->getStatusCode(), $response->getHeaders() );
 	}
 }

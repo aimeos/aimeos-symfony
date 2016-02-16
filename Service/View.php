@@ -9,6 +9,7 @@
 
 namespace Aimeos\ShopBundle\Service;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\DependencyInjection\Container;
 
@@ -89,6 +90,9 @@ class View
 			$helper = new \Aimeos\MW\View\Helper\Request\Symfony2( $view, $request );
 			$view->addHelper( 'request', $helper );
 		}
+
+		$helper = new \Aimeos\MW\View\Helper\Response\Symfony2( $view );
+		$view->addHelper( 'response', $helper );
 
 		$token = $this->container->get( 'security.csrf.token_manager' )->getToken( '_token' );
 		$helper = new \Aimeos\MW\View\Helper\Csrf\Standard( $view, '_token', $token->getValue() );
