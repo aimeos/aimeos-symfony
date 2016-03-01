@@ -49,7 +49,7 @@ class I18n
 		{
 			if( !isset( $this->i18n[$langid] ) )
 			{
-				$i18n = new \Aimeos\MW\Translation\Zend2( $i18nPaths, 'gettext', $langid, array( 'disableNotices' => true ) );
+				$i18n = new \Aimeos\MW\Translation\Gettext( $i18nPaths, $langid );
 
 				$apc = (bool) $this->container->getParameter( 'aimeos_shop.apc_enable' );
 				$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );

@@ -188,7 +188,7 @@ class ExtadmController extends Controller
 	 */
 	protected function getJsonClientI18n( array $i18nPaths, $lang )
 	{
-		$i18n = new \Aimeos\MW\Translation\Zend2( $i18nPaths, 'gettext', $lang, array( 'disableNotices' => true ) );
+		$i18n = new \Aimeos\MW\Translation\Gettext( $i18nPaths, $lang );
 
 		$content = array(
 			'admin' => $i18n->getAll( 'admin' ),

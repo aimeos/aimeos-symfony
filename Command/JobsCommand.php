@@ -89,7 +89,7 @@ class JobsCommand extends Command
 		$locale->setLanguageId( 'en' );
 		$ctx->setLocale( $locale );
 
-		$i18n = new \Aimeos\MW\Translation\Zend2( array(), 'gettext', 'en', array( 'disableNotices' => true ) );
+		$i18n = new \Aimeos\MW\Translation\None( 'en' );
 		$ctx->setI18n( array( 'en' => $i18n ) );
 
 		return $ctx;
