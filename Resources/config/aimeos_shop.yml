@@ -80,7 +80,7 @@ client:
             detail:
                 url:
                     target: aimeos_shop_detail
-            list:
+            lists:
                 url:
                     target: aimeos_shop_list
             session:
