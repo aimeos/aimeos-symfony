@@ -74,41 +74,6 @@ use the --no-dev option:
 
 `SYMFONY_ENV=prod composer update --no-dev`
 
-**Note:** Alternatively to running the `post-install-cmd` and `post-update-cmd`
-scripts automatically, you can add the lines required for installing the bundle
-manually. In your `./app/config/config.yml` file you need to add "AimeosShopBundle"
-to the list of bundles managed by the assetic bundle:
-```
-assetic:
-    # ...
-    bundles:        ['AimeosShopBundle']
-```
-
-Furthermore, add the Aimeos routes to your ```./app/config/routing.yml```
-```
-aimeos_shop:
-    resource: "@AimeosShopBundle/Resources/config/routing.yml"
-    prefix: /
-```
-
-For setting up the database, please run the following commands afterwards: 
-```
-php app/console aimeos:setup
-php app/console aimeos:cache
-```
-
-Finally, create the ```./web/uploads/``` directory and make sure it's writeable by the web server:
-```
-mkdir ./web/uploads/
-chmod 777 ./web/uploads/
-```
-In your production environment, you should use these commands as root instead:
-```
-mkdir ./web/uploads/
-chmod 755 ./web/uploads/
-chown www-data:www-data ./web/uploads/
-```
-
 ## Setup
 
 To see all components and get everything working, you also need to adapt your
@@ -167,12 +132,9 @@ Then, you should be able to call the catalog list page in your browser using
 ## Admin
 
 Setting up the administration interface is a matter of configuring the Symfony
-firewall to restrict access to the admin URLs.
+firewall to restrict access to the admin URLs. A basic firewall setup in the
+`./app/config/security.yml` file can look like this one:
 
-**Caution:** If you forget the protect the URLs of the administraiton interface,
-everybody will be able to change or delete any content in your shop!
-
-A basic firewall setup in the ```./app/config/security.yml``` file can look like this one:
 ```
 security:
     providers:
@@ -180,11 +142,18 @@ security:
             memory:
                 users:
                     admin: { password: secret, roles: [ 'ROLE_ADMIN' ] }
+        aimeos_customer:
+            entity: { class: AimeosShopBundle:User, property: username }
         in_memory:
             memory: ~
 
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
+        Aimeos\ShopBundle\Entity\User:
+            algorithm: sha1
+            encode_as_base64: false
+            iterations: 1
+
 
     firewalls:
         aimeos_admin:
@@ -194,12 +163,22 @@ security:
             form_login:
                 login_path: /admin
                 check_path: /admin_check
+        aimeos_myaccount:
+            pattern: ^/myaccount
+            provider: aimeos_customer
+            http_basic:
+                realm: "MyAccount"
         main:
             anonymous: ~
 
     access_control:
         - { path: ^/(extadm|jqadm|jsonadm), roles: ROLE_ADMIN }
+        - { path: ^/myaccount, roles: ROLE_USER }
 ```
+
+**Caution:** The order of the configuration settings in this file is important!
+If you place the `in_memory` or `main` section before the Aimeos related sections,
+authentication will fail!
 
 These settings will protect the ```/extadm``` (ExtJS), the ```/jqadm``` (JQuery+Bootstrap)
 and ```/jsonadm``` (JSON API) URLs from unauthorized access from someone without
@@ -207,12 +186,24 @@ admin privileges. There's only one user/password combination defined, which is
 rather inflexible. As alternative, you can use on of the other Symfony user provider
 to authenticate against.
 
-**Caution:** The order of the configuration settings in this file is important!
-If you place the `in_memory` or `main` section before the Aimeos related sections,
-authentication will fail!
-
-A bit more detailed explanation of the authentication is available in the
+The `/myaccount` URL is protected by HTTP basic authentication in this short
+example. Usually, you will replace it with a form based login or use the FOS user
+bundle with also offers user registration. A bit more detailed explanation of the
+authentication is available in the
 [Aimeos docs](https://aimeos.org/docs/Symfony/Configure_admin_myaccount_login)
+and it contains the
+[setup of the FOS user bundle](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login) too.
+
+**Caution:** This is only an example and contains a public password! Use **a strong
+password for authentication** in production environments!
+
+If the PHP web server is still running (`php -S 127.0.0.1:8000 -t web`), you should be
+able to call the admin login page in your browser using:
+
+`http://127.0.0.1:8000/app_dev.php/admin`
+
+and authenticating with the user `admin` and the password `secret` as defined in your
+`./app/config/security.yml` file.
 
 ## Hints
 
@@ -236,6 +227,6 @@ The Aimeos Symfony bundle is licensed under the terms of the MIT license and is 
 * [Web site](https://aimeos.org/Symfony)
 * [Documentation](https://aimeos.org/docs/Symfony)
 * [Help](https://aimeos.org/help/symfony-bundle-f17/)
-* [Issue tracker](https://github.com/aimeos/aimeos-symfony2/issues)
-* [Composer packages](https://packagist.org/packages/aimeos/aimeos-symfony2)
-* [Source code](https://github.com/aimeos/aimeos-symfony2)
+* [Issue tracker](https://github.com/aimeos/aimeos-symfony/issues)
+* [Composer packages](https://packagist.org/packages/aimeos/aimeos-symfony)
+* [Source code](https://github.com/aimeos/aimeos-symfony)
