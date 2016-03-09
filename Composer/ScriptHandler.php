@@ -69,7 +69,10 @@ class ScriptHandler
 
 		self::updateConfigFile( $options['symfony-app-dir'] . '/config/config.yml' );
 		self::updateRoutingFile( $options['symfony-app-dir'] . '/config/routing.yml' );
+		self::createDirectory( $options['symfony-app-dir'] . '/secure' );
 		self::createDirectory( $options['symfony-web-dir'] . '/uploads' );
+		self::createDirectory( $options['symfony-web-dir'] . '/preview' );
+		self::createDirectory( $options['symfony-web-dir'] . '/files' );
 	}
 
 
