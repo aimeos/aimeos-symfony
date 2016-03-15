@@ -105,6 +105,7 @@ class ExtadmController extends Controller
 
 		$cntlPaths = $this->get( 'aimeos' )->get()->getCustomPaths( 'controller/extjs' );
 		$context = $this->get( 'aimeos_context' )->get( false );
+		$context->setView( $this->get( 'aimeos_view' )->create( $context->getConfig(), array() ) );
 		$context = $this->setLocale( $context );
 
 		$controller = new \Aimeos\Controller\ExtJS\JsonRpc( $context, $cntlPaths );
