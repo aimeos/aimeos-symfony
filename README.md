@@ -212,7 +212,7 @@ do this in the ./app/config/config_dev.yml file of your Symfony application by
 adding these lines:
 ```
 aimeos_shop:
-    classes:
+    madmin:
         cache:
             manager:
                 name: None
