@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ff8bfbbd5af18c870ae00775ceb22ffd",
-    "content-hash": "49fc409592d9bc3707fb2e2b7e029d10",
+    "hash": "099094f4038a87d3385b534e21f7e1e6",
+    "content-hash": "6a03f5cda7f8ccc6e1f64702571fcfb1",
     "packages": [
         {
             "name": "aimeos/ai-gettext",
-            "version": "dev-master",
+            "version": "2016.01.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
-                "reference": "5d9ebb65c3940f893eb86e94f76e90c0cfe4d2aa"
+                "reference": "072ba387912e060dfd0e96092ff17f1ee9813488"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/5d9ebb65c3940f893eb86e94f76e90c0cfe4d2aa",
-                "reference": "5d9ebb65c3940f893eb86e94f76e90c0cfe4d2aa",
+                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/072ba387912e060dfd0e96092ff17f1ee9813488",
+                "reference": "072ba387912e060dfd0e96092ff17f1ee9813488",
                 "shasum": ""
             },
             "require": {
@@ -49,11 +49,11 @@
                 "gettext",
                 "performance"
             ],
-            "time": "2016-02-23 17:22:27"
+            "time": "2016-03-09 14:06:53"
         },
         {
             "name": "aimeos/ai-monolog",
-            "version": "dev-master",
+            "version": "2016.01.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
@@ -100,16 +100,16 @@
         },
         {
             "name": "aimeos/ai-swiftmailer",
-            "version": "dev-master",
+            "version": "2016.01.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "18068dbd8809811adcbc2927f7d0e34d702262bf"
+                "reference": "cdcb5b7ab207c32fd2a7ca7a1e27b6d3dd6b5d63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/18068dbd8809811adcbc2927f7d0e34d702262bf",
-                "reference": "18068dbd8809811adcbc2927f7d0e34d702262bf",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/cdcb5b7ab207c32fd2a7ca7a1e27b6d3dd6b5d63",
+                "reference": "cdcb5b7ab207c32fd2a7ca7a1e27b6d3dd6b5d63",
                 "shasum": ""
             },
             "require": {
@@ -143,11 +143,11 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2016-01-28 09:55:49"
+            "time": "2016-01-28 09:56:42"
         },
         {
             "name": "aimeos/ai-symfony",
-            "version": "dev-master",
+            "version": "2016.03.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
@@ -194,16 +194,16 @@
         },
         {
             "name": "aimeos/aimeos-core",
-            "version": "dev-master",
+            "version": "2016.03.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "83687908763744394fcace5e3bafeaf1c1bf1c24"
+                "reference": "a7425bf38d716d20370c830bb036ed04114ba072"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/83687908763744394fcace5e3bafeaf1c1bf1c24",
-                "reference": "83687908763744394fcace5e3bafeaf1c1bf1c24",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/a7425bf38d716d20370c830bb036ed04114ba072",
+                "reference": "a7425bf38d716d20370c830bb036ed04114ba072",
                 "shasum": ""
             },
             "require": {
@@ -269,7 +269,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2016-03-09 09:40:35"
+            "time": "2016-03-21 11:53:48"
         },
         {
             "name": "composer/installers",
@@ -878,16 +878,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.18.0",
+            "version": "1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "e19b764b5c855580e8ffa7e615f72c10fd2f99cc"
+                "reference": "a5f2734e8c16f3aa21b3da09715d10e15b4d2d45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/e19b764b5c855580e8ffa7e615f72c10fd2f99cc",
-                "reference": "e19b764b5c855580e8ffa7e615f72c10fd2f99cc",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/a5f2734e8c16f3aa21b3da09715d10e15b4d2d45",
+                "reference": "a5f2734e8c16f3aa21b3da09715d10e15b4d2d45",
                 "shasum": ""
             },
             "require": {
@@ -952,20 +952,20 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-03-01 18:00:40"
+            "time": "2016-03-13 16:08:35"
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v1.2.1",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "f078eba3bcf140fd69b5fcc3ea5ac809abf729dc"
+                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/f078eba3bcf140fd69b5fcc3ea5ac809abf729dc",
-                "reference": "f078eba3bcf140fd69b5fcc3ea5ac809abf729dc",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c7e26a21ba357863de030f0b9e701c7d04593774",
+                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774",
                 "shasum": ""
             },
             "require": {
@@ -1000,7 +1000,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-02-29 17:25:04"
+            "time": "2016-03-18 20:34:03"
         },
         {
             "name": "psr/http-message",
@@ -1144,16 +1144,16 @@
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "v2.9.0",
+            "version": "v2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/monolog-bundle.git",
-                "reference": "27c2e3eaec7a0ba3462f99ea92678cbfc7b146e4"
+                "reference": "82fd8f36e2cccbe94faf237403c48052d4d4b77e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/27c2e3eaec7a0ba3462f99ea92678cbfc7b146e4",
-                "reference": "27c2e3eaec7a0ba3462f99ea92678cbfc7b146e4",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/82fd8f36e2cccbe94faf237403c48052d4d4b77e",
+                "reference": "82fd8f36e2cccbe94faf237403c48052d4d4b77e",
                 "shasum": ""
             },
             "require": {
@@ -1165,6 +1165,7 @@
                 "symfony/monolog-bridge": "~2.3|~3.0"
             },
             "require-dev": {
+                "phpunit/phpunit": "^4.8",
                 "symfony/console": "~2.3|~3.0",
                 "symfony/yaml": "~2.3|~3.0"
             },
@@ -1199,20 +1200,20 @@
                 "log",
                 "logging"
             ],
-            "time": "2016-03-01 17:53:42"
+            "time": "2016-03-13 15:55:56"
         },
         {
             "name": "symfony/polyfill-apcu",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-apcu.git",
-                "reference": "d1911e6caeb4b6a4c8e2d5c46b978a66b3745e4c"
+                "reference": "0c901e4e65a2f7ece68f0fd249b56d6ad3adc214"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/d1911e6caeb4b6a4c8e2d5c46b978a66b3745e4c",
-                "reference": "d1911e6caeb4b6a4c8e2d5c46b978a66b3745e4c",
+                "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/0c901e4e65a2f7ece68f0fd249b56d6ad3adc214",
+                "reference": "0c901e4e65a2f7ece68f0fd249b56d6ad3adc214",
                 "shasum": ""
             },
             "require": {
@@ -1227,9 +1228,6 @@
             "autoload": {
                 "files": [
                     "bootstrap.php"
-                ],
-                "classmap": [
-                    "Resources/stubs"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1255,25 +1253,28 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-01-20 09:13:37"
+            "time": "2016-03-03 16:49:40"
         },
         {
             "name": "symfony/polyfill-intl-icu",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-icu.git",
-                "reference": "66b0bb4abda229bc073eff6bbc8f2685bdaac165"
+                "reference": "8328069d9f5322f0e7b3c3518485acfdc94c3942"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/66b0bb4abda229bc073eff6bbc8f2685bdaac165",
-                "reference": "66b0bb4abda229bc073eff6bbc8f2685bdaac165",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/8328069d9f5322f0e7b3c3518485acfdc94c3942",
+                "reference": "8328069d9f5322f0e7b3c3518485acfdc94c3942",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3|~3.0"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
             },
             "type": "library",
             "extra": {
@@ -1310,11 +1311,11 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-01-20 09:13:37"
+            "time": "2016-02-26 16:18:12"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
@@ -1373,16 +1374,16 @@
         },
         {
             "name": "symfony/polyfill-php54",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php54.git",
-                "reference": "74663d5a2ff3c530c1bc0571500e0feec9094054"
+                "reference": "9ba741ca01c77282ecf5796c2c1d667f03454ffb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php54/zipball/74663d5a2ff3c530c1bc0571500e0feec9094054",
-                "reference": "74663d5a2ff3c530c1bc0571500e0feec9094054",
+                "url": "https://api.github.com/repos/symfony/polyfill-php54/zipball/9ba741ca01c77282ecf5796c2c1d667f03454ffb",
+                "reference": "9ba741ca01c77282ecf5796c2c1d667f03454ffb",
                 "shasum": ""
             },
             "require": {
@@ -1427,11 +1428,11 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-01-20 09:13:37"
+            "time": "2016-01-25 19:13:00"
         },
         {
             "name": "symfony/polyfill-php55",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php55.git",
@@ -1487,7 +1488,7 @@
         },
         {
             "name": "symfony/polyfill-php56",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php56.git",
@@ -1543,16 +1544,16 @@
         },
         {
             "name": "symfony/polyfill-php70",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php70.git",
-                "reference": "8428ceddbbaf102f2906769a8ef2438220c5cb95"
+                "reference": "386c1be9cad3ab531425211919e78c37971be4ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/8428ceddbbaf102f2906769a8ef2438220c5cb95",
-                "reference": "8428ceddbbaf102f2906769a8ef2438220c5cb95",
+                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/386c1be9cad3ab531425211919e78c37971be4ce",
+                "reference": "386c1be9cad3ab531425211919e78c37971be4ce",
                 "shasum": ""
             },
             "require": {
@@ -1598,11 +1599,11 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-01-25 08:44:42"
+            "time": "2016-01-28 22:42:02"
         },
         {
             "name": "symfony/polyfill-util",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-util.git",
@@ -1967,20 +1968,20 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.3.3",
+            "version": "1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "4d54fde709664562eb63356f0250d527824d05de"
+                "reference": "b1d59735b672865dbeb930805029c24f226e3e77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/4d54fde709664562eb63356f0250d527824d05de",
-                "reference": "4d54fde709664562eb63356f0250d527824d05de",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/b1d59735b672865dbeb930805029c24f226e3e77",
+                "reference": "b1d59735b672865dbeb930805029c24f226e3e77",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4",
+                "php": "^5.4 || ^7.0",
                 "psr/http-message": "~1.0"
             },
             "provide": {
@@ -2013,7 +2014,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2016-01-04 21:37:32"
+            "time": "2016-03-17 18:02:05"
         }
     ],
     "packages-dev": [
@@ -2673,11 +2674,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "aimeos/aimeos-core": 20,
-        "aimeos/ai-symfony": 20,
-        "aimeos/ai-monolog": 20,
-        "aimeos/ai-gettext": 20,
-        "aimeos/ai-swiftmailer": 20,
         "friendsofsymfony/user-bundle": 20,
         "satooshi/php-coveralls": 20
     },
