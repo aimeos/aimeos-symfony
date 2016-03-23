@@ -1,4 +1,4 @@
-#apc_enable: true,
+#apc_enable: false,
 apc_prefix: 'sf:'
 extdir: %kernel.root_dir%/../ext
 uploaddir: /.
@@ -57,6 +57,15 @@ admin:
                 target: aimeos_shop_jqadm_save
             search:
                 target: aimeos_shop_jqadm_search
+    jsonadm:
+        url:
+            target: aimeos_shop_jsonadm_get
+            config:
+                absoluteUri: true
+            options:
+                target: aimeos_shop_jsonadm_options
+                config:
+                    absoluteUri: true
 
 client:
     html:
@@ -188,16 +197,6 @@ controller:
                 text:
                     default:
                         downloaddir: /uploads
-    jsonadm:
-        url:
-            target: aimeos_shop_jsonadm_get
-            config:
-                absoluteUri: true
-            options:
-                target: aimeos_shop_jsonadm_options
-                config:
-                    absoluteUri: true
-
 
 i18n:
 

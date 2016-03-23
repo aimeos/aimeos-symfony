@@ -36,8 +36,8 @@ class JsonadmController extends Controller
 		$status = 500;
 		$header = $request->headers->all();
 
-		$cntl = $this->createController( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $cntl->delete( $request->getContent(), $header, $status );
+		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
+		$result = $client->delete( $request->getContent(), $header, $status );
 
 		return $this->createResponse( $result, $status, $header );
 	}
@@ -56,8 +56,8 @@ class JsonadmController extends Controller
 		$status = 500;
 		$header = $request->headers->all();
 
-		$cntl = $this->createController( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $cntl->get( $request->getContent(), $header, $status );
+		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
+		$result = $client->get( $request->getContent(), $header, $status );
 
 		return $this->createResponse( $result, $status, $header );
 	}
@@ -76,8 +76,8 @@ class JsonadmController extends Controller
 		$status = 500;
 		$header = $request->headers->all();
 
-		$cntl = $this->createController( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $cntl->patch( $request->getContent(), $header, $status );
+		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
+		$result = $client->patch( $request->getContent(), $header, $status );
 
 		return $this->createResponse( $result, $status, $header );
 	}
@@ -96,8 +96,8 @@ class JsonadmController extends Controller
 		$status = 500;
 		$header = $request->headers->all();
 
-		$cntl = $this->createController( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $cntl->post( $request->getContent(), $header, $status );
+		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
+		$result = $client->post( $request->getContent(), $header, $status );
 
 		return $this->createResponse( $result, $status, $header );
 	}
@@ -116,8 +116,8 @@ class JsonadmController extends Controller
 		$status = 500;
 		$header = $request->headers->all();
 
-		$cntl = $this->createController( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $cntl->put( $request->getContent(), $header, $status );
+		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
+		$result = $client->put( $request->getContent(), $header, $status );
 
 		return $this->createResponse( $result, $status, $header );
 	}
@@ -136,8 +136,8 @@ class JsonadmController extends Controller
 		$status = 500;
 		$header = $request->headers->all();
 
-		$cntl = $this->createController( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $cntl->options( $request->getContent(), $header, $status );
+		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
+		$result = $client->options( $request->getContent(), $header, $status );
 
 		return $this->createResponse( $result, $status, $header );
 	}
@@ -151,10 +151,10 @@ class JsonadmController extends Controller
 	 * @param string $lang Language code
 	 * @return \Aimeos\MShop\Context\Item\Iface Context item
 	 */
-	protected function createController( $site, $resource, $lang )
+	protected function createClient( $site, $resource, $lang )
 	{
 		$aimeos = $this->get( 'aimeos' )->get();
-		$templatePaths = $aimeos->getCustomPaths( 'controller/jsonadm/templates' );
+		$templatePaths = $aimeos->getCustomPaths( 'admin/jsonadm/templates' );
 
 		$context = $this->get( 'aimeos_context' )->get( false );
 		$context = $this->setLocale( $context, $site, $lang );
@@ -162,7 +162,7 @@ class JsonadmController extends Controller
 		$view = $this->get('aimeos_view')->create( $context->getConfig(), $templatePaths, $lang );
 		$context->setView( $view );
 
-		return \Aimeos\Controller\JsonAdm\Factory::createController( $context, $templatePaths, $resource );
+		return \Aimeos\Admin\JsonAdm\Factory::createClient( $context, $templatePaths, $resource );
 	}
 
 
