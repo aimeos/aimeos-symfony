@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -22,6 +23,47 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  */
 class JqadmController extends Controller
 {
+	/**
+	 * Returns the JS file content
+	 *
+	 * @param $type File type, i.e. "css" or "js"
+	 * @return Response Response object
+	 */
+	public function fileAction( $type )
+	{
+		$contents = '';
+		$files = array();
+		$aimeos = $this->get( 'aimeos' )->get();
+
+		foreach( $aimeos->getCustomPaths( 'admin/jqadm' ) as $base => $paths )
+		{
+			foreach( $paths as $path )
+			{
+				$jsbAbsPath = $base . '/' . $path;
+				$jsb2 = new \Aimeos\MW\Jsb2\Standard( $jsbAbsPath, dirname( $jsbAbsPath ) );
+				$files = array_merge( $files, $jsb2->getFiles( $type ) );
+			}
+		}
+
+		foreach( $files as $file )
+		{
+			if( ( $content = file_get_contents( $file ) ) !== false ) {
+				$contents .= $content;
+			}
+		}
+
+		$response = new Response( $contents );
+
+		if( $type === 'js' ) {
+			$response->headers->set( 'Content-Type', 'application/javascript' );
+		} elseif( $type === 'css' ) {
+			$response->headers->set( 'Content-Type', 'text/css' );
+		}
+
+		return $response;
+	}
+
+
 	/**
 	 * Returns the HTML code for a copy of a resource object
 	 *

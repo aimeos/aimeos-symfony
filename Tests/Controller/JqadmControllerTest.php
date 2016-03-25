@@ -7,6 +7,34 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class JqadmControllerTest extends WebTestCase
 {
+	public function testFileCss()
+	{
+		$client = static::createClient(array(), array(
+			'PHP_AUTH_USER' => 'admin',
+			'PHP_AUTH_PW'   => 'adminpass',
+		) );
+
+		$client->request( 'GET', '/jqadm/file/css' );
+
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( '.aimeos', $client->getResponse()->getContent() );
+	}
+
+
+	public function testFileJs()
+	{
+		$client = static::createClient(array(), array(
+			'PHP_AUTH_USER' => 'admin',
+			'PHP_AUTH_PW'   => 'adminpass',
+		) );
+
+		$client->request( 'GET', '/jqadm/file/js' );
+
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'Aimeos = {', $client->getResponse()->getContent() );
+	}
+
+
 	public function testCopyAction()
 	{
 		$client = static::createClient(array(), array(

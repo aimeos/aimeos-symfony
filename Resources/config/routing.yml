@@ -22,6 +22,11 @@ aimeos_shop_extadm:
     methods: [GET]
 
 
+aimeos_shop_jqadm_file:
+    path: /jqadm/file/{type}
+    defaults: { _controller: AimeosShopBundle:Jqadm:file }
+    methods: [GET]
+
 aimeos_shop_jqadm_copy:
     path: /jqadm/copy/{resource}/{id}
     defaults: { _controller: AimeosShopBundle:Jqadm:copy }
