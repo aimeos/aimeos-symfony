@@ -38,6 +38,9 @@ resource:
         adapter: Standard
         basedir: %kernel.root_dir%/secure
         tempdir: %kernel.cache_dir%
+    mq:
+        adapter: Standard
+        db: db
 
 admin:
     extjs:
