@@ -36,7 +36,7 @@ class ExtadmControllerTest extends WebTestCase
 		);
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertStringStartsWith( '{', $client->getResponse()->getContent() );
+		$this->assertStringStartsWith( '[{', $client->getResponse()->getContent() );
 	}
 
 
