@@ -32,8 +32,9 @@ class ExtadmController extends Controller
 	 */
 	public function indexAction( Request $request )
 	{
-		$site = $request->attributes->get( 'site', 'default' );
-		$lang = $request->query->get( 'lang', 'en' );
+		$site = $request->attributes->get( 'site', $request->query->get( 'site', 'default' ) );
+		$lang = $request->attributes->get( 'lang', $request->query->get( 'lang', 'en' ) );
+		$tab = $request->attributes->get( 'tab', $request->query->get( 'tab', 0 ) );
 
 		$context = $this->get( 'aimeos_context' )->get( false );
 		$context = $this->setLocale( $context, $site, $lang );
@@ -80,9 +81,9 @@ class ExtadmController extends Controller
 			'smd' => $controller->getJsonSmd( $jsonUrl ),
 			'urlTemplate' => urldecode( $adminUrl ),
 			'uploaddir' => $this->container->getParameter( 'aimeos_shop.uploaddir' ),
-			'activeTab' => $request->query->get( 'tab', 0 ),
 			'version' => $aimeos->getVersion(),
 			'jqadmurl' => $jqadmUrl,
+			'activeTab' => $tab,
 		);
 
 		return $this->render( 'AimeosShopBundle:Extadm:index.html.twig', $vars );
@@ -110,7 +111,7 @@ class ExtadmController extends Controller
 
 		$controller = new \Aimeos\Controller\ExtJS\JsonRpc( $context, $cntlPaths );
 
-		$response = $controller->process( $request->request->all(), 'php://input' );
+		$response = $controller->process( $request->request->all(), $request->getContent() );
 		return $this->render( 'AimeosShopBundle:Extadm:do.html.twig', array( 'output' => $response ) );
 	}
 
