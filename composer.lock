@@ -4,12 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2b0ecd9016446826d69d649eb2feeb38",
-    "content-hash": "49fc409592d9bc3707fb2e2b7e029d10",
+    "hash": "ad11b030ea9bfd91f016ea94010919cd",
+    "content-hash": "78a6d0f6e8724ddb266bb24d6bc7c23c",
     "packages": [
         {
             "name": "aimeos/ai-gettext",
-            "version": "dev-master",
+            "version": "2016.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
@@ -53,7 +53,7 @@
         },
         {
             "name": "aimeos/ai-monolog",
-            "version": "dev-master",
+            "version": "2016.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
@@ -100,7 +100,7 @@
         },
         {
             "name": "aimeos/ai-swiftmailer",
-            "version": "dev-master",
+            "version": "2016.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
@@ -147,7 +147,7 @@
         },
         {
             "name": "aimeos/ai-symfony",
-            "version": "dev-master",
+            "version": "2016.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
@@ -194,16 +194,16 @@
         },
         {
             "name": "aimeos/aimeos-core",
-            "version": "dev-master",
+            "version": "2016.04.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "448c348b824adff7eea2f799b2a0d7a0e5fe0406"
+                "reference": "4c6037d2193e90fe0aa55315c33676ac0ac6b8c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/448c348b824adff7eea2f799b2a0d7a0e5fe0406",
-                "reference": "448c348b824adff7eea2f799b2a0d7a0e5fe0406",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/4c6037d2193e90fe0aa55315c33676ac0ac6b8c1",
+                "reference": "4c6037d2193e90fe0aa55315c33676ac0ac6b8c1",
                 "shasum": ""
             },
             "require": {
@@ -269,7 +269,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2016-04-13 12:13:27"
+            "time": "2016-04-11 16:57:55"
         },
         {
             "name": "composer/installers",
@@ -2672,11 +2672,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "aimeos/aimeos-core": 20,
-        "aimeos/ai-symfony": 20,
-        "aimeos/ai-monolog": 20,
-        "aimeos/ai-gettext": 20,
-        "aimeos/ai-swiftmailer": 20,
         "friendsofsymfony/user-bundle": 20,
         "satooshi/php-coveralls": 20
     },
