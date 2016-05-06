@@ -22,10 +22,14 @@
 	"require": {
 		"php": ">=5.3.3",
 		"aimeos/aimeos-core": "dev-master",
-		"aimeos/ai-symfony": "dev-master",
-		"aimeos/ai-monolog": "dev-master",
 		"aimeos/ai-gettext": "dev-master",
+		"aimeos/ai-monolog": "dev-master",
+		"aimeos/ai-symfony": "dev-master",
 		"aimeos/ai-swiftmailer": "dev-master",
+		"aimeos/ai-admin-extadm": "dev-master",
+		"aimeos/ai-admin-jqadm": "dev-master",
+		"aimeos/ai-admin-jsonadm": "dev-master",
+		"aimeos/ai-client-html": "dev-master",
 		"friendsofsymfony/user-bundle": "~2.0@dev",
 		"symfony/symfony": "~2.4||~3.0",
 		"symfony/monolog-bundle": "~2.4",
@@ -43,9 +47,9 @@
 	},
 	"scripts": {
 		"post-update-cmd": [
-			"cp -r vendor/aimeos/aimeos-core/admin/extjs/resources/* Resources/public/admin/extjs/resources/",
-			"cp -r vendor/aimeos/aimeos-core/admin/extjs/lib/* Resources/public/admin/extjs/lib/",
-			"cp -r vendor/aimeos/aimeos-core/client/html/themes/* Resources/public/themes/"
+			"cp -r ext/ai-admin-extadm/admin/extjs/resources/* Resources/public/admin/extjs/resources/",
+			"cp -r ext/ai-admin-extadm/admin/extjs/lib/* Resources/public/admin/extjs/lib/",
+			"cp -r ext/ai-client-html/client/html/themes/* Resources/public/themes/"
 		]
 	}
 }

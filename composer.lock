@@ -4,25 +4,287 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2b0ecd9016446826d69d649eb2feeb38",
-    "content-hash": "49fc409592d9bc3707fb2e2b7e029d10",
+    "hash": "cb86e8c436b4a1f41463f2a6200e0e84",
+    "content-hash": "df08d87ee7a785966858df2020de7877",
     "packages": [
+        {
+            "name": "aimeos/ai-admin-extadm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aimeos/ai-admin-extadm.git",
+                "reference": "b130247954e4e9f33fadc8302d93835742b0bfd7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/b130247954e4e9f33fadc8302d93835742b0bfd7",
+                "reference": "b130247954e4e9f33fadc8302d93835742b0bfd7",
+                "shasum": ""
+            },
+            "require": {
+                "aimeos/aimeos-core": "dev-master",
+                "composer/installers": "^1.0",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phing/phing": "~2.4",
+                "phpunit/phpunit": "~3.7||~4.0||~5.0",
+                "satooshi/php-coveralls": "dev-master",
+                "squizlabs/php_codesniffer": "~1.0"
+            },
+            "type": "aimeos-extension",
+            "autoload": {
+                "psr-4": {
+                    "Aimeos\\Controller\\ExtJS\\": "controller/extjs/src/Controller/ExtJS/"
+                },
+                "classmap": [
+                    "controller/extjs/src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Aimeos ai-admin-extadm extension",
+            "keywords": [
+                "ExtJS admin interface",
+                "aimeos",
+                "extension"
+            ],
+            "time": "2016-05-03 21:54:22"
+        },
+        {
+            "name": "aimeos/ai-admin-jqadm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aimeos/ai-admin-jqadm.git",
+                "reference": "fdf5076f5a22d8da152a663595e670c8ea60958d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/fdf5076f5a22d8da152a663595e670c8ea60958d",
+                "reference": "fdf5076f5a22d8da152a663595e670c8ea60958d",
+                "shasum": ""
+            },
+            "require": {
+                "aimeos/aimeos-core": "dev-master",
+                "composer/installers": "^1.0",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phing/phing": "~2.4",
+                "phpunit/phpunit": "~3.7||~4.0||~5.0",
+                "satooshi/php-coveralls": "dev-master",
+                "squizlabs/php_codesniffer": "~1.0"
+            },
+            "type": "aimeos-extension",
+            "autoload": {
+                "psr-4": {
+                    "Aimeos\\Admin\\JQAdm\\": "admin/jqadm/src/Admin/JQAdm/"
+                },
+                "classmap": [
+                    "admin/jqadm/src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Aimeos ai-admin-jqadm extension",
+            "keywords": [
+                "JQuery admin interface",
+                "aimeos",
+                "extension"
+            ],
+            "time": "2016-05-03 22:08:32"
+        },
+        {
+            "name": "aimeos/ai-admin-jsonadm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
+                "reference": "ec61f099e8da95440ef36f511f150eec7ea33254"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/ec61f099e8da95440ef36f511f150eec7ea33254",
+                "reference": "ec61f099e8da95440ef36f511f150eec7ea33254",
+                "shasum": ""
+            },
+            "require": {
+                "aimeos/aimeos-core": "dev-master",
+                "composer/installers": "^1.0",
+                "php": ">=5.3.3"
+            },
+            "type": "aimeos-extension",
+            "autoload": {
+                "psr-4": {
+                    "Aimeos\\Admin\\Jsonadm\\": "admin/jsonadm/src/Admin/Jsonadm/"
+                },
+                "classmap": [
+                    "admin/jsonadm/src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Aimeos ai-admin-jsonadm extension",
+            "keywords": [
+                "admin",
+                "aimeos",
+                "extension",
+                "json api"
+            ],
+            "time": "2016-05-04 09:14:15"
+        },
+        {
+            "name": "aimeos/ai-client-html",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aimeos/ai-client-html.git",
+                "reference": "cc87a0e14d96a80292dfd7bedad878537fe6987f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/cc87a0e14d96a80292dfd7bedad878537fe6987f",
+                "reference": "cc87a0e14d96a80292dfd7bedad878537fe6987f",
+                "shasum": ""
+            },
+            "require": {
+                "aimeos/ai-controller-frontend": "dev-master",
+                "aimeos/ai-controller-jobs": "dev-master",
+                "aimeos/aimeos-core": "dev-master",
+                "composer/installers": "^1.0",
+                "php": ">=5.3.3"
+            },
+            "type": "aimeos-extension",
+            "autoload": {
+                "psr-4": {
+                    "Aimeos\\Client\\Html\\": "client/html/src/Client/Html/",
+                    "Aimeos\\Controller\\Jobs\\": "client/html/src/Controller/Jobs/"
+                },
+                "classmap": [
+                    "client/html/src",
+                    "controller/jobs/src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Aimeos ai-client-html extension",
+            "keywords": [
+                "aimeos",
+                "client",
+                "extension",
+                "html"
+            ],
+            "time": "2016-05-05 10:21:16"
+        },
+        {
+            "name": "aimeos/ai-controller-frontend",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aimeos/ai-controller-frontend.git",
+                "reference": "4ffab160ae83173b3921501b223208feea0d58c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/4ffab160ae83173b3921501b223208feea0d58c8",
+                "reference": "4ffab160ae83173b3921501b223208feea0d58c8",
+                "shasum": ""
+            },
+            "require": {
+                "aimeos/aimeos-core": "dev-master",
+                "composer/installers": "^1.0",
+                "php": ">=5.3.3"
+            },
+            "type": "aimeos-extension",
+            "autoload": {
+                "psr-4": {
+                    "Aimeos\\Controller\\Frontend\\": "controller/frontend/src/Controller/Frontend/"
+                },
+                "classmap": [
+                    "controller/frontend/src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Aimeos ai-controller-frontend extension",
+            "keywords": [
+                "aimeos",
+                "controller",
+                "extension",
+                "frontend"
+            ],
+            "time": "2016-04-27 22:16:33"
+        },
+        {
+            "name": "aimeos/ai-controller-jobs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aimeos/ai-controller-jobs.git",
+                "reference": "62b3d41b35c909ad6a6e196029a5e22a17987f57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/62b3d41b35c909ad6a6e196029a5e22a17987f57",
+                "reference": "62b3d41b35c909ad6a6e196029a5e22a17987f57",
+                "shasum": ""
+            },
+            "require": {
+                "aimeos/aimeos-core": "dev-master",
+                "composer/installers": "^1.0",
+                "php": ">=5.3.3"
+            },
+            "type": "aimeos-extension",
+            "autoload": {
+                "psr-4": {
+                    "Aimeos\\Controller\\Common\\": "controller/jobs/src/Controller/Common/",
+                    "Aimeos\\Controller\\Jobs\\": "controller/jobs/src/Controller/Jobs/"
+                },
+                "classmap": [
+                    "controller/common/src",
+                    "controller/jobs/src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Aimeos ai-controller-jobs extension",
+            "keywords": [
+                "aimeos",
+                "controller",
+                "extension",
+                "jobs"
+            ],
+            "time": "2016-05-05 10:40:22"
+        },
         {
             "name": "aimeos/ai-gettext",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
-                "reference": "b4a99acb81369779cd3f75d6e5b03d2db15cc97b"
+                "reference": "66120624e780fc0da05250702859f899f2a5e937"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/b4a99acb81369779cd3f75d6e5b03d2db15cc97b",
-                "reference": "b4a99acb81369779cd3f75d6e5b03d2db15cc97b",
+                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/66120624e780fc0da05250702859f899f2a5e937",
+                "reference": "66120624e780fc0da05250702859f899f2a5e937",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0",
+                "composer/installers": "^1.0",
                 "php": ">=5.3.3"
             },
             "require-dev": {
@@ -49,7 +311,7 @@
                 "gettext",
                 "performance"
             ],
-            "time": "2016-03-31 14:07:34"
+            "time": "2016-04-21 21:53:20"
         },
         {
             "name": "aimeos/ai-monolog",
@@ -57,16 +319,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "f8e2feacbd21048c1432633953acf352d6de1445"
+                "reference": "5c69a0523dc332e4dc4c364fae6bc6f12093f84f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/f8e2feacbd21048c1432633953acf352d6de1445",
-                "reference": "f8e2feacbd21048c1432633953acf352d6de1445",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/5c69a0523dc332e4dc4c364fae6bc6f12093f84f",
+                "reference": "5c69a0523dc332e4dc4c364fae6bc6f12093f84f",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0",
+                "composer/installers": "^1.0",
                 "monolog/monolog": "~1.0",
                 "php": ">=5.3.3"
             },
@@ -96,7 +358,7 @@
                 "monolog",
                 "shop"
             ],
-            "time": "2015-10-20 13:55:27"
+            "time": "2016-04-21 21:53:20"
         },
         {
             "name": "aimeos/ai-swiftmailer",
@@ -104,16 +366,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "18068dbd8809811adcbc2927f7d0e34d702262bf"
+                "reference": "7dc4d85e96f6f9110ffbd31f54df38fa6d2cb700"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/18068dbd8809811adcbc2927f7d0e34d702262bf",
-                "reference": "18068dbd8809811adcbc2927f7d0e34d702262bf",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/7dc4d85e96f6f9110ffbd31f54df38fa6d2cb700",
+                "reference": "7dc4d85e96f6f9110ffbd31f54df38fa6d2cb700",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0",
+                "composer/installers": "^1.0",
                 "php": ">=5.3.3",
                 "swiftmailer/swiftmailer": ">=4.0"
             },
@@ -143,7 +405,7 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2016-01-28 09:55:49"
+            "time": "2016-04-21 21:53:20"
         },
         {
             "name": "aimeos/ai-symfony",
@@ -151,16 +413,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
-                "reference": "6b11f1255c37b91db102ce566b71e534f5c5bdda"
+                "reference": "2e1b9a128a65659436ba614c75cd3213d3b95b12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/6b11f1255c37b91db102ce566b71e534f5c5bdda",
-                "reference": "6b11f1255c37b91db102ce566b71e534f5c5bdda",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/2e1b9a128a65659436ba614c75cd3213d3b95b12",
+                "reference": "2e1b9a128a65659436ba614c75cd3213d3b95b12",
                 "shasum": ""
             },
             "require": {
-                "composer/installers": "~1.0",
+                "composer/installers": "^1.0",
                 "php": ">=5.3.3",
                 "symfony/symfony": "~2.4||~3.0",
                 "zendframework/zend-diactoros": "~1.0"
@@ -190,7 +452,7 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2016-02-27 11:37:29"
+            "time": "2016-04-21 21:53:20"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -198,12 +460,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "448c348b824adff7eea2f799b2a0d7a0e5fe0406"
+                "reference": "87e224bfa2b31ce62e25ceb8c70672d1ebea9a6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/448c348b824adff7eea2f799b2a0d7a0e5fe0406",
-                "reference": "448c348b824adff7eea2f799b2a0d7a0e5fe0406",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/87e224bfa2b31ce62e25ceb8c70672d1ebea9a6b",
+                "reference": "87e224bfa2b31ce62e25ceb8c70672d1ebea9a6b",
                 "shasum": ""
             },
             "require": {
@@ -236,24 +498,12 @@
                     "Aimeos\\MShop\\": "lib/mshoplib/src/MShop/",
                     "Aimeos\\MAdmin\\": "lib/mshoplib/src/MAdmin/",
                     "Aimeos\\Controller\\Common\\": "controller/common/src/Controller/Common/",
-                    "Aimeos\\Controller\\Frontend\\": "controller/frontend/src/Controller/Frontend/",
-                    "Aimeos\\Controller\\ExtJS\\": "controller/extjs/src/Controller/ExtJS/",
-                    "Aimeos\\Controller\\Jobs\\": "controller/jobs/src/Controller/Jobs/",
-                    "Aimeos\\Client\\Html\\": "client/html/src/Client/Html/",
-                    "Aimeos\\Admin\\JQAdm\\": "admin/jqadm/src/Admin/JQAdm/",
-                    "Aimeos\\Admin\\JsonAdm\\": "controller/jobs/src/Admin/JsonAdm/",
                     "Aimeos\\": "."
                 },
                 "classmap": [
                     "lib/mwlib/src",
                     "lib/mshoplib/src",
                     "controller/common/src",
-                    "controller/frontend/src",
-                    "controller/extjs/src",
-                    "controller/jobs/src",
-                    "client/html/src",
-                    "admin/jqadm/src",
-                    "admin/jsonadm/src",
                     "Bootstrap.php"
                 ]
             },
@@ -269,7 +519,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2016-04-13 12:13:27"
+            "time": "2016-05-03 10:57:16"
         },
         {
             "name": "composer/installers",
@@ -1093,16 +1343,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.1",
+            "version": "v5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421"
+                "reference": "d8db871a54619458a805229a057ea2af33c753e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/0697e6aa65c83edf97bb0f23d8763f94e3f11421",
-                "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/d8db871a54619458a805229a057ea2af33c753e8",
+                "reference": "d8db871a54619458a805229a057ea2af33c753e8",
                 "shasum": ""
             },
             "require": {
@@ -1142,7 +1392,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2015-06-06 14:19:39"
+            "time": "2016-05-01 08:45:47"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1657,27 +1907,27 @@
         },
         {
             "name": "symfony/security-acl",
-            "version": "v2.8.0",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-acl.git",
-                "reference": "4a3f7327ad215242c78f6564ad4ea6d2db1b8347"
+                "reference": "053b49bf4aa333a392c83296855989bcf88ddad1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security-acl/zipball/4a3f7327ad215242c78f6564ad4ea6d2db1b8347",
-                "reference": "4a3f7327ad215242c78f6564ad4ea6d2db1b8347",
+                "url": "https://api.github.com/repos/symfony/security-acl/zipball/053b49bf4aa333a392c83296855989bcf88ddad1",
+                "reference": "053b49bf4aa333a392c83296855989bcf88ddad1",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
-                "symfony/security-core": "~2.4|~3.0.0"
+                "php": ">=5.5.9",
+                "symfony/security-core": "~2.8|~3.0"
             },
             "require-dev": {
                 "doctrine/common": "~2.2",
                 "doctrine/dbal": "~2.2",
                 "psr/log": "~1.0",
-                "symfony/phpunit-bridge": "~2.7|~3.0.0"
+                "symfony/phpunit-bridge": "~2.8|~3.0"
             },
             "suggest": {
                 "doctrine/dbal": "For using the built-in ACL implementation",
@@ -1687,7 +1937,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -1714,7 +1964,7 @@
             ],
             "description": "Symfony Security Component - ACL (Access Control List)",
             "homepage": "https://symfony.com",
-            "time": "2015-12-28 09:39:09"
+            "time": "2015-12-28 09:39:46"
         },
         {
             "name": "symfony/swiftmailer-bundle",
@@ -1775,16 +2025,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.4",
+            "version": "v2.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "9e14f9f4869c19188a376eab61d9a1c1f1fee347"
+                "reference": "39ddd2383f4113cf67f8b28cde2c9d3fa340c3c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/9e14f9f4869c19188a376eab61d9a1c1f1fee347",
-                "reference": "9e14f9f4869c19188a376eab61d9a1c1f1fee347",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/39ddd2383f4113cf67f8b28cde2c9d3fa340c3c2",
+                "reference": "39ddd2383f4113cf67f8b28cde2c9d3fa340c3c2",
                 "shasum": ""
             },
             "require": {
@@ -1799,7 +2049,7 @@
                 "symfony/polyfill-php56": "~1.0",
                 "symfony/polyfill-php70": "~1.0",
                 "symfony/polyfill-util": "~1.0",
-                "symfony/security-acl": "~2.7",
+                "symfony/security-acl": "~2.7|~3.0.0",
                 "twig/twig": "~1.23|~2.0"
             },
             "conflict": {
@@ -1871,7 +2121,11 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Bridge\\": "src/Symfony/Bridge/",
+                    "Symfony\\Bridge\\Doctrine\\": "src/Symfony/Bridge/Doctrine/",
+                    "Symfony\\Bridge\\Monolog\\": "src/Symfony/Bridge/Monolog/",
+                    "Symfony\\Bridge\\ProxyManager\\": "src/Symfony/Bridge/ProxyManager/",
+                    "Symfony\\Bridge\\Swiftmailer\\": "src/Symfony/Bridge/Swiftmailer/",
+                    "Symfony\\Bridge\\Twig\\": "src/Symfony/Bridge/Twig/",
                     "Symfony\\Bundle\\": "src/Symfony/Bundle/",
                     "Symfony\\Component\\": "src/Symfony/Component/"
                 },
@@ -1901,7 +2155,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-03-27 12:57:53"
+            "time": "2016-04-29 15:34:08"
         },
         {
             "name": "twig/twig",
@@ -2673,10 +2927,14 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "aimeos/aimeos-core": 20,
-        "aimeos/ai-symfony": 20,
-        "aimeos/ai-monolog": 20,
         "aimeos/ai-gettext": 20,
+        "aimeos/ai-monolog": 20,
+        "aimeos/ai-symfony": 20,
         "aimeos/ai-swiftmailer": 20,
+        "aimeos/ai-admin-extadm": 20,
+        "aimeos/ai-admin-jqadm": 20,
+        "aimeos/ai-admin-jsonadm": 20,
+        "aimeos/ai-client-html": 20,
         "friendsofsymfony/user-bundle": 20,
         "satooshi/php-coveralls": 20
     },
