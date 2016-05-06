@@ -35,7 +35,7 @@ easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle 
 must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the
 composer post install/update scripts won't fail:
 
-```
+```php
     $bundles = array(
         new Aimeos\ShopBundle\AimeosShopBundle(),
         ...
@@ -80,7 +80,7 @@ To see all components and get everything working, you also need to adapt your
 Twig base template in `app/Resources/views/base.html.twig`. This is a working
 example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/):
 
-```
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -135,7 +135,7 @@ Setting up the administration interface is a matter of configuring the Symfony
 firewall to restrict access to the admin URLs. A basic firewall setup in the
 `./app/config/security.yml` file can look like this one:
 
-```
+```yaml
 security:
     providers:
         admin:
@@ -210,7 +210,7 @@ and authenticating with the user `admin` and the password `secret` as defined in
 To simplify development, you should configure to use no content cache. You can
 do this in the ./app/config/config_dev.yml file of your Symfony application by
 adding these lines:
-```
+```yaml
 aimeos_shop:
     madmin:
         cache:
