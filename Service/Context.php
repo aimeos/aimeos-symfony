@@ -181,11 +181,11 @@ class Context
 		if( $this->locale === null )
 		{
 			$status = $this->container->getParameter( 'aimeos_shop.disable_sites' );
-			$attr = $this->requestStack->getMasterRequest()->attributes;
+			$request = $this->requestStack->getMasterRequest();
 
-			$site = $attr->get( 'site', 'default' );
-			$lang = $attr->get( 'locale', '' );
-			$currency = $attr->get( 'currency', '' );
+			$site = $request->attributes->get( 'site', $request->query->get( 'site', 'default' ) );
+			$currency = $request->attributes->get( 'currency', $request->query->get( 'currency', '' ) );
+			$lang = $request->attributes->get( 'locale', $request->query->get( 'locale', '' ) );
 
 			$localeManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context );
 			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, $status );
