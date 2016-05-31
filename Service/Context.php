@@ -56,7 +56,7 @@ class Context
 			$config = $this->getConfig();
 			$context->setConfig( $config );
 
-			$dbm = new \Aimeos\MW\DB\Manager\PDO( $config );
+			$dbm = new \Aimeos\MW\DB\Manager\DBAL( $config );
 			$context->setDatabaseManager( $dbm );
 
 			$fs = new \Aimeos\MW\Filesystem\Manager\Standard( $config );
@@ -146,7 +146,7 @@ class Context
 	 */
 	protected function getConfig()
 	{
-		$configPaths = $this->container->get('aimeos')->get()->getConfigPaths( 'mysql' );
+		$configPaths = $this->container->get('aimeos')->get()->getConfigPaths();
 
 		$conf = new \Aimeos\MW\Config\PHPArray( array(), $configPaths );
 
