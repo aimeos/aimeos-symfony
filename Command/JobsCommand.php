@@ -109,7 +109,7 @@ class JobsCommand extends Command
 
 		$tmplPaths = $aimeos->getCustomPaths( 'controller/jobs/templates' );
 		$tmplPaths = array_merge( $tmplPaths, $aimeos->getCustomPaths( 'client/html/templates' ) );
-		$view = $container->get('aimeos_view')->create( $context->getConfig(), $tmplPaths );
+		$view = $container->get('aimeos_view')->create( $context, $tmplPaths );
 
 		$langManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context )->getSubManager( 'language' );
 		$langids = array_keys( $langManager->searchItems( $langManager->createSearch( true ) ) );

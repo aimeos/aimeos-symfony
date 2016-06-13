@@ -172,7 +172,7 @@ class JqadmController extends Controller
 		$context = $this->get( 'aimeos_context' )->get( false );
 		$context = $this->setLocale( $context, $site, $lang );
 
-		$view = $this->get( 'aimeos_view' )->create( $context->getConfig(), $templatePaths, $lang );
+		$view = $this->get( 'aimeos_view' )->create( $context, $templatePaths, $lang );
 		$context->setView( $view );
 
 		return \Aimeos\Admin\JQAdm\Factory::createClient( $context, $templatePaths, $resource );
