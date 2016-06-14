@@ -66,11 +66,11 @@ class AccountCommand extends Command
 		$user = $this->createCustomerItem( $context, $code, $password );
 
 		if( $input->getOption( 'admin' ) ) {
-			$this->addGroup( $input, $context, $user, 'admin' );
+			$this->addGroup( $input, $output, $context, $user, 'admin' );
 		}
 
 		if( $input->getOption( 'editor' ) ) {
-			$this->addGroup( $input, $context, $user, 'editor' );
+			$this->addGroup( $input, $output, $context, $user, 'editor' );
 		}
 	}
 
@@ -79,12 +79,13 @@ class AccountCommand extends Command
 	 * Adds the group to the given user
 	 *
 	 * @param InputInterface $input Input object
+	 * @param OutputInterface $output Output object
 	 * @param \Aimeos\MShop\Context\Item\Iface $context Aimeos context object
 	 * @param \Aimeos\MShop\Customer\Item\Iface $user Aimeos customer object
 	 * @param string $group Unique customer group code
 	 */
-	protected function addGroup( InputInterface $input, \Aimeos\MShop\Context\Item\Iface $context,
-		\Aimeos\MShop\Customer\Item\Iface $user, $group )
+	protected function addGroup( InputInterface $input, OutputInterface $output,
+		\Aimeos\MShop\Context\Item\Iface $context, \Aimeos\MShop\Customer\Item\Iface $user, $group )
 	{
 		$output->writeln( sprintf( 'Add "%1$s" group to user "%2$s" for sites', $group, $user->getCode() ) );
 
