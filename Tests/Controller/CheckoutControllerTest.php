@@ -282,6 +282,45 @@ class CheckoutControllerTest extends WebTestCase
 	}
 
 
+	public function testConfirmComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CheckoutController' )
+		->setMethods( array( 'getOutput' ) )
+		->disableOriginalConstructor()
+		->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->confirmComponentAction() );
+	}
+
+
+	public function testStandardComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CheckoutController' )
+		->setMethods( array( 'getOutput' ) )
+		->disableOriginalConstructor()
+		->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->standardComponentAction() );
+	}
+
+
+	public function testUpdateComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CheckoutController' )
+		->setMethods( array( 'getOutput' ) )
+		->disableOriginalConstructor()
+		->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->updateComponentAction() );
+	}
+
+
 	/**
 	 * Moves forward to the summary page
 	 *

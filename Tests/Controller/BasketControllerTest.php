@@ -198,4 +198,43 @@ class BasketControllerTest extends WebTestCase
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail .product:contains("Unittest: Bundle")' )->count() );
 	}
+
+
+	public function testMiniComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\BasketController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->miniComponentAction() );
+	}
+
+
+	public function testRelatedComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\BasketController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->relatedComponentAction() );
+	}
+
+
+	public function testStandardComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\BasketController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->standardComponentAction() );
+	}
 }

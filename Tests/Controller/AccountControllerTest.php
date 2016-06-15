@@ -23,4 +23,39 @@ class AccountControllerTest extends WebTestCase
 
 		$this->assertEquals( 401, $client->getResponse()->getStatusCode() );
 	}
+
+
+	public function testFavoriteComponent()
+	{
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/favoritecomponent' );
+
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+	}
+
+
+	public function testHistoryComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\AccountController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->historyComponentAction() );
+	}
+
+
+	public function testWatchComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\AccountController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->watchComponentAction() );
+	}
 }

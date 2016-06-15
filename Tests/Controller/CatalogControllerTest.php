@@ -216,4 +216,95 @@ class CatalogControllerTest extends WebTestCase
 		$this->assertContains( '.aimeos .product .stock', $content );
 		$this->assertContains( '.aimeos .catalog-detail-basket', $content );
 	}
+
+
+	public function testCountComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->countComponentAction() );
+	}
+
+
+	public function testDetailComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->detailComponentAction() );
+	}
+
+
+	public function testFilterComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->filterComponentAction() );
+	}
+
+
+	public function testListComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->listComponentAction() );
+	}
+
+
+	public function testSessionComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->sessionComponentAction() );
+	}
+
+
+	public function testStageComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->stageComponentAction() );
+	}
+
+
+	public function testStockComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->stockComponentAction() );
+	}
 }

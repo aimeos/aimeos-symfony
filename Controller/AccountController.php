@@ -10,7 +10,6 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 
@@ -20,7 +19,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @package symfony
  * @subpackage Controller
  */
-class AccountController extends Controller
+class AccountController extends AbstractController
 {
 	/**
 	 * Returns the html for the "My account" page.
@@ -53,5 +52,38 @@ class AccountController extends Controller
 
 		$response = $view->response();
 		return new Response( (string) $response->getBody(), $response->getStatusCode(), $response->getHeaders() );
+	}
+
+
+	/**
+	 * Returns the output of the account favorite component
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function favoriteComponentAction()
+	{
+		return $this->getOutput( 'account/favorite' );
+	}
+
+
+	/**
+	 * Returns the output of the account history component
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function historyComponentAction()
+	{
+		return $this->getOutput( 'account/history' );
+	}
+
+
+	/**
+	 * Returns the output of the account watch component
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function watchComponentAction()
+	{
+		return $this->getOutput( 'account/watch' );
 	}
 }

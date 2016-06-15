@@ -126,3 +126,8 @@ aimeos_shop_jsonadm_options:
     methods: [OPTIONS]
     requirements:
         resource: '[^0-9]*'
+
+
+aimeos_test_favoritecomponent:
+    path: /{site}/{locale}/{currency}/test/favoritecomponent
+    defaults: { _controller: AimeosShopBundle:Account:favoriteComponent }
