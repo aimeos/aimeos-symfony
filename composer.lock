@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cb86e8c436b4a1f41463f2a6200e0e84",
-    "content-hash": "df08d87ee7a785966858df2020de7877",
+    "hash": "581227ba3369ce240145e7b465a4a7fa",
+    "content-hash": "e3b725bd05bd69fde04e0a282314a99a",
     "packages": [
         {
             "name": "aimeos/ai-admin-extadm",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-extadm.git",
-                "reference": "777d506f267ca65962106554aaf12829e78ae787"
+                "reference": "1f05bd520f37530655f889554e0871fb08307eec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/777d506f267ca65962106554aaf12829e78ae787",
-                "reference": "777d506f267ca65962106554aaf12829e78ae787",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/1f05bd520f37530655f889554e0871fb08307eec",
+                "reference": "1f05bd520f37530655f889554e0871fb08307eec",
                 "shasum": ""
             },
             "require": {
@@ -51,7 +51,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2016-05-27 23:40:33"
+            "time": "2016-06-22 09:43:54"
         },
         {
             "name": "aimeos/ai-admin-jqadm",
@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "3b83d2a2e6e7eb6bedd70fcd021076d840d9ce2b"
+                "reference": "39a0eef4ec685a3c4223efd50a8fd90965b01667"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/3b83d2a2e6e7eb6bedd70fcd021076d840d9ce2b",
-                "reference": "3b83d2a2e6e7eb6bedd70fcd021076d840d9ce2b",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/39a0eef4ec685a3c4223efd50a8fd90965b01667",
+                "reference": "39a0eef4ec685a3c4223efd50a8fd90965b01667",
                 "shasum": ""
             },
             "require": {
@@ -97,7 +97,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2016-06-08 13:55:19"
+            "time": "2016-06-16 21:29:35"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -105,12 +105,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "ec61f099e8da95440ef36f511f150eec7ea33254"
+                "reference": "005523f1997862f248e29fe267bce3a4e0df43c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/ec61f099e8da95440ef36f511f150eec7ea33254",
-                "reference": "ec61f099e8da95440ef36f511f150eec7ea33254",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/005523f1997862f248e29fe267bce3a4e0df43c5",
+                "reference": "005523f1997862f248e29fe267bce3a4e0df43c5",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,7 @@
                 "extension",
                 "json api"
             ],
-            "time": "2016-05-04 09:14:15"
+            "time": "2016-06-20 15:40:29"
         },
         {
             "name": "aimeos/ai-client-html",
@@ -146,12 +146,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "c6c53cab637f571287b31e0146724702a8c5c1ff"
+                "reference": "cda22c984b6631e856cad210fdbf507f5b0da19b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/c6c53cab637f571287b31e0146724702a8c5c1ff",
-                "reference": "c6c53cab637f571287b31e0146724702a8c5c1ff",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/cda22c984b6631e856cad210fdbf507f5b0da19b",
+                "reference": "cda22c984b6631e856cad210fdbf507f5b0da19b",
                 "shasum": ""
             },
             "require": {
@@ -183,7 +183,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2016-05-23 11:46:24"
+            "time": "2016-06-21 16:34:11"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -268,6 +268,52 @@
                 "jobs"
             ],
             "time": "2016-05-11 16:58:23"
+        },
+        {
+            "name": "aimeos/ai-fosuser",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aimeos/ai-fosuser.git",
+                "reference": "9a059e99b309d5764622c9c455f1a0a7e5179e04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/9a059e99b309d5764622c9c455f1a0a7e5179e04",
+                "reference": "9a059e99b309d5764622c9c455f1a0a7e5179e04",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phing/phing": "~2.0",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "aimeos-extension",
+            "autoload": {
+                "psr-4": {
+                    "Aimeos\\MShop\\": "lib/mshoplib/src/MShop/"
+                },
+                "classmap": [
+                    "lib/custom/src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Aimeos ai-fosuser extension",
+            "keywords": [
+                "FriendsOfSymfony",
+                "aimeos",
+                "bundle",
+                "extension",
+                "symfony",
+                "user"
+            ],
+            "time": "2016-06-22 21:42:33"
         },
         {
             "name": "aimeos/ai-gettext",
@@ -413,12 +459,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
-                "reference": "c5bd01206895722eb49fefc93d08b965a7916aea"
+                "reference": "9848aed2eb694aa0b96c160441c4719a382ac8de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/c5bd01206895722eb49fefc93d08b965a7916aea",
-                "reference": "c5bd01206895722eb49fefc93d08b965a7916aea",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/9848aed2eb694aa0b96c160441c4719a382ac8de",
+                "reference": "9848aed2eb694aa0b96c160441c4719a382ac8de",
                 "shasum": ""
             },
             "require": {
@@ -452,7 +498,7 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2016-05-30 17:20:35"
+            "time": "2016-06-22 20:57:50"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -460,12 +506,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "fa5be9829db8ebc4f3801026ba85b9a6086cdec6"
+                "reference": "54de21bf3503c2d71667a906f5b3b4345c2a7aca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/fa5be9829db8ebc4f3801026ba85b9a6086cdec6",
-                "reference": "fa5be9829db8ebc4f3801026ba85b9a6086cdec6",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/54de21bf3503c2d71667a906f5b3b4345c2a7aca",
+                "reference": "54de21bf3503c2d71667a906f5b3b4345c2a7aca",
                 "shasum": ""
             },
             "require": {
@@ -520,7 +566,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2016-06-12 12:04:05"
+            "time": "2016-06-21 12:37:21"
         },
         {
             "name": "composer/installers",
@@ -2937,6 +2983,7 @@
         "aimeos/ai-admin-jqadm": 20,
         "aimeos/ai-admin-jsonadm": 20,
         "aimeos/ai-client-html": 20,
+        "aimeos/ai-fosuser": 20,
         "friendsofsymfony/user-bundle": 20,
         "satooshi/php-coveralls": 20
     },
