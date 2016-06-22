@@ -390,14 +390,46 @@
 	padding: 0 1em;
 	height: 1.525em;
 	min-width: 5em;
-	width: 80%;
+	width: 70%;
+}
+
+.catalog-filter-search .value:focus,
+.catalog-filter-search .reset:focus {
+	outline-style: none;
+}
+
+.catalog-filter-search .reset {
+	height: 1.525em;
+	vertical-align: top;
+	background-color: #FFFFFF;
+	border-style: none;
+	border: none;
+	width: 10%;
+}
+
+.catalog-filter-search .reset .symbol {
+	vertical-align: top;
+	font-weight: bold;
+	font-size: 105%;
+	color: #AAAAAA;
+}
+
+.catalog-filter-search .value[value=''] + .reset .symbol {
+	visibility: hidden;
+}
+
+.catalog-filter-search .reset .symbol:before {
+	content: "⨯";
 }
 
 .catalog-filter-search button.standardbutton {
+	line-height: 1.525em;
+	vertical-align: top;
 	background: none;
 	box-shadow: none;
 	border-radius: 0;
 	border: 0 none;
+	height: 1.525em;
 	min-width: 2em;
 	padding: 0;
 	margin: 0;
@@ -1213,10 +1245,13 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 
 .catalog-list-items .addbasket input,
 .catalog-detail-basket .group input {
-	vertical-align: middle;
 	text-align: center;
-	height: 1.6em;
-	width: 5em;
+	vertical-align: middle;
+	border: 1px solid #B0A060;
+	line-height: normal;
+	font-size: 125%;
+	padding: 0.2em;
+	width: 4em;
 }
 
 /* services */
@@ -2128,11 +2163,6 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
     margin: 1em;
 }
 
-.checkout-standard-delivery .button-group a.standardbutton,
-.checkout-standard-payment .button-group a.standardbutton {
-	margin: 0 1em 0 0;
-}
-
 /* Checkout summary */
 .checkout-standard-summary h3 {
 	display: inline-block;
@@ -2146,10 +2176,6 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 
 .checkout-standard-summary .note {
 	padding: 0 0 1em 0;
-}
-
-.checkout-standard-summary .button-group a.standardbutton {
-	margin: 0 1em 0 0;
 }
 
 .checkout-standard-summary .modify {
@@ -2180,8 +2206,9 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	padding: 0.5em 0;
 }
 
+.checkout-standard-summary-option label,
 .checkout-standard-summary-option input {
-	display: inline-block;
+	display: inline;
 }
 
 .checkout-standard-summary-option input[type="checkbox"] {
