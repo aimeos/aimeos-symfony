@@ -1,6 +1,6 @@
 /*
  * Aimeos elegance template CSS
- * 
+ *
  * @license LGPLv3, http://opensource.org/licenses/LGPL-3.0
  * @copyright Aimeos (aimeos.org), 2014-2016
  */
@@ -33,6 +33,10 @@
 
 .aimeos h2 {
 	font-size: 110%;
+}
+
+.aimeos input {
+	border: solid 1px #D0D0D0;
 }
 
 .aimeos .standardbutton {
@@ -77,7 +81,7 @@
 .aimeos .standardbutton::-moz-focus-inner,
 .aimeos .minibutton::-moz-focus-inner {
 	padding: 0;
-	border: 0; 
+	border: 0;
 }
 
 .aimeos .btn-action {
@@ -94,7 +98,7 @@
 	background-color: #AAA;
 	box-shadow: none;
 	cursor: not-allowed;
-	
+
 }
 
 .aimeos .btn-disabled:hover {
@@ -706,7 +710,7 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 .catalog-stage-breadcrumb li {
 	display: inline;
 	white-space: nowrap;
-}	
+}
 
 .catalog-stage-breadcrumb li:after {
 	content: ' / ';
@@ -772,7 +776,7 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 }
 
 .catalog-list .product a {
-	display: inline-block; 
+	display: inline-block;
 	text-decoration: none;
 }
 
@@ -923,7 +927,7 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	text-align: center;
 	margin: 2em 0;
 }
-	
+
 .catalog-list-promo .header {
 	text-align: left;
 	border: 0 none;
@@ -1062,7 +1066,7 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 }
 
 .catalog-detail-image .next-thumbs {
-	background: url(media/arrow_small_bottom.png) no-repeat; 
+	background: url(media/arrow_small_bottom.png) no-repeat;
 }
 
 .catalog-detail-image .prev-thumbs.disabled,
@@ -1470,7 +1474,7 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 .catalog-detail-additional .properties td {
 	padding: 1%;
 	width: 48%;
-}	
+}
 
 .catalog-detail-additional .attributes .media-list {
 	display: inline-block;
@@ -1482,7 +1486,7 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 
 .catalog-detail-additional .attributes img {
 	height: 1em;
-}	
+}
 
 /* Product detail, additional download section */
 .catalog-detail-additional .downloads .media-image {
@@ -2088,8 +2092,8 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	clear: both;
 }
 
-.checkout-standard-address .form-list .form-item { 
-	display: none; 
+.checkout-standard-address .form-list .form-item {
+	display: none;
 }
 
 .checkout-standard-address .form-list .mandatory,
