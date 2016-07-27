@@ -31,7 +31,7 @@ class AdminController extends Controller
 	{
 		if( $this->isAdmin() )
 		{
-			$params = array( 'site' => 'default', 'resource' => 'product', 'lang' => 'en' );
+			$params = array( 'site' => 'default', 'resource' => 'dashboard', 'lang' => 'en' );
 			return $this->redirect( $this->generateUrl( 'aimeos_shop_jqadm_search', $params ) );
 		}
 
