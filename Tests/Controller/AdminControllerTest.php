@@ -30,6 +30,6 @@ class AdminControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 302, $response->getStatusCode() );
-		$this->assertContains( '/default/jqadm/search/product?lang=en', $response->getContent() );
+		$this->assertContains( '/default/jqadm/search/dashboard?lang=en', $response->getContent() );
 	}
 }
