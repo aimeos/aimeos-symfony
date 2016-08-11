@@ -67,8 +67,9 @@ class CatalogControllerTest extends WebTestCase
 		$id = $nodes->parents()->filter( '.attr-item' )->attr( 'data-id');
 
 		$form = $crawler->filter( '.catalog-filter .btn-action' )->form();
-		$form['f_attrid'] = array( $id => 'xs' );
-		$crawler = $client->submit( $form );
+		$values = $form->getPhpValues();
+		$values['f_attrid'] = array( $id );
+		$crawler = $client->request( $form->getMethod(), $form->getUri(), $values, $form->getPhpFiles() );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Cappuccino")' )->count() );
