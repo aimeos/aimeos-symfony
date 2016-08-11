@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-extadm.git",
-                "reference": "1f05bd520f37530655f889554e0871fb08307eec"
+                "reference": "bd3311616104471a475d541fd5cd90ee7c019510"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/1f05bd520f37530655f889554e0871fb08307eec",
-                "reference": "1f05bd520f37530655f889554e0871fb08307eec",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/bd3311616104471a475d541fd5cd90ee7c019510",
+                "reference": "bd3311616104471a475d541fd5cd90ee7c019510",
                 "shasum": ""
             },
             "require": {
@@ -46,12 +46,13 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos ai-admin-extadm extension",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "ExtJS admin interface",
                 "aimeos",
                 "extension"
             ],
-            "time": "2016-06-22 09:43:54"
+            "time": "2016-08-11 09:51:36"
         },
         {
             "name": "aimeos/ai-admin-jqadm",
@@ -59,12 +60,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "39a0eef4ec685a3c4223efd50a8fd90965b01667"
+                "reference": "aa14956b43c5ac325fc88e40014d466f0d76ff44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/39a0eef4ec685a3c4223efd50a8fd90965b01667",
-                "reference": "39a0eef4ec685a3c4223efd50a8fd90965b01667",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/aa14956b43c5ac325fc88e40014d466f0d76ff44",
+                "reference": "aa14956b43c5ac325fc88e40014d466f0d76ff44",
                 "shasum": ""
             },
             "require": {
@@ -92,12 +93,13 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos ai-admin-jqadm extension",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "JQuery admin interface",
                 "aimeos",
                 "extension"
             ],
-            "time": "2016-06-16 21:29:35"
+            "time": "2016-08-11 09:51:36"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -105,12 +107,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "005523f1997862f248e29fe267bce3a4e0df43c5"
+                "reference": "18840f452674a1efb6a216612fd7bcd6454b9b3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/005523f1997862f248e29fe267bce3a4e0df43c5",
-                "reference": "005523f1997862f248e29fe267bce3a4e0df43c5",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/18840f452674a1efb6a216612fd7bcd6454b9b3e",
+                "reference": "18840f452674a1efb6a216612fd7bcd6454b9b3e",
                 "shasum": ""
             },
             "require": {
@@ -132,13 +134,14 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos ai-admin-jsonadm extension",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "admin",
                 "aimeos",
                 "extension",
                 "json api"
             ],
-            "time": "2016-06-20 15:40:29"
+            "time": "2016-08-11 09:51:36"
         },
         {
             "name": "aimeos/ai-client-html",
@@ -146,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "cda22c984b6631e856cad210fdbf507f5b0da19b"
+                "reference": "92b2f90f2ed4c6b3456f0178d475f627bd01470e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/cda22c984b6631e856cad210fdbf507f5b0da19b",
-                "reference": "cda22c984b6631e856cad210fdbf507f5b0da19b",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/92b2f90f2ed4c6b3456f0178d475f627bd01470e",
+                "reference": "92b2f90f2ed4c6b3456f0178d475f627bd01470e",
                 "shasum": ""
             },
             "require": {
@@ -177,13 +180,14 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos ai-client-html extension",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "aimeos",
                 "client",
                 "extension",
                 "html"
             ],
-            "time": "2016-06-21 16:34:11"
+            "time": "2016-08-11 13:06:47"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -191,12 +195,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "0751df7e04d63080e52b3111fd9244b4365b3fae"
+                "reference": "176d7e3051a5633c69f67ac6152e5894805d8fd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/0751df7e04d63080e52b3111fd9244b4365b3fae",
-                "reference": "0751df7e04d63080e52b3111fd9244b4365b3fae",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/176d7e3051a5633c69f67ac6152e5894805d8fd5",
+                "reference": "176d7e3051a5633c69f67ac6152e5894805d8fd5",
                 "shasum": ""
             },
             "require": {
@@ -218,13 +222,14 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos ai-controller-frontend extension",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "aimeos",
                 "controller",
                 "extension",
                 "frontend"
             ],
-            "time": "2016-06-01 11:28:50"
+            "time": "2016-08-11 09:51:36"
         },
         {
             "name": "aimeos/ai-controller-jobs",
@@ -232,12 +237,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "bbafe0f25db824ce133ba30fa70c2e17df1225b7"
+                "reference": "fed5f81b3b9a50d4d90fd3271a046fc445cdf283"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/bbafe0f25db824ce133ba30fa70c2e17df1225b7",
-                "reference": "bbafe0f25db824ce133ba30fa70c2e17df1225b7",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/fed5f81b3b9a50d4d90fd3271a046fc445cdf283",
+                "reference": "fed5f81b3b9a50d4d90fd3271a046fc445cdf283",
                 "shasum": ""
             },
             "require": {
@@ -261,13 +266,14 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos ai-controller-jobs extension",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "aimeos",
                 "controller",
                 "extension",
                 "jobs"
             ],
-            "time": "2016-05-11 16:58:23"
+            "time": "2016-08-11 09:51:36"
         },
         {
             "name": "aimeos/ai-fosuser",
@@ -275,15 +281,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-fosuser.git",
-                "reference": "9a059e99b309d5764622c9c455f1a0a7e5179e04"
+                "reference": "a828fec26e0ae7af3a6f967721717f78c7821633"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/9a059e99b309d5764622c9c455f1a0a7e5179e04",
-                "reference": "9a059e99b309d5764622c9c455f1a0a7e5179e04",
+                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/a828fec26e0ae7af3a6f967721717f78c7821633",
+                "reference": "a828fec26e0ae7af3a6f967721717f78c7821633",
                 "shasum": ""
             },
             "require": {
+                "aimeos/aimeos-core": "dev-master",
                 "composer/installers": "^1.0",
                 "php": ">=5.3.3"
             },
@@ -305,6 +312,7 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos ai-fosuser extension",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "FriendsOfSymfony",
                 "aimeos",
@@ -313,7 +321,7 @@
                 "symfony",
                 "user"
             ],
-            "time": "2016-06-22 21:42:33"
+            "time": "2016-08-03 07:28:00"
         },
         {
             "name": "aimeos/ai-gettext",
@@ -321,15 +329,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
-                "reference": "66120624e780fc0da05250702859f899f2a5e937"
+                "reference": "7998307ac3e4c565420731ef6dd0414705221d0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/66120624e780fc0da05250702859f899f2a5e937",
-                "reference": "66120624e780fc0da05250702859f899f2a5e937",
+                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/7998307ac3e4c565420731ef6dd0414705221d0f",
+                "reference": "7998307ac3e4c565420731ef6dd0414705221d0f",
                 "shasum": ""
             },
             "require": {
+                "aimeos/aimeos-core": "dev-master",
                 "composer/installers": "^1.0",
                 "php": ">=5.3.3"
             },
@@ -350,14 +359,14 @@
                 "LGPL-3.0"
             ],
             "description": "Aimeos Gettext extension",
-            "homepage": "https://aimeos.org",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "aimeos",
                 "extension",
                 "gettext",
                 "performance"
             ],
-            "time": "2016-04-21 21:53:20"
+            "time": "2016-08-03 07:28:00"
         },
         {
             "name": "aimeos/ai-monolog",
@@ -365,15 +374,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "5c69a0523dc332e4dc4c364fae6bc6f12093f84f"
+                "reference": "aad6c70ebcd42a5252dfb9a58d9fb284376032c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/5c69a0523dc332e4dc4c364fae6bc6f12093f84f",
-                "reference": "5c69a0523dc332e4dc4c364fae6bc6f12093f84f",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/aad6c70ebcd42a5252dfb9a58d9fb284376032c2",
+                "reference": "aad6c70ebcd42a5252dfb9a58d9fb284376032c2",
                 "shasum": ""
             },
             "require": {
+                "aimeos/aimeos-core": "dev-master",
                 "composer/installers": "^1.0",
                 "monolog/monolog": "~1.0",
                 "php": ">=5.3.3"
@@ -395,7 +405,7 @@
                 "LGPL-3.0"
             ],
             "description": "Monolog adapter for Aimeos web shops and e-commerce solutions",
-            "homepage": "https://aimeos.org",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "adapter",
                 "aimeos",
@@ -404,7 +414,7 @@
                 "monolog",
                 "shop"
             ],
-            "time": "2016-04-21 21:53:20"
+            "time": "2016-08-03 07:28:00"
         },
         {
             "name": "aimeos/ai-swiftmailer",
@@ -412,15 +422,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "7dc4d85e96f6f9110ffbd31f54df38fa6d2cb700"
+                "reference": "11c77e2414bf7789d3954b5fbbe07ca34475a245"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/7dc4d85e96f6f9110ffbd31f54df38fa6d2cb700",
-                "reference": "7dc4d85e96f6f9110ffbd31f54df38fa6d2cb700",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/11c77e2414bf7789d3954b5fbbe07ca34475a245",
+                "reference": "11c77e2414bf7789d3954b5fbbe07ca34475a245",
                 "shasum": ""
             },
             "require": {
+                "aimeos/aimeos-core": "dev-master",
                 "composer/installers": "^1.0",
                 "php": ">=5.3.3",
                 "swiftmailer/swiftmailer": ">=4.0"
@@ -442,7 +453,7 @@
                 "LGPL-3.0"
             ],
             "description": "SwiftMailer adapter for Aimeos web shops and e-commerce solutions",
-            "homepage": "https://aimeos.org",
+            "homepage": "https://aimeos.org/",
             "keywords": [
                 "adapter",
                 "aimeos",
@@ -451,7 +462,7 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2016-04-21 21:53:20"
+            "time": "2016-08-03 07:28:01"
         },
         {
             "name": "aimeos/ai-symfony",
@@ -459,15 +470,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
-                "reference": "9848aed2eb694aa0b96c160441c4719a382ac8de"
+                "reference": "c4295ef3660f7606464a2a2c7900eb8544124f36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/9848aed2eb694aa0b96c160441c4719a382ac8de",
-                "reference": "9848aed2eb694aa0b96c160441c4719a382ac8de",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/c4295ef3660f7606464a2a2c7900eb8544124f36",
+                "reference": "c4295ef3660f7606464a2a2c7900eb8544124f36",
                 "shasum": ""
             },
             "require": {
+                "aimeos/aimeos-core": "dev-master",
                 "composer/installers": "^1.0",
                 "php": ">=5.3.3",
                 "symfony/symfony": "~2.4||~3.0",
@@ -498,7 +510,7 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2016-06-22 20:57:50"
+            "time": "2016-08-03 07:28:01"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -506,12 +518,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "54de21bf3503c2d71667a906f5b3b4345c2a7aca"
+                "reference": "8443f891ace3e2ce7ec1eec9bbf32bce843beebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/54de21bf3503c2d71667a906f5b3b4345c2a7aca",
-                "reference": "54de21bf3503c2d71667a906f5b3b4345c2a7aca",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/8443f891ace3e2ce7ec1eec9bbf32bce843beebb",
+                "reference": "8443f891ace3e2ce7ec1eec9bbf32bce843beebb",
                 "shasum": ""
             },
             "require": {
@@ -566,20 +578,20 @@
                 "portal",
                 "shop"
             ],
-            "time": "2016-06-21 12:37:21"
+            "time": "2016-08-11 10:05:25"
         },
         {
             "name": "composer/installers",
-            "version": "v1.0.25",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e"
+                "reference": "a3595c5272a6f247228abb20076ed27321e4aae9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
+                "url": "https://api.github.com/repos/composer/installers/zipball/a3595c5272a6f247228abb20076ed27321e4aae9",
+                "reference": "a3595c5272a6f247228abb20076ed27321e4aae9",
                 "shasum": ""
             },
             "require": {
@@ -626,6 +638,7 @@
                 "MODX Evo",
                 "Mautic",
                 "OXID",
+                "RadPHP",
                 "SMF",
                 "Thelia",
                 "WolfCMS",
@@ -641,6 +654,7 @@
                 "dokuwiki",
                 "drupal",
                 "elgg",
+                "expressionengine",
                 "fuelphp",
                 "grav",
                 "installer",
@@ -666,7 +680,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-04-13 19:46:30"
+            "time": "2016-07-05 06:18:20"
         },
         {
             "name": "doctrine/annotations",
@@ -1248,16 +1262,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.19.0",
+            "version": "1.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
+                "reference": "f42fbdfd53e306bda545845e4dbfd3e72edb4952"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5f56ed5212dc509c8dc8caeba2715732abb32dbf",
-                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f42fbdfd53e306bda545845e4dbfd3e72edb4952",
+                "reference": "f42fbdfd53e306bda545845e4dbfd3e72edb4952",
                 "shasum": ""
             },
             "require": {
@@ -1276,8 +1290,8 @@
                 "php-console/php-console": "^3.1.3",
                 "phpunit/phpunit": "~4.5",
                 "phpunit/phpunit-mock-objects": "2.3.0",
-                "raven/raven": "^0.13",
                 "ruflin/elastica": ">=0.90 <3.0",
+                "sentry/sentry": "^0.13",
                 "swiftmailer/swiftmailer": "~5.3"
             },
             "suggest": {
@@ -1289,9 +1303,9 @@
                 "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
                 "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
-                "raven/raven": "Allow sending log messages to a Sentry server",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
-                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+                "sentry/sentry": "Allow sending log messages to a Sentry server"
             },
             "type": "library",
             "extra": {
@@ -1322,7 +1336,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-04-12 18:29:35"
+            "time": "2016-07-29 03:23:52"
         },
         {
             "name": "paragonie/random_compat",
@@ -1374,16 +1388,16 @@
         },
         {
             "name": "psr/http-message",
-            "version": "1.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298"
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
-                "reference": "85d63699f0dbedb190bbd4b0d2b9dc707ea4c298",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
                 "shasum": ""
             },
             "require": {
@@ -1411,6 +1425,7 @@
                 }
             ],
             "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
             "keywords": [
                 "http",
                 "http-message",
@@ -1419,7 +1434,7 @@
                 "request",
                 "response"
             ],
-            "time": "2015-05-04 20:22:00"
+            "time": "2016-08-06 14:39:51"
         },
         {
             "name": "psr/log",
@@ -1461,23 +1476,23 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.2",
+            "version": "v5.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "d8db871a54619458a805229a057ea2af33c753e8"
+                "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/d8db871a54619458a805229a057ea2af33c753e8",
-                "reference": "d8db871a54619458a805229a057ea2af33c753e8",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
+                "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.1,<0.9.4"
+                "mockery/mockery": "~0.9.1"
             },
             "type": "library",
             "extra": {
@@ -1510,7 +1525,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-05-01 08:45:47"
+            "time": "2016-07-08 11:51:25"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -2143,16 +2158,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.7",
+            "version": "v2.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "663b2d6202c3149515b39cfe50a174a130acb8e2"
+                "reference": "df02dd5d3f7decb3a05c6d0f31054b4263625dcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/663b2d6202c3149515b39cfe50a174a130acb8e2",
-                "reference": "663b2d6202c3149515b39cfe50a174a130acb8e2",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/df02dd5d3f7decb3a05c6d0f31054b4263625dcb",
+                "reference": "df02dd5d3f7decb3a05c6d0f31054b4263625dcb",
                 "shasum": ""
             },
             "require": {
@@ -2226,7 +2241,7 @@
                 "doctrine/dbal": "~2.4",
                 "doctrine/doctrine-bundle": "~1.2",
                 "doctrine/orm": "~2.4,>=2.4.5",
-                "egulias/email-validator": "~1.2",
+                "egulias/email-validator": "~1.2,>=1.2.1",
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
                 "phpdocumentor/reflection": "^1.0.7"
@@ -2273,7 +2288,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-06-06 16:05:37"
+            "time": "2016-07-30 08:48:52"
         },
         {
             "name": "twig/twig",
@@ -2390,16 +2405,16 @@
     "packages-dev": [
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.6.3",
+            "version": "1.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "fd51907c6c76acaa8a5234822a4f901c1500afc1"
+                "reference": "dd40b0a7fb16658cda9def9786992b8df8a49be7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/fd51907c6c76acaa8a5234822a4f901c1500afc1",
-                "reference": "fd51907c6c76acaa8a5234822a4f901c1500afc1",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/dd40b0a7fb16658cda9def9786992b8df8a49be7",
+                "reference": "dd40b0a7fb16658cda9def9786992b8df8a49be7",
                 "shasum": ""
             },
             "require": {
@@ -2408,6 +2423,7 @@
                 "jdorn/sql-formatter": "~1.1",
                 "php": ">=5.3.2",
                 "symfony/console": "~2.3|~3.0",
+                "symfony/dependency-injection": "~2.3|~3.0",
                 "symfony/doctrine-bridge": "~2.2|~3.0",
                 "symfony/framework-bundle": "~2.3|~3.0"
             },
@@ -2466,7 +2482,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2016-04-21 19:55:56"
+            "time": "2016-08-10 15:35:22"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -2779,6 +2795,7 @@
                 "rest",
                 "web service"
             ],
+            "abandoned": "guzzlehttp/guzzle",
             "time": "2015-03-18 18:23:50"
         },
         {
