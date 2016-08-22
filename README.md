@@ -226,7 +226,7 @@ The Aimeos Symfony bundle is licensed under the terms of the MIT license and is 
 
 * [Web site](https://aimeos.org/Symfony)
 * [Documentation](https://aimeos.org/docs/Symfony)
-* [Help](https://aimeos.org/help/symfony-bundle-f17/)
+* [Forum](https://aimeos.org/help/symfony-bundle-f17/)
 * [Issue tracker](https://github.com/aimeos/aimeos-symfony/issues)
 * [Composer packages](https://packagist.org/packages/aimeos/aimeos-symfony)
 * [Source code](https://github.com/aimeos/aimeos-symfony)
