@@ -47,6 +47,19 @@ class AccountControllerTest extends WebTestCase
 	}
 
 
+	public function testProfileComponent()
+	{
+		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\AccountController' )
+			->setMethods( array( 'getOutput' ) )
+			->disableOriginalConstructor()
+			->getMock();
+
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+
+		$this->assertEquals( 'test', $mock->profileComponentAction() );
+	}
+
+
 	public function testWatchComponent()
 	{
 		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\AccountController' )
