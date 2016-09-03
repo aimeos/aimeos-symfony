@@ -27,8 +27,12 @@ checkout process. A full set of pages including routing is also available for a 
 
 ## Installation
 
-This document is for the latest Aimeos Symfony **2016.04 release and later**. If you want
-to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
+This document is for the latest Aimeos Symfony **2016.04 release and later**.
+Current versions are:
+* Stable: ~2016.07
+* LTS: ~1.2
+
+If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
 The Aimeos Symfony e-commerce bundle is a composer based library that can be installed
 easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class
@@ -226,7 +230,7 @@ The Aimeos Symfony bundle is licensed under the terms of the MIT license and is 
 
 * [Web site](https://aimeos.org/Symfony)
 * [Documentation](https://aimeos.org/docs/Symfony)
-* [Help](https://aimeos.org/help/symfony-bundle-f17/)
+* [Forum](https://aimeos.org/help/symfony-bundle-f17/)
 * [Issue tracker](https://github.com/aimeos/aimeos-symfony/issues)
 * [Composer packages](https://packagist.org/packages/aimeos/aimeos-symfony)
 * [Source code](https://github.com/aimeos/aimeos-symfony)
