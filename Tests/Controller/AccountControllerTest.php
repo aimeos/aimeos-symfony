@@ -12,7 +12,10 @@ class AccountControllerTest extends WebTestCase
 		$client = static::createClient();
 		$client->request( 'GET', '/unittest/de/EUR/myaccount' );
 
+		$this->assertContains( 'aimeos account-profile', $client->getResponse()->getContent() );
 		$this->assertContains( 'aimeos account-history', $client->getResponse()->getContent() );
+		$this->assertContains( 'aimeos account-favorite', $client->getResponse()->getContent() );
+		$this->assertContains( 'aimeos account-watch', $client->getResponse()->getContent() );
 	}
 
 
@@ -31,6 +34,7 @@ class AccountControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/favoritecomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos account-favorite', $client->getResponse()->getContent() );
 	}
 
 
