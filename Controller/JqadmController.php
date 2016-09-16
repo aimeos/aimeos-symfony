@@ -169,7 +169,7 @@ class JqadmController extends Controller
 		$aimeos = $this->get( 'aimeos' )->get();
 		$templatePaths = $aimeos->getCustomPaths( 'admin/jqadm/templates' );
 
-		$context = $this->get( 'aimeos_context' )->get( false );
+		$context = $this->get( 'aimeos_context' )->get( false, 'backend' );
 		$context = $this->setLocale( $context, $site, $lang );
 
 		$view = $this->get( 'aimeos_view' )->create( $context, $templatePaths, $lang );

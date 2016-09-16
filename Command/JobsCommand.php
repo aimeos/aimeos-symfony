@@ -105,7 +105,7 @@ class JobsCommand extends Command
 	{
 		$container = $this->getContainer();
 		$aimeos = $container->get('aimeos')->get();
-		$context = $container->get( 'aimeos_context' )->get( false );
+		$context = $container->get( 'aimeos_context' )->get( false, 'backend' );
 
 		$tmplPaths = $aimeos->getCustomPaths( 'controller/jobs/templates' );
 		$tmplPaths = array_merge( $tmplPaths, $aimeos->getCustomPaths( 'client/html/templates' ) );

@@ -2,6 +2,9 @@ services:
     aimeos:
         class: Aimeos\ShopBundle\Service\Aimeos
         arguments: ["@service_container"]
+    aimeos_config:
+        class: Aimeos\ShopBundle\Service\Config
+        arguments: ["@service_container"]
     aimeos_context:
         class: Aimeos\ShopBundle\Service\Context
         arguments: ["@request_stack","@service_container"]

@@ -36,7 +36,7 @@ class ExtadmController extends Controller
 		$lang = $request->attributes->get( 'lang', $request->query->get( 'lang', 'en' ) );
 		$tab = $request->attributes->get( 'tab', $request->query->get( 'tab', 0 ) );
 
-		$context = $this->get( 'aimeos_context' )->get( false );
+		$context = $this->get( 'aimeos_context' )->get( false, 'backend' );
 		$context = $this->setLocale( $context, $site, $lang );
 
 		$aimeos = $this->get( 'aimeos' );
@@ -105,7 +105,7 @@ class ExtadmController extends Controller
 		}
 
 		$cntlPaths = $this->get( 'aimeos' )->get()->getCustomPaths( 'controller/extjs' );
-		$context = $this->get( 'aimeos_context' )->get( false );
+		$context = $this->get( 'aimeos_context' )->get( false, 'backend' );
 		$context->setView( $this->get( 'aimeos_view' )->create( $context, array() ) );
 		$context = $this->setLocale( $context );
 

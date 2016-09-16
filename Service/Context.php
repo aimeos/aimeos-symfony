@@ -45,15 +45,18 @@ class Context
 	 * Returns the current context.
 	 *
 	 * @param boolean $locale True to add locale object to context, false if not
+	 * @param string $type Configuration type ("frontend" or "backend")
 	 * @return \Aimeos\MShop\Context\Item\Iface Context object
 	 */
-	public function get( $locale = true )
+	public function get( $locale = true, $type = 'frontend' )
 	{
+		$container = $this->container;
+		$config = $container->get( 'aimeos_config' )->get( $type );
+
 		if( self::$context === null )
 		{
 			$context = new \Aimeos\MShop\Context\Item\Standard();
 
-			$config = $this->getConfig();
 			$context->setConfig( $config );
 
 			$dbm = new \Aimeos\MW\DB\Manager\DBAL( $config );
@@ -65,7 +68,6 @@ class Context
 			$mq = new \Aimeos\MW\MQueue\Manager\Standard( $config );
 			$context->setMessageQueueManager( $mq );
 
-			$container = $this->container;
 			$mail = new \Aimeos\MW\Mail\Swift( function() use ( $container) { return $container->get( 'mailer' ); } );
 			$context->setMail( $mail );
 
@@ -79,6 +81,7 @@ class Context
 		}
 
 		$context = self::$context;
+		$context->setConfig( $config );
 
 		if( $locale === true )
 		{
@@ -136,37 +139,6 @@ class Context
 		}
 
 		$context->setEditor( $username );
-	}
-
-
-	/**
-	 * Creates a new configuration object.
-	 *
-	 * @return \Aimeos\MW\Config\Iface Configuration object
-	 */
-	protected function getConfig()
-	{
-		$configPaths = $this->container->get('aimeos')->get()->getConfigPaths();
-
-		$conf = new \Aimeos\MW\Config\PHPArray( array(), $configPaths );
-
-		$apc = (bool) $this->container->getParameter( 'aimeos_shop.apc_enable' );
-		$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
-
-		if( function_exists( 'apc_store' ) === true && $apc === true ) {
-			$conf = new \Aimeos\MW\Config\Decorator\APC( $conf, $prefix );
-		}
-
-		$local = array(
-			'admin' => $this->container->getParameter( 'aimeos_shop.admin' ),
-			'client' => $this->container->getParameter( 'aimeos_shop.client' ),
-			'controller' => $this->container->getParameter( 'aimeos_shop.controller' ),
-			'madmin' => $this->container->getParameter( 'aimeos_shop.madmin' ),
-			'mshop' => $this->container->getParameter( 'aimeos_shop.mshop' ),
-			'resource' => $this->container->getParameter( 'aimeos_shop.resource' ),
-		);
-
-		return new \Aimeos\MW\Config\Decorator\Memory( $conf, $local );
 	}
 
 
