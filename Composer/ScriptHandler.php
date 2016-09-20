@@ -49,7 +49,7 @@ class ScriptHandler
 	 * @param CommandEvent $event CommandEvent instance
 	 * @throws \RuntimeException If an error occured
 	 */
-	public static function ensureConfigAndRouting( CommandEvent $event )
+	public static function updateConfig( CommandEvent $event )
 	{
 		$event->getIO()->write( 'Ensure existing config and routing for the shop bundle' );
 
