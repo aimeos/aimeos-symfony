@@ -44,6 +44,29 @@ class ScriptHandler
 
 
 	/**
+	 * Ensure existing config and routing for the shop bundle.
+	 *
+	 * @param CommandEvent $event CommandEvent instance
+	 * @throws \RuntimeException If an error occured
+	 */
+	public static function updateConfig( CommandEvent $event )
+	{
+		$event->getIO()->write( 'Ensure existing config and routing for the shop bundle' );
+
+		$options = self::getOptions( $event );
+
+		if( !isset( $options['symfony-app-dir'] ) || !is_dir( $options['symfony-app-dir'] ) )
+		{
+			$msg = 'An error occurred because the "%1$s" option or the "%2$s" directory isn\'t available';
+			throw new \RuntimeException( sprintf( $msg, 'symfony-app-dir', $options['symfony-app-dir'] ) );
+		}
+
+		self::updateConfigFile( $options['symfony-app-dir'] . '/config/config.yml' );
+		self::updateRoutingFile( $options['symfony-app-dir'] . '/config/routing.yml' );
+	}
+
+
+	/**
 	 * Installs the shop bundle.
 	 *
 	 * @param CommandEvent $event CommandEvent instance
@@ -67,8 +90,6 @@ class ScriptHandler
 			throw new \RuntimeException( sprintf( $msg, 'symfony-web-dir', $options['symfony-web-dir'] ) );
 		}
 
-		self::updateConfigFile( $options['symfony-app-dir'] . '/config/config.yml' );
-		self::updateRoutingFile( $options['symfony-app-dir'] . '/config/routing.yml' );
 		self::createDirectory( $options['symfony-app-dir'] . '/secure' );
 		self::createDirectory( $options['symfony-web-dir'] . '/uploads' );
 		self::createDirectory( $options['symfony-web-dir'] . '/preview' );
