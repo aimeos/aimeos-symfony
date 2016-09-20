@@ -51,7 +51,7 @@ class ScriptHandler
 	 */
 	public static function ensureConfigAndRouting( CommandEvent $event )
 	{
-		$event->getIO()->write( 'Installing the Aimeos shop bundle' );
+		$event->getIO()->write( 'Ensure existing config and routing for the shop bundle' );
 
 		$options = self::getOptions( $event );
 
