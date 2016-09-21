@@ -28,7 +28,7 @@ class User implements UserInterface, \Serializable
 	protected $id;
 
 	/**
-	 * @ORM\Column(name="siteid", type="integer")
+	 * @ORM\Column(name="siteid", type="integer", nullable=true)
 	 */
 	protected $siteid;
 
