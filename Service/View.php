@@ -49,59 +49,40 @@ class View
 	 */
 	public function create( \Aimeos\MShop\Context\Item\Iface $context, array $templatePaths, $locale = null )
 	{
-		$params = $fixed = array();
 		$config = $context->getConfig();
-		$request = $this->requestStack->getMasterRequest();
-
-		if( $locale !== null )
-		{
-			$params = $request->request->all() + $request->query->all() + $request->attributes->get( '_route_params' );
-			$fixed = $this->getFixedParams();
-
-			$i18n = $this->container->get('aimeos_i18n')->get( array( $locale ) );
-			$translation = $i18n[$locale];
-		}
-		else
-		{
-			$translation = new \Aimeos\MW\Translation\None( 'en' );
-		}
-
-
 		$view = new \Aimeos\MW\View\Standard( $templatePaths );
 
-		$helper = new \Aimeos\MW\View\Helper\Translate\Standard( $view, $translation );
-		$view->addHelper( 'translate', $helper );
+		$this->addConfig( $view, $config );
+		$this->addNumber( $view, $config );
+		$this->addRequest( $view );
+		$this->addResponse( $view );
+		$this->addParam( $view );
+		$this->addUrl( $view );
+		$this->addCsrf( $view );
+		$this->addAccess( $view, $context );
+		$this->addTranslate( $view, $config, $locale );
 
-		$helper = new \Aimeos\MW\View\Helper\Url\Symfony2( $view, $this->container->get( 'router' ), $fixed );
-		$view->addHelper( 'url', $helper );
+		return $view;
+	}
 
-		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, $params );
-		$view->addHelper( 'param', $helper );
 
-		$config = new \Aimeos\MW\Config\Decorator\Protect( clone $config, array( 'admin', 'client' ) );
-		$helper = new \Aimeos\MW\View\Helper\Config\Standard( $view, $config );
-		$view->addHelper( 'config', $helper );
+	/**
+	 * Adds the "access" helper to the view object
+	 *
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
+	 * @return \Aimeos\MW\View\Iface Modified view object
+	 */
+	protected function addAccess( \Aimeos\MW\View\Iface $view, \Aimeos\MShop\Context\Item\Iface $context )
+	{
+		$container = $this->container;
 
-		$sepDec = $config->get( 'client/html/common/format/seperatorDecimal', '.' );
-		$sep1000 = $config->get( 'client/html/common/format/seperator1000', ' ' );
-		$decimals = $config->get( 'client/html/common/format/decimals', 2 );
-		$helper = new \Aimeos\MW\View\Helper\Number\Standard( $view, $sepDec, $sep1000, $decimals );
-		$view->addHelper( 'number', $helper );
-
-		if( $request !== null )
+		$fcn = function() use ( $container, $context )
 		{
-			$helper = new \Aimeos\MW\View\Helper\Request\Symfony2( $view, $request );
-			$view->addHelper( 'request', $helper );
-		}
+			return $container->get( 'aimeos_support' )->getGroups( $context );
+		};
 
-		$helper = new \Aimeos\MW\View\Helper\Response\Symfony2( $view );
-		$view->addHelper( 'response', $helper );
-
-		$token = $this->container->get( 'security.csrf.token_manager' )->getToken( '_token' );
-		$helper = new \Aimeos\MW\View\Helper\Csrf\Standard( $view, '_token', $token->getValue() );
-		$view->addHelper( 'csrf', $helper );
-
-		$helper = new \Aimeos\MW\View\Helper\Access\Standard( $view, $this->getGroups( $context ) );
+		$helper = new \Aimeos\MW\View\Helper\Access\Standard( $view, $fcn );
 		$view->addHelper( 'access', $helper );
 
 		return $view;
@@ -109,52 +90,173 @@ class View
 
 
 	/**
-	 * Returns the routing parameters passed in the URL
+	 * Adds the "config" helper to the view object
 	 *
-	 * @return array Associative list of parameters with "site", "locale" and "currency" if available
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @param \Aimeos\MW\Config\Iface $config Configuration object
+	 * @return \Aimeos\MW\View\Iface Modified view object
 	 */
-	protected function getFixedParams()
+	protected function addConfig( \Aimeos\MW\View\Iface $view, \Aimeos\MW\Config\Iface $config )
 	{
-		$urlparams = array();
-		$attr = $this->requestStack->getMasterRequest()->attributes;
+		$config = new \Aimeos\MW\Config\Decorator\Protect( clone $config, array( 'admin', 'client' ) );
+		$helper = new \Aimeos\MW\View\Helper\Config\Standard( $view, $config );
+		$view->addHelper( 'config', $helper );
 
-		if( ( $site = $attr->get( 'site' ) ) !== null ) {
-			$urlparams['site'] = $site;
-		}
-
-		if( ( $lang = $attr->get( 'locale' ) ) !== null ) {
-			$urlparams['locale'] = $lang;
-		}
-
-		if( ( $currency = $attr->get( 'currency' ) ) !== null ) {
-			$urlparams['currency'] = $currency;
-		}
-
-		return $urlparams;
+		return $view;
 	}
 
 
 	/**
-	 * Returns the closure for retrieving the user groups
+	 * Adds the "access" helper to the view object
 	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
-	 * @return \Closure Function which returns the user group codes
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @return \Aimeos\MW\View\Iface Modified view object
 	 */
-	protected function getGroups( \Aimeos\MShop\Context\Item\Iface $context )
+	protected function addCsrf( \Aimeos\MW\View\Iface $view )
 	{
-		return function() use ( $context )
+		$token = $this->container->get( 'security.csrf.token_manager' )->getToken( '_token' );
+		$helper = new \Aimeos\MW\View\Helper\Csrf\Standard( $view, '_token', $token->getValue() );
+		$view->addHelper( 'csrf', $helper );
+
+		return $view;
+	}
+
+
+	/**
+	 * Adds the "number" helper to the view object
+	 *
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @param \Aimeos\MW\Config\Iface $config Configuration object
+	 * @return \Aimeos\MW\View\Iface Modified view object
+	 */
+	protected function addNumber( \Aimeos\MW\View\Iface $view, \Aimeos\MW\Config\Iface $config )
+	{
+		$sepDec = $config->get( 'client/html/common/format/seperatorDecimal', '.' );
+		$sep1000 = $config->get( 'client/html/common/format/seperator1000', ' ' );
+		$decimals = $config->get( 'client/html/common/format/decimals', 2 );
+
+		$helper = new \Aimeos\MW\View\Helper\Number\Standard( $view, $sepDec, $sep1000, $decimals );
+		$view->addHelper( 'number', $helper );
+
+		return $view;
+	}
+
+
+	/**
+	 * Adds the "param" helper to the view object
+	 *
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @return \Aimeos\MW\View\Iface Modified view object
+	 */
+	protected function addParam( \Aimeos\MW\View\Iface $view )
+	{
+		$params = array();
+		$request = $this->requestStack->getMasterRequest();
+
+		if( $request !== null ) {
+			$params = $request->request->all() + $request->query->all() + $request->attributes->get( '_route_params' );
+		}
+
+		$helper = new \Aimeos\MW\View\Helper\Param\Standard( $view, $params );
+		$view->addHelper( 'param', $helper );
+
+		return $view;
+	}
+
+
+	/**
+	 * Adds the "request" helper to the view object
+	 *
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @return \Aimeos\MW\View\Iface Modified view object
+	 */
+	protected function addRequest( \Aimeos\MW\View\Iface $view )
+	{
+		$request = $this->requestStack->getMasterRequest();
+
+		if( $request !== null )
 		{
-			$list = array();
-			$manager = \Aimeos\MShop\Factory::createManager( $context, 'customer/group' );
+			$helper = new \Aimeos\MW\View\Helper\Request\Symfony2( $view, $request );
+			$view->addHelper( 'request', $helper );
+		}
 
-			$search = $manager->createSearch();
-			$search->setConditions( $search->compare( '==', 'customer.group.id', $context->getGroupIds() ) );
+		return $view;
+	}
 
-			foreach( $manager->searchItems( $search ) as $item ) {
-				$list[] = $item->getCode();
+
+	/**
+	 * Adds the "response" helper to the view object
+	 *
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @return \Aimeos\MW\View\Iface Modified view object
+	 */
+	protected function addResponse( \Aimeos\MW\View\Iface $view )
+	{
+		$helper = new \Aimeos\MW\View\Helper\Response\Symfony2( $view );
+		$view->addHelper( 'response', $helper );
+
+		return $view;
+	}
+
+
+	/**
+	 * Adds the "url" helper to the view object
+	 *
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @return \Aimeos\MW\View\Iface Modified view object
+	 */
+	protected function addUrl( \Aimeos\MW\View\Iface $view )
+	{
+		$fixed = array();
+		$request = $this->requestStack->getMasterRequest();
+
+		if( $request !== null )
+		{
+			$attr = $request->attributes;
+
+			if( ( $site = $attr->get( 'site' ) ) !== null ) {
+				$fixed['site'] = $site;
 			}
 
-			return $list;
-		};
+			if( ( $lang = $attr->get( 'locale' ) ) !== null ) {
+				$fixed['locale'] = $lang;
+			}
+
+			if( ( $currency = $attr->get( 'currency' ) ) !== null ) {
+				$fixed['currency'] = $currency;
+			}
+		}
+
+		$helper = new \Aimeos\MW\View\Helper\Url\Symfony2( $view, $this->container->get( 'router' ), $fixed );
+		$view->addHelper( 'url', $helper );
+
+		return $view;
+	}
+
+
+	/**
+	 * Adds the "translate" helper to the view object
+	 *
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @param \Aimeos\MW\Config\Iface $config Configuration object
+	 * @param string|null $locale ISO language code, e.g. "de" or "de_CH"
+	 * @return \Aimeos\MW\View\Iface Modified view object
+	 */
+	protected function addTranslate( \Aimeos\MW\View\Iface $view, \Aimeos\MW\Config\Iface $config, $locale )
+	{
+		if( $locale !== null )
+		{
+			$i18n = $this->container->get( 'aimeos_i18n' )->get( array( $locale ) );
+			$translation = $i18n[$locale];
+		}
+		else
+		{
+			$translation = new \Aimeos\MW\Translation\None( 'en' );
+		}
+
+		$helper = new \Aimeos\MW\View\Helper\Translate\Standard( $view, $translation );
+		$view->addHelper( 'translate', $helper );
+
+		return $view;
 	}
 }
