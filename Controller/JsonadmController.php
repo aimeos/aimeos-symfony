@@ -157,7 +157,8 @@ class JsonadmController extends Controller
 		$templatePaths = $aimeos->getCustomPaths( 'admin/jsonadm/templates' );
 
 		$context = $this->get( 'aimeos_context' )->get( false, 'backend' );
-		$context = $this->setLocale( $context, $site, $lang );
+		$context->setI18n( $this->get('aimeos_i18n')->get( array( $lang, 'en' ) ) );
+		$context->setLocale( $this->get('aimeos_locale')->getBackend( $context, $site ) );
 
 		$view = $this->get('aimeos_view')->create( $context, $templatePaths, $lang );
 		$context->setView( $view );
@@ -185,35 +186,5 @@ class JsonadmController extends Controller
 		}
 
 		return $response;
-	}
-
-
-	/**
-	 * Sets the locale item in the given context
-	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
-	 * @param string $site Unique site code
-	 * @param string $lang ISO language code, e.g. "en" or "en_GB"
-	 * @return \Aimeos\MShop\Context\Item\Iface Modified context object
-	 */
-	protected function setLocale( \Aimeos\MShop\Context\Item\Iface $context, $site, $lang )
-	{
-		$localeManager = \Aimeos\MShop\Factory::createManager( $context, 'locale' );
-
-		try
-		{
-			$localeItem = $localeManager->bootstrap( $site, '', '', false );
-			$localeItem->setLanguageId( null );
-			$localeItem->setCurrencyId( null );
-		}
-		catch( \Aimeos\MShop\Locale\Exception $e )
-		{
-			$localeItem = $localeManager->createItem();
-		}
-
-		$context->setLocale( $localeItem );
-		$context->setI18n( $this->get('aimeos_i18n')->get( array( $lang ) ) );
-
-		return $context;
 	}
 }

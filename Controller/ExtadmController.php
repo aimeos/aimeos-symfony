@@ -37,7 +37,7 @@ class ExtadmController extends Controller
 		$tab = $request->attributes->get( 'tab', $request->query->get( 'tab', 0 ) );
 
 		$context = $this->get( 'aimeos_context' )->get( false, 'backend' );
-		$context = $this->setLocale( $context, $site, $lang );
+		$context->setLocale( $this->get( 'aimeos_locale' )->getBackend( $context, $site ) );
 
 		$aimeos = $this->get( 'aimeos' );
 		$bootstrap = $aimeos->get();
@@ -107,7 +107,7 @@ class ExtadmController extends Controller
 		$cntlPaths = $this->get( 'aimeos' )->get()->getCustomPaths( 'controller/extjs' );
 		$context = $this->get( 'aimeos_context' )->get( false, 'backend' );
 		$context->setView( $this->get( 'aimeos_view' )->create( $context, array() ) );
-		$context = $this->setLocale( $context );
+		$context->setLocale( $this->get( 'aimeos_locale' )->getBackend( $context, 'default' ) );
 
 		$controller = new \Aimeos\Controller\ExtJS\JsonRpc( $context, $cntlPaths );
 
@@ -222,29 +222,5 @@ class ExtadmController extends Controller
 		}
 
 		return json_encode( $item->toArray() );
-	}
-
-
-	/**
-	 * Sets the locale item in the given context
-	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
-	 * @param string $sitecode Unique site code
-	 * @param string $locale ISO language code, e.g. "en" or "en_GB"
-	 * @return \Aimeos\MShop\Context\Item\Iface Modified context object
-	 */
-	protected function setLocale( \Aimeos\MShop\Context\Item\Iface $context, $sitecode = 'default', $locale = null )
-	{
-		$localeManager = \Aimeos\MShop\Factory::createManager( $context, 'locale' );
-
-		try {
-			$localeItem = $localeManager->bootstrap( $sitecode, $locale, '', false );
-		} catch( \Aimeos\MShop\Locale\Exception $e ) {
-			$localeItem = $localeManager->createItem();
-		}
-
-		$context->setLocale( $localeItem );
-
-		return $context;
 	}
 }
