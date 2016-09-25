@@ -52,15 +52,15 @@ class View
 		$config = $context->getConfig();
 		$view = new \Aimeos\MW\View\Standard( $templatePaths );
 
-		$this->addConfig( $view, $config );
-		$this->addNumber( $view, $config );
-		$this->addRequest( $view );
-		$this->addResponse( $view );
-		$this->addParam( $view );
-		$this->addUrl( $view );
 		$this->addCsrf( $view );
 		$this->addAccess( $view, $context );
-		$this->addTranslate( $view, $config, $locale );
+		$this->addConfig( $view, $config );
+		$this->addNumber( $view, $config );
+		$this->addParam( $view );
+		$this->addRequest( $view );
+		$this->addResponse( $view );
+		$this->addTranslate( $view, $locale );
+		$this->addUrl( $view );
 
 		return $view;
 	}
@@ -200,6 +200,32 @@ class View
 
 
 	/**
+	 * Adds the "translate" helper to the view object
+	 *
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @param string|null $locale ISO language code, e.g. "de" or "de_CH"
+	 * @return \Aimeos\MW\View\Iface Modified view object
+	 */
+	protected function addTranslate( \Aimeos\MW\View\Iface $view, $locale )
+	{
+		if( $locale !== null )
+		{
+			$i18n = $this->container->get( 'aimeos_i18n' )->get( array( $locale ) );
+			$translation = $i18n[$locale];
+		}
+		else
+		{
+			$translation = new \Aimeos\MW\Translation\None( 'en' );
+		}
+
+		$helper = new \Aimeos\MW\View\Helper\Translate\Standard( $view, $translation );
+		$view->addHelper( 'translate', $helper );
+
+		return $view;
+	}
+
+
+	/**
 	 * Adds the "url" helper to the view object
 	 *
 	 * @param \Aimeos\MW\View\Iface $view View object
@@ -229,33 +255,6 @@ class View
 
 		$helper = new \Aimeos\MW\View\Helper\Url\Symfony2( $view, $this->container->get( 'router' ), $fixed );
 		$view->addHelper( 'url', $helper );
-
-		return $view;
-	}
-
-
-	/**
-	 * Adds the "translate" helper to the view object
-	 *
-	 * @param \Aimeos\MW\View\Iface $view View object
-	 * @param \Aimeos\MW\Config\Iface $config Configuration object
-	 * @param string|null $locale ISO language code, e.g. "de" or "de_CH"
-	 * @return \Aimeos\MW\View\Iface Modified view object
-	 */
-	protected function addTranslate( \Aimeos\MW\View\Iface $view, \Aimeos\MW\Config\Iface $config, $locale )
-	{
-		if( $locale !== null )
-		{
-			$i18n = $this->container->get( 'aimeos_i18n' )->get( array( $locale ) );
-			$translation = $i18n[$locale];
-		}
-		else
-		{
-			$translation = new \Aimeos\MW\Translation\None( 'en' );
-		}
-
-		$helper = new \Aimeos\MW\View\Helper\Translate\Standard( $view, $translation );
-		$view->addHelper( 'translate', $helper );
 
 		return $view;
 	}
