@@ -2,6 +2,9 @@ aimeos_shop:
     resource: "@AimeosShopBundle/Resources/config/routing.yml"
     prefix:   /{site}/{locale}/{currency}
 
+aimeos_shop_adm:
+    resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
+    prefix: /{site}
 
 aimeos_shop_admin:
     path: /admin
@@ -9,123 +12,6 @@ aimeos_shop_admin:
 
 aimeos_shop_admin_check:
     path: /admin_check
-
-
-
-aimeos_shop_extadm_file:
-    path: /{site}/extadm/file
-    defaults: { _controller: AimeosShopBundle:Extadm:file }
-    methods: [GET]
-
-aimeos_shop_extadm_json:
-    path: /{site}/extadm/do
-    defaults: { _controller: AimeosShopBundle:Extadm:do }
-    methods: [POST]
-
-aimeos_shop_extadm:
-    path: /{site}/extadm/{lang}/{tab}
-    defaults: { _controller: AimeosShopBundle:Extadm:index, lang: en, tab: 0 }
-    methods: [GET]
-
-
-aimeos_shop_jqadm_file:
-    path: /jqadm/file/{type}
-    defaults: { _controller: AimeosShopBundle:Jqadm:file }
-    methods: [GET]
-
-aimeos_shop_jqadm_copy:
-    path: /{site}/jqadm/copy/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jqadm:copy }
-    methods: [GET, POST]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]+'
-
-aimeos_shop_jqadm_create:
-    path: /{site}/jqadm/create/{resource}
-    defaults: { _controller: AimeosShopBundle:Jqadm:create }
-    methods: [GET, POST]
-    requirements:
-        resource: '[^0-9]+'
-
-aimeos_shop_jqadm_delete:
-    path: /{site}/jqadm/delete/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jqadm:delete }
-    methods: [GET, POST]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]+'
-
-aimeos_shop_jqadm_get:
-    path: /{site}/jqadm/get/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jqadm:get }
-    methods: [GET]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]+'
-
-aimeos_shop_jqadm_save:
-    path: /{site}/jqadm/save/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jqadm:save, id: null }
-    methods: [POST]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
-
-aimeos_shop_jqadm_search:
-    path: /{site}/jqadm/search/{resource}
-    defaults: { _controller: AimeosShopBundle:Jqadm:search }
-    methods: [GET, POST]
-    requirements:
-        resource: '[^0-9]+'
-
-
-aimeos_shop_jsonadm_delete:
-    path: /{site}/jsonadm/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:delete, id: null }
-    methods: [DELETE]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
-
-aimeos_shop_jsonadm_get:
-    path: /{site}/jsonadm/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:get, id: null }
-    methods: [GET]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
-
-aimeos_shop_jsonadm_patch:
-    path: /{site}/jsonadm/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:patch, id: null }
-    methods: [PATCH]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
-
-aimeos_shop_jsonadm_post:
-    path: /{site}/jsonadm/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:post, id: null }
-    methods: [POST]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
-
-aimeos_shop_jsonadm_put:
-    path: /{site}/jsonadm/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:put, id: null }
-    methods: [PUT]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
-
-aimeos_shop_jsonadm_options:
-    path: /{site}/jsonadm/{resource}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:options, resource: null }
-    methods: [OPTIONS]
-    requirements:
-        resource: '[^0-9]*'
 
 
 aimeos_test_favoritecomponent:

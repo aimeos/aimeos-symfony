@@ -245,6 +245,15 @@ class ScriptHandler
 			$update = true;
 		}
 
+		if( strpos( $content, 'aimeos_shop_adm:' ) === false )
+		{
+			$content .= "\n" . 'aimeos_shop_adm:
+    resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
+    prefix: /';
+
+			$update = true;
+		}
+
 		if( $update === true )
 		{
 			$fs = new Filesystem();

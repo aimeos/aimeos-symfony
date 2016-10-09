@@ -14,7 +14,7 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'GET', '/jqadm/file/css' );
+		$client->request( 'GET', '/unittest/jqadm/file/css' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
 		$this->assertContains( '.aimeos', $client->getResponse()->getContent() );
@@ -28,7 +28,7 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'GET', '/jqadm/file/js' );
+		$client->request( 'GET', '/unittest/jqadm/file/js' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
 		$this->assertContains( 'Aimeos = {', $client->getResponse()->getContent() );
