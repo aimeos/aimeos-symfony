@@ -29,7 +29,7 @@ checkout process. A full set of pages including routing is also available for a 
 
 This document is for the latest Aimeos Symfony **2016.04 release and later**.
 Current versions are:
-* Stable: ~2016.07
+* Stable: ~2016.10
 * LTS: ~1.2
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
@@ -52,17 +52,19 @@ Make sure that the database is set up and it is configured in your config.yml. T
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2016.07",
+        "aimeos/aimeos-symfony": "~2016.10",
         ...
     },
     "scripts": {
         "post-install-cmd": [
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::installBundle",
+            "Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateConfig",
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::setupDatabase",
             ...
         ],
         "post-update-cmd": [
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::installBundle",
+            "Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateConfig",
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::setupDatabase",
             ...
         ]
