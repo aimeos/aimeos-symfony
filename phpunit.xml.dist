@@ -9,7 +9,7 @@
 	processIsolation="false"
 	stopOnFailure="false"
 	syntaxCheck="false">
-	
+
 	<php>
 		<!-- disable E_USER_DEPRECATED -->
 		<!-- -16385 is the same as -1 & ~E_USER_DEPRECATED -->
@@ -22,6 +22,7 @@
 			<file>./Tests/Command/SetupCommandTest.php</file>
 			<file>./Tests/Command/CacheCommandTest.php</file>
 			<file>./Tests/Command/JobsCommandTest.php</file>
+			<file>./Tests/Command/AccountCommandTest.php</file>
 		</testsuite>
 		<testsuite name="entity">
 			<directory>./Tests/Entity</directory>
