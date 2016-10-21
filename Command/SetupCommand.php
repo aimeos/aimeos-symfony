@@ -155,7 +155,7 @@ class SetupCommand extends Command
 		foreach( (array) $input->getOption( 'option' ) as $option )
 		{
 			list( $name, $value ) = explode( ':', $option );
-			$conf->set( $name, $value );
+			$conf->set( str_replace( '\\', '/', $name ), $value );
 		}
 	}
 }
