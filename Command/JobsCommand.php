@@ -61,7 +61,10 @@ class JobsCommand extends Command
 
 		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
 		{
-			$localeItem = $localeManager->bootstrap( $siteItem->getCode(), 'en', '', false );
+			$localeItem = $localeManager->bootstrap( $siteItem->getCode(), '', '', false );
+			$localeItem->setLanguageId( null );
+			$localeItem->setCurrencyId( null );
+
 			$context->setLocale( $localeItem );
 
 			$output->writeln( sprintf( 'Executing the Aimeos jobs for "<info>%s</info>"', $siteItem->getCode() ) );
