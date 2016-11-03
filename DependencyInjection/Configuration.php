@@ -48,6 +48,7 @@ class Configuration implements ConfigurationInterface
 				->variableNode('page')->defaultValue( array() )->end()
 				->variableNode('backend')->defaultValue( array() )->end()
 				->variableNode('frontend')->defaultValue( array() )->end()
+				->variableNode('command')->defaultValue( array() )->end()
 			->end()
 		;
 

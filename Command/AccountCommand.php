@@ -57,7 +57,7 @@ class AccountCommand extends Command
 			$password = $helper->ask( $input, $output, $question );
 		}
 
-		$context = $this->getContainer()->get( 'aimeos_context' )->get( false, 'backend' );
+		$context = $this->getContainer()->get( 'aimeos_context' )->get( false, 'command' );
 		$context->setEditor( 'aimeos:account' );
 
 		$localeManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context );

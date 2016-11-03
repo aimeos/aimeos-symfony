@@ -224,6 +224,8 @@ mshop:
             text:
                 name: MySQL
 
+command:
+
 backend:
 
 frontend:

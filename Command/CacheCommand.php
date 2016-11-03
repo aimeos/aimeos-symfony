@@ -42,7 +42,7 @@ class CacheCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$context = $this->getContainer()->get( 'aimeos_context' )->get( false, 'backend' );
+		$context = $this->getContainer()->get( 'aimeos_context' )->get( false, 'command' );
 		$context->setEditor( 'aimeos:cache' );
 
 		$localeManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context );
