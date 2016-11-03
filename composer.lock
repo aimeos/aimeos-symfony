@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-extadm.git",
-                "reference": "54448ed9dbfd57442e440914bfa4bbf9aab331d2"
+                "reference": "ea541dfd3ac8d24b4bf315278ad1345a2a6cbce4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/54448ed9dbfd57442e440914bfa4bbf9aab331d2",
-                "reference": "54448ed9dbfd57442e440914bfa4bbf9aab331d2",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/ea541dfd3ac8d24b4bf315278ad1345a2a6cbce4",
+                "reference": "ea541dfd3ac8d24b4bf315278ad1345a2a6cbce4",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2016-10-03 14:19:42"
+            "time": "2016-10-19 14:01:45"
         },
         {
             "name": "aimeos/ai-admin-jqadm",
@@ -60,12 +60,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "1eec01fc00bd0201257f33a9c85c11e900991a8f"
+                "reference": "efb2f5cabb80a632dbe2e948fd2b0df0e40ab4b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/1eec01fc00bd0201257f33a9c85c11e900991a8f",
-                "reference": "1eec01fc00bd0201257f33a9c85c11e900991a8f",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/efb2f5cabb80a632dbe2e948fd2b0df0e40ab4b5",
+                "reference": "efb2f5cabb80a632dbe2e948fd2b0df0e40ab4b5",
                 "shasum": ""
             },
             "require": {
@@ -99,7 +99,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2016-10-03 14:20:43"
+            "time": "2016-11-01 22:57:57"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -107,12 +107,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "1803e41466937bb242f3cf4a7dad7f81fc8d3dfa"
+                "reference": "e3603506a7954fdc4aa9c76c77504b66bb4aaf6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/1803e41466937bb242f3cf4a7dad7f81fc8d3dfa",
-                "reference": "1803e41466937bb242f3cf4a7dad7f81fc8d3dfa",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/e3603506a7954fdc4aa9c76c77504b66bb4aaf6f",
+                "reference": "e3603506a7954fdc4aa9c76c77504b66bb4aaf6f",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +141,7 @@
                 "extension",
                 "json api"
             ],
-            "time": "2016-09-27 12:59:02"
+            "time": "2016-10-24 12:19:11"
         },
         {
             "name": "aimeos/ai-client-html",
@@ -149,12 +149,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "1bb29d82d820902c56318a058ed747520c015f2c"
+                "reference": "f932d4ef08d4ce8d3fd7b14f85477cbd5ca97b17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/1bb29d82d820902c56318a058ed747520c015f2c",
-                "reference": "1bb29d82d820902c56318a058ed747520c015f2c",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/f932d4ef08d4ce8d3fd7b14f85477cbd5ca97b17",
+                "reference": "f932d4ef08d4ce8d3fd7b14f85477cbd5ca97b17",
                 "shasum": ""
             },
             "require": {
@@ -187,7 +187,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2016-10-09 12:11:35"
+            "time": "2016-11-02 09:58:44"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -195,12 +195,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "c0c0ffce1dc42c503b7e80b12da67726ee7e2021"
+                "reference": "23de311b78d41a2c34bf7ad700228b71277850c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/c0c0ffce1dc42c503b7e80b12da67726ee7e2021",
-                "reference": "c0c0ffce1dc42c503b7e80b12da67726ee7e2021",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/23de311b78d41a2c34bf7ad700228b71277850c4",
+                "reference": "23de311b78d41a2c34bf7ad700228b71277850c4",
                 "shasum": ""
             },
             "require": {
@@ -229,7 +229,7 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2016-09-29 07:50:39"
+            "time": "2016-10-31 18:27:41"
         },
         {
             "name": "aimeos/ai-controller-jobs",
@@ -237,12 +237,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "4904359202d6d3ae1c21f20c0a7a05f94f9f359b"
+                "reference": "42dca08892457eaa28ec2ce3915e40354b49e157"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/4904359202d6d3ae1c21f20c0a7a05f94f9f359b",
-                "reference": "4904359202d6d3ae1c21f20c0a7a05f94f9f359b",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/42dca08892457eaa28ec2ce3915e40354b49e157",
+                "reference": "42dca08892457eaa28ec2ce3915e40354b49e157",
                 "shasum": ""
             },
             "require": {
@@ -273,7 +273,7 @@
                 "extension",
                 "jobs"
             ],
-            "time": "2016-10-03 14:22:02"
+            "time": "2016-11-02 13:25:12"
         },
         {
             "name": "aimeos/ai-fosuser",
@@ -518,12 +518,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "258c64b36e6d9ba6384698b986b5eb354cc7e4f2"
+                "reference": "88fd82ad2d2894bb30a84ea7d37a831adad4cd3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/258c64b36e6d9ba6384698b986b5eb354cc7e4f2",
-                "reference": "258c64b36e6d9ba6384698b986b5eb354cc7e4f2",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/88fd82ad2d2894bb30a84ea7d37a831adad4cd3b",
+                "reference": "88fd82ad2d2894bb30a84ea7d37a831adad4cd3b",
                 "shasum": ""
             },
             "require": {
@@ -580,7 +580,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2016-10-08 16:26:25"
+            "time": "2016-11-02 19:04:27"
         },
         {
             "name": "composer/installers",
@@ -691,35 +691,35 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.2.7",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535"
+                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
-                "reference": "f25c8aab83e0c3e976fd7d19875f198ccf2f7535",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
+                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "1.*",
-                "php": ">=5.3.2"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "^5.6.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Annotations\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -755,20 +755,20 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2015-08-31 12:32:49"
+            "time": "2016-10-24 11:45:47"
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.6.0",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "f8af318d14bdb0eff0336795b428b547bd39ccb6"
+                "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/f8af318d14bdb0eff0336795b428b547bd39ccb6",
-                "reference": "f8af318d14bdb0eff0336795b428b547bd39ccb6",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/b6f544a20f4807e81f7044d31e679ccbb1866dc3",
+                "reference": "b6f544a20f4807e81f7044d31e679ccbb1866dc3",
                 "shasum": ""
             },
             "require": {
@@ -825,7 +825,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-12-31 16:37:02"
+            "time": "2016-10-29 11:16:17"
         },
         {
             "name": "doctrine/collections",
@@ -1347,16 +1347,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf"
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/088c04e2f261c33bed6ca5245491cfca69195ccf",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c0125896dbb151380ab47e96c621741e79623beb",
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb",
                 "shasum": ""
             },
             "require": {
@@ -1391,7 +1391,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-04-03 06:00:07"
+            "time": "2016-10-17 15:23:22"
         },
         {
             "name": "psr/http-message",
@@ -2108,28 +2108,30 @@
         },
         {
             "name": "symfony/swiftmailer-bundle",
-            "version": "v2.3.11",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/swiftmailer-bundle.git",
-                "reference": "5e1a90f28213231ceee19c953bbebc5b5b95c690"
+                "reference": "d7b7bd6bb6e9b32ebc5f9778f94d4b4e4af5d069"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/5e1a90f28213231ceee19c953bbebc5b5b95c690",
-                "reference": "5e1a90f28213231ceee19c953bbebc5b5b95c690",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/d7b7bd6bb6e9b32ebc5f9778f94d4b4e4af5d069",
+                "reference": "d7b7bd6bb6e9b32ebc5f9778f94d4b4e4af5d069",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "swiftmailer/swiftmailer": ">=4.2.0,~5.0",
-                "symfony/config": "~2.3|~3.0",
-                "symfony/dependency-injection": "~2.3|~3.0",
-                "symfony/http-kernel": "~2.3|~3.0",
-                "symfony/yaml": "~2.3|~3.0"
+                "symfony/config": "~2.7|~3.0",
+                "symfony/dependency-injection": "~2.7|~3.0",
+                "symfony/http-kernel": "~2.7|~3.0"
             },
             "require-dev": {
-                "symfony/phpunit-bridge": "~2.7|~3.0"
+                "symfony/console": "~2.7|~3.0",
+                "symfony/framework-bundle": "~2.7|~3.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "symfony/yaml": "~2.7|~3.0"
             },
             "suggest": {
                 "psr/log": "Allows logging"
@@ -2137,7 +2139,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -2161,20 +2163,20 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2016-01-15 16:41:20"
+            "time": "2016-10-27 17:59:30"
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.8.12",
+            "version": "v2.8.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "6a5bc3257b60098c28fc1bbcacd52000dd2801d1"
+                "reference": "d04e2eb13ae63068fc8862530b403756e3702896"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/6a5bc3257b60098c28fc1bbcacd52000dd2801d1",
-                "reference": "6a5bc3257b60098c28fc1bbcacd52000dd2801d1",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/d04e2eb13ae63068fc8862530b403756e3702896",
+                "reference": "d04e2eb13ae63068fc8862530b403756e3702896",
                 "shasum": ""
             },
             "require": {
@@ -2190,7 +2192,7 @@
                 "symfony/polyfill-php70": "~1.0",
                 "symfony/polyfill-util": "~1.0",
                 "symfony/security-acl": "~2.7|~3.0.0",
-                "twig/twig": "~1.26|~2.0"
+                "twig/twig": "~1.27|~2.0"
             },
             "conflict": {
                 "phpdocumentor/reflection": "<1.0.7"
@@ -2296,20 +2298,20 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-10-03 18:44:12"
+            "time": "2016-10-27 02:18:45"
         },
         {
             "name": "twig/twig",
-            "version": "v1.26.1",
+            "version": "v1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d"
+                "reference": "3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
-                "reference": "a09d8ee17ac1cfea29ed60c83960ad685c6a898d",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97",
+                "reference": "3c6c0033fd3b5679c6e1cb60f4f9766c2b424d97",
                 "shasum": ""
             },
             "require": {
@@ -2322,7 +2324,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.26-dev"
+                    "dev-master": "1.27-dev"
                 }
             },
             "autoload": {
@@ -2357,20 +2359,20 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-10-05 18:57:41"
+            "time": "2016-10-25 19:17:17"
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.3.6",
+            "version": "1.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "a60da179c37f2c4e44ef734d0b92824a58943f7f"
+                "reference": "969ff423d3f201da3ff718a5831bb999bb0669b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/a60da179c37f2c4e44ef734d0b92824a58943f7f",
-                "reference": "a60da179c37f2c4e44ef734d0b92824a58943f7f",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/969ff423d3f201da3ff718a5831bb999bb0669b0",
+                "reference": "969ff423d3f201da3ff718a5831bb999bb0669b0",
                 "shasum": ""
             },
             "require": {
@@ -2407,7 +2409,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2016-09-07 17:57:29"
+            "time": "2016-10-11 13:25:21"
         }
     ],
     "packages-dev": [
