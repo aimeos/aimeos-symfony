@@ -100,7 +100,7 @@ class CatalogControllerTest extends WebTestCase
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
-		$link = $crawler->filter( '.catalog-list-pagination .option-name' )->link();
+		$link = $crawler->filter( '.catalog-list .pagination .option-name' )->link();
 		$crawler = $client->click( $link );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
@@ -128,14 +128,14 @@ class CatalogControllerTest extends WebTestCase
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
-		$link = $crawler->filter( '.catalog-list-pagination .option-name' )->link();
+		$link = $crawler->filter( '.catalog-list .pagination .option-name' )->link();
 		$crawler = $client->click( $link );
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
 		$this->assertEquals( 1, $products->eq( 1 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
 		$this->assertEquals( 1, $products->eq( 2 )->filter( 'h2:contains("Unittest: Empty Selection")' )->count() );
 
-		$link = $crawler->filter( '.catalog-list-pagination .option-name' )->link();
+		$link = $crawler->filter( '.catalog-list .pagination .option-name' )->link();
 		$crawler = $client->click( $link );
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
@@ -152,7 +152,7 @@ class CatalogControllerTest extends WebTestCase
 		$client = static::createClient();
 		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
 
-		$link = $crawler->filter( '.catalog-list-pagination .option-price' )->link();
+		$link = $crawler->filter( '.catalog-list .pagination .option-price' )->link();
 		$crawler = $client->click( $link );
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
@@ -162,7 +162,7 @@ class CatalogControllerTest extends WebTestCase
 		$this->assertEquals( 1, $products->eq( $count - 2 )->filter( '.value:contains("600.00 €")' )->count() );
 		$this->assertEquals( 1, $products->eq( $count - 1 )->filter( '.value:contains("600.00 €")' )->count() );
 
-		$link = $crawler->filter( '.catalog-list-pagination .option-price' )->link();
+		$link = $crawler->filter( '.catalog-list .pagination .option-price' )->link();
 		$crawler = $client->click( $link );
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
