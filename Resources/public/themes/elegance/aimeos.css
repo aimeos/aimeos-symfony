@@ -159,8 +159,10 @@
 }
 
 .aimeos .pagination {
+	text-align: center;
 	display: block;
 	clear: left;
+	color: #555;
 	margin: 0;
 }
 
@@ -332,11 +334,11 @@
 
 .catalog-filter-tree .media-list {
 	display: inline-block;
+	vertical-align: top;
 	margin: 0px 0.5em;
 }
 
 .catalog-filter-tree .media-item img {
-	vertical-align: top;
 	height: 1.25em;
 	width: 1.25em;
 }
@@ -831,15 +833,6 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 }
 
 /* price list */
-.catalog-list .price-list,
-.catalog-list .price {
-	display: none;
-}
-
-.catalog-list .price-actual {
-	display: block;
-}
-
 .catalog-list .price {
 	box-sizing: content-box;
 	text-align: left;
@@ -907,18 +900,12 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	color: #555;
 }
 
-.catalog-list-head .head-search {
+.catalog-list .list-search {
 	font-weight: bold;
 }
 
-.catalog-list-head .searchstring {
+.catalog-list .searchstring {
 	font-size: 133%;
-	color: #555;
-}
-
-/* Product list, pagination section */
-.catalog-list-pagination {
-	text-align: center;
 	color: #555;
 }
 
@@ -937,9 +924,10 @@ html.no-js .catalog-filter-attribute:hover .attribute-lists {
 	color: #555;
 }
 
-.catalog-list-promo .promo-items {
+.catalog-list-promo .list-items {
     white-space: nowrap;
 	overflow: auto;
+	font-size: 90%;
 	padding: 0;
 }
 
