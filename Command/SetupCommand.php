@@ -25,33 +25,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 class SetupCommand extends Command
 {
 	/**
-	 * Loads the requested setup task class
-	 *
-	 * @param string $classname Name of the setup task class
-	 * @return boolean True if class is found, false if not
-	 */
-	public static function autoload( $classname )
-	{
-		if( strncmp( $classname, 'Aimeos\\MW\\Setup\\Task\\', 21 ) === 0 )
-		{
-			$fileName = substr( $classname, 21 ) . '.php';
-			$paths = explode( PATH_SEPARATOR, get_include_path() );
-
-			foreach( $paths as $path )
-			{
-				$file = $path . DIRECTORY_SEPARATOR . $fileName;
-
-				if( file_exists( $file ) === true && ( include_once $file ) !== false ) {
-					return true;
-				}
-			}
-		}
-
-		return false;
-	}
-
-
-	/**
 	 * Configures the command name and description.
 	 */
 	protected function configure()
@@ -86,16 +59,6 @@ class SetupCommand extends Command
 		$this->setOptions( $config, $input );
 
 		$taskPaths = $this->getContainer()->get( 'aimeos' )->get()->getSetupPaths( $tplsite );
-
-		$includePaths = $taskPaths;
-		$includePaths[] = get_include_path();
-
-		if( set_include_path( implode( PATH_SEPARATOR, $includePaths ) ) === false ) {
-			throw new \Exception( 'Unable to extend include path' );
-		}
-
-		spl_autoload_register( '\Aimeos\ShopBundle\Command\SetupCommand::autoload', true );
-
 		$manager = new \Aimeos\MW\Setup\Manager\Multiple( $ctx->getDatabaseManager(), $dbconfig, $taskPaths, $ctx );
 
 		$output->writeln( sprintf( 'Initializing or updating the Aimeos database tables for site <info>%1$s</info>', $site ) );
