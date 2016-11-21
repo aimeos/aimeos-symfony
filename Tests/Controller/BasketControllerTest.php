@@ -177,7 +177,7 @@ class BasketControllerTest extends WebTestCase
 		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
 		$crawler = $client->submit( $form );
 
-		$this->assertEquals( 1, $crawler->filter( '.basket-related-bought .bought-item' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.basket-related-bought .product' )->count() );
 	}
 
 
