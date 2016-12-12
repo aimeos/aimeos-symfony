@@ -14,7 +14,7 @@ Ext.ns('Ext.ux.direct');
  * @class Ext.ux.direct.JsonRpcProvider
  * @extends Ext.direct.RemotingProvider
  * @author Cornelius Weiss <c.weiss@metaways.de>
- * @copyright Copyright (c) 2009-2010 Metaways Infosystems GmbH
+ * @copyright 2009-2010 Metaways Infosystems GmbH
  *            (http://www.metaways.de) Ext.Direct provider for seamless
  *            integration with JSON RPC servers
  *            Ext.Direct.addProvider(Ext.apply(Ext.app.JSONRPC_API, { 'type' :
