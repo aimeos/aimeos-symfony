@@ -33,7 +33,7 @@
 		"aimeos/ai-fosuser": "dev-master",
 		"friendsofsymfony/user-bundle": "~2.0@dev",
 		"symfony/symfony": "~2.4||~3.0",
-		"symfony/monolog-bundle": "~2.4",
+		"symfony/monolog-bundle": "~2.4||~3.0",
 		"symfony/swiftmailer-bundle": "~2.3",
 		"symfony/twig-bundle": "~2.1||~3.0"
 	},
