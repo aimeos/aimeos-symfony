@@ -33,13 +33,15 @@
 		"aimeos/ai-fosuser": "dev-master",
 		"friendsofsymfony/user-bundle": "~2.0@dev",
 		"symfony/symfony": "~2.4||~3.0",
-		"symfony/monolog-bundle": "~2.4||~3.0",
+		"symfony/twig-bundle": "~2.1||~3.0",
 		"symfony/swiftmailer-bundle": "~2.3",
-		"symfony/twig-bundle": "~2.1||~3.0"
+		"symfony/monolog-bundle": "~2.4||~3.0",
+		"sensio/framework-extra-bundle": "~2.3||~3.0",
+		"symfony/psr-http-message-bridge": "~1.0",
+		"zendframework/zend-diactoros": "~1.3"
 	},
 	"require-dev": {
 		"satooshi/php-coveralls": "dev-master",
-		"sensio/framework-extra-bundle": "~2.3||~3.0",
 		"doctrine/doctrine-bundle": "~1.2",
 		"doctrine/orm": "~2.2,>=2.2.3"
 	},

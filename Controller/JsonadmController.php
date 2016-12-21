@@ -10,9 +10,9 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Psr\Http\Message\ServerRequestInterface;
+use Zend\Diactoros\Response;
 
 
 /**
@@ -26,120 +26,90 @@ class JsonadmController extends Controller
 	/**
 	 * Deletes the resource object or a list of resource objects
 	 *
-	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
-	 * @param string Resource location, e.g. "product/stock/wareshouse"
+	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
+	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function deleteAction( Request $request, $resource, $site = 'default' )
+	public function deleteAction( ServerRequestInterface $request, $resource, $site = 'default' )
 	{
-		$status = 500;
-		$header = $request->headers->all();
-
-		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $client->delete( $request->getContent(), $header, $status );
-
-		return $this->createResponse( $result, $status, $header );
+		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		return $client->delete( $request, new Response() );
 	}
 
 
 	/**
 	 * Returns the requested resource object or list of resource objects
 	 *
-	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
-	 * @param string Resource location, e.g. "product/stock/wareshouse"
+	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
+	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function getAction( Request $request, $resource, $site = 'default' )
+	public function getAction( ServerRequestInterface $request, $resource, $site = 'default' )
 	{
-		$status = 500;
-		$header = $request->headers->all();
-
-		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $client->get( $request->getContent(), $header, $status );
-
-		return $this->createResponse( $result, $status, $header );
+		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		return $client->get( $request, new Response() );
 	}
 
 
 	/**
 	 * Updates a resource object or a list of resource objects
 	 *
-	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
-	 * @param string Resource location, e.g. "product/stock/wareshouse"
+	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
+	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function patchAction( Request $request, $resource, $site = 'default' )
+	public function patchAction( ServerRequestInterface $request, $resource, $site = 'default' )
 	{
-		$status = 500;
-		$header = $request->headers->all();
-
-		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $client->patch( $request->getContent(), $header, $status );
-
-		return $this->createResponse( $result, $status, $header );
+		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		return $client->patch( $request, new Response() );
 	}
 
 
 	/**
 	 * Creates a new resource object or a list of resource objects
 	 *
-	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
-	 * @param string Resource location, e.g. "product/stock/wareshouse"
+	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
+	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function postAction( Request $request, $resource, $site = 'default' )
+	public function postAction( ServerRequestInterface $request, $resource, $site = 'default' )
 	{
-		$status = 500;
-		$header = $request->headers->all();
-
-		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $client->post( $request->getContent(), $header, $status );
-
-		return $this->createResponse( $result, $status, $header );
+		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		return $client->post( $request, new Response() );
 	}
 
 
 	/**
 	 * Creates or updates a single resource object
 	 *
-	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
-	 * @param string Resource location, e.g. "product/stock/wareshouse"
+	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
+	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function putAction( Request $request, $resource, $site = 'default' )
+	public function putAction( ServerRequestInterface $request, $resource, $site = 'default' )
 	{
-		$status = 500;
-		$header = $request->headers->all();
-
-		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $client->put( $request->getContent(), $header, $status );
-
-		return $this->createResponse( $result, $status, $header );
+		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		return $client->put( $request, new Response() );
 	}
 
 
 	/**
 	 * Returns the available HTTP verbs and the resource URLs
 	 *
-	 * @param \Symfony\Component\HttpFoundation\Request $request Request object
-	 * @param string Resource location, e.g. "product/stock/wareshouse"
+	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Symfony\Component\HttpFoundation\Response Response object containing the generated output
+	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function optionsAction( Request $request, $resource = '', $site = 'default' )
+	public function optionsAction( ServerRequestInterface $request, $resource = '', $site = 'default' )
 	{
-		$status = 500;
-		$header = $request->headers->all();
-
-		$client = $this->createClient( $site, $resource, $request->get( 'lang', 'en' ) );
-		$result = $client->options( $request->getContent(), $header, $status );
-
-		return $this->createResponse( $result, $status, $header );
+		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		return $client->options( $request, new Response() );
 	}
 
 
@@ -147,7 +117,7 @@ class JsonadmController extends Controller
 	 * Returns the resource controller
 	 *
 	 * @param string $site Unique site code
-	 * @param string Resource location, e.g. "product/stock/wareshouse"
+	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $lang Language code
 	 * @return \Aimeos\MShop\Context\Item\Iface Context item
 	 */
@@ -164,27 +134,5 @@ class JsonadmController extends Controller
 		$context->setView( $view );
 
 		return \Aimeos\Admin\JsonAdm\Factory::createClient( $context, $templatePaths, $resource );
-	}
-
-
-	/**
-	 * Creates a new response object
-	 *
-	 * @param string $content Body of the HTTP response
-	 * @param integer $status HTTP status
-	 * @param array $header List of HTTP headers
-	 * @return Response HTTP response object
-	 */
-	protected function createResponse( $content, $status, array $header )
-	{
-		$response = new Response();
-		$response->setContent( $content );
-		$response->setStatusCode( $status );
-
-		foreach( $header as $key => $value ) {
-			$response->headers->set( $key, $value );
-		}
-
-		return $response;
 	}
 }
