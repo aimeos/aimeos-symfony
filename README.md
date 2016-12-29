@@ -92,7 +92,7 @@ example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/):
 {% block aimeos_header %}{% endblock %}
         <title>{% block title %}Aimeos shop{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 {% block aimeos_styles %}{% endblock %}
     </head>
     <body>
@@ -115,9 +115,8 @@ example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/):
             {% block aimeos_body %}{% endblock %}
             {% block aimeos_aside %}{% endblock %}
         </div>
-        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 {% block aimeos_scripts %}{% endblock %}
     </body>
 </html>
