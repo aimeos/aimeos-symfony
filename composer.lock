@@ -152,12 +152,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "95ba5d9d266db2893f8b17bd5526970c545ee153"
+                "reference": "6b6c0d7fc7220ce738a2b7f753f0162b379d1156"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/95ba5d9d266db2893f8b17bd5526970c545ee153",
-                "reference": "95ba5d9d266db2893f8b17bd5526970c545ee153",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/6b6c0d7fc7220ce738a2b7f753f0162b379d1156",
+                "reference": "6b6c0d7fc7220ce738a2b7f753f0162b379d1156",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +190,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2016-12-28 20:57:31"
+            "time": "2016-12-29 14:53:47"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -198,12 +198,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "b1c760c4723b230d66845dd3e58df22cf6e5b9d6"
+                "reference": "aa36bdcf1e4c2551fb0d5a6d076e5a7e537145e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/b1c760c4723b230d66845dd3e58df22cf6e5b9d6",
-                "reference": "b1c760c4723b230d66845dd3e58df22cf6e5b9d6",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/aa36bdcf1e4c2551fb0d5a6d076e5a7e537145e9",
+                "reference": "aa36bdcf1e4c2551fb0d5a6d076e5a7e537145e9",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +232,7 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2016-12-18 13:30:32"
+            "time": "2016-12-29 15:41:48"
         },
         {
             "name": "aimeos/ai-controller-jobs",
