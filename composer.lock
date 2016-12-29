@@ -152,12 +152,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "102d181466e7bd070f163b8d8657f0b376a64b03"
+                "reference": "95ba5d9d266db2893f8b17bd5526970c545ee153"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/102d181466e7bd070f163b8d8657f0b376a64b03",
-                "reference": "102d181466e7bd070f163b8d8657f0b376a64b03",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/95ba5d9d266db2893f8b17bd5526970c545ee153",
+                "reference": "95ba5d9d266db2893f8b17bd5526970c545ee153",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +190,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2016-12-21 08:49:41"
+            "time": "2016-12-28 20:57:31"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -521,12 +521,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "2a034c0a028914d3e43b412d5f076b5555068bd8"
+                "reference": "815faa2d71227b947125728d2695c7db5ab40d36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/2a034c0a028914d3e43b412d5f076b5555068bd8",
-                "reference": "2a034c0a028914d3e43b412d5f076b5555068bd8",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/815faa2d71227b947125728d2695c7db5ab40d36",
+                "reference": "815faa2d71227b947125728d2695c7db5ab40d36",
                 "shasum": ""
             },
             "require": {
@@ -584,7 +584,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2016-12-21 07:56:19"
+            "time": "2016-12-23 01:52:33"
         },
         {
             "name": "composer/installers",
@@ -2224,16 +2224,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.29.0",
+            "version": "v1.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "74f723e542368ca2080b252740be5f1113ebb898"
+                "reference": "c6ff71094fde15d12398eaba029434b013dc5e59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/74f723e542368ca2080b252740be5f1113ebb898",
-                "reference": "74f723e542368ca2080b252740be5f1113ebb898",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c6ff71094fde15d12398eaba029434b013dc5e59",
+                "reference": "c6ff71094fde15d12398eaba029434b013dc5e59",
                 "shasum": ""
             },
             "require": {
@@ -2246,7 +2246,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.29-dev"
+                    "dev-master": "1.30-dev"
                 }
             },
             "autoload": {
@@ -2281,7 +2281,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-12-13 17:28:18"
+            "time": "2016-12-23 11:06:22"
         },
         {
             "name": "zendframework/zend-diactoros",
