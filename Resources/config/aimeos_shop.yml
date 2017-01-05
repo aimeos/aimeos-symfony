@@ -1,7 +1,7 @@
 #apc_enable: false,
 apc_prefix: 'sf:'
 extdir: %kernel.root_dir%/../ext
-uploaddir: /.
+uploaddir: /
 
 page:
     account-index: ['account/profile','account/history','account/favorite','account/watch','basket/mini','catalog/session']
