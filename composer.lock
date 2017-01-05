@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-extadm.git",
-                "reference": "c584edc68313a9a35668c1406804ebe6ab16cbb3"
+                "reference": "7e60d1a9697ff3a90579c1e49ef53b173ed362d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/c584edc68313a9a35668c1406804ebe6ab16cbb3",
-                "reference": "c584edc68313a9a35668c1406804ebe6ab16cbb3",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/7e60d1a9697ff3a90579c1e49ef53b173ed362d0",
+                "reference": "7e60d1a9697ff3a90579c1e49ef53b173ed362d0",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2016-12-18 13:30:03"
+            "time": "2016-12-31 14:19:41"
         },
         {
             "name": "aimeos/ai-admin-jqadm",
@@ -152,12 +152,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "6b6c0d7fc7220ce738a2b7f753f0162b379d1156"
+                "reference": "7183901bbeb6f39b68b09687b278012ffd6e3954"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/6b6c0d7fc7220ce738a2b7f753f0162b379d1156",
-                "reference": "6b6c0d7fc7220ce738a2b7f753f0162b379d1156",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/7183901bbeb6f39b68b09687b278012ffd6e3954",
+                "reference": "7183901bbeb6f39b68b09687b278012ffd6e3954",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +190,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2016-12-29 14:53:47"
+            "time": "2017-01-01 13:57:42"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -521,12 +521,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "815faa2d71227b947125728d2695c7db5ab40d36"
+                "reference": "76d65119f7ec94bc1085a2162407a430bf50e46c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/815faa2d71227b947125728d2695c7db5ab40d36",
-                "reference": "815faa2d71227b947125728d2695c7db5ab40d36",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/76d65119f7ec94bc1085a2162407a430bf50e46c",
+                "reference": "76d65119f7ec94bc1085a2162407a430bf50e46c",
                 "shasum": ""
             },
             "require": {
@@ -584,7 +584,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2016-12-23 01:52:33"
+            "time": "2016-12-31 18:53:12"
         },
         {
             "name": "composer/installers",
@@ -695,16 +695,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5"
+                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
-                "reference": "30e07cf03edc3cd3ef579d0dd4dd8c58250799a5",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
+                "reference": "bd4461328621bde0ae6b1b2675fbc6aca4ceb558",
                 "shasum": ""
             },
             "require": {
@@ -759,7 +759,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-10-24 11:45:47"
+            "time": "2016-12-30 15:59:45"
         },
         {
             "name": "doctrine/cache",
