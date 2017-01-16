@@ -197,12 +197,7 @@ class Context
 		$token = null;
 		$username = '';
 
-		if( $this->container->has( 'security.token_storage' ) ) {
-			$token = $this->container->get( 'security.token_storage' )->getToken();
-		}
-		else if( $this->container->has( 'security.context' ) ) {
-			$token = $this->container->get( 'security.context' )->getToken();
-		}
+		$token = $this->container->get( 'security.token_storage' )->getToken();
 
 		if( is_object( $token ) )
 		{

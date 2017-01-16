@@ -76,13 +76,22 @@ class View
 	protected function addAccess( \Aimeos\MW\View\Iface $view, \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		$container = $this->container;
+		$token = $this->container->get( 'security.token_storage' )->getToken();
 
-		$fcn = function() use ( $container, $context )
+		if( is_object( $token ) && is_object( $token->getUser() )
+			&& in_array( 'ROLE_ADMIN', (array) $token->getUser()->getRoles() ) )
 		{
-			return $container->get( 'aimeos_support' )->getGroups( $context );
-		};
+			$helper = new \Aimeos\MW\View\Helper\Access\All( $view );
+		}
+		else
+		{
+			$fcn = function() use ( $container, $context ) {
+				return $container->get( 'aimeos_support' )->getGroups( $context );
+			};
 
-		$helper = new \Aimeos\MW\View\Helper\Access\Standard( $view, $fcn );
+			$helper = new \Aimeos\MW\View\Helper\Access\Standard( $view, $fcn );
+		}
+
 		$view->addHelper( 'access', $helper );
 
 		return $view;
