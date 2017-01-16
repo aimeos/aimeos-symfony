@@ -194,9 +194,7 @@ class Context
 	 */
 	protected function addUserGroups( \Aimeos\MShop\Context\Item\Iface $context )
 	{
-		$token = null;
 		$username = '';
-
 		$token = $this->container->get( 'security.token_storage' )->getToken();
 
 		if( is_object( $token ) )
