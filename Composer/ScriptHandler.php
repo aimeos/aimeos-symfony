@@ -12,7 +12,7 @@ namespace Aimeos\ShopBundle\Composer;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\PhpExecutableFinder;
-use Composer\Script\CommandEvent;
+use Composer\Script\Event;
 
 
 /**
@@ -25,10 +25,10 @@ class ScriptHandler
 	/**
 	 * Sets up the shop database.
 	 *
-	 * @param CommandEvent $event CommandEvent instance
+	 * @param Event $event Event instance
 	 * @throws \RuntimeException If an error occured
 	 */
-	public static function setupDatabase( CommandEvent $event )
+	public static function setupDatabase( Event $event )
 	{
 		$options = $env = array();
 
@@ -46,10 +46,10 @@ class ScriptHandler
 	/**
 	 * Ensure existing config and routing for the shop bundle.
 	 *
-	 * @param CommandEvent $event CommandEvent instance
+	 * @param Event $event Event instance
 	 * @throws \RuntimeException If an error occured
 	 */
-	public static function updateConfig( CommandEvent $event )
+	public static function updateConfig( Event $event )
 	{
 		$event->getIO()->write( 'Ensure existing config and routing for the shop bundle' );
 
@@ -69,10 +69,10 @@ class ScriptHandler
 	/**
 	 * Installs the shop bundle.
 	 *
-	 * @param CommandEvent $event CommandEvent instance
+	 * @param Event $event Event instance
 	 * @throws \RuntimeException If an error occured
 	 */
-	public static function installBundle( CommandEvent $event )
+	public static function installBundle( Event $event )
 	{
 		$event->getIO()->write( 'Installing the Aimeos shop bundle' );
 
@@ -118,12 +118,12 @@ class ScriptHandler
 	/**
 	 * Executes a Symphony command.
 	 *
-	 * @param CommandEvent $event Command event object
+	 * @param Event $event Command event object
 	 * @param string $cmd Command name to execute, e.g. "aimeos:update"
 	 * @param array List of configuration options for the given command
 	 * @throws \RuntimeException If the command couldn't be executed
 	 */
-	protected static function executeCommand( CommandEvent $event, $cmd, array $options = array() )
+	protected static function executeCommand( Event $event, $cmd, array $options = array() )
 	{
 		$php = escapeshellarg( self::getPhp() );
 		$console = escapeshellarg( self::getConsoleDir( $event ) . '/console' );
@@ -153,11 +153,11 @@ class ScriptHandler
 	/**
 	 * Returns a relative path to the directory that contains the `console` command.
 	 *
-	 * @param CommandEvent $event Command event object
+	 * @param Event $event Command event object
 	 * @return string The path to the console directory
 	 * @throws \RuntimeException If console directory couldn't be found
 	 */
-	protected static function getConsoleDir( CommandEvent $event )
+	protected static function getConsoleDir( Event $event )
 	{
 		$options = self::getOptions( $event );
 
@@ -176,10 +176,10 @@ class ScriptHandler
 	/**
 	 * Returns the available options defined in the composer file.
 	 *
-	 * @param CommandEvent $event Command event object
+	 * @param Event $event Command event object
 	 * @return array Associative list of option keys and values
 	 */
-	protected static function getOptions( CommandEvent $event )
+	protected static function getOptions( Event $event )
 	{
 		return $event->getComposer()->getPackage()->getExtra();
 	}
