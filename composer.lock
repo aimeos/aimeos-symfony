@@ -147,16 +147,16 @@
         },
         {
             "name": "aimeos/ai-client-html",
-            "version": "2017.01.2",
+            "version": "2017.01.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "f1c349bb6f8b954c1a1b898fd558b6b311528d02"
+                "reference": "488bd72149608df81820457d810f3513ab25290e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/f1c349bb6f8b954c1a1b898fd558b6b311528d02",
-                "reference": "f1c349bb6f8b954c1a1b898fd558b6b311528d02",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/488bd72149608df81820457d810f3513ab25290e",
+                "reference": "488bd72149608df81820457d810f3513ab25290e",
                 "shasum": ""
             },
             "require": {
@@ -189,7 +189,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2017-01-10T10:13:33+00:00"
+            "time": "2017-01-12T21:16:58+00:00"
         },
         {
             "name": "aimeos/ai-controller-frontend",
