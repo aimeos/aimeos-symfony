@@ -520,12 +520,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-twig.git",
-                "reference": "b952ca50ab9f72a4f308f20b52adfb51d4ef3da5"
+                "reference": "8de40352b7c3b5ec2c27d590df8b2fb311c312c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/b952ca50ab9f72a4f308f20b52adfb51d4ef3da5",
-                "reference": "b952ca50ab9f72a4f308f20b52adfb51d4ef3da5",
+                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/8de40352b7c3b5ec2c27d590df8b2fb311c312c9",
+                "reference": "8de40352b7c3b5ec2c27d590df8b2fb311c312c9",
                 "shasum": ""
             },
             "require": {
@@ -543,7 +543,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2017-01-21 15:44:51"
+            "time": "2017-01-21 21:23:39"
         },
         {
             "name": "aimeos/aimeos-core",
