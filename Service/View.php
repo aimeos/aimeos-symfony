@@ -49,9 +49,10 @@ class View
 	 */
 	public function create( \Aimeos\MShop\Context\Item\Iface $context, array $templatePaths, $locale = null )
 	{
-		$engine = new \Aimeos\MW\View\Engine\Twig( $this->container->get( 'twig' ) );
-		$view = new \Aimeos\MW\View\Standard( $templatePaths, array( '.html.twig' => $engine ) );
 		$config = $context->getConfig();
+		$twig = $this->container->get( 'twig' );
+		$engine = new \Aimeos\MW\View\Engine\Twig( $twig );
+		$view = new \Aimeos\MW\View\Standard( $templatePaths, array( '.html.twig' => $engine ) );
 
 		$this->addCsrf( $view );
 		$this->addAccess( $view, $context );
@@ -62,6 +63,8 @@ class View
 		$this->addResponse( $view );
 		$this->addTranslate( $view, $locale );
 		$this->addUrl( $view );
+
+		$this->initTwig( $view, $twig );
 
 		return $view;
 	}
@@ -267,5 +270,30 @@ class View
 		$view->addHelper( 'url', $helper );
 
 		return $view;
+	}
+
+
+	/**
+	 * Adds the Aimeos template functions for Twig
+	 *
+	 * @param \Twig_Environment $env Twig environment object
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 */
+	protected function initTwig( \Aimeos\MW\View\Iface $view, \Twig_Environment $twig )
+	{
+		$fcn = function( $key, $default = null ) use ( $view ) {
+			return $view->config( $key, $default );
+		};
+		$twig->addFunction( new \Twig_SimpleFunction( 'aiconfig', $fcn ) );
+
+		$fcn = function( $singular, array $values = array(), $domain = 'client' ) use ( $view ) {
+			return vsprintf( $view->translate( $domain, $singular ), $values );
+		};
+		$twig->addFunction( new \Twig_SimpleFunction( 'aitrans', $fcn ) );
+
+		$fcn = function( $singular, $plural, $number, array $values = array(), $domain = 'client' ) use ( $view ) {
+			return vsprintf( $view->translate( $domain, $singular, $plural, $number ), $values );
+		};
+		$twig->addFunction( new \Twig_SimpleFunction( 'aitransplural', $fcn ) );
 	}
 }
