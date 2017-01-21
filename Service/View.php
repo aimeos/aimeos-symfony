@@ -49,8 +49,9 @@ class View
 	 */
 	public function create( \Aimeos\MShop\Context\Item\Iface $context, array $templatePaths, $locale = null )
 	{
+		$engine = new \Aimeos\MW\View\Engine\Twig( $this->container->get( 'twig' ) );
+		$view = new \Aimeos\MW\View\Standard( $templatePaths, array( '.html.twig' => $engine ) );
 		$config = $context->getConfig();
-		$view = new \Aimeos\MW\View\Standard( $templatePaths );
 
 		$this->addCsrf( $view );
 		$this->addAccess( $view, $context );
