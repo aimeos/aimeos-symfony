@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "95488820bdf1207a1c866711779aac39",
-    "content-hash": "19fc6f77ed993783419caf24e085a68a",
+    "content-hash": "45435b260759f06d4c0df48b6909485a",
     "packages": [
         {
             "name": "aimeos/ai-admin-extadm",
@@ -13,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-extadm.git",
-                "reference": "7e60d1a9697ff3a90579c1e49ef53b173ed362d0"
+                "reference": "e40423456195022aa5b0d06760192aca3a5479e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/7e60d1a9697ff3a90579c1e49ef53b173ed362d0",
-                "reference": "7e60d1a9697ff3a90579c1e49ef53b173ed362d0",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/e40423456195022aa5b0d06760192aca3a5479e3",
+                "reference": "e40423456195022aa5b0d06760192aca3a5479e3",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +51,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2016-12-31 14:19:41"
+            "time": "2017-01-03 11:56:55"
         },
         {
             "name": "aimeos/ai-admin-jqadm",
@@ -60,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "ea0e04399de0238699fea84891f752c02d3b124b"
+                "reference": "a742acd7761f4bf59b17d488f506f34354cde92f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/ea0e04399de0238699fea84891f752c02d3b124b",
-                "reference": "ea0e04399de0238699fea84891f752c02d3b124b",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/a742acd7761f4bf59b17d488f506f34354cde92f",
+                "reference": "a742acd7761f4bf59b17d488f506f34354cde92f",
                 "shasum": ""
             },
             "require": {
@@ -99,7 +98,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2016-12-18 13:30:32"
+            "time": "2017-01-16 11:29:13"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -107,12 +106,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "4533c73047fe54148abaec45cb6888958409f859"
+                "reference": "c7f94053056955ac71b95bdea85829754861b1a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/4533c73047fe54148abaec45cb6888958409f859",
-                "reference": "4533c73047fe54148abaec45cb6888958409f859",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/c7f94053056955ac71b95bdea85829754861b1a2",
+                "reference": "c7f94053056955ac71b95bdea85829754861b1a2",
                 "shasum": ""
             },
             "require": {
@@ -144,7 +143,7 @@
                 "extension",
                 "json api"
             ],
-            "time": "2016-12-18 17:00:29"
+            "time": "2017-01-03 11:56:55"
         },
         {
             "name": "aimeos/ai-client-html",
@@ -152,12 +151,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "7183901bbeb6f39b68b09687b278012ffd6e3954"
+                "reference": "47bcaa3644e13f84268beae7cbd19edb48f36dbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/7183901bbeb6f39b68b09687b278012ffd6e3954",
-                "reference": "7183901bbeb6f39b68b09687b278012ffd6e3954",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/47bcaa3644e13f84268beae7cbd19edb48f36dbf",
+                "reference": "47bcaa3644e13f84268beae7cbd19edb48f36dbf",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +189,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2017-01-01 13:57:42"
+            "time": "2017-01-19 18:00:01"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -198,12 +197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "aa36bdcf1e4c2551fb0d5a6d076e5a7e537145e9"
+                "reference": "b46c0d20b2609b3847165e429705298d7ee3a8f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/aa36bdcf1e4c2551fb0d5a6d076e5a7e537145e9",
-                "reference": "aa36bdcf1e4c2551fb0d5a6d076e5a7e537145e9",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/b46c0d20b2609b3847165e429705298d7ee3a8f2",
+                "reference": "b46c0d20b2609b3847165e429705298d7ee3a8f2",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +231,7 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2016-12-29 15:41:48"
+            "time": "2017-01-03 11:56:55"
         },
         {
             "name": "aimeos/ai-controller-jobs",
@@ -240,12 +239,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "d496bc5cf65dbfaee70ed00a6f9d3b21db96f1c3"
+                "reference": "f2cd2dcb83679414db7e1efce4d9854304281122"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/d496bc5cf65dbfaee70ed00a6f9d3b21db96f1c3",
-                "reference": "d496bc5cf65dbfaee70ed00a6f9d3b21db96f1c3",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/f2cd2dcb83679414db7e1efce4d9854304281122",
+                "reference": "f2cd2dcb83679414db7e1efce4d9854304281122",
                 "shasum": ""
             },
             "require": {
@@ -276,7 +275,7 @@
                 "extension",
                 "jobs"
             ],
-            "time": "2016-12-18 13:30:32"
+            "time": "2017-01-08 16:14:10"
         },
         {
             "name": "aimeos/ai-fosuser",
@@ -332,12 +331,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
-                "reference": "3e3cf61cf01ef4445e1febea3dc8968f2407b8ed"
+                "reference": "dd75d681263061da81ca1a929d4596b4a74a7c78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/3e3cf61cf01ef4445e1febea3dc8968f2407b8ed",
-                "reference": "3e3cf61cf01ef4445e1febea3dc8968f2407b8ed",
+                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/dd75d681263061da81ca1a929d4596b4a74a7c78",
+                "reference": "dd75d681263061da81ca1a929d4596b4a74a7c78",
                 "shasum": ""
             },
             "require": {
@@ -369,7 +368,7 @@
                 "gettext",
                 "performance"
             ],
-            "time": "2016-12-17 13:47:46"
+            "time": "2017-01-03 11:56:56"
         },
         {
             "name": "aimeos/ai-monolog",
@@ -516,17 +515,48 @@
             "time": "2016-12-17 13:47:49"
         },
         {
+            "name": "aimeos/ai-twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aimeos/ai-twig.git",
+                "reference": "b952ca50ab9f72a4f308f20b52adfb51d4ef3da5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/b952ca50ab9f72a4f308f20b52adfb51d4ef3da5",
+                "reference": "b952ca50ab9f72a4f308f20b52adfb51d4ef3da5",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "^1.0",
+                "php": ">=5.3.3",
+                "twig/twig": "~1.9||~2.0"
+            },
+            "type": "aimeos-extension",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "Aimeos ai-twig extension",
+            "keywords": [
+                "aimeos",
+                "extension"
+            ],
+            "time": "2017-01-21 15:44:51"
+        },
+        {
             "name": "aimeos/aimeos-core",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "76d65119f7ec94bc1085a2162407a430bf50e46c"
+                "reference": "c64f585353fc67c51dfb0f295564302d44077643"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/76d65119f7ec94bc1085a2162407a430bf50e46c",
-                "reference": "76d65119f7ec94bc1085a2162407a430bf50e46c",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/c64f585353fc67c51dfb0f295564302d44077643",
+                "reference": "c64f585353fc67c51dfb0f295564302d44077643",
                 "shasum": ""
             },
             "require": {
@@ -584,7 +614,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2016-12-31 18:53:12"
+            "time": "2017-01-19 10:20:48"
         },
         {
             "name": "composer/installers",
@@ -691,7 +721,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -759,7 +789,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-12-30 15:59:45"
+            "time": "2016-12-30T15:59:45+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -829,7 +859,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-10-29 11:16:17"
+            "time": "2016-10-29T11:16:17+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -895,20 +925,20 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14 22:21:58"
+            "time": "2015-04-14T22:21:58+00:00"
         },
         {
             "name": "doctrine/common",
-            "version": "v2.7.1",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "5954c297e9d93ff84554906c2fbbc2a133c43941"
+                "reference": "930297026c8009a567ac051fd545bf6124150347"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/5954c297e9d93ff84554906c2fbbc2a133c43941",
-                "reference": "5954c297e9d93ff84554906c2fbbc2a133c43941",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/930297026c8009a567ac051fd545bf6124150347",
+                "reference": "930297026c8009a567ac051fd545bf6124150347",
                 "shasum": ""
             },
             "require": {
@@ -968,20 +998,20 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2016-12-03 08:15:01"
+            "time": "2017-01-13T14:02:13+00:00"
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.5.x-dev",
+            "version": "v2.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "a526d0df58daa8ab6802244bf3227f532e0deb45"
+                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/a526d0df58daa8ab6802244bf3227f532e0deb45",
-                "reference": "a526d0df58daa8ab6802244bf3227f532e0deb45",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
+                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
                 "shasum": ""
             },
             "require": {
@@ -1039,7 +1069,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2016-12-04 05:53:43"
+            "time": "2017-01-19T13:27:33+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -1106,7 +1136,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-11-06 14:35:42"
+            "time": "2015-11-06T14:35:42+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -1160,7 +1190,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09 13:34:57"
+            "time": "2014-09-09T13:34:57+00:00"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1234,7 +1264,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-11-29 14:53:27"
+            "time": "2016-11-29T14:53:27+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1312,7 +1342,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26 00:15:39"
+            "time": "2016-11-26T00:15:39+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1360,7 +1390,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-11-07 23:38:38"
+            "time": "2016-11-07T23:38:38+00:00"
         },
         {
             "name": "psr/cache",
@@ -1406,7 +1436,7 @@
                 "psr",
                 "psr-6"
             ],
-            "time": "2016-08-06 20:24:11"
+            "time": "2016-08-06T20:24:11+00:00"
         },
         {
             "name": "psr/http-message",
@@ -1456,7 +1486,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -1494,20 +1524,20 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2012-12-21 11:40:51"
+            "time": "2012-12-21T11:40:51+00:00"
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.18",
+            "version": "v3.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "c38bc608e12e81089d5d9dfbf72775ed553c61af"
+                "reference": "d57c2f297d17ee82baf8cae0b16dae34a9378784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/c38bc608e12e81089d5d9dfbf72775ed553c61af",
-                "reference": "c38bc608e12e81089d5d9dfbf72775ed553c61af",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/d57c2f297d17ee82baf8cae0b16dae34a9378784",
+                "reference": "d57c2f297d17ee82baf8cae0b16dae34a9378784",
                 "shasum": ""
             },
             "require": {
@@ -1562,7 +1592,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2016-12-14 08:30:06"
+            "time": "2017-01-10T19:42:56+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1616,24 +1646,24 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-12-29 10:02:40"
+            "time": "2016-12-29T10:02:40+00:00"
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "3.0.1",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/monolog-bundle.git",
-                "reference": "5f2d2d62530cd66be361216107869a3b061045db"
+                "reference": "ebce76a39a65495a66c34eb1574cc4b9e35a4e64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/5f2d2d62530cd66be361216107869a3b061045db",
-                "reference": "5f2d2d62530cd66be361216107869a3b061045db",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/ebce76a39a65495a66c34eb1574cc4b9e35a4e64",
+                "reference": "ebce76a39a65495a66c34eb1574cc4b9e35a4e64",
                 "shasum": ""
             },
             "require": {
-                "monolog/monolog": "~1.18",
+                "monolog/monolog": "~1.22",
                 "php": ">=5.3.2",
                 "symfony/config": "~2.7|~3.0",
                 "symfony/dependency-injection": "~2.7|~3.0",
@@ -1676,7 +1706,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2016-11-15 15:54:07"
+            "time": "2017-01-10T20:01:51+00:00"
         },
         {
             "name": "symfony/polyfill-intl-icu",
@@ -1734,7 +1764,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1793,7 +1823,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-php56",
@@ -1849,7 +1879,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-php70",
@@ -1908,7 +1938,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-util",
@@ -1960,7 +1990,7 @@
                 "polyfill",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/psr-http-message-bridge",
@@ -2020,7 +2050,7 @@
                 "http-message",
                 "psr-7"
             ],
-            "time": "2016-09-14 18:37:20"
+            "time": "2016-09-14T18:37:20+00:00"
         },
         {
             "name": "symfony/swiftmailer-bundle",
@@ -2079,20 +2109,20 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2016-12-20 04:44:33"
+            "time": "2016-12-20T04:44:33+00:00"
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.2.1",
+            "version": "v3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "5824d423678a0cc44f3eb46efc246aecd1836dd7"
+                "reference": "358c59fd21f9db7fdb465d1e07fba822d9e18e9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/5824d423678a0cc44f3eb46efc246aecd1836dd7",
-                "reference": "5824d423678a0cc44f3eb46efc246aecd1836dd7",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/358c59fd21f9db7fdb465d1e07fba822d9e18e9e",
+                "reference": "358c59fd21f9db7fdb465d1e07fba822d9e18e9e",
                 "shasum": ""
             },
             "require": {
@@ -2221,33 +2251,34 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-12-13 13:20:15"
+            "time": "2017-01-12T21:36:55+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v1.30.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "c6ff71094fde15d12398eaba029434b013dc5e59"
+                "reference": "9062992538bc5855a683c6737257bfa18d25a4b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c6ff71094fde15d12398eaba029434b013dc5e59",
-                "reference": "c6ff71094fde15d12398eaba029434b013dc5e59",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/9062992538bc5855a683c6737257bfa18d25a4b8",
+                "reference": "9062992538bc5855a683c6737257bfa18d25a4b8",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.7"
+                "php": "^7.0",
+                "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
                 "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~3.2@dev"
+                "symfony/phpunit-bridge": "~3.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.30-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -2282,20 +2313,20 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-12-23 11:06:22"
+            "time": "2017-01-11T19:39:01+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.3.7",
+            "version": "1.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "969ff423d3f201da3ff718a5831bb999bb0669b0"
+                "reference": "d5d74ca5548753e0e427fcffca89b134943bac89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/969ff423d3f201da3ff718a5831bb999bb0669b0",
-                "reference": "969ff423d3f201da3ff718a5831bb999bb0669b0",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/d5d74ca5548753e0e427fcffca89b134943bac89",
+                "reference": "d5d74ca5548753e0e427fcffca89b134943bac89",
                 "shasum": ""
             },
             "require": {
@@ -2307,7 +2338,7 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.6 || ^5.5",
-                "squizlabs/php_codesniffer": "^2.3.1"
+                "zendframework/zend-coding-standard": "~1.0.0"
             },
             "type": "library",
             "extra": {
@@ -2332,43 +2363,43 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2016-10-11 13:25:21"
+            "time": "2017-01-17T16:18:33+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.6.4",
+            "version": "1.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "dd40b0a7fb16658cda9def9786992b8df8a49be7"
+                "reference": "0f0c4df366bd1d36d38a27e2f5ff128e118ac969"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/dd40b0a7fb16658cda9def9786992b8df8a49be7",
-                "reference": "dd40b0a7fb16658cda9def9786992b8df8a49be7",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/0f0c4df366bd1d36d38a27e2f5ff128e118ac969",
+                "reference": "0f0c4df366bd1d36d38a27e2f5ff128e118ac969",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "~2.3",
                 "doctrine/doctrine-cache-bundle": "~1.0",
                 "jdorn/sql-formatter": "~1.1",
-                "php": ">=5.3.2",
-                "symfony/console": "~2.3|~3.0",
-                "symfony/dependency-injection": "~2.3|~3.0",
-                "symfony/doctrine-bridge": "~2.2|~3.0",
-                "symfony/framework-bundle": "~2.3|~3.0"
+                "php": ">=5.5.9",
+                "symfony/console": "~2.7|~3.0",
+                "symfony/dependency-injection": "~2.7|~3.0",
+                "symfony/doctrine-bridge": "~2.7|~3.0",
+                "symfony/framework-bundle": "~2.7|~3.0"
             },
             "require-dev": {
                 "doctrine/orm": "~2.3",
                 "phpunit/phpunit": "~4",
-                "satooshi/php-coveralls": "~0.6.1",
+                "satooshi/php-coveralls": "^1.0",
                 "symfony/phpunit-bridge": "~2.7|~3.0",
                 "symfony/property-info": "~2.8|~3.0",
-                "symfony/validator": "~2.2|~3.0",
-                "symfony/yaml": "~2.2|~3.0",
-                "twig/twig": "~1.10"
+                "symfony/validator": "~2.7|~3.0",
+                "symfony/yaml": "~2.7|~3.0",
+                "twig/twig": "~1.10|~2.0"
             },
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle.",
@@ -2415,7 +2446,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2016-08-10 15:35:22"
+            "time": "2017-01-07T21:47:22+00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -2503,7 +2534,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-01-26 17:28:51"
+            "time": "2016-01-26T17:28:51+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -2557,7 +2588,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-06-14 21:17:01"
+            "time": "2015-06-14T21:17:01+00:00"
         },
         {
             "name": "doctrine/orm",
@@ -2633,7 +2664,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2016-12-18 15:42:34"
+            "time": "2016-12-18T15:42:34+00:00"
         },
         {
             "name": "guzzle/guzzle",
@@ -2726,7 +2757,7 @@
                 "web service"
             ],
             "abandoned": "guzzlehttp/guzzle",
-            "time": "2014-01-28 22:29:15"
+            "time": "2014-01-28T22:29:15+00:00"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -2776,7 +2807,7 @@
                 "highlight",
                 "sql"
             ],
-            "time": "2014-01-12 16:20:24"
+            "time": "2014-01-12T16:20:24+00:00"
         },
         {
             "name": "satooshi/php-coveralls",
@@ -2869,6 +2900,7 @@
         "aimeos/ai-admin-jsonadm": 20,
         "aimeos/ai-client-html": 20,
         "aimeos/ai-fosuser": 20,
+        "aimeos/ai-twig": 20,
         "friendsofsymfony/user-bundle": 20,
         "satooshi/php-coveralls": 20
     },

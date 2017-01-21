@@ -31,6 +31,7 @@
 		"aimeos/ai-admin-jsonadm": "dev-master",
 		"aimeos/ai-client-html": "dev-master",
 		"aimeos/ai-fosuser": "dev-master",
+		"aimeos/ai-twig": "dev-master",
 		"friendsofsymfony/user-bundle": "~2.0@dev",
 		"symfony/symfony": "~2.4||~3.0",
 		"symfony/twig-bundle": "~2.1||~3.0",
