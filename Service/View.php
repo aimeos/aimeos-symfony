@@ -276,8 +276,8 @@ class View
 	/**
 	 * Adds the Aimeos template functions for Twig
 	 *
-	 * @param \Twig_Environment $env Twig environment object
 	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @param \Twig_Environment $twig Twig environment object
 	 */
 	protected function initTwig( \Aimeos\MW\View\Iface $view, \Twig_Environment $twig )
 	{
