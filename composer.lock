@@ -151,12 +151,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "47bcaa3644e13f84268beae7cbd19edb48f36dbf"
+                "reference": "6ae74d77c3519e838d7f44bb48d5f5bde010da56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/47bcaa3644e13f84268beae7cbd19edb48f36dbf",
-                "reference": "47bcaa3644e13f84268beae7cbd19edb48f36dbf",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/6ae74d77c3519e838d7f44bb48d5f5bde010da56",
+                "reference": "6ae74d77c3519e838d7f44bb48d5f5bde010da56",
                 "shasum": ""
             },
             "require": {
@@ -189,7 +189,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2017-01-19 18:00:01"
+            "time": "2017-02-05 13:52:18"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -239,12 +239,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "f2cd2dcb83679414db7e1efce4d9854304281122"
+                "reference": "d5c26d5538e55758790f5bebd485205f06722af7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/f2cd2dcb83679414db7e1efce4d9854304281122",
-                "reference": "f2cd2dcb83679414db7e1efce4d9854304281122",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/d5c26d5538e55758790f5bebd485205f06722af7",
+                "reference": "d5c26d5538e55758790f5bebd485205f06722af7",
                 "shasum": ""
             },
             "require": {
@@ -275,7 +275,7 @@
                 "extension",
                 "jobs"
             ],
-            "time": "2017-01-08 16:14:10"
+            "time": "2017-01-26 01:20:24"
         },
         {
             "name": "aimeos/ai-fosuser",
@@ -520,12 +520,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-twig.git",
-                "reference": "8de40352b7c3b5ec2c27d590df8b2fb311c312c9"
+                "reference": "1e73000985c0e67d0508bc794d30269075231f49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/8de40352b7c3b5ec2c27d590df8b2fb311c312c9",
-                "reference": "8de40352b7c3b5ec2c27d590df8b2fb311c312c9",
+                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/1e73000985c0e67d0508bc794d30269075231f49",
+                "reference": "1e73000985c0e67d0508bc794d30269075231f49",
                 "shasum": ""
             },
             "require": {
@@ -543,7 +543,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2017-01-21 21:23:39"
+            "time": "2017-01-21 22:31:40"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -551,12 +551,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "c64f585353fc67c51dfb0f295564302d44077643"
+                "reference": "02237c0886012a19bcd19e7fb5feb1d83ba73436"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/c64f585353fc67c51dfb0f295564302d44077643",
-                "reference": "c64f585353fc67c51dfb0f295564302d44077643",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/02237c0886012a19bcd19e7fb5feb1d83ba73436",
+                "reference": "02237c0886012a19bcd19e7fb5feb1d83ba73436",
                 "shasum": ""
             },
             "require": {
@@ -614,7 +614,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2017-01-19 10:20:48"
+            "time": "2017-01-31 14:32:15"
         },
         {
             "name": "composer/installers",
@@ -863,28 +863,29 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
+                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/1a4fb7e902202c33cce8c55989b945612943c2ba",
+                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "doctrine/coding-standard": "~0.1@dev",
+                "phpunit/phpunit": "^5.7"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -925,7 +926,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14T22:21:58+00:00"
+            "time": "2017-01-03T10:49:41+00:00"
         },
         {
             "name": "doctrine/common",
@@ -1002,16 +1003,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.9",
+            "version": "v2.5.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e"
+                "reference": "1b1effbddbdc0f40d1c8f849f44bcddac4f52a48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
-                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/1b1effbddbdc0f40d1c8f849f44bcddac4f52a48",
+                "reference": "1b1effbddbdc0f40d1c8f849f44bcddac4f52a48",
                 "shasum": ""
             },
             "require": {
@@ -1069,7 +1070,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-01-19T13:27:33+00:00"
+            "time": "2017-02-04T21:20:13+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -1194,16 +1195,16 @@
         },
         {
             "name": "friendsofsymfony/user-bundle",
-            "version": "v2.0.0-beta1",
+            "version": "2.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "28151dcb25de663c05ce26917fd6a0b5cb2787cf"
+                "reference": "d01739f70df32e6ab441b23b88395ae26715c5f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/28151dcb25de663c05ce26917fd6a0b5cb2787cf",
-                "reference": "28151dcb25de663c05ce26917fd6a0b5cb2787cf",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/d01739f70df32e6ab441b23b88395ae26715c5f3",
+                "reference": "d01739f70df32e6ab441b23b88395ae26715c5f3",
                 "shasum": ""
             },
             "require": {
@@ -1212,9 +1213,11 @@
                 "symfony/form": "^2.7 || ^3.0",
                 "symfony/framework-bundle": "^2.7 || ^3.0",
                 "symfony/security-bundle": "^2.7 || ^3.0",
+                "symfony/templating": "^2.7 || ^3.0",
                 "symfony/twig-bundle": "^2.7 || ^3.0"
             },
             "conflict": {
+                "doctrine/doctrine-bundle": "<1.3",
                 "symfony/doctrine-bridge": "<2.7"
             },
             "require-dev": {
@@ -1264,7 +1267,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-11-29T14:53:27+00:00"
+            "time": "2017-01-30T16:02:42+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1528,16 +1531,16 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.19",
+            "version": "v3.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "d57c2f297d17ee82baf8cae0b16dae34a9378784"
+                "reference": "ed86f6fb1753e76b39ff8b87f527045ca6b97169"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/d57c2f297d17ee82baf8cae0b16dae34a9378784",
-                "reference": "d57c2f297d17ee82baf8cae0b16dae34a9378784",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/ed86f6fb1753e76b39ff8b87f527045ca6b97169",
+                "reference": "ed86f6fb1753e76b39ff8b87f527045ca6b97169",
                 "shasum": ""
             },
             "require": {
@@ -1592,7 +1595,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2017-01-10T19:42:56+00:00"
+            "time": "2017-02-02T15:31:23+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2113,16 +2116,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.2.2",
+            "version": "v3.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "358c59fd21f9db7fdb465d1e07fba822d9e18e9e"
+                "reference": "6306409b3836ed2936c7b0454f00711d0128748c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/358c59fd21f9db7fdb465d1e07fba822d9e18e9e",
-                "reference": "358c59fd21f9db7fdb465d1e07fba822d9e18e9e",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/6306409b3836ed2936c7b0454f00711d0128748c",
+                "reference": "6306409b3836ed2936c7b0454f00711d0128748c",
                 "shasum": ""
             },
             "require": {
@@ -2205,6 +2208,7 @@
                 "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
                 "phpdocumentor/reflection-docblock": "^3.0",
                 "predis/predis": "~1.0",
+                "sensio/framework-extra-bundle": "^3.0.2",
                 "symfony/phpunit-bridge": "~3.2",
                 "symfony/polyfill-apcu": "~1.1",
                 "symfony/security-acl": "~2.8|~3.0"
@@ -2251,7 +2255,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-01-12T21:36:55+00:00"
+            "time": "2017-02-06T13:15:43+00:00"
         },
         {
             "name": "twig/twig",
@@ -2317,16 +2321,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.3.9",
+            "version": "1.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "d5d74ca5548753e0e427fcffca89b134943bac89"
+                "reference": "83e8d98b9915de76c659ce27d683c02a0f99fa90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/d5d74ca5548753e0e427fcffca89b134943bac89",
-                "reference": "d5d74ca5548753e0e427fcffca89b134943bac89",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/83e8d98b9915de76c659ce27d683c02a0f99fa90",
+                "reference": "83e8d98b9915de76c659ce27d683c02a0f99fa90",
                 "shasum": ""
             },
             "require": {
@@ -2363,22 +2367,22 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2017-01-17T16:18:33+00:00"
+            "time": "2017-01-23T04:53:24+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.6.6",
+            "version": "1.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "0f0c4df366bd1d36d38a27e2f5ff128e118ac969"
+                "reference": "a01d99bc6c9a6c8a8ace0012690099dd957ce9b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/0f0c4df366bd1d36d38a27e2f5ff128e118ac969",
-                "reference": "0f0c4df366bd1d36d38a27e2f5ff128e118ac969",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/a01d99bc6c9a6c8a8ace0012690099dd957ce9b9",
+                "reference": "a01d99bc6c9a6c8a8ace0012690099dd957ce9b9",
                 "shasum": ""
             },
             "require": {
@@ -2446,7 +2450,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2017-01-07T21:47:22+00:00"
+            "time": "2017-01-16T12:01:26+00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
