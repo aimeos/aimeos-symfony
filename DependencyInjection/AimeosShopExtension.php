@@ -37,7 +37,7 @@ class AimeosShopExtension extends Extension implements PrependExtensionInterface
 		$config = $this->processConfiguration( $configuration, $configs );
 
 		foreach( $configs as $list ) {
-			$this->merge( $config, $list );
+			$config = array_replace_recursive( $config, $list );
 		}
 
 		foreach( $config as $key => $value ) {
@@ -61,26 +61,5 @@ class AimeosShopExtension extends Extension implements PrependExtensionInterface
 
 		$container->prependExtensionConfig( 'aimeos_shop', $config );
 		$container->addResource( new FileResource( $configFile ) );
-	}
-
-
-	/**
-	 * Merges the second array into the first overruling its values
-	 *
-	 * @param array &$original Associative list of original values
-	 * @param array $overrule Associative list of new values
-	 */
-	protected function merge( array &$original, array $overrule )
-	{
-		foreach( array_keys( $overrule ) as $key )
-		{
-			if( isset( $original[$key] ) && is_array( $original[$key] ) ) {
-				if( is_array( $overrule[$key] ) ) {
-					$this->merge( $original[$key], $overrule[$key] );
-				}
-			} elseif( isset( $overrule[$key] ) ) {
-				$original[$key] = $overrule[$key];
-			}
-		}
 	}
 }
