@@ -15,7 +15,7 @@ $autoload = false;
 foreach( $files as $file )
 {
 	if( is_file( $file ) ) {
-		$autoload = include_once $file;
+		$autoload = require $file;
 		break;
 	}
 }
