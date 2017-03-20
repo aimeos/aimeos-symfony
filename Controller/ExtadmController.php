@@ -81,6 +81,7 @@ class ExtadmController extends Controller
 			'smd' => $controller->getJsonSmd( $jsonUrl ),
 			'urlTemplate' => urldecode( $adminUrl ),
 			'uploaddir' => $this->container->getParameter( 'aimeos_shop.uploaddir' ),
+			'extensions' => implode( ',', $bootstrap->getExtensions() ),
 			'version' => $aimeos->getVersion(),
 			'jqadmurl' => $jqadmUrl,
 			'activeTab' => $tab,

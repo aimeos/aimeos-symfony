@@ -189,7 +189,8 @@ class JqadmController extends Controller
 	protected function getHtml( $content )
 	{
 		$version = $this->get( 'aimeos' )->getVersion();
-		$content = str_replace( array( '{type}', '{version}' ), array( 'Symfony', $version ), $content );
+		$extnames = implode( ',', $this->get( 'aimeos' )->get()->getExtensions() );
+		$content = str_replace( ['{type}', '{version}', '{extensions}'], ['Symfony', $version, $extnames], $content );
 
 		return $this->render( 'AimeosShopBundle:Jqadm:index.html.twig', array( 'content' => $content ) );
 	}
