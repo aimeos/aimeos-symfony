@@ -54,7 +54,7 @@ class I18n
 				$apc = (bool) $this->container->getParameter( 'aimeos_shop.apc_enable' );
 				$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
 
-				if( function_exists( 'apc_store' ) === true && $apc === true ) {
+				if( function_exists( 'apcu_store' ) === true && $apc === true ) {
 					$i18n = new \Aimeos\MW\Translation\Decorator\APC( $i18n, $prefix );
 				}
 

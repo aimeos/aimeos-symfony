@@ -49,7 +49,7 @@ class Config
 		$apc = (bool) $this->container->getParameter( 'aimeos_shop.apc_enable' );
 		$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
 
-		if( function_exists( 'apc_store' ) === true && $apc === true ) {
+		if( function_exists( 'apcu_store' ) === true && $apc === true ) {
 			$conf = new \Aimeos\MW\Config\Decorator\APC( $conf, $prefix );
 		}
 
