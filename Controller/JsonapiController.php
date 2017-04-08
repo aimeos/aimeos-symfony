@@ -102,7 +102,7 @@ class JsonapiController extends Controller
 	 */
 	public function optionsAction( ServerRequestInterface $request, $resource = '' )
 	{
-		return $this->createClient( $resource, $related )->options( $request, new Response() );
+		return $this->createClient( $resource )->options( $request, new Response() );
 	}
 
 
@@ -113,7 +113,7 @@ class JsonapiController extends Controller
 	 * @param string Related resource location, e.g. "address"
 	 * @return \Aimeos\Client\JsonApi\Iface JSON API client
 	 */
-	protected function createClient( $resource, $related )
+	protected function createClient( $resource, $related = '' )
 	{
 		$tmplPaths = $this->container->get( 'aimeos' )->get()->getCustomPaths( 'client/jsonapi/templates' );
 		$context = $this->container->get( 'aimeos_context' )->get();
