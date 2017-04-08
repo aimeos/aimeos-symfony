@@ -185,12 +185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "1cb1daa7c31869724ce7d1cd541fc776a5f137b3"
+                "reference": "5e15bb9253f517a9766e7ea73d7658daa126d219"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/1cb1daa7c31869724ce7d1cd541fc776a5f137b3",
-                "reference": "1cb1daa7c31869724ce7d1cd541fc776a5f137b3",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/5e15bb9253f517a9766e7ea73d7658daa126d219",
+                "reference": "5e15bb9253f517a9766e7ea73d7658daa126d219",
                 "shasum": ""
             },
             "require": {
@@ -219,7 +219,7 @@
                 "extension",
                 "json"
             ],
-            "time": "2017-04-06 10:29:48"
+            "time": "2017-04-08 01:09:03"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -575,12 +575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "c953c83ffca7649029b782773fda7966cecd32cd"
+                "reference": "acf9c2e43d42cedb6c78e233eb7c2e0f25b21ea5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/c953c83ffca7649029b782773fda7966cecd32cd",
-                "reference": "c953c83ffca7649029b782773fda7966cecd32cd",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/acf9c2e43d42cedb6c78e233eb7c2e0f25b21ea5",
+                "reference": "acf9c2e43d42cedb6c78e233eb7c2e0f25b21ea5",
                 "shasum": ""
             },
             "require": {
@@ -637,7 +637,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2017-04-06 22:22:19"
+            "time": "2017-04-08 00:47:58"
         },
         {
             "name": "composer/installers",
