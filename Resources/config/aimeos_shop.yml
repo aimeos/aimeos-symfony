@@ -132,21 +132,11 @@ client:
             update:
                 url:
                     target: aimeos_shop_update
-        locale:
-            select:
-                currency:
-                    param-name: currency
-                language:
-                    param-name: locale
     jsonapi:
         url:
             target: aimeos_shop_jsonapi_get
-            config:
-                absoluteUri: true
             options:
                 target: aimeos_shop_jsonapi_options
-                config:
-                    absoluteUri: true
 
 controller:
     common:
