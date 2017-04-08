@@ -67,48 +67,31 @@ aimeos_shop_privacy:
 
 
 aimeos_shop_jsonapi_delete:
-    path: /jsonapi/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonapi:delete, id: null }
+    path: /jsonapi/{resource}/{id}/{related}/{relatedid}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:delete, id: null, related: null, relatedid: null }
     methods: [DELETE]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
 
 aimeos_shop_jsonapi_get:
-    path: /jsonapi/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonapi:get, id: null }
+    path: /jsonapi/{resource}/{id}/{related}/{relatedid}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:get, id: null, related: null, relatedid: null }
     methods: [GET]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
 
 aimeos_shop_jsonapi_patch:
-    path: /jsonapi/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonapi:patch, id: null }
+    path: /jsonapi/{resource}/{id}/{related}/{relatedid}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:patch, id: null, related: null, relatedid: null }
     methods: [PATCH]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
 
 aimeos_shop_jsonapi_post:
-    path: /jsonapi/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonapi:post, id: null }
+    path: /jsonapi/{resource}/{id}/{related}/{relatedid}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:post, id: null, related: null, relatedid: null }
     methods: [POST]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
 
 aimeos_shop_jsonapi_put:
-    path: /jsonapi/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonapi:put, id: null }
+    path: /jsonapi/{resource}/{id}/{related}/{relatedid}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:put, id: null, related: null, relatedid: null }
     methods: [PUT]
-    requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
 
 aimeos_shop_jsonapi_options:
     path: /jsonapi/{resource}
     defaults: { _controller: AimeosShopBundle:Jsonapi:options, resource: null }
     methods: [OPTIONS]
-    requirements:
-        resource: '.*'

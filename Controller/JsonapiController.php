@@ -27,12 +27,13 @@ class JsonapiController extends Controller
 	 * Deletes the resource object or a list of resource objects
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
-	 * @param string Resource location, e.g. "product"
+	 * @param string Resource location, e.g. "customer"
+	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function deleteAction( ServerRequestInterface $request, $resource )
+	public function deleteAction( ServerRequestInterface $request, $resource, $related = '' )
 	{
-		return $this->createClient( $resource )->delete( $request, new Response() );
+		return $this->createClient( $resource, $related )->delete( $request, new Response() );
 	}
 
 
@@ -40,12 +41,13 @@ class JsonapiController extends Controller
 	 * Returns the requested resource object or list of resource objects
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
-	 * @param string Resource location, e.g. "product"
+	 * @param string Resource location, e.g. "customer"
+	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function getAction( ServerRequestInterface $request, $resource )
+	public function getAction( ServerRequestInterface $request, $resource, $related = '' )
 	{
-		return $this->createClient( $resource )->get( $request, new Response() );
+		return $this->createClient( $resource, $related )->get( $request, new Response() );
 	}
 
 
@@ -53,12 +55,13 @@ class JsonapiController extends Controller
 	 * Updates a resource object or a list of resource objects
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
-	 * @param string Resource location, e.g. "product"
+	 * @param string Resource location, e.g. "customer"
+	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function patchAction( ServerRequestInterface $request, $resource )
+	public function patchAction( ServerRequestInterface $request, $resource, $related = '' )
 	{
-		return $this->createClient( $resource )->patch( $request, new Response() );
+		return $this->createClient( $resource, $related )->patch( $request, new Response() );
 	}
 
 
@@ -66,12 +69,13 @@ class JsonapiController extends Controller
 	 * Creates a new resource object or a list of resource objects
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
-	 * @param string Resource location, e.g. "product"
+	 * @param string Resource location, e.g. "customer"
+	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function postAction( ServerRequestInterface $request, $resource )
+	public function postAction( ServerRequestInterface $request, $resource, $related = '' )
 	{
-		return $this->createClient( $resource )->post( $request, new Response() );
+		return $this->createClient( $resource, $related )->post( $request, new Response() );
 	}
 
 
@@ -79,12 +83,13 @@ class JsonapiController extends Controller
 	 * Creates or updates a single resource object
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
-	 * @param string Resource location, e.g. "product"
+	 * @param string Resource location, e.g. "customer"
+	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function putAction( ServerRequestInterface $request, $resource )
+	public function putAction( ServerRequestInterface $request, $resource, $related = '' )
 	{
-		return $this->createClient( $resource )->put( $request, new Response() );
+		return $this->createClient( $resource, $related )->put( $request, new Response() );
 	}
 
 
@@ -92,22 +97,24 @@ class JsonapiController extends Controller
 	 * Returns the available HTTP verbs and the resource URLs
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
-	 * @param string Resource location, e.g. "product"
+	 * @param string Resource location, e.g. "customer"
+	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function optionsAction( ServerRequestInterface $request, $resource = '' )
+	public function optionsAction( ServerRequestInterface $request, $resource = '', $related = '' )
 	{
-		return $this->createClient( $resource )->options( $request, new Response() );
+		return $this->createClient( $resource, $related )->options( $request, new Response() );
 	}
 
 
 	/**
 	 * Returns the resource controller
 	 *
-	 * @param string Resource location, e.g. "product"
-	 * @return \Aimeos\MShop\Context\Item\Iface Context item
+	 * @param string Resource location, e.g. "customer"
+	 * @param string Related resource location, e.g. "address"
+	 * @return \Aimeos\Client\JsonApi\Iface JSON API client
 	 */
-	protected function createClient( $resource )
+	protected function createClient( $resource, $related )
 	{
 		$tmplPaths = $this->container->get( 'aimeos' )->get()->getCustomPaths( 'client/jsonapi/templates' );
 		$context = $this->container->get( 'aimeos_context' )->get();
@@ -116,6 +123,6 @@ class JsonapiController extends Controller
 		$view = $this->container->get( 'aimeos_view' )->create( $context, $tmplPaths, $langid );
 		$context->setView( $view );
 
-		return \Aimeos\Client\JsonApi\Factory::createClient( $context, $tmplPaths, $resource );
+		return \Aimeos\Client\JsonApi\Factory::createClient( $context, $tmplPaths, $resource . '/' . $related );
 	}
 }
