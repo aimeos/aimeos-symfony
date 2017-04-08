@@ -22,6 +22,20 @@ class JsonapiControllerTest extends WebTestCase
 	}
 
 
+	public function testPutAction()
+	{
+		$client = static::createClient();
+		$client->request( 'PUT', '/unittest/de/EUR/jsonapi/basket' );
+		$response = $client->getResponse();
+
+		$json = json_decode( $response->getContent(), true );
+
+		$this->assertNotNull( $json );
+		$this->assertEquals( 403, $response->getStatusCode() );
+		$this->assertArrayHasKey( 'errors', $json );
+	}
+
+
 	public function testGetAttributeAction()
 	{
 		$client = static::createClient();

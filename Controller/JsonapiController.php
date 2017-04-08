@@ -98,10 +98,9 @@ class JsonapiController extends Controller
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
 	 * @param string Resource location, e.g. "customer"
-	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function optionsAction( ServerRequestInterface $request, $resource = '', $related = '' )
+	public function optionsAction( ServerRequestInterface $request, $resource = '' )
 	{
 		return $this->createClient( $resource, $related )->options( $request, new Response() );
 	}
