@@ -1,0 +1,14 @@
+aimeos_shop_extadm_file:
+    path: /file
+    defaults: { _controller: AimeosShopBundle:Extadm:file }
+    methods: [GET]
+
+aimeos_shop_extadm_json:
+    path: /do
+    defaults: { _controller: AimeosShopBundle:Extadm:do }
+    methods: [POST]
+
+aimeos_shop_extadm:
+    path: /{lang}/{tab}
+    defaults: { _controller: AimeosShopBundle:Extadm:index, lang: en, tab: 0 }
+    methods: [GET]

@@ -1,19 +1,28 @@
+aimeos_shop_adm:
+    resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
+
+aimeos_shop_extadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_extadm.yml"
+    prefix: /{site}/extadm
+
+aimeos_shop_jqadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_jqadm.yml"
+    prefix: /{site}/jqadm
+
+aimeos_shop_jsonadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_jsonadm.yml"
+    prefix: /{site}/jsonadm
+
+
 aimeos_shop:
     resource: "@AimeosShopBundle/Resources/config/routing.yml"
     prefix:   /{site}/{locale}/{currency}
 
-aimeos_shop_adm:
-    resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
-    prefix: /{site}
-
-aimeos_shop_admin:
-    path: /admin
-    defaults: { _controller: AimeosShopBundle:Admin:index }
-
-aimeos_shop_admin_check:
-    path: /admin_check
-
-
 aimeos_test_favoritecomponent:
     path: /{site}/{locale}/{currency}/test/favoritecomponent
     defaults: { _controller: AimeosShopBundle:Account:favoriteComponent }
+
+
+aimeos_shop_jsonapi:
+    resource: "@AimeosShopBundle/Resources/config/routing_jsonapi.yml"
+    prefix: /{site}/{locale}/{currency}/jsonapi

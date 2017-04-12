@@ -230,8 +230,6 @@ class ScriptHandler
 	 */
 	protected static function updateRoutingFile( $filename )
 	{
-		$update = false;
-
 		if( ( $content = file_get_contents( $filename ) ) === false ) {
 			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
 		}
@@ -241,8 +239,6 @@ class ScriptHandler
 			$content .= "\n" . 'aimeos_shop:
     resource: "@AimeosShopBundle/Resources/config/routing.yml"
     prefix: /';
-
-			$update = true;
 		}
 
 		if( strpos( $content, 'aimeos_shop_adm:' ) === false )
@@ -250,15 +246,38 @@ class ScriptHandler
 			$content .= "\n" . 'aimeos_shop_adm:
     resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
     prefix: /';
-
-			$update = true;
 		}
 
-		if( $update === true )
+		if( strpos( $content, 'aimeos_shop_extadm:' ) === false )
 		{
-			$fs = new Filesystem();
-			$fs->dumpFile( $filename, $content );
+			$content .= "\n" . 'aimeos_shop_extadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_extadm.yml"
+    prefix: /admin/extadm';
 		}
+
+		if( strpos( $content, 'aimeos_shop_jqadm:' ) === false )
+		{
+			$content .= "\n" . 'aimeos_shop_jqadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_jqadm.yml"
+    prefix: /admin/jqadm';
+		}
+
+		if( strpos( $content, 'aimeos_shop_jsonadm:' ) === false )
+		{
+			$content .= "\n" . 'aimeos_shop_jsonadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_jsonadm.yml"
+    prefix: /admin/jsonadm';
+		}
+
+		if( strpos( $content, 'aimeos_shop_jsonapi:' ) === false )
+		{
+			$content .= "\n" . 'aimeos_shop_jsonapi:
+    resource: "@AimeosShopBundle/Resources/config/routing_jsonapi.yml"
+    prefix: /jsonapi';
+		}
+
+		$fs = new Filesystem();
+		$fs->dumpFile( $filename, $content );
 	}
 
 
