@@ -437,7 +437,7 @@ class JsonapiControllerTest extends WebTestCase
 		$this->assertEquals( 'basket/address', $json['included'][3]['type'] );
 
 		// store basket
-		$client->request( 'POST', $json['links']['self']['href'] );
+		$client->request( 'POST', $json['data']['links']['self']['href'] );
 		$basketJson = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( true, ctype_digit( $basketJson['data']['id'] ) );
 
