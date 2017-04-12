@@ -3,40 +3,40 @@ aimeos_shop_jsonadm_delete:
     defaults: { _controller: AimeosShopBundle:Jsonadm:delete, id: null }
     methods: [DELETE]
     requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
+        resource: '[^0-9A-Z\-\_]+'
+        id: '[0-9A-Z\-\_]*'
 
 aimeos_shop_jsonadm_get:
     path: /{resource}/{id}
     defaults: { _controller: AimeosShopBundle:Jsonadm:get, id: null }
     methods: [GET]
     requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
+        resource: '[^0-9A-Z\-\_]+'
+        id: '[0-9A-Z\-\_]*'
 
 aimeos_shop_jsonadm_patch:
     path: /{resource}/{id}
     defaults: { _controller: AimeosShopBundle:Jsonadm:patch, id: null }
     methods: [PATCH]
     requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
+        resource: '[^0-9A-Z\-\_]+'
+        id: '[0-9A-Z\-\_]*'
 
 aimeos_shop_jsonadm_post:
     path: /{resource}/{id}
     defaults: { _controller: AimeosShopBundle:Jsonadm:post, id: null }
     methods: [POST]
     requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
+        resource: '[^0-9A-Z\-\_]+'
+        id: '[0-9A-Z\-\_]*'
 
 aimeos_shop_jsonadm_put:
     path: /{resource}/{id}
     defaults: { _controller: AimeosShopBundle:Jsonadm:put, id: null }
     methods: [PUT]
     requirements:
-        resource: '[^0-9]+'
-        id: '[0-9]*'
+        resource: '[^0-9A-Z\-\_]+'
+        id: '[0-9A-Z\-\_]*'
 
 aimeos_shop_jsonadm_options:
     path: /{resource}
