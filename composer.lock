@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-extadm.git",
-                "reference": "af134731aaa1296721eb596dd926b408e2aae97e"
+                "reference": "8c8fb76c50affdacfbc48154f58b9cbd19632174"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/af134731aaa1296721eb596dd926b408e2aae97e",
-                "reference": "af134731aaa1296721eb596dd926b408e2aae97e",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/8c8fb76c50affdacfbc48154f58b9cbd19632174",
+                "reference": "8c8fb76c50affdacfbc48154f58b9cbd19632174",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2017-04-06 22:30:50"
+            "time": "2017-04-10 08:45:03"
         },
         {
             "name": "aimeos/ai-admin-jqadm",
@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "f25b82fde8e90a51349db6a23f0dd906c5604b1e"
+                "reference": "008260180ea7b50e9328dc0f9715c6b0a056f1f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/f25b82fde8e90a51349db6a23f0dd906c5604b1e",
-                "reference": "f25b82fde8e90a51349db6a23f0dd906c5604b1e",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/008260180ea7b50e9328dc0f9715c6b0a056f1f1",
+                "reference": "008260180ea7b50e9328dc0f9715c6b0a056f1f1",
                 "shasum": ""
             },
             "require": {
@@ -86,7 +86,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2017-04-06 22:30:50"
+            "time": "2017-04-10 23:43:07"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -94,12 +94,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "337e63250fbbeab0eda17f4923bfd755d4451863"
+                "reference": "b74ec1c44ca3d73abcc27d3aec34b8d0585bd2c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/337e63250fbbeab0eda17f4923bfd755d4451863",
-                "reference": "337e63250fbbeab0eda17f4923bfd755d4451863",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/b74ec1c44ca3d73abcc27d3aec34b8d0585bd2c2",
+                "reference": "b74ec1c44ca3d73abcc27d3aec34b8d0585bd2c2",
                 "shasum": ""
             },
             "require": {
@@ -131,7 +131,7 @@
                 "extension",
                 "json api"
             ],
-            "time": "2017-04-06 10:29:43"
+            "time": "2017-04-11 00:19:29"
         },
         {
             "name": "aimeos/ai-client-html",
@@ -139,12 +139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "0be4ad738e68177bdd3309d1026776a01d886554"
+                "reference": "f68df3be16334616923feea29a1d181b5f5281cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/0be4ad738e68177bdd3309d1026776a01d886554",
-                "reference": "0be4ad738e68177bdd3309d1026776a01d886554",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/f68df3be16334616923feea29a1d181b5f5281cb",
+                "reference": "f68df3be16334616923feea29a1d181b5f5281cb",
                 "shasum": ""
             },
             "require": {
@@ -177,7 +177,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2017-04-06 22:30:51"
+            "time": "2017-04-11 11:25:20"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -185,12 +185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "5e15bb9253f517a9766e7ea73d7658daa126d219"
+                "reference": "87d0a81f0dc770ff01bae6fb7a36e731c2b3fd44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/5e15bb9253f517a9766e7ea73d7658daa126d219",
-                "reference": "5e15bb9253f517a9766e7ea73d7658daa126d219",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/87d0a81f0dc770ff01bae6fb7a36e731c2b3fd44",
+                "reference": "87d0a81f0dc770ff01bae6fb7a36e731c2b3fd44",
                 "shasum": ""
             },
             "require": {
@@ -219,7 +219,7 @@
                 "extension",
                 "json"
             ],
-            "time": "2017-04-08 01:09:03"
+            "time": "2017-04-10 08:33:34"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -575,12 +575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "acf9c2e43d42cedb6c78e233eb7c2e0f25b21ea5"
+                "reference": "b7eccfc55028ddafd4763080b6d637aaa340a6b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/acf9c2e43d42cedb6c78e233eb7c2e0f25b21ea5",
-                "reference": "acf9c2e43d42cedb6c78e233eb7c2e0f25b21ea5",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/b7eccfc55028ddafd4763080b6d637aaa340a6b5",
+                "reference": "b7eccfc55028ddafd4763080b6d637aaa340a6b5",
                 "shasum": ""
             },
             "require": {
@@ -637,7 +637,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2017-04-08 00:47:58"
+            "time": "2017-04-10 08:42:57"
         },
         {
             "name": "composer/installers",
