@@ -1,0 +1,29 @@
+aimeos_shop_jsonapi_delete:
+    path: /{resource}/{id}/{related}/{relatedid}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:delete, id: null, related: null, relatedid: null }
+    methods: [DELETE]
+
+aimeos_shop_jsonapi_get:
+    path: /{resource}/{id}/{related}/{relatedid}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:get, id: null, related: null, relatedid: null }
+    methods: [GET]
+
+aimeos_shop_jsonapi_patch:
+    path: /{resource}/{id}/{related}/{relatedid}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:patch, id: null, related: null, relatedid: null }
+    methods: [PATCH]
+
+aimeos_shop_jsonapi_post:
+    path: /{resource}/{id}/{related}/{relatedid}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:post, id: null, related: null, relatedid: null }
+    methods: [POST]
+
+aimeos_shop_jsonapi_put:
+    path: /{resource}/{id}/{related}/{relatedid}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:put, id: null, related: null, relatedid: null }
+    methods: [PUT]
+
+aimeos_shop_jsonapi_options:
+    path: /{resource}
+    defaults: { _controller: AimeosShopBundle:Jsonapi:options, resource: null }
+    methods: [OPTIONS]
