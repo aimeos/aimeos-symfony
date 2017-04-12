@@ -148,11 +148,11 @@ class JsonapiControllerTest extends WebTestCase
 		$client = static::createClient();
 
 		$client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
-		$json = json_decode( $client->getResponse()->getContent(), true );
-		$this->assertGreaterThan( 8, count( $json['meta']['resources'] ) );
+		$optJson = json_decode( $client->getResponse()->getContent(), true );
+		$this->assertGreaterThan( 8, count( $optJson['meta']['resources'] ) );
 
 		// catalog root
-		$client->request( 'GET', $json['meta']['resources']['catalog'], ['include' => 'catalog'] );
+		$client->request( 'GET', $optJson['meta']['resources']['catalog'], ['include' => 'catalog'] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'categories', $json['included'][0]['attributes']['catalog.code'] );
 
@@ -162,7 +162,7 @@ class JsonapiControllerTest extends WebTestCase
 		$this->assertEquals( 'cafe', $json['included'][0]['attributes']['catalog.code'] );
 
 		// product list for "cafe" category
-		$client->request( 'GET', $json['included'][0]['links']['product']['href'] );
+		$client->request( 'GET', $optJson['meta']['resources']['product'], ['f_catid' => $json['included'][0]['id']] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'CNE', $json['data'][0]['attributes']['product.code'] );
 	}
