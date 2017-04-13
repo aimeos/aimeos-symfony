@@ -29,7 +29,7 @@ checkout process. A full set of pages including routing is also available for a 
 
 This document is for the latest Aimeos Symfony **2016.10 release and later**.
 
-- Beta release: 2017.01
+- Stable release: 2017.04
 - LTS release: 2016.10
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
@@ -52,7 +52,7 @@ Make sure that the database is set up and it is configured in your config.yml. T
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2016.10",
+        "aimeos/aimeos-symfony": "~2017.04",
         ...
     },
     "scripts": {
@@ -159,10 +159,9 @@ security:
             encode_as_base64: false
             iterations: 1
 
-
     firewalls:
         aimeos_admin:
-            pattern:   ^/(admin|extadm|jqadm|jsonadm)
+            pattern:   ^/admin
             anonymous: ~
             provider: admin
             form_login:
@@ -177,7 +176,7 @@ security:
             anonymous: ~
 
     access_control:
-        - { path: ^/(extadm|jqadm|jsonadm), roles: ROLE_ADMIN }
+        - { path: ^/admin/.+, roles: ROLE_ADMIN }
         - { path: ^/myaccount, roles: ROLE_USER }
 ```
 
@@ -185,11 +184,10 @@ security:
 If you place the `in_memory` or `main` section before the Aimeos related sections,
 authentication will fail!
 
-These settings will protect the ```/extadm``` (ExtJS), the ```/jqadm``` (JQuery+Bootstrap)
-and ```/jsonadm``` (JSON API) URLs from unauthorized access from someone without
-admin privileges. There's only one user/password combination defined, which is
-rather inflexible. As alternative, you can use on of the other Symfony user provider
-to authenticate against.
+These settings will protect the ```/admin/*``` URLs from unauthorized access from
+someone without admin privileges. There's only one user/password combination defined,
+which is rather inflexible. As alternative, you can use on of the other Symfony user
+provider to authenticate against.
 
 The `/myaccount` URL is protected by HTTP basic authentication in this short
 example. Usually, you will replace it with a form based login or use the FOS user
