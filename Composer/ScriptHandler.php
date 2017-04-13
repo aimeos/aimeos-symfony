@@ -252,21 +252,21 @@ class ScriptHandler
 		{
 			$content .= "\n" . 'aimeos_shop_extadm:
     resource: "@AimeosShopBundle/Resources/config/routing_extadm.yml"
-    prefix: /admin/extadm';
+    prefix: /admin/{site}/extadm';
 		}
 
 		if( strpos( $content, 'aimeos_shop_jqadm:' ) === false )
 		{
 			$content .= "\n" . 'aimeos_shop_jqadm:
     resource: "@AimeosShopBundle/Resources/config/routing_jqadm.yml"
-    prefix: /admin/jqadm';
+    prefix: /admin/{site}/jqadm';
 		}
 
 		if( strpos( $content, 'aimeos_shop_jsonadm:' ) === false )
 		{
 			$content .= "\n" . 'aimeos_shop_jsonadm:
     resource: "@AimeosShopBundle/Resources/config/routing_jsonadm.yml"
-    prefix: /admin/jsonadm';
+    prefix: /admin/{site}/jsonadm';
 		}
 
 		if( strpos( $content, 'aimeos_shop_jsonapi:' ) === false )

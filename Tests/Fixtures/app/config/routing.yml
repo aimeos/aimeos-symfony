@@ -14,6 +14,11 @@ aimeos_shop_jsonadm:
     prefix: /{site}/jsonadm
 
 
+aimeos_shop_jsonapi:
+    resource: "@AimeosShopBundle/Resources/config/routing_jsonapi.yml"
+    prefix: /{site}/{locale}/{currency}/jsonapi
+
+
 aimeos_shop:
     resource: "@AimeosShopBundle/Resources/config/routing.yml"
     prefix:   /{site}/{locale}/{currency}
@@ -21,8 +26,3 @@ aimeos_shop:
 aimeos_test_favoritecomponent:
     path: /{site}/{locale}/{currency}/test/favoritecomponent
     defaults: { _controller: AimeosShopBundle:Account:favoriteComponent }
-
-
-aimeos_shop_jsonapi:
-    resource: "@AimeosShopBundle/Resources/config/routing_jsonapi.yml"
-    prefix: /{site}/{locale}/{currency}/jsonapi
