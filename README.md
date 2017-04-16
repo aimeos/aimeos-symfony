@@ -46,7 +46,12 @@ composer post install/update scripts won't fail:
     );
 ```
 
-Make sure that the database is set up and it is configured in your config.yml. Then add these lines to your composer.json of your Symfony2 project:
+Make sure that the database is set up and it is configured in your config.yml.
+If you want to use a database server other than MySQL, please have a look into the article about
+[supported database servers](https://aimeos.org/docs/Developers/Library/Database_support)
+and their specific configuration.
+
+Then add these lines to your composer.json of your Symfony2 project:
 
 ```
     "prefer-stable": true,
