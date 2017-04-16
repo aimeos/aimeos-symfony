@@ -67,7 +67,7 @@ class ExtadmController extends Controller
 		$token = $this->get( 'security.csrf.token_manager' )->getToken( 'aimeos_admin_token' )->getValue();
 		$jsonUrl = $this->generateUrl( 'aimeos_shop_extadm_json', array( '_token' => $token, 'site' => $site ) );
 
-		$jqadmUrl = $this->generateUrl( 'aimeos_shop_jqadm_search', array( 'site' => $site, 'resource' => 'product', 'lang' => $lang ) );
+		$jqadmUrl = $this->generateUrl( 'aimeos_shop_jqadm_search', array( 'site' => $site, 'lang' => $lang, 'resource' => 'dashboard' ) );
 
 		$vars = array(
 			'lang' => $lang,
