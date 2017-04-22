@@ -216,9 +216,10 @@ class Context
 				$username = $token->getUser();
 			}
 		}
-		elseif( $this->container->has( 'request' ) )
-		{
-			$username = $this->container->get( 'request' )->getClientIp();
+		elseif( $this->container->has( 'request_stack' )
+			&& ( $request = $this->container->get('request_stack')->getMasterRequest() ) !== null
+		) {
+			$username = $request->getClientIp();
 		}
 
 		$context->setEditor( $username );
