@@ -6,7 +6,7 @@ namespace Aimeos\ShopBundle\Tests\Entity;
 use Aimeos\ShopBundle\Entity\User;
 
 
-class UserTest extends \PHPUnit_Framework_TestCase
+class UserTest extends \PHPUnit\Framework\TestCase
 {
 	private $object;
 
@@ -50,6 +50,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
 	public function testEraseCredentials()
 	{
 		$this->object->eraseCredentials();
+		$this->assertNull( $this->object->getPassword() );
 	}
 
 
@@ -62,5 +63,6 @@ class UserTest extends \PHPUnit_Framework_TestCase
 	public function testUnserialize()
 	{
 		$this->object->unserialize( 'a:3:{i:0;N;i:1;N;i:2;N;}' );
+		$this->assertNull( $this->object->getId() );
 	}
 }

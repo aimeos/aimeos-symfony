@@ -6,7 +6,7 @@ namespace Aimeos\ShopBundle\Tests\Entity;
 use Aimeos\ShopBundle\Entity\FosUser;
 
 
-class FosUserTest extends \PHPUnit_Framework_TestCase
+class FosUserTest extends \PHPUnit\Framework\TestCase
 {
 	private $object;
 
@@ -154,9 +154,11 @@ class FosUserTest extends \PHPUnit_Framework_TestCase
 	}
 
 
+	/**
+	 * @expectedException Exception
+	 */
 	public function testSetWebsiteInvalid()
 	{
-		$this->setExpectedException( 'Exception' );
 		$this->object->setWebsite( 'aimeos+org' );
 	}
 }
