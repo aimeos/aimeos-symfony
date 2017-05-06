@@ -85,7 +85,7 @@ class BasketControllerTest extends WebTestCase
 		$crawler = $client->submit( $form );
 
 
-		$link = $crawler->filter( '.basket-standard .product .action .change' )->link();
+		$link = $crawler->filter( '.basket-standard .product .action .delete' )->link();
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 0, $crawler->filter( '.basket-standard .product' )->count() );
