@@ -197,26 +197,19 @@ class Context
 		$username = '';
 		$token = $this->container->get( 'security.token_storage' )->getToken();
 
-		if( is_object( $token ) )
+		if( is_object( $token ) && is_object( $token->getUser() ) && method_exists( $token->getUser(), 'getId' ) )
 		{
-			if( method_exists( $token->getUser(), 'getId' ) )
+			$username =  $token->getUser()->getUsername();
+			$userid = $token->getUser()->getId();
+			$context->setUserId( $userid );
+			$context->setGroupIds( function() use ( $context, $userid )
 			{
-				$userid = $token->getUser()->getId();
-				$context->setUserId( $userid );
-				$context->setGroupIds( function() use ( $context, $userid )
-				{
-					$manager = \Aimeos\MShop\Factory::createManager( $context, 'customer' );
-					return $manager->getItem( $userid, array( 'customer/group' ) )->getGroups();
-				} );
-			}
-
-			if( is_object( $token->getUser() ) ) {
-				$username =  $token->getUser()->getUsername();
-			} else {
-				$username = $token->getUser();
-			}
+				$manager = \Aimeos\MShop\Factory::createManager( $context, 'customer' );
+				return $manager->getItem( $userid, array( 'customer/group' ) )->getGroups();
+			} );
 		}
-		elseif( $this->container->has( 'request_stack' )
+
+		if( $username === '' && $this->container->has( 'request_stack' )
 			&& ( $request = $this->container->get('request_stack')->getMasterRequest() ) !== null
 		) {
 			$username = $request->getClientIp();
