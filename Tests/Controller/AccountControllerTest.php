@@ -2,6 +2,7 @@
 
 namespace Aimeos\ShopBundle\Tests\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 
@@ -45,9 +46,10 @@ class AccountControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->historyComponentAction() );
+		$this->assertSame( $response, $mock->historyComponentAction() );
 	}
 
 
@@ -58,9 +60,10 @@ class AccountControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->profileComponentAction() );
+		$this->assertSame( $response, $mock->profileComponentAction() );
 	}
 
 
@@ -71,8 +74,9 @@ class AccountControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->watchComponentAction() );
+		$this->assertSame( $response, $mock->watchComponentAction() );
 	}
 }

@@ -29,7 +29,9 @@ class BasketController extends AbstractController
 	public function indexAction()
 	{
 		$params = $this->get( 'aimeos_page' )->getSections( 'basket-index' );
-		return $this->render( 'AimeosShopBundle:Basket:index.html.twig', $params );
+		$response =  $this->render( 'AimeosShopBundle:Basket:index.html.twig', $params );
+		$response->headers->set('Cache-Control', 'no-store');
+		return $response;
 	}
 
 	/**
@@ -39,7 +41,9 @@ class BasketController extends AbstractController
 	 */
 	public function miniComponentAction()
 	{
-		return $this->getOutput( 'basket/mini' );
+		$response = $this->getOutput( 'basket/mini' );
+		$response->headers->set('Cache-Control', 'no-store');
+		return $response;
 	}
 
 
@@ -50,7 +54,9 @@ class BasketController extends AbstractController
 	 */
 	public function relatedComponentAction()
 	{
-		return $this->getOutput( 'basket/related' );
+		$response = $this->getOutput( 'basket/related' );
+		$response->headers->set('Cache-Control', 'no-store');
+		return $response;
 	}
 
 
@@ -61,6 +67,8 @@ class BasketController extends AbstractController
 	 */
 	public function standardComponentAction()
 	{
-		return $this->getOutput( 'basket/standard' );
+		$response = $this->getOutput( 'basket/standard' );
+		$response->headers->set('Cache-Control', 'no-store');
+		return $response;
 	}
 }

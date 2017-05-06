@@ -29,7 +29,7 @@ class AccountController extends AbstractController
 	public function indexAction()
 	{
 		$params = $this->get( 'aimeos_page' )->getSections( 'account-index' );
-		return $this->render( 'AimeosShopBundle:Account:index.html.twig', $params );
+		return $this->render( 'AimeosShopBundle:Account:index.html.twig', $params )->setPrivate()->setMaxAge( 300 );
 	}
 
 
@@ -51,7 +51,8 @@ class AccountController extends AbstractController
 		$client->process();
 
 		$response = $view->response();
-		return new Response( (string) $response->getBody(), $response->getStatusCode(), $response->getHeaders() );
+		return Response::create( (string) $response->getBody(), $response->getStatusCode(), $response->getHeaders() )
+			->setPrivate()->setMaxAge( 300 );
 	}
 
 
@@ -62,7 +63,7 @@ class AccountController extends AbstractController
 	 */
 	public function favoriteComponentAction()
 	{
-		return $this->getOutput( 'account/favorite' );
+		return $this->getOutput( 'account/favorite' )->setPrivate()->setMaxAge( 300 );
 	}
 
 
@@ -73,7 +74,7 @@ class AccountController extends AbstractController
 	 */
 	public function historyComponentAction()
 	{
-		return $this->getOutput( 'account/history' );
+		return $this->getOutput( 'account/history' )->setPrivate()->setMaxAge( 300 );
 	}
 
 
@@ -84,7 +85,7 @@ class AccountController extends AbstractController
 	 */
 	public function profileComponentAction()
 	{
-		return $this->getOutput( 'account/profile' );
+		return $this->getOutput( 'account/profile' )->setPrivate()->setMaxAge( 300 );
 	}
 
 
@@ -95,6 +96,6 @@ class AccountController extends AbstractController
 	 */
 	public function watchComponentAction()
 	{
-		return $this->getOutput( 'account/watch' );
+		return $this->getOutput( 'account/watch' )->setPrivate()->setMaxAge( 300 );
 	}
 }

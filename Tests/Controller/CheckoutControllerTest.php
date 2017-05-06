@@ -2,6 +2,7 @@
 
 namespace Aimeos\ShopBundle\Tests\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 
@@ -289,9 +290,10 @@ class CheckoutControllerTest extends WebTestCase
 		->disableOriginalConstructor()
 		->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->confirmComponentAction() );
+		$this->assertSame( $response, $mock->confirmComponentAction() );
 	}
 
 
@@ -302,9 +304,10 @@ class CheckoutControllerTest extends WebTestCase
 		->disableOriginalConstructor()
 		->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->standardComponentAction() );
+		$this->assertSame( $response, $mock->standardComponentAction() );
 	}
 
 
@@ -315,9 +318,10 @@ class CheckoutControllerTest extends WebTestCase
 		->disableOriginalConstructor()
 		->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->updateComponentAction() );
+		$this->assertSame( $response, $mock->updateComponentAction() );
 	}
 
 

@@ -2,6 +2,7 @@
 
 namespace Aimeos\ShopBundle\Tests\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 
@@ -226,9 +227,10 @@ class CatalogControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->countComponentAction() );
+		$this->assertSame( $response, $mock->countComponentAction() );
 	}
 
 
@@ -239,9 +241,10 @@ class CatalogControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->detailComponentAction() );
+		$this->assertSame( $response, $mock->detailComponentAction() );
 	}
 
 
@@ -252,9 +255,10 @@ class CatalogControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->filterComponentAction() );
+		$this->assertSame( $response, $mock->filterComponentAction() );
 	}
 
 
@@ -265,9 +269,10 @@ class CatalogControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->listComponentAction() );
+		$this->assertSame( $response, $mock->listComponentAction() );
 	}
 
 
@@ -278,9 +283,10 @@ class CatalogControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->sessionComponentAction() );
+		$this->assertSame( $response, $mock->sessionComponentAction() );
 	}
 
 
@@ -291,9 +297,10 @@ class CatalogControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->stageComponentAction() );
+		$this->assertSame( $response, $mock->stageComponentAction() );
 	}
 
 
@@ -304,8 +311,9 @@ class CatalogControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->stockComponentAction() );
+		$this->assertSame( $response, $mock->stockComponentAction() );
 	}
 }

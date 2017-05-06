@@ -29,7 +29,9 @@ class CheckoutController extends AbstractController
 	public function confirmAction()
 	{
 		$params = $this->get( 'aimeos_page' )->getSections( 'checkout-confirm' );
-		return $this->render( 'AimeosShopBundle:Checkout:confirm.html.twig', $params );
+		$response = $this->render( 'AimeosShopBundle:Checkout:confirm.html.twig', $params );
+		$response->headers->set('Cache-Control', 'no-store');
+		return $response;
 	}
 
 
@@ -41,7 +43,9 @@ class CheckoutController extends AbstractController
 	public function indexAction()
 	{
 		$params = $this->get( 'aimeos_page' )->getSections( 'checkout-index' );
-		return $this->render( 'AimeosShopBundle:Checkout:index.html.twig', $params );
+		$response = $this->render( 'AimeosShopBundle:Checkout:index.html.twig', $params );
+		$response->headers->set('Cache-Control', 'no-store');
+		return $response;
 	}
 
 
@@ -53,7 +57,9 @@ class CheckoutController extends AbstractController
 	public function updateAction()
 	{
 		$params = $this->get( 'aimeos_page' )->getSections( 'checkout-update' );
-		return $this->render( 'AimeosShopBundle:Checkout:update.html.twig', $params );
+		$response = $this->render( 'AimeosShopBundle:Checkout:update.html.twig', $params );
+		$response->headers->set('Cache-Control', 'no-store');
+		return $response;
 	}
 
 
@@ -64,7 +70,9 @@ class CheckoutController extends AbstractController
 	 */
 	public function confirmComponentAction()
 	{
-		return $this->getOutput( 'checkout/confirm' );
+		$response = $this->getOutput( 'checkout/confirm' );
+		$response->headers->set('Cache-Control', 'no-store');
+		return $response;
 	}
 
 
@@ -75,7 +83,9 @@ class CheckoutController extends AbstractController
 	 */
 	public function standardComponentAction()
 	{
-		return $this->getOutput( 'checkout/standard' );
+		$response = $this->getOutput( 'checkout/standard' );
+		$response->headers->set('Cache-Control', 'no-store');
+		return $response;
 	}
 
 
@@ -86,6 +96,8 @@ class CheckoutController extends AbstractController
 	 */
 	public function updateComponentAction()
 	{
-		return $this->getOutput( 'checkout/update' );
+		$response = $this->getOutput( 'checkout/update' );
+		$response->headers->set('Cache-Control', 'no-store');
+		return $response;
 	}
 }

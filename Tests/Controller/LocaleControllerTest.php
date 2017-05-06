@@ -2,6 +2,7 @@
 
 namespace Aimeos\ShopBundle\Tests\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 
@@ -14,8 +15,9 @@ class LocaleControllerTest extends WebTestCase
 			->disableOriginalConstructor()
 			->getMock();
 
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( 'test' ) );
+		$response = Response::create( 'test' );
+		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
 
-		$this->assertEquals( 'test', $mock->selectComponentAction() );
+		$this->assertSame( $response, $mock->selectComponentAction() );
 	}
 }
