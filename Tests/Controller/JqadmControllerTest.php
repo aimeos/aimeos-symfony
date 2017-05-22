@@ -46,7 +46,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( '<div class="product-item', $response->getContent() );
+		$this->assertContains( 'item-product', $response->getContent() );
 	}
 
 
@@ -61,7 +61,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( '<div class="product-item', $response->getContent() );
+		$this->assertContains( 'item-product', $response->getContent() );
 	}
 
 
@@ -76,7 +76,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( '<table class="list-items', $response->getContent() );
+		$this->assertContains( 'list-items', $response->getContent() );
 	}
 
 
@@ -91,7 +91,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( '<div class="product-item', $response->getContent() );
+		$this->assertContains( 'item-product', $response->getContent() );
 	}
 
 
@@ -106,7 +106,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( '<div class="product-item', $response->getContent() );
+		$this->assertContains( 'item-product', $response->getContent() );
 	}
 
 
@@ -121,7 +121,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( '<table class="list-items', $response->getContent() );
+		$this->assertContains( 'list-items', $response->getContent() );
 	}
 
 
@@ -135,7 +135,6 @@ class JqadmControllerTest extends WebTestCase
 		$client->request( 'GET', '/invalid/jqadm/search/product' );
 		$response = $client->getResponse();
 
-		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( '<table class="list-items', $response->getContent() );
+		$this->assertEquals( 500, $response->getStatusCode() );
 	}
 }

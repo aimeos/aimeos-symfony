@@ -46,8 +46,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertEquals( 24, $json['meta']['total'] );
-		$this->assertEquals( 24, count( $json['data'] ) );
+		$this->assertEquals( 25, $json['meta']['total'] );
+		$this->assertEquals( 25, count( $json['data'] ) );
 	}
 
 
