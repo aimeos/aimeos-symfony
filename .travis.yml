@@ -21,7 +21,7 @@ before_script:
   - travis_retry composer require "symfony/symfony:${SYMFONY_VERSION}"
 
 script:
-  - vendor/bin/phpunit --coverage-clover coverage.xml
+  - phpunit --coverage-clover coverage.xml
 
 after_success:
   - php vendor/bin/coveralls
