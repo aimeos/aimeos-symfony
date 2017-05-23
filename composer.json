@@ -30,7 +30,7 @@
 		"aimeos/ai-admin-jqadm": "~2016.10",
 		"aimeos/ai-admin-jsonadm": "~2016.10",
 		"aimeos/ai-client-html": "~2016.10",
-        "aimeos/ai-controller-jobs": "~2016.10",
+		"aimeos/ai-controller-jobs": "~2016.10",
 		"aimeos/ai-fosuser": "~2016.10",
 		"friendsofsymfony/user-bundle": "~2.0@dev",
 		"symfony/symfony": "~2.4||~3.0",
@@ -42,7 +42,8 @@
 		"satooshi/php-coveralls": "dev-master",
 		"sensio/framework-extra-bundle": "~2.3||~3.0",
 		"doctrine/doctrine-bundle": "~1.2",
-		"doctrine/orm": "~2.2,>=2.2.3"
+		"doctrine/orm": "~2.2,>=2.2.3",
+		"phpunit/phpunit": "4.8.35||~5.0"
 	},
 	"autoload": {
 		"psr-4": { "Aimeos\\ShopBundle\\": "" }
