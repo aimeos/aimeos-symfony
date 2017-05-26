@@ -28,6 +28,6 @@ class LocaleController extends AbstractController
 	 */
 	public function selectComponentAction()
 	{
-		return $this->getOutput( 'locale/select' )->setMaxAge( 43200 );
+		return $this->getOutput( 'locale/select' );
 	}
 }

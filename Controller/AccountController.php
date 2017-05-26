@@ -51,8 +51,7 @@ class AccountController extends AbstractController
 		$client->process();
 
 		$response = $view->response();
-		return Response::create( (string) $response->getBody(), $response->getStatusCode(), $response->getHeaders() )
-			->setPrivate()->setMaxAge( 300 );
+		return Response::create( (string) $response->getBody(), $response->getStatusCode(), $response->getHeaders() );
 	}
 
 
@@ -63,7 +62,7 @@ class AccountController extends AbstractController
 	 */
 	public function favoriteComponentAction()
 	{
-		return $this->getOutput( 'account/favorite' )->setPrivate()->setMaxAge( 300 );
+		return $this->getOutput( 'account/favorite' );
 	}
 
 
@@ -74,7 +73,7 @@ class AccountController extends AbstractController
 	 */
 	public function historyComponentAction()
 	{
-		return $this->getOutput( 'account/history' )->setPrivate()->setMaxAge( 300 );
+		return $this->getOutput( 'account/history' );
 	}
 
 
@@ -85,7 +84,7 @@ class AccountController extends AbstractController
 	 */
 	public function profileComponentAction()
 	{
-		return $this->getOutput( 'account/profile' )->setPrivate()->setMaxAge( 300 );
+		return $this->getOutput( 'account/profile' );
 	}
 
 
@@ -96,6 +95,6 @@ class AccountController extends AbstractController
 	 */
 	public function watchComponentAction()
 	{
-		return $this->getOutput( 'account/watch' )->setPrivate()->setMaxAge( 300 );
+		return $this->getOutput( 'account/watch' );
 	}
 }

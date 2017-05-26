@@ -29,7 +29,7 @@ class CatalogController extends AbstractController
 	public function countAction()
 	{
 		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-count' );
-		$response = $this->render( 'AimeosShopBundle:Catalog:count.html.twig', $params )->setMaxAge( 43200 );
+		$response = $this->render( 'AimeosShopBundle:Catalog:count.html.twig', $params )->setMaxAge( 300 );
 		$response->headers->set( 'Content-Type', 'application/javascript' );
 		return $response;
 	}
@@ -43,7 +43,7 @@ class CatalogController extends AbstractController
 	public function detailAction()
 	{
 		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-detail' );
-		return $this->render( 'AimeosShopBundle:Catalog:detail.html.twig', $params )->setMaxAge( 43200 );
+		return $this->render( 'AimeosShopBundle:Catalog:detail.html.twig', $params );
 	}
 
 
@@ -55,7 +55,7 @@ class CatalogController extends AbstractController
 	public function listAction()
 	{
 		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-list' );
-		return $this->render( 'AimeosShopBundle:Catalog:list.html.twig', $params )->setMaxAge( 43200 );
+		return $this->render( 'AimeosShopBundle:Catalog:list.html.twig', $params );
 	}
 
 
@@ -81,7 +81,7 @@ class CatalogController extends AbstractController
 	public function suggestAction()
 	{
 		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-suggest' );
-		$response = $this->render( 'AimeosShopBundle:Catalog:suggest.html.twig', $params )->setMaxAge( 43200 );
+		$response = $this->render( 'AimeosShopBundle:Catalog:suggest.html.twig', $params );
 		$response->headers->set( 'Content-Type', 'application/json' );
 		return $response;
 	}
@@ -94,7 +94,7 @@ class CatalogController extends AbstractController
 	 */
 	public function countComponentAction()
 	{
-		$response = $this->getOutput( 'catalog/count' )->setMaxAge( 43200 );
+		$response = $this->getOutput( 'catalog/count' )->setMaxAge( 300 );
 		$response->headers->set( 'Content-Type', 'application/javascript' );
 		return $response;
 	}
@@ -107,7 +107,7 @@ class CatalogController extends AbstractController
 	 */
 	public function detailComponentAction()
 	{
-		return $this->getOutput( 'catalog/detail' )->setMaxAge( 43200 );
+		return $this->getOutput( 'catalog/detail' );
 	}
 
 
@@ -118,7 +118,7 @@ class CatalogController extends AbstractController
 	 */
 	public function filterComponentAction()
 	{
-		return $this->getOutput( 'catalog/filter' )->setMaxAge( 43200 );
+		return $this->getOutput( 'catalog/filter' );
 	}
 
 
@@ -129,7 +129,7 @@ class CatalogController extends AbstractController
 	 */
 	public function listComponentAction()
 	{
-		return $this->getOutput( 'catalog/lists' )->setMaxAge( 43200 );
+		return $this->getOutput( 'catalog/lists' );
 	}
 
 
@@ -140,7 +140,7 @@ class CatalogController extends AbstractController
 	 */
 	public function sessionComponentAction()
 	{
-		return $this->getOutput( 'catalog/session' )->setMaxAge( 43200 );
+		return $this->getOutput( 'catalog/session' );
 	}
 
 
@@ -151,7 +151,7 @@ class CatalogController extends AbstractController
 	 */
 	public function stageComponentAction()
 	{
-		return $this->getOutput( 'catalog/stage' )->setMaxAge( 43200 );
+		return $this->getOutput( 'catalog/stage' );
 	}
 
 
@@ -175,7 +175,7 @@ class CatalogController extends AbstractController
 	 */
 	public function suggestComponentAction()
 	{
-		$response = $this->getOutput( 'catalog/suggest' )->setMaxAge( 43200 );
+		$response = $this->getOutput( 'catalog/suggest' );
 		$response->headers->set( 'Content-Type', 'application/json' );
 		return $response;
 	}
