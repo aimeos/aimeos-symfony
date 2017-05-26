@@ -54,6 +54,7 @@ class JobsCommand extends Command
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
 		$context = $this->getContext();
+		$process = $context->getProcess();
 		$aimeos = $this->getContainer()->get( 'aimeos' )->get();
 
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
@@ -69,10 +70,17 @@ class JobsCommand extends Command
 
 			$output->writeln( sprintf( 'Executing the Aimeos jobs for "<info>%s</info>"', $siteItem->getCode() ) );
 
-			foreach( $jobs as $jobname ) {
-				\Aimeos\Controller\Jobs\Factory::createController( $context, $aimeos, $jobname )->run();
+			foreach( $jobs as $jobname )
+			{
+				$fcn = function( $context, $aimeos, $jobname ) {
+					\Aimeos\Controller\Jobs\Factory::createController( $context, $aimeos, $jobname )->run();
+				};
+
+				$process->start( $fcn, [$context, $aimeos, $jobname], true );
 			}
 		}
+
+		$process->wait();
 	}
 
 

@@ -59,6 +59,7 @@ class Context
 			$this->addLogger( $context );
 			$this->addCache( $context );
 			$this->addMailer( $context);
+			$this->addProcess( $context);
 
 			self::$context = $context;
 		}
@@ -89,9 +90,8 @@ class Context
 	protected function addCache( \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		$cache = new \Aimeos\MAdmin\Cache\Proxy\Standard( $context );
-		$context->setCache( $cache );
 
-		return $context;
+		return $context->setCache( $cache );
 	}
 
 
@@ -104,9 +104,8 @@ class Context
 	protected function addDatabaseManager( \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		$dbm = new \Aimeos\MW\DB\Manager\DBAL( $context->getConfig() );
-		$context->setDatabaseManager( $dbm );
 
-		return $context;
+		return $context->setDatabaseManager( $dbm );
 	}
 
 
@@ -119,9 +118,8 @@ class Context
 	protected function addFilesystemManager( \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		$fs = new \Aimeos\MW\Filesystem\Manager\Standard( $context->getConfig() );
-		$context->setFilesystemManager( $fs );
 
-		return $context;
+		return $context->setFilesystemManager( $fs );
 	}
 
 
@@ -134,9 +132,8 @@ class Context
 	protected function addLogger( \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		$logger = \Aimeos\MAdmin\Log\Manager\Factory::createManager( $context );
-		$context->setLogger( $logger );
 
-		return $context;
+		return $context->setLogger( $logger );
 	}
 
 
@@ -151,9 +148,8 @@ class Context
 	{
 		$container = $this->container;
 		$mail = new \Aimeos\MW\Mail\Swift( function() use ( $container) { return $container->get( 'mailer' ); } );
-		$context->setMail( $mail );
 
-		return $context;
+		return $context->setMail( $mail );
 	}
 
 
@@ -166,9 +162,27 @@ class Context
 	protected function addMessageQueueManager( \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		$mq = new \Aimeos\MW\MQueue\Manager\Standard( $context->getConfig() );
-		$context->setMessageQueueManager( $mq );
 
-		return $context;
+		return $context->setMessageQueueManager( $mq );
+	}
+
+
+	/**
+	 * Adds the process object to the context
+	 *
+	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
+	 * @return \Aimeos\MShop\Context\Item\Iface Modified context object
+	 */
+	protected function addProcess( \Aimeos\MShop\Context\Item\Iface $context )
+	{
+		$config = $context->getConfig();
+		$max = $config->get( 'pcntl_max', 4 );
+		$prio = $config->get( 'pcntl_priority', 19 );
+
+		$process = new \Aimeos\MW\Process\Pcntl( $max, $prio );
+		$process = new \Aimeos\MW\Process\Decorator\Check( $process );
+
+		return $context->setProcess( $process );
 	}
 
 
@@ -181,9 +195,8 @@ class Context
 	protected function addSession( \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		$session = new \Aimeos\MW\Session\Symfony2( $this->container->get( 'session' ) );
-		$context->setSession( $session );
 
-		return $context;
+		return $context->setSession( $session );
 	}
 
 
@@ -191,6 +204,7 @@ class Context
 	 * Adds the user ID and name if available
 	 *
 	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
+	 * @return \Aimeos\MShop\Context\Item\Iface Modified context object
 	 */
 	protected function addUserGroups( \Aimeos\MShop\Context\Item\Iface $context )
 	{
@@ -215,6 +229,6 @@ class Context
 			$username = $request->getClientIp();
 		}
 
-		$context->setEditor( $username );
+		return $context->setEditor( $username );
 	}
 }
