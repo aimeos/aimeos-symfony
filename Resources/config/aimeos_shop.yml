@@ -134,9 +134,7 @@ client:
                     target: aimeos_shop_update
     jsonapi:
         url:
-            target: aimeos_shop_jsonapi_get
-            options:
-                target: aimeos_shop_jsonapi_options
+            target: aimeos_shop_jsonapi_options
 
 controller:
     common:

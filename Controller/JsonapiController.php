@@ -28,12 +28,11 @@ class JsonapiController extends Controller
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
 	 * @param string Resource location, e.g. "customer"
-	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function deleteAction( ServerRequestInterface $request, $resource, $related = '' )
+	public function deleteAction( ServerRequestInterface $request, $resource )
 	{
-		return $this->createClient( $resource, $related )->delete( $request, new Response() );
+		return $this->createClient( $request, $resource )->delete( $request, new Response() );
 	}
 
 
@@ -42,12 +41,11 @@ class JsonapiController extends Controller
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
 	 * @param string Resource location, e.g. "customer"
-	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function getAction( ServerRequestInterface $request, $resource, $related = '' )
+	public function getAction( ServerRequestInterface $request, $resource )
 	{
-		return $this->createClient( $resource, $related )->get( $request, new Response() );
+		return $this->createClient( $request, $resource )->get( $request, new Response() );
 	}
 
 
@@ -56,12 +54,11 @@ class JsonapiController extends Controller
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
 	 * @param string Resource location, e.g. "customer"
-	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function patchAction( ServerRequestInterface $request, $resource, $related = '' )
+	public function patchAction( ServerRequestInterface $request, $resource )
 	{
-		return $this->createClient( $resource, $related )->patch( $request, new Response() );
+		return $this->createClient( $request, $resource )->patch( $request, new Response() );
 	}
 
 
@@ -70,12 +67,11 @@ class JsonapiController extends Controller
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
 	 * @param string Resource location, e.g. "customer"
-	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function postAction( ServerRequestInterface $request, $resource, $related = '' )
+	public function postAction( ServerRequestInterface $request, $resource )
 	{
-		return $this->createClient( $resource, $related )->post( $request, new Response() );
+		return $this->createClient( $request, $resource )->post( $request, new Response() );
 	}
 
 
@@ -84,12 +80,11 @@ class JsonapiController extends Controller
 	 *
 	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
 	 * @param string Resource location, e.g. "customer"
-	 * @param string Related resource location, e.g. "address"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function putAction( ServerRequestInterface $request, $resource, $related = '' )
+	public function putAction( ServerRequestInterface $request, $resource )
 	{
-		return $this->createClient( $resource, $related )->put( $request, new Response() );
+		return $this->createClient( $request, $resource )->put( $request, new Response() );
 	}
 
 
@@ -102,19 +97,23 @@ class JsonapiController extends Controller
 	 */
 	public function optionsAction( ServerRequestInterface $request, $resource = '' )
 	{
-		return $this->createClient( $resource )->options( $request, new Response() );
+		return $this->createClient( $request, $resource )->options( $request, new Response() );
 	}
 
 
 	/**
 	 * Returns the resource controller
 	 *
+	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
 	 * @param string Resource location, e.g. "customer"
-	 * @param string Related resource location, e.g. "address"
 	 * @return \Aimeos\Client\JsonApi\Iface JSON API client
 	 */
-	protected function createClient( $resource, $related = '' )
+	protected function createClient( ServerRequestInterface $request, $resource )
 	{
+		$args = $request->getAttributes();
+		$params = $request->getQueryParams();
+		$related = ( isset( $args['related'] ) ? $args['related'] : ( isset( $params['related'] ) ? $params['related'] : null ) );
+
 		$tmplPaths = $this->container->get( 'aimeos' )->get()->getCustomPaths( 'client/jsonapi/templates' );
 		$context = $this->container->get( 'aimeos_context' )->get();
 		$langid = $context->getLocale()->getLanguageId();

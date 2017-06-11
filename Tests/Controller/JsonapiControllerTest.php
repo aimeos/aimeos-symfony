@@ -98,9 +98,7 @@ class JsonapiControllerTest extends WebTestCase
 		$this->assertArrayHasKey( 'id', $json['data'][0] );
 		$this->assertEquals( 'CNC', $json['data'][0]['attributes']['product.code'] );
 
-		$id = $json['data'][0]['id'];
-
-		$client->request( 'GET', '/unittest/de/EUR/jsonapi/product/' . $id );
+		$client->request( 'GET', '/unittest/de/EUR/jsonapi/product?id=' . $json['data'][0]['id'] );
 		$response = $client->getResponse();
 
 		$json = json_decode( $response->getContent(), true );
