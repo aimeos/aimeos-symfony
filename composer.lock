@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-extadm.git",
-                "reference": "f4dcd1fcf58ed3cd5296be85357614b153f5c900"
+                "reference": "1efd7a54312e26097e1c02dae27fac5b1212a8b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/f4dcd1fcf58ed3cd5296be85357614b153f5c900",
-                "reference": "f4dcd1fcf58ed3cd5296be85357614b153f5c900",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-extadm/zipball/1efd7a54312e26097e1c02dae27fac5b1212a8b2",
+                "reference": "1efd7a54312e26097e1c02dae27fac5b1212a8b2",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2017-06-07 14:29:52"
+            "time": "2017-07-02 22:57:28"
         },
         {
             "name": "aimeos/ai-admin-jqadm",
@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "0fdb9c27beb1566386cacf44af8df84b4f94e971"
+                "reference": "ca6047b67edd6b1a7ac65b3bf2c6183b1c2ce908"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/0fdb9c27beb1566386cacf44af8df84b4f94e971",
-                "reference": "0fdb9c27beb1566386cacf44af8df84b4f94e971",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/ca6047b67edd6b1a7ac65b3bf2c6183b1c2ce908",
+                "reference": "ca6047b67edd6b1a7ac65b3bf2c6183b1c2ce908",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2017-06-11 09:29:33"
+            "time": "2017-07-06 07:09:17"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -96,12 +96,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "a37fadb1297651e6325a1bbdf55f60a7d1573e1a"
+                "reference": "d898d1f5ea6cbb11b22ab82bc3f2dc1beca35fff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/a37fadb1297651e6325a1bbdf55f60a7d1573e1a",
-                "reference": "a37fadb1297651e6325a1bbdf55f60a7d1573e1a",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/d898d1f5ea6cbb11b22ab82bc3f2dc1beca35fff",
+                "reference": "d898d1f5ea6cbb11b22ab82bc3f2dc1beca35fff",
                 "shasum": ""
             },
             "require": {
@@ -133,7 +133,7 @@
                 "extension",
                 "json api"
             ],
-            "time": "2017-06-07 14:31:30"
+            "time": "2017-06-28 22:24:54"
         },
         {
             "name": "aimeos/ai-client-html",
@@ -141,12 +141,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "b3541778d8f1ed30556b3f48fe83fba2aed4e365"
+                "reference": "2b1e23606a44fd8122bf781a0492c154e0ad244b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/b3541778d8f1ed30556b3f48fe83fba2aed4e365",
-                "reference": "b3541778d8f1ed30556b3f48fe83fba2aed4e365",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/2b1e23606a44fd8122bf781a0492c154e0ad244b",
+                "reference": "2b1e23606a44fd8122bf781a0492c154e0ad244b",
                 "shasum": ""
             },
             "require": {
@@ -179,7 +179,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2017-06-11 12:26:50"
+            "time": "2017-07-04 11:51:30"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -187,12 +187,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "5c75be461c3eb3dd61d6fcb16c7068f4d7a36023"
+                "reference": "0e5809b5c402bb13a1000c608035398e242a5ebf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/5c75be461c3eb3dd61d6fcb16c7068f4d7a36023",
-                "reference": "5c75be461c3eb3dd61d6fcb16c7068f4d7a36023",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/0e5809b5c402bb13a1000c608035398e242a5ebf",
+                "reference": "0e5809b5c402bb13a1000c608035398e242a5ebf",
                 "shasum": ""
             },
             "require": {
@@ -221,7 +221,7 @@
                 "extension",
                 "json"
             ],
-            "time": "2017-06-11 12:47:32"
+            "time": "2017-06-28 22:24:54"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -229,12 +229,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "7a4b9a32f71c50982b84920ffe928de54979b771"
+                "reference": "2ee39bf5bb29a7aa11cee53505439beb92ec1226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/7a4b9a32f71c50982b84920ffe928de54979b771",
-                "reference": "7a4b9a32f71c50982b84920ffe928de54979b771",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/2ee39bf5bb29a7aa11cee53505439beb92ec1226",
+                "reference": "2ee39bf5bb29a7aa11cee53505439beb92ec1226",
                 "shasum": ""
             },
             "require": {
@@ -263,7 +263,7 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2017-06-10 13:49:46"
+            "time": "2017-07-02 22:26:52"
         },
         {
             "name": "aimeos/ai-controller-jobs",
@@ -271,12 +271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "836de0e527868879c0b395af8940e34853be9d7b"
+                "reference": "03cc07219c769c31b54f147cc159178b16d80504"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/836de0e527868879c0b395af8940e34853be9d7b",
-                "reference": "836de0e527868879c0b395af8940e34853be9d7b",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/03cc07219c769c31b54f147cc159178b16d80504",
+                "reference": "03cc07219c769c31b54f147cc159178b16d80504",
                 "shasum": ""
             },
             "require": {
@@ -307,7 +307,7 @@
                 "extension",
                 "jobs"
             ],
-            "time": "2017-06-07 14:33:39"
+            "time": "2017-07-02 22:26:52"
         },
         {
             "name": "aimeos/ai-fosuser",
@@ -315,12 +315,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-fosuser.git",
-                "reference": "a6bcb6b6418757e41166edaa7c96c641cd713068"
+                "reference": "97536b905dc12397da603bb9de6f1f24d03fe5e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/a6bcb6b6418757e41166edaa7c96c641cd713068",
-                "reference": "a6bcb6b6418757e41166edaa7c96c641cd713068",
+                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/97536b905dc12397da603bb9de6f1f24d03fe5e9",
+                "reference": "97536b905dc12397da603bb9de6f1f24d03fe5e9",
                 "shasum": ""
             },
             "require": {
@@ -351,7 +351,7 @@
                 "symfony",
                 "user"
             ],
-            "time": "2017-06-07 12:23:36"
+            "time": "2017-07-08 09:25:52"
         },
         {
             "name": "aimeos/ai-gettext",
@@ -359,12 +359,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
-                "reference": "21fe5ae47546c895e01e656856dc712c8e458a18"
+                "reference": "f8827a5fdc5677c2322249e9af5ef8fb0eb157a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/21fe5ae47546c895e01e656856dc712c8e458a18",
-                "reference": "21fe5ae47546c895e01e656856dc712c8e458a18",
+                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/f8827a5fdc5677c2322249e9af5ef8fb0eb157a6",
+                "reference": "f8827a5fdc5677c2322249e9af5ef8fb0eb157a6",
                 "shasum": ""
             },
             "require": {
@@ -393,7 +393,7 @@
                 "gettext",
                 "performance"
             ],
-            "time": "2017-05-31 08:37:51"
+            "time": "2017-06-28 22:24:55"
         },
         {
             "name": "aimeos/ai-monolog",
@@ -491,12 +491,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
-                "reference": "d0922673b45cf9bc8d2ec031bd9747b99f9e37bf"
+                "reference": "0a2a48d4ec7c0d2edd900ca566bc626056832177"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/d0922673b45cf9bc8d2ec031bd9747b99f9e37bf",
-                "reference": "d0922673b45cf9bc8d2ec031bd9747b99f9e37bf",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/0a2a48d4ec7c0d2edd900ca566bc626056832177",
+                "reference": "0a2a48d4ec7c0d2edd900ca566bc626056832177",
                 "shasum": ""
             },
             "require": {
@@ -528,7 +528,7 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2017-05-31 08:37:53"
+            "time": "2017-07-03 09:18:32"
         },
         {
             "name": "aimeos/ai-twig",
@@ -536,12 +536,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-twig.git",
-                "reference": "c1e01e699d960cb09fbeb1531354fef01241d348"
+                "reference": "d1129f67c1cacb7c193be692bc2ffcff3cc2de44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/c1e01e699d960cb09fbeb1531354fef01241d348",
-                "reference": "c1e01e699d960cb09fbeb1531354fef01241d348",
+                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/d1129f67c1cacb7c193be692bc2ffcff3cc2de44",
+                "reference": "d1129f67c1cacb7c193be692bc2ffcff3cc2de44",
                 "shasum": ""
             },
             "require": {
@@ -569,7 +569,7 @@
                 "templates",
                 "twig"
             ],
-            "time": "2017-05-31 08:37:53"
+            "time": "2017-06-28 22:21:39"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -577,12 +577,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "22cd7f3fdb06b1662a808a645d13b248c7b26eed"
+                "reference": "ab499cae958756511e2008773f411d14ee16a5a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/22cd7f3fdb06b1662a808a645d13b248c7b26eed",
-                "reference": "22cd7f3fdb06b1662a808a645d13b248c7b26eed",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/ab499cae958756511e2008773f411d14ee16a5a8",
+                "reference": "ab499cae958756511e2008773f411d14ee16a5a8",
                 "shasum": ""
             },
             "require": {
@@ -639,7 +639,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2017-06-08 22:02:19"
+            "time": "2017-07-07 10:10:02"
         },
         {
             "name": "composer/installers",
@@ -1358,16 +1358,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.22.1",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0"
+                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1e044bc4b34e91743943479f1be7a1d5eb93add0",
-                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
                 "shasum": ""
             },
             "require": {
@@ -1388,7 +1388,7 @@
                 "phpunit/phpunit-mock-objects": "2.3.0",
                 "ruflin/elastica": ">=0.90 <3.0",
                 "sentry/sentry": "^0.13",
-                "swiftmailer/swiftmailer": "~5.3"
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -1432,7 +1432,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-03-13T07:08:03+00:00"
+            "time": "2017-06-19T01:22:40+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -2351,16 +2351,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.3.2",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "82bd7c039214b34bb5d12c04f996f05f6581c49f"
+                "reference": "82f7cba3c272bcd266f2d27ad6f07832c2eb3a1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/82bd7c039214b34bb5d12c04f996f05f6581c49f",
-                "reference": "82bd7c039214b34bb5d12c04f996f05f6581c49f",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/82f7cba3c272bcd266f2d27ad6f07832c2eb3a1c",
+                "reference": "82f7cba3c272bcd266f2d27ad6f07832c2eb3a1c",
                 "shasum": ""
             },
             "require": {
@@ -2469,7 +2469,6 @@
                     "Symfony\\Bridge\\Doctrine\\": "src/Symfony/Bridge/Doctrine/",
                     "Symfony\\Bridge\\Monolog\\": "src/Symfony/Bridge/Monolog/",
                     "Symfony\\Bridge\\ProxyManager\\": "src/Symfony/Bridge/ProxyManager/",
-                    "Symfony\\Bridge\\Swiftmailer\\": "src/Symfony/Bridge/Swiftmailer/",
                     "Symfony\\Bridge\\Twig\\": "src/Symfony/Bridge/Twig/",
                     "Symfony\\Bundle\\": "src/Symfony/Bundle/",
                     "Symfony\\Component\\": "src/Symfony/Component/"
@@ -2500,7 +2499,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-06-06T04:00:14+00:00"
+            "time": "2017-07-05T13:28:34+00:00"
         },
         {
             "name": "twig/twig",
@@ -3566,16 +3565,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.20",
+            "version": "5.7.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3cb94a5f8c07a03c8b7527ed7468a2926203f58b"
+                "reference": "3b91adfb64264ddec5a2dee9851f354aa66327db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3cb94a5f8c07a03c8b7527ed7468a2926203f58b",
-                "reference": "3cb94a5f8c07a03c8b7527ed7468a2926203f58b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3b91adfb64264ddec5a2dee9851f354aa66327db",
+                "reference": "3b91adfb64264ddec5a2dee9851f354aa66327db",
                 "shasum": ""
             },
             "require": {
@@ -3644,20 +3643,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-05-22T07:42:55+00:00"
+            "time": "2017-06-21T08:11:54+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.4.3",
+            "version": "3.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "3ab72b65b39b491e0c011e2e09bb2206c2aa8e24"
+                "reference": "a23b761686d50a560cc56233b9ecf49597cc9118"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/3ab72b65b39b491e0c011e2e09bb2206c2aa8e24",
-                "reference": "3ab72b65b39b491e0c011e2e09bb2206c2aa8e24",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/a23b761686d50a560cc56233b9ecf49597cc9118",
+                "reference": "a23b761686d50a560cc56233b9ecf49597cc9118",
                 "shasum": ""
             },
             "require": {
@@ -3703,7 +3702,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-12-08T20:27:08+00:00"
+            "time": "2017-06-30T09:13:00+00:00"
         },
         {
             "name": "satooshi/php-coveralls",
