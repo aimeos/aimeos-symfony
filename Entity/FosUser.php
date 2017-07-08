@@ -16,7 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Aimeos\ShopBundle\Entity\User
  *
  * @ORM\Entity
- * @ORM\Table(name="fos_user",uniqueConstraints={@ORM\UniqueConstraint(name="unq_fosus_email",columns={"email_canonical"})},indexes={@ORM\Index(name="idx_fosus_langid", columns={"langid"}),@ORM\Index(name="idx_fosus_last_first", columns={"lastname", "firstname"}),@ORM\Index(name="idx_fosus_post_addr1", columns={"postal", "address1"}),@ORM\Index(name="idx_fosus_post_city", columns={"postal", "city"}),@ORM\Index(name="idx_fosus_lastname", columns={"lastname"}),@ORM\Index(name="idx_fosus_address1", columns={"address1"}),@ORM\Index(name="idx_fosus_city", columns={"city"})})
+ * @ORM\Table(name="fos_user",uniqueConstraints={@ORM\UniqueConstraint(name="unq_fosus_username",columns={"username_canonical"}),@ORM\UniqueConstraint(name="unq_fosus_confirmtoken",columns={"confirmation_token"}),@ORM\UniqueConstraint(name="unq_fosus_email",columns={"email_canonical"})},indexes={@ORM\Index(name="idx_fosus_langid", columns={"langid"}),@ORM\Index(name="idx_fosus_last_first", columns={"lastname", "firstname"}),@ORM\Index(name="idx_fosus_post_addr1", columns={"postal", "address1"}),@ORM\Index(name="idx_fosus_post_city", columns={"postal", "city"}),@ORM\Index(name="idx_fosus_lastname", columns={"lastname"}),@ORM\Index(name="idx_fosus_address1", columns={"address1"}),@ORM\Index(name="idx_fosus_city", columns={"city"})})
  */
 class FosUser extends BaseUser
 {
@@ -63,17 +63,17 @@ class FosUser extends BaseUser
 	protected $lastname = '';
 
 	/**
-	 * @ORM\Column(name="address1", type="string", length=255)
+	 * @ORM\Column(name="address1", type="string", length=200)
 	 */
 	protected $address1 = '';
 
 	/**
-	 * @ORM\Column(name="address2", type="string", length=255)
+	 * @ORM\Column(name="address2", type="string", length=200)
 	 */
 	protected $address2 = '';
 
 	/**
-	 * @ORM\Column(name="address3", type="string", length=255)
+	 * @ORM\Column(name="address3", type="string", length=200)
 	 */
 	protected $address3 = '';
 
@@ -83,12 +83,12 @@ class FosUser extends BaseUser
 	protected $postal = '';
 
 	/**
-	 * @ORM\Column(name="city", type="string", length=255)
+	 * @ORM\Column(name="city", type="string", length=200)
 	 */
 	protected $city = '';
 
 	/**
-	 * @ORM\Column(name="state", type="string", length=255)
+	 * @ORM\Column(name="state", type="string", length=200)
 	 */
 	protected $state = '';
 
@@ -108,7 +108,7 @@ class FosUser extends BaseUser
 	protected $telephone = '';
 
 	/**
-	 * @ORM\Column(name="telefax", type="string", length=255)
+	 * @ORM\Column(name="telefax", type="string", length=32)
 	 */
 	protected $telefax = '';
 
