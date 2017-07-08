@@ -28,6 +28,11 @@ class FosUser extends BaseUser
 	protected $id;
 
 	/**
+	 * @ORM\Column(name="siteid", type="integer", nullable=true)
+	 */
+	protected $siteid;
+
+	/**
 	 * @ORM\Column(name="salutation", type="string", length=8)
 	 */
 	protected $salutation = '';
@@ -93,7 +98,7 @@ class FosUser extends BaseUser
 	protected $langid = '';
 
 	/**
-	 * @ORM\Column(name="countryid", type="string", length=2, nullable=true)
+	 * @ORM\Column(name="countryid", type="string", length=2, nullable=true, options={"fixed" = true})
 	 */
 	protected $countryid = '';
 
@@ -113,12 +118,12 @@ class FosUser extends BaseUser
 	protected $website = '';
 
 	/**
-	 * @ORM\Column(name="longitude", type="float", nullable=true)
+	 * @ORM\Column(name="longitude", type="decimal", precision=8, scale=6, nullable=true)
 	 */
 	protected $longitude;
 
 	/**
-	 * @ORM\Column(name="latitude", type="float", nullable=true)
+	 * @ORM\Column(name="latitude", type="decimal", precision=8, scale=6, nullable=true)
 	 */
 	protected $latitude;
 

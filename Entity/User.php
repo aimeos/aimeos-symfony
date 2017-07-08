@@ -38,7 +38,7 @@ class User implements UserInterface, \Serializable
 	protected $label;
 
 	/**
-	 * @ORM\Column(name="code", type="string", length=32)
+	 * @ORM\Column(name="code", type="string", length=255)
 	 */
 	protected $username;
 
@@ -83,17 +83,17 @@ class User implements UserInterface, \Serializable
 	protected $lastname = '';
 
 	/**
-	 * @ORM\Column(name="address1", type="string", length=255)
+	 * @ORM\Column(name="address1", type="string", length=200)
 	 */
 	protected $address1 = '';
 
 	/**
-	 * @ORM\Column(name="address2", type="string", length=255)
+	 * @ORM\Column(name="address2", type="string", length=200)
 	 */
 	protected $address2 = '';
 
 	/**
-	 * @ORM\Column(name="address3", type="string", length=255)
+	 * @ORM\Column(name="address3", type="string", length=200)
 	 */
 	protected $address3 = '';
 
@@ -103,12 +103,12 @@ class User implements UserInterface, \Serializable
 	protected $postal = '';
 
 	/**
-	 * @ORM\Column(name="city", type="string", length=255)
+	 * @ORM\Column(name="city", type="string", length=200)
 	 */
 	protected $city = '';
 
 	/**
-	 * @ORM\Column(name="state", type="string", length=255)
+	 * @ORM\Column(name="state", type="string", length=200)
 	 */
 	protected $state = '';
 
@@ -118,7 +118,7 @@ class User implements UserInterface, \Serializable
 	protected $langid = '';
 
 	/**
-	 * @ORM\Column(name="countryid", type="string", length=2, nullable=true)
+	 * @ORM\Column(name="countryid", type="string", length=2, nullable=true, options={"fixed" = true})
 	 */
 	protected $countryid = '';
 
@@ -128,7 +128,7 @@ class User implements UserInterface, \Serializable
 	protected $telephone = '';
 
 	/**
-	 * @ORM\Column(name="telefax", type="string", length=255)
+	 * @ORM\Column(name="telefax", type="string", length=32)
 	 */
 	protected $telefax = '';
 
@@ -143,12 +143,12 @@ class User implements UserInterface, \Serializable
 	protected $website = '';
 
 	/**
-	 * @ORM\Column(name="longitude", type="float", nullable=true)
+	 * @ORM\Column(name="longitude", type="decimal", precision=8, scale=6, nullable=true)
 	 */
 	protected $longitude;
 
 	/**
-	 * @ORM\Column(name="latitude", type="float", nullable=true)
+	 * @ORM\Column(name="latitude", type="decimal", precision=8, scale=6, nullable=true)
 	 */
 	protected $latitude;
 
