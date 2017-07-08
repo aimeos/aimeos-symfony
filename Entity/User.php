@@ -143,6 +143,16 @@ class User implements UserInterface, \Serializable
 	protected $website = '';
 
 	/**
+	 * @ORM\Column(name="longitude", type="float", nullable=true)
+	 */
+	protected $longitude;
+
+	/**
+	 * @ORM\Column(name="latitude", type="float", nullable=true)
+	 */
+	protected $latitude;
+
+	/**
 	 * @ORM\Column(name="birthday", type="date", nullable=true)
 	 */
 	protected $birthday;

@@ -28,11 +28,6 @@ class FosUser extends BaseUser
 	protected $id;
 
 	/**
-	 * @ORM\Column(name="salt", type="string", length=255)
-	 */
-	protected $salt = 'mshop';
-
-	/**
 	 * @ORM\Column(name="salutation", type="string", length=8)
 	 */
 	protected $salutation = '';
@@ -116,6 +111,16 @@ class FosUser extends BaseUser
 	 * @ORM\Column(name="website", type="string", length=255)
 	 */
 	protected $website = '';
+
+	/**
+	 * @ORM\Column(name="longitude", type="float", nullable=true)
+	 */
+	protected $longitude;
+
+	/**
+	 * @ORM\Column(name="latitude", type="float", nullable=true)
+	 */
+	protected $latitude;
 
 	/**
 	 * @ORM\Column(name="birthday", type="date", nullable=true)
@@ -561,5 +566,49 @@ class FosUser extends BaseUser
 		}
 
 		$this->website = (string) $website;
+	}
+
+
+	/**
+	 * Returns the longitude.
+	 *
+	 * @return float Longitude value
+	 */
+	public function getLongitude()
+	{
+		return $this->longitude;
+	}
+
+
+	/**
+	 * Sets a new longitude.
+	 *
+	 * @param float $value New longitude value
+	 */
+	public function setLongitude($value)
+	{
+		$this->longitude = (float) $value;
+	}
+
+
+	/**
+	 * Returns the latitude.
+	 *
+	 * @return Float Latitude value
+	 */
+	public function getLatitude()
+	{
+		return $this->latitude;
+	}
+
+
+	/**
+	 * Sets a new latitude.
+	 *
+	 * @param float $value New latitude value
+	 */
+	public function setLatitude($value)
+	{
+		$this->latitude = (float) $value;
 	}
 }
