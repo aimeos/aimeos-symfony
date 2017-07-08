@@ -16,7 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Aimeos\ShopBundle\Entity\User
  *
  * @ORM\Entity
- * @ORM\Table(name="mshop_customer",uniqueConstraints={@ORM\UniqueConstraint(name="unq_mscus_sid_code",columns={"siteid","code"})},indexes={@ORM\Index(name="idx_mscus_sid_st_ln_fn", columns={"siteid", "status", "lastname", "firstname"}),@ORM\Index(name="idx_mscus_sid_st_ad1_ad2", columns={"siteid", "status", "address1", "address2"}),@ORM\Index(name="idx_mscus_sid_st_post_ci", columns={"siteid", "status", "postal", "city"}),@ORM\Index(name="idx_mscus_sid_lastname", columns={"siteid", "lastname"}),@ORM\Index(name="idx_mscus_sid_address1", columns={"siteid", "address1"}),@ORM\Index(name="idx_mscus_sid_city", columns={"siteid", "city"}),@ORM\Index(name="idx_mscus_sid_postal", columns={"siteid", "postal"}),@ORM\Index(name="idx_mscus_sid_email", columns={"siteid", "email"})})
+ * @ORM\Table(name="mshop_customer",uniqueConstraints={@ORM\UniqueConstraint(name="unq_mscus_sid_code",columns={"siteid","code"})},indexes={@ORM\Index(name="idx_mscus_sid_langid", columns={"siteid", "langid"}),@ORM\Index(name="idx_mscus_sid_last_first", columns={"siteid", "lastname", "firstname"}),@ORM\Index(name="idx_mscus_sid_post_addr1", columns={"siteid", "postal", "address1"}),@ORM\Index(name="idx_mscus_sid_post_city", columns={"siteid", "postal", "city"}),@ORM\Index(name="idx_mscus_sid_city", columns={"siteid", "city"}),@ORM\Index(name="idx_mscus_sid_email", columns={"siteid", "email"})})
  */
 class User implements UserInterface, \Serializable
 {
