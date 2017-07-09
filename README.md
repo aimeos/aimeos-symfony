@@ -34,9 +34,14 @@ This document is for the latest Aimeos Symfony **2016.10 release and later**.
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
 The Aimeos Symfony e-commerce bundle is a composer based library that can be installed
-easiest by using [Composer](https://getcomposer.org). Before, the Aimeos bundle class
-must be known by the `registerBundles()` method in the `app/AppKernel.php` file so the
-composer post install/update scripts won't fail:
+easiest by using [Composer](https://getcomposer.org). If you don't have an existing
+Symfony application, you can create a skeleton application using
+
+`composer create-project symfony/framework-standard-edition myshop`
+
+You need to adapt some files inside the newly created directory. Before, the Aimeos
+bundle class must be known by the `registerBundles()` method in the `app/AppKernel.php`
+file so the composer post install/update scripts won't fail:
 
 ```php
     $bundles = array(
@@ -44,6 +49,33 @@ composer post install/update scripts won't fail:
         new FOS\UserBundle\FOSUserBundle(),
         ...
     );
+```
+
+These settings need to be added at the end of your ./app/config/config.yml file:
+
+```yaml
+fos_user:
+    db_driver: orm
+    user_class: Aimeos\ShopBundle\Entity\FosUser
+    firewall_name: aimeos_myaccount
+    from_email:
+        address: "me@example.com"
+        sender_name: "Test shop"
+```
+
+The Aimeos components have to be configured as well to get authentication working correctly.
+You need to take care of two things: Using the correct customer manager implementation and
+password encryption method. Both must be appended at the end of your `./app/config/config.yml`
+as well:
+
+```yaml
+aimeos_shop:
+    mshop:
+        customer:
+            manager:
+                name: FosUser
+                password:
+                    name: Bcrypt
 ```
 
 Make sure that the database is set up and it is configured in your config.yml.
@@ -139,45 +171,23 @@ Then, you should be able to call the catalog list page in your browser using
 
 ```http://127.0.0.1:8000/app_dev.php/list ```
 
-## Admin
+## Login and Admin
 
 Setting up the administration interface is a matter of configuring the Symfony
 firewall to restrict access to the admin URLs. Since 2017.07, the FOSUserBundle
 is required. For a more detailed description, please read the article about
 [setting up the FOSUserBundle](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login).
 
-These settings need to be added at the end of your ./app/config/config.yml file:
-
-```yaml
-fos_user:
-    db_driver: orm
-    user_class: Aimeos\ShopBundle\Entity\FosUser
-    firewall_name: aimeos_myaccount
-    from_email:
-        address: "%mailer_user%"
-        sender_name: "%mailer_user%"
-```
-
-The Aimeos components have to be configured as well to get authentication working correctly. You need to take care of two things: Using the correct customer manager implementation and password encryption method. Both must be appended at the end of your ./app/config/config.yml as well:
-
-```yaml
-aimeos_shop:
-    mshop:
-        customer:
-            manager:
-                name: FosUser
-                password:
-                    name: Bcrypt
-```
-
-To add the required routes for the FOSUserBundle, append these two lines at the end of your ./app/config/routing.yml file:
+To add the required routes for the FOSUserBundle, append these two lines at the
+end of your ./app/config/routing.yml file:
 
 ```yaml
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 ```
 
-Setting up the security configuration is the most complex part. The firewall setup in the `./app/config/security.yml` file should look like this one:
+Setting up the security configuration is the most complex part. The firewall
+setup in the `./app/config/security.yml` file should look like this one:
 
 ```yaml
 security:
