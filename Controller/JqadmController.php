@@ -105,7 +105,14 @@ class JqadmController extends Controller
 	public function deleteAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $cntl->delete() . $cntl->search() );
+
+		$cntl = $this->createClient();
+
+		if( ( $html = $cntl->delete() ) == '' ) {
+			return $cntl->getView()->response();
+		}
+
+		return $this->getHtml( $html );
 	}
 
 
@@ -135,7 +142,12 @@ class JqadmController extends Controller
 	public function saveAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( ( $cntl->save() ? : $cntl->search() ) );
+
+		if( ( $html = $cntl->save() ) == '' ) {
+			return $cntl->getView()->response();
+		}
+
+		return $this->getHtml( $html );
 	}
 
 
