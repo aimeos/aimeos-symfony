@@ -32,7 +32,7 @@ class AccountCommand extends Command
 		$this->setName( 'aimeos:account');
 		$this->setDescription( 'Creates new (admin) accounts' );
 		$this->addArgument( 'email', InputArgument::REQUIRED, 'E-mail address of the account that should be created' );
-		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to create accounts for like "default unittest" (none for all)' );
+		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to create accounts for like "default"', 'default' );
 		$this->addOption( 'password', null, InputOption::VALUE_REQUIRED, 'Optional password for the account (will ask for if not given)' );
 		$this->addOption( 'admin', null, InputOption::VALUE_NONE, 'If account should have administrator privileges' );
 		$this->addOption( 'editor', null, InputOption::VALUE_NONE, 'If account should have limited editor privileges' );
@@ -61,7 +61,8 @@ class AccountCommand extends Command
 		$context->setEditor( 'aimeos:account' );
 
 		$localeManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context );
-		$context->setLocale( $localeManager->createItem() );
+		$localeItem = $localeManager->bootstrap( $input->getArgument( 'site' ), '', '', false );
+		$context->setLocale( $localeItem );
 
 		$user = $this->createCustomerItem( $context, $code, $password );
 

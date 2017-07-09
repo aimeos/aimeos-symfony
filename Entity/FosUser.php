@@ -163,13 +163,24 @@ class FosUser extends BaseUser
 
 
 	/**
-	 * Returns the user unique id.
+	 * Returns the user unique ID.
 	 *
 	 * @return mixed
 	 */
 	public function getId()
 	{
 		return $this->id;
+	}
+
+
+	/**
+	 * Returns the site ID of the user.
+	 *
+	 * @return mixed
+	 */
+	public function getSiteId()
+	{
+		return $this->siteid;
 	}
 
 

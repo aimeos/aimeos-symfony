@@ -25,15 +25,21 @@ class AdminController extends Controller
 	/**
 	 * Returns the initial HTML view for the admin interface.
 	 *
+	 * @param Request $request Symfony request object
 	 * @return Response Generated HTML page for the admin interface
 	 */
-	public function indexAction()
+	public function indexAction( Request $request )
 	{
-		if( $this->isAdmin() )
+		if( $this->hasRole( ['ROLE_ADMIN'] ) )
 		{
-			$params = array( 'site' => 'default', 'resource' => 'dashboard', 'lang' => 'en' );
+			$context = $this->get( 'aimeos_context' )->get( false );
+			$siteManager = \Aimeos\MShop\Factory::createManager( $context, 'locale/site' );
+			$siteItem = $siteManager->getItem( $this->getUser()->getSiteId() );
+
+			$params = array( 'site' => $siteItem->getCode(), 'resource' => 'dashboard' );
 			return $this->redirect( $this->generateUrl( 'aimeos_shop_jqadm_search', $params ) );
 		}
+
 
 		$param = array( 'error' => '', 'username' => '' );
 
@@ -52,16 +58,21 @@ class AdminController extends Controller
 	/**
 	 * Checks if the used is authenticated and has the admin role
 	 *
+	 * @param array $roles List of role names where at least one must match
 	 * @return boolean True if authenticated and is admin, false if not
 	 */
-	protected function isAdmin()
+	protected function hasRole( array $roles )
 	{
-		if( $this->has( 'security.authorization_checker' ) && $this->get( 'security.token_storage' )->getToken()
-			&& $this->get( 'security.authorization_checker' )->isGranted( 'ROLE_ADMIN' )
-			|| $this->has( 'security.context' ) && $this->get( 'security.context' )->getToken()
-			&& $this->get( 'security.context' )->isGranted( 'ROLE_ADMIN' )
-		) {
-			return true;
+		if( $this->has( 'security.authorization_checker' ) && $this->get( 'security.token_storage' )->getToken() )
+		{
+			$checker = $this->get( 'security.authorization_checker' );
+
+			foreach( $roles as $role )
+			{
+				if( $checker->isGranted( $role ) ) {
+					return true;
+				}
+			}
 		}
 
 		return false;
