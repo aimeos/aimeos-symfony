@@ -1,6 +1,6 @@
 #apc_enable: false,
 apc_prefix: 'sf:'
-extdir: %kernel.root_dir%/../ext
+extdir: "%kernel.root_dir%/../ext"
 uploaddir: /
 
 page:
@@ -18,26 +18,26 @@ page:
 resource:
     db:
         adapter: mysql
-        host: %database_host%
-        port: %database_port%
-        database: %database_name%
-        username: %database_user%
-        password: %database_password%
+        host: "%database_host%"
+        port: "%database_port%"
+        database: "%database_name%"
+        username: "%database_user%"
+        password: "%database_password%"
         stmt: ["SET SESSION sort_buffer_size=2097144; SET NAMES 'utf8'; SET SESSION sql_mode='ANSI'"]
         limit: 2
         opt-persistent: 0
     fs:
         adapter: Standard
-        basedir: %kernel.root_dir%/../web
-        tempdir: %kernel.cache_dir%
+        basedir: "%kernel.root_dir%/../web"
+        tempdir: "%kernel.cache_dir%"
     fs-admin:
         adapter: Standard
-        basedir: %kernel.root_dir%/../web/uploads
-        tempdir: %kernel.cache_dir%
+        basedir: "%kernel.root_dir%/../web/uploads"
+        tempdir: "%kernel.cache_dir%"
     fs-secure:
         adapter: Standard
-        basedir: %kernel.root_dir%/secure
-        tempdir: %kernel.cache_dir%
+        basedir: "%kernel.root_dir%/secure"
+        tempdir: "%kernel.cache_dir%"
     mq:
         adapter: Standard
         db: db
