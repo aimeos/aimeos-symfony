@@ -51,7 +51,7 @@ file so the composer post install/update scripts won't fail:
     );
 ```
 
-These settings need to be added at the end of your ./app/config/config.yml file:
+These settings need to be added at the end of your `./app/config/config.yml` file:
 
 ```yaml
 fos_user:
@@ -179,7 +179,7 @@ is required. For a more detailed description, please read the article about
 [setting up the FOSUserBundle](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login).
 
 To add the required routes for the FOSUserBundle, append these two lines at the
-end of your ./app/config/routing.yml file:
+end of your `./app/config/routing.yml` file:
 
 ```yaml
 fos_user:
@@ -229,9 +229,7 @@ someone without admin privileges.
 
 The `/myaccount` URL is protected by the FOS user bundle as well, which also offers
 user registration. A bit more detailed explanation of the authentication is available in the
-[Aimeos docs](https://aimeos.org/docs/Symfony/Configure_admin_myaccount_login)
-and it contains more details about the
-[setup of the FOS user bundle](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login) too.
+[Aimeos docs](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login).
 
 As last step, you have to create an admin account using the Symfony command line:
 
