@@ -106,8 +106,6 @@ class JqadmController extends Controller
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
 
-		$cntl = $this->createClient();
-
 		if( ( $html = $cntl->delete() ) == '' ) {
 			return $cntl->getView()->response();
 		}
