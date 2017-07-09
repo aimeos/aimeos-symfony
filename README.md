@@ -7,14 +7,13 @@ Aimeos Symfony bundle
 [![Build Status](https://travis-ci.org/aimeos/aimeos-symfony.svg?branch=master)](https://travis-ci.org/aimeos/aimeos-symfony)
 [![Coverage Status](https://coveralls.io/repos/aimeos/aimeos-symfony/badge.svg?branch=master)](https://coveralls.io/r/aimeos/aimeos-symfony?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/?branch=master)
-[![HHVM Status](http://hhvm.h4cc.de/badge/aimeos/aimeos-symfony.svg)](http://hhvm.h4cc.de/package/aimeos/aimeos-symfony)
 
 The repository contains the Symfony e-commerce bundle integrating the Aimeos e-commerce
 library into Symfony 2 and 3. The bundle provides controllers for e.g. faceted filter,
 product lists and detail views, for searching products as well as baskets and the
 checkout process. A full set of pages including routing is also available for a quick start.
 
-[![Aimeos Symfony2 demo](https://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony2.demo.aimeos.org/)
+[![Aimeos Symfony demo](https://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony.demo.aimeos.org/)
 
 ## Table of content
 
@@ -29,7 +28,7 @@ checkout process. A full set of pages including routing is also available for a 
 
 This document is for the latest Aimeos Symfony **2016.10 release and later**.
 
-- Stable release: 2017.04
+- Stable release: 2017.07
 - LTS release: 2016.10
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
@@ -42,6 +41,7 @@ composer post install/update scripts won't fail:
 ```php
     $bundles = array(
         new Aimeos\ShopBundle\AimeosShopBundle(),
+        new FOS\UserBundle\FOSUserBundle(),
         ...
     );
 ```
@@ -51,13 +51,13 @@ If you want to use a database server other than MySQL, please have a look into t
 [supported database servers](https://aimeos.org/docs/Developers/Library/Database_support)
 and their specific configuration.
 
-Then add these lines to your composer.json of your Symfony2 project:
+Then add these lines to your composer.json of your Symfony project:
 
 ```
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2017.04",
+        "aimeos/aimeos-symfony": "~2017.07",
         ...
     },
     "scripts": {
@@ -142,76 +142,102 @@ Then, you should be able to call the catalog list page in your browser using
 ## Admin
 
 Setting up the administration interface is a matter of configuring the Symfony
-firewall to restrict access to the admin URLs. A basic firewall setup in the
-`./app/config/security.yml` file can look like this one:
+firewall to restrict access to the admin URLs. Since 2017.07, the FOSUserBundle
+is required. For a more detailed description, please read the article about
+[setting up the FOSUserBundle](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login).
+
+These settings need to be added at the end of your ./app/config/config.yml file:
+
+```yaml
+fos_user:
+    db_driver: orm
+    user_class: Aimeos\ShopBundle\Entity\FosUser
+    firewall_name: aimeos_myaccount
+    from_email:
+        address: "%mailer_user%"
+        sender_name: "%mailer_user%"
+```
+
+The Aimeos components have to be configured as well to get authentication working correctly. You need to take care of two things: Using the correct customer manager implementation and password encryption method. Both must be appended at the end of your ./app/config/config.yml as well:
+
+```yaml
+aimeos_shop:
+    mshop:
+        customer:
+            manager:
+                name: FosUser
+                password:
+                    name: Bcrypt
+```
+
+To add the required routes for the FOSUserBundle, append these two lines at the end of your ./app/config/routing.yml file:
+
+```yaml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+```
+
+Setting up the security configuration is the most complex part. The firewall setup in the `./app/config/security.yml` file should look like this one:
 
 ```yaml
 security:
     providers:
-        admin:
-            memory:
-                users:
-                    admin: { password: secret, roles: [ 'ROLE_ADMIN' ] }
-        aimeos_customer:
-            entity: { class: AimeosShopBundle:User, property: username }
-        in_memory:
-            memory: ~
+        aimeos:
+            entity: { class: AimeosShopBundle:FosUser, property: username }
 
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
-        Aimeos\ShopBundle\Entity\User:
-            algorithm: sha1
-            encode_as_base64: false
-            iterations: 1
+        Aimeos\ShopBundle\Entity\FosUser: bcrypt
 
     firewalls:
         aimeos_admin:
             pattern:   ^/admin
             anonymous: ~
-            provider: admin
+            provider: aimeos
             form_login:
                 login_path: /admin
                 check_path: /admin_check
         aimeos_myaccount:
-            pattern: ^/myaccount
-            provider: aimeos_customer
-            http_basic:
-                realm: "MyAccount"
-        main:
-            anonymous: ~
+            pattern: ^/
+            form_login:
+                provider: aimeos
+                csrf_token_generator: security.csrf.token_manager
+            logout:       true
+            anonymous:    true
 
     access_control:
-        - { path: ^/admin/.+, roles: ROLE_ADMIN }
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/myaccount, roles: ROLE_USER }
+        - { path: ^/admin/.+, roles: ROLE_ADMIN }
 ```
 
 **Caution:** The order of the configuration settings in this file is important!
-If you place the `in_memory` or `main` section before the Aimeos related sections,
-authentication will fail!
 
 These settings will protect the ```/admin/*``` URLs from unauthorized access from
-someone without admin privileges. There's only one user/password combination defined,
-which is rather inflexible. As alternative, you can use on of the other Symfony user
-provider to authenticate against.
+someone without admin privileges.
 
-The `/myaccount` URL is protected by HTTP basic authentication in this short
-example. Usually, you will replace it with a form based login or use the FOS user
-bundle with also offers user registration. A bit more detailed explanation of the
-authentication is available in the
+The `/myaccount` URL is protected by the FOS user bundle as well, which also offers
+user registration. A bit more detailed explanation of the authentication is available in the
 [Aimeos docs](https://aimeos.org/docs/Symfony/Configure_admin_myaccount_login)
-and it contains the
+and it contains more details about the
 [setup of the FOS user bundle](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login) too.
 
-**Caution:** This is only an example and contains a public password! Use **a strong
-password for authentication** in production environments!
+As last step, you have to create an admin account using the Symfony command line:
 
-If the PHP web server is still running (`php -S 127.0.0.1:8000 -t web`), you should be
-able to call the admin login page in your browser using:
+```bash
+./bin/console aimeos:account --admin me@mydomain.com
+./bin/console fos:user:promote me@mydomain.com ROLE_ADMIN
+```
+
+Please replace `me@mydomain.com` with your own e-mail address. If the PHP web server is
+still running (`php -S 127.0.0.1:8000 -t web`), you should be able to call the admin
+login page in your browser using:
 
 `http://127.0.0.1:8000/app_dev.php/admin`
 
-and authenticating with the user `admin` and the password `secret` as defined in your
-`./app/config/security.yml` file.
+and authenticating with your e-mail and the password which has been asked for by the
+aimeos:account command.
 
 ## Hints
 
