@@ -1,0 +1,35 @@
+aimeos_shop_basket:
+    path: /basket/{b_action}
+    defaults: { _controller: AimeosShopBundle:Basket:index, b_action: null }
+
+aimeos_shop_count:
+    path: /count
+    defaults: { _controller: AimeosShopBundle:Catalog:count, _format: js }
+
+aimeos_shop_detail:
+    path: /detail/{d_prodid}/{d_name}/{d_pos}
+    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '', d_pos: 0 }
+
+aimeos_shop_list:
+    path: /list/{f_catid}/{f_name}
+    defaults: { _controller: AimeosShopBundle:Catalog:list, f_catid: null, f_name: '' }
+
+aimeos_shop_session_pinned:
+    path: /detail/pin/{pin_action}/{pin_id}/{d_prodid}/{d_name}
+    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '', d_pos: 0 }
+
+aimeos_shop_suggest:
+    path: /suggest
+    defaults: { _controller: AimeosShopBundle:Catalog:suggest, _format: json }
+
+aimeos_shop_stock:
+    path: /stock
+    defaults: { _controller: AimeosShopBundle:Catalog:stock, _format: js }
+
+aimeos_shop_checkout:
+    path: /checkout/{c_step}
+    defaults: { _controller: AimeosShopBundle:Checkout:index, c_step: null }
+
+aimeos_shop_confirm:
+    path: /confirm/{code}
+    defaults: { _controller: AimeosShopBundle:Checkout:confirm, code: null }
