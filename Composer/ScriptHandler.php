@@ -241,41 +241,6 @@ class ScriptHandler
     prefix: /';
 		}
 
-		if( strpos( $content, 'aimeos_shop_adm:' ) === false )
-		{
-			$content .= "\n" . 'aimeos_shop_adm:
-    resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
-    prefix: /';
-		}
-
-		if( strpos( $content, 'aimeos_shop_extadm:' ) === false )
-		{
-			$content .= "\n" . 'aimeos_shop_extadm:
-    resource: "@AimeosShopBundle/Resources/config/routing_extadm.yml"
-    prefix: /admin/{site}/extadm';
-		}
-
-		if( strpos( $content, 'aimeos_shop_jqadm:' ) === false )
-		{
-			$content .= "\n" . 'aimeos_shop_jqadm:
-    resource: "@AimeosShopBundle/Resources/config/routing_jqadm.yml"
-    prefix: /admin/{site}/jqadm';
-		}
-
-		if( strpos( $content, 'aimeos_shop_jsonadm:' ) === false )
-		{
-			$content .= "\n" . 'aimeos_shop_jsonadm:
-    resource: "@AimeosShopBundle/Resources/config/routing_jsonadm.yml"
-    prefix: /admin/{site}/jsonadm';
-		}
-
-		if( strpos( $content, 'aimeos_shop_jsonapi:' ) === false )
-		{
-			$content .= "\n" . 'aimeos_shop_jsonapi:
-    resource: "@AimeosShopBundle/Resources/config/routing_jsonapi.yml"
-    prefix: /jsonapi';
-		}
-
 		$fs = new Filesystem();
 		$fs->dumpFile( $filename, $content );
 	}

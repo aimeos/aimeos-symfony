@@ -1,59 +1,34 @@
+aimeos_shop_adm:
+    resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
+    prefix: /
+
+aimeos_shop_extadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_extadm.yml"
+    prefix: /admin/{site}/extadm
+
+aimeos_shop_jqadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_jqadm.yml"
+    prefix: /admin/{site}/jqadm
+
+aimeos_shop_jsonadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_jsonadm.yml"
+    prefix: /admin/{site}/jsonadm
+
+aimeos_shop_jsonapi:
+    resource: "@AimeosShopBundle/Resources/config/routing_jsonapi.yml"
+    prefix: /jsonapi
+
 aimeos_shop_account:
-    path: /myaccount
-    defaults: { _controller: AimeosShopBundle:Account:index }
+    resource: "@AimeosShopBundle/Resources/config/routing_account.yml"
+    prefix: /myaccount
 
-aimeos_shop_account_favorite:
-    path: /myaccount/favorite/{fav_action}/{fav_id}/{d_name}
-    defaults: { _controller: AimeosShopBundle:Account:index, fav_action: '', fav_id: null, d_name: '', d_prodid: null, d_pos: 0 }
-
-aimeos_shop_account_watch:
-    path: /myaccount/watch/{wat_action}/{wat_id}/{d_name}
-    defaults: { _controller: AimeosShopBundle:Account:index, wat_action: '', wat_id: null, d_name: '', d_prodid: null, d_pos: 0 }
-
-aimeos_shop_account_download:
-    path: /myaccount/download/{dl_id}
-    defaults: { _controller: AimeosShopBundle:Account:download }
-
-
-aimeos_shop_basket:
-    path: /basket/{b_action}
-    defaults: { _controller: AimeosShopBundle:Basket:index, b_action: null }
-
-aimeos_shop_count:
-    path: /count
-    defaults: { _controller: AimeosShopBundle:Catalog:count, _format: js }
-
-aimeos_shop_detail:
-    path: /detail/{d_prodid}/{d_name}/{d_pos}
-    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '', d_pos: 0 }
-
-aimeos_shop_list:
-    path: /list/{f_catid}/{f_name}
-    defaults: { _controller: AimeosShopBundle:Catalog:list, f_catid: null, f_name: '' }
-
-aimeos_shop_session_pinned:
-    path: /detail/pin/{pin_action}/{pin_id}/{d_prodid}/{d_name}
-    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '', d_pos: 0 }
-
-aimeos_shop_suggest:
-    path: /suggest
-    defaults: { _controller: AimeosShopBundle:Catalog:suggest, _format: json }
-
-aimeos_shop_stock:
-    path: /stock
-    defaults: { _controller: AimeosShopBundle:Catalog:stock, _format: js }
-
-aimeos_shop_checkout:
-    path: /checkout/{c_step}
-    defaults: { _controller: AimeosShopBundle:Checkout:index, c_step: null }
-
-aimeos_shop_confirm:
-    path: /confirm/{code}/{orderid}
-    defaults: { _controller: AimeosShopBundle:Checkout:confirm, code: null, orderid: null }
+aimeos_shop_default:
+    resource: "@AimeosShopBundle/Resources/config/routing_default.yml"
+    prefix: /
 
 aimeos_shop_update:
-    path: /update/{code}/{orderid}
-    defaults: { _controller: AimeosShopBundle:Checkout:update, code: null, orderid: null }
+    resource: "@AimeosShopBundle/Resources/config/routing_update.yml"
+    prefix: /
 
 
 aimeos_shop_terms:

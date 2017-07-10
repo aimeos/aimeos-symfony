@@ -18,10 +18,27 @@ aimeos_shop_jsonapi:
     resource: "@AimeosShopBundle/Resources/config/routing_jsonapi.yml"
     prefix: /{site}/{locale}/{currency}/jsonapi
 
+aimeos_shop_account:
+    resource: "@AimeosShopBundle/Resources/config/routing_account.yml"
+    prefix:   /{site}/{locale}/{currency}/myaccount
 
-aimeos_shop:
-    resource: "@AimeosShopBundle/Resources/config/routing.yml"
+aimeos_shop_default:
+    resource: "@AimeosShopBundle/Resources/config/routing_default.yml"
     prefix:   /{site}/{locale}/{currency}
+
+aimeos_shop_update:
+    resource: "@AimeosShopBundle/Resources/config/routing_update.yml"
+    prefix:   /{site}/{locale}/{currency}
+
+
+aimeos_shop_terms:
+    path: /terms
+    defaults: { _controller: AimeosShopBundle:Page:terms }
+
+aimeos_shop_privacy:
+    path: /privacy
+    defaults: { _controller: AimeosShopBundle:Page:privacy }
+
 
 aimeos_test_favoritecomponent:
     path: /{site}/{locale}/{currency}/test/favoritecomponent

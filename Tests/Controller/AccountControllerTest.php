@@ -11,7 +11,7 @@ class AccountControllerTest extends WebTestCase
 	public function testAccount()
 	{
 		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/myaccount' );
+		$client->request( 'GET', '/unittest/de/EUR/myaccount/' );
 
 		$this->assertContains( 'aimeos account-profile', $client->getResponse()->getContent() );
 		$this->assertContains( 'aimeos account-history', $client->getResponse()->getContent() );
