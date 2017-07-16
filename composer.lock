@@ -49,16 +49,16 @@
         },
         {
             "name": "aimeos/ai-admin-jqadm",
-            "version": "2017.07.4",
+            "version": "2017.07.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "79fa394b0c123f64361d85520da36ffeb53d9a65"
+                "reference": "dd75851143167256cd6b391e08d11089778a32ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/79fa394b0c123f64361d85520da36ffeb53d9a65",
-                "reference": "79fa394b0c123f64361d85520da36ffeb53d9a65",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/dd75851143167256cd6b391e08d11089778a32ad",
+                "reference": "dd75851143167256cd6b391e08d11089778a32ad",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2017-07-06T07:09:03+00:00"
+            "time": "2017-07-15T09:48:20+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -137,16 +137,16 @@
         },
         {
             "name": "aimeos/ai-client-html",
-            "version": "2017.07.3",
+            "version": "2017.07.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "fa16874fe676b47192b73f24a776baf661f12121"
+                "reference": "d8ed12328f81c2c7190dae73e76b6762f63747e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/fa16874fe676b47192b73f24a776baf661f12121",
-                "reference": "fa16874fe676b47192b73f24a776baf661f12121",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/d8ed12328f81c2c7190dae73e76b6762f63747e9",
+                "reference": "d8ed12328f81c2c7190dae73e76b6762f63747e9",
                 "shasum": ""
             },
             "require": {
@@ -179,7 +179,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2017-07-06T07:19:48+00:00"
+            "time": "2017-07-15T22:39:45+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -225,16 +225,16 @@
         },
         {
             "name": "aimeos/ai-controller-frontend",
-            "version": "2017.07.2",
+            "version": "2017.07.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "6d755aa5ab6d0db72af5f71d0fe4930d68d9d20c"
+                "reference": "eba90318c770ae9d6ddaf027f2223bbe8065f775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/6d755aa5ab6d0db72af5f71d0fe4930d68d9d20c",
-                "reference": "6d755aa5ab6d0db72af5f71d0fe4930d68d9d20c",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/eba90318c770ae9d6ddaf027f2223bbe8065f775",
+                "reference": "eba90318c770ae9d6ddaf027f2223bbe8065f775",
                 "shasum": ""
             },
             "require": {
@@ -263,7 +263,7 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2017-07-03T11:07:37+00:00"
+            "time": "2017-07-14T23:11:48+00:00"
         },
         {
             "name": "aimeos/ai-controller-jobs",
@@ -311,16 +311,16 @@
         },
         {
             "name": "aimeos/ai-fosuser",
-            "version": "2017.07.3",
+            "version": "2017.07.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-fosuser.git",
-                "reference": "7bf3eac7f07b2ec9c000b9c6ea02fa82665e54b8"
+                "reference": "3cd25c232b988cc48adc23724ad47be08867856b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/7bf3eac7f07b2ec9c000b9c6ea02fa82665e54b8",
-                "reference": "7bf3eac7f07b2ec9c000b9c6ea02fa82665e54b8",
+                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/3cd25c232b988cc48adc23724ad47be08867856b",
+                "reference": "3cd25c232b988cc48adc23724ad47be08867856b",
                 "shasum": ""
             },
             "require": {
@@ -351,7 +351,7 @@
                 "symfony",
                 "user"
             ],
-            "time": "2017-07-09T11:18:20+00:00"
+            "time": "2017-07-16T13:26:27+00:00"
         },
         {
             "name": "aimeos/ai-gettext",
@@ -573,16 +573,16 @@
         },
         {
             "name": "aimeos/aimeos-core",
-            "version": "2017.07.3",
+            "version": "2017.07.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "ee281fa5fb255105ec0ccc1449663c6ba122b630"
+                "reference": "7b0f79627a41a98c704461b1df712d8a820621be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/ee281fa5fb255105ec0ccc1449663c6ba122b630",
-                "reference": "ee281fa5fb255105ec0ccc1449663c6ba122b630",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/7b0f79627a41a98c704461b1df712d8a820621be",
+                "reference": "7b0f79627a41a98c704461b1df712d8a820621be",
                 "shasum": ""
             },
             "require": {
@@ -639,7 +639,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2017-07-09T10:05:14+00:00"
+            "time": "2017-07-16T13:12:03+00:00"
         },
         {
             "name": "composer/installers",
