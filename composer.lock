@@ -53,12 +53,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "ca6047b67edd6b1a7ac65b3bf2c6183b1c2ce908"
+                "reference": "01bc6f8ff0d82a63eaf15f1b62d682c91d65d6ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/ca6047b67edd6b1a7ac65b3bf2c6183b1c2ce908",
-                "reference": "ca6047b67edd6b1a7ac65b3bf2c6183b1c2ce908",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/01bc6f8ff0d82a63eaf15f1b62d682c91d65d6ed",
+                "reference": "01bc6f8ff0d82a63eaf15f1b62d682c91d65d6ed",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2017-07-06 07:09:17"
+            "time": "2017-07-15 09:48:39"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -96,12 +96,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "d898d1f5ea6cbb11b22ab82bc3f2dc1beca35fff"
+                "reference": "5d21ce0ef536d26ddb1f5412610ae73bc16db817"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/d898d1f5ea6cbb11b22ab82bc3f2dc1beca35fff",
-                "reference": "d898d1f5ea6cbb11b22ab82bc3f2dc1beca35fff",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/5d21ce0ef536d26ddb1f5412610ae73bc16db817",
+                "reference": "5d21ce0ef536d26ddb1f5412610ae73bc16db817",
                 "shasum": ""
             },
             "require": {
@@ -133,7 +133,7 @@
                 "extension",
                 "json api"
             ],
-            "time": "2017-06-28 22:24:54"
+            "time": "2017-07-11 15:41:38"
         },
         {
             "name": "aimeos/ai-client-html",
@@ -141,12 +141,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "2b1e23606a44fd8122bf781a0492c154e0ad244b"
+                "reference": "eee32fbefd48deeb507343de8ced3640687ccbf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/2b1e23606a44fd8122bf781a0492c154e0ad244b",
-                "reference": "2b1e23606a44fd8122bf781a0492c154e0ad244b",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/eee32fbefd48deeb507343de8ced3640687ccbf2",
+                "reference": "eee32fbefd48deeb507343de8ced3640687ccbf2",
                 "shasum": ""
             },
             "require": {
@@ -179,7 +179,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2017-07-04 11:51:30"
+            "time": "2017-07-15 22:27:41"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -187,12 +187,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "0e5809b5c402bb13a1000c608035398e242a5ebf"
+                "reference": "dfd1f75c1fb37caf39ec0f9e2c15ad772cffa3d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/0e5809b5c402bb13a1000c608035398e242a5ebf",
-                "reference": "0e5809b5c402bb13a1000c608035398e242a5ebf",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/dfd1f75c1fb37caf39ec0f9e2c15ad772cffa3d2",
+                "reference": "dfd1f75c1fb37caf39ec0f9e2c15ad772cffa3d2",
                 "shasum": ""
             },
             "require": {
@@ -221,7 +221,7 @@
                 "extension",
                 "json"
             ],
-            "time": "2017-06-28 22:24:54"
+            "time": "2017-07-14 12:38:12"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -229,12 +229,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "2ee39bf5bb29a7aa11cee53505439beb92ec1226"
+                "reference": "13393fb4cdc37684de67120c0f00b2f988c4a664"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/2ee39bf5bb29a7aa11cee53505439beb92ec1226",
-                "reference": "2ee39bf5bb29a7aa11cee53505439beb92ec1226",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/13393fb4cdc37684de67120c0f00b2f988c4a664",
+                "reference": "13393fb4cdc37684de67120c0f00b2f988c4a664",
                 "shasum": ""
             },
             "require": {
@@ -263,7 +263,7 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2017-07-02 22:26:52"
+            "time": "2017-07-14 23:10:31"
         },
         {
             "name": "aimeos/ai-controller-jobs",
@@ -315,12 +315,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-fosuser.git",
-                "reference": "922d11d2e570814e60f719ebb3c84b382d79b191"
+                "reference": "3ce3840be7b9aab407065b1e4cc6dd810116d4de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/922d11d2e570814e60f719ebb3c84b382d79b191",
-                "reference": "922d11d2e570814e60f719ebb3c84b382d79b191",
+                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/3ce3840be7b9aab407065b1e4cc6dd810116d4de",
+                "reference": "3ce3840be7b9aab407065b1e4cc6dd810116d4de",
                 "shasum": ""
             },
             "require": {
@@ -351,7 +351,7 @@
                 "symfony",
                 "user"
             ],
-            "time": "2017-07-09 10:27:39"
+            "time": "2017-07-15 09:47:12"
         },
         {
             "name": "aimeos/ai-gettext",
@@ -577,12 +577,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "7ac9496b0dc8eaf4ecd5f347684888c52a804299"
+                "reference": "a75d301587eab11ad4601095d8cddc5df45fc527"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/7ac9496b0dc8eaf4ecd5f347684888c52a804299",
-                "reference": "7ac9496b0dc8eaf4ecd5f347684888c52a804299",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/a75d301587eab11ad4601095d8cddc5df45fc527",
+                "reference": "a75d301587eab11ad4601095d8cddc5df45fc527",
                 "shasum": ""
             },
             "require": {
@@ -639,7 +639,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2017-07-09 10:04:40"
+            "time": "2017-07-12 15:18:46"
         },
         {
             "name": "composer/installers",
@@ -3161,22 +3161,22 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "3.1.1",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e"
+                "reference": "46f7e8bb075036c92695b15a1ddb6971c751e585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/8331b5efe816ae05461b7ca1e721c01b46bafb3e",
-                "reference": "8331b5efe816ae05461b7ca1e721c01b46bafb3e",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/46f7e8bb075036c92695b15a1ddb6971c751e585",
+                "reference": "46f7e8bb075036c92695b15a1ddb6971c751e585",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5",
                 "phpdocumentor/reflection-common": "^1.0@dev",
-                "phpdocumentor/type-resolver": "^0.2.0",
+                "phpdocumentor/type-resolver": "^0.4.0",
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
@@ -3202,24 +3202,24 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-09-30T07:12:33+00:00"
+            "time": "2017-07-15T11:38:20+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
-            "version": "0.2.1",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/TypeResolver.git",
-                "reference": "e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb"
+                "reference": "9c977708995954784726e25d0cd1dddf4e65b0f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb",
-                "reference": "e224fb2ea2fba6d3ad6fdaef91cd09a172155ccb",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/9c977708995954784726e25d0cd1dddf4e65b0f7",
+                "reference": "9c977708995954784726e25d0cd1dddf4e65b0f7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5",
+                "php": "^5.5 || ^7.0",
                 "phpdocumentor/reflection-common": "^1.0"
             },
             "require-dev": {
@@ -3249,7 +3249,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-11-25T06:54:22+00:00"
+            "time": "2017-07-14T14:27:02+00:00"
         },
         {
             "name": "phpspec/prophecy",
