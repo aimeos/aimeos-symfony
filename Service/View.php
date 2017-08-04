@@ -49,10 +49,12 @@ class View
 	 */
 	public function create( \Aimeos\MShop\Context\Item\Iface $context, array $templatePaths, $locale = null )
 	{
-		$config = $context->getConfig();
 		$twig = $this->container->get( 'twig' );
 		$engine = new \Aimeos\MW\View\Engine\Twig( $twig );
 		$view = new \Aimeos\MW\View\Standard( $templatePaths, array( '.html.twig' => $engine ) );
+
+		$config = $context->getConfig();
+		$session = $context->getSession();
 
 		$this->addCsrf( $view );
 		$this->addAccess( $view, $context );
@@ -61,6 +63,7 @@ class View
 		$this->addParam( $view );
 		$this->addRequest( $view );
 		$this->addResponse( $view );
+		$this->addSession( $view, $session );
 		$this->addTranslate( $view, $locale );
 		$this->addUrl( $view );
 
@@ -207,6 +210,22 @@ class View
 	{
 		$helper = new \Aimeos\MW\View\Helper\Response\Symfony2( $view );
 		$view->addHelper( 'response', $helper );
+
+		return $view;
+	}
+
+
+	/**
+	 * Adds the "session" helper to the view object
+	 *
+	 * @param \Aimeos\MW\View\Iface $view View object
+	 * @param \Aimeos\MW\Session\Iface $session Session object
+	 * @return \Aimeos\MW\View\Iface Modified view object
+	 */
+	protected function addSession( \Aimeos\MW\View\Iface $view, \Aimeos\MW\Session\Iface $session )
+	{
+		$helper = new \Aimeos\MW\View\Helper\Session\Standard( $view, $session );
+		$view->addHelper( 'session', $helper );
 
 		return $view;
 	}
