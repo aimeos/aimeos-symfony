@@ -75,7 +75,12 @@ class JqadmController extends Controller
 	public function copyAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $cntl->copy() );
+
+		if( ( $html = $cntl->copy() ) == '' ) {
+			return $cntl->getView()->response();
+		}
+
+		return $this->getHtml( $html );
 	}
 
 
@@ -90,7 +95,12 @@ class JqadmController extends Controller
 	public function createAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $cntl->create() );
+
+		if( ( $html = $cntl->create() ) == '' ) {
+			return $cntl->getView()->response();
+		}
+
+		return $this->getHtml( $html );
 	}
 
 
@@ -115,6 +125,26 @@ class JqadmController extends Controller
 
 
 	/**
+	 * Exports the requested resource object
+	 *
+	 * @param Request $request Symfony request object
+	 * @param string $resource Resource location, e.g. "product"
+	 * @param string $site Unique site code
+	 * @return Response Generated output
+	 */
+	public function exportAction( Request $request, $resource, $site = 'default' )
+	{
+		$cntl = $this->createClient( $request, $site, $resource );
+
+		if( ( $html = $cntl->export() ) == '' ) {
+			return $cntl->getView()->response();
+		}
+
+		return $this->getHtml( $html );
+	}
+
+
+	/**
 	 * Returns the HTML code for the requested resource object
 	 *
 	 * @param Request $request Symfony request object
@@ -125,7 +155,12 @@ class JqadmController extends Controller
 	public function getAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $cntl->get() );
+
+		if( ( $html = $cntl->get() ) == '' ) {
+			return $cntl->getView()->response();
+		}
+
+		return $this->getHtml( $html );
 	}
 
 
@@ -160,7 +195,12 @@ class JqadmController extends Controller
 	public function searchAction( Request $request, $resource, $site = 'default' )
 	{
 		$cntl = $this->createClient( $request, $site, $resource );
-		return $this->getHtml( $cntl->search() );
+
+		if( ( $html = $cntl->search() ) == '' ) {
+			return $cntl->getView()->response();
+		}
+
+		return $this->getHtml( $html );
 	}
 
 

@@ -58,6 +58,8 @@ admin:
                 target: aimeos_shop_jqadm_create
             delete:
                 target: aimeos_shop_jqadm_delete
+            export:
+                target: aimeos_shop_jqadm_export
             get:
                 target: aimeos_shop_jqadm_get
             save:

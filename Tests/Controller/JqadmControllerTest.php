@@ -80,6 +80,21 @@ class JqadmControllerTest extends WebTestCase
 	}
 
 
+	public function testExportAction()
+	{
+		$client = static::createClient(array(), array(
+			'PHP_AUTH_USER' => 'admin',
+			'PHP_AUTH_PW'   => 'adminpass',
+		) );
+
+		$client->request( 'GET', '/unittest/jqadm/export/order' );
+		$response = $client->getResponse();
+
+		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertContains( 'list-items', $response->getContent() );
+	}
+
+
 	public function testGetAction()
 	{
 		$client = static::createClient(array(), array(
