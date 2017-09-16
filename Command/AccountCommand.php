@@ -34,6 +34,7 @@ class AccountCommand extends Command
 		$this->addArgument( 'email', InputArgument::REQUIRED, 'E-mail address of the account that should be created' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to create accounts for like "default"', 'default' );
 		$this->addOption( 'password', null, InputOption::VALUE_REQUIRED, 'Optional password for the account (will ask for if not given)' );
+		$this->addOption( 'super', null, InputOption::VALUE_NONE, 'If account should have super user privileges' );
 		$this->addOption( 'admin', null, InputOption::VALUE_NONE, 'If account should have administrator privileges' );
 		$this->addOption( 'editor', null, InputOption::VALUE_NONE, 'If account should have limited editor privileges' );
 	}
@@ -65,6 +66,10 @@ class AccountCommand extends Command
 		$context->setLocale( $localeItem );
 
 		$user = $this->createCustomerItem( $context, $code, $password );
+
+		if( $input->getOption( 'super' ) ) {
+			$this->addGroup( $input, $output, $context, $user, 'super' );
+		}
 
 		if( $input->getOption( 'admin' ) ) {
 			$this->addGroup( $input, $output, $context, $user, 'admin' );
