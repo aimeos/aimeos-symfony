@@ -117,7 +117,7 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'POST', '/unittest/jqadm/save/product/0' );
+		$client->request( 'POST', '/unittest/jqadm/save/product' );
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );

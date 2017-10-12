@@ -9,7 +9,7 @@ aimeos_shop_jqadm_copy:
     methods: [GET, POST]
     requirements:
         resource: '[^0-9A-Z\-\_]+'
-        id: '[0-9A-Z\-\_]*'
+        id: '[0-9A-Z\-\_]+'
 
 aimeos_shop_jqadm_create:
     path: /create/{resource}
@@ -24,7 +24,7 @@ aimeos_shop_jqadm_delete:
     methods: [GET, POST]
     requirements:
         resource: '[^0-9A-Z\-\_]+'
-        id: '[0-9A-Z\-\_]*'
+        id: '[0-9A-Z\-\_]+'
 
 aimeos_shop_jqadm_export:
     path: /export/{resource}
@@ -39,15 +39,14 @@ aimeos_shop_jqadm_get:
     methods: [GET]
     requirements:
         resource: '[^0-9A-Z\-\_]+'
-        id: '[0-9A-Z\-\_]*'
+        id: '[0-9A-Z\-\_]+'
 
 aimeos_shop_jqadm_save:
-    path: /save/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jqadm:save, id: null }
+    path: /save/{resource}
+    defaults: { _controller: AimeosShopBundle:Jqadm:save }
     methods: [POST]
     requirements:
         resource: '[^0-9A-Z\-\_]+'
-        id: '[0-9A-Z\-\_]*'
 
 aimeos_shop_jqadm_search:
     path: /search/{resource}
