@@ -26,7 +26,6 @@
 		"aimeos/ai-monolog": "dev-master",
 		"aimeos/ai-symfony": "dev-master",
 		"aimeos/ai-swiftmailer": "dev-master",
-		"aimeos/ai-admin-extadm": "dev-master",
 		"aimeos/ai-admin-jqadm": "dev-master",
 		"aimeos/ai-admin-jsonadm": "dev-master",
 		"aimeos/ai-client-jsonapi": "dev-master",
@@ -53,8 +52,6 @@
 	},
 	"scripts": {
 		"post-update-cmd": [
-			"cp -r ext/ai-admin-extadm/admin/extjs/resources/* Resources/public/admin/extjs/resources/",
-			"cp -r ext/ai-admin-extadm/admin/extjs/lib/* Resources/public/admin/extjs/lib/",
 			"cp -r ext/ai-client-html/client/html/themes/* Resources/public/themes/"
 		]
 	}

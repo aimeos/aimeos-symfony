@@ -2,10 +2,6 @@ aimeos_shop_adm:
     resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
     prefix: /
 
-aimeos_shop_extadm:
-    resource: "@AimeosShopBundle/Resources/config/routing_extadm.yml"
-    prefix: /admin/{site}/extadm
-
 aimeos_shop_jqadm:
     resource: "@AimeosShopBundle/Resources/config/routing_jqadm.yml"
     prefix: /admin/{site}/jqadm

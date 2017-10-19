@@ -44,7 +44,6 @@ security:
                 realm: "Default"
 
     access_control:
-        - { path: ^/unittest/extadm, roles: ROLE_ADMIN }
         - { path: ^/unittest/jqadm, roles: ROLE_ADMIN }
         - { path: ^/unittest/jsonadm, roles: ROLE_ADMIN }
         - { path: ^/unittest/de/EUR/checkout, roles: ROLE_USER }
