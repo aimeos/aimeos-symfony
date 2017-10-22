@@ -47,9 +47,6 @@ resource:
         db: db
 
 admin:
-    extjs:
-        url:
-            target: aimeos_shop_extadm
     jqadm:
         url:
             copy:
@@ -188,22 +185,6 @@ controller:
                     # doesn't restrict the size of the image if it's scaled due to a value
                     # in the "maxwidth" parameter
                     # maxheight: 280
-    extjs:
-        attribute:
-            export:
-                text:
-                    default:
-                        downloaddir: /uploads
-        catalog:
-            export:
-                text:
-                    default:
-                        downloaddir: /uploads
-        product:
-            export:
-                text:
-                    default:
-                        downloaddir: /uploads
 
 i18n:
 
