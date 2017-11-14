@@ -24,7 +24,7 @@ resource:
         username: "%database_user%"
         password: "%database_password%"
         stmt: ["SET SESSION sort_buffer_size=2097144; SET NAMES 'utf8'; SET SESSION sql_mode='ANSI'"]
-        limit: 2
+        limit: 3
         opt-persistent: 0
     fs:
         adapter: Standard
