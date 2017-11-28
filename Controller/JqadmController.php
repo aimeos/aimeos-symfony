@@ -227,7 +227,7 @@ class JqadmController extends Controller
 
 		$view->aimeosType = 'Symfony';
 		$view->aimeosVersion = $this->get( 'aimeos' )->getVersion();
-		$view->aimeosExtensions = implode( ',', $this->get( 'aimeos' )->get()->getExtensions() );
+		$view->aimeosExtensions = implode( ',', $aimeos->getExtensions() );
 
 		$context->setView( $view );
 
