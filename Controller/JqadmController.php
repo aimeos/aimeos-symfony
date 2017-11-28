@@ -224,6 +224,11 @@ class JqadmController extends Controller
 		$context->setLocale( $this->get( 'aimeos_locale' )->getBackend( $context, $site ) );
 
 		$view = $this->get( 'aimeos_view' )->create( $context, $templatePaths, $lang );
+
+		$view->aimeosType = 'Symfony';
+		$view->aimeosVersion = $this->get( 'aimeos' )->getVersion();
+		$view->aimeosExtensions = implode( ',', $this->get( 'aimeos' )->get()->getExtensions() );
+
 		$context->setView( $view );
 
 		return \Aimeos\Admin\JQAdm\Factory::createClient( $context, $aimeos, $resource );
@@ -238,10 +243,6 @@ class JqadmController extends Controller
 	 */
 	protected function getHtml( $content )
 	{
-		$version = $this->get( 'aimeos' )->getVersion();
-		$extnames = implode( ',', $this->get( 'aimeos' )->get()->getExtensions() );
-		$content = str_replace( ['{type}', '{version}', '{extensions}'], ['Symfony', $version, $extnames], $content );
-
 		return $this->render( 'AimeosShopBundle:Jqadm:index.html.twig', array( 'content' => $content ) );
 	}
 }
