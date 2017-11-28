@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "b59950be22cdfa6c6dacb5d8666e606e37a08386"
+                "reference": "1db75d361ddaff32a7bbb431106c7caaa0510717"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/b59950be22cdfa6c6dacb5d8666e606e37a08386",
-                "reference": "b59950be22cdfa6c6dacb5d8666e606e37a08386",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/1db75d361ddaff32a7bbb431106c7caaa0510717",
+                "reference": "1db75d361ddaff32a7bbb431106c7caaa0510717",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2017-10-19T16:11:01+00:00"
+            "time": "2017-11-28T12:48:58+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "70a284e6895a38558adfb23867fe119ba9bdc93a"
+                "reference": "f510479b2c9978478478091840e34dafc7e4c57c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/70a284e6895a38558adfb23867fe119ba9bdc93a",
-                "reference": "70a284e6895a38558adfb23867fe119ba9bdc93a",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/f510479b2c9978478478091840e34dafc7e4c57c",
+                "reference": "f510479b2c9978478478091840e34dafc7e4c57c",
                 "shasum": ""
             },
             "require": {
@@ -92,7 +92,7 @@
                 "extension",
                 "json api"
             ],
-            "time": "2017-10-17T20:30:21+00:00"
+            "time": "2017-11-27T17:59:19+00:00"
         },
         {
             "name": "aimeos/ai-client-html",
@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "92e8eb9e22d0e54cc72569109f208c649c44e4e2"
+                "reference": "2a5ca85acd6ae3f3a9e62714ebc476cb2cf699b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/92e8eb9e22d0e54cc72569109f208c649c44e4e2",
-                "reference": "92e8eb9e22d0e54cc72569109f208c649c44e4e2",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/2a5ca85acd6ae3f3a9e62714ebc476cb2cf699b6",
+                "reference": "2a5ca85acd6ae3f3a9e62714ebc476cb2cf699b6",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2017-10-14T20:45:41+00:00"
+            "time": "2017-11-25T21:58:24+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -146,12 +146,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "2487b50755e5e71eacf2b8eeb062a3816feabd8a"
+                "reference": "38783bbf16a0d91d46e29da829e2a5f76c14966c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/2487b50755e5e71eacf2b8eeb062a3816feabd8a",
-                "reference": "2487b50755e5e71eacf2b8eeb062a3816feabd8a",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/38783bbf16a0d91d46e29da829e2a5f76c14966c",
+                "reference": "38783bbf16a0d91d46e29da829e2a5f76c14966c",
                 "shasum": ""
             },
             "require": {
@@ -180,7 +180,7 @@
                 "extension",
                 "json"
             ],
-            "time": "2017-10-15T22:37:01+00:00"
+            "time": "2017-11-27T18:01:26+00:00"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -188,12 +188,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "167152d7ff0ce173133ac4b3aaca765e8ffb866b"
+                "reference": "27d1e41928f264652c39da5879cfaf7c9b0339ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/167152d7ff0ce173133ac4b3aaca765e8ffb866b",
-                "reference": "167152d7ff0ce173133ac4b3aaca765e8ffb866b",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/27d1e41928f264652c39da5879cfaf7c9b0339ba",
+                "reference": "27d1e41928f264652c39da5879cfaf7c9b0339ba",
                 "shasum": ""
             },
             "require": {
@@ -222,7 +222,7 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2017-10-14T22:30:56+00:00"
+            "time": "2017-11-22T23:18:12+00:00"
         },
         {
             "name": "aimeos/ai-controller-jobs",
@@ -230,12 +230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "24b9f7f194705d6bd397c87266038b6383a52d6f"
+                "reference": "9abd04164b140cccaef3dbd51a34578ad1dd7c2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/24b9f7f194705d6bd397c87266038b6383a52d6f",
-                "reference": "24b9f7f194705d6bd397c87266038b6383a52d6f",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/9abd04164b140cccaef3dbd51a34578ad1dd7c2f",
+                "reference": "9abd04164b140cccaef3dbd51a34578ad1dd7c2f",
                 "shasum": ""
             },
             "require": {
@@ -266,7 +266,7 @@
                 "extension",
                 "jobs"
             ],
-            "time": "2017-10-15T15:29:09+00:00"
+            "time": "2017-11-22T23:18:15+00:00"
         },
         {
             "name": "aimeos/ai-fosuser",
@@ -274,12 +274,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-fosuser.git",
-                "reference": "6ed2237486951e2401ef13573876b7f4fdd1c2a4"
+                "reference": "ce0c06d8bb9792c67d1580070110c730c05d5988"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/6ed2237486951e2401ef13573876b7f4fdd1c2a4",
-                "reference": "6ed2237486951e2401ef13573876b7f4fdd1c2a4",
+                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/ce0c06d8bb9792c67d1580070110c730c05d5988",
+                "reference": "ce0c06d8bb9792c67d1580070110c730c05d5988",
                 "shasum": ""
             },
             "require": {
@@ -310,7 +310,7 @@
                 "symfony",
                 "user"
             ],
-            "time": "2017-09-21T08:00:22+00:00"
+            "time": "2017-11-22T23:18:27+00:00"
         },
         {
             "name": "aimeos/ai-gettext",
@@ -318,12 +318,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
-                "reference": "e1fead0e186751578fffeea5340d4cabe39602a6"
+                "reference": "09720afaeb2e6582189e22575f42e1d21be3fe57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/e1fead0e186751578fffeea5340d4cabe39602a6",
-                "reference": "e1fead0e186751578fffeea5340d4cabe39602a6",
+                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/09720afaeb2e6582189e22575f42e1d21be3fe57",
+                "reference": "09720afaeb2e6582189e22575f42e1d21be3fe57",
                 "shasum": ""
             },
             "require": {
@@ -352,7 +352,7 @@
                 "gettext",
                 "performance"
             ],
-            "time": "2017-10-02T17:17:20+00:00"
+            "time": "2017-11-22T23:18:29+00:00"
         },
         {
             "name": "aimeos/ai-monolog",
@@ -360,12 +360,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "ce813dc1d1f61dd8163524da3529f746bfdf28fc"
+                "reference": "55af785dd05487650b80097798ea0caf42342854"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/ce813dc1d1f61dd8163524da3529f746bfdf28fc",
-                "reference": "ce813dc1d1f61dd8163524da3529f746bfdf28fc",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/55af785dd05487650b80097798ea0caf42342854",
+                "reference": "55af785dd05487650b80097798ea0caf42342854",
                 "shasum": ""
             },
             "require": {
@@ -397,7 +397,7 @@
                 "monolog",
                 "shop"
             ],
-            "time": "2017-09-29T12:45:05+00:00"
+            "time": "2017-11-22T23:18:32+00:00"
         },
         {
             "name": "aimeos/ai-swiftmailer",
@@ -405,12 +405,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "d841890046cf282d248a5b10a35f3d433e8b23aa"
+                "reference": "4c1e19c550bbc8c26fc825e57041283543094541"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/d841890046cf282d248a5b10a35f3d433e8b23aa",
-                "reference": "d841890046cf282d248a5b10a35f3d433e8b23aa",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/4c1e19c550bbc8c26fc825e57041283543094541",
+                "reference": "4c1e19c550bbc8c26fc825e57041283543094541",
                 "shasum": ""
             },
             "require": {
@@ -442,7 +442,7 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2017-09-29T12:46:57+00:00"
+            "time": "2017-11-22T23:18:44+00:00"
         },
         {
             "name": "aimeos/ai-symfony",
@@ -450,12 +450,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
-                "reference": "b872e2676d4bf21ff06b3ebc4541ac8499d3993d"
+                "reference": "13bfc4ca455eb436a35f736c3868c88127021370"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/b872e2676d4bf21ff06b3ebc4541ac8499d3993d",
-                "reference": "b872e2676d4bf21ff06b3ebc4541ac8499d3993d",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/13bfc4ca455eb436a35f736c3868c88127021370",
+                "reference": "13bfc4ca455eb436a35f736c3868c88127021370",
                 "shasum": ""
             },
             "require": {
@@ -487,7 +487,7 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2017-10-01T13:31:05+00:00"
+            "time": "2017-11-22T23:18:45+00:00"
         },
         {
             "name": "aimeos/ai-twig",
@@ -495,12 +495,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-twig.git",
-                "reference": "55d34b0b3150cb39a499b90e2b67f4456341a77a"
+                "reference": "b847a6a629aab3c5de043c39c31ca69f0e0ad59c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/55d34b0b3150cb39a499b90e2b67f4456341a77a",
-                "reference": "55d34b0b3150cb39a499b90e2b67f4456341a77a",
+                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/b847a6a629aab3c5de043c39c31ca69f0e0ad59c",
+                "reference": "b847a6a629aab3c5de043c39c31ca69f0e0ad59c",
                 "shasum": ""
             },
             "require": {
@@ -528,7 +528,7 @@
                 "templates",
                 "twig"
             ],
-            "time": "2017-10-01T13:31:52+00:00"
+            "time": "2017-11-22T23:18:45+00:00"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -536,12 +536,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "f874d3cb58f7cb980ee42b9458a09f4070cb47e1"
+                "reference": "486aaa7e3474f15de7373c1ca9e63a8dbc01fa31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/f874d3cb58f7cb980ee42b9458a09f4070cb47e1",
-                "reference": "f874d3cb58f7cb980ee42b9458a09f4070cb47e1",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/486aaa7e3474f15de7373c1ca9e63a8dbc01fa31",
+                "reference": "486aaa7e3474f15de7373c1ca9e63a8dbc01fa31",
                 "shasum": ""
             },
             "require": {
@@ -598,7 +598,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2017-10-17T20:27:33+00:00"
+            "time": "2017-11-25T23:03:06+00:00"
         },
         {
             "name": "composer/installers",
@@ -1189,16 +1189,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.2",
+            "version": "2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "bc31baa11ea2883e017f0a10d9722ef9d50eac1c"
+                "reference": "1bec00a10039b823cc94eef4eddd47dcd3b2ca04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/bc31baa11ea2883e017f0a10d9722ef9d50eac1c",
-                "reference": "bc31baa11ea2883e017f0a10d9722ef9d50eac1c",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/1bec00a10039b823cc94eef4eddd47dcd3b2ca04",
+                "reference": "1bec00a10039b823cc94eef4eddd47dcd3b2ca04",
                 "shasum": ""
             },
             "require": {
@@ -1207,8 +1207,8 @@
             },
             "require-dev": {
                 "dominicsayers/isemail": "dev-master",
-                "phpunit/phpunit": "^4.8.0",
-                "satooshi/php-coveralls": "dev-master"
+                "phpunit/phpunit": "^4.8.35",
+                "satooshi/php-coveralls": "^1.0.1"
             },
             "suggest": {
                 "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
@@ -1242,7 +1242,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2017-01-30T22:07:36+00:00"
+            "time": "2017-11-15T23:40:40+00:00"
         },
         {
             "name": "fig/link-util",
@@ -1908,16 +1908,16 @@
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "v3.1.1",
+            "version": "v3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/monolog-bundle.git",
-                "reference": "80c82d7d41c4eed0bf27e215f27531c05b217c17"
+                "reference": "2b41b8b6d2c6edb1a5494f02f8e4129be2a44784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/80c82d7d41c4eed0bf27e215f27531c05b217c17",
-                "reference": "80c82d7d41c4eed0bf27e215f27531c05b217c17",
+                "url": "https://api.github.com/repos/symfony/monolog-bundle/zipball/2b41b8b6d2c6edb1a5494f02f8e4129be2a44784",
+                "reference": "2b41b8b6d2c6edb1a5494f02f8e4129be2a44784",
                 "shasum": ""
             },
             "require": {
@@ -1929,8 +1929,8 @@
                 "symfony/monolog-bridge": "~2.7|~3.0|~4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8",
                 "symfony/console": "~2.3|~3.0|~4.0",
+                "symfony/phpunit-bridge": "^3.3|^4.0",
                 "symfony/yaml": "~2.3|~3.0|~4.0"
             },
             "type": "symfony-bundle",
@@ -1942,7 +1942,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Bundle\\MonologBundle\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1964,7 +1967,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2017-09-26T03:17:02+00:00"
+            "time": "2017-11-06T16:02:17+00:00"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -2368,30 +2371,30 @@
         },
         {
             "name": "symfony/swiftmailer-bundle",
-            "version": "v3.0.4",
+            "version": "v3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/swiftmailer-bundle.git",
-                "reference": "d31de92759321649aec6670ca4e19179b0ec3af4"
+                "reference": "9728097df87e76e2db71fc41fd7d211c06daea3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/d31de92759321649aec6670ca4e19179b0ec3af4",
-                "reference": "d31de92759321649aec6670ca4e19179b0ec3af4",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/9728097df87e76e2db71fc41fd7d211c06daea3e",
+                "reference": "9728097df87e76e2db71fc41fd7d211c06daea3e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
                 "swiftmailer/swiftmailer": "^6.0.1",
-                "symfony/config": "~2.8|~3.0",
-                "symfony/dependency-injection": "~2.7|~3.0",
-                "symfony/http-kernel": "~2.7|~3.0"
+                "symfony/config": "~2.8|~3.3|~4.0",
+                "symfony/dependency-injection": "~2.7|~3.3|~4.0",
+                "symfony/http-kernel": "~2.7|~3.3|~4.0"
             },
             "require-dev": {
-                "symfony/console": "~2.7|~3.0",
-                "symfony/framework-bundle": "~2.7|~3.0",
-                "symfony/phpunit-bridge": "~3.3@dev",
-                "symfony/yaml": "~2.7|~3.0"
+                "symfony/console": "~2.7|~3.3|~4.0",
+                "symfony/framework-bundle": "~2.7|~3.3|~4.0",
+                "symfony/phpunit-bridge": "~3.3|~4.0",
+                "symfony/yaml": "~2.7|~3.3|~4.0"
             },
             "suggest": {
                 "psr/log": "Allows logging"
@@ -2399,13 +2402,16 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Bundle\\SwiftmailerBundle\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2423,20 +2429,20 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2017-09-10T19:31:30+00:00"
+            "time": "2017-10-23T15:15:11+00:00"
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.3.10",
+            "version": "v3.3.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "cfef3b2d505ae4375b17032bd03ed9a3da4b7b43"
+                "reference": "9b0226340705f75fd0cebd220746a36050ead8a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/cfef3b2d505ae4375b17032bd03ed9a3da4b7b43",
-                "reference": "cfef3b2d505ae4375b17032bd03ed9a3da4b7b43",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/9b0226340705f75fd0cebd220746a36050ead8a9",
+                "reference": "9b0226340705f75fd0cebd220746a36050ead8a9",
                 "shasum": ""
             },
             "require": {
@@ -2459,7 +2465,7 @@
             },
             "conflict": {
                 "phpdocumentor/reflection-docblock": "<3.0||>=3.2.0,<3.2.2",
-                "phpdocumentor/type-resolver": "<0.2.0",
+                "phpdocumentor/type-resolver": "<0.2.1",
                 "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
             },
             "provide": {
@@ -2521,6 +2527,7 @@
             },
             "require-dev": {
                 "cache/integration-tests": "dev-master",
+                "doctrine/annotations": "~1.0",
                 "doctrine/cache": "~1.6",
                 "doctrine/data-fixtures": "1.0.*",
                 "doctrine/dbal": "~2.4",
@@ -2576,7 +2583,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-10-05T23:40:32+00:00"
+            "time": "2017-11-16T18:15:01+00:00"
         },
         {
             "name": "twig/twig",
@@ -2700,37 +2707,41 @@
     "packages-dev": [
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.6.13",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "8cd4c2921b6cef14a78d98cd3f0fb81ba6a976f9"
+                "reference": "eb6e4fb904a459be28872765ab6e2d246aac7c87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/8cd4c2921b6cef14a78d98cd3f0fb81ba6a976f9",
-                "reference": "8cd4c2921b6cef14a78d98cd3f0fb81ba6a976f9",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/eb6e4fb904a459be28872765ab6e2d246aac7c87",
+                "reference": "eb6e4fb904a459be28872765ab6e2d246aac7c87",
                 "shasum": ""
             },
             "require": {
-                "doctrine/dbal": "~2.3",
+                "doctrine/dbal": "^2.5.12",
                 "doctrine/doctrine-cache-bundle": "~1.2",
-                "jdorn/sql-formatter": "~1.1",
-                "php": ">=5.5.9",
+                "jdorn/sql-formatter": "^1.2.16",
+                "php": "^5.5.9|^7.0",
                 "symfony/console": "~2.7|~3.0|~4.0",
                 "symfony/dependency-injection": "~2.7|~3.0|~4.0",
                 "symfony/doctrine-bridge": "~2.7|~3.0|~4.0",
                 "symfony/framework-bundle": "~2.7|~3.0|~4.0"
             },
+            "conflict": {
+                "symfony/http-foundation": "<2.6"
+            },
             "require-dev": {
                 "doctrine/orm": "~2.3",
-                "phpunit/phpunit": "~4",
+                "phpunit/phpunit": "^4.8.36|^5.7|^6.4",
                 "satooshi/php-coveralls": "^1.0",
                 "symfony/phpunit-bridge": "~2.7|~3.0|~4.0",
                 "symfony/property-info": "~2.8|~3.0|~4.0",
                 "symfony/validator": "~2.7|~3.0|~4.0",
+                "symfony/web-profiler-bundle": "~2.7|~3.0|~4.0",
                 "symfony/yaml": "~2.7|~3.0|~4.0",
-                "twig/twig": "~1.12|~2.0"
+                "twig/twig": "~1.26|~2.0"
             },
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle.",
@@ -2739,7 +2750,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "1.8.x-dev"
                 }
             },
             "autoload": {
@@ -2777,7 +2788,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2017-10-11T19:48:03+00:00"
+            "time": "2017-11-24T13:09:19+00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -2923,16 +2934,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.5.11",
+            "version": "v2.5.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "249b737094f1e7cba4f0a8d19acf5be6cf3ed504"
+                "reference": "93103f44a3e36e7b48165b6e6b736833f33b18ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/249b737094f1e7cba4f0a8d19acf5be6cf3ed504",
-                "reference": "249b737094f1e7cba4f0a8d19acf5be6cf3ed504",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/93103f44a3e36e7b48165b6e6b736833f33b18ef",
+                "reference": "93103f44a3e36e7b48165b6e6b736833f33b18ef",
                 "shasum": ""
             },
             "require": {
@@ -2943,11 +2954,11 @@
                 "doctrine/instantiator": "^1.0.1",
                 "ext-pdo": "*",
                 "php": ">=5.4",
-                "symfony/console": "~2.5|~3.0"
+                "symfony/console": "~2.5|~3.0|~4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
-                "symfony/yaml": "~2.3|~3.0"
+                "symfony/yaml": "~2.3|~3.0|~4.0"
             },
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
@@ -2995,7 +3006,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-09-18T06:50:20+00:00"
+            "time": "2017-11-27T23:25:55+00:00"
         },
         {
             "name": "guzzle/guzzle",
@@ -3142,37 +3153,40 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8e6e04167378abf1ddb4d3522d8755c5fd90d102",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "doctrine/collections": "1.*",
-                "phpunit/phpunit": "~4.1"
+                "doctrine/collections": "^1.0",
+                "doctrine/common": "^2.6",
+                "phpunit/phpunit": "^4.1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "DeepCopy\\": "src/DeepCopy/"
-                }
+                },
+                "files": [
+                    "src/DeepCopy/deep_copy.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Create deep copies (clones) of your objects",
-            "homepage": "https://github.com/myclabs/DeepCopy",
             "keywords": [
                 "clone",
                 "copy",
@@ -3180,7 +3194,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-04-12T18:52:22+00:00"
+            "time": "2017-10-19T19:58:43+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3238,29 +3252,35 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "4.1.1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "2d3d238c433cf69caeb4842e97a3223a116f94b2"
+                "reference": "66465776cfc249844bde6d117abff1d22e06c2da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/2d3d238c433cf69caeb4842e97a3223a116f94b2",
-                "reference": "2d3d238c433cf69caeb4842e97a3223a116f94b2",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/66465776cfc249844bde6d117abff1d22e06c2da",
+                "reference": "66465776cfc249844bde6d117abff1d22e06c2da",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
-                "phpdocumentor/reflection-common": "^1.0@dev",
+                "phpdocumentor/reflection-common": "^1.0.0",
                 "phpdocumentor/type-resolver": "^0.4.0",
                 "webmozart/assert": "^1.0"
             },
             "require-dev": {
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "^4.4"
+                "doctrine/instantiator": "~1.0.5",
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^6.4"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "phpDocumentor\\Reflection\\": [
@@ -3279,7 +3299,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2017-08-30T18:51:59+00:00"
+            "time": "2017-11-27T17:38:31+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -3330,16 +3350,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.7.2",
+            "version": "1.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "c9b8c6088acd19d769d4cc0ffa60a9fe34344bd6"
+                "reference": "e4ed002c67da8eceb0eb8ddb8b3847bb53c5c2bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/c9b8c6088acd19d769d4cc0ffa60a9fe34344bd6",
-                "reference": "c9b8c6088acd19d769d4cc0ffa60a9fe34344bd6",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/e4ed002c67da8eceb0eb8ddb8b3847bb53c5c2bf",
+                "reference": "e4ed002c67da8eceb0eb8ddb8b3847bb53c5c2bf",
                 "shasum": ""
             },
             "require": {
@@ -3351,7 +3371,7 @@
             },
             "require-dev": {
                 "phpspec/phpspec": "^2.5|^3.2",
-                "phpunit/phpunit": "^4.8 || ^5.6.5"
+                "phpunit/phpunit": "^4.8.35 || ^5.7"
             },
             "type": "library",
             "extra": {
@@ -3389,7 +3409,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-09-04T11:05:03+00:00"
+            "time": "2017-11-24T13:59:53+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3456,16 +3476,16 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "1.4.2",
+            "version": "1.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "3cc8f69b3028d0f96a9078e6295d86e9bf019be5"
+                "reference": "730b01bc3e867237eaac355e06a36b85dd93a8b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/3cc8f69b3028d0f96a9078e6295d86e9bf019be5",
-                "reference": "3cc8f69b3028d0f96a9078e6295d86e9bf019be5",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/730b01bc3e867237eaac355e06a36b85dd93a8b4",
+                "reference": "730b01bc3e867237eaac355e06a36b85dd93a8b4",
                 "shasum": ""
             },
             "require": {
@@ -3499,7 +3519,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2016-10-03T07:40:28+00:00"
+            "time": "2017-11-27T13:52:08+00:00"
         },
         {
             "name": "phpunit/php-text-template",
@@ -3593,16 +3613,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "9a02332089ac48e704c70f6cefed30c224e3c0b0"
+                "reference": "791198a2c6254db10131eecfe8c06670700904db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/9a02332089ac48e704c70f6cefed30c224e3c0b0",
-                "reference": "9a02332089ac48e704c70f6cefed30c224e3c0b0",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/791198a2c6254db10131eecfe8c06670700904db",
+                "reference": "791198a2c6254db10131eecfe8c06670700904db",
                 "shasum": ""
             },
             "require": {
@@ -3638,20 +3658,20 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2017-08-20T05:47:52+00:00"
+            "time": "2017-11-27T05:48:46+00:00"
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.23",
+            "version": "5.7.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "78532d5269d984660080d8e0f4c99c5c2ea65ffe"
+                "reference": "4b1c822a68ae6577df38a59eb49b046712ec0f6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/78532d5269d984660080d8e0f4c99c5c2ea65ffe",
-                "reference": "78532d5269d984660080d8e0f4c99c5c2ea65ffe",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4b1c822a68ae6577df38a59eb49b046712ec0f6a",
+                "reference": "4b1c822a68ae6577df38a59eb49b046712ec0f6a",
                 "shasum": ""
             },
             "require": {
@@ -3676,7 +3696,7 @@
                 "sebastian/object-enumerator": "~2.0",
                 "sebastian/resource-operations": "~1.0",
                 "sebastian/version": "~1.0.3|~2.0",
-                "symfony/yaml": "~2.1|~3.0"
+                "symfony/yaml": "~2.1|~3.0|~4.0"
             },
             "conflict": {
                 "phpdocumentor/reflection-docblock": "3.0.2"
@@ -3720,7 +3740,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-10-15T06:13:55+00:00"
+            "time": "2017-11-14T14:50:51+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
