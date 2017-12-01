@@ -2,17 +2,18 @@ sudo: false
 language: php
 
 php:
-  - hhvm
+  - 7.2
   - 7.1
   - 7.0
   - 5.6
   - 5.5
 
 env:
-  - SYMFONY_VERSION=2.8.*
-  - SYMFONY_VERSION=3.1.*
-  - SYMFONY_VERSION=3.2.*
+  - SYMFONY_VERSION=3.4.*
   - SYMFONY_VERSION=3.3.*
+  - SYMFONY_VERSION=3.2.*
+  - SYMFONY_VERSION=3.1.*
+  - SYMFONY_VERSION=2.8.*
 
 before_script:
   - if [[ $TRAVIS_PHP_VERSION != "hhvm" ]]; then echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi
@@ -30,5 +31,6 @@ after_success:
 
 matrix:
   fast_finish: true
-  allow_failures:
-    - php: hhvm
+  include:
+  - php: 7.2
+    env: SYMFONY_VERSION=4.0.*
