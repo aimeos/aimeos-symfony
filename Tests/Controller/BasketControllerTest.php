@@ -17,7 +17,7 @@ class BasketControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.basket-standard' )->count() );
@@ -35,7 +35,7 @@ class BasketControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$form['b_prod[0][quantity]'] = 2;
 		$crawler = $client->submit( $form );
 
@@ -54,7 +54,7 @@ class BasketControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.basket:contains("Unittest: Bundle")' )->count() );
@@ -64,7 +64,7 @@ class BasketControllerTest extends WebTestCase
 		$link = $crawler->filter( '.basket-standard .btn-back' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.basket:contains("Unittest: Bundle")' )->count() );
@@ -81,7 +81,7 @@ class BasketControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 
@@ -101,7 +101,7 @@ class BasketControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 
@@ -127,7 +127,7 @@ class BasketControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 
@@ -148,7 +148,7 @@ class BasketControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 
@@ -175,7 +175,7 @@ class BasketControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.basket-related-bought .product' )->count() );
@@ -191,7 +191,7 @@ class BasketControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 		$link = $crawler->filter( '.basket-standard .btn-back' )->link();

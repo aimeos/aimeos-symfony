@@ -133,6 +133,6 @@ class JsonadmController extends Controller
 		$view = $this->get('aimeos_view')->create( $context, $templatePaths, $lang );
 		$context->setView( $view );
 
-		return \Aimeos\Admin\JsonAdm\Factory::createClient( $context, $templatePaths, $resource );
+		return \Aimeos\Admin\JsonAdm\Factory::createClient( $context, $aimeos, $resource );
 	}
 }

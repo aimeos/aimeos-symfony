@@ -20,7 +20,7 @@ class CheckoutControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
@@ -232,7 +232,7 @@ class CheckoutControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
@@ -338,7 +338,7 @@ class CheckoutControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
 		$crawler = $client->click( $link );
 
-		$form = $crawler->filter( '.catalog-detail .addbasket .btn-action' )->form();
+		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
 		$link = $crawler->filter( '.basket-standard .btn-action' )->link();
