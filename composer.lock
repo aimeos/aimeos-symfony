@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "631bc19b1a7f64e173e187d4bb7e066c8b3530d2"
+                "reference": "e49af8ac4e2b471859ee2164db9762ab4c5de222"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/631bc19b1a7f64e173e187d4bb7e066c8b3530d2",
-                "reference": "631bc19b1a7f64e173e187d4bb7e066c8b3530d2",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/e49af8ac4e2b471859ee2164db9762ab4c5de222",
+                "reference": "e49af8ac4e2b471859ee2164db9762ab4c5de222",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2017-12-08T11:49:37+00:00"
+            "time": "2017-12-10T14:34:59+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -536,12 +536,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "c88d6ccb98b0b364f925f95a4bef5096d4cb0408"
+                "reference": "f33e1fedd936e26e2a0f96c027a723dc839e763d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/c88d6ccb98b0b364f925f95a4bef5096d4cb0408",
-                "reference": "c88d6ccb98b0b364f925f95a4bef5096d4cb0408",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/f33e1fedd936e26e2a0f96c027a723dc839e763d",
+                "reference": "f33e1fedd936e26e2a0f96c027a723dc839e763d",
                 "shasum": ""
             },
             "require": {
@@ -598,7 +598,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2017-12-06T12:12:25+00:00"
+            "time": "2017-12-09T22:57:11+00:00"
         },
         {
             "name": "composer/installers",
