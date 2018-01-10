@@ -51,6 +51,13 @@ file so the composer post install/update scripts won't fail:
     );
 ```
 
+Ensure that Twig is configured for templating in the `framework` section:
+```
+framework:
+    templating:
+        engines: ['twig']
+```
+
 These settings need to be added at the end of your `./app/config/config.yml` file:
 
 ```yaml
