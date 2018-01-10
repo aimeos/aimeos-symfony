@@ -37,7 +37,7 @@
 		"symfony/twig-bundle": "~2.1||~3.0",
 		"symfony/swiftmailer-bundle": "~2.3||~3.0",
 		"symfony/monolog-bundle": "~2.4||~3.0",
-		"sensio/framework-extra-bundle": "~2.3||~3.0",
+		"sensio/framework-extra-bundle": "~3.0||~5.0",
 		"symfony/psr-http-message-bridge": "~1.0",
 		"zendframework/zend-diactoros": "~1.3"
 	},
