@@ -28,7 +28,7 @@ checkout process. A full set of pages including routing is also available for a 
 
 This document is for the latest Aimeos Symfony **2017.10 release and later**.
 
-- Beta release: 2018.11
+- Beta release: 2018.01
 - LTS release: 2017.10
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
@@ -52,7 +52,8 @@ file so the composer post install/update scripts won't fail:
 ```
 
 Ensure that Twig is configured for templating in the `framework` section:
-```
+
+```yaml
 framework:
     templating:
         engines: ['twig']
