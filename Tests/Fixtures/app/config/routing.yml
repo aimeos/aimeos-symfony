@@ -39,3 +39,6 @@ aimeos_shop_privacy:
 aimeos_test_favoritecomponent:
     path: /{site}/{locale}/{currency}/test/favoritecomponent
     defaults: { _controller: AimeosShopBundle:Account:favoriteComponent }
+
+fos_user_security_logout:
+    path: /logout
