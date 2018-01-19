@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aimeos/ai-admin-jqadm",
-            "version": "2018.01.2",
+            "version": "2018.01.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "78f1b33978151d146d9828fe1dd0cc54572131e6"
+                "reference": "3b25bfc5499dc9d0f306e6d40a8d733c7594904d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/78f1b33978151d146d9828fe1dd0cc54572131e6",
-                "reference": "78f1b33978151d146d9828fe1dd0cc54572131e6",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/3b25bfc5499dc9d0f306e6d40a8d733c7594904d",
+                "reference": "3b25bfc5499dc9d0f306e6d40a8d733c7594904d",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2018-01-03T21:05:16+00:00"
+            "time": "2018-01-17T15:28:39+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -96,16 +96,16 @@
         },
         {
             "name": "aimeos/ai-client-html",
-            "version": "2018.01.2",
+            "version": "2018.01.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "384c5cf9e399dad7b3882223f3544cffc17ef49a"
+                "reference": "a5aad00893d0d4cce6ce060c42caabf3a02e462a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/384c5cf9e399dad7b3882223f3544cffc17ef49a",
-                "reference": "384c5cf9e399dad7b3882223f3544cffc17ef49a",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/a5aad00893d0d4cce6ce060c42caabf3a02e462a",
+                "reference": "a5aad00893d0d4cce6ce060c42caabf3a02e462a",
                 "shasum": ""
             },
             "require": {
@@ -128,7 +128,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Aimeos ai-client-html extension",
             "homepage": "https://aimeos.org/",
@@ -138,7 +138,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2018-01-03T21:05:16+00:00"
+            "time": "2018-01-18T14:01:18+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -533,16 +533,16 @@
         },
         {
             "name": "aimeos/aimeos-core",
-            "version": "2018.01.1",
+            "version": "2018.01.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "aabfabf4cfd05789ec9f2982b96b76e36863cb5f"
+                "reference": "2170c7a21cedc56cd545d075b3cf3b00bc3ff336"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/aabfabf4cfd05789ec9f2982b96b76e36863cb5f",
-                "reference": "aabfabf4cfd05789ec9f2982b96b76e36863cb5f",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/2170c7a21cedc56cd545d075b3cf3b00bc3ff336",
+                "reference": "2170c7a21cedc56cd545d075b3cf3b00bc3ff336",
                 "shasum": ""
             },
             "require": {
@@ -599,7 +599,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2018-01-01T18:01:16+00:00"
+            "time": "2018-01-17T15:29:48+00:00"
         },
         {
             "name": "composer/installers",
@@ -1787,16 +1787,16 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v5.1.3",
+            "version": "v5.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "0696496cb3e2d23add645d424699e5c723238aad"
+                "reference": "072c00c52b947e88a1e619e9ff426cee6c8c482b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/0696496cb3e2d23add645d424699e5c723238aad",
-                "reference": "0696496cb3e2d23add645d424699e5c723238aad",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/072c00c52b947e88a1e619e9ff426cee6c8c482b",
+                "reference": "072c00c52b947e88a1e619e9ff426cee6c8c482b",
                 "shasum": ""
             },
             "require": {
@@ -1852,7 +1852,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2017-12-04T18:33:55+00:00"
+            "time": "2018-01-12T13:08:16+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
