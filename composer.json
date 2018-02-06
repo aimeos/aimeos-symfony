@@ -34,7 +34,7 @@
 		"aimeos/ai-fosuser": "~2017.10",
 		"aimeos/ai-twig": "~2017.10",
 		"friendsofsymfony/user-bundle": "~2.0",
-		"symfony/symfony": "~2.4||~3.0",
+		"symfony/symfony": "~2.4||~3.0||~4.0",
 		"symfony/twig-bundle": "~2.1||~3.0",
 		"symfony/swiftmailer-bundle": "~2.3||~3.0",
 		"symfony/monolog-bundle": "~2.4||~3.0",
