@@ -2,24 +2,32 @@ services:
     aimeos:
         class: Aimeos\ShopBundle\Service\Aimeos
         arguments: ["@service_container"]
+        public: true
     aimeos_config:
         class: Aimeos\ShopBundle\Service\Config
         arguments: ["@service_container"]
+        public: true
     aimeos_context:
         class: Aimeos\ShopBundle\Service\Context
         arguments: ["@service_container"]
+        public: true
     aimeos_i18n:
         class: Aimeos\ShopBundle\Service\I18n
         arguments: ["@service_container"]
+        public: true
     aimeos_locale:
         class: Aimeos\ShopBundle\Service\Locale
         arguments: ["@request_stack","@service_container"]
+        public: true
     aimeos_page:
         class: Aimeos\ShopBundle\Service\Page
         arguments: ["@service_container"]
+        public: true
     aimeos_support:
         class: Aimeos\ShopBundle\Service\Support
         arguments: []
+        public: true
     aimeos_view:
         class: Aimeos\ShopBundle\Service\View
         arguments: ["@request_stack","@service_container"]
+        public: true
