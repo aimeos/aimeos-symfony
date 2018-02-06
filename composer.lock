@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "24527278784db03a0121a5a0d18c84cd75f24336"
+                "reference": "3a70dd170e211b64ad9cfe2f2da5e610db8dd082"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/24527278784db03a0121a5a0d18c84cd75f24336",
-                "reference": "24527278784db03a0121a5a0d18c84cd75f24336",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/3a70dd170e211b64ad9cfe2f2da5e610db8dd082",
+                "reference": "3a70dd170e211b64ad9cfe2f2da5e610db8dd082",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2018-01-18T11:39:43+00:00"
+            "time": "2018-02-05T23:03:48+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "e0af17480027b15a9e1fe31dcaa54c618d1cb2bd"
+                "reference": "1df7b35beef3643663fef1323b91c058e93d6e59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/e0af17480027b15a9e1fe31dcaa54c618d1cb2bd",
-                "reference": "e0af17480027b15a9e1fe31dcaa54c618d1cb2bd",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/1df7b35beef3643663fef1323b91c058e93d6e59",
+                "reference": "1df7b35beef3643663fef1323b91c058e93d6e59",
                 "shasum": ""
             },
             "require": {
@@ -82,7 +82,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Aimeos ai-admin-jsonadm extension",
             "homepage": "https://aimeos.org/",
@@ -92,7 +92,7 @@
                 "extension",
                 "json api"
             ],
-            "time": "2017-12-26T11:29:02+00:00"
+            "time": "2018-01-18T12:08:13+00:00"
         },
         {
             "name": "aimeos/ai-client-html",
@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "165759b6c1e56cbf3c26fd3a22d559aeb04fe689"
+                "reference": "1f8b660ba7b8b7c06413fb6216bfaa6feaf42d67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/165759b6c1e56cbf3c26fd3a22d559aeb04fe689",
-                "reference": "165759b6c1e56cbf3c26fd3a22d559aeb04fe689",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/1f8b660ba7b8b7c06413fb6216bfaa6feaf42d67",
+                "reference": "1f8b660ba7b8b7c06413fb6216bfaa6feaf42d67",
                 "shasum": ""
             },
             "require": {
@@ -138,7 +138,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2018-01-18T13:53:49+00:00"
+            "time": "2018-02-01T16:29:25+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -146,12 +146,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "3ffdf1992cec503162e9b99fafa4a879e78cfe90"
+                "reference": "2282dc9f7756c655b9326728266b824bf515d452"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/3ffdf1992cec503162e9b99fafa4a879e78cfe90",
-                "reference": "3ffdf1992cec503162e9b99fafa4a879e78cfe90",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/2282dc9f7756c655b9326728266b824bf515d452",
+                "reference": "2282dc9f7756c655b9326728266b824bf515d452",
                 "shasum": ""
             },
             "require": {
@@ -171,7 +171,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Aimeos JSON API extension",
             "keywords": [
@@ -180,7 +180,7 @@
                 "extension",
                 "json"
             ],
-            "time": "2017-12-07T13:50:48+00:00"
+            "time": "2018-01-18T12:08:15+00:00"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -188,12 +188,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "5e2903fee40884ed12556354d6e2a36b19a136f2"
+                "reference": "9bf8abc1afb3082cf21c266e91c28799f55aab32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/5e2903fee40884ed12556354d6e2a36b19a136f2",
-                "reference": "5e2903fee40884ed12556354d6e2a36b19a136f2",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/9bf8abc1afb3082cf21c266e91c28799f55aab32",
+                "reference": "9bf8abc1afb3082cf21c266e91c28799f55aab32",
                 "shasum": ""
             },
             "require": {
@@ -212,7 +212,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Aimeos ai-controller-frontend extension",
             "homepage": "https://aimeos.org/",
@@ -222,7 +222,7 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2017-12-28T12:28:51+00:00"
+            "time": "2018-01-18T12:08:17+00:00"
         },
         {
             "name": "aimeos/ai-controller-jobs",
@@ -230,12 +230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "d741c571f630834411fac52d62bdba85eb2647c3"
+                "reference": "e18811da8f9ee295fd683a1d02d9b78173f0b11f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/d741c571f630834411fac52d62bdba85eb2647c3",
-                "reference": "d741c571f630834411fac52d62bdba85eb2647c3",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/e18811da8f9ee295fd683a1d02d9b78173f0b11f",
+                "reference": "e18811da8f9ee295fd683a1d02d9b78173f0b11f",
                 "shasum": ""
             },
             "require": {
@@ -256,7 +256,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Aimeos ai-controller-jobs extension",
             "homepage": "https://aimeos.org/",
@@ -266,7 +266,7 @@
                 "extension",
                 "jobs"
             ],
-            "time": "2017-12-26T11:47:25+00:00"
+            "time": "2018-01-18T12:08:18+00:00"
         },
         {
             "name": "aimeos/ai-fosuser",
@@ -274,12 +274,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-fosuser.git",
-                "reference": "fbe50a415d6397bc009d17c9207b13c36bd532e0"
+                "reference": "cc024d4da93b308b2861258462038ce097741894"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/fbe50a415d6397bc009d17c9207b13c36bd532e0",
-                "reference": "fbe50a415d6397bc009d17c9207b13c36bd532e0",
+                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/cc024d4da93b308b2861258462038ce097741894",
+                "reference": "cc024d4da93b308b2861258462038ce097741894",
                 "shasum": ""
             },
             "require": {
@@ -298,7 +298,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Aimeos ai-fosuser extension",
             "homepage": "https://aimeos.org/",
@@ -310,7 +310,7 @@
                 "symfony",
                 "user"
             ],
-            "time": "2017-12-03T12:34:34+00:00"
+            "time": "2018-01-18T12:08:27+00:00"
         },
         {
             "name": "aimeos/ai-gettext",
@@ -318,12 +318,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
-                "reference": "6323af19808973b6dcd817e8e4aed37084974302"
+                "reference": "5c7c21651db646eb02b3681bb7c0d6d5c0e017e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/6323af19808973b6dcd817e8e4aed37084974302",
-                "reference": "6323af19808973b6dcd817e8e4aed37084974302",
+                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/5c7c21651db646eb02b3681bb7c0d6d5c0e017e7",
+                "reference": "5c7c21651db646eb02b3681bb7c0d6d5c0e017e7",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +342,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Aimeos Gettext extension",
             "homepage": "https://aimeos.org/",
@@ -352,7 +352,7 @@
                 "gettext",
                 "performance"
             ],
-            "time": "2017-12-03T12:37:05+00:00"
+            "time": "2018-01-18T12:08:27+00:00"
         },
         {
             "name": "aimeos/ai-monolog",
@@ -360,12 +360,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "7ee0d54092ff284b0229275bcbc3b3e63533daa5"
+                "reference": "51e2bb50e36cbc19b043b63d74e63b38a9eccc55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/7ee0d54092ff284b0229275bcbc3b3e63533daa5",
-                "reference": "7ee0d54092ff284b0229275bcbc3b3e63533daa5",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/51e2bb50e36cbc19b043b63d74e63b38a9eccc55",
+                "reference": "51e2bb50e36cbc19b043b63d74e63b38a9eccc55",
                 "shasum": ""
             },
             "require": {
@@ -385,7 +385,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Monolog adapter for Aimeos web shops and e-commerce solutions",
             "homepage": "https://aimeos.org/",
@@ -397,7 +397,7 @@
                 "monolog",
                 "shop"
             ],
-            "time": "2017-12-03T12:34:37+00:00"
+            "time": "2018-01-18T12:08:29+00:00"
         },
         {
             "name": "aimeos/ai-swiftmailer",
@@ -405,19 +405,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "1299b579a3858053cdac776042e2e711c2b522a8"
+                "reference": "cb3f20a0ca660d7732870a0f4dff6f46f8dbebc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/1299b579a3858053cdac776042e2e711c2b522a8",
-                "reference": "1299b579a3858053cdac776042e2e711c2b522a8",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/cb3f20a0ca660d7732870a0f4dff6f46f8dbebc0",
+                "reference": "cb3f20a0ca660d7732870a0f4dff6f46f8dbebc0",
                 "shasum": ""
             },
             "require": {
                 "aimeos/aimeos-core": "dev-master",
                 "composer/installers": "^1.0",
                 "php": ">=5.3.3",
-                "swiftmailer/swiftmailer": ">=4.0"
+                "swiftmailer/swiftmailer": "~4.0||~5.0||~6.0"
             },
             "type": "aimeos-extension",
             "autoload": {
@@ -430,7 +430,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "SwiftMailer adapter for Aimeos web shops and e-commerce solutions",
             "homepage": "https://aimeos.org/",
@@ -442,7 +442,7 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2017-12-03T12:34:45+00:00"
+            "time": "2018-01-26T14:35:08+00:00"
         },
         {
             "name": "aimeos/ai-symfony",
@@ -450,12 +450,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
-                "reference": "42f2e72d16f293e52a9b3d0f20a16c41232344c1"
+                "reference": "f12962761394df82894c2ddbdbda7f6fc6bc1938"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/42f2e72d16f293e52a9b3d0f20a16c41232344c1",
-                "reference": "42f2e72d16f293e52a9b3d0f20a16c41232344c1",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/f12962761394df82894c2ddbdbda7f6fc6bc1938",
+                "reference": "f12962761394df82894c2ddbdbda7f6fc6bc1938",
                 "shasum": ""
             },
             "require": {
@@ -476,7 +476,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Symfony 2 adapter for Aimeos web shops and e-commerce solutions",
             "homepage": "https://aimeos.org/Symfony",
@@ -487,7 +487,7 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2017-12-02T16:17:49+00:00"
+            "time": "2018-01-18T12:08:41+00:00"
         },
         {
             "name": "aimeos/ai-twig",
@@ -495,12 +495,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-twig.git",
-                "reference": "9e1d939fc5217aa5a4e382ba1c96dc99a556ff63"
+                "reference": "d4e0d5c6a4ede561e485829ee21157a8a8a00b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/9e1d939fc5217aa5a4e382ba1c96dc99a556ff63",
-                "reference": "9e1d939fc5217aa5a4e382ba1c96dc99a556ff63",
+                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/d4e0d5c6a4ede561e485829ee21157a8a8a00b8a",
+                "reference": "d4e0d5c6a4ede561e485829ee21157a8a8a00b8a",
                 "shasum": ""
             },
             "require": {
@@ -519,7 +519,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Twig template engine adapter for Aimeos e-commerce components",
             "keywords": [
@@ -528,7 +528,7 @@
                 "templates",
                 "twig"
             ],
-            "time": "2017-12-03T12:34:45+00:00"
+            "time": "2018-01-18T12:08:41+00:00"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -536,12 +536,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "c0744c9d0e50b83a58666bd324972afa05a4574d"
+                "reference": "d377d1a439e98b4c72b1d815311aba571cb2827b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/c0744c9d0e50b83a58666bd324972afa05a4574d",
-                "reference": "c0744c9d0e50b83a58666bd324972afa05a4574d",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/d377d1a439e98b4c72b1d815311aba571cb2827b",
+                "reference": "d377d1a439e98b4c72b1d815311aba571cb2827b",
                 "shasum": ""
             },
             "require": {
@@ -588,7 +588,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-3.0"
+                "LGPL-3.0-or-later"
             ],
             "description": "Full-featured e-commerce components for high performance online shops",
             "homepage": "https://aimeos.org/",
@@ -598,7 +598,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2018-01-17T15:02:38+00:00"
+            "time": "2018-02-05T13:47:18+00:00"
         },
         {
             "name": "composer/installers",
@@ -1974,16 +1974,16 @@
         },
         {
             "name": "symfony/polyfill-apcu",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-apcu.git",
-                "reference": "04f62674339602def515bff4bc6901fc1d4951e8"
+                "reference": "e8ae2136ddb53dea314df56fcd88e318ab936c00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/04f62674339602def515bff4bc6901fc1d4951e8",
-                "reference": "04f62674339602def515bff4bc6901fc1d4951e8",
+                "url": "https://api.github.com/repos/symfony/polyfill-apcu/zipball/e8ae2136ddb53dea314df56fcd88e318ab936c00",
+                "reference": "e8ae2136ddb53dea314df56fcd88e318ab936c00",
                 "shasum": ""
             },
             "require": {
@@ -1992,7 +1992,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -2026,20 +2026,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11T12:05:26+00:00"
+            "time": "2018-01-30T19:27:44+00:00"
         },
         {
             "name": "symfony/polyfill-intl-icu",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-icu.git",
-                "reference": "d2bb2ef00dd8605d6fbd4db53ed4af1395953497"
+                "reference": "254919c03761d46c29291616576ed003f10e91c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/d2bb2ef00dd8605d6fbd4db53ed4af1395953497",
-                "reference": "d2bb2ef00dd8605d6fbd4db53ed4af1395953497",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/254919c03761d46c29291616576ed003f10e91c1",
+                "reference": "254919c03761d46c29291616576ed003f10e91c1",
                 "shasum": ""
             },
             "require": {
@@ -2052,7 +2052,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -2084,20 +2084,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11T12:05:26+00:00"
+            "time": "2018-01-30T19:27:44+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296"
+                "reference": "78be803ce01e55d3491c1397cf1c64beb9c1b63b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296",
-                "reference": "2ec8b39c38cb16674bbf3fea2b6ce5bf117e1296",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/78be803ce01e55d3491c1397cf1c64beb9c1b63b",
+                "reference": "78be803ce01e55d3491c1397cf1c64beb9c1b63b",
                 "shasum": ""
             },
             "require": {
@@ -2109,7 +2109,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -2143,20 +2143,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11T12:05:26+00:00"
+            "time": "2018-01-30T19:27:44+00:00"
         },
         {
             "name": "symfony/polyfill-php56",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php56.git",
-                "reference": "265fc96795492430762c29be291a371494ba3a5b"
+                "reference": "ebc999ce5f14204c5150b9bd15f8f04e621409d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/265fc96795492430762c29be291a371494ba3a5b",
-                "reference": "265fc96795492430762c29be291a371494ba3a5b",
+                "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/ebc999ce5f14204c5150b9bd15f8f04e621409d8",
+                "reference": "ebc999ce5f14204c5150b9bd15f8f04e621409d8",
                 "shasum": ""
             },
             "require": {
@@ -2166,7 +2166,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -2199,20 +2199,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11T12:05:26+00:00"
+            "time": "2018-01-30T19:27:44+00:00"
         },
         {
             "name": "symfony/polyfill-php70",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php70.git",
-                "reference": "0442b9c0596610bd24ae7b5f0a6cdbbc16d9fcff"
+                "reference": "3532bfcd8f933a7816f3a0a59682fc404776600f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/0442b9c0596610bd24ae7b5f0a6cdbbc16d9fcff",
-                "reference": "0442b9c0596610bd24ae7b5f0a6cdbbc16d9fcff",
+                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/3532bfcd8f933a7816f3a0a59682fc404776600f",
+                "reference": "3532bfcd8f933a7816f3a0a59682fc404776600f",
                 "shasum": ""
             },
             "require": {
@@ -2222,7 +2222,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -2258,20 +2258,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11T12:05:26+00:00"
+            "time": "2018-01-30T19:27:44+00:00"
         },
         {
             "name": "symfony/polyfill-util",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-util.git",
-                "reference": "6e719200c8e540e0c0effeb31f96bdb344b94176"
+                "reference": "e17c808ec4228026d4f5a8832afa19be85979563"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-util/zipball/6e719200c8e540e0c0effeb31f96bdb344b94176",
-                "reference": "6e719200c8e540e0c0effeb31f96bdb344b94176",
+                "url": "https://api.github.com/repos/symfony/polyfill-util/zipball/e17c808ec4228026d4f5a8832afa19be85979563",
+                "reference": "e17c808ec4228026d4f5a8832afa19be85979563",
                 "shasum": ""
             },
             "require": {
@@ -2280,7 +2280,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6-dev"
+                    "dev-master": "1.7-dev"
                 }
             },
             "autoload": {
@@ -2310,7 +2310,7 @@
                 "polyfill",
                 "shim"
             ],
-            "time": "2017-10-11T12:05:26+00:00"
+            "time": "2018-01-31T18:08:44+00:00"
         },
         {
             "name": "symfony/psr-http-message-bridge",
@@ -2436,16 +2436,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.4.3",
+            "version": "v3.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "21abeae69baf64d689b04ca33663b4354be1a226"
+                "reference": "5220b6f9fcdee261c6fdd3e096f3b204fba5d906"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/21abeae69baf64d689b04ca33663b4354be1a226",
-                "reference": "21abeae69baf64d689b04ca33663b4354be1a226",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/5220b6f9fcdee261c6fdd3e096f3b204fba5d906",
+                "reference": "5220b6f9fcdee261c6fdd3e096f3b204fba5d906",
                 "shasum": ""
             },
             "require": {
@@ -2463,7 +2463,6 @@
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/polyfill-php56": "~1.0",
                 "symfony/polyfill-php70": "~1.6",
-                "symfony/polyfill-util": "~1.0",
                 "twig/twig": "^1.35|^2.4.4"
             },
             "conflict": {
@@ -2587,7 +2586,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-01-05T08:33:31+00:00"
+            "time": "2018-01-29T12:30:04+00:00"
         },
         {
             "name": "twig/twig",
@@ -3256,16 +3255,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "4.2.0",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "66465776cfc249844bde6d117abff1d22e06c2da"
+                "reference": "94fd0001232e47129dd3504189fa1c7225010d08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/66465776cfc249844bde6d117abff1d22e06c2da",
-                "reference": "66465776cfc249844bde6d117abff1d22e06c2da",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/94fd0001232e47129dd3504189fa1c7225010d08",
+                "reference": "94fd0001232e47129dd3504189fa1c7225010d08",
                 "shasum": ""
             },
             "require": {
@@ -3303,7 +3302,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2017-11-27T17:38:31+00:00"
+            "time": "2017-11-30T07:14:17+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -3666,16 +3665,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.26",
+            "version": "5.7.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "7fbc25c13309de0c4c9bb48b7361f1eca34c7fbd"
+                "reference": "b7803aeca3ccb99ad0a506fa80b64cd6a56bbc0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7fbc25c13309de0c4c9bb48b7361f1eca34c7fbd",
-                "reference": "7fbc25c13309de0c4c9bb48b7361f1eca34c7fbd",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b7803aeca3ccb99ad0a506fa80b64cd6a56bbc0c",
+                "reference": "b7803aeca3ccb99ad0a506fa80b64cd6a56bbc0c",
                 "shasum": ""
             },
             "require": {
@@ -3699,7 +3698,7 @@
                 "sebastian/global-state": "^1.1",
                 "sebastian/object-enumerator": "~2.0",
                 "sebastian/resource-operations": "~1.0",
-                "sebastian/version": "~1.0.3|~2.0",
+                "sebastian/version": "^1.0.6|^2.0.1",
                 "symfony/yaml": "~2.1|~3.0|~4.0"
             },
             "conflict": {
@@ -3744,7 +3743,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-12-17T06:14:38+00:00"
+            "time": "2018-02-01T05:50:59+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -4397,16 +4396,16 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "2db61e59ff05fe5126d152bd0655c9ea113e550f"
+                "reference": "0df1908962e7a3071564e857d86874dad1ef204a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/2db61e59ff05fe5126d152bd0655c9ea113e550f",
-                "reference": "2db61e59ff05fe5126d152bd0655c9ea113e550f",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/0df1908962e7a3071564e857d86874dad1ef204a",
+                "reference": "0df1908962e7a3071564e857d86874dad1ef204a",
                 "shasum": ""
             },
             "require": {
@@ -4443,7 +4442,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-11-23T20:04:58+00:00"
+            "time": "2018-01-29T19:49:41+00:00"
         }
     ],
     "aliases": [],
