@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "37f0cca3a77742f1227f8fd777ba05270e25079f"
+                "reference": "68a10ae52e5314bc1a38e191d920ea30dd053676"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/37f0cca3a77742f1227f8fd777ba05270e25079f",
-                "reference": "37f0cca3a77742f1227f8fd777ba05270e25079f",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/68a10ae52e5314bc1a38e191d920ea30dd053676",
+                "reference": "68a10ae52e5314bc1a38e191d920ea30dd053676",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2018-03-17T17:10:53+00:00"
+            "time": "2018-03-20T11:31:16+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
