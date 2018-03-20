@@ -159,7 +159,7 @@ class BasketControllerTest extends WebTestCase
 		$this->assertEquals( 1, $crawler->filter( '.basket-standard .product:contains("Geldwerter Nachlass")' )->count() );
 
 
-		$link = $crawler->filter( '.basket-standard-coupon .change' )->link();
+		$link = $crawler->filter( '.basket-standard-coupon .delete' )->link();
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 1, $crawler->filter( '.basket-standard .product' )->count() );
