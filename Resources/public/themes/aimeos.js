@@ -249,6 +249,66 @@ AimeosAccountHistory = {
 
 
 /**
+ * Account subscription actions
+ */
+AimeosAccountSubscription = {
+
+	/**
+	 * Shows subscription details without page reload
+	 */
+	setupDetailShow: function() {
+
+		$(".account-subscription .subscription-item").on("click", "> a", function(ev) {
+
+			var details = $(".account-subscription-detail", ev.delegateTarget);
+
+			if(details.length === 0) {
+
+				$.get($(this).attr("href"), function(data) {
+
+					var doc = document.createElement("html");
+					doc.innerHTML = data;
+
+					var node = $(".account-subscription-detail", doc);
+					node.css("display", "none");
+					$(ev.delegateTarget).append(node);
+					node.slideDown();
+				});
+
+			} else {
+				details.slideToggle();
+			}
+
+			return false;
+		});
+	},
+
+
+	/**
+	 * Closes the order details without page reload
+	 */
+	setupDetailClose: function() {
+
+		$(".account-subscription .subscription-item").on("click", ".btn-close", function(ev) {
+			$(".account-subscription-detail", ev.delegateTarget).slideUp();
+			return false;
+		});
+	},
+
+
+	/**
+	 * Initializes the account subscription actions
+	 */
+	init: function() {
+
+		this.setupDetailShow();
+		this.setupDetailClose();
+	}
+};
+
+
+
+/**
  * Account watch actions
  */
 AimeosAccountWatch = {
@@ -1022,6 +1082,19 @@ AimeosCatalogFilter = {
 
 
 	/**
+	 * Hides the attribute filter if no products are available for
+	 */
+	setupAttributeListsEmtpy: function() {
+
+		$(".catalog-filter-attribute .attribute-lists fieldset").hide();
+
+		$(".catalog-filter-attribute .attribute-lists .attr-count").each(function(ev) {
+			$(this).parents('fieldset').show();
+		});
+	},
+
+
+	/**
 	 * Submits the form when clicking on filter attribute names or counts
 	 */
 	setupAttributeItemSubmit: function() {
@@ -1051,7 +1124,9 @@ AimeosCatalogFilter = {
 
 		$(".catalog-filter-search").on("click", ".reset", function(ev) {
 			$(".symbol", this).css("visibility", "hidden");
+			$(".value", ev.delegateTarget).val("");
 			$(".value", ev.delegateTarget).focus();
+			return false;
 		});
 	},
 
@@ -1063,6 +1138,7 @@ AimeosCatalogFilter = {
 
 		this.setupCategoryToggle();
 		this.setupAttributeToggle();
+		this.setupAttributeListsEmtpy();
 		this.setupAttributeListsToggle();
 		this.setupListFadeout();
 
@@ -1325,8 +1401,11 @@ AimeosCheckoutStandard = {
 
 		var form = $(".checkout-standard form").first();
 		var node = $(".checkout-standard-process", form);
+		var anchor = $("a.btn-action", node);
 
-		if(node.length > 0 && node.has(".mandatory").length === 0 && node.has(".optional").length === 0 && form.attr("action") !== '' ) {
+		if(anchor.length > 0) {
+			window.location = anchor.attr("href");
+		} else if(node.length > 0 && node.has(".mandatory").length === 0 && node.has(".optional").length === 0 && form.attr("action") !== '' ) {
 			form.submit();
 		}
 	},
