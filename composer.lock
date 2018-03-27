@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "e7944b86759d9e73d953139c2f8d25b3fc0f942b"
+                "reference": "7205e197eb567627354be714eb7b3559316a1a34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/e7944b86759d9e73d953139c2f8d25b3fc0f942b",
-                "reference": "e7944b86759d9e73d953139c2f8d25b3fc0f942b",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/7205e197eb567627354be714eb7b3559316a1a34",
+                "reference": "7205e197eb567627354be714eb7b3559316a1a34",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "aimeos",
                 "extension"
             ],
-            "time": "2018-03-15T14:19:52+00:00"
+            "time": "2018-03-22T16:42:19+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "68a10ae52e5314bc1a38e191d920ea30dd053676"
+                "reference": "9632e0c093a38cde5b8606c90db5640c1e2e908a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/68a10ae52e5314bc1a38e191d920ea30dd053676",
-                "reference": "68a10ae52e5314bc1a38e191d920ea30dd053676",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/9632e0c093a38cde5b8606c90db5640c1e2e908a",
+                "reference": "9632e0c093a38cde5b8606c90db5640c1e2e908a",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2018-03-20T11:31:16+00:00"
+            "time": "2018-03-25T15:45:05+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -232,12 +232,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "c4b4dcc160c94374070fcf0fc8be588ba1c838de"
+                "reference": "672c0d005f2e596551fca8f1b726e9a22b259519"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/c4b4dcc160c94374070fcf0fc8be588ba1c838de",
-                "reference": "c4b4dcc160c94374070fcf0fc8be588ba1c838de",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/672c0d005f2e596551fca8f1b726e9a22b259519",
+                "reference": "672c0d005f2e596551fca8f1b726e9a22b259519",
                 "shasum": ""
             },
             "require": {
@@ -268,7 +268,7 @@
                 "extension",
                 "jobs"
             ],
-            "time": "2018-03-15T18:32:42+00:00"
+            "time": "2018-03-23T18:06:43+00:00"
         },
         {
             "name": "aimeos/ai-fosuser",
@@ -2796,39 +2796,39 @@
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineCacheBundle.git",
-                "reference": "9baecbd6bfdd1123b0cf8c1b88fee0170a84ddd1"
+                "reference": "4c8e363f96427924e7e519c5b5119b4f54512697"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/9baecbd6bfdd1123b0cf8c1b88fee0170a84ddd1",
-                "reference": "9baecbd6bfdd1123b0cf8c1b88fee0170a84ddd1",
+                "url": "https://api.github.com/repos/doctrine/DoctrineCacheBundle/zipball/4c8e363f96427924e7e519c5b5119b4f54512697",
+                "reference": "4c8e363f96427924e7e519c5b5119b4f54512697",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.4.2",
                 "doctrine/inflector": "~1.0",
                 "php": ">=5.3.2",
-                "symfony/doctrine-bridge": "~2.2|~3.0|~4.0"
+                "symfony/doctrine-bridge": "~2.7|~3.3|~4.0"
             },
             "require-dev": {
                 "instaclick/coding-standard": "~1.1",
                 "instaclick/object-calisthenics-sniffs": "dev-master",
                 "instaclick/symfony2-coding-standard": "dev-remaster",
-                "phpunit/phpunit": "~4",
+                "phpunit/phpunit": "~4|~5",
                 "predis/predis": "~0.8",
                 "satooshi/php-coveralls": "^1.0",
                 "squizlabs/php_codesniffer": "~1.5",
-                "symfony/console": "~2.2|~3.0|~4.0",
-                "symfony/finder": "~2.2|~3.0|~4.0",
-                "symfony/framework-bundle": "~2.2|~3.0|~4.0",
-                "symfony/phpunit-bridge": "~2.7|~3.0|~4.0",
-                "symfony/security-acl": "~2.3|~3.0",
-                "symfony/validator": "~2.2|~3.0|~4.0",
-                "symfony/yaml": "~2.2|~3.0|~4.0"
+                "symfony/console": "~2.7|~3.3|~4.0",
+                "symfony/finder": "~2.7|~3.3|~4.0",
+                "symfony/framework-bundle": "~2.7|~3.3|~4.0",
+                "symfony/phpunit-bridge": "~2.7|~3.3|~4.0",
+                "symfony/security-acl": "~2.7|~3.3",
+                "symfony/validator": "~2.7|~3.3|~4.0",
+                "symfony/yaml": "~2.7|~3.3|~4.0"
             },
             "suggest": {
                 "symfony/security-acl": "For using this bundle to cache ACLs"
@@ -2880,7 +2880,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2017-10-12T17:23:29+00:00"
+            "time": "2018-03-27T09:22:12+00:00"
         },
         {
             "name": "doctrine/instantiator",
