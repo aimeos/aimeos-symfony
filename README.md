@@ -211,6 +211,7 @@ security:
             pattern:   ^/admin
             anonymous: ~
             provider: aimeos
+            logout_on_user_change: true
             form_login:
                 login_path: /admin
                 check_path: /admin_check
