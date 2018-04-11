@@ -15,6 +15,14 @@ env:
   - SYMFONY_VERSION=3.1.*
   - SYMFONY_VERSION=2.8.*
 
+matrix:
+  fast_finish: true
+  include:
+  - php: 7.2
+    env: SYMFONY_VERSION=4.0.*
+  - php: 7.1
+    env: SYMFONY_VERSION=4.0.*
+
 before_script:
   - echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - mysql -e "create database symfony;"
@@ -28,11 +36,3 @@ script:
 
 after_success:
   - php vendor/bin/coveralls
-
-matrix:
-  fast_finish: true
-  include:
-  - php: 7.2
-    env: SYMFONY_VERSION=4.0.*
-  - php: 7.1
-    env: SYMFONY_VERSION=4.0.*
