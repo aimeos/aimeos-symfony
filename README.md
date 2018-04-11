@@ -9,7 +9,7 @@ Aimeos Symfony bundle
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/?branch=master)
 
 The repository contains the Symfony e-commerce bundle integrating the Aimeos e-commerce
-library into Symfony 2 and 3. The bundle provides controllers for e.g. faceted filter,
+library into Symfony 2, 3 and 4. The bundle provides controllers for e.g. faceted filter,
 product lists and detail views, for searching products as well as baskets and the
 checkout process. A full set of pages including routing is also available for a quick start.
 
@@ -28,7 +28,7 @@ checkout process. A full set of pages including routing is also available for a 
 
 This document is for the latest Aimeos Symfony **2017.10 release and later**.
 
-- Beta release: 2018.01
+- Stable release: 2018.04
 - LTS release: 2017.10
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
@@ -97,7 +97,7 @@ Then add these lines to your composer.json of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2017.10",
+        "aimeos/aimeos-symfony": "~2018.04",
         ...
     },
     "scripts": {
