@@ -132,6 +132,9 @@ client:
                         terms:
                             url:
                                 target: aimeos_shop_terms
+                            cancel:
+                                url:
+                                    target: aimeos_shop_terms
                             privacy:
                                 url:
                                     target: aimeos_shop_privacy
