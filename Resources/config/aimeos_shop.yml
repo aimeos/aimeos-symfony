@@ -211,6 +211,8 @@ mshop:
                 name: MySQL
             price:
                 name: MySQL
+            supplier:
+                name: MySQL
             text:
                 name: MySQL
 
