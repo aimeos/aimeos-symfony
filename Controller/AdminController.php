@@ -33,10 +33,16 @@ class AdminController extends Controller
 		if( $this->hasRole( ['ROLE_ADMIN'] ) )
 		{
 			$context = $this->get( 'aimeos_context' )->get( false );
+			$user = $this->get( 'security.token_storage' )->getToken()->getUser();
 			$siteManager = \Aimeos\MShop\Factory::createManager( $context, 'locale/site' );
-			$siteItem = $siteManager->getItem( $this->getUser()->getSiteId() );
+			$siteCode = ( $user->getSiteId() ? $siteManager->getItem( $user->getSiteId() )->getCode() : 'default' );
+			$locale = $user->getLanguageId() ?: $this->getParameter( 'locale' );
 
-			$params = array( 'site' => $siteItem->getCode(), 'resource' => 'dashboard' );
+			$params = array(
+				'resource' => 'dashboard',
+				'site' => $request->attributes->get( 'site', $request->query->get( 'site', $siteCode ) ),
+				'lang' => $request->attributes->get( 'lang', $request->query->get( 'lang', $locale ) ),
+			);
 			return $this->redirect( $this->generateUrl( 'aimeos_shop_jqadm_search', $params ) );
 		}
 
