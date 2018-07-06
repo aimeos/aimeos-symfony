@@ -86,7 +86,7 @@ class View
 		$token = $this->container->get( 'security.token_storage' )->getToken();
 
 		if( is_object( $token ) && is_object( $token->getUser() )
-			&& in_array( 'ROLE_ADMIN', (array) $token->getUser()->getRoles() ) )
+			&& in_array( 'ROLE_SUPER_ADMIN', (array) $token->getUser()->getRoles() ) )
 		{
 			$helper = new \Aimeos\MW\View\Helper\Access\All( $view );
 		}

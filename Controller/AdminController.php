@@ -30,7 +30,7 @@ class AdminController extends Controller
 	 */
 	public function indexAction( Request $request )
 	{
-		if( $this->hasRole( ['ROLE_ADMIN'] ) )
+		if( $this->hasRole( ['ROLE_ADMIN', 'ROLE_SUPER_ADMIN'] ) )
 		{
 			$context = $this->get( 'aimeos_context' )->get( false );
 			$user = $this->get( 'security.token_storage' )->getToken()->getUser();

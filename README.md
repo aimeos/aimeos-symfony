@@ -228,7 +228,7 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/myaccount, roles: ROLE_USER }
-        - { path: ^/admin/.+, roles: ROLE_ADMIN }
+        - { path: ^/admin/.+, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
 ```
 
 **Caution:** The order of the configuration settings in this file is important!

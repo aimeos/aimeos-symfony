@@ -67,16 +67,25 @@ class AccountCommand extends Command
 
 		$user = $this->createCustomerItem( $context, $code, $password );
 
-		if( $input->getOption( 'super' ) ) {
-			$this->addGroup( $input, $output, $context, $user, 'super' );
-		}
-
 		if( $input->getOption( 'admin' ) ) {
 			$this->addGroup( $input, $output, $context, $user, 'admin' );
 		}
 
 		if( $input->getOption( 'editor' ) ) {
 			$this->addGroup( $input, $output, $context, $user, 'editor' );
+		}
+
+		if( $this->getContainer()->has( 'fos_user.user_manager' ) )
+		{
+			$userManager = $this->getContainer()->get( 'fos_user.user_manager' );
+
+			if( $input->getOption( 'super' ) ) {
+				$userManager->promote( $code );
+			}
+
+			if( $input->getOption( 'admin' ) || $input->getOption( 'editor' ) ) {
+				$userManager->addRole( $code, 'ROLE_ADMIN' );
+			}
 		}
 	}
 
