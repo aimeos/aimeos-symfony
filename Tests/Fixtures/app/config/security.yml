@@ -3,7 +3,7 @@ security:
         in_memory:
             memory:
                 users:
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    admin: { password: adminpass, roles: [ 'ROLE_SUPER_ADMIN' ] }
         default:
             entity: { class: AimeosShopBundle:User, property: username }
 
@@ -44,6 +44,6 @@ security:
                 realm: "Default"
 
     access_control:
-        - { path: ^/unittest/jqadm, roles: ROLE_ADMIN }
-        - { path: ^/unittest/jsonadm, roles: ROLE_ADMIN }
+        - { path: ^/unittest/jqadm, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
+        - { path: ^/unittest/jsonadm, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
         - { path: ^/unittest/de/EUR/checkout, roles: ROLE_USER }
