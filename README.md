@@ -244,13 +244,16 @@ As last step, you have to create an admin account using the Symfony command line
 
 ```bash
 ./bin/console aimeos:account --admin me@mydomain.com
-./bin/console fos:user:promote me@mydomain.com ROLE_ADMIN
 ```
 
 The e-mail address is the user name for login and the account will work for the frontend too.
 To protect the new account, the command will ask you for a password. The same command can
 create limited accounts by using "--editor" instead of "--admin". If you use "--super" the
-account will have access to all sites.
+account will have access to all sites. Before 2018.07, you also have to execute:
+
+```bash
+./bin/console fos:user:promote me@mydomain.com ROLE_ADMIN
+```
 
 If the PHP web server is still running (`php -S 127.0.0.1:8000 -t web`), you should be
 able to call the admin login page in your browser using
