@@ -28,7 +28,7 @@ checkout process. A full set of pages including routing is also available for a 
 
 This document is for the latest Aimeos Symfony **2017.10 release and later**.
 
-- Stable release: 2018.04
+- Stable release: 2018.07
 - LTS release: 2017.10
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
@@ -97,7 +97,7 @@ Then add these lines to your composer.json of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2018.04",
+        "aimeos/aimeos-symfony": "~2018.07",
         ...
     },
     "scripts": {
@@ -124,6 +124,10 @@ In a production environment or if you don't want that the demo data gets install
 use the --no-dev option:
 
 `SYMFONY_ENV=prod composer update --no-dev`
+
+If you get an exception that the `SensioGeneratorBundle` isn't found, follow the
+steps described in the
+[Aimeos Symfony forum post](https://aimeos.org/help/symfony-bundle-f17/symfony-env-prod-composer-update-no-dev-t1488.html#p6384)
 
 ## Setup
 
