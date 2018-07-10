@@ -78,14 +78,18 @@ class AccountCommand extends Command
 		if( $this->getContainer()->has( 'fos_user.user_manager' ) )
 		{
 			$userManager = $this->getContainer()->get( 'fos_user.user_manager' );
+			$fosUser = $userManager->findUserByUsername( $code );
+			$fosUser->setSuperAdmin( false );
 
 			if( $input->getOption( 'super' ) ) {
-				$userManager->promote( $code );
+				$fosUser->setSuperAdmin( true );
 			}
 
 			if( $input->getOption( 'admin' ) || $input->getOption( 'editor' ) ) {
-				$userManager->addRole( $code, 'ROLE_ADMIN' );
+				$fosUser->addRole( 'ROLE_ADMIN' );
 			}
+
+			$userManager->updateUser( $fosUser );
 		}
 	}
 
