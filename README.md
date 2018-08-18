@@ -38,6 +38,7 @@ easiest by using [Composer](https://getcomposer.org). If you don't have an exist
 Symfony application, you can create a skeleton application using
 
 Symfony 4: `composer create-project symfony/website-skeleton myshop`
+
 Symfony 3: `composer create-project symfony/framework-standard-edition myshop`
 
 You need to adapt some files inside the newly created directory. Before, the Aimeos
