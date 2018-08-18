@@ -158,9 +158,10 @@ class JsonapiControllerTest extends WebTestCase
 		$client->request( 'GET', $json['included'][0]['links']['self']['href'], ['include' => 'catalog'] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'cafe', $json['included'][0]['attributes']['catalog.code'] );
+// print_r( $json );
 
 		// product list for "cafe" category
-		$client->request( 'GET', $optJson['meta']['resources']['product'], ['f_catid' => $json['included'][0]['id']] );
+		$client->request( 'GET', $optJson['meta']['resources']['product'], ['filter' => ['f_catid' => $json['included'][0]['id']]] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'CNE', $json['data'][0]['attributes']['product.code'] );
 	}
