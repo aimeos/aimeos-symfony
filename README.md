@@ -37,9 +37,7 @@ The Aimeos Symfony e-commerce bundle is a composer based library that can be ins
 easiest by using [Composer](https://getcomposer.org). If you don't have an existing
 Symfony application, you can create a skeleton application using
 
-Symfony 4: `composer create-project symfony/website-skeleton myshop`
-
-Symfony 3: `composer create-project symfony/framework-standard-edition myshop`
+`composer create-project symfony/framework-standard-edition myshop`
 
 You need to adapt some files inside the newly created directory. Before, the Aimeos
 bundle class must be known by the `registerBundles()` method in the `app/AppKernel.php`
