@@ -1,6 +1,6 @@
 {
 	"name": "aimeos/aimeos-symfony",
-	"description": "Full-featured Symfony web shop bundle and e-commerce solution for high performance shops",
+	"description": "Full-featured Symfony online shop bundle and e-commerce solution for high performance shops",
 	"homepage": "https://aimeos.org/Symfony",
 	"type": "symfony-bundle",
 	"license": "MIT",
