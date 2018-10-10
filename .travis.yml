@@ -30,6 +30,7 @@ before_script:
   - composer self-update
   - rm composer.lock # Prevent dependency problems
   - travis_retry composer require "symfony/symfony:${SYMFONY_VERSION}"
+  - sed -i 's/utf8mb4/utf8/' Resources/config/aimeos_shop.yml
 
 script:
   - vendor/bin/phpunit --coverage-clover coverage.xml
