@@ -23,12 +23,15 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class CacheCommand extends Command
 {
+	protected static $defaultName = 'aimeos:cache';
+
+
 	/**
 	 * Configures the command name and description.
 	 */
 	protected function configure()
 	{
-		$this->setName( 'aimeos:cache' );
+		$this->setName( self::$defaultName );
 		$this->setDescription( 'Clears the content cache' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to clear the cache like "default unittest" (none for all)' );
 	}

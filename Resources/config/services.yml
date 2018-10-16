@@ -31,3 +31,20 @@ services:
         class: Aimeos\ShopBundle\Service\View
         arguments: ["@request_stack","@service_container"]
         public: true
+
+    aimeos_account:
+        class: Aimeos\ShopBundle\Command\AccountCommand
+        tags:
+            - { name: 'console.command', command: 'aimeos:account' }
+    aimeos_cache:
+        class: Aimeos\ShopBundle\Command\CacheCommand
+        tags:
+            - { name: 'console.command', command: 'aimeos:cache' }
+    aimeos_jobs:
+        class: Aimeos\ShopBundle\Command\JobsCommand
+        tags:
+            - { name: 'console.command', command: 'aimeos:jobs' }
+    aimeos_setup:
+        class: Aimeos\ShopBundle\Command\SetupCommand
+        tags:
+            - { name: 'console.command', command: 'aimeos:setup' }

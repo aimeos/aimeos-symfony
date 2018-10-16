@@ -23,6 +23,9 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class JobsCommand extends Command
 {
+	protected static $defaultName = 'aimeos:jobs';
+
+
 	/**
 	 * Configures the command name and description.
 	 */
@@ -37,7 +40,7 @@ class JobsCommand extends Command
 			$names .= str_pad( $key, 30 ) . $controller->getName() . PHP_EOL;
 		}
 
-		$this->setName( 'aimeos:jobs' );
+		$this->setName( self::$defaultName );
 		$this->setDescription( 'Executes the job controllers' );
 		$this->addArgument( 'jobs', InputArgument::REQUIRED, 'One or more job controller names like "admin/job customer/email/watch"' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to execute the jobs for like "default unittest" (none for all)' );

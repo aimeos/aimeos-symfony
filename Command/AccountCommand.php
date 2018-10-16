@@ -24,12 +24,15 @@ use Symfony\Component\Console\Question\Question;
  */
 class AccountCommand extends Command
 {
+	protected static $defaultName = 'aimeos:account';
+
+
 	/**
 	 * Configures the command name and description.
 	 */
 	protected function configure()
 	{
-		$this->setName( 'aimeos:account');
+		$this->setName( self::$defaultName );
 		$this->setDescription( 'Creates new (admin) accounts' );
 		$this->addArgument( 'email', InputArgument::REQUIRED, 'E-mail address of the account that should be created' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to create accounts for like "default"', 'default' );

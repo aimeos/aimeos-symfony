@@ -24,12 +24,15 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class SetupCommand extends Command
 {
+	protected static $defaultName = 'aimeos:setup';
+
+
 	/**
 	 * Configures the command name and description.
 	 */
 	protected function configure()
 	{
-		$this->setName( 'aimeos:setup');
+		$this->setName( self::$defaultName );
 		$this->setDescription( 'Initialize or update the Aimeos database tables' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site for updating database entries', 'default' );
 		$this->addArgument( 'tplsite', InputArgument::OPTIONAL, 'Template site for creating or updating database entries', 'default' );
