@@ -55,14 +55,11 @@ class ScriptHandler
 
 		$options = self::getOptions( $event );
 
-		if( !isset( $options['symfony-app-dir'] ) || !is_dir( $options['symfony-app-dir'] ) )
+		if( isset( $options['symfony-app-dir'] ) )
 		{
-			$msg = 'An error occurred because the "%1$s" option or the "%2$s" directory isn\'t available';
-			throw new \RuntimeException( sprintf( $msg, 'symfony-app-dir', $options['symfony-app-dir'] ) );
+			self::updateConfigFile( $options['symfony-app-dir'] . '/config/config.yml' );
+			self::updateRoutingFile( $options['symfony-app-dir'] . '/config/routing.yml' );
 		}
-
-		self::updateConfigFile( $options['symfony-app-dir'] . '/config/config.yml' );
-		self::updateRoutingFile( $options['symfony-app-dir'] . '/config/routing.yml' );
 	}
 
 
@@ -77,23 +74,21 @@ class ScriptHandler
 		$event->getIO()->write( 'Installing the Aimeos shop bundle' );
 
 		$options = self::getOptions( $event );
+		$securedir = 'var';
 
-		if( !isset( $options['symfony-app-dir'] ) || !is_dir( $options['symfony-app-dir'] ) )
-		{
-			$msg = 'An error occurred because the "%1$s" option or the "%2$s" directory isn\'t available';
-			throw new \RuntimeException( sprintf( $msg, 'symfony-app-dir', $options['symfony-app-dir'] ) );
+		if( isset( $options['symfony-app-dir'] ) && is_dir( $options['symfony-app-dir'] ) ) {
+			$securedir = $options['symfony-app-dir'];
 		}
 
-		if( !isset( $options['symfony-web-dir'] ) || !is_dir( $options['symfony-web-dir'] ) )
-		{
-			$msg = 'An error occurred because the "%1$s" option or the "%2$s" directory isn\'t available';
-			throw new \RuntimeException( sprintf( $msg, 'symfony-web-dir', $options['symfony-web-dir'] ) );
+		if( isset( $options['symfony-var-dir'] ) && is_dir( $options['symfony-var-dir'] ) ) {
+			$securedir = $options['symfony-var-dir'];
 		}
 
-		self::createDirectory( $options['symfony-app-dir'] . '/secure' );
-		self::createDirectory( $options['symfony-web-dir'] . '/uploads' );
-		self::createDirectory( $options['symfony-web-dir'] . '/preview' );
-		self::createDirectory( $options['symfony-web-dir'] . '/files' );
+		$webdir = ( isset( $options['symfony-web-dir'] ) ? $options['symfony-web-dir'] : 'public' );
+
+		self::createDirectory( $securedir . '/secure' );
+		self::createDirectory( $webdir . '/preview' );
+		self::createDirectory( $webdir . '/files' );
 	}
 
 
@@ -161,15 +156,17 @@ class ScriptHandler
 	{
 		$options = self::getOptions( $event );
 
-		if( isset( $options['symfony-bin-dir'] ) && is_dir( $options['symfony-bin-dir'] ) ) {
-			return $options['symfony-bin-dir'];
-		}
+		$bindir = 'bin';
 
 		if( isset( $options['symfony-app-dir'] ) && is_dir( $options['symfony-app-dir'] ) ) {
-			return $options['symfony-app-dir'];
+			$bindir = $options['symfony-app-dir'];
 		}
 
-		throw new \RuntimeException( sprintf( 'Console directory not found. Neither %1$s nor %2$s option exist', 'symfony-app-dir', 'symfony-bin-dir' ) );
+		if( isset( $options['symfony-bin-dir'] ) && is_dir( $options['symfony-bin-dir'] ) ) {
+			$bindir = $options['symfony-bin-dir'];
+		}
+
+		return $bindir;
 	}
 
 
@@ -230,8 +227,10 @@ class ScriptHandler
 	 */
 	protected static function updateRoutingFile( $filename )
 	{
-		if( ( $content = file_get_contents( $filename ) ) === false ) {
-			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
+		$content = '';
+
+		if( file_exists( $filename ) && ( $content = file_get_contents( $filename ) ) === false ) {
+			throw new \RuntimeException( sprintf( 'File "%1$s" not readable', $filename ) );
 		}
 
 		if( strpos( $content, 'aimeos_shop:' ) === false )
