@@ -81,7 +81,11 @@ class AccountCommand extends Command
 		if( $this->getContainer()->has( 'fos_user.user_manager' ) )
 		{
 			$userManager = $this->getContainer()->get( 'fos_user.user_manager' );
-			$fosUser = $userManager->findUserByUsername( $code );
+
+			if( ( $fosUser = $userManager->findUserByUsername( $code ) ) === null ) {
+				throw new \RuntimeException( 'No user created' );
+			}
+
 			$fosUser->setSuperAdmin( false );
 
 			if( $input->getOption( 'super' ) ) {
