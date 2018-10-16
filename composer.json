@@ -32,7 +32,7 @@
 		"aimeos/ai-client-html": "dev-master",
 		"aimeos/ai-fosuser": "dev-master",
 		"aimeos/ai-twig": "dev-master",
-		"friendsofsymfony/user-bundle": "dev-master",
+		"friendsofsymfony/user-bundle": "~2.1",
 		"symfony/framework-bundle": "~2.8||~3.0||~4.0",
 		"symfony/security-bundle": "~2.8||~3.0||~4.0",
 		"symfony/twig-bundle": "~2.8||~3.0||~4.0",
