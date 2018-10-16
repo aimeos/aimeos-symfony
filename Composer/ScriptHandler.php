@@ -233,7 +233,7 @@ class ScriptHandler
 			throw new \RuntimeException( sprintf( 'File "%1$s" not readable', $filename ) );
 		}
 
-		if( strpos( $content, 'aimeos_shop:' ) === false )
+		if( strpos( $content, 'fos_user:' ) === false )
 		{
 			$content .= "\n" . 'fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"';
