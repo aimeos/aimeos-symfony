@@ -235,6 +235,12 @@ class ScriptHandler
 
 		if( strpos( $content, 'aimeos_shop:' ) === false )
 		{
+			$content .= "\n" . 'fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"';
+		}
+
+		if( strpos( $content, 'aimeos_shop:' ) === false )
+		{
 			$content .= "\n" . 'aimeos_shop:
     resource: "@AimeosShopBundle/Resources/config/routing.yml"
     prefix: /';
