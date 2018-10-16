@@ -18,6 +18,9 @@ checkout process. A full set of pages including routing is also available for a 
 ## Table of content
 
 - [Installation](#installation)
+  - [Symfony 3](#symfony-3)
+  - [Symfony 4](#symfony-4)
+- [Composer](#composer)
 - [Setup](#setup)
 - [Admin](#admin)
 - [Hints](#hints)
@@ -26,12 +29,13 @@ checkout process. A full set of pages including routing is also available for a 
 
 ## Installation
 
-This document is for the latest Aimeos Symfony **2017.10 release and later**.
+This document is for the latest Aimeos Symfony **2018.10 release and later**.
 
-- Stable release: 2018.07
-- LTS release: 2017.10
+- LTS release: 2018.10
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
+
+### Symfony 3
 
 The Aimeos Symfony e-commerce bundle is a composer based library that can be installed
 easiest by using [Composer](https://getcomposer.org). If you don't have an existing
@@ -86,18 +90,108 @@ aimeos_shop:
                     name: Bcrypt
 ```
 
-Make sure that the database is set up and it is configured in your config.yml.
+Make sure that the database is set up and it is configured in your `./app/config/config.yml`:
+
+```yaml
+parameters:
+    database_host: <your host/ip>
+    database_port: <your port>
+    database_name: <your database>
+    database_user: <db username>
+    database_password: <db password>
+```
+
 If you want to use a database server other than MySQL, please have a look into the article about
 [supported database servers](https://aimeos.org/docs/Developers/Library/Database_support)
 and their specific configuration.
 
-Then add these lines to your composer.json of your Symfony project:
+### Symfony 4
 
+The Aimeos Symfony e-commerce bundle is a composer based library that can be installed
+easiest by using [Composer](https://getcomposer.org). If you don't have an existing
+Symfony application, you can create a skeleton application using
+
+`composer create-project symfony/website-skeleton myshop`
+
+Ensure that Twig is configured for templating in the `framework` section of your
+`./config/packages/framework.yaml` file:
+
+```yaml
+framework:
+    templating:
+        engines: ['twig']
 ```
+
+These settings need to be added to the `./config/packages/fos_user.yaml` file:
+
+```yaml
+fos_user:
+    db_driver: orm
+    user_class: Aimeos\ShopBundle\Entity\FosUser
+    firewall_name: aimeos_myaccount
+    from_email:
+        address: "me@example.com"
+        sender_name: "Test shop"
+```
+
+The Aimeos components have to be configured as well to get authentication working correctly.
+You need to take care of two things: Using the correct customer manager implementation and
+password encryption method. Both must be appended at the end of the `./config/packages/aimeos_shop.yaml`
+as well:
+
+```yaml
+aimeos_shop:
+    mshop:
+        customer:
+            manager:
+                name: FosUser
+                password:
+                    name: Bcrypt
+```
+
+To configure the Aimeos routing, create the file `./config/routes/aimeos_shop.yaml` with these lines:
+
+```yaml
+aimeos_shop:
+    resource: "@AimeosShopBundle/Resources/config/routing.yml"
+```
+
+The same applies for the FosUser bundle. Create the file `./config/routes/fos_user.yaml` containing:
+
+```yaml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+```
+
+Make sure that the database is set up and it is configured in your `./config/packages/doctrine.yaml`:
+
+```yaml
+parameters:
+    env(DATABASE_URL): ''
+    database_host: <your host/ip>
+    database_port: <your port>
+    database_name: <your database>
+    database_user: <db username>
+    database_password: <db password>
+```
+
+Also, you have to configure your database credentials in the `.env` file:
+
+`DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name`
+
+If you want to use a database server other than MySQL, please have a look into the article about
+[supported database servers](https://aimeos.org/docs/Developers/Library/Database_support)
+and their specific configuration.
+
+## Composer
+
+Then add these lines to your `composer.json` of your Symfony project:
+
+```json
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2018.07",
+        "aimeos/aimeos-symfony": "~2018.10",
         ...
     },
     "scripts": {
@@ -132,8 +226,12 @@ steps described in the
 ## Setup
 
 To see all components and get everything working, you also need to adapt your
-Twig base template in `app/Resources/views/base.html.twig`. This is a working
-example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/):
+Twig base template. This is a working example using the
+[Twitter bootstrap CSS framework](http://getbootstrap.com/) and you need to replace
+the existing file with the content below:
+
+- Symfony 3: `./app/Resources/views/base.html.twig`
+- Symfony 4: `./templates/base.html.twig`
 
 ```html
 <!DOCTYPE html>
@@ -177,11 +275,11 @@ example using the [Twitter bootstrap CSS framework](http://getbootstrap.com/):
 
 Start the PHP web server in the base directory of your application to do some quick tests:
 
-```php -S 127.0.0.1:8000 -t web```
+```./bin/console server:run```
 
 Then, you should be able to call the catalog list page in your browser using
 
-```http://127.0.0.1:8000/app_dev.php/list ```
+```http://127.0.0.1:8000/list```
 
 ## Login and Admin
 
@@ -190,16 +288,11 @@ firewall to restrict access to the admin URLs. Since 2017.07, the FOSUserBundle
 is required. For a more detailed description, please read the article about
 [setting up the FOSUserBundle](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login).
 
-To add the required routes for the FOSUserBundle, append these two lines at the
-end of your `./app/config/routing.yml` file:
-
-```yaml
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-```
-
 Setting up the security configuration is the most complex part. The firewall
-setup in the `./app/config/security.yml` file should look like this one:
+setup should look like this one:
+
+- Symfony 3: `./app/config/security.yml`
+- Symfony 4: `./config/packages/security.yaml`
 
 ```yaml
 security:
@@ -253,25 +346,24 @@ As last step, you have to create an admin account using the Symfony command line
 The e-mail address is the user name for login and the account will work for the frontend too.
 To protect the new account, the command will ask you for a password. The same command can
 create limited accounts by using "--editor" instead of "--admin". If you use "--super" the
-account will have access to all sites. Before 2018.07, you also have to execute:
+account will have access to all sites.
 
-```bash
-./bin/console fos:user:promote me@mydomain.com ROLE_ADMIN
-```
-
-If the PHP web server is still running (`php -S 127.0.0.1:8000 -t web`), you should be
+If the PHP web server is still running (`./bin/console server:run`), you should be
 able to call the admin login page in your browser using
 
-`http://127.0.0.1:8000/app_dev.php/admin`
+```http://127.0.0.1:8000/admin```
 
 and authenticating with your e-mail and the password which has been asked for by the
-aimeos:account command.
+`aimeos:account` command.
 
 ## Hints
 
 To simplify development, you should configure to use no content cache. You can
-do this in the ./app/config/config_dev.yml file of your Symfony application by
-adding these lines:
+do this by adding these lines to:
+
+- Symfony 3: `./app/config/config.yml`
+- Symfony 4: `./config/packages/aimeos_shop.yaml`
+
 ```yaml
 aimeos_shop:
     madmin:
