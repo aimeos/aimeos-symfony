@@ -8,10 +8,12 @@ Aimeos Symfony bundle
 [![Coverage Status](https://coveralls.io/repos/aimeos/aimeos-symfony/badge.svg?branch=master)](https://coveralls.io/r/aimeos/aimeos-symfony?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/?branch=master)
 
-The repository contains the Symfony e-commerce bundle integrating the Aimeos e-commerce
-library into Symfony 2, 3 and 4. The bundle provides controllers for e.g. faceted filter,
-product lists and detail views, for searching products as well as baskets and the
-checkout process. A full set of pages including routing is also available for a quick start.
+:star: Star us on GitHub — it helps!
+
+[Aimeos](https://aimeos.org/Symfony) is THE professional, full-featured and
+high performance e-commerce package for Symfony!  You can install it in your
+existing Symfony application within 5 minutes and can adapt, extend, overwrite
+and customize anything to your needs. 
 
 [![Aimeos Symfony demo](https://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony.demo.aimeos.org/)
 
