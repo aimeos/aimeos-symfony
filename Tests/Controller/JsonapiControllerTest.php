@@ -85,7 +85,7 @@ class JsonapiControllerTest extends WebTestCase
 	{
 		$client = static::createClient();
 
-		$params = ['filter' => ['f_search' => 'Cafe Noire Cap', 'f_listtype' => 'unittype19']];
+		$params = ['filter' => ['f_search' => 'Cafe Noire Cap']];
 		$client->request( 'GET', '/unittest/de/EUR/jsonapi/product', $params );
 		$response = $client->getResponse();
 
@@ -93,8 +93,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertEquals( 1, $json['meta']['total'] );
-		$this->assertEquals( 1, count( $json['data'] ) );
+		$this->assertEquals( 2, $json['meta']['total'] );
+		$this->assertEquals( 2, count( $json['data'] ) );
 		$this->assertArrayHasKey( 'id', $json['data'][0] );
 		$this->assertEquals( 'CNC', $json['data'][0]['attributes']['product.code'] );
 
@@ -158,7 +158,6 @@ class JsonapiControllerTest extends WebTestCase
 		$client->request( 'GET', $json['included'][0]['links']['self']['href'], ['include' => 'catalog'] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'cafe', $json['included'][0]['attributes']['catalog.code'] );
-// print_r( $json );
 
 		// product list for "cafe" category
 		$client->request( 'GET', $optJson['meta']['resources']['product'], ['filter' => ['f_catid' => $json['included'][0]['id']]] );
