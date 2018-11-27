@@ -15,7 +15,7 @@ high performance e-commerce package for Symfony!  You can install it in your
 existing Symfony application within 5 minutes and can adapt, extend, overwrite
 and customize anything to your needs. 
 
-[![Aimeos Symfony demo](https://aimeos.org/fileadmin/user_upload/symfony-demo.jpg)](http://symfony.demo.aimeos.org/)
+[![Aimeos Symfony demo](https://aimeos.org/fileadmin/aimeos.org/images/aimeos-github.png)](http://symfony.demo.aimeos.org/)
 
 ## Table of content
 
