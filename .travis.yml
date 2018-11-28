@@ -14,6 +14,8 @@ env:
 
 matrix:
   fast_finish: true
+  allow_failures:
+  - env: SYMFONY_VERSION=2.8.*
   include:
   - php: 7.2
     env: SYMFONY_VERSION=4.1.*
