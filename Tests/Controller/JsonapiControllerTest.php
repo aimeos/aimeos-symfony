@@ -202,9 +202,9 @@ class JsonapiControllerTest extends WebTestCase
 		$this->assertGreaterThan( 8, count( $json['meta']['resources'] ) );
 
 		// product list for full text search
-		$client->request( 'GET', $json['meta']['resources']['product'], ['filter' => ['f_search' => 'selection']] );
+		$client->request( 'GET', $json['meta']['resources']['product'], ['filter' => ['f_search' => 'cappuccino']] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
-		$this->assertEquals( 3, count( $json['data'] ) );
+		$this->assertEquals( 2, count( $json['data'] ) );
 	}
 
 

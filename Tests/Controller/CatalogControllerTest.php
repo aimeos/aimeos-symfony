@@ -27,11 +27,9 @@ class CatalogControllerTest extends WebTestCase
 		$this->assertEquals( 1, $crawler->filter( '.catalog-filter-search' )->count() );
 
 		$form = $crawler->filter( '.catalog-filter-search button' )->form();
-		$form['f_search'] = 'Unit';
+		$form['f_search'] = 'Cafe';
 		$crawler = $client->submit( $form );
 
-		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Test Selection")' )->count() );
-		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Empty Selection")' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->count() );
 	}
 
@@ -114,7 +112,7 @@ class CatalogControllerTest extends WebTestCase
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail' )->count() );
-		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unittest: Empty Selection")' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unterproduct 3")' )->count() );
 
 		$link = $crawler->filter( '.catalog-stage-navigator a.prev' )->link();
 		$crawler = $client->click( $link );
@@ -133,21 +131,21 @@ class CatalogControllerTest extends WebTestCase
 		$crawler = $client->click( $link );
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
-		$this->assertEquals( 1, $products->eq( 0 )->filter( 'h2:contains("16 discs")' )->count() );
-		$this->assertEquals( 1, $products->eq( 1 )->filter( 'h2:contains("Cafe Noire Cappuccino")' )->count() );
-		$this->assertEquals( 1, $products->eq( 2 )->filter( 'h2:contains("Cafe Noire Expresso")' )->count() );
-		$this->assertEquals( 1, $products->eq( 3 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
-		$this->assertEquals( 1, $products->eq( 4 )->filter( 'h2:contains("Unittest: Empty Selection")' )->count() );
+		$this->assertEquals( 1, $products->eq( 0 )->filter( 'h2:contains("Cafe Noire Cappuccino")' )->count() );
+		$this->assertEquals( 1, $products->eq( 1 )->filter( 'h2:contains("Cafe Noire Expresso")' )->count() );
+		$this->assertEquals( 1, $products->eq( 2 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
+		$this->assertEquals( 1, $products->eq( 3 )->filter( 'h2:contains("Unterproduct 3")' )->count() );
 
 		$link = $crawler->filter( '.catalog-list .pagination .option-name' )->link();
 		$crawler = $client->click( $link );
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
-		$count = $products->count();
 
-		$this->assertGreaterThan( 2, $count );
-		$this->assertEquals( 1, $products->eq( $count - 1 )->filter( 'h2:contains("16 discs")' )->count() );
-		$this->assertEquals( 1, $products->eq( $count - 2 )->filter( 'h2:contains("Cafe Noire Cappuccino")' )->count() );
+		$this->assertGreaterThan( 3, $products->count() );
+		$this->assertEquals( 1, $products->eq( 0 )->filter( 'h2:contains("Unterproduct 3")' )->count() );
+		$this->assertEquals( 1, $products->eq( 1 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
+		$this->assertEquals( 1, $products->eq( 2 )->filter( 'h2:contains("Cafe Noire Expresso")' )->count() );
+		$this->assertEquals( 1, $products->eq( 3 )->filter( 'h2:contains("Cafe Noire Cappuccino")' )->count() );
 	}
 
 
@@ -205,7 +203,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testSuggest()
 	{
 		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/suggest', array( 'f_search' => 'unit' ) );
+		$client->request( 'GET', '/unittest/de/EUR/suggest', array( 'f_search' => 'Cafe' ) );
 		$content = $client->getResponse()->getContent();
 
 		$this->assertStringStartsWith( '[{', $content );
