@@ -4,27 +4,22 @@ language: php
 php:
   - 7.2
   - 7.1
-  - 7.0
-  - 5.6
-  - 5.5
 
 env:
+  - SYMFONY_VERSION=4.2.*
+  - SYMFONY_VERSION=4.1.*
+  - SYMFONY_VERSION=4.0.*
   - SYMFONY_VERSION=3.4.*
-  - SYMFONY_VERSION=2.8.*
 
 matrix:
   fast_finish: true
-  allow_failures:
-  - env: SYMFONY_VERSION=2.8.*
   include:
-  - php: 7.2
-    env: SYMFONY_VERSION=4.1.*
-  - php: 7.1
-    env: SYMFONY_VERSION=4.1.*
-  - php: 7.2
-    env: SYMFONY_VERSION=4.0.*
-  - php: 7.1
-    env: SYMFONY_VERSION=4.0.*
+  - php: 7.0
+    env: SYMFONY_VERSION=3.4.*
+  - php: 5.6
+    env: SYMFONY_VERSION=3.4.*
+  - php: 5.5
+    env: SYMFONY_VERSION=3.4.*
 
 before_script:
   - echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
