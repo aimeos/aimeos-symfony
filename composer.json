@@ -20,7 +20,7 @@
 	"prefer-stable": true,
 	"minimum-stability": "dev",
 	"require": {
-		"php": ">=5.3.3",
+		"php": ">=5.5.0",
 		"aimeos/aimeos-core": "dev-master",
 		"aimeos/ai-gettext": "dev-master",
 		"aimeos/ai-monolog": "dev-master",
