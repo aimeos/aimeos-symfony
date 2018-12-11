@@ -22,12 +22,12 @@ matrix:
     env: SYMFONY_VERSION=3.4.*
 
 before_script:
-  - echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - echo 'memory_limit=-1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   - mysql -e "create database symfony;"
   - mysql -e "set global wait_timeout=600"
   - composer self-update
   - rm composer.lock # Prevent dependency problems
-  - travis_retry composer require "symfony/symfony:${SYMFONY_VERSION}"
+  - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer require "symfony/symfony:${SYMFONY_VERSION}"
   - sed -i 's/utf8mb4/utf8/' Resources/config/aimeos_shop.yml
 
 script:
