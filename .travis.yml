@@ -23,6 +23,9 @@ matrix:
     env: SYMFONY_VERSION=4.0.*
   - php: 7.1
     env: SYMFONY_VERSION=4.0.*
+  allow_failures:
+    - php: 5.6
+    - php: 5.5
 
 before_script:
   - echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
