@@ -202,7 +202,9 @@ madmin:
 mshop:
     customer:
         manager:
+            name: FosUser
             password:
+                name: Bcrypt
                 options:
                     format: "%%1$s{%%2$s}"
     index:
