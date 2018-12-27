@@ -137,12 +137,17 @@ fos_user:
 ```
 
 The Aimeos components have to be configured as well to get authentication working correctly.
-You need to take care of two things: Using the correct customer manager implementation and
-password encryption method. Both must be appended at the end of the `./config/packages/aimeos_shop.yaml`
-as well:
+You need to take care of three things: Using the correct customer manager implementation and
+password encryption method as well as the right path for the storages. All must be appended
+at the end of the `./config/packages/aimeos_shop.yaml`:
 
 ```yaml
 aimeos_shop:
+    resource:
+        fs:
+            basedir: "%kernel.root_dir%/../public"
+        fs-admin:
+            basedir: "%kernel.root_dir%/../public/uploads"
     mshop:
         customer:
             manager:
