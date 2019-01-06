@@ -11,9 +11,9 @@ Aimeos Symfony bundle
 :star: Star us on GitHub — it helps!
 
 [Aimeos](https://aimeos.org/Symfony) is THE professional, full-featured and
-high performance e-commerce package for Symfony!  You can install it in your
-existing Symfony application within 5 minutes and can adapt, extend, overwrite
-and customize anything to your needs. 
+ultra fast e-commerce package for Symfony!  You can install it in your existing
+Symfony application within 5 minutes and can adapt, extend, overwrite and
+customize anything to your needs.
 
 [![Aimeos Symfony demo](https://aimeos.org/fileadmin/aimeos.org/images/aimeos-github.png)](http://symfony.demo.aimeos.org/)
 
@@ -80,10 +80,13 @@ fos_user:
 The Aimeos components have to be configured as well to get authentication working correctly.
 You need to take care of two things: Using the correct customer manager implementation and
 password encryption method. Both must be appended at the end of your `./app/config/config.yml`
-as well:
+as well as the base URL to see your uploaded images:
 
 ```yaml
 aimeos_shop:
+    resource:
+        fs:
+            baseurl: "https://yourdomain.com/"
     mshop:
         customer:
             manager:
@@ -145,6 +148,7 @@ at the end of the `./config/packages/aimeos_shop.yaml`:
 aimeos_shop:
     resource:
         fs:
+            baseurl: "https://yourdomain.com/"
             basedir: "%kernel.root_dir%/../public"
         fs-admin:
             basedir: "%kernel.root_dir%/../public/uploads"
