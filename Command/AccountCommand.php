@@ -141,15 +141,14 @@ class AccountCommand extends Command
 	 */
 	protected function addListItem( \Aimeos\MShop\Context\Item\Iface $context, $userid, $groupid )
 	{
-		$manager = \Aimeos\MShop\Customer\Manager\Factory::createManager( $context )->getSubmanager( 'lists' );
-		$typeid = $manager->getSubmanager( 'type' )->findItem( 'default', array(), 'customer/group' )->getId();
+		$manager = \Aimeos\MShop::create( $context, 'customer/lists' );
 
 		$search = $manager->createSearch();
 		$expr = array(
 			$search->compare( '==', 'customer.lists.parentid', $userid ),
 			$search->compare( '==', 'customer.lists.refid', $groupid ),
+			$search->compare( '==', 'customer.lists.type', 'default' ),
 			$search->compare( '==', 'customer.lists.domain', 'customer/group' ),
-			$search->compare( '==', 'customer.lists.typeid', $typeid ),
 		);
 		$search->setConditions( $search->combine( '&&', $expr ) );
 		$search->setSlice( 0, 1 );
@@ -159,8 +158,8 @@ class AccountCommand extends Command
 			$item = $manager->createItem();
 			$item->setDomain( 'customer/group' );
 			$item->setParentId( $userid );
-			$item->setTypeId( $typeid );
 			$item->setRefId( $groupid );
+			$item->setType( 'default' );
 			$item->setStatus( 1 );
 
 			$manager->saveItem( $item, false );
