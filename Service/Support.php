@@ -30,7 +30,7 @@ class Support
 	public function getGroups( \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		$list = array();
-		$manager = \Aimeos\MShop\Factory::createManager( $context, 'customer/group' );
+		$manager = \Aimeos\MShop::create( $context, 'customer/group' );
 
 		$search = $manager->createSearch();
 		$search->setConditions( $search->compare( '==', 'customer.group.id', $context->getGroupIds() ) );

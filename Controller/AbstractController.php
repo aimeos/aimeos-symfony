@@ -37,7 +37,7 @@ class AbstractController extends Controller
 		$view = $this->container->get( 'aimeos_view' )->create( $context, $tmplPaths, $langid );
 		$context->setView( $view );
 
-		$client = \Aimeos\Client\Html\Factory::createClient( $context, $clientName );
+		$client = \Aimeos\Client\Html::create( $context, $clientName );
 		$client->setView( $view );
 		$client->process();
 

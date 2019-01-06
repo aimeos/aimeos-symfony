@@ -33,7 +33,7 @@ class JsonadmController extends Controller
 	 */
 	public function deleteAction( ServerRequestInterface $request, $resource, $site = 'default' )
 	{
-		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->delete( $request, new Response() );
 	}
 
@@ -48,7 +48,7 @@ class JsonadmController extends Controller
 	 */
 	public function getAction( ServerRequestInterface $request, $resource, $site = 'default' )
 	{
-		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->get( $request, new Response() );
 	}
 
@@ -63,7 +63,7 @@ class JsonadmController extends Controller
 	 */
 	public function patchAction( ServerRequestInterface $request, $resource, $site = 'default' )
 	{
-		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->patch( $request, new Response() );
 	}
 
@@ -78,7 +78,7 @@ class JsonadmController extends Controller
 	 */
 	public function postAction( ServerRequestInterface $request, $resource, $site = 'default' )
 	{
-		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->post( $request, new Response() );
 	}
 
@@ -93,7 +93,7 @@ class JsonadmController extends Controller
 	 */
 	public function putAction( ServerRequestInterface $request, $resource, $site = 'default' )
 	{
-		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->put( $request, new Response() );
 	}
 
@@ -108,7 +108,7 @@ class JsonadmController extends Controller
 	 */
 	public function optionsAction( ServerRequestInterface $request, $resource = '', $site = 'default' )
 	{
-		$client = $this->createClient( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->options( $request, new Response() );
 	}
 
@@ -121,7 +121,7 @@ class JsonadmController extends Controller
 	 * @param string $lang Language code
 	 * @return \Aimeos\MShop\Context\Item\Iface Context item
 	 */
-	protected function createClient( $site, $resource, $lang )
+	protected function createAdmin( $site, $resource, $lang )
 	{
 		$aimeos = $this->get( 'aimeos' )->get();
 		$templatePaths = $aimeos->getCustomPaths( 'admin/jsonadm/templates' );
@@ -133,6 +133,6 @@ class JsonadmController extends Controller
 		$view = $this->get('aimeos_view')->create( $context, $templatePaths, $lang );
 		$context->setView( $view );
 
-		return \Aimeos\Admin\JsonAdm\Factory::createClient( $context, $aimeos, $resource );
+		return \Aimeos\Admin\JsonAdm::create( $context, $aimeos, $resource );
 	}
 }

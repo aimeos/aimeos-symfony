@@ -74,7 +74,7 @@ class JqadmController extends Controller
 	 */
 	public function copyAction( Request $request, $resource, $site = 'default' )
 	{
-		$cntl = $this->createClient( $request, $site, $resource );
+		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->copy() ) == '' ) {
 			return $cntl->getView()->response();
@@ -94,7 +94,7 @@ class JqadmController extends Controller
 	 */
 	public function createAction( Request $request, $resource, $site = 'default' )
 	{
-		$cntl = $this->createClient( $request, $site, $resource );
+		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->create() ) == '' ) {
 			return $cntl->getView()->response();
@@ -114,7 +114,7 @@ class JqadmController extends Controller
 	 */
 	public function deleteAction( Request $request, $resource, $site = 'default' )
 	{
-		$cntl = $this->createClient( $request, $site, $resource );
+		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->delete() ) == '' ) {
 			return $cntl->getView()->response();
@@ -134,7 +134,7 @@ class JqadmController extends Controller
 	 */
 	public function exportAction( Request $request, $resource, $site = 'default' )
 	{
-		$cntl = $this->createClient( $request, $site, $resource );
+		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->export() ) == '' ) {
 			return $cntl->getView()->response();
@@ -154,7 +154,7 @@ class JqadmController extends Controller
 	 */
 	public function getAction( Request $request, $resource, $site = 'default' )
 	{
-		$cntl = $this->createClient( $request, $site, $resource );
+		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->get() ) == '' ) {
 			return $cntl->getView()->response();
@@ -174,7 +174,7 @@ class JqadmController extends Controller
 	 */
 	public function saveAction( Request $request, $resource, $site = 'default' )
 	{
-		$cntl = $this->createClient( $request, $site, $resource );
+		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->save() ) == '' ) {
 			return $cntl->getView()->response();
@@ -194,7 +194,7 @@ class JqadmController extends Controller
 	 */
 	public function searchAction( Request $request, $resource, $site = 'default' )
 	{
-		$cntl = $this->createClient( $request, $site, $resource );
+		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->search() ) == '' ) {
 			return $cntl->getView()->response();
@@ -212,7 +212,7 @@ class JqadmController extends Controller
 	 * @param string $resource Resource location, e.g. "product"
 	 * @return \Aimeos\Admin\JQAdm\Iface Context item
 	 */
-	protected function createClient( Request $request, $site, $resource )
+	protected function createAdmin( Request $request, $site, $resource )
 	{
 		$lang = $request->get( 'lang', 'en' );
 
@@ -231,7 +231,7 @@ class JqadmController extends Controller
 
 		$context->setView( $view );
 
-		return \Aimeos\Admin\JQAdm\Factory::createClient( $context, $aimeos, $resource );
+		return \Aimeos\Admin\JQAdm::create( $context, $aimeos, $resource );
 	}
 
 

@@ -64,7 +64,7 @@ class AccountCommand extends Command
 		$context = $this->getContainer()->get( 'aimeos_context' )->get( false, 'command' );
 		$context->setEditor( 'aimeos:account' );
 
-		$localeManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context );
+		$localeManager = \Aimeos\MShop::create( $context, 'locale' );
 		$localeItem = $localeManager->bootstrap( $input->getArgument( 'site' ), '', '', false );
 		$context->setLocale( $localeItem );
 
@@ -115,7 +115,7 @@ class AccountCommand extends Command
 	{
 		$output->writeln( sprintf( 'Add "%1$s" group to user "%2$s" for sites', $group, $user->getCode() ) );
 
-		$localeManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context );
+		$localeManager = \Aimeos\MShop::create( $context, 'locale' );
 
 		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
 		{
@@ -179,7 +179,7 @@ class AccountCommand extends Command
 	 */
 	protected function createCustomerItem( \Aimeos\MShop\Context\Item\Iface $context, $email, $password )
 	{
-		$manager = \Aimeos\MShop\Factory::createManager( $context, 'customer' );
+		$manager = \Aimeos\MShop::create( $context, 'customer' );
 
 		try {
 			$item = $manager->findItem( $email );
@@ -208,7 +208,7 @@ class AccountCommand extends Command
 	 */
 	protected function getGroupItem( \Aimeos\MShop\Context\Item\Iface $context, $code )
 	{
-		$manager = \Aimeos\MShop\Customer\Manager\Factory::createManager( $context )->getSubmanager( 'group' );
+		$manager = \Aimeos\MShop::create( $context, 'customer/group' );
 
 		try
 		{

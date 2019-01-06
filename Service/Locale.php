@@ -56,7 +56,7 @@ class Locale
 			$currency = $request->attributes->get( 'currency', $request->query->get( 'currency', '' ) );
 			$lang = $request->attributes->get( 'locale', $request->query->get( 'locale', '' ) );
 
-			$localeManager = \Aimeos\MShop\Locale\Manager\Factory::createManager( $context );
+			$localeManager = \Aimeos\MShop::create( $context, 'locale' );
 			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, $status );
 		}
 
@@ -73,7 +73,7 @@ class Locale
 	 */
 	public function getBackend( \Aimeos\MShop\Context\Item\Iface $context, $site )
 	{
-		$localeManager = \Aimeos\MShop\Factory::createManager( $context, 'locale' );
+		$localeManager = \Aimeos\MShop::create( $context, 'locale' );
 
 		try {
 			$localeItem = $localeManager->bootstrap( $site, '', '', false, null, true );

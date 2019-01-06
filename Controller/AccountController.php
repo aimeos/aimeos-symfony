@@ -46,7 +46,7 @@ class AccountController extends AbstractController
 		$view = $this->container->get('aimeos_view')->create( $context, array(), $langid );
 		$context->setView( $view );
 
-		$client = \Aimeos\Client\Html\Factory::createClient( $context, 'account/download' );
+		$client = \Aimeos\Client\Html::create( $context, 'account/download' );
 		$client->setView( $view );
 		$client->process();
 
