@@ -95,6 +95,9 @@ client:
             download:
                 url:
                     target: aimeos_shop_account_download
+                error:
+                    url:
+                        target: aimeos_shop_account
         catalog:
             count:
                 url:
@@ -209,8 +212,6 @@ mshop:
             name: FosUser
             password:
                 name: Bcrypt
-                options:
-                    format: "%%1$s{%%2$s}"
     index:
         manager:
             name: MySQL

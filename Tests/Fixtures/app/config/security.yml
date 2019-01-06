@@ -21,11 +21,6 @@ security:
             anonymous: ~
             http_basic:
                 realm: "Admin Area"
-        aimeos_extadm:
-            pattern:    ^/unittest/extadm
-            provider: in_memory
-            http_basic:
-                realm: "Admin Area"
         aimeos_jqadm:
             pattern:    ^/unittest/jqadm
             provider: in_memory

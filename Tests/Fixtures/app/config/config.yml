@@ -42,5 +42,11 @@ doctrine:
 
 aimeos_shop:
     disable_sites: false
-    resource:
-        nosql: test
+    mshop:
+        customer:
+            manager:
+                name: Standard
+                password:
+                    name: Standard
+                    options:
+                        format: "%%1$s{%%2$s}"

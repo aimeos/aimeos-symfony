@@ -42,7 +42,7 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'GET', '/unittest/jqadm/copy/product/0' );
+		$client->request( 'GET', '/unittest/jqadm/copy/product/1' );
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
@@ -102,7 +102,7 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'GET', '/unittest/jqadm/get/product/0' );
+		$client->request( 'GET', '/unittest/jqadm/get/product/1' );
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
