@@ -51,7 +51,7 @@ class CatalogControllerTest extends WebTestCase
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 3, $crawler->filter( '.catalog-stage-breadcrumb li' )->count() );
-		$this->assertEquals( 1, $crawler->filter( '.catalog-list-promo .product a:contains("Cafe Noire Expresso")' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->count() );
 	}
 
 
@@ -102,23 +102,23 @@ class CatalogControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list .pagination .option-name' )->link();
 		$crawler = $client->click( $link );
 
-		$link = $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->link();
+		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Cappuccino")' )->link();
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail' )->count() );
-		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unittest: Bundle")' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Cafe Noire Cappuccino")' )->count() );
 
 		$link = $crawler->filter( '.catalog-stage-navigator a.next' )->link();
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail' )->count() );
-		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unterproduct 3")' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Cafe Noire Expresso")' )->count() );
 
 		$link = $crawler->filter( '.catalog-stage-navigator a.prev' )->link();
 		$crawler = $client->click( $link );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-detail' )->count() );
-		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Unittest: Bundle")' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.catalog-detail:contains("Cafe Noire Cappuccino")' )->count() );
 	}
 
 
