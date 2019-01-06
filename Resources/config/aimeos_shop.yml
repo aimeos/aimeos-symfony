@@ -8,9 +8,10 @@ page:
     basket-index: ['basket/standard','basket/related']
     catalog-count: ['catalog/count']
     catalog-detail: ['basket/mini','catalog/stage','catalog/detail','catalog/session']
-    catalog-list: ['basket/mini','catalog/filter','catalog/stage','catalog/lists']
+    catalog-list: ['basket/mini','catalog/filter','catalog/lists']
     catalog-suggest: ['catalog/suggest']
     catalog-stock: ['catalog/stock']
+    catalog-tree: ['basket/mini','catalog/filter','catalog/stage','catalog/lists']
     checkout-confirm: ['checkout/confirm']
     checkout-index: ['checkout/standard']
     checkout-update: ['checkout/update']
@@ -114,6 +115,9 @@ client:
             suggest:
                 url:
                     target: aimeos_shop_suggest
+            tree:
+                url:
+                    target: aimeos_shop_tree
         common:
             content:
                 baseurl: /

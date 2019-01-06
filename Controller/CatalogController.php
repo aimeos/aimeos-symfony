@@ -60,6 +60,18 @@ class CatalogController extends AbstractController
 
 
 	/**
+	 * Returns the html for the catalog tree page.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function treeAction()
+	{
+		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-tree' );
+		return $this->render( 'AimeosShopBundle:Catalog:tree.html.twig', $params );
+	}
+
+
+	/**
 	 * Returns the html body part for the catalog stock page.
 	 *
 	 * @return Response Response object containing the generated output
