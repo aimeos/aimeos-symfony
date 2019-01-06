@@ -34,6 +34,7 @@ resource:
         adapter: Standard
         basedir: "%kernel.root_dir%/../web"
         tempdir: "%kernel.cache_dir%"
+        baseurl: "/"
     fs-admin:
         adapter: Standard
         basedir: "%kernel.root_dir%/../web/uploads"
