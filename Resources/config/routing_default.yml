@@ -11,15 +11,15 @@ aimeos_shop_tree:
     defaults: { _controller: AimeosShopBundle:Catalog:tree }
 
 aimeos_shop_detail:
-    path: /detail/{d_prodid}/{d_name}/{d_pos}
-    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '', d_pos: 0 }
+    path: /d/{d_name}/{d_prodid}/{d_pos}
+    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_pos: 0 }
 
 aimeos_shop_list:
     path: /list
     defaults: { _controller: AimeosShopBundle:Catalog:list }
 
 aimeos_shop_session_pinned:
-    path: /detail/pin/{pin_action}/{pin_id}/{d_prodid}/{d_name}
+    path: /d/pin/{pin_action}/{pin_id}/{d_prodid}/{d_name}
     defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '', d_pos: 0 }
 
 aimeos_shop_suggest:
