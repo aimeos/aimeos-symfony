@@ -448,6 +448,6 @@ class JsonapiControllerTest extends WebTestCase
 
 		// delete created order
 		$context = static::$kernel->getContainer()->get( 'aimeos_context' )->get();
-		\Aimeos\MShop\Factory::createManager( $context, 'order/base' )->deleteItem( $basketJson['data']['id'] );
+		\Aimeos\MShop::create( $context, 'order/base' )->deleteItem( $basketJson['data']['id'] );
 	}
 }

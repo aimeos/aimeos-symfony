@@ -130,7 +130,6 @@ class BasketControllerTest extends WebTestCase
 		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
 		$crawler = $client->submit( $form );
 
-
 		$form = $crawler->filter( '.basket-standard .btn-update' )->form();
 		$form['b_prod[0][quantity]'] = 3;
 		$crawler = $client->submit( $form );
