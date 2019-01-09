@@ -61,6 +61,9 @@ class SetupCommand extends Command
 		$dbconfig = $this->getDbConfig( $config );
 		$this->setOptions( $config, $input );
 
+		\Aimeos\MShop::cache( false );
+		\Aimeos\MAdmin::cache( false );
+
 		$taskPaths = $this->getContainer()->get( 'aimeos' )->get()->getSetupPaths( $tplsite );
 		$manager = new \Aimeos\MW\Setup\Manager\Multiple( $ctx->getDatabaseManager(), $dbconfig, $taskPaths, $ctx );
 
