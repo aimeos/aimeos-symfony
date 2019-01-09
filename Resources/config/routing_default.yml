@@ -19,8 +19,8 @@ aimeos_shop_list:
     defaults: { _controller: AimeosShopBundle:Catalog:list }
 
 aimeos_shop_session_pinned:
-    path: /d/pin/{pin_action}/{pin_id}/{d_prodid}/{d_name}
-    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '', d_pos: 0 }
+    path: /d/pin/{pin_action}/{pin_id}/{d_name}
+    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '' }
 
 aimeos_shop_suggest:
     path: /suggest
