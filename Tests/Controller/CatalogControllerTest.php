@@ -2,7 +2,6 @@
 
 namespace Aimeos\ShopBundle\Tests\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 
