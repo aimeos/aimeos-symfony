@@ -40,10 +40,10 @@ class AccountController extends AbstractController
 	 */
 	public function downloadAction()
 	{
-		$context = $this->container->get('aimeos_context')->get();
+		$context = $this->container->get('aimeos.context')->get();
 		$langid = $context->getLocale()->getLanguageId();
 
-		$view = $this->container->get('aimeos_view')->create( $context, array(), $langid );
+		$view = $this->container->get('aimeos.view')->create( $context, array(), $langid );
 		$context->setView( $view );
 
 		$client = \Aimeos\Client\Html::create( $context, 'account/download' );

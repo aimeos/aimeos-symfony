@@ -93,7 +93,7 @@ class View
 		else
 		{
 			$fcn = function() use ( $container, $context ) {
-				return $container->get( 'aimeos_support' )->getGroups( $context );
+				return $container->get( 'aimeos.support' )->getGroups( $context );
 			};
 
 			$helper = new \Aimeos\MW\View\Helper\Access\Standard( $view, $fcn );
@@ -242,7 +242,7 @@ class View
 	{
 		if( $locale !== null )
 		{
-			$i18n = $this->container->get( 'aimeos_i18n' )->get( array( $locale ) );
+			$i18n = $this->container->get( 'aimeos.i18n' )->get( array( $locale ) );
 			$translation = $i18n[$locale];
 		}
 		else

@@ -50,7 +50,7 @@ class SetupCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$ctx = $this->getContainer()->get( 'aimeos_context' )->get( false, 'command' );
+		$ctx = $this->getContainer()->get( 'aimeos.context' )->get( false, 'command' );
 		$ctx->setEditor( 'aimeos:setup' );
 
 		$config = $ctx->getConfig();

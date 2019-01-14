@@ -42,13 +42,13 @@ class Page
 	 */
 	public function getSections( $pageName )
 	{
-		$context = $this->container->get('aimeos_context')->get();
+		$context = $this->container->get('aimeos.context')->get();
 		$pagesConfig = $this->container->getParameter( 'aimeos_shop.page' );
 		$result = array( 'aibody' => array(), 'aiheader' => array() );
 
 		$langid = $context->getLocale()->getLanguageId();
 		$tmplPaths = $this->container->get('aimeos')->get()->getCustomPaths( 'client/html/templates' );
-		$view = $this->container->get('aimeos_view')->create( $context, $tmplPaths, $langid );
+		$view = $this->container->get('aimeos.view')->create( $context, $tmplPaths, $langid );
 		$context->setView( $view );
 
 		if( isset( $pagesConfig[$pageName] ) )

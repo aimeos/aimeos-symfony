@@ -126,11 +126,11 @@ class JsonadmController extends Controller
 		$aimeos = $this->get( 'aimeos' )->get();
 		$templatePaths = $aimeos->getCustomPaths( 'admin/jsonadm/templates' );
 
-		$context = $this->get( 'aimeos_context' )->get( false, 'backend' );
-		$context->setI18n( $this->get('aimeos_i18n')->get( array( $lang, 'en' ) ) );
-		$context->setLocale( $this->get('aimeos_locale')->getBackend( $context, $site ) );
+		$context = $this->get( 'aimeos.context' )->get( false, 'backend' );
+		$context->setI18n( $this->get('aimeos.i18n')->get( array( $lang, 'en' ) ) );
+		$context->setLocale( $this->get('aimeos.locale')->getBackend( $context, $site ) );
 
-		$view = $this->get('aimeos_view')->create( $context, $templatePaths, $lang );
+		$view = $this->get('aimeos.view')->create( $context, $templatePaths, $lang );
 		$context->setView( $view );
 
 		return \Aimeos\Admin\JsonAdm::create( $context, $aimeos, $resource );
