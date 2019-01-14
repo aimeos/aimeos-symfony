@@ -10,6 +10,7 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -19,7 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @package symfony
  * @subpackage Controller
  */
-class BasketController extends AbstractController
+class BasketController extends Controller
 {
 	/**
 	 * Returns the html for the standard basket page.
@@ -49,7 +50,10 @@ class BasketController extends AbstractController
 	 */
 	public function miniComponentAction()
 	{
-		$response = $this->getOutput( 'basket/mini' );
+		$client = $this->container->get( 'shop' )->get( 'basket/mini' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		$response = new Response( (string) $client->getBody() );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
 	}
@@ -62,7 +66,10 @@ class BasketController extends AbstractController
 	 */
 	public function relatedComponentAction()
 	{
-		$response = $this->getOutput( 'basket/related' );
+		$client = $this->container->get( 'shop' )->get( 'basket/related' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		$response = new Response( (string) $client->getBody() );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
 	}
@@ -75,7 +82,10 @@ class BasketController extends AbstractController
 	 */
 	public function standardComponentAction()
 	{
-		$response = $this->getOutput( 'basket/standard' );
+		$client = $this->container->get( 'shop' )->get( 'basket/standard' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		$response = new Response( (string) $client->getBody() );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
 	}

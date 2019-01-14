@@ -10,14 +10,10 @@ class LocaleControllerTest extends WebTestCase
 {
 	public function testSelectComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\LocaleController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/localeselectcomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->selectComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos locale-select', $client->getResponse()->getContent() );
 	}
 }

@@ -223,98 +223,70 @@ class CatalogControllerTest extends WebTestCase
 
 	public function testCountComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/catalogcountcomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->countComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'catalog-filter-count', $client->getResponse()->getContent() );
 	}
 
 
 	public function testDetailComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/catalogdetailcomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->detailComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos catalog-detail', $client->getResponse()->getContent() );
 	}
 
 
 	public function testFilterComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/catalogfiltercomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->filterComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos catalog-filter', $client->getResponse()->getContent() );
 	}
 
 
 	public function testListComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/cataloglistcomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->listComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos catalog-list', $client->getResponse()->getContent() );
 	}
 
 
 	public function testSessionComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/catalogsessioncomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->sessionComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos catalog-session', $client->getResponse()->getContent() );
 	}
 
 
 	public function testStageComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/catalogstagecomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->stageComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos catalog-stage', $client->getResponse()->getContent() );
 	}
 
 
 	public function testStockComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CatalogController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/catalogstockcomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->stockComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'stock-list', $client->getResponse()->getContent() );
 	}
 }

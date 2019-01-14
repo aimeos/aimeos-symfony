@@ -202,42 +202,30 @@ class BasketControllerTest extends WebTestCase
 
 	public function testMiniComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\BasketController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/basketminicomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->miniComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos basket-mini', $client->getResponse()->getContent() );
 	}
 
 
 	public function testRelatedComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\BasketController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/basketrelatedcomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->relatedComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos basket-related', $client->getResponse()->getContent() );
 	}
 
 
 	public function testStandardComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\BasketController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/basketstandardcomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->standardComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos basket-standard', $client->getResponse()->getContent() );
 	}
 }

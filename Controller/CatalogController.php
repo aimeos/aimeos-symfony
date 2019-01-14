@@ -10,6 +10,7 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -19,7 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @package symfony
  * @subpackage Controller
  */
-class CatalogController extends AbstractController
+class CatalogController extends Controller
 {
 	/**
 	 * Returns the view for the XHR response with the counts for the facetted search.
@@ -154,9 +155,12 @@ class CatalogController extends AbstractController
 	 */
 	public function countComponentAction()
 	{
-		$response = $this->getOutput( 'catalog/count' )->setMaxAge( 300 );
+		$client = $this->container->get( 'shop' )->get( 'catalog/count' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		$response = new Response( (string) $client->getBody() );
 		$response->headers->set( 'Content-Type', 'application/javascript' );
-		return $response;
+		return $response->setMaxAge( 300 );
 	}
 
 
@@ -167,7 +171,10 @@ class CatalogController extends AbstractController
 	 */
 	public function detailComponentAction()
 	{
-		return $this->getOutput( 'catalog/detail' );
+		$client = $this->container->get( 'shop' )->get( 'catalog/detail' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
 	}
 
 
@@ -178,7 +185,10 @@ class CatalogController extends AbstractController
 	 */
 	public function filterComponentAction()
 	{
-		return $this->getOutput( 'catalog/filter' );
+		$client = $this->container->get( 'shop' )->get( 'catalog/filter' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
 	}
 
 
@@ -189,7 +199,10 @@ class CatalogController extends AbstractController
 	 */
 	public function listComponentAction()
 	{
-		return $this->getOutput( 'catalog/lists' );
+		$client = $this->container->get( 'shop' )->get( 'catalog/lists' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
 	}
 
 
@@ -200,7 +213,10 @@ class CatalogController extends AbstractController
 	 */
 	public function sessionComponentAction()
 	{
-		return $this->getOutput( 'catalog/session' );
+		$client = $this->container->get( 'shop' )->get( 'catalog/session' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
 	}
 
 
@@ -211,7 +227,10 @@ class CatalogController extends AbstractController
 	 */
 	public function stageComponentAction()
 	{
-		return $this->getOutput( 'catalog/stage' );
+		$client = $this->container->get( 'shop' )->get( 'catalog/stage' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
 	}
 
 
@@ -222,9 +241,12 @@ class CatalogController extends AbstractController
 	 */
 	public function stockComponentAction()
 	{
-		$response = $this->getOutput( 'catalog/stock' )->setMaxAge( 30 );
+		$client = $this->container->get( 'shop' )->get( 'catalog/stock' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		$response = new Response( (string) $client->getBody() );
 		$response->headers->set( 'Content-Type', 'application/javascript' );
-		return $response;
+		return $response->setMaxAge( 30 );
 	}
 
 
@@ -235,7 +257,10 @@ class CatalogController extends AbstractController
 	 */
 	public function suggestComponentAction()
 	{
-		$response = $this->getOutput( 'catalog/suggest' );
+		$client = $this->container->get( 'shop' )->get( 'catalog/suggest' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		$response = new Response( (string) $client->getBody() );
 		$response->headers->set( 'Content-Type', 'application/json' );
 		return $response;
 	}

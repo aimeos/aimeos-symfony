@@ -285,43 +285,30 @@ class CheckoutControllerTest extends WebTestCase
 
 	public function testConfirmComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CheckoutController' )
-		->setMethods( array( 'getOutput' ) )
-		->disableOriginalConstructor()
-		->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/checkoutconfirmcomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->confirmComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos checkout-confirm', $client->getResponse()->getContent() );
 	}
 
 
 	public function testStandardComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CheckoutController' )
-		->setMethods( array( 'getOutput' ) )
-		->disableOriginalConstructor()
-		->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/checkoutstandardcomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->standardComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos checkout-standard', $client->getResponse()->getContent() );
 	}
 
 
 	public function testUpdateComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\CheckoutController' )
-		->setMethods( array( 'getOutput' ) )
-		->disableOriginalConstructor()
-		->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/checkoutupdatecomponent?code=unitpaymentcode' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->updateComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
 	}
 
 

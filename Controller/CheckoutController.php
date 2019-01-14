@@ -10,6 +10,7 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -19,7 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @package symfony
  * @subpackage Controller
  */
-class CheckoutController extends AbstractController
+class CheckoutController extends Controller
 {
 	/**
 	 * Returns the html for the checkout confirmation page.
@@ -94,7 +95,10 @@ class CheckoutController extends AbstractController
 	 */
 	public function confirmComponentAction()
 	{
-		$response = $this->getOutput( 'checkout/confirm' );
+		$client = $this->container->get( 'shop' )->get( 'checkout/confirm' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		$response = new Response( (string) $client->getBody() );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
 	}
@@ -107,7 +111,10 @@ class CheckoutController extends AbstractController
 	 */
 	public function standardComponentAction()
 	{
-		$response = $this->getOutput( 'checkout/standard' );
+		$client = $this->container->get( 'shop' )->get( 'checkout/standard' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		$response = new Response( (string) $client->getBody() );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
 	}
@@ -120,7 +127,10 @@ class CheckoutController extends AbstractController
 	 */
 	public function updateComponentAction()
 	{
-		$response = $this->getOutput( 'checkout/update' );
+		$client = $this->container->get( 'shop' )->get( 'checkout/update' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		$response = new Response( (string) $client->getBody() );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
 	}

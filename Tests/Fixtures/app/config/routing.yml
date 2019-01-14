@@ -36,9 +36,79 @@ aimeos_shop_privacy:
     defaults: { _controller: AimeosShopBundle:Page:privacy }
 
 
-aimeos_test_favoritecomponent:
-    path: /{site}/{locale}/{currency}/test/favoritecomponent
+aimeos_test_accountfavoritecomponent:
+    path: /{site}/{locale}/{currency}/test/accountfavoritecomponent
     defaults: { _controller: AimeosShopBundle:Account:favoriteComponent }
+
+aimeos_test_accounthistorycomponent:
+    path: /{site}/{locale}/{currency}/test/accounthistorycomponent
+    defaults: { _controller: AimeosShopBundle:Account:historyComponent }
+
+aimeos_test_accountprofilecomponent:
+    path: /{site}/{locale}/{currency}/test/accountprofilecomponent
+    defaults: { _controller: AimeosShopBundle:Account:profileComponent }
+
+aimeos_test_accountwatchcomponent:
+    path: /{site}/{locale}/{currency}/test/accountwatchcomponent
+    defaults: { _controller: AimeosShopBundle:Account:watchComponent }
+
+aimeos_test_basketminicomponent:
+    path: /{site}/{locale}/{currency}/test/basketminicomponent
+    defaults: { _controller: AimeosShopBundle:Basket:miniComponent }
+
+aimeos_test_basketrelatedcomponent:
+    path: /{site}/{locale}/{currency}/test/basketrelatedcomponent
+    defaults: { _controller: AimeosShopBundle:Basket:relatedComponent }
+
+aimeos_test_basketstandardcomponent:
+    path: /{site}/{locale}/{currency}/test/basketstandardcomponent
+    defaults: { _controller: AimeosShopBundle:Basket:standardComponent }
+
+aimeos_test_catalogcountcomponent:
+    path: /{site}/{locale}/{currency}/test/catalogcountcomponent
+    defaults: { _controller: AimeosShopBundle:Catalog:countComponent }
+
+aimeos_test_catalogdetailcomponent:
+    path: /{site}/{locale}/{currency}/test/catalogdetailcomponent
+    defaults: { _controller: AimeosShopBundle:Catalog:detailComponent }
+
+aimeos_test_catalogfiltercomponent:
+    path: /{site}/{locale}/{currency}/test/catalogfiltercomponent
+    defaults: { _controller: AimeosShopBundle:Catalog:filterComponent }
+
+aimeos_test_cataloglistcomponent:
+    path: /{site}/{locale}/{currency}/test/cataloglistcomponent
+    defaults: { _controller: AimeosShopBundle:Catalog:listComponent }
+
+aimeos_test_catalogsessioncomponent:
+    path: /{site}/{locale}/{currency}/test/catalogsessioncomponent
+    defaults: { _controller: AimeosShopBundle:Catalog:sessionComponent }
+
+aimeos_test_catalogstagecomponent:
+    path: /{site}/{locale}/{currency}/test/catalogstagecomponent
+    defaults: { _controller: AimeosShopBundle:Catalog:stageComponent }
+
+aimeos_test_catalogstockcomponent:
+    path: /{site}/{locale}/{currency}/test/catalogstockcomponent
+    defaults: { _controller: AimeosShopBundle:Catalog:stockComponent }
+
+aimeos_test_checkoutconfirmcomponent:
+    path: /{site}/{locale}/{currency}/test/checkoutconfirmcomponent
+    defaults: { _controller: AimeosShopBundle:Checkout:confirmComponent }
+
+aimeos_test_checkoutstandardcomponent:
+    path: /{site}/{locale}/{currency}/test/checkoutstandardcomponent
+    defaults: { _controller: AimeosShopBundle:Checkout:standardComponent }
+
+aimeos_test_checkoutupdatecomponent:
+    path: /{site}/{locale}/{currency}/test/checkoutupdatecomponent
+    defaults: { _controller: AimeosShopBundle:Checkout:updateComponent }
+
+
+aimeos_test_localeselectcomponent:
+    path: /{site}/{locale}/{currency}/test/localeselectcomponent
+    defaults: { _controller: AimeosShopBundle:Locale:selectComponent }
+
 
 fos_user_security_logout:
     path: /logout
