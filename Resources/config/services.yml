@@ -19,10 +19,6 @@ services:
         class: Aimeos\ShopBundle\Service\Locale
         arguments: ["@request_stack","@service_container"]
         public: true
-    aimeos_page:
-        class: Aimeos\ShopBundle\Service\Page
-        arguments: ["@service_container"]
-        public: true
     aimeos.support:
         class: Aimeos\ShopBundle\Service\Support
         arguments: []
@@ -30,6 +26,10 @@ services:
     aimeos.view:
         class: Aimeos\ShopBundle\Service\View
         arguments: ["@request_stack","@service_container"]
+        public: true
+    shop:
+        class: Aimeos\ShopBundle\Service\Shop
+        arguments: ["@service_container"]
         public: true
 
     aimeos_account:
