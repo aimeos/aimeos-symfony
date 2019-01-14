@@ -8,6 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class AccountControllerTest extends WebTestCase
 {
+	protected function setUp()
+	{
+		\Aimeos\MShop::cache( false );
+		\Aimeos\Controller\Frontend::cache( false );
+	}
+
+
 	public function testAccount()
 	{
 		$client = static::createClient();

@@ -7,6 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class JsonapiControllerTest extends WebTestCase
 {
+	protected function setUp()
+	{
+		\Aimeos\MShop::cache( false );
+		\Aimeos\Controller\Frontend::cache( false );
+	}
+
+
 	public function testOptionsAction()
 	{
 		$client = static::createClient();
@@ -47,7 +54,7 @@ class JsonapiControllerTest extends WebTestCase
 		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
 		$this->assertEquals( 26, $json['meta']['total'] );
-		$this->assertEquals( 26, count( $json['data'] ) );
+		$this->assertEquals( 25, count( $json['data'] ) );
 	}
 
 

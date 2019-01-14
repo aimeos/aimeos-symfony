@@ -8,6 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class CheckoutControllerTest extends WebTestCase
 {
+	protected function setUp()
+	{
+		\Aimeos\MShop::cache( false );
+		\Aimeos\Controller\Frontend::cache( false );
+	}
+
+
 	public function testStandardNavbar()
 	{
 		$client = static::createClient(array(), array(

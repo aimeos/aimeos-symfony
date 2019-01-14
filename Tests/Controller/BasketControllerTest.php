@@ -8,6 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class BasketControllerTest extends WebTestCase
 {
+	protected function setUp()
+	{
+		\Aimeos\MShop::cache( false );
+		\Aimeos\Controller\Frontend::cache( false );
+	}
+
+
 	public function testStandardAdd()
 	{
 		$client = static::createClient();
