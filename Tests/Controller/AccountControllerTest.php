@@ -32,7 +32,7 @@ class AccountControllerTest extends WebTestCase
 	public function testFavoriteComponent()
 	{
 		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/test/favoritecomponent' );
+		$client->request( 'GET', '/unittest/de/EUR/test/accountfavoritecomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
 		$this->assertContains( 'aimeos account-favorite', $client->getResponse()->getContent() );
@@ -41,42 +41,30 @@ class AccountControllerTest extends WebTestCase
 
 	public function testHistoryComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\AccountController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/accounthistorycomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->historyComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos account-history', $client->getResponse()->getContent() );
 	}
 
 
 	public function testProfileComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\AccountController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/accountprofilecomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->profileComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos account-profile', $client->getResponse()->getContent() );
 	}
 
 
 	public function testWatchComponent()
 	{
-		$mock = $this->getMockBuilder( 'Aimeos\ShopBundle\Controller\AccountController' )
-			->setMethods( array( 'getOutput' ) )
-			->disableOriginalConstructor()
-			->getMock();
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/accountwatchcomponent' );
 
-		$response = Response::create( 'test' );
-		$mock->expects( $this->once() )->method( 'getOutput' )->will( $this->returnValue( $response ) );
-
-		$this->assertSame( $response, $mock->watchComponentAction() );
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertContains( 'aimeos account-watch', $client->getResponse()->getContent() );
 	}
 }

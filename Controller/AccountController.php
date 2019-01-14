@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
 /**
@@ -19,7 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @package symfony
  * @subpackage Controller
  */
-class AccountController extends AbstractController
+class AccountController extends Controller
 {
 	/**
 	 * Returns the html for the "My account" page.
@@ -60,7 +61,10 @@ class AccountController extends AbstractController
 	 */
 	public function favoriteComponentAction()
 	{
-		return $this->getOutput( 'account/favorite' );
+		$client = $this->container->get( 'shop' )->get( 'account/favorite' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
 	}
 
 
@@ -71,7 +75,10 @@ class AccountController extends AbstractController
 	 */
 	public function historyComponentAction()
 	{
-		return $this->getOutput( 'account/history' );
+		$client = $this->container->get( 'shop' )->get( 'account/history' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
 	}
 
 
@@ -82,7 +89,10 @@ class AccountController extends AbstractController
 	 */
 	public function profileComponentAction()
 	{
-		return $this->getOutput( 'account/profile' );
+		$client = $this->container->get( 'shop' )->get( 'account/profile' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
 	}
 
 
@@ -93,6 +103,9 @@ class AccountController extends AbstractController
 	 */
 	public function watchComponentAction()
 	{
-		return $this->getOutput( 'account/watch' );
+		$client = $this->container->get( 'shop' )->get( 'account/watch' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
 	}
 }

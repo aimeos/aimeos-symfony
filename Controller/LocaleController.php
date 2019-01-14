@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
 /**
@@ -19,7 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @package symfony
  * @subpackage Controller
  */
-class LocaleController extends AbstractController
+class LocaleController extends Controller
 {
 	/**
 	 * Returns the output of the locale select component
@@ -28,6 +29,10 @@ class LocaleController extends AbstractController
 	 */
 	public function selectComponentAction()
 	{
-		return $this->getOutput( 'locale/select' );
+		$shop = $this->container->get( 'shop' );
+		$client = $shop->get( 'locale/select' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
 	}
 }
