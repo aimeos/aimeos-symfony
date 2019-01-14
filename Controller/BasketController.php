@@ -28,7 +28,15 @@ class BasketController extends AbstractController
 	 */
 	public function indexAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'basket-index' );
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['basket-index'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
 		$response =  $this->render( 'AimeosShopBundle:Basket:index.html.twig', $params );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;

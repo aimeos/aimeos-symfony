@@ -28,7 +28,15 @@ class CheckoutController extends AbstractController
 	 */
 	public function confirmAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'checkout-confirm' );
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['checkout-confirm'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
 		$response = $this->render( 'AimeosShopBundle:Checkout:confirm.html.twig', $params );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
@@ -42,7 +50,15 @@ class CheckoutController extends AbstractController
 	 */
 	public function indexAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'checkout-index' );
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['checkout-index'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
 		$response = $this->render( 'AimeosShopBundle:Checkout:index.html.twig', $params );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
@@ -56,7 +72,15 @@ class CheckoutController extends AbstractController
 	 */
 	public function updateAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'checkout-update' );
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['checkout-update'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
 		$response = $this->render( 'AimeosShopBundle:Checkout:update.html.twig', $params );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;

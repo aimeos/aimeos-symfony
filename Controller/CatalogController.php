@@ -28,7 +28,15 @@ class CatalogController extends AbstractController
 	 */
 	public function countAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-count' );
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-count'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
 		$response = $this->render( 'AimeosShopBundle:Catalog:count.html.twig', $params )->setMaxAge( 300 );
 		$response->headers->set( 'Content-Type', 'application/javascript' );
 		return $response;
@@ -42,7 +50,15 @@ class CatalogController extends AbstractController
 	 */
 	public function detailAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-detail' );
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-detail'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
 		return $this->render( 'AimeosShopBundle:Catalog:detail.html.twig', $params );
 	}
 
@@ -54,7 +70,15 @@ class CatalogController extends AbstractController
 	 */
 	public function listAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-list' );
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-list'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
 		return $this->render( 'AimeosShopBundle:Catalog:list.html.twig', $params );
 	}
 
@@ -66,7 +90,15 @@ class CatalogController extends AbstractController
 	 */
 	public function treeAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-tree' );
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-tree'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
 		return $this->render( 'AimeosShopBundle:Catalog:tree.html.twig', $params );
 	}
 
@@ -78,7 +110,15 @@ class CatalogController extends AbstractController
 	 */
 	public function stockAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-stock' );
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-stock'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
 		$response = $this->render( 'AimeosShopBundle:Catalog:stock.html.twig', $params )->setMaxAge( 30 );
 		$response->headers->set( 'Content-Type', 'application/javascript' );
 		return $response;
@@ -92,7 +132,15 @@ class CatalogController extends AbstractController
 	 */
 	public function suggestAction()
 	{
-		$params = $this->get( 'aimeos_page' )->getSections( 'catalog-suggest' );
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-suggest'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
 		$response = $this->render( 'AimeosShopBundle:Catalog:suggest.html.twig', $params );
 		$response->headers->set( 'Content-Type', 'application/json' );
 		return $response;
