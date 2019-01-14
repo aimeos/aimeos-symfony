@@ -31,10 +31,10 @@ class AbstractController extends Controller
 	protected function getOutput( $clientName )
 	{
 		$tmplPaths = $this->container->get( 'aimeos' )->get()->getCustomPaths( 'client/html/templates' );
-		$context = $this->container->get( 'aimeos_context' )->get();
+		$context = $this->container->get( 'aimeos.context' )->get();
 		$langid = $context->getLocale()->getLanguageId();
 
-		$view = $this->container->get( 'aimeos_view' )->create( $context, $tmplPaths, $langid );
+		$view = $this->container->get( 'aimeos.view' )->create( $context, $tmplPaths, $langid );
 		$context->setView( $view );
 
 		$client = \Aimeos\Client\Html::create( $context, $clientName );

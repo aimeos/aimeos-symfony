@@ -115,10 +115,10 @@ class JsonapiController extends Controller
 		$related = ( isset( $args['related'] ) ? $args['related'] : ( isset( $params['related'] ) ? $params['related'] : null ) );
 
 		$tmplPaths = $this->container->get( 'aimeos' )->get()->getCustomPaths( 'client/jsonapi/templates' );
-		$context = $this->container->get( 'aimeos_context' )->get();
+		$context = $this->container->get( 'aimeos.context' )->get();
 		$langid = $context->getLocale()->getLanguageId();
 
-		$view = $this->container->get( 'aimeos_view' )->create( $context, $tmplPaths, $langid );
+		$view = $this->container->get( 'aimeos.view' )->create( $context, $tmplPaths, $langid );
 		$context->setView( $view );
 
 		return \Aimeos\Client\JsonApi::create( $context, $resource . '/' . $related );

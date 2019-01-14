@@ -119,15 +119,15 @@ class JobsCommand extends Command
 	{
 		$container = $this->getContainer();
 		$aimeos = $container->get('aimeos')->get();
-		$context = $container->get( 'aimeos_context' )->get( false, 'command' );
+		$context = $container->get( 'aimeos.context' )->get( false, 'command' );
 
 		$tmplPaths = $aimeos->getCustomPaths( 'controller/jobs/templates' );
 		$tmplPaths = array_merge( $tmplPaths, $aimeos->getCustomPaths( 'client/html/templates' ) );
-		$view = $container->get('aimeos_view')->create( $context, $tmplPaths );
+		$view = $container->get('aimeos.view')->create( $context, $tmplPaths );
 
 		$langManager = \Aimeos\MShop::create( $context, 'locale/language' );
 		$langids = array_keys( $langManager->searchItems( $langManager->createSearch( true ) ) );
-		$i18n = $this->getContainer()->get( 'aimeos_i18n' )->get( $langids );
+		$i18n = $this->getContainer()->get( 'aimeos.i18n' )->get( $langids );
 
 		$context->setEditor( 'aimeos:jobs' );
 		$context->setView( $view );
