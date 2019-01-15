@@ -33,6 +33,7 @@ customize anything to your needs.
 
 This document is for the latest Aimeos Symfony **2018.10 release and later**.
 
+- Beta release: 2019.01
 - LTS release: 2018.10
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
