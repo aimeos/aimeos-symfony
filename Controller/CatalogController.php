@@ -60,7 +60,7 @@ class CatalogController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		return $this->render( 'AimeosShopBundle:Catalog:detail.html.twig', $params );
+		return $this->render( 'AimeosShopBundle:Catalog:detail.html.twig', $params )->setMaxAge( 3600 );
 	}
 
 
@@ -80,7 +80,7 @@ class CatalogController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		return $this->render( 'AimeosShopBundle:Catalog:list.html.twig', $params );
+		return $this->render( 'AimeosShopBundle:Catalog:list.html.twig', $params )->setMaxAge( 3600 );
 	}
 
 
@@ -100,7 +100,7 @@ class CatalogController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		return $this->render( 'AimeosShopBundle:Catalog:tree.html.twig', $params );
+		return $this->render( 'AimeosShopBundle:Catalog:tree.html.twig', $params )->setMaxAge( 3600 );
 	}
 
 
@@ -142,7 +142,7 @@ class CatalogController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( 'AimeosShopBundle:Catalog:suggest.html.twig', $params );
+		$response = $this->render( 'AimeosShopBundle:Catalog:suggest.html.twig', $params )->setMaxAge( 300 );
 		$response->headers->set( 'Content-Type', 'application/json' );
 		return $response;
 	}
@@ -174,7 +174,8 @@ class CatalogController extends Controller
 		$client = $this->container->get( 'shop' )->get( 'catalog/detail' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
 
-		return new Response( (string) $client->getBody() );
+		$response = new Response( (string) $client->getBody() );
+		return $response->setMaxAge( 3600 );
 	}
 
 
@@ -188,7 +189,8 @@ class CatalogController extends Controller
 		$client = $this->container->get( 'shop' )->get( 'catalog/filter' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
 
-		return new Response( (string) $client->getBody() );
+		$response = new Response( (string) $client->getBody() );
+		return $response->setMaxAge( 3600 );
 	}
 
 
@@ -202,7 +204,8 @@ class CatalogController extends Controller
 		$client = $this->container->get( 'shop' )->get( 'catalog/lists' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
 
-		return new Response( (string) $client->getBody() );
+		$response = new Response( (string) $client->getBody() );
+		return $response->setMaxAge( 3600 );
 	}
 
 
@@ -216,7 +219,8 @@ class CatalogController extends Controller
 		$client = $this->container->get( 'shop' )->get( 'catalog/session' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
 
-		return new Response( (string) $client->getBody() );
+		$response = new Response( (string) $client->getBody() );
+		return $response->setMaxAge( 0 );
 	}
 
 
@@ -230,7 +234,8 @@ class CatalogController extends Controller
 		$client = $this->container->get( 'shop' )->get( 'catalog/stage' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
 
-		return new Response( (string) $client->getBody() );
+		$response = new Response( (string) $client->getBody() );
+		return $response->setMaxAge( 3600 );
 	}
 
 
@@ -262,6 +267,6 @@ class CatalogController extends Controller
 
 		$response = new Response( (string) $client->getBody() );
 		$response->headers->set( 'Content-Type', 'application/json' );
-		return $response;
+		return $response->setMaxAge( 300 );
 	}
 }
