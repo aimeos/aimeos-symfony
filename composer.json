@@ -45,7 +45,7 @@
 		"zendframework/zend-diactoros": "~1.3"
 	},
 	"require-dev": {
-		"satooshi/php-coveralls": "dev-master",
+		"php-coveralls/php-coveralls": "~2.0",
 		"doctrine/doctrine-bundle": "~1.2",
 		"doctrine/orm": "~2.2,>=2.2.3",
 		"phpunit/phpunit": "^4.8.35||~5.0"
