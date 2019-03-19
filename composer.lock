@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7bdcdf8d8fcd014acbba3cd62f3c1f7",
+    "content-hash": "71bfb60e0ea7a0d41b7f5ef4e83cc55a",
     "packages": [
         {
             "name": "aimeos/ai-admin-jqadm",
@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "a2cddfab0387bdd01bac8666035f7c2900f464fe"
+                "reference": "daac5a20bbd2558fc7fc80ca7705caa625d7c80d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/a2cddfab0387bdd01bac8666035f7c2900f464fe",
-                "reference": "a2cddfab0387bdd01bac8666035f7c2900f464fe",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/daac5a20bbd2558fc7fc80ca7705caa625d7c80d",
+                "reference": "daac5a20bbd2558fc7fc80ca7705caa625d7c80d",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2019-03-13T08:38:34+00:00"
+            "time": "2019-03-18T16:48:44+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -5142,7 +5142,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.5.0"
+        "php": ">=7.1.0"
     },
     "platform-dev": []
 }
