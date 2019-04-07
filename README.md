@@ -4,6 +4,7 @@
 
 Aimeos Symfony bundle
 ======================
+[![Total Downloads](https://poser.pugx.org/aimeos/aimeos-symfony/d/total.svg)](https://packagist.org/packages/aimeos/aimeos-symfony)
 [![Build Status](https://travis-ci.org/aimeos/aimeos-symfony.svg?branch=master)](https://travis-ci.org/aimeos/aimeos-symfony)
 [![Coverage Status](https://coveralls.io/repos/aimeos/aimeos-symfony/badge.svg?branch=master)](https://coveralls.io/r/aimeos/aimeos-symfony?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/aimeos-symfony/?branch=master)
