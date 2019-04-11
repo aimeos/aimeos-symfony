@@ -4,6 +4,7 @@
 
 Aimeos Symfony bundle
 ======================
+
 [![Total Downloads](https://poser.pugx.org/aimeos/aimeos-symfony/d/total.svg)](https://packagist.org/packages/aimeos/aimeos-symfony)
 [![Build Status](https://travis-ci.org/aimeos/aimeos-symfony.svg?branch=master)](https://travis-ci.org/aimeos/aimeos-symfony)
 [![Coverage Status](https://coveralls.io/repos/aimeos/aimeos-symfony/badge.svg?branch=master)](https://coveralls.io/r/aimeos/aimeos-symfony?branch=master)
@@ -34,7 +35,7 @@ customize anything to your needs.
 
 This document is for the latest Aimeos Symfony **2018.10 release and later**.
 
-- Beta release: 2019.01
+- Stable release: 2019.04
 - LTS release: 2018.10
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
@@ -204,7 +205,7 @@ Then add these lines to your `composer.json` of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2018.10",
+        "aimeos/aimeos-symfony": "~2014.04",
         ...
     },
     "scripts": {
@@ -292,7 +293,9 @@ Start the PHP web server in the base directory of your application to do some qu
 
 Then, you should be able to call the catalog list page in your browser using
 
-```http://127.0.0.1:8000/list```
+Since 2019.04: http://127.0.0.1:8000/shop
+Until 2019.01: http://127.0.0.1:8000/list
+
 
 ## Login and Admin
 
