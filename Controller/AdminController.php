@@ -33,8 +33,8 @@ class AdminController extends Controller
 		if( $this->hasRole( ['ROLE_ADMIN', 'ROLE_SUPER_ADMIN'] ) )
 		{
 			$context = $this->get( 'aimeos.context' )->get( false );
+			$siteManager = \Aimeos\MShop::create( $context, 'locale/site' );
 			$user = $this->get( 'security.token_storage' )->getToken()->getUser();
-			$siteManager = \Aimeos\MShop\Factory::create( $context, 'locale/site' );
 			$siteCode = ( $user->getSiteId() ? $siteManager->getItem( $user->getSiteId() )->getCode() : 'default' );
 			$locale = $user->getLanguageId() ?: $this->getParameter( 'locale' );
 
