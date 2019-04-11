@@ -41,4 +41,4 @@ security:
     access_control:
         - { path: ^/unittest/jqadm, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
         - { path: ^/unittest/jsonadm, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
-        - { path: ^/unittest/de/EUR/checkout, roles: ROLE_USER }
+        - { path: ^/unittest/de/EUR/shop/checkout, roles: ROLE_USER }

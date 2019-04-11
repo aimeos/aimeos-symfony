@@ -6,20 +6,16 @@ aimeos_shop_count:
     path: /count
     defaults: { _controller: AimeosShopBundle:Catalog:count, _format: js }
 
-aimeos_shop_tree:
-    path: /c/{f_name}/{f_catid}
-    defaults: { _controller: AimeosShopBundle:Catalog:tree }
+aimeos_shop_checkout:
+    path: /checkout/{c_step}
+    defaults: { _controller: AimeosShopBundle:Checkout:index, c_step: null }
 
-aimeos_shop_detail:
-    path: /d/{d_name}/{d_pos}
-    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_pos: 0 }
-
-aimeos_shop_list:
-    path: /list
-    defaults: { _controller: AimeosShopBundle:Catalog:list }
+aimeos_shop_confirm:
+    path: /confirm/{code}
+    defaults: { _controller: AimeosShopBundle:Checkout:confirm, code: null }
 
 aimeos_shop_session_pinned:
-    path: /d/pin/{pin_action}/{pin_id}/{d_name}
+    path: /pin/{pin_action}/{pin_id}/{d_name}
     defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '' }
 
 aimeos_shop_suggest:
@@ -30,10 +26,14 @@ aimeos_shop_stock:
     path: /stock
     defaults: { _controller: AimeosShopBundle:Catalog:stock, _format: js }
 
-aimeos_shop_checkout:
-    path: /checkout/{c_step}
-    defaults: { _controller: AimeosShopBundle:Checkout:index, c_step: null }
+aimeos_shop_tree:
+    path: /{f_name}~{f_catid}
+    defaults: { _controller: AimeosShopBundle:Catalog:tree }
 
-aimeos_shop_confirm:
-    path: /confirm/{code}
-    defaults: { _controller: AimeosShopBundle:Checkout:confirm, code: null }
+aimeos_shop_detail:
+    path: /{d_name}/{d_pos}
+    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_pos: 0 }
+
+aimeos_shop_list:
+    path: ''
+    defaults: { _controller: AimeosShopBundle:Catalog:list }

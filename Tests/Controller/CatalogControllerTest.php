@@ -17,7 +17,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testCount()
 	{
 		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/count' );
+		$client->request( 'GET', '/unittest/de/EUR/shop/count' );
 		$content = $client->getResponse()->getContent();
 
 		$this->assertContains( '".catalog-filter-count li.cat-item"', $content );
@@ -28,7 +28,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testFilterSearch()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/shop/' );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-filter-search' )->count() );
 
@@ -43,7 +43,7 @@ class CatalogControllerTest extends WebTestCase
  	public function testFilterTree()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/shop/' );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-filter-tree' )->count() );
 
@@ -64,7 +64,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testFilterAttribute()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/shop/' );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-filter-attribute' )->count() );
 
@@ -84,7 +84,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testStageBreadcrumb()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/shop/' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
@@ -103,7 +103,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testStageNavigator()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/shop/' );
 
 		$link = $crawler->filter( '.catalog-list .pagination .option-name' )->link();
 		$crawler = $client->click( $link );
@@ -131,7 +131,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testListSortationName()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/shop/' );
 
 		$link = $crawler->filter( '.catalog-list .pagination .option-name' )->link();
 		$crawler = $client->click( $link );
@@ -158,7 +158,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testListSortationPrice()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/shop/' );
 
 		$link = $crawler->filter( '.catalog-list .pagination .option-price' )->link();
 		$crawler = $client->click( $link );
@@ -182,7 +182,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testDetailPinned()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/shop/' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
@@ -197,7 +197,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testDetailLastSeen()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/list' );
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/shop/' );
 
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
@@ -209,7 +209,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testSuggest()
 	{
 		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/suggest', array( 'f_search' => 'Cafe' ) );
+		$client->request( 'GET', '/unittest/de/EUR/shop/suggest', array( 'f_search' => 'Cafe' ) );
 		$content = $client->getResponse()->getContent();
 
 		$this->assertStringStartsWith( '[{', $content );
@@ -219,7 +219,7 @@ class CatalogControllerTest extends WebTestCase
 	public function testStock()
 	{
 		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/stock' );
+		$client->request( 'GET', '/unittest/de/EUR/shop/stock' );
 		$content = $client->getResponse()->getContent();
 
 		$this->assertContains( '.aimeos .product .stock', $content );

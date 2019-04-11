@@ -1,3 +1,12 @@
+aimeos_shop_terms:
+    path: /terms
+    defaults: { _controller: AimeosShopBundle:Page:terms }
+
+aimeos_shop_privacy:
+    path: /privacy
+    defaults: { _controller: AimeosShopBundle:Page:privacy }
+
+
 aimeos_shop_adm:
     resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
     prefix: /
@@ -20,17 +29,8 @@ aimeos_shop_account:
 
 aimeos_shop_default:
     resource: "@AimeosShopBundle/Resources/config/routing_default.yml"
-    prefix: /
+    prefix: /shop
 
 aimeos_shop_update:
     resource: "@AimeosShopBundle/Resources/config/routing_update.yml"
     prefix: /
-
-
-aimeos_shop_terms:
-    path: /terms
-    defaults: { _controller: AimeosShopBundle:Page:terms }
-
-aimeos_shop_privacy:
-    path: /privacy
-    defaults: { _controller: AimeosShopBundle:Page:privacy }

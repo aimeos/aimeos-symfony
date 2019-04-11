@@ -1,30 +1,5 @@
-aimeos_shop_adm:
-    resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
-
-aimeos_shop_jqadm:
-    resource: "@AimeosShopBundle/Resources/config/routing_jqadm.yml"
-    prefix: /{site}/jqadm
-
-aimeos_shop_jsonadm:
-    resource: "@AimeosShopBundle/Resources/config/routing_jsonadm.yml"
-    prefix: /{site}/jsonadm
-
-
-aimeos_shop_jsonapi:
-    resource: "@AimeosShopBundle/Resources/config/routing_jsonapi.yml"
-    prefix: /{site}/{locale}/{currency}/jsonapi
-
-aimeos_shop_account:
-    resource: "@AimeosShopBundle/Resources/config/routing_account.yml"
-    prefix:   /{site}/{locale}/{currency}/myaccount
-
-aimeos_shop_default:
-    resource: "@AimeosShopBundle/Resources/config/routing_default.yml"
-    prefix:   /{site}/{locale}/{currency}
-
-aimeos_shop_update:
-    resource: "@AimeosShopBundle/Resources/config/routing_update.yml"
-    prefix:   /{site}/{locale}/{currency}
+fos_user_security_logout:
+    path: /logout
 
 
 aimeos_shop_terms:
@@ -110,5 +85,30 @@ aimeos_test_localeselectcomponent:
     defaults: { _controller: AimeosShopBundle:Locale:selectComponent }
 
 
-fos_user_security_logout:
-    path: /logout
+aimeos_shop_adm:
+    resource: "@AimeosShopBundle/Resources/config/routing_adm.yml"
+
+aimeos_shop_jqadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_jqadm.yml"
+    prefix: /{site}/jqadm
+
+aimeos_shop_jsonadm:
+    resource: "@AimeosShopBundle/Resources/config/routing_jsonadm.yml"
+    prefix: /{site}/jsonadm
+
+
+aimeos_shop_jsonapi:
+    resource: "@AimeosShopBundle/Resources/config/routing_jsonapi.yml"
+    prefix: /{site}/{locale}/{currency}/jsonapi
+
+aimeos_shop_account:
+    resource: "@AimeosShopBundle/Resources/config/routing_account.yml"
+    prefix:   /{site}/{locale}/{currency}/myaccount
+
+aimeos_shop_default:
+    resource: "@AimeosShopBundle/Resources/config/routing_default.yml"
+    prefix:   /{site}/{locale}/{currency}/shop
+
+aimeos_shop_update:
+    resource: "@AimeosShopBundle/Resources/config/routing_update.yml"
+    prefix:   /{site}/{locale}/{currency}
