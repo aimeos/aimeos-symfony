@@ -29,10 +29,14 @@ aimeos_shop_stock:
 aimeos_shop_tree:
     path: /{f_name}~{f_catid}
     defaults: { _controller: AimeosShopBundle:Catalog:tree }
+    requirements:
+        f_name: '[^~]+'
 
 aimeos_shop_detail:
-    path: /{d_name}/{d_pos}
-    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_pos: 0 }
+    path: /{d_name}/{d_pos}/{d_prodid}
+    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_pos: null, d_prodid: null }
+    requirements:
+        d_pos: '[0-9]*'
 
 aimeos_shop_list:
     path: ''
