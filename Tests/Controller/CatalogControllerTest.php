@@ -139,19 +139,20 @@ class CatalogControllerTest extends WebTestCase
 		$products = $crawler->filter( '.catalog-list-items .product' );
 		$this->assertEquals( 1, $products->eq( 0 )->filter( 'h2:contains("Cafe Noire Cappuccino")' )->count() );
 		$this->assertEquals( 1, $products->eq( 1 )->filter( 'h2:contains("Cafe Noire Expresso")' )->count() );
-		$this->assertEquals( 1, $products->eq( 2 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
-		$this->assertEquals( 1, $products->eq( 3 )->filter( 'h2:contains("Unterproduct 3")' )->count() );
+		$this->assertEquals( 1, $products->eq( 2 )->filter( 'h2:contains("MNOP/16 disc")' )->count() );
+		$this->assertEquals( 1, $products->eq( 3 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
 
 		$link = $crawler->filter( '.catalog-list .pagination .option-name' )->link();
 		$crawler = $client->click( $link );
 
 		$products = $crawler->filter( '.catalog-list-items .product' );
+		$count = $products->count();
 
-		$this->assertGreaterThan( 3, $products->count() );
-		$this->assertEquals( 1, $products->eq( 0 )->filter( 'h2:contains("Unterproduct 3")' )->count() );
-		$this->assertEquals( 1, $products->eq( 1 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
-		$this->assertEquals( 1, $products->eq( 2 )->filter( 'h2:contains("Cafe Noire Expresso")' )->count() );
-		$this->assertEquals( 1, $products->eq( 3 )->filter( 'h2:contains("Cafe Noire Cappuccino")' )->count() );
+		$this->assertGreaterThan( 3, $count );
+		$this->assertEquals( 1, $products->eq( $count - 4 )->filter( 'h2:contains("Unittest: Bundle")' )->count() );
+		$this->assertEquals( 1, $products->eq( $count - 3 )->filter( 'h2:contains("MNOP/16 disc")' )->count() );
+		$this->assertEquals( 1, $products->eq( $count - 2 )->filter( 'h2:contains("Cafe Noire Expresso")' )->count() );
+		$this->assertEquals( 1, $products->eq( $count - 1 )->filter( 'h2:contains("Cafe Noire Cappuccino")' )->count() );
 	}
 
 
