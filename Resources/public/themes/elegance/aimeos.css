@@ -1473,8 +1473,6 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 .catalog-detail-basket .selection .radio .select-label > span {
 	text-align: center;
 	min-width: 2.5em;
-	display: block;
-	padding: 0;
 }
 
 .catalog-list-items .selection .radio .select-label,
