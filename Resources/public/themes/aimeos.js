@@ -109,7 +109,8 @@ Aimeos = {
 			var element = $(elements[i]);
 
 			if($(window).scrollTop() + $(window).height() + 2 * element.height() >= element.offset().top) {
-				element.css("background-image", "url('" + element.data("src") + "')");
+				element.attr("srcset", element.data("srcset"));
+				element.attr("src", element.data("src"));
 				element.removeClass("lazy-image");
 			}
 		}
@@ -808,11 +809,11 @@ AimeosCatalog = {
 					} else {
 						$(".addbasket .btn-action", parent).removeClass("btn-disabled").removeAttr("disabled");
 					}
+
+					$(".catalog-detail-additional .subproduct-actual").removeClass("subproduct-actual");
+					$(".catalog-detail-additional .subproduct-" + prodId).addClass("subproduct-actual");
 				}
 			}
-
-			$(".catalog-detail-additional .subproduct-actual").removeClass("subproduct-actual");
-			$(".catalog-detail-additional .subproduct-" + prodId).addClass("subproduct-actual");
 		});
 	},
 
@@ -1200,9 +1201,11 @@ AimeosCatalogList = {
 			if( list.length > 1 ) {
 				var second = list.eq(1);
 				var size = $(this).height();
+				var image = $("img", second);
 
 				$(this).css("background-image", "none"); // Don't let default image shine through
-				second.css("background-image", "url('" + second.data("src") + "')");
+				image.attr("srcset", image.data("srcset"));
+				image.attr("src", image.data("src"));
 				second.fadeTo(0, 0.33);
 
 				list.first().fadeTo(400, 0.33, function() {
@@ -1525,11 +1528,6 @@ Aimeos.loadImages();
 
 
 jQuery(document).ready(function($) {
-
-	/* CSS3 "background-size: contain" support for IE8 */
-	$(".catalog-list-items .media-item").css("background-size", "contain");
-	$(".catalog-detail-image .item").css("background-size", "contain");
-
 
 	/* Lazy product image loading in list view */
 	Aimeos.loadImages();
