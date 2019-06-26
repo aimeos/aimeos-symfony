@@ -100,8 +100,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertEquals( 2, $json['meta']['total'] );
-		$this->assertEquals( 2, count( $json['data'] ) );
+		$this->assertEquals( 1, $json['meta']['total'] );
+		$this->assertEquals( 1, count( $json['data'] ) );
 		$this->assertArrayHasKey( 'id', $json['data'][0] );
 		$this->assertEquals( 'CNC', $json['data'][0]['attributes']['product.code'] );
 
@@ -196,7 +196,7 @@ class JsonapiControllerTest extends WebTestCase
 		}
 
 		$json = json_decode( $client->getResponse()->getContent(), true );
-		$this->assertEquals( 2, $json['meta']['total'] );
+		$this->assertEquals( 1, $json['meta']['total'] );
 	}
 
 
@@ -211,7 +211,7 @@ class JsonapiControllerTest extends WebTestCase
 		// product list for full text search
 		$client->request( 'GET', $json['meta']['resources']['product'], ['filter' => ['f_search' => 'cappuccino']] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
-		$this->assertEquals( 2, count( $json['data'] ) );
+		$this->assertEquals( 1, count( $json['data'] ) );
 	}
 
 
@@ -280,7 +280,7 @@ class JsonapiControllerTest extends WebTestCase
 		$this->assertGreaterThan( 8, count( $json['meta']['resources'] ) );
 
 		// product for code "CNC"
-		$client->request( 'GET', $json['meta']['resources']['product'], ['filter' => ['f_search' => 'ABCD']] );
+		$client->request( 'GET', $json['meta']['resources']['product'], ['filter' => ['f_search' => 'Cap']] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 1, count( $json['data'] ) );
 

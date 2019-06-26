@@ -36,7 +36,7 @@ class CatalogControllerTest extends WebTestCase
 		$form['f_search'] = 'Cafe';
 		$crawler = $client->submit( $form );
 
-		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Unittest: Bundle")' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Cappuccino")' )->count() );
 	}
 
 
