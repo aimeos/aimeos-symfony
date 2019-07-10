@@ -50,3 +50,7 @@ aimeos_shop:
                     name: Standard
                     options:
                         format: "%%1$s{%%2$s}"
+    madmin:
+        cache:
+            manager:
+                name: None
