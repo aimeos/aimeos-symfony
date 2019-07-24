@@ -205,7 +205,7 @@ Then add these lines to your `composer.json` of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2014.07",
+        "aimeos/aimeos-symfony": "~2019.07",
         ...
     },
     "scripts": {
