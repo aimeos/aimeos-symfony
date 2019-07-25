@@ -36,7 +36,7 @@ class AdminController extends Controller
 			$siteManager = \Aimeos\MShop::create( $context, 'locale/site' );
 			$user = $this->get( 'security.token_storage' )->getToken()->getUser();
 			$siteCode = ( $user->getSiteId() ? $siteManager->getItem( $user->getSiteId() )->getCode() : 'default' );
-			$locale = $user->getLanguageId() ?: $this->getParameter( 'locale' );
+			$locale = $user->getLanguageId() ?: ( $this->container->hasParameter( 'locale' ) ? $this->container->getParameter( 'locale' ) : 'en' );
 
 			$params = array(
 				'resource' => 'dashboard',
