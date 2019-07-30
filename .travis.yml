@@ -1,6 +1,9 @@
 sudo: false
-dist: trusty
+dist: xenial
 language: php
+
+services:
+  - mysql
 
 php:
   - 7.3
@@ -19,12 +22,10 @@ matrix:
 
 before_script:
   - echo 'memory_limit=-1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-  - mysql -e "create database symfony;"
+  - mysql -e "CREATE DATABASE symfony; GRANT ALL ON symfony.* TO 'aimeos'@'127.0.0.1' IDENTIFIED BY 'aimeos'"
   - mysql -e "set global wait_timeout=600"
-  - composer self-update
   - rm composer.lock # Prevent dependency problems
   - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer require "symfony/symfony:${SYMFONY_VERSION}"
-  - sed -i 's/utf8mb4/utf8/' Resources/config/aimeos_shop.yml
 
 script:
   - vendor/bin/phpunit --coverage-clover coverage.xml
