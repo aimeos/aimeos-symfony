@@ -38,7 +38,7 @@ class AccountController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		return $this->render( 'AimeosShopBundle:Account:index.html.twig', $params )->setPrivate()->setMaxAge( 300 );
+		return $this->render( '@AimeosShop/Account/index.html.twig', $params )->setPrivate()->setMaxAge( 300 );
 	}
 
 

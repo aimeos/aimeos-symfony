@@ -38,7 +38,7 @@ class BasketController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response =  $this->render( 'AimeosShopBundle:Basket:index.html.twig', $params );
+		$response =  $this->render( '@AimeosShop/Basket/index.html.twig', $params );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
 	}

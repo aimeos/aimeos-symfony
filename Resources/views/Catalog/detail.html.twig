@@ -1,4 +1,4 @@
- {% extends 'AimeosShopBundle::base.html.twig' %}
+ {% extends '@AimeosShop/base.html.twig' %}
 
  {% block aimeos_scripts %}
     {{ parent() }}
@@ -23,7 +23,7 @@
  {% block aimeos_body %}
      {{ aibody['catalog/detail']|raw }}
  {% endblock %}
- 
+
  {% block aimeos_aside %}
      {{ aibody['catalog/session']|raw }}
  {% endblock %}

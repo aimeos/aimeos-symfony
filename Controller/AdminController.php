@@ -57,7 +57,7 @@ class AdminController extends Controller
 			$param['username'] = $auth->getLastUsername();
 		}
 
-		return $this->render( 'AimeosShopBundle:Admin:index.html.twig', $param );
+		return $this->render( '@AimeosShop/Admin/index.html.twig', $param );
 	}
 
 
