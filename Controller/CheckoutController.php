@@ -38,7 +38,7 @@ class CheckoutController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( 'AimeosShopBundle:Checkout:confirm.html.twig', $params );
+		$response = $this->render( '@AimeosShop/Checkout/confirm.html.twig', $params );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
 	}
@@ -60,7 +60,7 @@ class CheckoutController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( 'AimeosShopBundle:Checkout:index.html.twig', $params );
+		$response = $this->render( '@AimeosShop/Checkout/index.html.twig', $params );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
 	}
@@ -82,7 +82,7 @@ class CheckoutController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( 'AimeosShopBundle:Checkout:update.html.twig', $params );
+		$response = $this->render( '@AimeosShop/Checkout/update.html.twig', $params );
 		$response->headers->set('Cache-Control', 'no-store');
 		return $response;
 	}

@@ -38,7 +38,7 @@ class CatalogController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( 'AimeosShopBundle:Catalog:count.html.twig', $params );
+		$response = $this->render( '@AimeosShop/Catalog/count.html.twig', $params );
 		$response->headers->set( 'Content-Type', 'application/javascript' );
 		$response->headers->set( 'Cache-Control', 'public, max-age=300' );
 		return $response;
@@ -61,7 +61,7 @@ class CatalogController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( 'AimeosShopBundle:Catalog:detail.html.twig', $params );
+		$response = $this->render( '@AimeosShop/Catalog/detail.html.twig', $params );
 		$response->headers->set( 'Cache-Control', 'private, max-age=10' );
 		return $response;
 	}
@@ -83,7 +83,7 @@ class CatalogController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( 'AimeosShopBundle:Catalog:list.html.twig', $params );
+		$response = $this->render( '@AimeosShop/Catalog/list.html.twig', $params );
 		$response->headers->set( 'Cache-Control', 'private, max-age=10' );
 		return $response;
 	}
@@ -105,7 +105,7 @@ class CatalogController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( 'AimeosShopBundle:Catalog:tree.html.twig', $params );
+		$response = $this->render( '@AimeosShop/Catalog/tree.html.twig', $params );
 		$response->headers->set( 'Cache-Control', 'private, max-age=10' );
 		return $response;
 	}
@@ -127,7 +127,7 @@ class CatalogController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( 'AimeosShopBundle:Catalog:stock.html.twig', $params );
+		$response = $this->render( '@AimeosShop/Catalog/stock.html.twig', $params );
 		$response->headers->set( 'Content-Type', 'application/javascript' );
 		$response->headers->set( 'Cache-Control', 'public, max-age=30' );
 		return $response;
@@ -150,7 +150,7 @@ class CatalogController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( 'AimeosShopBundle:Catalog:suggest.html.twig', $params );
+		$response = $this->render( '@AimeosShop/Catalog/suggest.html.twig', $params );
 		$response->headers->set( 'Cache-Control', 'private, max-age=300' );
 		$response->headers->set( 'Content-Type', 'application/json' );
 		return $response;

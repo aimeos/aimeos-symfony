@@ -28,7 +28,7 @@ class PageController extends Controller
 	 */
 	public function privacyAction()
 	{
-		return $this->render( 'AimeosShopBundle:Page:privacy.html.twig' );
+		return $this->render( '@AimeosShop/Page/privacy.html.twig' );
 	}
 
 
@@ -39,6 +39,6 @@ class PageController extends Controller
 	 */
 	public function termsAction()
 	{
-		return $this->render( 'AimeosShopBundle:Page:terms.html.twig' );
+		return $this->render( '@AimeosShop/Page/terms.html.twig' );
 	}
 }

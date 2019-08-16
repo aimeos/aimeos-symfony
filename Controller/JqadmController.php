@@ -243,6 +243,6 @@ class JqadmController extends Controller
 	 */
 	protected function getHtml( $content )
 	{
-		return $this->render( 'AimeosShopBundle:Jqadm:index.html.twig', array( 'content' => $content ) );
+		return $this->render( '@AimeosShop/Jqadm/index.html.twig', array( 'content' => $content ) );
 	}
 }
