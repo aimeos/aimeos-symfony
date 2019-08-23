@@ -31,20 +31,10 @@ class JobsCommand extends Command
 	 */
 	protected function configure()
 	{
-		$names = '';
-		$aimeos = new \Aimeos\Bootstrap( array() );
-		$cntlPaths = $aimeos->getCustomPaths( 'controller/jobs' );
-		$controllers = \Aimeos\Controller\Jobs::get( $this->getBareContext(), $aimeos, $cntlPaths );
-
-		foreach( $controllers as $key => $controller ) {
-			$names .= str_pad( $key, 30 ) . $controller->getName() . PHP_EOL;
-		}
-
 		$this->setName( self::$defaultName );
 		$this->setDescription( 'Executes the job controllers' );
 		$this->addArgument( 'jobs', InputArgument::REQUIRED, 'One or more job controller names like "admin/job customer/email/watch"' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to execute the jobs for like "default unittest" (none for all)' );
-		$this->setHelp( "Available jobs are:\n" . $names );
 	}
 
 
@@ -84,29 +74,6 @@ class JobsCommand extends Command
 		}
 
 		$process->wait();
-	}
-
-
-	/**
-	 * Returns a bare context object
-	 *
-	 * @return \Aimeos\MShop\Context\Item\Standard Context object containing only the most necessary dependencies
-	 */
-	protected function getBareContext()
-	{
-		$ctx = new \Aimeos\MShop\Context\Item\Standard();
-
-		$conf = new \Aimeos\MW\Config\PHPArray( array(), array() );
-		$ctx->setConfig( $conf );
-
-		$locale = \Aimeos\MShop::create( $ctx, 'locale' )->createItem();
-		$locale->setLanguageId( 'en' );
-		$ctx->setLocale( $locale );
-
-		$i18n = new \Aimeos\MW\Translation\None( 'en' );
-		$ctx->setI18n( array( 'en' => $i18n ) );
-
-		return $ctx;
 	}
 
 
