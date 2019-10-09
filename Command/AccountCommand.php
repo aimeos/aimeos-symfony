@@ -51,7 +51,8 @@ class AccountCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$code = $input->getArgument( 'email' );
+		$email = $input->getArgument( 'email' );
+
 		if( ( $password = $input->getOption( 'password' ) ) === null )
 		{
 			$helper = $this->getHelper( 'question' );
@@ -65,11 +66,36 @@ class AccountCommand extends Command
 		$context->setEditor( 'aimeos:account' );
 
 		$localeManager = \Aimeos\MShop::create( $context, 'locale' );
-		$localeItem = $localeManager->bootstrap( $input->getArgument( 'site' ), '', '', false );
+		$localeItem = $localeManager->bootstrap( $input->getArgument( 'site' ) ?: 'default', '', '', false );
 		$context->setLocale( $localeItem );
 
-		$user = $this->createCustomerItem( $context, $code, $password );
+		$manager = \Aimeos\MShop::create( $context, 'customer' );
 
+		try {
+			$item = $manager->findItem( $email );
+		} catch( \Aimeos\MShop\Exception $e ) {
+			$item = $manager->createItem();
+		}
+
+		$item = $item->setCode( $email )->setLabel( $email )->setPassword( $password )->setStatus( 1 );
+		$item->getPaymentAddress()->setEmail( $email );
+
+		$manager->saveItem( $this->addGroups( $input, $output, $context, $item ), false );
+		$this->addRoles( $input, $email );
+	}
+
+
+	/**
+	 * Adds the group to the given user
+	 *
+	 * @param InputInterface $input Input object
+	 * @param OutputInterface $output Output object
+	 * @param \Aimeos\MShop\Context\Item\Iface $context Aimeos context object
+	 * @param \Aimeos\MShop\Customer\Item\Iface $user Aimeos customer object
+	 */
+	protected function addGroups( InputInterface $input, OutputInterface $output,
+		\Aimeos\MShop\Context\Item\Iface $context, \Aimeos\MShop\Customer\Item\Iface $user )
+	{
 		if( $input->getOption( 'admin' ) ) {
 			$this->addGroup( $input, $output, $context, $user, 'admin' );
 		}
@@ -78,26 +104,7 @@ class AccountCommand extends Command
 			$this->addGroup( $input, $output, $context, $user, 'editor' );
 		}
 
-		if( $this->getContainer()->has( 'fos_user.user_manager' ) )
-		{
-			$userManager = $this->getContainer()->get( 'fos_user.user_manager' );
-
-			if( ( $fosUser = $userManager->findUserByUsername( $code ) ) === null ) {
-				throw new \RuntimeException( 'No user created' );
-			}
-
-			$fosUser->setSuperAdmin( false );
-
-			if( $input->getOption( 'super' ) ) {
-				$fosUser->setSuperAdmin( true );
-			}
-
-			if( $input->getOption( 'admin' ) || $input->getOption( 'editor' ) ) {
-				$fosUser->addRole( 'ROLE_ADMIN' );
-			}
-
-			$userManager->updateUser( $fosUser );
-		}
+		return $user;
 	}
 
 
@@ -114,88 +121,41 @@ class AccountCommand extends Command
 		\Aimeos\MShop\Context\Item\Iface $context, \Aimeos\MShop\Customer\Item\Iface $user, $group )
 	{
 		$output->writeln( sprintf( 'Add "%1$s" group to user "%2$s" for sites', $group, $user->getCode() ) );
+		$output->writeln( '- ' . $context->getLocale()->getSite()->getCode() );
 
-		$localeManager = \Aimeos\MShop::create( $context, 'locale' );
-
-		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
-		{
-			$localeItem = $localeManager->bootstrap( $siteItem->getCode(), '', '', false );
-
-			$lcontext = clone $context;
-			$lcontext->setLocale( $localeItem );
-
-			$output->writeln( '- ' . $siteItem->getCode() );
-
-			$groupItem = $this->getGroupItem( $lcontext, $group );
-			$this->addListItem( $lcontext, $user->getId(), $groupItem->getId() );
-		}
+		$groupId = $this->getGroupItem( $context, $group )->getId();
+		return $user->setGroups( array_merge( $user->getGroups(), [$groupId] ) );
 	}
 
 
 	/**
-	 * Associates the user to the group by their given IDs
+	 * Adds required roles to user identified by his e-mail
 	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Aimeos context object
-	 * @param string $userid Unique user ID
-	 * @param string $groupid Unique group ID
-	 */
-	protected function addListItem( \Aimeos\MShop\Context\Item\Iface $context, $userid, $groupid )
-	{
-		$manager = \Aimeos\MShop::create( $context, 'customer/lists' );
-
-		$search = $manager->createSearch();
-		$expr = array(
-			$search->compare( '==', 'customer.lists.parentid', $userid ),
-			$search->compare( '==', 'customer.lists.refid', $groupid ),
-			$search->compare( '==', 'customer.lists.type', 'default' ),
-			$search->compare( '==', 'customer.lists.domain', 'customer/group' ),
-		);
-		$search->setConditions( $search->combine( '&&', $expr ) );
-		$search->setSlice( 0, 1 );
-
-		if( count( $manager->searchItems( $search ) ) === 0 )
-		{
-			$item = $manager->createItem();
-			$item->setDomain( 'customer/group' );
-			$item->setParentId( $userid );
-			$item->setRefId( $groupid );
-			$item->setType( 'default' );
-			$item->setStatus( 1 );
-
-			$manager->saveItem( $item, false );
-		}
-	}
-
-
-	/**
-	 * Returns the customer item for the given e-mail and set its password
-	 *
-	 * If the customer doesn't exist yet, it will be created.
-	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Aimeos context object
+	 * @param InputInterface $input Input object
 	 * @param string $email Unique e-mail address
-	 * @param string $password New user password
-	 * @return \Aimeos\MShop\Customer\Item\Iface Aimeos customer item object
 	 */
-	protected function createCustomerItem( \Aimeos\MShop\Context\Item\Iface $context, $email, $password )
+	protected function addRoles( InputInterface $input, $email )
 	{
-		$manager = \Aimeos\MShop::create( $context, 'customer' );
+		if( $this->getContainer()->has( 'fos_user.user_manager' ) )
+		{
+			$userManager = $this->getContainer()->get( 'fos_user.user_manager' );
 
-		try {
-			$item = $manager->findItem( $email );
-		} catch( \Aimeos\MShop\Exception $e ) {
-			$item = $manager->createItem();
+			if( ( $fosUser = $userManager->findUserByUsername( $email ) ) === null ) {
+				throw new \RuntimeException( 'No user created' );
+			}
+
+			$fosUser->setSuperAdmin( false );
+
+			if( $input->getOption( 'super' ) ) {
+				$fosUser->setSuperAdmin( true );
+			}
+
+			if( $input->getOption( 'admin' ) || $input->getOption( 'editor' ) ) {
+				$fosUser->addRole( 'ROLE_ADMIN' );
+			}
+
+			$userManager->updateUser( $fosUser );
 		}
-
-		$item->setCode( $email );
-		$item->setLabel( $email );
-		$item->getPaymentAddress()->setEmail( $email );
-		$item->setPassword( $password );
-		$item->setStatus( 1 );
-
-		$manager->saveItem( $item );
-
-		return $item;
 	}
 
 
