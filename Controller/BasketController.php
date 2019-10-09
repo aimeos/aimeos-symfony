@@ -43,6 +43,21 @@ class BasketController extends Controller
 		return $response;
 	}
 
+
+	/**
+	 * Returns the output of the bulk order component
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function bulkComponentAction()
+	{
+		$client = $this->container->get( 'shop' )->get( 'basket/bulk' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
+	}
+
+
 	/**
 	 * Returns the output of the basket mini component
 	 *
