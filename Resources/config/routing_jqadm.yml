@@ -19,7 +19,7 @@ aimeos_shop_jqadm_create:
 
 aimeos_shop_jqadm_delete:
     path: /delete/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jqadm:delete }
+    defaults: { _controller: AimeosShopBundle:Jqadm:delete, id: null }
     methods: [GET, POST]
     requirements:
         resource: '[a-z\/]+'

@@ -75,8 +75,7 @@ class JqadmControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/jqadm/delete/product/0' );
 		$response = $client->getResponse();
 
-		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( 'list-items', $response->getContent() );
+		$this->assertEquals( 302, $response->getStatusCode() );
 	}
 
 
