@@ -33,10 +33,9 @@ customize anything to your needs.
 
 ## Installation
 
-This document is for the latest Aimeos Symfony **2018.10 release and later**.
+This document is for the latest Aimeos Symfony **2019.10 release and later**.
 
-- Stable release: 2019.07
-- LTS release: 2018.10
+- LTS release: 2019.10
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
@@ -205,7 +204,7 @@ Then add these lines to your `composer.json` of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2019.07",
+        "aimeos/aimeos-symfony": "~2019.10",
         ...
     },
     "scripts": {
@@ -293,8 +292,7 @@ Start the PHP web server in the base directory of your application to do some qu
 
 Then, you should be able to call the catalog list page in your browser using
 
-Since 2019.04: http://127.0.0.1:8000/shop
-Until 2019.01: http://127.0.0.1:8000/list
+```http://127.0.0.1:8000/shop```
 
 
 ## Login and Admin
