@@ -196,6 +196,23 @@ If you want to use a database server other than MySQL, please have a look into t
 [supported database servers](https://aimeos.org/docs/Developers/Library/Database_support)
 and their specific configuration.
 
+Symfony 4 uses an in-memory mail spooler by default which collects the e-mails and send them
+at the end. This can be problematic if there's an error because you e.g. forgot to add a
+sender address and all e-mail gets lost. The settings for sending e-mails immediately in
+`config/packages/swiftmailer.yaml` are:
+
+```yaml
+swiftmailer:
+    url: '%env(MAILER_URL)%'
+    sender_address: <your@domain.com>
+#    spool: { type: 'memory' }
+```
+
+If you don't use Sendmail but SMTP for sending e-mails, you have to adapt the `MAILER_URL`
+configuration in your `.env` file, e.g.:
+
+`MAILER_URL=smtp://smtp.mailtrap.io:2525?encryption=tls&auth_mode=login&username=...&password=...`
+
 ## Composer
 
 Then add these lines to your `composer.json` of your Symfony project:
