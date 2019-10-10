@@ -80,7 +80,7 @@ class AccountCommand extends Command
 		$item = $item->setCode( $email )->setLabel( $email )->setPassword( $password )->setStatus( 1 );
 		$item->getPaymentAddress()->setEmail( $email );
 
-		$manager->saveItem( $this->addGroups( $input, $output, $context, $item ), false );
+		$manager->saveItem( $this->addGroups( $input, $output, $context, $item ) );
 		$this->addRoles( $input, $email );
 	}
 
