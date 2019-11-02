@@ -182,7 +182,6 @@ mshop:
                 name: Bcrypt
     index:
         manager:
-            name: MySQL
             attribute:
                 name: MySQL
             catalog:
