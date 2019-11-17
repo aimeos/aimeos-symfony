@@ -9,7 +9,7 @@ class JsonadmControllerTest extends WebTestCase
 {
 	public function testOptionsAction()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -40,7 +40,7 @@ class JsonadmControllerTest extends WebTestCase
 
 	public function testActionsSingle()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -104,7 +104,7 @@ class JsonadmControllerTest extends WebTestCase
 
 	public function testActionsBulk()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );

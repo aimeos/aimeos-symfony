@@ -69,7 +69,7 @@ class CatalogControllerTest extends WebTestCase
 		$this->assertEquals( 1, $crawler->filter( '.catalog-filter-attribute' )->count() );
 
 		$nodes = $crawler->filter( '.catalog-filter-attribute .attr-size span:contains("XS")' );
-		$id = $nodes->parents()->filter( '.attr-item' )->attr( 'data-id');
+		$id = $nodes->parents()->filter( '.attr-item' )->attr( 'data-id' );
 
 		$form = $crawler->filter( '.catalog-filter .btn-primary' )->form();
 		$values = $form->getPhpValues();

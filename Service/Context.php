@@ -58,8 +58,8 @@ class Context
 			$this->addMessageQueueManager( $context );
 			$this->addLogger( $context );
 			$this->addCache( $context );
-			$this->addMailer( $context);
-			$this->addProcess( $context);
+			$this->addMailer( $context );
+			$this->addProcess( $context );
 
 			self::$context = $context;
 		}
@@ -69,13 +69,13 @@ class Context
 
 		if( $locale === true )
 		{
-			$localeItem = $this->container->get('aimeos.locale')->get( $context );
-			$context->setI18n( $this->container->get('aimeos.i18n')->get( array( $localeItem->getLanguageId() ) ) );
+			$localeItem = $this->container->get( 'aimeos.locale' )->get( $context );
+			$context->setI18n( $this->container->get( 'aimeos.i18n' )->get( array( $localeItem->getLanguageId() ) ) );
 			$context->setLocale( $localeItem );
 		}
 
 		$this->addSession( $context );
-		$this->addUserGroups( $context);
+		$this->addUserGroups( $context );
 
 		return $context;
 	}
@@ -147,7 +147,7 @@ class Context
 	protected function addMailer( \Aimeos\MShop\Context\Item\Iface $context )
 	{
 		$container = $this->container;
-		$mail = new \Aimeos\MW\Mail\Swift( function() use ( $container) { return $container->get( 'mailer' ); } );
+		$mail = new \Aimeos\MW\Mail\Swift( function() use ( $container ) { return $container->get( 'mailer' ); } );
 
 		return $context->setMail( $mail );
 	}
@@ -213,7 +213,7 @@ class Context
 
 		if( is_object( $token ) && is_object( $token->getUser() ) && method_exists( $token->getUser(), 'getId' ) )
 		{
-			$username =  $token->getUser()->getUsername();
+			$username = $token->getUser()->getUsername();
 			$userid = $token->getUser()->getId();
 			$context->setUserId( $userid );
 			$context->setGroupIds( function() use ( $context, $userid )
@@ -224,7 +224,7 @@ class Context
 		}
 
 		if( $username === '' && $this->container->has( 'request_stack' )
-			&& ( $request = $this->container->get('request_stack')->getMasterRequest() ) !== null
+			&& ( $request = $this->container->get( 'request_stack' )->getMasterRequest() ) !== null
 		) {
 			$username = $request->getClientIp();
 		}

@@ -9,7 +9,7 @@ class JqadmControllerTest extends WebTestCase
 {
 	public function testFileCss()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -23,7 +23,7 @@ class JqadmControllerTest extends WebTestCase
 
 	public function testFileJs()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -37,7 +37,7 @@ class JqadmControllerTest extends WebTestCase
 
 	public function testCopyAction()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -52,7 +52,7 @@ class JqadmControllerTest extends WebTestCase
 
 	public function testCreateAction()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -67,7 +67,7 @@ class JqadmControllerTest extends WebTestCase
 
 	public function testDeleteAction()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -81,7 +81,7 @@ class JqadmControllerTest extends WebTestCase
 
 	public function testExportAction()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -96,7 +96,7 @@ class JqadmControllerTest extends WebTestCase
 
 	public function testGetAction()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -111,7 +111,7 @@ class JqadmControllerTest extends WebTestCase
 
 	public function testSaveAction()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -126,7 +126,7 @@ class JqadmControllerTest extends WebTestCase
 
 	public function testSearchAction()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
@@ -141,7 +141,7 @@ class JqadmControllerTest extends WebTestCase
 
 	public function testSearchActionSite()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
