@@ -44,7 +44,7 @@ class Config
 	{
 		$configPaths = $this->container->get('aimeos')->get()->getConfigPaths();
 
-		$conf = new \Aimeos\MW\Config\PHPArray( array(), $configPaths );
+		$conf = new \Aimeos\MW\Config\PHPArray( [], $configPaths );
 
 		$apc = (bool) $this->container->getParameter( 'aimeos_shop.apc_enable' );
 		$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
@@ -65,7 +65,7 @@ class Config
 		$config = new \Aimeos\MW\Config\Decorator\Memory( $conf, $local );
 		$settings = $this->container->getParameter( 'aimeos_shop.' . $type );
 
-		if( $settings !== array() ) {
+		if( is_array( $settings ) && $settings !== [] ) {
 			$config = new \Aimeos\MW\Config\Decorator\Memory( $config, $settings );
 		}
 
