@@ -42,7 +42,7 @@ class Config
 	 */
 	public function get( $type = 'frontend' )
 	{
-		$configPaths = $this->container->get('aimeos')->get()->getConfigPaths();
+		$configPaths = $this->container->get( 'aimeos' )->get()->getConfigPaths();
 
 		$conf = new \Aimeos\MW\Config\PHPArray( [], $configPaths );
 

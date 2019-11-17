@@ -28,7 +28,7 @@ class BasketControllerTest extends WebTestCase
 
 		$this->assertEquals( 1, $crawler->filter( '.basket-standard' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.basket:contains("Unittest: Bundle")' )->count() );
-		$this->assertEquals( 1, $crawler->filter( '.basket .product .quantity .value' )->attr('value') );
+		$this->assertEquals( 1, $crawler->filter( '.basket .product .quantity .value' )->attr( 'value' ) );
 	}
 
 
@@ -47,7 +47,7 @@ class BasketControllerTest extends WebTestCase
 
 		$this->assertEquals( 1, $crawler->filter( '.basket-standard' )->count() );
 		$this->assertEquals( 1, $crawler->filter( '.basket:contains("Unittest: Bundle")' )->count() );
-		$this->assertEquals( 2, $crawler->filter( '.basket .product .quantity .value' )->attr('value') );
+		$this->assertEquals( 2, $crawler->filter( '.basket .product .quantity .value' )->attr( 'value' ) );
 	}
 
 
@@ -64,7 +64,7 @@ class BasketControllerTest extends WebTestCase
 		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.basket:contains("Unittest: Bundle")' )->count() );
-		$this->assertEquals( 1, $crawler->filter( '.basket .product .quantity .value' )->attr('value') );
+		$this->assertEquals( 1, $crawler->filter( '.basket .product .quantity .value' )->attr( 'value' ) );
 
 
 		$link = $crawler->filter( '.basket-standard .btn-back' )->link();
@@ -74,7 +74,7 @@ class BasketControllerTest extends WebTestCase
 		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.basket:contains("Unittest: Bundle")' )->count() );
-		$this->assertEquals( 2, $crawler->filter( '.basket .product .quantity .value' )->attr('value') );
+		$this->assertEquals( 2, $crawler->filter( '.basket .product .quantity .value' )->attr( 'value' ) );
 	}
 
 

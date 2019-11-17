@@ -16,7 +16,7 @@ class CheckoutControllerTest extends WebTestCase
 
 	public function testStandardNavbar()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
@@ -84,7 +84,7 @@ class CheckoutControllerTest extends WebTestCase
 
 	public function testStandardNextBack()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
@@ -133,7 +133,7 @@ class CheckoutControllerTest extends WebTestCase
 
 	public function testStandardAddressPayment()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
@@ -152,7 +152,7 @@ class CheckoutControllerTest extends WebTestCase
 
 	public function testStandardAddressDelivery()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
@@ -171,7 +171,7 @@ class CheckoutControllerTest extends WebTestCase
 
 	public function testStandardDelivery()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
@@ -190,7 +190,7 @@ class CheckoutControllerTest extends WebTestCase
 
 	public function testStandardPayment()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
@@ -209,7 +209,7 @@ class CheckoutControllerTest extends WebTestCase
 
 	public function testStandardBasket()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
@@ -228,7 +228,7 @@ class CheckoutControllerTest extends WebTestCase
 
 	public function testStandardOrder()
 	{
-		$client = static::createClient(array(), array(
+		$client = static::createClient( array(), array(
 			'PHP_AUTH_USER' => 'UTC001',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
