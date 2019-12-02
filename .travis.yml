@@ -11,7 +11,6 @@ php:
   - 7.1
 
 env:
-  - SYMFONY_VERSION=5.0.*
   - SYMFONY_VERSION=4.4.*
   - SYMFONY_VERSION=3.4.*
 
