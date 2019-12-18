@@ -120,8 +120,8 @@ class AccountCommand extends Command
 	protected function addGroup( InputInterface $input, OutputInterface $output,
 		\Aimeos\MShop\Context\Item\Iface $context, \Aimeos\MShop\Customer\Item\Iface $user, $group )
 	{
-		$output->writeln( sprintf( 'Add "%1$s" group to user "%2$s" for sites', $group, $user->getCode() ) );
-		$output->writeln( '- ' . $context->getLocale()->getSite()->getCode() );
+		$site = $context->getLocale()->getSiteItem()->getCode();
+		$output->writeln( sprintf( 'Add "%1$s" group to user "%2$s" for site "%3$s"', $group, $user->getCode(), $site ) );
 
 		$groupId = $this->getGroupItem( $context, $group )->getId();
 		return $user->setGroups( array_merge( $user->getGroups(), [$groupId] ) );
