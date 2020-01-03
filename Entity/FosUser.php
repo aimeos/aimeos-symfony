@@ -165,9 +165,9 @@ class FosUser extends BaseUser
 	/**
 	 * Returns the user unique ID.
 	 *
-	 * @return mixed
+	 * @return string|null
 	 */
-	public function getId()
+	public function getId() : ?string
 	{
 		return $this->id;
 	}
@@ -178,7 +178,7 @@ class FosUser extends BaseUser
 	 *
 	 * @return mixed
 	 */
-	public function getSiteId()
+	public function getSiteId() : ?string
 	{
 		return $this->siteid;
 	}
@@ -187,7 +187,7 @@ class FosUser extends BaseUser
 	/**
 	 * @inheritDoc
 	 */
-	public function getSalt()
+	public function getSalt() : ?string
 	{
 		return $this->salt;
 	}
@@ -198,9 +198,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Company name
 	 */
-	public function getCompany()
+	public function getCompany() : string
 	{
-		return $this->company;
+		return (string) $this->company;
 	}
 
 
@@ -209,7 +209,7 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $company New company name
 	 */
-	public function setCompany($company)
+	public function setCompany( string $company )
 	{
 		$this->company = (string) $company;
 	}
@@ -220,9 +220,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string vatid
 	 */
-	public function getVatID()
+	public function getVatId() : string
 	{
-		return $this->vatid;
+		return (string) $this->vatid;
 	}
 
 
@@ -231,7 +231,7 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $vatid New vatid
 	 */
-	public function setVatID($vatid)
+	public function setVatID( string $vatid )
 	{
 		$this->vatid = (string) $vatid;
 	}
@@ -242,9 +242,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Saluatation constant defined in \Aimeos\MShop\Common\Item\Address\Base
 	 */
-	public function getSalutation()
+	public function getSalutation() : string
 	{
-		return ( isset( $this->salutation ) ? (string) $this->salutation : \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_UNKNOWN );
+		return $this->salutation ?? \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_UNKNOWN;
 	}
 
 
@@ -253,21 +253,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $salutation Salutation constant defined in \Aimeos\MShop\Common\Item\Address\Base
 	 */
-	public function setSalutation($salutation)
+	public function setSalutation( string $salutation )
 	{
-		switch( $salutation )
-		{
-			case \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_UNKNOWN:
-			case \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_COMPANY:
-			case \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MRS:
-			case \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MISS:
-			case \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MR:
-				break;
-			default:
-				throw new \Exception( sprintf( 'Address salutation "%1$s" is unknown', $value ) );
-		}
-
-		$this->salutation = (string) $salutation;
+		$this->salutation = $salutation;
 	}
 
 
@@ -276,9 +264,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Title of the person
 	 */
-	public function getTitle()
+	public function getTitle() : string
 	{
-		return $this->title;
+		return (string) $this->title;
 	}
 
 
@@ -287,9 +275,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $title New title of the person
 	 */
-	public function setTitle($title)
+	public function setTitle( string $title )
 	{
-		$this->title = (string) $title;
+		$this->title = $title;
 	}
 
 
@@ -298,9 +286,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string First name of the person
 	 */
-	public function getFirstname()
+	public function getFirstname() : string
 	{
-		return $this->firstname;
+		return (string) $this->firstname;
 	}
 
 
@@ -309,9 +297,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $firstname New first name of the person
 	 */
-	public function setFirstname($firstname)
+	public function setFirstname( string $firstname )
 	{
-		$this->firstname = (string) $firstname;
+		$this->firstname = $firstname;
 	}
 
 
@@ -320,9 +308,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Last name of the person
 	 */
-	public function getLastname()
+	public function getLastname() : string
 	{
-		return $this->lastname;
+		return (string) $this->lastname;
 	}
 
 
@@ -331,9 +319,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $lastname New last name of the person
 	 */
-	public function setLastname($lastname)
+	public function setLastname( string $lastname )
 	{
-		$this->lastname = (string) $lastname;
+		$this->lastname = $lastname;
 	}
 
 
@@ -342,9 +330,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string First address part
 	 */
-	public function getAddress1()
+	public function getAddress1() : string
 	{
-		return $this->address1;
+		return (string) $this->address1;
 	}
 
 
@@ -353,9 +341,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $address1 New first address part
 	 */
-	public function setAddress1($address1)
+	public function setAddress1( string $address1 )
 	{
-		$this->address1 = (string) $address1;
+		$this->address1 = $address1;
 	}
 
 
@@ -364,9 +352,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Second address part
 	 */
-	public function getAddress2()
+	public function getAddress2() : string
 	{
-		return $this->address2;
+		return (string) $this->address2;
 	}
 
 
@@ -375,9 +363,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $address2 New second address part
 	 */
-	public function setAddress2($address2)
+	public function setAddress2( string $address2 )
 	{
-		$this->address2 = (string) $address2;
+		$this->address2 = $address2;
 	}
 
 
@@ -386,9 +374,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string third address part
 	 */
-	public function getAddress3()
+	public function getAddress3() : string
 	{
-		return $this->address3;
+		return (string) $this->address3;
 	}
 
 
@@ -397,9 +385,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $address3 New third address part
 	 */
-	public function setAddress3($address3)
+	public function setAddress3( string $address3 )
 	{
-		$this->address3 = (string) $address3;
+		$this->address3 = $address3;
 	}
 
 
@@ -408,9 +396,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Postal code
 	 */
-	public function getPostal()
+	public function getPostal() : string
 	{
-		return $this->postal;
+		return (string) $this->postal;
 	}
 
 
@@ -419,9 +407,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $postal New postal code
 	 */
-	public function setPostal($postal)
+	public function setPostal( string $postal )
 	{
-		$this->postal = (string) $postal;
+		$this->postal = $postal;
 	}
 
 
@@ -430,9 +418,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string City name
 	 */
-	public function getCity()
+	public function getCity() : string
 	{
-		return $this->city;
+		return (string) $this->city;
 	}
 
 
@@ -441,9 +429,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $city New city name
 	 */
-	public function setCity($city)
+	public function setCity( string $city )
 	{
-		$this->city = (string) $city;
+		$this->city = $city;
 	}
 
 
@@ -452,9 +440,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string State name
 	 */
-	public function getState()
+	public function getState() : string
 	{
-		return $this->state;
+		return (string) $this->state;
 	}
 
 
@@ -463,20 +451,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $state New state name
 	 */
-	public function setState($state)
+	public function setState( string $state )
 	{
-		$this->state = (string) $state;
-	}
-
-
-	/**
-	 * Sets the ID of the country the address is in.
-	 *
-	 * @param string $countryid Unique ID of the country
-	 */
-	public function setCountryId($countryid)
-	{
-		$this->countryid = strtoupper( (string) $countryid );
+		$this->state = $state;
 	}
 
 
@@ -485,20 +462,20 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Unique ID of the country
 	 */
-	public function getCountryId()
+	public function getCountryId() : string
 	{
-		return $this->countryid;
+		return (string) $this->countryid;
 	}
 
 
 	/**
-	 * Sets the ID of the language.
+	 * Sets the ID of the country the address is in.
 	 *
-	 * @param string $langid Unique ID of the language
+	 * @param string $countryid Unique ID of the country
 	 */
-	public function setLanguageId($langid)
+	public function setCountryId( string $countryid )
 	{
-		$this->langid = strtolower( (string) $langid );
+		$this->countryid = strtoupper( $countryid );
 	}
 
 
@@ -507,9 +484,20 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Unique ID of the language
 	 */
-	public function getLanguageId()
+	public function getLanguageId() : string
 	{
-		return $this->langid;
+		return (string) $this->langid;
+	}
+
+
+	/**
+	 * Sets the ID of the language.
+	 *
+	 * @param string $langid Unique ID of the language
+	 */
+	public function setLanguageId( string $langid )
+	{
+		$this->langid = $langid;
 	}
 
 
@@ -518,9 +506,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Telephone number
 	 */
-	public function getTelephone()
+	public function getTelephone() : string
 	{
-		return $this->telephone;
+		return (string) $this->telephone;
 	}
 
 
@@ -529,9 +517,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $telephone New telephone number
 	 */
-	public function setTelephone($telephone)
+	public function setTelephone( string $telephone )
 	{
-		$this->telephone = (string) $telephone;
+		$this->telephone = $telephone;
 	}
 
 
@@ -540,9 +528,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Telefax number
 	 */
-	public function getTelefax()
+	public function getTelefax() : string
 	{
-		return $this->telefax;
+		return (string) $this->telefax;
 	}
 
 
@@ -551,9 +539,9 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $telefax New telefax number
 	 */
-	public function setTelefax($telefax)
+	public function setTelefax( string $telefax )
 	{
-		$this->telefax = (string) $telefax;
+		$this->telefax = $telefax;
 	}
 
 
@@ -562,9 +550,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return string Website URL
 	 */
-	public function getWebsite()
+	public function getWebsite() : string
 	{
-		return $this->website;
+		return (string)  $this->website;
 	}
 
 
@@ -573,7 +561,7 @@ class FosUser extends BaseUser
 	 *
 	 * @param string $website New website URL
 	 */
-	public function setWebsite($website)
+	public function setWebsite( string $website )
 	{
 		$pattern = '#^([a-z]+://)?[a-zA-Z0-9\-]+(\.[a-zA-Z0-9\-]+)+(:[0-9]+)?(/.*)?$#';
 
@@ -581,7 +569,7 @@ class FosUser extends BaseUser
 			throw new \Exception( sprintf( 'Invalid web site URL "%1$s"', $website ) );
 		}
 
-		$this->website = (string) $website;
+		$this->website = $website;
 	}
 
 
@@ -590,9 +578,9 @@ class FosUser extends BaseUser
 	 *
 	 * @return float Longitude value
 	 */
-	public function getLongitude()
+	public function getLongitude() : float
 	{
-		return $this->longitude;
+		return (float) $this->longitude;
 	}
 
 
@@ -601,20 +589,20 @@ class FosUser extends BaseUser
 	 *
 	 * @param float $value New longitude value
 	 */
-	public function setLongitude($value)
+	public function setLongitude( float $value )
 	{
-		$this->longitude = (float) $value;
+		$this->longitude = $value;
 	}
 
 
 	/**
 	 * Returns the latitude.
 	 *
-	 * @return Float Latitude value
+	 * @return float Latitude value
 	 */
-	public function getLatitude()
+	public function getLatitude() : float
 	{
-		return $this->latitude;
+		return (float) $this->latitude;
 	}
 
 
@@ -623,8 +611,8 @@ class FosUser extends BaseUser
 	 *
 	 * @param float $value New latitude value
 	 */
-	public function setLatitude($value)
+	public function setLatitude( float $value )
 	{
-		$this->latitude = (float) $value;
+		$this->latitude = $value;
 	}
 }

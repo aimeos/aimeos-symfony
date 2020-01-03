@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class BasketControllerTest extends WebTestCase
 {
-	protected function setUp()
+	protected function setUp() : void
 	{
 		\Aimeos\MShop::cache( false );
 		\Aimeos\Controller\Frontend::cache( false );
@@ -212,7 +212,7 @@ class BasketControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/basketminicomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos basket-mini', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos basket-mini', $client->getResponse()->getContent() );
 	}
 
 
@@ -222,7 +222,7 @@ class BasketControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/basketrelatedcomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos basket-related', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos basket-related', $client->getResponse()->getContent() );
 	}
 
 
@@ -232,6 +232,6 @@ class BasketControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/basketstandardcomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos basket-standard', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos basket-standard', $client->getResponse()->getContent() );
 	}
 }

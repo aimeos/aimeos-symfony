@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class JsonapiControllerTest extends WebTestCase
 {
-	protected function setUp()
+	protected function setUp() : void
 	{
 		\Aimeos\MShop::cache( false );
 		\Aimeos\Controller\Frontend::cache( false );

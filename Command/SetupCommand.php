@@ -96,7 +96,7 @@ class SetupCommand extends Command
 	 * @param \Aimeos\MW\Config\Iface $conf Config object
 	 * @return array Multi-dimensional associative list of database configuration parameters
 	 */
-	protected function getDbConfig( \Aimeos\MW\Config\Iface $conf )
+	protected function getDbConfig( \Aimeos\MW\Config\Iface $conf ) : array
 	{
 		$dbconfig = $conf->get( 'resource', array() );
 
@@ -116,8 +116,6 @@ class SetupCommand extends Command
 	 *
 	 * @param \Aimeos\MW\Config\Iface $conf Configuration object
 	 * @param InputInterface $input Input object
-	 * @param array Associative list of database configurations
-	 * @throws \RuntimeException If the format of the options is invalid
 	 */
 	protected function setOptions( \Aimeos\MW\Config\Iface $conf, InputInterface $input )
 	{

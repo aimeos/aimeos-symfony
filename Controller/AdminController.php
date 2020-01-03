@@ -28,7 +28,7 @@ class AdminController extends Controller
 	 * @param Request $request Symfony request object
 	 * @return Response Generated HTML page for the admin interface
 	 */
-	public function indexAction( Request $request )
+	public function indexAction( Request $request ) : \Symfony\Component\HttpFoundation\Response
 	{
 		if( $this->hasRole( ['ROLE_ADMIN', 'ROLE_SUPER_ADMIN'] ) )
 		{
@@ -65,9 +65,9 @@ class AdminController extends Controller
 	 * Checks if the used is authenticated and has the admin role
 	 *
 	 * @param array $roles List of role names where at least one must match
-	 * @return boolean True if authenticated and is admin, false if not
+	 * @return bool True if authenticated and is admin, false if not
 	 */
-	protected function hasRole( array $roles )
+	protected function hasRole( array $roles ) : bool
 	{
 		if( $this->has( 'security.authorization_checker' ) && $this->get( 'security.token_storage' )->getToken() )
 		{

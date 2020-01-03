@@ -30,7 +30,7 @@ abstract class Command extends ContainerAwareCommand
 	 * @param InputInterface $input Input object
 	 * @return \Aimeos\MShop\Locale\Item\Site\Interface[] List of site items
 	 */
-	protected function getSiteItems( \Aimeos\MShop\Context\Item\Iface $context, InputInterface $input )
+	protected function getSiteItems( \Aimeos\MShop\Context\Item\Iface $context, InputInterface $input ) : array
 	{
 		$manager = \Aimeos\MShop::create( $context, 'locale/site' );
 		$search = $manager->createSearch();

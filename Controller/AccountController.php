@@ -27,7 +27,7 @@ class AccountController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function indexAction()
+	public function indexAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -47,7 +47,7 @@ class AccountController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function downloadAction()
+	public function downloadAction() : Response
 	{
 		$response = $this->container->get( 'shop' )->get( 'account/download' )->getView()->response();
 		return Response::create( (string) $response->getBody(), $response->getStatusCode(), $response->getHeaders() );
@@ -59,7 +59,7 @@ class AccountController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function favoriteComponentAction()
+	public function favoriteComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'account/favorite' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -73,7 +73,7 @@ class AccountController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function historyComponentAction()
+	public function historyComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'account/history' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -87,7 +87,7 @@ class AccountController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function profileComponentAction()
+	public function profileComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'account/profile' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -101,7 +101,7 @@ class AccountController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function watchComponentAction()
+	public function watchComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'account/watch' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );

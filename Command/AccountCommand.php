@@ -94,7 +94,7 @@ class AccountCommand extends Command
 	 * @param \Aimeos\MShop\Customer\Item\Iface $user Aimeos customer object
 	 */
 	protected function addGroups( InputInterface $input, OutputInterface $output,
-		\Aimeos\MShop\Context\Item\Iface $context, \Aimeos\MShop\Customer\Item\Iface $user )
+		\Aimeos\MShop\Context\Item\Iface $context, \Aimeos\MShop\Customer\Item\Iface $user ) : \Aimeos\MShop\Customer\Item\Iface
 	{
 		if( $input->getOption( 'admin' ) ) {
 			$this->addGroup( $input, $output, $context, $user, 'admin' );
@@ -117,8 +117,8 @@ class AccountCommand extends Command
 	 * @param \Aimeos\MShop\Customer\Item\Iface $user Aimeos customer object
 	 * @param string $group Unique customer group code
 	 */
-	protected function addGroup( InputInterface $input, OutputInterface $output,
-		\Aimeos\MShop\Context\Item\Iface $context, \Aimeos\MShop\Customer\Item\Iface $user, $group )
+	protected function addGroup( InputInterface $input, OutputInterface $output, \Aimeos\MShop\Context\Item\Iface $context,
+		\Aimeos\MShop\Customer\Item\Iface $user, string $group ) : \Aimeos\MShop\Customer\Item\Iface
 	{
 		$site = $context->getLocale()->getSiteItem()->getCode();
 		$output->writeln( sprintf( 'Add "%1$s" group to user "%2$s" for site "%3$s"', $group, $user->getCode(), $site ) );
@@ -134,7 +134,7 @@ class AccountCommand extends Command
 	 * @param InputInterface $input Input object
 	 * @param string $email Unique e-mail address
 	 */
-	protected function addRoles( InputInterface $input, $email )
+	protected function addRoles( InputInterface $input, string $email )
 	{
 		if( $this->getContainer()->has( 'fos_user.user_manager' ) )
 		{
@@ -166,7 +166,8 @@ class AccountCommand extends Command
 	 * @param string $code Unique customer group code
 	 * @return \Aimeos\MShop\Customer\Item\Group\Iface Aimeos customer group item object
 	 */
-	protected function getGroupItem( \Aimeos\MShop\Context\Item\Iface $context, $code )
+	protected function getGroupItem( \Aimeos\MShop\Context\Item\Iface $context,
+		string $code ) : \Aimeos\MShop\Customer\Item\Group\Iface
 	{
 		$manager = \Aimeos\MShop::create( $context, 'customer/group' );
 

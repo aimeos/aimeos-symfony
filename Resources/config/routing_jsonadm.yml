@@ -35,7 +35,7 @@ aimeos_shop_jsonadm_put:
 
 aimeos_shop_jsonadm_options:
     path: /{resource}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:options, resource: null }
+    defaults: { _controller: AimeosShopBundle:Jsonadm:options, resource: '' }
     methods: [OPTIONS]
     requirements:
         resource: '.*'

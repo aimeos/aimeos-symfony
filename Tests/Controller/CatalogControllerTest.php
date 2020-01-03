@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class CatalogControllerTest extends WebTestCase
 {
-	protected function setUp()
+	protected function setUp() : void
 	{
 		\Aimeos\MShop::cache( false );
 		\Aimeos\Controller\Frontend::cache( false );
@@ -20,8 +20,8 @@ class CatalogControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/shop/count' );
 		$content = $client->getResponse()->getContent();
 
-		$this->assertContains( '".catalog-filter-count li.cat-item"', $content );
-		$this->assertContains( '".catalog-filter-attribute .attribute-lists li.attr-item"', $content );
+		$this->assertStringContainsString( '".catalog-filter-count li.cat-item"', $content );
+		$this->assertStringContainsString( '".catalog-filter-attribute .attribute-lists li.attr-item"', $content );
 	}
 
 
@@ -223,8 +223,8 @@ class CatalogControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/shop/stock' );
 		$content = $client->getResponse()->getContent();
 
-		$this->assertContains( '.aimeos .product .stock', $content );
-		$this->assertContains( '.aimeos .catalog-detail-basket', $content );
+		$this->assertStringContainsString( '.aimeos .product .stock', $content );
+		$this->assertStringContainsString( '.aimeos .catalog-detail-basket', $content );
 	}
 
 
@@ -234,7 +234,7 @@ class CatalogControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/catalogcountcomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'catalog-filter-count', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'catalog-filter-count', $client->getResponse()->getContent() );
 	}
 
 
@@ -244,7 +244,7 @@ class CatalogControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/catalogdetailcomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos catalog-detail', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos catalog-detail', $client->getResponse()->getContent() );
 	}
 
 
@@ -254,7 +254,7 @@ class CatalogControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/catalogfiltercomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos catalog-filter', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos catalog-filter', $client->getResponse()->getContent() );
 	}
 
 
@@ -264,7 +264,7 @@ class CatalogControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/cataloglistcomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos catalog-list', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos catalog-list', $client->getResponse()->getContent() );
 	}
 
 
@@ -274,7 +274,7 @@ class CatalogControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/catalogsessioncomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos catalog-session', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos catalog-session', $client->getResponse()->getContent() );
 	}
 
 
@@ -284,7 +284,7 @@ class CatalogControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/catalogstagecomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos catalog-stage', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos catalog-stage', $client->getResponse()->getContent() );
 	}
 
 
@@ -294,6 +294,6 @@ class CatalogControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/catalogstockcomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'stock-list', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'stock-list', $client->getResponse()->getContent() );
 	}
 }

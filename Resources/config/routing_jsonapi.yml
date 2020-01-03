@@ -25,5 +25,5 @@ aimeos_shop_jsonapi_put:
 
 aimeos_shop_jsonapi_options:
     path: /{resource}
-    defaults: { _controller: AimeosShopBundle:Jsonapi:options, resource: null }
+    defaults: { _controller: AimeosShopBundle:Jsonapi:options, resource: '' }
     methods: [OPTIONS]

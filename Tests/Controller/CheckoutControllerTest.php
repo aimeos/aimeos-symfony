@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class CheckoutControllerTest extends WebTestCase
 {
-	protected function setUp()
+	protected function setUp() : void
 	{
 		\Aimeos\MShop::cache( false );
 		\Aimeos\Controller\Frontend::cache( false );
@@ -295,7 +295,7 @@ class CheckoutControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/checkoutconfirmcomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos checkout-confirm', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos checkout-confirm', $client->getResponse()->getContent() );
 	}
 
 
@@ -305,7 +305,7 @@ class CheckoutControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/checkoutstandardcomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos checkout-standard', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos checkout-standard', $client->getResponse()->getContent() );
 	}
 
 

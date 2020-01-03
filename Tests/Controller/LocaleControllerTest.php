@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class LocaleControllerTest extends WebTestCase
 {
-	protected function setUp()
+	protected function setUp() : void
 	{
 		\Aimeos\MShop::cache( false );
 		\Aimeos\Controller\Frontend::cache( false );
@@ -21,6 +21,6 @@ class LocaleControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/localeselectcomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos locale-select', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos locale-select', $client->getResponse()->getContent() );
 	}
 }

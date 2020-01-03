@@ -27,7 +27,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function countAction()
+	public function countAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -50,7 +50,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function detailAction()
+	public function detailAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -72,7 +72,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function listAction()
+	public function listAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -94,7 +94,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function treeAction()
+	public function treeAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -116,7 +116,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function stockAction()
+	public function stockAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -139,7 +139,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function suggestAction()
+	public function suggestAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -162,7 +162,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function countComponentAction()
+	public function countComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'catalog/count' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -176,7 +176,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function detailComponentAction()
+	public function detailComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'catalog/detail' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -190,7 +190,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function filterComponentAction()
+	public function filterComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'catalog/filter' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -204,7 +204,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function listComponentAction()
+	public function listComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'catalog/lists' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -218,7 +218,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function sessionComponentAction()
+	public function sessionComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'catalog/session' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -232,7 +232,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function stageComponentAction()
+	public function stageComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'catalog/stage' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -246,7 +246,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function stockComponentAction()
+	public function stockComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'catalog/stock' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -260,7 +260,7 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function suggestComponentAction()
+	public function suggestComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'catalog/suggest' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );

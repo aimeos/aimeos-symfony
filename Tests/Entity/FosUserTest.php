@@ -11,7 +11,7 @@ class FosUserTest extends \PHPUnit\Framework\TestCase
 	private $object;
 
 
-	protected function setUp()
+	protected function setUp() : void
 	{
 		$this->object = new FosUser();
 	}
@@ -154,11 +154,9 @@ class FosUserTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	/**
-	 * @expectedException Exception
-	 */
 	public function testSetWebsiteInvalid()
 	{
+		$this->expectException( \Exception::class );
 		$this->object->setWebsite( 'aimeos+org' );
 	}
 }

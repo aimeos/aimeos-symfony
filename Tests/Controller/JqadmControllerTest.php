@@ -17,7 +17,7 @@ class JqadmControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/jqadm/file/css' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( '.aimeos', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( '.aimeos', $client->getResponse()->getContent() );
 	}
 
 
@@ -31,7 +31,7 @@ class JqadmControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/jqadm/file/js' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'Aimeos = {', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'Aimeos = {', $client->getResponse()->getContent() );
 	}
 
 
@@ -46,7 +46,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( 'item-product', $response->getContent() );
+		$this->assertStringContainsString( 'item-product', $response->getContent() );
 	}
 
 
@@ -61,7 +61,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( 'item-product', $response->getContent() );
+		$this->assertStringContainsString( 'item-product', $response->getContent() );
 	}
 
 
@@ -90,7 +90,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( 'list-items', $response->getContent() );
+		$this->assertStringContainsString( 'list-items', $response->getContent() );
 	}
 
 
@@ -105,7 +105,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( 'item-product', $response->getContent() );
+		$this->assertStringContainsString( 'item-product', $response->getContent() );
 	}
 
 
@@ -120,7 +120,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( 'item-product', $response->getContent() );
+		$this->assertStringContainsString( 'item-product', $response->getContent() );
 	}
 
 
@@ -135,7 +135,7 @@ class JqadmControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( 'list-items', $response->getContent() );
+		$this->assertStringContainsString( 'list-items', $response->getContent() );
 	}
 
 

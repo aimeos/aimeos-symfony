@@ -98,7 +98,7 @@ class ScriptHandler
 	 * @param string $dir Absolute path of the new directory
 	 * @throws \RuntimeException If directory couldn't be created
 	 */
-	protected static function createDirectory( $dir )
+	protected static function createDirectory( string $dir )
 	{
 		$perm = 0755;
 
@@ -118,7 +118,7 @@ class ScriptHandler
 	 * @param array List of configuration options for the given command
 	 * @throws \RuntimeException If the command couldn't be executed
 	 */
-	protected static function executeCommand( Event $event, $cmd, array $options = array() )
+	protected static function executeCommand( Event $event, string $cmd, array $options = [] )
 	{
 		$php = escapeshellarg( self::getPhp() );
 		$console = escapeshellarg( self::getConsoleDir( $event ) . '/console' );
@@ -188,7 +188,7 @@ class ScriptHandler
 	 * @return string Path to the PHP command
 	 * @throws \RuntimeException If PHP interpreter couldn't be found
 	 */
-	protected static function getPhp()
+	protected static function getPhp() : string
 	{
 		$phpFinder = new PhpExecutableFinder;
 
@@ -206,7 +206,7 @@ class ScriptHandler
 	 * @param string $filename Name of the YAML config file
 	 * @throws \RuntimeException If file is not found
 	 */
-	protected static function updateConfigFile( $filename )
+	protected static function updateConfigFile( string $filename )
 	{
 		if( ( $content = file_get_contents( $filename ) ) === false ) {
 			throw new \RuntimeException( sprintf( 'File "%1$s" not found', $filename ) );
@@ -225,7 +225,7 @@ class ScriptHandler
 	 * @param string $filename Name of the YAML config file
 	 * @throws \RuntimeException If file is not found
 	 */
-	protected static function updateRoutingFile( $filename )
+	protected static function updateRoutingFile( string $filename )
 	{
 		$content = '';
 
@@ -255,9 +255,9 @@ class ScriptHandler
 	 * Adds the AimeosShopBundle to the assetic section of the config file
 	 *
 	 * @param string &$content Content of the config.yml file
-	 * @return boolean True if modified, false if not
+	 * @return bool True if modified, false if not
 	 */
-	protected static function addAsseticBundle( &$content )
+	protected static function addAsseticBundle( string &$content ) : bool
 	{
 		if( preg_match( "/    bundles:[ ]*\[.*'AimeosShopBundle'.*\]/", $content ) !== 1 )
 		{

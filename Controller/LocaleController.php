@@ -27,7 +27,7 @@ class LocaleController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function selectComponentAction()
+	public function selectComponentAction() : Response
 	{
 		$shop = $this->container->get( 'shop' );
 		$client = $shop->get( 'locale/select' );

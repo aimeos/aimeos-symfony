@@ -15,6 +15,6 @@ class AdminControllerTest extends WebTestCase
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertContains( '<form class="login"', $response->getContent() );
+		$this->assertStringContainsString( '<form class="login"', $response->getContent() );
 	}
 }

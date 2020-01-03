@@ -27,7 +27,7 @@ class BasketController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function indexAction()
+	public function indexAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -49,7 +49,7 @@ class BasketController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function bulkComponentAction()
+	public function bulkComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'basket/bulk' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -63,7 +63,7 @@ class BasketController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function miniComponentAction()
+	public function miniComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'basket/mini' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -79,7 +79,7 @@ class BasketController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function relatedComponentAction()
+	public function relatedComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'basket/related' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -95,7 +95,7 @@ class BasketController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function standardComponentAction()
+	public function standardComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'basket/standard' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );

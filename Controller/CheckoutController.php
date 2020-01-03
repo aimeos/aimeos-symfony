@@ -27,7 +27,7 @@ class CheckoutController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function confirmAction()
+	public function confirmAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -49,7 +49,7 @@ class CheckoutController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function indexAction()
+	public function indexAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -71,7 +71,7 @@ class CheckoutController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function updateAction()
+	public function updateAction() : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
@@ -93,7 +93,7 @@ class CheckoutController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function confirmComponentAction()
+	public function confirmComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'checkout/confirm' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -109,7 +109,7 @@ class CheckoutController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function standardComponentAction()
+	public function standardComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'checkout/standard' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
@@ -125,7 +125,7 @@ class CheckoutController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function updateComponentAction()
+	public function updateComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'checkout/update' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );

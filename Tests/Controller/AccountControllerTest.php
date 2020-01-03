@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class AccountControllerTest extends WebTestCase
 {
-	protected function setUp()
+	protected function setUp() : void
 	{
 		\Aimeos\MShop::cache( false );
 		\Aimeos\Controller\Frontend::cache( false );
@@ -20,10 +20,10 @@ class AccountControllerTest extends WebTestCase
 		$client = static::createClient();
 		$client->request( 'GET', '/unittest/de/EUR/myaccount/' );
 
-		$this->assertContains( 'aimeos account-profile', $client->getResponse()->getContent() );
-		$this->assertContains( 'aimeos account-history', $client->getResponse()->getContent() );
-		$this->assertContains( 'aimeos account-favorite', $client->getResponse()->getContent() );
-		$this->assertContains( 'aimeos account-watch', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos account-profile', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos account-history', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos account-favorite', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos account-watch', $client->getResponse()->getContent() );
 	}
 
 
@@ -42,7 +42,7 @@ class AccountControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/accountfavoritecomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos account-favorite', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos account-favorite', $client->getResponse()->getContent() );
 	}
 
 
@@ -52,7 +52,7 @@ class AccountControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/accounthistorycomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos account-history', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos account-history', $client->getResponse()->getContent() );
 	}
 
 
@@ -62,7 +62,7 @@ class AccountControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/accountprofilecomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos account-profile', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos account-profile', $client->getResponse()->getContent() );
 	}
 
 
@@ -72,6 +72,6 @@ class AccountControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/test/accountwatchcomponent' );
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertContains( 'aimeos account-watch', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'aimeos account-watch', $client->getResponse()->getContent() );
 	}
 }

@@ -13,6 +13,7 @@ namespace Aimeos\ShopBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 
 
 /**
@@ -29,7 +30,7 @@ class JqadmController extends Controller
 	 * @param $type File type, i.e. "css" or "js"
 	 * @return Response Response object
 	 */
-	public function fileAction( $type )
+	public function fileAction( $type ) : Response
 	{
 		$contents = '';
 		$files = array();
@@ -72,12 +73,12 @@ class JqadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return Response Generated output
 	 */
-	public function copyAction( Request $request, $resource, $site = 'default' )
+	public function copyAction( Request $request, $resource, $site = 'default' ) : Response
 	{
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->copy() ) == '' ) {
-			return $cntl->getView()->response();
+			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -92,12 +93,12 @@ class JqadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return Response Generated output
 	 */
-	public function createAction( Request $request, $resource, $site = 'default' )
+	public function createAction( Request $request, $resource, $site = 'default' ) : Response
 	{
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->create() ) == '' ) {
-			return $cntl->getView()->response();
+			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -112,12 +113,12 @@ class JqadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return Response Generated output
 	 */
-	public function deleteAction( Request $request, $resource, $site = 'default' )
+	public function deleteAction( Request $request, $resource, $site = 'default' ) : Response
 	{
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->delete() ) == '' ) {
-			return $cntl->getView()->response();
+			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -132,12 +133,12 @@ class JqadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return Response Generated output
 	 */
-	public function exportAction( Request $request, $resource, $site = 'default' )
+	public function exportAction( Request $request, $resource, $site = 'default' ) : Response
 	{
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->export() ) == '' ) {
-			return $cntl->getView()->response();
+			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -152,12 +153,12 @@ class JqadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return Response Generated output
 	 */
-	public function getAction( Request $request, $resource, $site = 'default' )
+	public function getAction( Request $request, $resource, $site = 'default' ) : Response
 	{
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->get() ) == '' ) {
-			return $cntl->getView()->response();
+			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -172,12 +173,12 @@ class JqadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return Response Generated output
 	 */
-	public function saveAction( Request $request, $resource, $site = 'default' )
+	public function saveAction( Request $request, $resource, $site = 'default' ) : Response
 	{
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->save() ) == '' ) {
-			return $cntl->getView()->response();
+			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -192,12 +193,12 @@ class JqadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return Response Generated output
 	 */
-	public function searchAction( Request $request, $resource, $site = 'default' )
+	public function searchAction( Request $request, $resource, $site = 'default' ) : Response
 	{
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->search() ) == '' ) {
-			return $cntl->getView()->response();
+			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -212,7 +213,7 @@ class JqadmController extends Controller
 	 * @param string $resource Resource location, e.g. "product"
 	 * @return \Aimeos\Admin\JQAdm\Iface Context item
 	 */
-	protected function createAdmin( Request $request, $site, $resource )
+	protected function createAdmin( Request $request, $site, $resource ) : \Aimeos\Admin\JQAdm\Iface
 	{
 		$lang = $request->get( 'lang', 'en' );
 
@@ -241,7 +242,7 @@ class JqadmController extends Controller
 	 * @param string $content Content from admin client
 	 * @return Response View for rendering the output
 	 */
-	protected function getHtml( $content )
+	protected function getHtml( $content ) : Response
 	{
 		return $this->render( '@AimeosShop/Jqadm/index.html.twig', array( 'content' => $content ) );
 	}

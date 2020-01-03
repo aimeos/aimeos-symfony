@@ -181,7 +181,7 @@ class User implements UserInterface, \Serializable
 	/**
 	 * @inheritDoc
 	 */
-	public function getId()
+	public function getId() : ?string
 	{
 		return $this->id;
 	}
@@ -190,7 +190,7 @@ class User implements UserInterface, \Serializable
 	/**
 	 * @inheritDoc
 	 */
-	public function getUsername()
+	public function getUsername() : ?string
 	{
 		return $this->username;
 	}
@@ -199,7 +199,7 @@ class User implements UserInterface, \Serializable
 	/**
 	 * @inheritDoc
 	 */
-	public function getSalt()
+	public function getSalt() : ?string
 	{
 		return 'mshop';
 	}
@@ -208,7 +208,7 @@ class User implements UserInterface, \Serializable
 	/**
 	 * @inheritDoc
 	 */
-	public function getPassword()
+	public function getPassword() : ?string
 	{
 		return $this->password;
 	}
@@ -217,7 +217,7 @@ class User implements UserInterface, \Serializable
 	/**
 	 * @inheritDoc
 	 */
-	public function getRoles()
+	public function getRoles() : array
 	{
 		return array( 'ROLE_USER' );
 	}

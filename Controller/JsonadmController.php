@@ -31,7 +31,8 @@ class JsonadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function deleteAction( ServerRequestInterface $request, $resource, $site = 'default' )
+	public function deleteAction( ServerRequestInterface $request, string $resource,
+		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->delete( $request, new Response() );
@@ -46,7 +47,8 @@ class JsonadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function getAction( ServerRequestInterface $request, $resource, $site = 'default' )
+	public function getAction( ServerRequestInterface $request, string $resource,
+		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->get( $request, new Response() );
@@ -61,7 +63,8 @@ class JsonadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function patchAction( ServerRequestInterface $request, $resource, $site = 'default' )
+	public function patchAction( ServerRequestInterface $request, string $resource,
+		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->patch( $request, new Response() );
@@ -76,7 +79,8 @@ class JsonadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function postAction( ServerRequestInterface $request, $resource, $site = 'default' )
+	public function postAction( ServerRequestInterface $request, string $resource,
+		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->post( $request, new Response() );
@@ -91,7 +95,8 @@ class JsonadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function putAction( ServerRequestInterface $request, $resource, $site = 'default' )
+	public function putAction( ServerRequestInterface $request, string $resource,
+		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->put( $request, new Response() );
@@ -106,7 +111,8 @@ class JsonadmController extends Controller
 	 * @param string $site Unique site code
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function optionsAction( ServerRequestInterface $request, $resource = '', $site = 'default' )
+	public function optionsAction( ServerRequestInterface $request, string $resource = '',
+		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
 		return $client->options( $request, new Response() );
@@ -119,9 +125,9 @@ class JsonadmController extends Controller
 	 * @param string $site Unique site code
 	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $lang Language code
-	 * @return \Aimeos\MShop\Context\Item\Iface Context item
+	 * @return \Aimeos\Admin\JsonAdm\Iface Context item
 	 */
-	protected function createAdmin( $site, $resource, $lang )
+	protected function createAdmin( string $site, string $resource, string $lang ) : \Aimeos\Admin\JsonAdm\Iface
 	{
 		$aimeos = $this->get( 'aimeos' )->get();
 		$templatePaths = $aimeos->getCustomPaths( 'admin/jsonadm/templates' );

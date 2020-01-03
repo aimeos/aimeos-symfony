@@ -26,7 +26,7 @@ class PageController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function privacyAction()
+	public function privacyAction() : Response
 	{
 		return $this->render( '@AimeosShop/Page/privacy.html.twig' );
 	}
@@ -37,7 +37,7 @@ class PageController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function termsAction()
+	public function termsAction() : Response
 	{
 		return $this->render( '@AimeosShop/Page/terms.html.twig' );
 	}
