@@ -10,6 +10,7 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
