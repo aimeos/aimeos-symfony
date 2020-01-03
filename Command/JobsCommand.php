@@ -85,12 +85,12 @@ class JobsCommand extends Command
 	protected function getContext() : \Aimeos\MShop\Context\Item\Iface
 	{
 		$container = $this->getContainer();
-		$aimeos = $container->get('aimeos')->get();
+		$aimeos = $container->get( 'aimeos' )->get();
 		$context = $container->get( 'aimeos.context' )->get( false, 'command' );
 
 		$tmplPaths = $aimeos->getCustomPaths( 'controller/jobs/templates' );
 		$tmplPaths = array_merge( $tmplPaths, $aimeos->getCustomPaths( 'client/html/templates' ) );
-		$view = $container->get('aimeos.view')->create( $context, $tmplPaths );
+		$view = $container->get( 'aimeos.view' )->create( $context, $tmplPaths );
 
 		$langManager = \Aimeos\MShop::create( $context, 'locale/language' );
 		$langids = array_keys( $langManager->searchItems( $langManager->createSearch( true ) ) );

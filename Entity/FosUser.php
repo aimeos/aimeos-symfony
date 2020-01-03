@@ -552,7 +552,7 @@ class FosUser extends BaseUser
 	 */
 	public function getWebsite() : string
 	{
-		return (string)  $this->website;
+		return (string) $this->website;
 	}
 
 

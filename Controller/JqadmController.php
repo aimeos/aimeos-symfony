@@ -78,7 +78,7 @@ class JqadmController extends Controller
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->copy() ) == '' ) {
-			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -98,7 +98,7 @@ class JqadmController extends Controller
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->create() ) == '' ) {
-			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -118,7 +118,7 @@ class JqadmController extends Controller
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->delete() ) == '' ) {
-			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -138,7 +138,7 @@ class JqadmController extends Controller
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->export() ) == '' ) {
-			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -158,7 +158,7 @@ class JqadmController extends Controller
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->get() ) == '' ) {
-			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -178,7 +178,7 @@ class JqadmController extends Controller
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->save() ) == '' ) {
-			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
@@ -198,7 +198,7 @@ class JqadmController extends Controller
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->search() ) == '' ) {
-			return (new HttpFoundationFactory())->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
 		return $this->getHtml( $html );
