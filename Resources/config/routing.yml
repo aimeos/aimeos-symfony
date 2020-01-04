@@ -25,7 +25,7 @@ aimeos_shop_jsonapi:
 
 aimeos_shop_account:
     resource: "@AimeosShopBundle/Resources/config/routing_account.yml"
-    prefix: /myaccount
+    prefix: /profile
 
 aimeos_shop_default:
     resource: "@AimeosShopBundle/Resources/config/routing_default.yml"
