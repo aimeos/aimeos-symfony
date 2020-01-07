@@ -24,7 +24,7 @@ resource:
         database: "%database_name%"
         username: "%database_user%"
         password: "%database_password%"
-        stmt: ["SET SESSION sort_buffer_size=2097144; SET NAMES 'utf8mb4'; SET SESSION sql_mode='ANSI'"]
+        stmt: ["SET SESSION sort_buffer_size=2097144; SET NAMES 'utf8mb4'; SET SESSION sql_mode='ANSI'; SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED"]
         limit: 3
         opt-persistent: 0
         defaultTableOptions:
