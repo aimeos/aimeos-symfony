@@ -20,7 +20,7 @@
 	"prefer-stable": true,
 	"minimum-stability": "dev",
 	"require": {
-		"php": ">=7.1.0",
+		"php": "~7.1",
 		"aimeos/aimeos-core": "dev-master",
 		"aimeos/ai-gettext": "dev-master",
 		"aimeos/ai-monolog": "dev-master",
@@ -43,7 +43,6 @@
 		"symfony/psr-http-message-bridge": "~1.0",
 		"sensio/framework-extra-bundle": "~3.4||~4.0||~5.0",
 		"friendsofsymfony/user-bundle": "~2.1",
-		"zendframework/zend-diactoros": "~1.3",
 		"nyholm/psr7": "~1.0"
 	},
 	"require-dev": {

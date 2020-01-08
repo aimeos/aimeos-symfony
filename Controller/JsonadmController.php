@@ -12,7 +12,7 @@ namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\Response;
+use Nyholm\Psr7\Factory\Psr17Factory;
 
 
 /**
@@ -35,7 +35,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->delete( $request, new Response() );
+		return $client->delete( $request, (new Psr17Factory)->createResponse() );
 	}
 
 
@@ -51,7 +51,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->get( $request, new Response() );
+		return $client->get( $request, (new Psr17Factory)->createResponse() );
 	}
 
 
@@ -67,7 +67,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->patch( $request, new Response() );
+		return $client->patch( $request, (new Psr17Factory)->createResponse() );
 	}
 
 
@@ -83,7 +83,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->post( $request, new Response() );
+		return $client->post( $request, (new Psr17Factory)->createResponse() );
 	}
 
 
@@ -99,7 +99,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->put( $request, new Response() );
+		return $client->put( $request, (new Psr17Factory)->createResponse() );
 	}
 
 
@@ -115,7 +115,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->options( $request, new Response() );
+		return $client->options( $request, (new Psr17Factory)->createResponse() );
 	}
 
 
