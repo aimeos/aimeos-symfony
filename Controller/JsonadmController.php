@@ -35,7 +35,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->delete( $request, (new Psr17Factory)->createResponse() );
+		return $client->delete( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
@@ -51,7 +51,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->get( $request, (new Psr17Factory)->createResponse() );
+		return $client->get( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
@@ -67,7 +67,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->patch( $request, (new Psr17Factory)->createResponse() );
+		return $client->patch( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
@@ -83,7 +83,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->post( $request, (new Psr17Factory)->createResponse() );
+		return $client->post( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
@@ -99,7 +99,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->put( $request, (new Psr17Factory)->createResponse() );
+		return $client->put( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
@@ -115,7 +115,7 @@ class JsonadmController extends Controller
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
 		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
-		return $client->options( $request, (new Psr17Factory)->createResponse() );
+		return $client->options( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
