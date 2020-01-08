@@ -32,7 +32,7 @@ class JsonapiController extends Controller
 	 */
 	public function deleteAction( ServerRequestInterface $request, string $resource ) : \Psr\Http\Message\ResponseInterface
 	{
-		return $this->createClient( $request, $resource )->delete( $request, (new Psr17Factory)->createResponse() );
+		return $this->createClient( $request, $resource )->delete( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
@@ -45,7 +45,7 @@ class JsonapiController extends Controller
 	 */
 	public function getAction( ServerRequestInterface $request, string $resource ) : \Psr\Http\Message\ResponseInterface
 	{
-		return $this->createClient( $request, $resource )->get( $request, (new Psr17Factory)->createResponse() );
+		return $this->createClient( $request, $resource )->get( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
@@ -58,7 +58,7 @@ class JsonapiController extends Controller
 	 */
 	public function patchAction( ServerRequestInterface $request, string $resource ) : \Psr\Http\Message\ResponseInterface
 	{
-		return $this->createClient( $request, $resource )->patch( $request, (new Psr17Factory)->createResponse() );
+		return $this->createClient( $request, $resource )->patch( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
@@ -71,7 +71,7 @@ class JsonapiController extends Controller
 	 */
 	public function postAction( ServerRequestInterface $request, string $resource ) : \Psr\Http\Message\ResponseInterface
 	{
-		return $this->createClient( $request, $resource )->post( $request, (new Psr17Factory)->createResponse() );
+		return $this->createClient( $request, $resource )->post( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
@@ -84,7 +84,7 @@ class JsonapiController extends Controller
 	 */
 	public function putAction( ServerRequestInterface $request, string $resource ) : \Psr\Http\Message\ResponseInterface
 	{
-		return $this->createClient( $request, $resource )->put( $request, (new Psr17Factory)->createResponse() );
+		return $this->createClient( $request, $resource )->put( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
@@ -97,7 +97,7 @@ class JsonapiController extends Controller
 	 */
 	public function optionsAction( ServerRequestInterface $request, string $resource = '' ) : \Psr\Http\Message\ResponseInterface
 	{
-		return $this->createClient( $request, $resource )->options( $request, (new Psr17Factory)->createResponse() );
+		return $this->createClient( $request, $resource )->options( $request, ( new Psr17Factory )->createResponse() );
 	}
 
 
