@@ -35,7 +35,8 @@ customize anything to your needs.
 
 This document is for the latest Aimeos Symfony **2019.10 release and later**.
 
-- LTS release: 2019.10
+- LTS release: 2019.10 (Symfony 3.4 and 4.x)
+- Beta release: 2019.10 (Symfony 3.4 and 4.x)
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
@@ -355,7 +356,7 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/myaccount, roles: ROLE_USER }
+        - { path: ^/profile, roles: ROLE_USER }
         - { path: ^/admin/.+, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
 ```
 
@@ -364,7 +365,7 @@ security:
 These settings will protect the ```/admin/*``` URLs from unauthorized access from
 someone without admin privileges.
 
-The `/myaccount` URL is protected by the FOS user bundle as well, which also offers
+The `/profile` URL is protected by the FOS user bundle as well, which also offers
 user registration. A bit more detailed explanation of the authentication is available in the
 [Aimeos docs](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login).
 
