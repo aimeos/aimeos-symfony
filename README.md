@@ -200,7 +200,7 @@ and their specific configuration.
 Symfony 4 uses an in-memory mail spooler by default which collects the e-mails and send them
 at the end. This can be problematic if there's an error because you e.g. forgot to add a
 sender address and all e-mail gets lost. The settings for sending e-mails immediately in
-`config/packages/swiftmailer.yaml` are:
+`./config/packages/swiftmailer.yaml` are:
 
 ```yaml
 swiftmailer:
@@ -306,7 +306,7 @@ the existing file with the content below:
 
 Start the PHP web server in the base directory of your application to do some quick tests:
 
-```./bin/console server:run```
+```php -S 127.0.0.1:8000 -t public```
 
 Then, you should be able to call the catalog list page in your browser using
 
@@ -380,7 +380,7 @@ To protect the new account, the command will ask you for a password. The same co
 create limited accounts by using "--editor" instead of "--admin". If you use "--super" the
 account will have access to all sites.
 
-If the PHP web server is still running (`./bin/console server:run`), you should be
+If the PHP web server is still running (`php -S 127.0.0.1:8000 -t public`), you should be
 able to call the admin login page in your browser using
 
 ```http://127.0.0.1:8000/admin```
