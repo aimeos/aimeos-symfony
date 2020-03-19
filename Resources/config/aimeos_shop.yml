@@ -29,7 +29,7 @@ resource:
         opt-persistent: 0
         defaultTableOptions:
             charset: utf8mb4
-            collate: utf8mb4_bin
+            collate: utf8mb4_unicode_ci
     fs:
         adapter: Standard
         basedir: "%kernel.root_dir%/../web"
