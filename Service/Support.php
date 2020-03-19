@@ -35,10 +35,6 @@ class Support
 		$search = $manager->createSearch();
 		$search->setConditions( $search->compare( '==', 'customer.group.id', $context->getGroupIds() ) );
 
-		foreach( $manager->searchItems( $search ) as $item ) {
-			$list[] = $item->getCode();
-		}
-
-		return $list;
+		return $manager->searchItems( $search )->getCode()->toArray();
 	}
 }
