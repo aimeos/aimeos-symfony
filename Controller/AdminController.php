@@ -34,8 +34,11 @@ class AdminController extends Controller
 		{
 			$context = $this->get( 'aimeos.context' )->get( false );
 			$siteManager = \Aimeos\MShop::create( $context, 'locale/site' );
+
 			$user = $this->get( 'security.token_storage' )->getToken()->getUser();
-			$siteCode = ( $user->getSiteId() ? $siteManager->getItem( $user->getSiteId() )->getCode() : 'default' );
+			$siteId = current( array_reverse( explode( '.', trim( $user->getSiteId(), '.' ) ) ) );
+			$siteCode = ( $siteId ? $siteManager->getItem( $siteId )->getCode() : 'default' );
+
 			$locale = $user->getLanguageId() ?: ( $this->container->hasParameter( 'locale' ) ? $this->container->getParameter( 'locale' ) : 'en' );
 
 			$params = array(
