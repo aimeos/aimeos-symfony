@@ -65,8 +65,27 @@ class JobsCommand extends Command
 
 			foreach( $jobs as $jobname )
 			{
-				$fcn = function( $context, $aimeos, $jobname ) {
+				$fcn = function( $context, $aimeos, $jobname ) use ( $output ) {
 					\Aimeos\Controller\Jobs::create( $context, $aimeos, $jobname )->run();
+
+					$container = $this->getContainer();
+					$mailers = array_keys($container->getParameter('swiftmailer.mailers'));
+					foreach ($mailers as $name) {
+						if (method_exists($container, 'initialized') ? $container->initialized(sprintf('swiftmailer.mailer.%s', $name)) : true) {
+							if ($container->getParameter(sprintf('swiftmailer.mailer.%s.spool.enabled', $name))) {
+								$mailer = $container->get(sprintf('swiftmailer.mailer.%s', $name));
+								$transport = $mailer->getTransport();
+								if ($transport instanceof \Swift_Transport_SpoolTransport) {
+									$spool = $transport->getSpool();
+									if ($spool instanceof \Swift_MemorySpool) {
+										$output->writeln( sprintf( 'Flushing queue "<info>%s</info>"', $name ) );
+										// may throw
+										$spool->flushQueue($container->get(sprintf('swiftmailer.mailer.%s.transport.real', $name)));
+									}
+								}
+							}
+						}
+					}
 				};
 
 				$process->start( $fcn, [$context, $aimeos, $jobname], true );
