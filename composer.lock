@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "755a832d17aa8ec18464b489330aa4cfb504eec7"
+                "reference": "01cb03f42b14a9c72e52eca79e21fc9777008c92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/755a832d17aa8ec18464b489330aa4cfb504eec7",
-                "reference": "755a832d17aa8ec18464b489330aa4cfb504eec7",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/01cb03f42b14a9c72e52eca79e21fc9777008c92",
+                "reference": "01cb03f42b14a9c72e52eca79e21fc9777008c92",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 "bootstrap",
                 "extension"
             ],
-            "time": "2020-04-21T17:05:04+00:00"
+            "time": "2020-04-29T15:15:41+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -107,12 +107,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "ff8edce57f53593ac258b8d677103e5759686e10"
+                "reference": "f8649de270a6c0a482542a128b41626113afd345"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/ff8edce57f53593ac258b8d677103e5759686e10",
-                "reference": "ff8edce57f53593ac258b8d677103e5759686e10",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/f8649de270a6c0a482542a128b41626113afd345",
+                "reference": "f8649de270a6c0a482542a128b41626113afd345",
                 "shasum": ""
             },
             "require": {
@@ -151,7 +151,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2020-04-22T17:29:05+00:00"
+            "time": "2020-04-27T16:12:07+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
