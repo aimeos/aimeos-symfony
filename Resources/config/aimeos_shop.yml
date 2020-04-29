@@ -84,6 +84,9 @@ client:
             index:
                 url:
                     target: aimeos_shop_account
+            profile:
+                url:
+                    target: aimeos_shop_account
             subscription:
                 url:
                     target: aimeos_shop_account
