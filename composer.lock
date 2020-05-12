@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bcda5ac7018e87cd919a4c69d975051",
+    "content-hash": "df8a013664a4e01f8699358fa4e008f4",
     "packages": [
         {
             "name": "aimeos/ai-admin-jqadm",
-            "version": "dev-master",
+            "version": "2020.04.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "01cb03f42b14a9c72e52eca79e21fc9777008c92"
+                "reference": "81490538dbbd0128c04f849db65fc3de03f03fe3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/01cb03f42b14a9c72e52eca79e21fc9777008c92",
-                "reference": "01cb03f42b14a9c72e52eca79e21fc9777008c92",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/81490538dbbd0128c04f849db65fc3de03f03fe3",
+                "reference": "81490538dbbd0128c04f849db65fc3de03f03fe3",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -53,24 +53,24 @@
                 "bootstrap",
                 "extension"
             ],
-            "time": "2020-04-29T15:15:41+00:00"
+            "time": "2020-04-18T08:13:43+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
-            "version": "dev-master",
+            "version": "2020.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "5c8cf347d3ece763110567d740e3201e7d12e687"
+                "reference": "e5a5fab1e7c1c97c36883935e85d8c3b583cd174"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/5c8cf347d3ece763110567d740e3201e7d12e687",
-                "reference": "5c8cf347d3ece763110567d740e3201e7d12e687",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/e5a5fab1e7c1c97c36883935e85d8c3b583cd174",
+                "reference": "e5a5fab1e7c1c97c36883935e85d8c3b583cd174",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -99,26 +99,26 @@
                 "extension",
                 "json api"
             ],
-            "time": "2020-04-27T17:35:32+00:00"
+            "time": "2020-04-06T22:26:06+00:00"
         },
         {
             "name": "aimeos/ai-client-html",
-            "version": "dev-master",
+            "version": "2020.04.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "f8649de270a6c0a482542a128b41626113afd345"
+                "reference": "363c9a83b1405630af6c191bc119eadafb30679a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/f8649de270a6c0a482542a128b41626113afd345",
-                "reference": "f8649de270a6c0a482542a128b41626113afd345",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/363c9a83b1405630af6c191bc119eadafb30679a",
+                "reference": "363c9a83b1405630af6c191bc119eadafb30679a",
                 "shasum": ""
             },
             "require": {
-                "aimeos/ai-controller-frontend": "dev-master",
-                "aimeos/ai-controller-jobs": "dev-master",
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/ai-controller-frontend": "2020.04.*",
+                "aimeos/ai-controller-jobs": "2020.04.*",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -151,25 +151,25 @@
                 "extension",
                 "html"
             ],
-            "time": "2020-04-27T16:12:07+00:00"
+            "time": "2020-05-05T17:01:09+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
-            "version": "dev-master",
+            "version": "2020.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "113e4a5f1288357c1c7cbd27bfa69ce63da5692a"
+                "reference": "044545a9fb7e22d5e8813f5c886924648e8ea552"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/113e4a5f1288357c1c7cbd27bfa69ce63da5692a",
-                "reference": "113e4a5f1288357c1c7cbd27bfa69ce63da5692a",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/044545a9fb7e22d5e8813f5c886924648e8ea552",
+                "reference": "044545a9fb7e22d5e8813f5c886924648e8ea552",
                 "shasum": ""
             },
             "require": {
-                "aimeos/ai-controller-frontend": "dev-master",
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/ai-controller-frontend": "2020.04.*",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -199,24 +199,24 @@
                 "extension",
                 "json"
             ],
-            "time": "2020-04-01T14:06:24+00:00"
+            "time": "2020-04-06T22:26:06+00:00"
         },
         {
             "name": "aimeos/ai-controller-frontend",
-            "version": "dev-master",
+            "version": "2020.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "03e9dba229a04dbbe03af2465e6e18c67db7146d"
+                "reference": "0df6ae5cf4b37fcfcf606737141d60d8433789c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/03e9dba229a04dbbe03af2465e6e18c67db7146d",
-                "reference": "03e9dba229a04dbbe03af2465e6e18c67db7146d",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/0df6ae5cf4b37fcfcf606737141d60d8433789c6",
+                "reference": "0df6ae5cf4b37fcfcf606737141d60d8433789c6",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -244,24 +244,24 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2020-04-03T16:41:24+00:00"
+            "time": "2020-04-06T22:26:06+00:00"
         },
         {
             "name": "aimeos/ai-controller-jobs",
-            "version": "dev-master",
+            "version": "2020.04.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "236fa0af30c2755a039ec94bc4eb01c4cf6203c7"
+                "reference": "2774548d0cfd835b948748da2714ccf8b2711053"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/236fa0af30c2755a039ec94bc4eb01c4cf6203c7",
-                "reference": "236fa0af30c2755a039ec94bc4eb01c4cf6203c7",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/2774548d0cfd835b948748da2714ccf8b2711053",
+                "reference": "2774548d0cfd835b948748da2714ccf8b2711053",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -291,24 +291,24 @@
                 "extension",
                 "jobs"
             ],
-            "time": "2020-04-16T08:11:36+00:00"
+            "time": "2020-04-16T08:10:53+00:00"
         },
         {
             "name": "aimeos/ai-fosuser",
-            "version": "dev-master",
+            "version": "2020.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-fosuser.git",
-                "reference": "d3e9951606af5583a55127e4891e7cd77c17293e"
+                "reference": "c4fae3d40a1e77612f70e0ef1e0a71ac3282e1d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/d3e9951606af5583a55127e4891e7cd77c17293e",
-                "reference": "d3e9951606af5583a55127e4891e7cd77c17293e",
+                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/c4fae3d40a1e77612f70e0ef1e0a71ac3282e1d6",
+                "reference": "c4fae3d40a1e77612f70e0ef1e0a71ac3282e1d6",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -338,24 +338,24 @@
                 "symfony",
                 "user"
             ],
-            "time": "2020-03-30T06:59:51+00:00"
+            "time": "2020-04-06T22:26:06+00:00"
         },
         {
             "name": "aimeos/ai-gettext",
-            "version": "dev-master",
+            "version": "2020.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
-                "reference": "009b32a5101728ffbb4a34bc474530596420f5ea"
+                "reference": "84a83c3d5024fbcabc159fe4a5d082873d364d0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/009b32a5101728ffbb4a34bc474530596420f5ea",
-                "reference": "009b32a5101728ffbb4a34bc474530596420f5ea",
+                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/84a83c3d5024fbcabc159fe4a5d082873d364d0d",
+                "reference": "84a83c3d5024fbcabc159fe4a5d082873d364d0d",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -383,24 +383,24 @@
                 "gettext",
                 "performance"
             ],
-            "time": "2020-04-02T14:08:52+00:00"
+            "time": "2020-04-06T22:26:06+00:00"
         },
         {
             "name": "aimeos/ai-monolog",
-            "version": "dev-master",
+            "version": "2020.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "51f91abfe8ccbba266734d37a3fff1b43a7d033b"
+                "reference": "f2d7310826259028c42f5749a262a67b49406337"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/51f91abfe8ccbba266734d37a3fff1b43a7d033b",
-                "reference": "51f91abfe8ccbba266734d37a3fff1b43a7d033b",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/f2d7310826259028c42f5749a262a67b49406337",
+                "reference": "f2d7310826259028c42f5749a262a67b49406337",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "monolog/monolog": "~1.0",
                 "php": "~7.1"
@@ -431,24 +431,24 @@
                 "monolog",
                 "shop"
             ],
-            "time": "2020-03-11T09:27:43+00:00"
+            "time": "2020-04-06T22:26:06+00:00"
         },
         {
             "name": "aimeos/ai-swiftmailer",
-            "version": "dev-master",
+            "version": "2020.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "832bf149e4adfc069362d5c8a2093ad98e11d04d"
+                "reference": "eb20fc84a14233cf69747b8cb6518c8ffc01fde6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/832bf149e4adfc069362d5c8a2093ad98e11d04d",
-                "reference": "832bf149e4adfc069362d5c8a2093ad98e11d04d",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/eb20fc84a14233cf69747b8cb6518c8ffc01fde6",
+                "reference": "eb20fc84a14233cf69747b8cb6518c8ffc01fde6",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1",
                 "swiftmailer/swiftmailer": "~5.0||~6.0"
@@ -479,24 +479,24 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2020-03-10T17:59:51+00:00"
+            "time": "2020-04-06T22:26:07+00:00"
         },
         {
             "name": "aimeos/ai-symfony",
-            "version": "dev-master",
+            "version": "2020.04.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
-                "reference": "f7c43058a6d3d2d4ce9d9e459ffbbd1db3c5747f"
+                "reference": "455030093e221555153abfbc1180ebf5dae362fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/f7c43058a6d3d2d4ce9d9e459ffbbd1db3c5747f",
-                "reference": "f7c43058a6d3d2d4ce9d9e459ffbbd1db3c5747f",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/455030093e221555153abfbc1180ebf5dae362fa",
+                "reference": "455030093e221555153abfbc1180ebf5dae362fa",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "nyholm/psr7": "~1.2",
                 "php": "~7.1",
@@ -527,24 +527,24 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2020-03-10T17:55:33+00:00"
+            "time": "2020-04-06T22:26:07+00:00"
         },
         {
             "name": "aimeos/ai-twig",
-            "version": "dev-master",
+            "version": "2020.04.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-twig.git",
-                "reference": "3c5613acdfc40b3a8e9f013d0842fc1771dbb030"
+                "reference": "a4f8116e34ca00d53cc471d4697e213904392778"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/3c5613acdfc40b3a8e9f013d0842fc1771dbb030",
-                "reference": "3c5613acdfc40b3a8e9f013d0842fc1771dbb030",
+                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/a4f8116e34ca00d53cc471d4697e213904392778",
+                "reference": "a4f8116e34ca00d53cc471d4697e213904392778",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.04.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1",
                 "twig/twig": "~1.9||~2.0"
@@ -572,20 +572,20 @@
                 "templates",
                 "twig"
             ],
-            "time": "2020-03-10T17:55:47+00:00"
+            "time": "2020-04-06T22:26:07+00:00"
         },
         {
             "name": "aimeos/aimeos-core",
-            "version": "dev-master",
+            "version": "2020.04.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "2a9546be074509115fe5ab28618c2ece65ad2668"
+                "reference": "88dabe86918c92fc2c1d03c735a527d12481fb69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/2a9546be074509115fe5ab28618c2ece65ad2668",
-                "reference": "2a9546be074509115fe5ab28618c2ece65ad2668",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/88dabe86918c92fc2c1d03c735a527d12481fb69",
+                "reference": "88dabe86918c92fc2c1d03c735a527d12481fb69",
                 "shasum": ""
             },
             "require": {
@@ -644,7 +644,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2020-04-28T14:26:42+00:00"
+            "time": "2020-04-23T20:34:01+00:00"
         },
         {
             "name": "aimeos/map",
@@ -1845,16 +1845,16 @@
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v5.5.4",
+            "version": "v5.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "d0585d4825a87a5030ca8cd34adb4a17e1066c17"
+                "reference": "c76bb1c5c67840ecb6d9be8e9d8d7036e375e317"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/d0585d4825a87a5030ca8cd34adb4a17e1066c17",
-                "reference": "d0585d4825a87a5030ca8cd34adb4a17e1066c17",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/c76bb1c5c67840ecb6d9be8e9d8d7036e375e317",
+                "reference": "c76bb1c5c67840ecb6d9be8e9d8d7036e375e317",
                 "shasum": ""
             },
             "require": {
@@ -1914,7 +1914,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2020-04-06T12:20:39+00:00"
+            "time": "2020-05-06T12:12:33+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3640,16 +3640,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14"
+                "reference": "1aab00e39cebaef4d8652497f46c15c1b7e45294"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
-                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/1aab00e39cebaef4d8652497f46c15c1b7e45294",
+                "reference": "1aab00e39cebaef4d8652497f46c15c1b7e45294",
                 "shasum": ""
             },
             "require": {
@@ -3661,7 +3661,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3708,20 +3708,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-08T16:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-iconv",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-iconv.git",
-                "reference": "ad6d62792bfbcfc385dd34b424d4fcf9712a32c8"
+                "reference": "d51debc1391a609c514f6f072dd59a61b461502a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-iconv/zipball/ad6d62792bfbcfc385dd34b424d4fcf9712a32c8",
-                "reference": "ad6d62792bfbcfc385dd34b424d4fcf9712a32c8",
+                "url": "https://api.github.com/repos/symfony/polyfill-iconv/zipball/d51debc1391a609c514f6f072dd59a61b461502a",
+                "reference": "d51debc1391a609c514f6f072dd59a61b461502a",
                 "shasum": ""
             },
             "require": {
@@ -3733,7 +3733,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3781,20 +3781,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-03-09T19:04:49+00:00"
+            "time": "2020-05-08T16:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-intl-icu",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-icu.git",
-                "reference": "9c281272735eb66476e0fa7381e03fb0d4b60197"
+                "reference": "0913a9ab67d6042966287c8ad996927b6c710330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/9c281272735eb66476e0fa7381e03fb0d4b60197",
-                "reference": "9c281272735eb66476e0fa7381e03fb0d4b60197",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-icu/zipball/0913a9ab67d6042966287c8ad996927b6c710330",
+                "reference": "0913a9ab67d6042966287c8ad996927b6c710330",
                 "shasum": ""
             },
             "require": {
@@ -3807,7 +3807,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3853,20 +3853,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-08T16:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf"
+                "reference": "ab0af41deab94ec8dceb3d1fb408bdd038eba4dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf",
-                "reference": "47bd6aa45beb1cd7c6a16b7d1810133b728bdfcf",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/ab0af41deab94ec8dceb3d1fb408bdd038eba4dc",
+                "reference": "ab0af41deab94ec8dceb3d1fb408bdd038eba4dc",
                 "shasum": ""
             },
             "require": {
@@ -3880,7 +3880,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -3929,20 +3929,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-03-09T19:04:49+00:00"
+            "time": "2020-05-08T16:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac"
+                "reference": "a54881ec0ab3b2005c406aed0023c062879031e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/a54881ec0ab3b2005c406aed0023c062879031e7",
+                "reference": "a54881ec0ab3b2005c406aed0023c062879031e7",
                 "shasum": ""
             },
             "require": {
@@ -3954,7 +3954,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -4002,20 +4002,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-03-09T19:04:49+00:00"
+            "time": "2020-05-08T16:50:20+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php72.git",
-                "reference": "37b0976c78b94856543260ce09b460a7bc852747"
+                "reference": "42fda6d7380e5c940d7f68341ccae89d5ab9963b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/37b0976c78b94856543260ce09b460a7bc852747",
-                "reference": "37b0976c78b94856543260ce09b460a7bc852747",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/42fda6d7380e5c940d7f68341ccae89d5ab9963b",
+                "reference": "42fda6d7380e5c940d7f68341ccae89d5ab9963b",
                 "shasum": ""
             },
             "require": {
@@ -4024,7 +4024,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -4071,20 +4071,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-08T17:28:34+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.15.0",
+            "version": "v1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
-                "reference": "0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7"
+                "reference": "7e95fe59d12169fcf4041487e4bf34fca37ee0ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7",
-                "reference": "0f27e9f464ea3da33cbe7ca3bdf4eb66def9d0f7",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/7e95fe59d12169fcf4041487e4bf34fca37ee0ed",
+                "reference": "7e95fe59d12169fcf4041487e4bf34fca37ee0ed",
                 "shasum": ""
             },
             "require": {
@@ -4093,7 +4093,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -4143,7 +4143,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "time": "2020-05-02T14:56:09+00:00"
         },
         {
             "name": "symfony/property-access",
@@ -5933,33 +5933,38 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "1.3.1",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "ec3a55242203ffa6a4b27c58176da97ff0a7aec1"
+                "reference": "4111f6853aea6f28b2b1dcfdde83d12dd3d5e6e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/ec3a55242203ffa6a4b27c58176da97ff0a7aec1",
-                "reference": "ec3a55242203ffa6a4b27c58176da97ff0a7aec1",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/4111f6853aea6f28b2b1dcfdde83d12dd3d5e6e3",
+                "reference": "4111f6853aea6f28b2b1dcfdde83d12dd3d5e6e3",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1"
+                "php": "^7.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.2"
+                "doctrine/coding-standard": "^7.0",
+                "phpstan/phpstan": "^0.11",
+                "phpstan/phpstan-phpunit": "^0.11",
+                "phpstan/phpstan-strict-rules": "^0.11",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
+                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector",
+                    "Doctrine\\Inflector\\": "lib/Doctrine/Inflector"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -5988,15 +5993,35 @@
                     "email": "schmittjoh@gmail.com"
                 }
             ],
-            "description": "Common String Manipulations with regard to casing and singular/plural rules.",
-            "homepage": "http://www.doctrine-project.org",
+            "description": "PHP Doctrine Inflector is a small library that can perform string manipulations with regard to upper/lowercase and singular/plural forms of words.",
+            "homepage": "https://www.doctrine-project.org/projects/inflector.html",
             "keywords": [
                 "inflection",
-                "pluralize",
-                "singularize",
-                "string"
+                "inflector",
+                "lowercase",
+                "manipulation",
+                "php",
+                "plural",
+                "singular",
+                "strings",
+                "uppercase",
+                "words"
             ],
-            "time": "2019-10-30T19:59:35+00:00"
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-09T15:09:09+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -8702,21 +8727,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "aimeos/aimeos-core": 20,
-        "aimeos/ai-gettext": 20,
-        "aimeos/ai-monolog": 20,
-        "aimeos/ai-symfony": 20,
-        "aimeos/ai-swiftmailer": 20,
-        "aimeos/ai-admin-jqadm": 20,
-        "aimeos/ai-admin-jsonadm": 20,
-        "aimeos/ai-controller-jobs": 20,
-        "aimeos/ai-controller-frontend": 20,
-        "aimeos/ai-client-jsonapi": 20,
-        "aimeos/ai-client-html": 20,
-        "aimeos/ai-fosuser": 20,
-        "aimeos/ai-twig": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
