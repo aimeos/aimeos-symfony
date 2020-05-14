@@ -55,6 +55,9 @@ class JobsCommand extends Command
 
 		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
 		{
+			\Aimeos\MShop::cache( true );
+			\Aimeos\MAdmin::cache( true );
+
 			$localeItem = $localeManager->bootstrap( $siteItem->getCode(), '', '', false );
 			$localeItem->setLanguageId( null );
 			$localeItem->setCurrencyId( null );
