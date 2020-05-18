@@ -37,7 +37,7 @@ resource:
         baseurl: "/"
     fs-admin:
         adapter: Standard
-        basedir: "%kernel.root_dir%/../web/uploads"
+        basedir: "%kernel.cache_dir%/../admin"
         tempdir: "%kernel.cache_dir%"
     fs-import:
         adapter: Standard
@@ -45,7 +45,7 @@ resource:
         tempdir: "%kernel.cache_dir%"
     fs-secure:
         adapter: Standard
-        basedir: "%kernel.root_dir%/secure"
+        basedir: "%kernel.cache_dir%/../secure"
         tempdir: "%kernel.cache_dir%"
     mq:
         adapter: Standard
