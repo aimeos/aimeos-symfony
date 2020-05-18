@@ -72,6 +72,10 @@ class Context
 			$localeItem = $this->container->get( 'aimeos.locale' )->get( $context );
 			$context->setI18n( $this->container->get( 'aimeos.i18n' )->get( array( $localeItem->getLanguageId() ) ) );
 			$context->setLocale( $localeItem );
+
+			foreach( $localeItem->getSiteItem()->getConfig() as $key => $value ) {
+				$config->set( $key, $value );
+			}
 		}
 
 		$this->addSession( $context );
