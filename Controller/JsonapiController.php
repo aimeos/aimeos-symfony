@@ -43,7 +43,7 @@ class JsonapiController extends Controller
 	 * @param string Resource location, e.g. "customer"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function getAction( ServerRequestInterface $request, string $resource ) : \Psr\Http\Message\ResponseInterface
+	public function getAction( ServerRequestInterface $request, ?string $resource ) : \Psr\Http\Message\ResponseInterface
 	{
 		return $this->createClient( $request, $resource )->get( $request, ( new Psr17Factory )->createResponse() );
 	}
@@ -56,7 +56,7 @@ class JsonapiController extends Controller
 	 * @param string Resource location, e.g. "customer"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function patchAction( ServerRequestInterface $request, string $resource ) : \Psr\Http\Message\ResponseInterface
+	public function patchAction( ServerRequestInterface $request, ?string $resource ) : \Psr\Http\Message\ResponseInterface
 	{
 		return $this->createClient( $request, $resource )->patch( $request, ( new Psr17Factory )->createResponse() );
 	}
@@ -69,7 +69,7 @@ class JsonapiController extends Controller
 	 * @param string Resource location, e.g. "customer"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function postAction( ServerRequestInterface $request, string $resource ) : \Psr\Http\Message\ResponseInterface
+	public function postAction( ServerRequestInterface $request, ?string $resource ) : \Psr\Http\Message\ResponseInterface
 	{
 		return $this->createClient( $request, $resource )->post( $request, ( new Psr17Factory )->createResponse() );
 	}
@@ -82,7 +82,7 @@ class JsonapiController extends Controller
 	 * @param string Resource location, e.g. "customer"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function putAction( ServerRequestInterface $request, string $resource ) : \Psr\Http\Message\ResponseInterface
+	public function putAction( ServerRequestInterface $request, ?string $resource ) : \Psr\Http\Message\ResponseInterface
 	{
 		return $this->createClient( $request, $resource )->put( $request, ( new Psr17Factory )->createResponse() );
 	}
@@ -95,7 +95,7 @@ class JsonapiController extends Controller
 	 * @param string Resource location, e.g. "customer"
 	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
 	 */
-	public function optionsAction( ServerRequestInterface $request, string $resource = '' ) : \Psr\Http\Message\ResponseInterface
+	public function optionsAction( ServerRequestInterface $request, ?string $resource = '' ) : \Psr\Http\Message\ResponseInterface
 	{
 		return $this->createClient( $request, $resource )->options( $request, ( new Psr17Factory )->createResponse() );
 	}
@@ -108,7 +108,7 @@ class JsonapiController extends Controller
 	 * @param string Resource location, e.g. "customer"
 	 * @return \Aimeos\Client\JsonApi\Iface JSON API client
 	 */
-	protected function createClient( ServerRequestInterface $request, string $resource ) : \Aimeos\Client\JsonApi\Iface
+	protected function createClient( ServerRequestInterface $request, ?string $resource ) : \Aimeos\Client\JsonApi\Iface
 	{
 		$args = $request->getAttributes();
 		$params = $request->getQueryParams();
