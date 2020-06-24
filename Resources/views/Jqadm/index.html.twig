@@ -12,10 +12,8 @@
 		<link rel="stylesheet" href="{{ path('aimeos_shop_jqadm_file', {'site': 'default', 'type': 'css', 'lang': 'en'}) }}">
 	</head>
 	<body>
-		<div class="app-menu" style="text-align: right; margin: 0 2.5%;">
-			<a class="logout" style="padding: 0.25rem 0.75rem; font-weight: bold" href="{{ path('fos_user_security_logout') }}">
-				Logout
-			</a>
+		<div class="app-menu" style="background: #202830; text-align: right">
+			<a class="logout fa fa-sign-out" style="color: #fff; padding: 0.5em 1.5em" aria-hidden="true" href="{{ path('fos_user_security_logout') }}"></a>
 		</div>
 
 {{content|raw}}
