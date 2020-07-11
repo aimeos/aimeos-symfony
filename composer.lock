@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bcda5ac7018e87cd919a4c69d975051",
+    "content-hash": "5a0a3a5afd7bd60d827bffbbe86fbfe0",
     "packages": [
         {
             "name": "aimeos/ai-admin-jqadm",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "3fd89c480477e7041fd54937216a439c452ea813"
+                "reference": "d09e7f8f0c68a5a779224231abbe04ca01514d8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/3fd89c480477e7041fd54937216a439c452ea813",
-                "reference": "3fd89c480477e7041fd54937216a439c452ea813",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/d09e7f8f0c68a5a779224231abbe04ca01514d8e",
+                "reference": "d09e7f8f0c68a5a779224231abbe04ca01514d8e",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -53,24 +53,24 @@
                 "bootstrap",
                 "extension"
             ],
-            "time": "2020-07-06T11:49:40+00:00"
+            "time": "2020-07-07T09:38:08+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "232e574695c38291f2b4af3205279ace8f9a5e96"
+                "reference": "b0a5857708dd70c86681d2074b4cbc26932c2cc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/232e574695c38291f2b4af3205279ace8f9a5e96",
-                "reference": "232e574695c38291f2b4af3205279ace8f9a5e96",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/b0a5857708dd70c86681d2074b4cbc26932c2cc5",
+                "reference": "b0a5857708dd70c86681d2074b4cbc26932c2cc5",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -99,26 +99,26 @@
                 "extension",
                 "json api"
             ],
-            "time": "2020-07-02T09:36:09+00:00"
+            "time": "2020-07-07T09:38:08+00:00"
         },
         {
             "name": "aimeos/ai-client-html",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "bc6731a0a73da4d4b0f5fb00837c437335b3cd7f"
+                "reference": "37f0b1fec37226cadbe218e7e44675c08e04a994"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/bc6731a0a73da4d4b0f5fb00837c437335b3cd7f",
-                "reference": "bc6731a0a73da4d4b0f5fb00837c437335b3cd7f",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/37f0b1fec37226cadbe218e7e44675c08e04a994",
+                "reference": "37f0b1fec37226cadbe218e7e44675c08e04a994",
                 "shasum": ""
             },
             "require": {
-                "aimeos/ai-controller-frontend": "dev-master",
-                "aimeos/ai-controller-jobs": "dev-master",
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/ai-controller-frontend": "2020.07.*",
+                "aimeos/ai-controller-jobs": "2020.07.*",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1",
                 "tecnickcom/tcpdf": "~6.3"
@@ -152,25 +152,25 @@
                 "extension",
                 "html"
             ],
-            "time": "2020-07-07T09:24:30+00:00"
+            "time": "2020-07-07T09:38:08+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "8f1993ae3cab461cee48472f0aae54e098b51d47"
+                "reference": "04a3de12dc002d1985996e95f4ac18890376006d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/8f1993ae3cab461cee48472f0aae54e098b51d47",
-                "reference": "8f1993ae3cab461cee48472f0aae54e098b51d47",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/04a3de12dc002d1985996e95f4ac18890376006d",
+                "reference": "04a3de12dc002d1985996e95f4ac18890376006d",
                 "shasum": ""
             },
             "require": {
-                "aimeos/ai-controller-frontend": "dev-master",
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/ai-controller-frontend": "2020.07.*",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -200,24 +200,24 @@
                 "extension",
                 "json"
             ],
-            "time": "2020-06-28T17:52:56+00:00"
+            "time": "2020-07-07T09:38:08+00:00"
         },
         {
             "name": "aimeos/ai-controller-frontend",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "cd95e4d594c35d09b3db310c1e17e9eb6c2cf8f6"
+                "reference": "631e482da2a448b3d7642b6581175735d598d92f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/cd95e4d594c35d09b3db310c1e17e9eb6c2cf8f6",
-                "reference": "cd95e4d594c35d09b3db310c1e17e9eb6c2cf8f6",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/631e482da2a448b3d7642b6581175735d598d92f",
+                "reference": "631e482da2a448b3d7642b6581175735d598d92f",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -245,24 +245,24 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2020-06-03T14:44:29+00:00"
+            "time": "2020-07-07T09:38:08+00:00"
         },
         {
             "name": "aimeos/ai-controller-jobs",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "6b64516ed944843d4de6f400ebe978eadde39c32"
+                "reference": "3a5d04b8e4a847e9d31e5799b36f058c3aa99627"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/6b64516ed944843d4de6f400ebe978eadde39c32",
-                "reference": "6b64516ed944843d4de6f400ebe978eadde39c32",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/3a5d04b8e4a847e9d31e5799b36f058c3aa99627",
+                "reference": "3a5d04b8e4a847e9d31e5799b36f058c3aa99627",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -292,24 +292,24 @@
                 "extension",
                 "jobs"
             ],
-            "time": "2020-07-02T11:32:35+00:00"
+            "time": "2020-07-07T09:38:08+00:00"
         },
         {
             "name": "aimeos/ai-fosuser",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-fosuser.git",
-                "reference": "d4c87a8ec4f3cd1128c67a6ce5037b9f51f32fc8"
+                "reference": "08d15491012c95347708bf2cd0a74a75b0c022a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/d4c87a8ec4f3cd1128c67a6ce5037b9f51f32fc8",
-                "reference": "d4c87a8ec4f3cd1128c67a6ce5037b9f51f32fc8",
+                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/08d15491012c95347708bf2cd0a74a75b0c022a9",
+                "reference": "08d15491012c95347708bf2cd0a74a75b0c022a9",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -339,24 +339,24 @@
                 "symfony",
                 "user"
             ],
-            "time": "2020-07-03T14:43:13+00:00"
+            "time": "2020-07-07T09:38:08+00:00"
         },
         {
             "name": "aimeos/ai-gettext",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
-                "reference": "009b32a5101728ffbb4a34bc474530596420f5ea"
+                "reference": "4e7b494496b549b55b6b8f666a6121e2f77a8b23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/009b32a5101728ffbb4a34bc474530596420f5ea",
-                "reference": "009b32a5101728ffbb4a34bc474530596420f5ea",
+                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/4e7b494496b549b55b6b8f666a6121e2f77a8b23",
+                "reference": "4e7b494496b549b55b6b8f666a6121e2f77a8b23",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -384,24 +384,24 @@
                 "gettext",
                 "performance"
             ],
-            "time": "2020-04-02T14:08:52+00:00"
+            "time": "2020-07-07T09:38:08+00:00"
         },
         {
             "name": "aimeos/ai-monolog",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "51f91abfe8ccbba266734d37a3fff1b43a7d033b"
+                "reference": "01a8ba50652aab4ffa58a6d14512e3bfd6e612d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/51f91abfe8ccbba266734d37a3fff1b43a7d033b",
-                "reference": "51f91abfe8ccbba266734d37a3fff1b43a7d033b",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/01a8ba50652aab4ffa58a6d14512e3bfd6e612d0",
+                "reference": "01a8ba50652aab4ffa58a6d14512e3bfd6e612d0",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "monolog/monolog": "~1.0",
                 "php": "~7.1"
@@ -432,24 +432,24 @@
                 "monolog",
                 "shop"
             ],
-            "time": "2020-03-11T09:27:43+00:00"
+            "time": "2020-07-07T09:38:08+00:00"
         },
         {
             "name": "aimeos/ai-swiftmailer",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "832bf149e4adfc069362d5c8a2093ad98e11d04d"
+                "reference": "f01ffa5d1be2aee338e24cf9ee8a4d08622d4d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/832bf149e4adfc069362d5c8a2093ad98e11d04d",
-                "reference": "832bf149e4adfc069362d5c8a2093ad98e11d04d",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/f01ffa5d1be2aee338e24cf9ee8a4d08622d4d6d",
+                "reference": "f01ffa5d1be2aee338e24cf9ee8a4d08622d4d6d",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1",
                 "swiftmailer/swiftmailer": "~5.0||~6.0"
@@ -480,24 +480,24 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2020-03-10T17:59:51+00:00"
+            "time": "2020-07-07T09:38:09+00:00"
         },
         {
             "name": "aimeos/ai-symfony",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
-                "reference": "f7c43058a6d3d2d4ce9d9e459ffbbd1db3c5747f"
+                "reference": "931f998c34d078453870a4d570e86ed1d3a9da00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/f7c43058a6d3d2d4ce9d9e459ffbbd1db3c5747f",
-                "reference": "f7c43058a6d3d2d4ce9d9e459ffbbd1db3c5747f",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/931f998c34d078453870a4d570e86ed1d3a9da00",
+                "reference": "931f998c34d078453870a4d570e86ed1d3a9da00",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "nyholm/psr7": "~1.2",
                 "php": "~7.1",
@@ -528,24 +528,24 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2020-03-10T17:55:33+00:00"
+            "time": "2020-07-07T09:38:09+00:00"
         },
         {
             "name": "aimeos/ai-twig",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-twig.git",
-                "reference": "3c5613acdfc40b3a8e9f013d0842fc1771dbb030"
+                "reference": "f0818951e53da4826c54f26cb0ebf0863df92812"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/3c5613acdfc40b3a8e9f013d0842fc1771dbb030",
-                "reference": "3c5613acdfc40b3a8e9f013d0842fc1771dbb030",
+                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/f0818951e53da4826c54f26cb0ebf0863df92812",
+                "reference": "f0818951e53da4826c54f26cb0ebf0863df92812",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.07.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1",
                 "twig/twig": "~1.9||~2.0"
@@ -573,11 +573,11 @@
                 "templates",
                 "twig"
             ],
-            "time": "2020-03-10T17:55:47+00:00"
+            "time": "2020-07-07T09:38:09+00:00"
         },
         {
             "name": "aimeos/aimeos-core",
-            "version": "dev-master",
+            "version": "2020.07.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
@@ -903,16 +903,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "1.10.1",
+            "version": "1.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "35a4a70cd94e09e2259dfae7488afc6b474ecbd3"
+                "reference": "13e3381b25847283a91948d04640543941309727"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/35a4a70cd94e09e2259dfae7488afc6b474ecbd3",
-                "reference": "35a4a70cd94e09e2259dfae7488afc6b474ecbd3",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/13e3381b25847283a91948d04640543941309727",
+                "reference": "13e3381b25847283a91948d04640543941309727",
                 "shasum": ""
             },
             "require": {
@@ -995,7 +995,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-27T16:24:54+00:00"
+            "time": "2020-07-07T18:54:01+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -6302,16 +6302,16 @@
     "packages-dev": [
         {
             "name": "doctrine/collections",
-            "version": "1.6.5",
+            "version": "1.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "fc0206348e17e530d09463fef07ba8968406cd6d"
+                "reference": "5f0470363ff042d0057006ae7acabc5d7b5252d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/fc0206348e17e530d09463fef07ba8968406cd6d",
-                "reference": "fc0206348e17e530d09463fef07ba8968406cd6d",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/5f0470363ff042d0057006ae7acabc5d7b5252d5",
+                "reference": "5f0470363ff042d0057006ae7acabc5d7b5252d5",
                 "shasum": ""
             },
             "require": {
@@ -6377,7 +6377,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-25T19:24:35+00:00"
+            "time": "2020-06-22T19:14:02+00:00"
         },
         {
             "name": "doctrine/common",
@@ -7792,33 +7792,33 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.10.3",
+            "version": "1.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "451c3cd1418cf640de218914901e51b064abb093"
+                "reference": "b20034be5efcdab4fb60ca3a29cba2949aead160"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/451c3cd1418cf640de218914901e51b064abb093",
-                "reference": "451c3cd1418cf640de218914901e51b064abb093",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/b20034be5efcdab4fb60ca3a29cba2949aead160",
+                "reference": "b20034be5efcdab4fb60ca3a29cba2949aead160",
                 "shasum": ""
             },
             "require": {
-                "doctrine/instantiator": "^1.0.2",
-                "php": "^5.3|^7.0",
-                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0|^5.0",
-                "sebastian/comparator": "^1.2.3|^2.0|^3.0|^4.0",
-                "sebastian/recursion-context": "^1.0|^2.0|^3.0|^4.0"
+                "doctrine/instantiator": "^1.2",
+                "php": "^7.2",
+                "phpdocumentor/reflection-docblock": "^5.0",
+                "sebastian/comparator": "^3.0 || ^4.0",
+                "sebastian/recursion-context": "^3.0 || ^4.0"
             },
             "require-dev": {
-                "phpspec/phpspec": "^2.5 || ^3.2",
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5 || ^7.1"
+                "phpspec/phpspec": "^6.0",
+                "phpunit/phpunit": "^8.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.10.x-dev"
+                    "dev-master": "1.11.x-dev"
                 }
             },
             "autoload": {
@@ -7851,7 +7851,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2020-03-05T15:02:03+00:00"
+            "time": "2020-07-08T12:44:21+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -9451,20 +9451,20 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.9.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "9dc4f203e36f2b486149058bade43c851dd97451"
+                "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/9dc4f203e36f2b486149058bade43c851dd97451",
-                "reference": "9dc4f203e36f2b486149058bade43c851dd97451",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.3 || ^7.0",
+                "php": "^5.3.3 || ^7.0 || ^8.0",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "conflict": {
@@ -9496,26 +9496,12 @@
                 "check",
                 "validate"
             ],
-            "time": "2020-06-16T10:16:42+00:00"
+            "time": "2020-07-08T17:02:28+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "aimeos/aimeos-core": 20,
-        "aimeos/ai-gettext": 20,
-        "aimeos/ai-monolog": 20,
-        "aimeos/ai-symfony": 20,
-        "aimeos/ai-swiftmailer": 20,
-        "aimeos/ai-admin-jqadm": 20,
-        "aimeos/ai-admin-jsonadm": 20,
-        "aimeos/ai-controller-jobs": 20,
-        "aimeos/ai-controller-frontend": 20,
-        "aimeos/ai-client-jsonapi": 20,
-        "aimeos/ai-client-html": 20,
-        "aimeos/ai-fosuser": 20,
-        "aimeos/ai-twig": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
