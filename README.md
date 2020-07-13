@@ -35,8 +35,8 @@ customize anything to your needs.
 
 This document is for the latest Aimeos Symfony **2019.10 release and later**.
 
+- Stable release: 2020.07 (Symfony 3.4 and 4.x)
 - LTS release: 2019.10 (Symfony 3.4 and 4.x)
-- Stable release: 2020.04 (Symfony 3.4 and 4.x)
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
@@ -222,7 +222,7 @@ Then add these lines to your `composer.json` of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2020.04",
+        "aimeos/aimeos-symfony": "~2020.07",
         ...
     },
     "scripts": {
