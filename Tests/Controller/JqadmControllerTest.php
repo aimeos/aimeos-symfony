@@ -116,11 +116,10 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'POST', '/unittest/jqadm/save/product' );
+		$client->request( 'POST', '/unittest/jqadm/save/product', ['item' => ['product.type' => 'default']] );
 		$response = $client->getResponse();
 
-		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertStringContainsString( 'item-product', $response->getContent() );
+		$this->assertEquals( 302, $response->getStatusCode() );
 	}
 
 
