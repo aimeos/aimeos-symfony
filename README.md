@@ -302,7 +302,7 @@ the existing file with the content below:
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 {% block aimeos_head %}{% endblock %}
             </div>
-        </div>
+        </nav>
         <div class="container">
             {% block aimeos_nav %}{% endblock %}
             {% block aimeos_stage %}{% endblock %}
