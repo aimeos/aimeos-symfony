@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aimeos/ai-admin-jqadm",
-            "version": "2020.07.5",
+            "version": "2020.07.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "68dfebcc80a7bc010c1d9bd002b4de28a2ca5aa1"
+                "reference": "36b74f92b09db6dafbcc64232e2e1079992ecd04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/68dfebcc80a7bc010c1d9bd002b4de28a2ca5aa1",
-                "reference": "68dfebcc80a7bc010c1d9bd002b4de28a2ca5aa1",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/36b74f92b09db6dafbcc64232e2e1079992ecd04",
+                "reference": "36b74f92b09db6dafbcc64232e2e1079992ecd04",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +53,7 @@
                 "bootstrap",
                 "extension"
             ],
-            "time": "2020-09-10T15:00:55+00:00"
+            "time": "2020-09-14T19:08:46+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -103,16 +103,16 @@
         },
         {
             "name": "aimeos/ai-client-html",
-            "version": "2020.07.3",
+            "version": "2020.07.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "dcab98f475f12cb8b343e6f6fa6a9bca9c2a5477"
+                "reference": "6270b9bc97e92500c955c03651ff5b6834525ce9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/dcab98f475f12cb8b343e6f6fa6a9bca9c2a5477",
-                "reference": "dcab98f475f12cb8b343e6f6fa6a9bca9c2a5477",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/6270b9bc97e92500c955c03651ff5b6834525ce9",
+                "reference": "6270b9bc97e92500c955c03651ff5b6834525ce9",
                 "shasum": ""
             },
             "require": {
@@ -152,7 +152,7 @@
                 "extension",
                 "html"
             ],
-            "time": "2020-08-18T19:34:08+00:00"
+            "time": "2020-09-14T19:09:10+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -577,16 +577,16 @@
         },
         {
             "name": "aimeos/aimeos-core",
-            "version": "2020.07.3",
+            "version": "2020.07.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "545c95f226b6aec637bb1f03d69dc1a6c953d1d7"
+                "reference": "718cb10e7aa0347de702cb2cc85ca92387e74b7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/545c95f226b6aec637bb1f03d69dc1a6c953d1d7",
-                "reference": "545c95f226b6aec637bb1f03d69dc1a6c953d1d7",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/718cb10e7aa0347de702cb2cc85ca92387e74b7e",
+                "reference": "718cb10e7aa0347de702cb2cc85ca92387e74b7e",
                 "shasum": ""
             },
             "require": {
@@ -647,7 +647,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2020-08-18T19:28:00+00:00"
+            "time": "2020-09-14T19:07:28+00:00"
         },
         {
             "name": "aimeos/map",
@@ -1000,16 +1000,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.10.3",
+            "version": "2.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "03ca23afc2ee062f5d3e32426ad37c34a4770dcf"
+                "reference": "47433196b6390d14409a33885ee42b6208160643"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/03ca23afc2ee062f5d3e32426ad37c34a4770dcf",
-                "reference": "03ca23afc2ee062f5d3e32426ad37c34a4770dcf",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/47433196b6390d14409a33885ee42b6208160643",
+                "reference": "47433196b6390d14409a33885ee42b6208160643",
                 "shasum": ""
             },
             "require": {
@@ -1105,7 +1105,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-02T01:35:42+00:00"
+            "time": "2020-09-12T21:20:41+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -8122,6 +8122,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2019-09-17T06:23:10+00:00"
         },
         {
