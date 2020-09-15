@@ -1021,6 +1021,26 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 	transform: translate(-50%, -50%);
 }
 
+/* ratings */
+.aimeos .product .rating {
+	background-color: #555;
+	background-color: var(--ai-secondary, #555);
+	text-align: center;
+	margin: 1.5em 0;
+	height: 0.9px;
+}
+
+.aimeos .product .stars {
+	color: #555;
+	color: var(--ai-secondary, #555);
+	background-color: #FFF;
+	background-color: var(--ai-bg, #FFF);
+	text-align: center;
+	position: relative;
+	padding: 0 0.5em;
+	top: -0.7em;
+ }
+
 /* text list */
 .aimeos .product .text-list {
 	line-height: 1.1;
