@@ -28,7 +28,7 @@ class FosUser extends BaseUser
 	protected $id;
 
 	/**
-	 * @ORM\Column(name="siteid", type="string", nullable=true)
+	 * @ORM\Column(name="siteid", type="string", length=255)
 	 */
 	protected $siteid;
 
