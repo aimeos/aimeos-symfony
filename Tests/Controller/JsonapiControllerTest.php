@@ -335,7 +335,7 @@ class JsonapiControllerTest extends WebTestCase
 	public function testGetCustomerActionAuthorized()
 	{
 		$client = static::createClient( array(), array(
-			'PHP_AUTH_USER' => 'UTC001',
+			'PHP_AUTH_USER' => 'test@example.com',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 
@@ -354,7 +354,7 @@ class JsonapiControllerTest extends WebTestCase
 	public function testGetCustomerAddressActionAuthorized()
 	{
 		$client = static::createClient( array(), array(
-			'PHP_AUTH_USER' => 'UTC001',
+			'PHP_AUTH_USER' => 'test@example.com',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 
@@ -378,7 +378,7 @@ class JsonapiControllerTest extends WebTestCase
 	public function testGetOrderActionAuthorized()
 	{
 		$client = static::createClient( array(), array(
-			'PHP_AUTH_USER' => 'UTC001',
+			'PHP_AUTH_USER' => 'test@example.com',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
 
