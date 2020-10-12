@@ -44,10 +44,10 @@ class JsonadmControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
-
+		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
 
 		$content = '{"data":{"type":"stock/type","attributes":{"stock.type.code":"symfony","stock.type.label":"symfony"}}}';
-		$client->request( 'POST', '/unittest/jsonadm/stock/type', array(), array(), array(), $content );
+		$client->request( 'POST', '/unittest/jsonadm/stock/type', ['_token' => $token], [], [], $content );
 		$response = $client->getResponse();
 
 		$json = json_decode( $response->getContent(), true );
@@ -63,7 +63,7 @@ class JsonadmControllerTest extends WebTestCase
 
 
 		$content = '{"data":{"type":"stock/type","attributes":{"stock.type.code":"symfony2","stock.type.label":"symfony2"}}}';
-		$client->request( 'PATCH', '/unittest/jsonadm/stock/type/' . $id, array(), array(), array(), $content );
+		$client->request( 'PATCH', '/unittest/jsonadm/stock/type/' . $id, ['_token' => $token], [], [], $content );
 		$response = $client->getResponse();
 
 		$json = json_decode( $response->getContent(), true );
@@ -91,7 +91,7 @@ class JsonadmControllerTest extends WebTestCase
 		$this->assertEquals( 1, $json['meta']['total'] );
 
 
-		$client->request( 'DELETE', '/unittest/jsonadm/stock/type/' . $id );
+		$client->request( 'DELETE', '/unittest/jsonadm/stock/type/' . $id, ['_token' => $token], [], [] );
 		$response = $client->getResponse();
 
 		$json = json_decode( $response->getContent(), true );
@@ -108,13 +108,14 @@ class JsonadmControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
+		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
 
 
 		$content = '{"data":[
 			{"type":"stock/type","attributes":{"stock.type.code":"symfony","stock.type.label":"symfony"}},
 			{"type":"stock/type","attributes":{"stock.type.code":"symfony2","stock.type.label":"symfony"}}
 		]}';
-		$client->request( 'POST', '/unittest/jsonadm/stock/type', array(), array(), array(), $content );
+		$client->request( 'POST', '/unittest/jsonadm/stock/type', ['_token' => $token], [], [], $content );
 		$response = $client->getResponse();
 
 		$json = json_decode( $response->getContent(), true );
@@ -135,7 +136,7 @@ class JsonadmControllerTest extends WebTestCase
 			{"type":"stock/type","id":' . $ids[0] . ',"attributes":{"stock.type.label":"symfony2"}},
 			{"type":"stock/type","id":' . $ids[1] . ',"attributes":{"stock.type.label":"symfony2"}}
 		]}';
-		$client->request( 'PATCH', '/unittest/jsonadm/stock/type', array(), array(), array(), $content );
+		$client->request( 'PATCH', '/unittest/jsonadm/stock/type', ['_token' => $token], [], [], $content );
 		$response = $client->getResponse();
 
 		$json = json_decode( $response->getContent(), true );
@@ -179,7 +180,7 @@ class JsonadmControllerTest extends WebTestCase
 			{"type":"stock/type","id":' . $ids[0] . '},
 			{"type":"stock/type","id":' . $ids[1] . '}
 		]}';
-		$client->request( 'DELETE', '/unittest/jsonadm/stock/type', array(), array(), array(), $content );
+		$client->request( 'DELETE', '/unittest/jsonadm/stock/type', ['_token' => $token], [], [], $content );
 		$response = $client->getResponse();
 
 		$json = json_decode( $response->getContent(), true );

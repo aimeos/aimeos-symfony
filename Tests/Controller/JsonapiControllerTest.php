@@ -32,7 +32,9 @@ class JsonapiControllerTest extends WebTestCase
 	public function testPutAction()
 	{
 		$client = static::createClient();
-		$client->request( 'PUT', '/unittest/de/EUR/jsonapi/basket' );
+		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
+
+		$client->request( 'PUT', '/unittest/de/EUR/jsonapi/basket', ['_token' => $token] );
 		$response = $client->getResponse();
 
 		$json = json_decode( $response->getContent(), true );
@@ -218,6 +220,7 @@ class JsonapiControllerTest extends WebTestCase
 	public function testWorkflowBasketAddress()
 	{
 		$client = static::createClient();
+		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
 
 		$client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$json = json_decode( $client->getResponse()->getContent(), true );
@@ -229,11 +232,11 @@ class JsonapiControllerTest extends WebTestCase
 		$this->assertEquals( 'basket', $json['data']['type'] );
 
 		$content = '{"data": {"id": "delivery", "attributes": {"order.base.address.firstname": "test"}}}';
-		$client->request( 'POST', $json['links']['basket/address']['href'], [], [], [], $content );
+		$client->request( 'POST', $json['links']['basket/address']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'basket/address', $json['included'][0]['type'] );
 
-		$client->request( 'DELETE', $json['included'][0]['links']['self']['href'] );
+		$client->request( 'DELETE', $json['included'][0]['links']['self']['href'], ['_token' => $token] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 0, count( $json['included'] ) );
 	}
@@ -242,6 +245,7 @@ class JsonapiControllerTest extends WebTestCase
 	public function testWorkflowBasketCoupon()
 	{
 		$client = static::createClient();
+		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
 
 		$client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$json = json_decode( $client->getResponse()->getContent(), true );
@@ -254,18 +258,18 @@ class JsonapiControllerTest extends WebTestCase
 
 		// add product "CNC" as prerequisite
 		$content = '{"data": {"attributes": {"product.id": ' . $json['data'][0]['id'] . '}}}';
-		$client->request( 'POST', $json['data'][0]['links']['basket/product']['href'], [], [], [], $content );
+		$client->request( 'POST', $json['data'][0]['links']['basket/product']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'basket/product', $json['included'][0]['type'] );
 
 		// add coupon "GHIJ"
 		$content = '{"data": {"id": "GHIJ"}}';
-		$client->request( 'POST', $json['links']['basket/coupon']['href'], [], [], [], $content );
+		$client->request( 'POST', $json['links']['basket/coupon']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'basket/coupon', $json['included'][2]['type'] );
 
 		// remove coupon "GHIJ" again
-		$client->request( 'DELETE', $json['included'][2]['links']['self']['href'] );
+		$client->request( 'DELETE', $json['included'][2]['links']['self']['href'], ['_token' => $token] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 1, count( $json['included'] ) );
 	}
@@ -274,6 +278,7 @@ class JsonapiControllerTest extends WebTestCase
 	public function testWorkflowBasketProduct()
 	{
 		$client = static::createClient();
+		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
 
 		$client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$json = json_decode( $client->getResponse()->getContent(), true );
@@ -285,16 +290,16 @@ class JsonapiControllerTest extends WebTestCase
 		$this->assertEquals( 1, count( $json['data'] ) );
 
 		$content = '{"data": {"attributes": {"product.id": ' . $json['data'][0]['id'] . '}}}';
-		$client->request( 'POST', $json['data'][0]['links']['basket/product']['href'], [], [], [], $content );
+		$client->request( 'POST', $json['data'][0]['links']['basket/product']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'basket/product', $json['included'][0]['type'] );
 
 		$content = '{"data": {"attributes": {"quantity": 2}}}';
-		$client->request( 'PATCH', $json['included'][0]['links']['self']['href'], [], [], [], $content );
+		$client->request( 'PATCH', $json['included'][0]['links']['self']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 2, $json['included'][0]['attributes']['order.base.product.quantity'] );
 
-		$client->request( 'DELETE', $json['included'][0]['links']['self']['href'] );
+		$client->request( 'DELETE', $json['included'][0]['links']['self']['href'], ['_token' => $token] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 0, count( $json['included'] ) );
 	}
@@ -303,6 +308,7 @@ class JsonapiControllerTest extends WebTestCase
 	public function testWorkflowBasketService()
 	{
 		$client = static::createClient();
+		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
 
 		$client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$json = json_decode( $client->getResponse()->getContent(), true );
@@ -320,13 +326,13 @@ class JsonapiControllerTest extends WebTestCase
 			'directdebit.bankcode' => 'ABCDEFGH',
 			'directdebit.bankname' => 'test bank',
 		]]];
-		$client->request( 'POST', $json['data'][1]['links']['basket/service']['href'], [], [], [], json_encode( $content ) );
+		$client->request( 'POST', $json['data'][1]['links']['basket/service']['href'], ['_token' => $token], [], [], json_encode( $content ) );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'basket/service', $json['included'][0]['type'] );
 		$this->assertEquals( 'directdebit-test', $json['included'][0]['attributes']['order.base.service.code'] );
 		$this->assertEquals( 5, count( $json['included'][0]['attributes']['attribute'] ) );
 
-		$client->request( 'DELETE', $json['included'][0]['links']['self']['href'] );
+		$client->request( 'DELETE', $json['included'][0]['links']['self']['href'], ['_token' => $token] );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 0, count( $json['included'] ) );
 	}
@@ -397,6 +403,7 @@ class JsonapiControllerTest extends WebTestCase
 	public function testWorkflowOrder()
 	{
 		$client = static::createClient();
+		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
 
 		$client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$optJson = json_decode( $client->getResponse()->getContent(), true );
@@ -409,7 +416,7 @@ class JsonapiControllerTest extends WebTestCase
 
 		// add product "CNC"
 		$content = '{"data": {"attributes": {"product.id": ' . $json['data'][0]['id'] . '}}}';
-		$client->request( 'POST', $json['data'][0]['links']['basket/product']['href'], [], [], [], $content );
+		$client->request( 'POST', $json['data'][0]['links']['basket/product']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'basket/product', $json['included'][0]['type'] );
 
@@ -420,7 +427,7 @@ class JsonapiControllerTest extends WebTestCase
 
 		// add delivery service
 		$content = '{"data": {"id": "delivery", "attributes": {"service.id": ' . $json['data'][0]['id'] . '}}}';
-		$client->request( 'POST', $json['data'][0]['links']['basket/service']['href'], [], [], [], $content );
+		$client->request( 'POST', $json['data'][0]['links']['basket/service']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'basket/service', $json['included'][1]['type'] );
 
@@ -431,24 +438,24 @@ class JsonapiControllerTest extends WebTestCase
 
 		// add payment service
 		$content = '{"data": {"id": "payment", "attributes": {"service.id": ' . $json['data'][0]['id'] . '}}}';
-		$client->request( 'POST', $json['data'][0]['links']['basket/service']['href'], [], [], [], $content );
+		$client->request( 'POST', $json['data'][0]['links']['basket/service']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'basket/service', $json['included'][2]['type'] );
 
 		// add address
 		$content = '{"data": {"id": "payment", "attributes": {"order.base.address.firstname": "test"}}}';
-		$client->request( 'POST', $json['links']['basket/address']['href'], [], [], [], $content );
+		$client->request( 'POST', $json['links']['basket/address']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( 'basket/address', $json['included'][3]['type'] );
 
 		// store basket
-		$client->request( 'POST', $json['data']['links']['self']['href'] );
+		$client->request( 'POST', $json['data']['links']['self']['href'], ['_token' => $token] );
 		$basketJson = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( true, ctype_digit( $basketJson['data']['id'] ) );
 
 		// add order
 		$content = '{"data": {"attributes": {"order.baseid": ' . $basketJson['data']['id'] . '}}}';
-		$client->request( 'POST', $basketJson['links']['order']['href'], [], [], [], $content );
+		$client->request( 'POST', $basketJson['links']['order']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $client->getResponse()->getContent(), true );
 		$this->assertEquals( true, ctype_digit( $json['data']['id'] ) );
 
