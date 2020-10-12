@@ -11,7 +11,7 @@
 namespace Aimeos\ShopBundle\EventListener;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Symfony\Component\HttpKernel\Event\KernelEvent;
 use Symfony\Component\DependencyInjection\Container;
 
 
@@ -40,9 +40,9 @@ class CsrfListener
 	/**
 	 * Handles the kernel request
 	 *
-	 * @param RequestEvent $event Request event object
+	 * @param KernelEvent $event Request event object
 	 */
-	public function onKernelRequest( RequestEvent $event )
+	public function onKernelRequest( KernelEvent $event )
 	{
 		$request = $event->getRequest();
 
