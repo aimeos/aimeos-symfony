@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bcda5ac7018e87cd919a4c69d975051",
+    "content-hash": "420f52e71c157c8c58db4baba37bce0b",
     "packages": [
         {
             "name": "aimeos/ai-admin-jqadm",
-            "version": "dev-master",
+            "version": "2020.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "1f2c01babb93afe4996300d8c44400090afd0dec"
+                "reference": "c3b6b748a7f062e992fc91282f8619ed4872ce5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/1f2c01babb93afe4996300d8c44400090afd0dec",
-                "reference": "1f2c01babb93afe4996300d8c44400090afd0dec",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/c3b6b748a7f062e992fc91282f8619ed4872ce5c",
+                "reference": "c3b6b748a7f062e992fc91282f8619ed4872ce5c",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -53,24 +53,24 @@
                 "bootstrap",
                 "extension"
             ],
-            "time": "2020-10-11T10:54:19+00:00"
+            "time": "2020-10-11T10:53:36+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
-            "version": "dev-master",
+            "version": "2020.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jsonadm.git",
-                "reference": "f65c8e7a621f944cde97b4a3179b3dabc75f0a97"
+                "reference": "d23a7628db46e3e75a61beb67c57483bdf3bf5f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/f65c8e7a621f944cde97b4a3179b3dabc75f0a97",
-                "reference": "f65c8e7a621f944cde97b4a3179b3dabc75f0a97",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jsonadm/zipball/d23a7628db46e3e75a61beb67c57483bdf3bf5f3",
+                "reference": "d23a7628db46e3e75a61beb67c57483bdf3bf5f3",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -99,26 +99,26 @@
                 "extension",
                 "json api"
             ],
-            "time": "2020-10-06T07:04:45+00:00"
+            "time": "2020-10-06T07:52:36+00:00"
         },
         {
             "name": "aimeos/ai-client-html",
-            "version": "dev-master",
+            "version": "2020.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "ab1df5876d3f0e287608f2cb1abc813c814d8750"
+                "reference": "a0178ab2f13aea1d2a6a30bfa9d4e35383f8afef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/ab1df5876d3f0e287608f2cb1abc813c814d8750",
-                "reference": "ab1df5876d3f0e287608f2cb1abc813c814d8750",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/a0178ab2f13aea1d2a6a30bfa9d4e35383f8afef",
+                "reference": "a0178ab2f13aea1d2a6a30bfa9d4e35383f8afef",
                 "shasum": ""
             },
             "require": {
-                "aimeos/ai-controller-frontend": "dev-master",
-                "aimeos/ai-controller-jobs": "dev-master",
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/ai-controller-frontend": "2020.10.*",
+                "aimeos/ai-controller-jobs": "2020.10.*",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1",
                 "tecnickcom/tcpdf": "~6.3"
@@ -152,25 +152,25 @@
                 "extension",
                 "html"
             ],
-            "time": "2020-10-08T07:33:39+00:00"
+            "time": "2020-10-08T07:34:52+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
-            "version": "dev-master",
+            "version": "2020.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "ce1f5f571317d59d8f77c03e05a2c5c707c7f335"
+                "reference": "991682856cda2fabbd1f68afaf1fa0542fef9cdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/ce1f5f571317d59d8f77c03e05a2c5c707c7f335",
-                "reference": "ce1f5f571317d59d8f77c03e05a2c5c707c7f335",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/991682856cda2fabbd1f68afaf1fa0542fef9cdb",
+                "reference": "991682856cda2fabbd1f68afaf1fa0542fef9cdb",
                 "shasum": ""
             },
             "require": {
-                "aimeos/ai-controller-frontend": "dev-master",
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/ai-controller-frontend": "2020.10.*",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -200,24 +200,24 @@
                 "extension",
                 "json"
             ],
-            "time": "2020-10-05T08:38:25+00:00"
+            "time": "2020-10-06T07:52:36+00:00"
         },
         {
             "name": "aimeos/ai-controller-frontend",
-            "version": "dev-master",
+            "version": "2020.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-frontend.git",
-                "reference": "013c3f262d2978ae4bc5500127d3fbd21c21e1b0"
+                "reference": "d41937e7a127c1a160af692d715b78d42638f4a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/013c3f262d2978ae4bc5500127d3fbd21c21e1b0",
-                "reference": "013c3f262d2978ae4bc5500127d3fbd21c21e1b0",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-frontend/zipball/d41937e7a127c1a160af692d715b78d42638f4a0",
+                "reference": "d41937e7a127c1a160af692d715b78d42638f4a0",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -245,24 +245,24 @@
                 "extension",
                 "frontend"
             ],
-            "time": "2020-10-06T07:19:05+00:00"
+            "time": "2020-10-06T07:52:36+00:00"
         },
         {
             "name": "aimeos/ai-controller-jobs",
-            "version": "dev-master",
+            "version": "2020.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "adf0b85f0a149cd342aef609ba41dc409d6dfb34"
+                "reference": "69a1da81f6cf77e1e0875ff2b520449faa1aac63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/adf0b85f0a149cd342aef609ba41dc409d6dfb34",
-                "reference": "adf0b85f0a149cd342aef609ba41dc409d6dfb34",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/69a1da81f6cf77e1e0875ff2b520449faa1aac63",
+                "reference": "69a1da81f6cf77e1e0875ff2b520449faa1aac63",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -292,24 +292,24 @@
                 "extension",
                 "jobs"
             ],
-            "time": "2020-10-11T11:00:38+00:00"
+            "time": "2020-10-06T07:52:36+00:00"
         },
         {
             "name": "aimeos/ai-fosuser",
-            "version": "dev-master",
+            "version": "2020.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-fosuser.git",
-                "reference": "a4d1b56fae9ea0449fcef60f265f466035daf843"
+                "reference": "c3994e56683dc42e1eb8ddb5bd60db8d5f977b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/a4d1b56fae9ea0449fcef60f265f466035daf843",
-                "reference": "a4d1b56fae9ea0449fcef60f265f466035daf843",
+                "url": "https://api.github.com/repos/aimeos/ai-fosuser/zipball/c3994e56683dc42e1eb8ddb5bd60db8d5f977b8a",
+                "reference": "c3994e56683dc42e1eb8ddb5bd60db8d5f977b8a",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -339,24 +339,24 @@
                 "symfony",
                 "user"
             ],
-            "time": "2020-08-26T07:09:23+00:00"
+            "time": "2020-10-06T07:52:36+00:00"
         },
         {
             "name": "aimeos/ai-gettext",
-            "version": "dev-master",
+            "version": "2020.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-gettext.git",
-                "reference": "009b32a5101728ffbb4a34bc474530596420f5ea"
+                "reference": "924915aba79131f39828a2131a5ebcb1c0b9e741"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/009b32a5101728ffbb4a34bc474530596420f5ea",
-                "reference": "009b32a5101728ffbb4a34bc474530596420f5ea",
+                "url": "https://api.github.com/repos/aimeos/ai-gettext/zipball/924915aba79131f39828a2131a5ebcb1c0b9e741",
+                "reference": "924915aba79131f39828a2131a5ebcb1c0b9e741",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1"
             },
@@ -384,24 +384,24 @@
                 "gettext",
                 "performance"
             ],
-            "time": "2020-04-02T14:08:52+00:00"
+            "time": "2020-10-06T07:52:36+00:00"
         },
         {
             "name": "aimeos/ai-monolog",
-            "version": "dev-master",
+            "version": "2020.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-monolog.git",
-                "reference": "51f91abfe8ccbba266734d37a3fff1b43a7d033b"
+                "reference": "236e0cc50224b43adce6b947cc5a58259165c695"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/51f91abfe8ccbba266734d37a3fff1b43a7d033b",
-                "reference": "51f91abfe8ccbba266734d37a3fff1b43a7d033b",
+                "url": "https://api.github.com/repos/aimeos/ai-monolog/zipball/236e0cc50224b43adce6b947cc5a58259165c695",
+                "reference": "236e0cc50224b43adce6b947cc5a58259165c695",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "monolog/monolog": "~1.0",
                 "php": "~7.1"
@@ -432,24 +432,24 @@
                 "monolog",
                 "shop"
             ],
-            "time": "2020-03-11T09:27:43+00:00"
+            "time": "2020-10-06T07:52:36+00:00"
         },
         {
             "name": "aimeos/ai-swiftmailer",
-            "version": "dev-master",
+            "version": "2020.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-swiftmailer.git",
-                "reference": "832bf149e4adfc069362d5c8a2093ad98e11d04d"
+                "reference": "c8c2412a6c4edcf067d881d806341d3609c43ee9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/832bf149e4adfc069362d5c8a2093ad98e11d04d",
-                "reference": "832bf149e4adfc069362d5c8a2093ad98e11d04d",
+                "url": "https://api.github.com/repos/aimeos/ai-swiftmailer/zipball/c8c2412a6c4edcf067d881d806341d3609c43ee9",
+                "reference": "c8c2412a6c4edcf067d881d806341d3609c43ee9",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1",
                 "swiftmailer/swiftmailer": "~5.0||~6.0"
@@ -480,24 +480,24 @@
                 "shop",
                 "swiftmailer"
             ],
-            "time": "2020-03-10T17:59:51+00:00"
+            "time": "2020-10-06T07:52:36+00:00"
         },
         {
             "name": "aimeos/ai-symfony",
-            "version": "dev-master",
+            "version": "2020.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
-                "reference": "f7c43058a6d3d2d4ce9d9e459ffbbd1db3c5747f"
+                "reference": "2b3049e3fa6d07ef38186e526d4bf92e11e0a36b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/f7c43058a6d3d2d4ce9d9e459ffbbd1db3c5747f",
-                "reference": "f7c43058a6d3d2d4ce9d9e459ffbbd1db3c5747f",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/2b3049e3fa6d07ef38186e526d4bf92e11e0a36b",
+                "reference": "2b3049e3fa6d07ef38186e526d4bf92e11e0a36b",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "nyholm/psr7": "~1.2",
                 "php": "~7.1",
@@ -528,24 +528,24 @@
                 "shop",
                 "symfony"
             ],
-            "time": "2020-03-10T17:55:33+00:00"
+            "time": "2020-10-06T07:52:37+00:00"
         },
         {
             "name": "aimeos/ai-twig",
-            "version": "dev-master",
+            "version": "2020.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-twig.git",
-                "reference": "3c5613acdfc40b3a8e9f013d0842fc1771dbb030"
+                "reference": "5e0dbb9806879eb725cc0a4540186dacbc05e623"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/3c5613acdfc40b3a8e9f013d0842fc1771dbb030",
-                "reference": "3c5613acdfc40b3a8e9f013d0842fc1771dbb030",
+                "url": "https://api.github.com/repos/aimeos/ai-twig/zipball/5e0dbb9806879eb725cc0a4540186dacbc05e623",
+                "reference": "5e0dbb9806879eb725cc0a4540186dacbc05e623",
                 "shasum": ""
             },
             "require": {
-                "aimeos/aimeos-core": "dev-master",
+                "aimeos/aimeos-core": "2020.10.*",
                 "composer/installers": "^1.0",
                 "php": "~7.1",
                 "twig/twig": "~1.9||~2.0"
@@ -573,20 +573,20 @@
                 "templates",
                 "twig"
             ],
-            "time": "2020-03-10T17:55:47+00:00"
+            "time": "2020-10-06T07:52:37+00:00"
         },
         {
             "name": "aimeos/aimeos-core",
-            "version": "dev-master",
+            "version": "2020.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "482a1de6e9b03f62675354ca235c1b3bacd8cb43"
+                "reference": "4e8bac701e1c1010490bc5da9ba2c66178236a0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/482a1de6e9b03f62675354ca235c1b3bacd8cb43",
-                "reference": "482a1de6e9b03f62675354ca235c1b3bacd8cb43",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/4e8bac701e1c1010490bc5da9ba2c66178236a0f",
+                "reference": "4e8bac701e1c1010490bc5da9ba2c66178236a0f",
                 "shasum": ""
             },
             "require": {
@@ -647,7 +647,7 @@
                 "portal",
                 "shop"
             ],
-            "time": "2020-10-11T09:26:46+00:00"
+            "time": "2020-10-11T09:27:39+00:00"
         },
         {
             "name": "aimeos/map",
@@ -999,6 +999,168 @@
             "time": "2020-07-07T18:54:01+00:00"
         },
         {
+            "name": "doctrine/collections",
+            "version": "1.6.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/collections.git",
+                "reference": "55f8b799269a1a472457bd1a41b4f379d4cfba4a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/55f8b799269a1a472457bd1a41b4f379d4cfba4a",
+                "reference": "55f8b799269a1a472457bd1a41b4f379d4cfba4a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^6.0",
+                "phpstan/phpstan-shim": "^0.9.2",
+                "phpunit/phpunit": "^7.0",
+                "vimeo/psalm": "^3.8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\Collections\\": "lib/Doctrine/Common/Collections"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "PHP Doctrine Collections library that adds additional functionality on top of PHP arrays.",
+            "homepage": "https://www.doctrine-project.org/projects/collections.html",
+            "keywords": [
+                "array",
+                "collections",
+                "iterators",
+                "php"
+            ],
+            "time": "2020-07-27T17:53:49+00:00"
+        },
+        {
+            "name": "doctrine/common",
+            "version": "2.13.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/common.git",
+                "reference": "f3812c026e557892c34ef37f6ab808a6b567da7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/f3812c026e557892c34ef37f6ab808a6b567da7f",
+                "reference": "f3812c026e557892c34ef37f6ab808a6b567da7f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "^1.0",
+                "doctrine/cache": "^1.0",
+                "doctrine/collections": "^1.0",
+                "doctrine/event-manager": "^1.0",
+                "doctrine/inflector": "^1.0",
+                "doctrine/lexer": "^1.0",
+                "doctrine/persistence": "^1.3.3",
+                "doctrine/reflection": "^1.0",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^1.0",
+                "phpstan/phpstan": "^0.11",
+                "phpstan/phpstan-phpunit": "^0.11",
+                "phpunit/phpunit": "^7.0",
+                "squizlabs/php_codesniffer": "^3.0",
+                "symfony/phpunit-bridge": "^4.0.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.11.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\": "lib/Doctrine/Common"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                },
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com"
+                }
+            ],
+            "description": "PHP Doctrine Common project is a library that provides additional functionality that other Doctrine projects depend on such as better reflection support, persistence interfaces, proxies, event system and much more.",
+            "homepage": "https://www.doctrine-project.org/projects/common.html",
+            "keywords": [
+                "common",
+                "doctrine",
+                "php"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fcommon",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-05T16:46:05+00:00"
+        },
+        {
             "name": "doctrine/dbal",
             "version": "2.11.1",
             "source": {
@@ -1197,6 +1359,98 @@
             "time": "2020-05-29T18:28:51+00:00"
         },
         {
+            "name": "doctrine/inflector",
+            "version": "1.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/inflector.git",
+                "reference": "4650c8b30c753a76bf44fb2ed00117d6f367490c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/4650c8b30c753a76bf44fb2ed00117d6f367490c",
+                "reference": "4650c8b30c753a76bf44fb2ed00117d6f367490c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^7.0",
+                "phpstan/phpstan": "^0.11",
+                "phpstan/phpstan-phpunit": "^0.11",
+                "phpstan/phpstan-strict-rules": "^0.11",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector",
+                    "Doctrine\\Inflector\\": "lib/Doctrine/Inflector"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "PHP Doctrine Inflector is a small library that can perform string manipulations with regard to upper/lowercase and singular/plural forms of words.",
+            "homepage": "https://www.doctrine-project.org/projects/inflector.html",
+            "keywords": [
+                "inflection",
+                "inflector",
+                "lowercase",
+                "manipulation",
+                "php",
+                "plural",
+                "singular",
+                "strings",
+                "uppercase",
+                "words"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-05-29T07:19:59+00:00"
+        },
+        {
             "name": "doctrine/lexer",
             "version": "1.2.1",
             "source": {
@@ -1271,6 +1525,182 @@
                 }
             ],
             "time": "2020-05-25T17:44:05+00:00"
+        },
+        {
+            "name": "doctrine/persistence",
+            "version": "1.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/persistence.git",
+                "reference": "7a6eac9fb6f61bba91328f15aa7547f4806ca288"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/7a6eac9fb6f61bba91328f15aa7547f4806ca288",
+                "reference": "7a6eac9fb6f61bba91328f15aa7547f4806ca288",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "^1.0",
+                "doctrine/cache": "^1.0",
+                "doctrine/collections": "^1.0",
+                "doctrine/event-manager": "^1.0",
+                "doctrine/reflection": "^1.2",
+                "php": "^7.1 || ^8.0"
+            },
+            "conflict": {
+                "doctrine/common": "<2.10@dev"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^6.0",
+                "phpstan/phpstan": "^0.11",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "vimeo/psalm": "^3.11"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\": "lib/Doctrine/Common",
+                    "Doctrine\\Persistence\\": "lib/Doctrine/Persistence"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                },
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com"
+                }
+            ],
+            "description": "The Doctrine Persistence project is a set of shared interfaces and functionality that the different Doctrine object mappers share.",
+            "homepage": "https://doctrine-project.org/projects/persistence.html",
+            "keywords": [
+                "mapper",
+                "object",
+                "odm",
+                "orm",
+                "persistence"
+            ],
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fpersistence",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-20T12:56:16+00:00"
+        },
+        {
+            "name": "doctrine/reflection",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/reflection.git",
+                "reference": "55e71912dfcd824b2fdd16f2d9afe15684cfce79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/reflection/zipball/55e71912dfcd824b2fdd16f2d9afe15684cfce79",
+                "reference": "55e71912dfcd824b2fdd16f2d9afe15684cfce79",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "^1.0",
+                "ext-tokenizer": "*",
+                "php": "^7.1"
+            },
+            "conflict": {
+                "doctrine/common": "<2.9"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^5.0",
+                "doctrine/common": "^2.10",
+                "phpstan/phpstan": "^0.11.0",
+                "phpstan/phpstan-phpunit": "^0.11.0",
+                "phpunit/phpunit": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\": "lib/Doctrine/Common"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                },
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com"
+                }
+            ],
+            "description": "The Doctrine Reflection project is a simple library used by the various Doctrine projects which adds some additional functionality on top of the reflection functionality that comes with PHP. It allows you to get the reflection information about classes, methods and properties statically.",
+            "homepage": "https://www.doctrine-project.org/projects/reflection.html",
+            "keywords": [
+                "reflection",
+                "static"
+            ],
+            "time": "2020-03-27T11:06:43+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -6494,168 +6924,6 @@
             "time": "2020-08-25T05:50:16+00:00"
         },
         {
-            "name": "doctrine/collections",
-            "version": "1.6.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/collections.git",
-                "reference": "55f8b799269a1a472457bd1a41b4f379d4cfba4a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/55f8b799269a1a472457bd1a41b4f379d4cfba4a",
-                "reference": "55f8b799269a1a472457bd1a41b4f379d4cfba4a",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.3 || ^8.0"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^6.0",
-                "phpstan/phpstan-shim": "^0.9.2",
-                "phpunit/phpunit": "^7.0",
-                "vimeo/psalm": "^3.8.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Collections\\": "lib/Doctrine/Common/Collections"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "PHP Doctrine Collections library that adds additional functionality on top of PHP arrays.",
-            "homepage": "https://www.doctrine-project.org/projects/collections.html",
-            "keywords": [
-                "array",
-                "collections",
-                "iterators",
-                "php"
-            ],
-            "time": "2020-07-27T17:53:49+00:00"
-        },
-        {
-            "name": "doctrine/common",
-            "version": "2.13.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/common.git",
-                "reference": "f3812c026e557892c34ef37f6ab808a6b567da7f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/f3812c026e557892c34ef37f6ab808a6b567da7f",
-                "reference": "f3812c026e557892c34ef37f6ab808a6b567da7f",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/annotations": "^1.0",
-                "doctrine/cache": "^1.0",
-                "doctrine/collections": "^1.0",
-                "doctrine/event-manager": "^1.0",
-                "doctrine/inflector": "^1.0",
-                "doctrine/lexer": "^1.0",
-                "doctrine/persistence": "^1.3.3",
-                "doctrine/reflection": "^1.0",
-                "php": "^7.1 || ^8.0"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^1.0",
-                "phpstan/phpstan": "^0.11",
-                "phpstan/phpstan-phpunit": "^0.11",
-                "phpunit/phpunit": "^7.0",
-                "squizlabs/php_codesniffer": "^3.0",
-                "symfony/phpunit-bridge": "^4.0.5"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.11.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\": "lib/Doctrine/Common"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                },
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                }
-            ],
-            "description": "PHP Doctrine Common project is a library that provides additional functionality that other Doctrine projects depend on such as better reflection support, persistence interfaces, proxies, event system and much more.",
-            "homepage": "https://www.doctrine-project.org/projects/common.html",
-            "keywords": [
-                "common",
-                "doctrine",
-                "php"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.doctrine-project.org/sponsorship.html",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.patreon.com/phpdoctrine",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fcommon",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-06-05T16:46:05+00:00"
-        },
-        {
             "name": "doctrine/doctrine-bundle",
             "version": "1.12.10",
             "source": {
@@ -6855,98 +7123,6 @@
             "time": "2019-11-29T11:22:01+00:00"
         },
         {
-            "name": "doctrine/inflector",
-            "version": "1.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/inflector.git",
-                "reference": "4650c8b30c753a76bf44fb2ed00117d6f367490c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/4650c8b30c753a76bf44fb2ed00117d6f367490c",
-                "reference": "4650c8b30c753a76bf44fb2ed00117d6f367490c",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2 || ^8.0"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^7.0",
-                "phpstan/phpstan": "^0.11",
-                "phpstan/phpstan-phpunit": "^0.11",
-                "phpstan/phpstan-strict-rules": "^0.11",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector",
-                    "Doctrine\\Inflector\\": "lib/Doctrine/Inflector"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "PHP Doctrine Inflector is a small library that can perform string manipulations with regard to upper/lowercase and singular/plural forms of words.",
-            "homepage": "https://www.doctrine-project.org/projects/inflector.html",
-            "keywords": [
-                "inflection",
-                "inflector",
-                "lowercase",
-                "manipulation",
-                "php",
-                "plural",
-                "singular",
-                "strings",
-                "uppercase",
-                "words"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.doctrine-project.org/sponsorship.html",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.patreon.com/phpdoctrine",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-05-29T07:19:59+00:00"
-        },
-        {
             "name": "doctrine/instantiator",
             "version": "1.3.1",
             "source": {
@@ -7103,182 +7279,6 @@
                 "orm"
             ],
             "time": "2020-10-10T17:11:26+00:00"
-        },
-        {
-            "name": "doctrine/persistence",
-            "version": "1.3.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/persistence.git",
-                "reference": "7a6eac9fb6f61bba91328f15aa7547f4806ca288"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/7a6eac9fb6f61bba91328f15aa7547f4806ca288",
-                "reference": "7a6eac9fb6f61bba91328f15aa7547f4806ca288",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/annotations": "^1.0",
-                "doctrine/cache": "^1.0",
-                "doctrine/collections": "^1.0",
-                "doctrine/event-manager": "^1.0",
-                "doctrine/reflection": "^1.2",
-                "php": "^7.1 || ^8.0"
-            },
-            "conflict": {
-                "doctrine/common": "<2.10@dev"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^6.0",
-                "phpstan/phpstan": "^0.11",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
-                "vimeo/psalm": "^3.11"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\": "lib/Doctrine/Common",
-                    "Doctrine\\Persistence\\": "lib/Doctrine/Persistence"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                },
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                }
-            ],
-            "description": "The Doctrine Persistence project is a set of shared interfaces and functionality that the different Doctrine object mappers share.",
-            "homepage": "https://doctrine-project.org/projects/persistence.html",
-            "keywords": [
-                "mapper",
-                "object",
-                "odm",
-                "orm",
-                "persistence"
-            ],
-            "funding": [
-                {
-                    "url": "https://www.doctrine-project.org/sponsorship.html",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://www.patreon.com/phpdoctrine",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fpersistence",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-06-20T12:56:16+00:00"
-        },
-        {
-            "name": "doctrine/reflection",
-            "version": "1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/reflection.git",
-                "reference": "55e71912dfcd824b2fdd16f2d9afe15684cfce79"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/reflection/zipball/55e71912dfcd824b2fdd16f2d9afe15684cfce79",
-                "reference": "55e71912dfcd824b2fdd16f2d9afe15684cfce79",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/annotations": "^1.0",
-                "ext-tokenizer": "*",
-                "php": "^7.1"
-            },
-            "conflict": {
-                "doctrine/common": "<2.9"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^5.0",
-                "doctrine/common": "^2.10",
-                "phpstan/phpstan": "^0.11.0",
-                "phpstan/phpstan-phpunit": "^0.11.0",
-                "phpunit/phpunit": "^7.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Common\\": "lib/Doctrine/Common"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                },
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                }
-            ],
-            "description": "The Doctrine Reflection project is a simple library used by the various Doctrine projects which adds some additional functionality on top of the reflection functionality that comes with PHP. It allows you to get the reflection information about classes, methods and properties statically.",
-            "homepage": "https://www.doctrine-project.org/projects/reflection.html",
-            "keywords": [
-                "reflection",
-                "static"
-            ],
-            "time": "2020-03-27T11:06:43+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -9699,21 +9699,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "aimeos/aimeos-core": 20,
-        "aimeos/ai-gettext": 20,
-        "aimeos/ai-monolog": 20,
-        "aimeos/ai-symfony": 20,
-        "aimeos/ai-swiftmailer": 20,
-        "aimeos/ai-admin-jqadm": 20,
-        "aimeos/ai-admin-jsonadm": 20,
-        "aimeos/ai-controller-jobs": 20,
-        "aimeos/ai-controller-frontend": 20,
-        "aimeos/ai-client-jsonapi": 20,
-        "aimeos/ai-client-html": 20,
-        "aimeos/ai-fosuser": 20,
-        "aimeos/ai-twig": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
