@@ -81,6 +81,16 @@ class CatalogControllerTest extends WebTestCase
 	}
 
 
+	public function testHome()
+	{
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/' );
+		$content = $client->getResponse()->getContent();
+
+		$this->assertStringContainsString( '"aimeos catalog-home"', $content );
+	}
+
+
 	public function testStageBreadcrumb()
 	{
 		$client = static::createClient();
@@ -255,6 +265,16 @@ class CatalogControllerTest extends WebTestCase
 
 		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
 		$this->assertStringContainsString( 'aimeos catalog-filter', $client->getResponse()->getContent() );
+	}
+
+
+	public function testHomeComponent()
+	{
+		$client = static::createClient();
+		$client->request( 'GET', '/unittest/de/EUR/test/cataloghomecomponent' );
+
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertStringContainsString( 'aimeos catalog-home', $client->getResponse()->getContent() );
 	}
 
 

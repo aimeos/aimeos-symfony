@@ -90,6 +90,28 @@ class CatalogController extends Controller
 
 
 	/**
+	 * Returns the html for the catalog home page.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function homeAction() : Response
+	{
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-home'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
+		$response = $this->render( '@AimeosShop/Catalog/home.html.twig', $params );
+		$response->headers->set( 'Cache-Control', 'private, max-age=10' );
+		return $response;
+	}
+
+
+	/**
 	 * Returns the html for the catalog tree page.
 	 *
 	 * @return Response Response object containing the generated output
@@ -193,6 +215,20 @@ class CatalogController extends Controller
 	public function filterComponentAction() : Response
 	{
 		$client = $this->container->get( 'shop' )->get( 'catalog/filter' );
+		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
+
+		return new Response( (string) $client->getBody() );
+	}
+
+
+	/**
+	 * Returns the output of the catalog home component
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function homeComponentAction() : Response
+	{
+		$client = $this->container->get( 'shop' )->get( 'catalog/home' );
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
 
 		return new Response( (string) $client->getBody() );

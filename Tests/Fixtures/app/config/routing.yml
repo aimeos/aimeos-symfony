@@ -51,6 +51,10 @@ aimeos_test_catalogfiltercomponent:
     path: /{site}/{locale}/{currency}/test/catalogfiltercomponent
     defaults: { _controller: AimeosShopBundle:Catalog:filterComponent }
 
+aimeos_test_cataloghomecomponent:
+    path: /{site}/{locale}/{currency}/test/cataloghomecomponent
+    defaults: { _controller: AimeosShopBundle:Catalog:homeComponent }
+
 aimeos_test_cataloglistcomponent:
     path: /{site}/{locale}/{currency}/test/cataloglistcomponent
     defaults: { _controller: AimeosShopBundle:Catalog:listComponent }
@@ -112,3 +116,7 @@ aimeos_shop_default:
 aimeos_shop_update:
     resource: "@AimeosShopBundle/Resources/config/routing_update.yml"
     prefix:   /{site}/{locale}/{currency}
+
+aimeos_shop_home:
+    path: /{site}/{locale}/{currency}/
+    defaults: { _controller: AimeosShopBundle:Catalog:home }
