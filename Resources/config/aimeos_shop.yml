@@ -186,16 +186,7 @@ mshop:
                 name: Bcrypt
     index:
         manager:
-            attribute:
-                name: MySQL
-            catalog:
-                name: MySQL
-            price:
-                name: MySQL
-            supplier:
-                name: MySQL
-            text:
-                name: MySQL
+            name: MySQL
 
 command:
 
