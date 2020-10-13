@@ -33,10 +33,10 @@ customize anything to your needs.
 
 ## Installation
 
-This document is for the latest Aimeos Symfony **2019.10 release and later**.
+This document is for the latest Aimeos Symfony **2020.10 release and later**.
 
-- Stable release: 2020.07 (Symfony 3.4 and 4.x)
-- LTS release: 2019.10 (Symfony 3.4 and 4.x)
+- LTS release: 2020.10 (Symfony 3.4 and 4.x)
+- Old LTS release: 2019.10 (Symfony 3.4 and 4.x)
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
@@ -110,7 +110,7 @@ parameters:
 ```
 
 If you want to use a database server other than MySQL, please have a look into the article about
-[supported database servers](https://aimeos.org/docs/Developers/Library/Database_support)
+[supported database servers](https://aimeos.org/docs/latest/infrastructure/databases/)
 and their specific configuration.
 
 ### Symfony 4
@@ -194,7 +194,7 @@ Also, you have to configure your database credentials in the `.env` file:
 `DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name`
 
 If you want to use a database server other than MySQL, please have a look into the article about
-[supported database servers](https://aimeos.org/docs/Developers/Library/Database_support)
+[supported database servers](https://aimeos.org/docs/latest/infrastructure/databases/)
 and their specific configuration.
 
 Symfony 4 uses an in-memory mail spooler by default which collects the e-mails and send them
@@ -222,7 +222,7 @@ Then add these lines to your `composer.json` of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2020.07",
+        "aimeos/aimeos-symfony": "~2020.10",
         ...
     },
     "scripts": {
@@ -274,8 +274,7 @@ the existing file with the content below:
         {% block aimeos_header %}{% endblock %}
         <title>{% block title %}Aimeos shop{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link type="text/css" rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto:400,300'>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
         <style>
             /* Theme: Black&White */
             /* body {
@@ -286,13 +285,14 @@ the existing file with the content below:
             body { color: #000; color: var(--ai-primary, #000); background-color: #fff; background-color: var(--ai-bg, #fff); }
             .navbar, footer { color: #555; color: var(--ai-primary-alt, #555); background-color: #f8f8f8; background-color: var(--ai-bg-alt, #f8f8f8); }
             .navbar a, .navbar a:before, .navbar span, footer a { color: #555 !important; color: var(--ai-primary-alt, #555) !important; }
+            .content { margin: 0 5% } .catalog-stage-image { margin: 0 -5.55% }
             .sm:before { font: normal normal normal 14px/1 FontAwesome; padding: 0 0.2em; font-size: 225% }
             .facebook:before { content: "\f082" } .twitter:before { content: "\f081" } .instagram:before { content: "\f16d" } .youtube:before { content: "\f167" }
         </style>
         {% block aimeos_styles %}{% endblock %}
     </head>
     <body>
-        <nav class="navbar navbar-expand-md navbar-light mb-5">
+        <nav class="navbar navbar-expand-md navbar-light">
             <a class="navbar-brand" href="/">
                 <img src="http://aimeos.org/fileadmin/template/icons/logo.png" height="30" title="Aimeos Logo">
             </a>
@@ -323,9 +323,7 @@ the existing file with the content below:
                 </div>
             </div>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/bootstrap@4"></script>
         {% block aimeos_scripts %}{% endblock %}
     </body>
 </html>
@@ -344,8 +342,7 @@ Then, you should be able to call the catalog list page in your browser using
 
 Setting up the administration interface is a matter of configuring the Symfony
 firewall to restrict access to the admin URLs. Since 2017.07, the FOSUserBundle
-is required. For a more detailed description, please read the article about
-[setting up the FOSUserBundle](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login).
+is required.
 
 Setting up the security configuration is the most complex part. The firewall
 setup should look like this one:
@@ -393,8 +390,7 @@ These settings will protect the ```/admin/*``` URLs from unauthorized access fro
 someone without admin privileges.
 
 The `/profile` URL is protected by the FOS user bundle as well, which also offers
-user registration. A bit more detailed explanation of the authentication is available in the
-[Aimeos docs](https://aimeos.org/docs/Symfony/Configure_FOSUserBundle_login).
+user registration.
 
 As last step, you have to create an admin account using the Symfony command line:
 
@@ -438,7 +434,7 @@ The Aimeos Symfony bundle is licensed under the terms of the MIT license and is 
 ## Links
 
 * [Web site](https://aimeos.org/Symfony)
-* [Documentation](https://aimeos.org/docs/Symfony)
+* [Documentation](https://aimeos.org/docs/latest/symfony/)
 * [Forum](https://aimeos.org/help/symfony-bundle-f17/)
 * [Issue tracker](https://github.com/aimeos/aimeos-symfony/issues)
 * [Composer packages](https://packagist.org/packages/aimeos/aimeos-symfony)
