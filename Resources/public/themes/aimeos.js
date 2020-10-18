@@ -363,13 +363,13 @@ AimeosAccountSubscription = {
 	 */
 	setupDetailShow: function() {
 
-		$(".account-subscription .subscription-item").on("click", "> a", function(ev) {
+		$(".account-subscription .subscription-item").on("click", function(ev) {
 
 			var details = $(".account-subscription-detail", ev.delegateTarget);
 
 			if(details.length === 0) {
 
-				$.get($(this).attr("href"), function(data) {
+				$.get($(this).find('.action a.btn').attr("href"), function(data) {
 
 					var doc = document.createElement("html");
 					doc.innerHTML = data;
@@ -1464,7 +1464,7 @@ AimeosCatalogFilter = {
 	setupCategoryToggle: function() {
 
 		$(".catalog-filter-tree").on("click", "h2", function(ev) {
-			$("> ul", ev.delegateTarget).slideToggle();
+			$(".category-lists", ev.delegateTarget).slideToggle();
 		});
 	},
 
@@ -1542,7 +1542,7 @@ AimeosCatalogFilter = {
 	setupPriceToggle: function() {
 
 		$(".catalog-filter-price").on("click", "h2", function(ev) {
-			$("fieldset", ev.delegateTarget).slideToggle();
+			$(".price-lists", ev.delegateTarget).slideToggle();
 		});
 	},
 
