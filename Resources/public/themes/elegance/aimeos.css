@@ -551,7 +551,8 @@ input[type="range"]::-moz-range-progress {
 	text-transform: uppercase;
 	position: relative;
 	list-style: none;
-	padding: 0em;
+	padding: 0;
+	margin: 0;
 }
 
 .locale-select li.select-dropdown {
@@ -620,6 +621,7 @@ input[type="range"]::-moz-range-progress {
 .catalog-filter-tree.col {
 	padding-right: 0;
 	padding-left: 0;
+	margin: 1em 0;
 }
 
 .catalog-filter-tree fieldset > ul {
@@ -703,6 +705,7 @@ input[type="range"]::-moz-range-progress {
 .catalog-filter-search .input-group {
 	border-bottom: 1px solid #555;
 	border-bottom-color: var(--ai-secondary, #555);
+	margin-bottom: 1em;
 }
 
 .catalog-filter-search .value {
@@ -832,8 +835,8 @@ html.no-js .catalog-filter-tree:hover > ul {
 
 html.no-js .catalog-filter-attribute:hover .attribute-lists,
 html.no-js .catalog-filter-supplier:hover .supplier-lists,
-html.no-js .catalog-filter-tree .category-lists,
-html.no-js .catalog-filter-price .price-lists {
+html.no-js .catalog-filter-tree:hover .category-lists,
+html.no-js .catalog-filter-price:hover .price-lists {
 	display: block;
 }
 
@@ -966,6 +969,7 @@ html.no-js .catalog-filter-price .price-lists {
 .catalog-filter-supplier .attr-count {
 	margin-bottom: 0.5rem;
 	display: inline-block;
+	vertical-align: middle;
 }
 
 .catalog-filter-price .btn {
@@ -1032,7 +1036,7 @@ html.no-js .catalog-filter-price .price-lists {
 .catalog-stage {
 	color: #FFA840;
 	color: var(--ai-primary, #FFA840);
-	margin: 1em 0;
+	margin-bottom: 1em;
 	clear: both;
 }
 
@@ -2489,7 +2493,7 @@ html.no-js .catalog-filter-price .price-lists {
 .basket-mini > a {
 	display: inline-block;
 	white-space: nowrap;
-	padding: 0.75em 1em;
+	padding: 0.5em 1em;
 	text-decoration: none;
 }
 
@@ -2526,7 +2530,7 @@ html.no-js .catalog-filter-price .price-lists {
 }
 
 .basket-mini-product {
-	display: inline;
+	display: none;
 }
 
 .basket-mini-product .basket-toggle {
