@@ -238,7 +238,7 @@ class ScriptHandler
 			}
 			else
 			{
-				$fs = \Composer\Factory::createRemoteFilesystem( $event->getIO(), $config )
+				\Composer\Factory::createRemoteFilesystem( $event->getIO(), $config )
 					->getContents( 'github.com', 'https://api.github.com/graphql', false, $options );
 			}
 		}
