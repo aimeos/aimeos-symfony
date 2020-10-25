@@ -23,7 +23,8 @@ before_script:
   - mysql -e "CREATE DATABASE symfony; GRANT ALL ON symfony.* TO 'aimeos'@'127.0.0.1' IDENTIFIED BY 'aimeos'"
   - mysql -e "set global wait_timeout=600"
   - rm composer.lock # Prevent dependency problems
-  - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer require "symfony/symfony:${SYMFONY_VERSION}"
+  - composer req "symfony/symfony:${SYMFONY_VERSION}" --no-update
+  - COMPOSER_MEMORY_LIMIT=-1 travis_retry composer update
 
 script:
   - vendor/bin/phpunit --coverage-clover coverage.xml
