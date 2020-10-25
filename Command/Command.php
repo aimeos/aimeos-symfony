@@ -39,6 +39,6 @@ abstract class Command extends ContainerAwareCommand
 			$search->setConditions( $search->compare( '==', 'locale.site.code', explode( ' ', $codes ) ) );
 		}
 
-		return $manager->searchItems( $search );
+		return $manager->search( $search );
 	}
 }
