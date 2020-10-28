@@ -1129,7 +1129,6 @@ html.no-js .catalog-filter-price:hover .price-lists {
 .catalog-home .stage-item {
 	background-color: #FFF;
 	background-color: var(--ai-bg-alt, #FFF);
-	display: block;
 	margin: 0;
 }
 
@@ -2090,7 +2089,7 @@ html.no-js .catalog-filter-price:hover .price-lists {
 	background-color: #555;
 	background-color: var(--ai-secondary, #555);
 	color: #FFF;
-	background-color: var(--ai-bg, #FFF);
+	color: var(--ai-bg, #FFF);
 }
 
 .catalog-list-items .selection .select-option:disabled + .select-label,
@@ -2108,8 +2107,8 @@ html.no-js .catalog-filter-price:hover .price-lists {
 	border: solid 1px #555;
 	border-color: var(--ai-secondary, #555);
 	text-align: center;
+	max-width: 4em;
 	padding: 0;
-	width: 4em;
 }
 
 .catalog-list-items .selection .custom input[type=number],
@@ -2410,7 +2409,7 @@ html.no-js .catalog-filter-price:hover .price-lists {
 .catalog-session-pinned .name {
 	margin: 0;
 	padding: 0;
-	height: 3em;
+	height: 2.5em;
 	font-size: 100%;
 	font-weight: normal;
 	text-align: center;
