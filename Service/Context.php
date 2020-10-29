@@ -223,7 +223,7 @@ class Context
 			$context->setGroupIds( function() use ( $context, $userid )
 			{
 				$manager = \Aimeos\MShop::create( $context, 'customer' );
-				return $manager->getItem( $userid, array( 'customer/group' ) )->getGroups();
+				return $manager->get( $userid, array( 'customer/group' ) )->getGroups();
 			} );
 		}
 

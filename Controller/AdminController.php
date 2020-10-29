@@ -37,7 +37,7 @@ class AdminController extends Controller
 
 			$user = $this->get( 'security.token_storage' )->getToken()->getUser();
 			$siteId = current( array_reverse( explode( '.', trim( $user->getSiteId(), '.' ) ) ) );
-			$siteCode = ( $siteId ? $siteManager->getItem( $siteId )->getCode() : 'default' );
+			$siteCode = ( $siteId ? $siteManager->get( $siteId )->getCode() : 'default' );
 
 			$locale = $user->getLanguageId() ?: ( $this->container->hasParameter( 'locale' ) ? $this->container->getParameter( 'locale' ) : 'en' );
 
