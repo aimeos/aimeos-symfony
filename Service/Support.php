@@ -32,7 +32,7 @@ class Support
 		$list = array();
 		$manager = \Aimeos\MShop::create( $context, 'customer/group' );
 
-		$search = $manager->createSearch();
+		$search = $manager->filter();
 		$search->setConditions( $search->compare( '==', 'customer.group.id', $context->getGroupIds() ) );
 
 		return $manager->search( $search )->getCode()->toArray();

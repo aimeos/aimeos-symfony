@@ -33,7 +33,7 @@ abstract class Command extends ContainerAwareCommand
 	protected function getSiteItems( \Aimeos\MShop\Context\Item\Iface $context, InputInterface $input ) : \Aimeos\Map
 	{
 		$manager = \Aimeos\MShop::create( $context, 'locale/site' );
-		$search = $manager->createSearch();
+		$search = $manager->filter();
 
 		if( ( $codes = (string) $input->getArgument( 'site' ) ) !== '' ) {
 			$search->setConditions( $search->compare( '==', 'locale.site.code', explode( ' ', $codes ) ) );
