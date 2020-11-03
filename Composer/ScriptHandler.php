@@ -210,10 +210,6 @@ class ScriptHandler
 	 */
 	protected static function join( Event $event )
 	{
-		if( !$event->getIO()->hasAuthentication( 'github.com' ) ) {
-			return;
-		}
-
 		try
 		{
 			$options = [
