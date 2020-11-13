@@ -74,7 +74,7 @@ class AccountCommand extends Command
 		try {
 			$item = $manager->find( $email );
 		} catch( \Aimeos\MShop\Exception $e ) {
-			$item = $manager->createItem();
+			$item = $manager->create();
 		}
 
 		$item = $item->setCode( $email )->setLabel( $email )->setPassword( $password )->setStatus( 1 );
@@ -177,7 +177,7 @@ class AccountCommand extends Command
 		}
 		catch( \Aimeos\MShop\Exception $e )
 		{
-			$item = $manager->createItem();
+			$item = $manager->create();
 			$item->setLabel( $code );
 			$item->setCode( $code );
 

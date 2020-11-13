@@ -78,7 +78,7 @@ class Locale
 		try {
 			$localeItem = $localeManager->bootstrap( $site, '', '', false, null, true );
 		} catch( \Aimeos\MShop\Exception $e ) {
-			$localeItem = $localeManager->createItem();
+			$localeItem = $localeManager->create();
 		}
 
 		return $localeItem->setCurrencyId( null )->setLanguageId( null );
