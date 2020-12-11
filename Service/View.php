@@ -264,27 +264,16 @@ class View
 	 */
 	protected function addUrl( \Aimeos\MW\View\Iface $view )
 	{
-		$fixed = array();
-		$request = $this->requestStack->getMasterRequest();
+		$fixed = [];
 
-		if( $request !== null )
+		if( $request = $this->requestStack->getMasterRequest() )
 		{
-			$attr = $request->attributes;
-
-			if( ( $site = $attr->get( 'site' ) ) !== null ) {
-				$fixed['site'] = $site;
-			}
-
-			if( ( $lang = $attr->get( 'locale' ) ) !== null ) {
-				$fixed['locale'] = $lang;
-			}
-
-			if( ( $currency = $attr->get( 'currency' ) ) !== null ) {
-				$fixed['currency'] = $currency;
-			}
+			$fixed['site'] = $request->attributes->get( 'site', $request->query->get( 'site' ) );
+			$fixed['locale'] = $request->attributes->get( 'locale', $request->query->get( 'locale' ) );
+			$fixed['currency'] = $request->attributes->get( 'currency', $request->query->get( 'currency' ) );
 		}
 
-		$helper = new \Aimeos\MW\View\Helper\Url\Symfony2( $view, $this->container->get( 'router' ), $fixed );
+		$helper = new \Aimeos\MW\View\Helper\Url\Symfony2( $view, $this->container->get( 'router' ), array_filter( $fixed ) );
 		$view->addHelper( 'url', $helper );
 
 		return $view;
