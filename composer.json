@@ -19,6 +19,9 @@
 	],
 	"prefer-stable": true,
 	"minimum-stability": "dev",
+    "conflict": {
+        "symfony/http-foundation": "v5.2.0"
+    },
 	"require": {
 		"php": "~7.1",
 		"aimeos/aimeos-core": "dev-master",
