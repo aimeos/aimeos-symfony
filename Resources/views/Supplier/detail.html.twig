@@ -1,0 +1,16 @@
+{% extends '@AimeosShop/base.html.twig' %}
+
+{% block aimeos_header %}
+    {{ (aiheader['basket/mini'] ?? '')|raw }}
+    {{ (aiheader['supplier/detail'] ?? '')|raw }}
+    {{ (aiheader['catalog/lists'] ?? '')|raw }}
+{% endblock %}
+
+{% block aimeos_head %}
+    {{ (aibody['basket/mini'] ?? '')|raw }}
+{% endblock %}
+
+{% block aimeos_body %}
+    {{ (aibody['supplier/detail'] ?? '')|raw }}
+    {{ (aibody['catalog/lists'] ?? '')|raw }}
+{% endblock %}

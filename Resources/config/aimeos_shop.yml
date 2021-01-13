@@ -13,6 +13,7 @@ page:
     catalog-stock: ['catalog/stock']
     catalog-suggest: ['catalog/suggest']
     catalog-tree: ['basket/mini','catalog/filter','catalog/stage','catalog/lists']
+    supplier-detail: ['basket/mini','supplier/detail','catalog/lists']
     checkout-confirm: ['checkout/confirm']
     checkout-index: ['checkout/standard']
     checkout-update: ['checkout/update']
@@ -159,6 +160,10 @@ client:
             update:
                 url:
                     target: aimeos_shop_update
+        supplier:
+            detail:
+                url:
+                    target: aimeos_shop_supplier_detail
     jsonapi:
         url:
             target: aimeos_shop_jsonapi_options

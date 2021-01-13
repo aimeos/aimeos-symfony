@@ -31,6 +31,10 @@ aimeos_shop_default:
     resource: "@AimeosShopBundle/Resources/config/routing_default.yml"
     prefix: /shop
 
+aimeos_shop_supplier:
+    resource: "@AimeosShopBundle/Resources/config/routing_supplier.yml"
+    prefix: /s
+
 aimeos_shop_update:
     resource: "@AimeosShopBundle/Resources/config/routing_update.yml"
     prefix: /

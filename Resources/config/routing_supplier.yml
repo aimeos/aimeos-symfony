@@ -1,0 +1,3 @@
+aimeos_shop_supplier_detail:
+    path: /{s_name}/{f_supid}
+    defaults: { _controller: AimeosShopBundle:Supplier:detail, s_name: null }

@@ -113,6 +113,10 @@ aimeos_shop_default:
     resource: "@AimeosShopBundle/Resources/config/routing_default.yml"
     prefix:   /{site}/{locale}/{currency}/shop
 
+aimeos_shop_supplier:
+    resource: "@AimeosShopBundle/Resources/config/routing_supplier.yml"
+    prefix:   /{site}/{locale}/{currency}/s
+
 aimeos_shop_update:
     resource: "@AimeosShopBundle/Resources/config/routing_update.yml"
     prefix:   /{site}/{locale}/{currency}
