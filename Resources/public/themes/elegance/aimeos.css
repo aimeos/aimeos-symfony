@@ -1867,7 +1867,7 @@ html.no-js .catalog-filter-price:hover .price-lists {
 .catalog-list-items .price-item:first-of-type,
 .catalog-detail-basket .price-item:first-of-type {
 	display: block;
-	font-size: 125%;
+	font-size: 110%;
 	font-weight: bold;
 }
 
@@ -2082,6 +2082,11 @@ html.no-js .catalog-filter-price:hover .price-lists {
 	line-height: 0;
 }
 
+.catalog-list-items .selection .select-label > span {
+	height: calc(.5em + .75rem - 1px);
+	display: block;
+}
+
 .catalog-list-items .selection .select-label > span,
 .catalog-detail-basket .selection .select-label > span {
 	padding: 0 0.25em;
@@ -2092,7 +2097,7 @@ html.no-js .catalog-filter-price:hover .price-lists {
 .catalog-detail-basket .selection .radio .select-label {
 	border: solid 1px #D0D0D0;
 	border-color: var(--ai-light, #D0D0D0);
-	padding: 0.525em;
+	padding: 0.5em;
 	text-align: center;
 	min-width: 2.5em;
 	width: auto;
@@ -2135,11 +2140,15 @@ html.no-js .catalog-filter-price:hover .price-lists {
 	margin: 0;
 }
 
-.catalog-list-items .selection .media-item > img,
+.catalog-list-items .selection .media-item > img {
+	height: calc(.5em + .75rem - 1px);
+	width: calc(.5em + .75rem - 1px);
+}
+
 .catalog-detail-basket .selection .media-item > img {
+	height: 1.5rem;
+	width: 1.5rem;
 	border: none;
-	height: 1.3em;
-	width: 1.3em;
 }
 
 .catalog-list-items .selection .media-item + span,
@@ -2580,6 +2589,19 @@ html.no-js .catalog-filter-price:hover .price-lists {
 .basket-mini-product th,
 .basket-mini-product td {
 	padding: 1em;
+}
+
+.basket-mini-product .supplier {
+	background-color: #f8f8f8;
+	background-color: var(--ai-bg-light, #f8f8f8);
+}
+
+.basket-mini-product .supplier td {
+	padding: 0.5em 1em;
+}
+
+.basket-mini-product .supplier .supplier-name {
+	margin: 0;
 }
 
 .basket-mini-product th,
@@ -3156,6 +3178,8 @@ html.no-js .catalog-filter-price:hover .price-lists {
 .aimeos .common-summary-detail tr.subtotal {
 	color: #555;
 	color: var(--ai-secondary, #555);
+	background-color: #F8F8F8;
+	background-color: var(--ai-bg-light, #F8F8F8);
 }
 
 .aimeos .common-summary-detail tr.total {
@@ -3163,14 +3187,21 @@ html.no-js .catalog-filter-price:hover .price-lists {
 	border-top-color: var(--ai-light, #D0D0D0);
 	color: #555;
 	color: var(--ai-secondary, #555);
-	background-color: #F8F8F8;
-	background-color: var(--ai-bg-light, #F8F8F8);
 }
 
 .aimeos .common-summary-detail th,
 .aimeos .common-summary-detail td {
 	vertical-align: middle;
 	padding: 0.5em;
+}
+
+.aimeos .common-summary-detail .supplier {
+	background-color: #F8F8F8;
+	background-color: var(--ai-bg-light, #F8F8F8);
+}
+
+.aimeos .common-summary-detail .supplier-name {
+	margin: 0;
 }
 
 .aimeos .common-summary-detail .image img.detail {
@@ -3636,6 +3667,26 @@ html.no-js .catalog-filter-price:hover .price-lists {
 .account-subscription-detail .attr-item .value {
 	min-width: 0;
 }
+
+
+/* Suppliers */
+
+/* Supplier images */
+.supplier-detail-image {
+	background-color: #FFF;
+	background-color: var(--ai-bg, #FFF);
+	margin-bottom: 2em;
+}
+
+.supplier-detail-image .item {
+	width: 100%;
+}
+
+.supplier-detail-description {
+	margin: 0 1%;
+	margin-bottom: 2em;
+}
+
 
 
 /*! jQuery UI - v1.10.0 - 2013-01-17
