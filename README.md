@@ -2,8 +2,7 @@
     <img src="https://aimeos.org/fileadmin/template/icons/logo.png" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
 </a>
 
-Aimeos Symfony bundle
-======================
+# Aimeos Symfony bundle
 
 [![Total Downloads](https://poser.pugx.org/aimeos/aimeos-symfony/d/total.svg)](https://packagist.org/packages/aimeos/aimeos-symfony)
 [![Build Status](https://travis-ci.org/aimeos/aimeos-symfony.svg?branch=master)](https://travis-ci.org/aimeos/aimeos-symfony)
@@ -36,7 +35,7 @@ customize anything to your needs.
 This document is for the latest Aimeos Symfony **2020.10 release and later**.
 
 - LTS release: 2020.10 (Symfony 3.4 and 4.x)
-- Old LTS release: 2019.10 (Symfony 3.4 and 4.x)
+- Beta release: 2021.01 (Symfony 3.4 and 4.x)
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
