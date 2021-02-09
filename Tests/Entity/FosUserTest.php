@@ -45,11 +45,8 @@ class FosUserTest extends \PHPUnit\Framework\TestCase
 		$this->object->setSalutation( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_COMPANY );
 		$this->assertEquals( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_COMPANY, $this->object->getSalutation() );
 
-		$this->object->setSalutation( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MRS );
-		$this->assertEquals( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MRS, $this->object->getSalutation() );
-
-		$this->object->setSalutation( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MISS );
-		$this->assertEquals( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MISS, $this->object->getSalutation() );
+		$this->object->setSalutation( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MS );
+		$this->assertEquals( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MS, $this->object->getSalutation() );
 
 		$this->object->setSalutation( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MR );
 		$this->assertEquals( \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_MR, $this->object->getSalutation() );
