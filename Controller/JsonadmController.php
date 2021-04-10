@@ -34,7 +34,7 @@ class JsonadmController extends Controller
 	public function deleteAction( ServerRequestInterface $request, string $resource,
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
 		return $client->delete( $request, ( new Psr17Factory )->createResponse() );
 	}
 
@@ -50,7 +50,7 @@ class JsonadmController extends Controller
 	public function getAction( ServerRequestInterface $request, string $resource,
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
 		return $client->get( $request, ( new Psr17Factory )->createResponse() );
 	}
 
@@ -66,7 +66,7 @@ class JsonadmController extends Controller
 	public function patchAction( ServerRequestInterface $request, string $resource,
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
 		return $client->patch( $request, ( new Psr17Factory )->createResponse() );
 	}
 
@@ -82,7 +82,7 @@ class JsonadmController extends Controller
 	public function postAction( ServerRequestInterface $request, string $resource,
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
 		return $client->post( $request, ( new Psr17Factory )->createResponse() );
 	}
 
@@ -98,7 +98,7 @@ class JsonadmController extends Controller
 	public function putAction( ServerRequestInterface $request, string $resource,
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
 		return $client->put( $request, ( new Psr17Factory )->createResponse() );
 	}
 
@@ -114,7 +114,7 @@ class JsonadmController extends Controller
 	public function optionsAction( ServerRequestInterface $request, string $resource = '',
 		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'lang', 'en' ) );
+		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
 		return $client->options( $request, ( new Psr17Factory )->createResponse() );
 	}
 

@@ -215,7 +215,7 @@ class JqadmController extends Controller
 	 */
 	protected function createAdmin( Request $request, $site, $resource ) : \Aimeos\Admin\JQAdm\Iface
 	{
-		$lang = $request->get( 'lang', 'en' );
+		$lang = $request->get( 'locale', 'en' );
 
 		$aimeos = $this->get( 'aimeos' )->get();
 		$templatePaths = $aimeos->getCustomPaths( 'admin/jqadm/templates' );

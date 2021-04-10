@@ -44,7 +44,7 @@ class AdminController extends Controller
 			$params = array(
 				'resource' => 'dashboard',
 				'site' => $request->attributes->get( 'site', $request->query->get( 'site', $siteCode ) ),
-				'lang' => $request->attributes->get( 'lang', $request->query->get( 'lang', $locale ) ),
+				'locale' => $request->attributes->get( 'locale', $request->query->get( 'locale', $locale ) ),
 			);
 			return $this->redirect( $this->generateUrl( 'aimeos_shop_jqadm_search', $params ) );
 		}
