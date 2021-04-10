@@ -23,7 +23,7 @@
         "symfony/http-foundation": "v5.2.0"
     },
 	"require": {
-		"php": "~7.2",
+		"php": "~7.1",
 		"aimeos/aimeos-core": "dev-master",
 		"aimeos/ai-gettext": "dev-master",
 		"aimeos/ai-monolog": "dev-master",
@@ -35,28 +35,27 @@
 		"aimeos/ai-controller-frontend": "dev-master",
 		"aimeos/ai-client-jsonapi": "dev-master",
 		"aimeos/ai-client-html": "dev-master",
+		"aimeos/ai-fosuser": "dev-master",
 		"aimeos/ai-twig": "dev-master",
 		"doctrine/common": "^2.8",
-		"symfony/asset": "~5.0",
+		"symfony/asset": "~3.4||~4.0||~5.0",
 		"symfony/monolog-bundle": "~3.0",
-		"symfony/framework-bundle": "~4.0||~5.0",
-		"symfony/security-bundle": "~4.0||~5.0",
+		"symfony/framework-bundle": "~3.4||~4.0||~5.0",
+		"symfony/security-bundle": "~3.4||~4.0||~5.0",
 		"symfony/swiftmailer-bundle": "~3.0",
-		"symfony/twig-bundle": "~4.0||~5.0",
+		"symfony/twig-bundle": "~3.4||~4.0||~5.0",
 		"symfony/psr-http-message-bridge": "~1.0",
-		"sensio/framework-extra-bundle": "~4.0||~5.0",
-		"symfony/templating": "~5.2",
-		"symfony/form": "~5.2",
-		"nyholm/psr7": "~1.0",
-		"twig/twig": "~2.0||~3.0"
+		"sensio/framework-extra-bundle": "~3.4||~4.0||~5.0",
+		"friendsofsymfony/user-bundle": "~2.1",
+		"nyholm/psr7": "~1.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~7.0||~8.0",
 		"php-coveralls/php-coveralls": "~2.0",
 		"doctrine/doctrine-bundle": "~1.2",
 		"doctrine/orm": "^2.2.3",
-		"symfony/browser-kit": "~4.0||~5.0",
-		"symfony/css-selector": "~4.0||~5.0"
+		"symfony/browser-kit": "~3.4||~4.0||~5.0",
+		"symfony/css-selector": "~3.4||~4.0||~5.0"
 	},
 	"autoload": {
 		"psr-4": { "Aimeos\\ShopBundle\\": "" }
