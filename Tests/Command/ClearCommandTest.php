@@ -9,7 +9,7 @@ use Symfony\Component\Console\Tester\CommandTester;
 use Aimeos\ShopBundle\Command;
 
 
-class CacheCommandTest extends WebTestCase
+class ClearCommandTest extends WebTestCase
 {
 	public function testCacheCommand()
 	{
@@ -19,7 +19,7 @@ class CacheCommandTest extends WebTestCase
 		$application = new Application( $kernel );
 		$application->add( new Command\CacheCommand() );
 
-		$command = $application->find( 'aimeos:cache' );
+		$command = $application->find( 'aimeos:clear' );
 		$commandTester = new CommandTester( $command );
 		$commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest' ) );
 

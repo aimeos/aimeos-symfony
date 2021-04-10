@@ -21,7 +21,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @package symfony
  * @subpackage Command
  */
-class CacheCommand extends Command
+class ClearCommand extends Command
 {
 	protected static $defaultName = 'aimeos:cache';
 
@@ -46,7 +46,7 @@ class CacheCommand extends Command
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
 		$context = $this->getContainer()->get( 'aimeos.context' )->get( false, 'command' );
-		$context->setEditor( 'aimeos:cache' );
+		$context->setEditor( 'aimeos:clear' );
 
 		$localeManager = \Aimeos\MShop::create( $context, 'locale' );
 

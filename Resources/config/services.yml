@@ -36,10 +36,10 @@ services:
         class: Aimeos\ShopBundle\Command\AccountCommand
         tags:
             - { name: 'console.command', command: 'aimeos:account' }
-    aimeos_cache:
-        class: Aimeos\ShopBundle\Command\CacheCommand
+    aimeos_clear:
+        class: Aimeos\ShopBundle\Command\ClearCommand
         tags:
-            - { name: 'console.command', command: 'aimeos:cache' }
+            - { name: 'console.command', command: 'aimeos:clear' }
     aimeos_jobs:
         class: Aimeos\ShopBundle\Command\JobsCommand
         tags:
