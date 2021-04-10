@@ -81,7 +81,7 @@ class JqadmController extends Controller
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
-		return $this->getHtml( $html );
+		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -101,7 +101,7 @@ class JqadmController extends Controller
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
-		return $this->getHtml( $html );
+		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -121,7 +121,7 @@ class JqadmController extends Controller
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
-		return $this->getHtml( $html );
+		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -141,7 +141,7 @@ class JqadmController extends Controller
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
-		return $this->getHtml( $html );
+		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -161,7 +161,7 @@ class JqadmController extends Controller
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
-		return $this->getHtml( $html );
+		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -181,7 +181,7 @@ class JqadmController extends Controller
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
-		return $this->getHtml( $html );
+		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -201,7 +201,7 @@ class JqadmController extends Controller
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
 		}
 
-		return $this->getHtml( $html );
+		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -242,8 +242,13 @@ class JqadmController extends Controller
 	 * @param string $content Content from admin client
 	 * @return Response View for rendering the output
 	 */
-	protected function getHtml( $content ) : Response
+	protected function getHtml( $content, $lang ) : Response
 	{
-		return $this->render( '@AimeosShop/Jqadm/index.html.twig', array( 'content' => $content ) );
+		return $this->render( '@AimeosShop/Jqadm/index.html.twig', [
+			'content' => $content,
+			'locale' => $lang,
+			'localeDir' => in_array( $lang, ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ur'] ) ? 'rtl' : 'ltr',
+			'theme' => ( $_COOKIE['aimeos_backend_theme'] ?? '' ) == 'dark' ? 'dark' : 'light'
+		] );
 	}
 }
