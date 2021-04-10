@@ -171,13 +171,12 @@ client:
 controller:
     common:
         media:
-            standard:
-                # Mime icon related settings
-                mimeicon:
-                    # Directory where icons for the mime types stored. Must be relative to the path in "basedir"
-                    directory: bundles/aimeosshop/mimeicons
-                    # File extension of mime type icons
-                    extension: .png
+            # Mime icon related settings
+            mimeicon:
+                # Directory where icons for the mime types stored. Must be relative to the path in "basedir"
+                directory: bundles/aimeosshop/mimeicons
+                # File extension of mime type icons
+                extension: .png
 
 i18n:
 
