@@ -185,11 +185,9 @@ madmin:
 mshop:
     customer:
         manager:
-            name: Standard
+            name: FosUser
             password:
-                name: Standard
-                options:
-                    format: "%%1$s{%%2$s}"
+                name: Bcrypt
     index:
         manager:
             name: MySQL

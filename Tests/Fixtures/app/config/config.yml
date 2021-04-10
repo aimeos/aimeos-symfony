@@ -11,6 +11,8 @@ framework:
         resource: "%kernel.root_dir%/config/routing.yml"
     session:
         storage_id: session.storage.mock_file
+    templating:
+        engines: [twig]
 
 monolog:
     handlers:
@@ -40,6 +42,14 @@ doctrine:
 
 aimeos_shop:
     disable_sites: false
+    mshop:
+        customer:
+            manager:
+                name: Standard
+                password:
+                    name: Standard
+                    options:
+                        format: "%%1$s{%%2$s}"
     madmin:
         cache:
             manager:
