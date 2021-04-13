@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "f584e45b5d40795b4a16ef9e3a95edf3caa287c0"
+                "reference": "4c44a548f798d5978560495d7b23d9b5b27b45d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/f584e45b5d40795b4a16ef9e3a95edf3caa287c0",
-                "reference": "f584e45b5d40795b4a16ef9e3a95edf3caa287c0",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/4c44a548f798d5978560495d7b23d9b5b27b45d7",
+                "reference": "4c44a548f798d5978560495d7b23d9b5b27b45d7",
                 "shasum": ""
             },
             "require": {
@@ -60,7 +60,7 @@
                 "source": "https://github.com/aimeos/ai-admin-jqadm",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2021-04-06T08:07:34+00:00"
+            "time": "2021-04-12T11:46:58+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -121,12 +121,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "c8e87103ef336710d69a8dd949562c88a3b33975"
+                "reference": "91254832949c588c70a19222a24ef32955dd646b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/c8e87103ef336710d69a8dd949562c88a3b33975",
-                "reference": "c8e87103ef336710d69a8dd949562c88a3b33975",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/91254832949c588c70a19222a24ef32955dd646b",
+                "reference": "91254832949c588c70a19222a24ef32955dd646b",
                 "shasum": ""
             },
             "require": {
@@ -135,7 +135,7 @@
                 "aimeos/aimeos-core": "dev-master",
                 "composer/installers": "^1.0",
                 "php": "~7.1||~8.0",
-                "tecnickcom/tcpdf": "dev-main"
+                "tecnickcom/tcpdf": "^6.4.1"
             },
             "require-dev": {
                 "nyholm/psr7-server": "~1.0",
@@ -173,7 +173,7 @@
                 "source": "https://github.com/aimeos/ai-client-html",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2021-04-07T16:44:25+00:00"
+            "time": "2021-04-12T09:51:34+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -665,12 +665,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "7ccb8235e651a331c8927d45f4198816adb86ebf"
+                "reference": "e50b6738adcb8cf761bac9df22c4fef8128f14e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/7ccb8235e651a331c8927d45f4198816adb86ebf",
-                "reference": "7ccb8235e651a331c8927d45f4198816adb86ebf",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/e50b6738adcb8cf761bac9df22c4fef8128f14e5",
+                "reference": "e50b6738adcb8cf761bac9df22c4fef8128f14e5",
                 "shasum": ""
             },
             "require": {
@@ -737,7 +737,7 @@
                 "source": "https://github.com/aimeos/aimeos-core",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2021-04-09T08:04:50+00:00"
+            "time": "2021-04-11T07:33:59+00:00"
         },
         {
             "name": "aimeos/map",
@@ -6820,22 +6820,21 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "dev-main",
+            "version": "6.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "cf8a66c8ec6911bb04f45ccbbf56f2992e6e2139"
+                "reference": "5ba838befdb37ef06a16d9f716f35eb03cb1b329"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/cf8a66c8ec6911bb04f45ccbbf56f2992e6e2139",
-                "reference": "cf8a66c8ec6911bb04f45ccbbf56f2992e6e2139",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/5ba838befdb37ef06a16d9f716f35eb03cb1b329",
+                "reference": "5ba838befdb37ef06a16d9f716f35eb03cb1b329",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -6881,7 +6880,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tecnickcom/TCPDF/issues",
-                "source": "https://github.com/tecnickcom/TCPDF/tree/main"
+                "source": "https://github.com/tecnickcom/TCPDF/tree/6.4.1"
             },
             "funding": [
                 {
@@ -6889,7 +6888,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-04-06T15:35:45+00:00"
+            "time": "2021-03-27T16:00:33+00:00"
         },
         {
             "name": "twig/twig",
