@@ -2052,9 +2052,10 @@ jQuery(document).ready(function($) {
 	 */
 	var $dropdowns = $('.top-item'); // Specifying the element is faster for older browsers
 
-	$('.has-submenu > .top-cat-item').on('click', function(t){
-		t.preventDefault(), t.stopPropagation();
-	});
+        //Uncomment below if Megamenu
+//	$('.has-submenu > .top-cat-item').on('click', function(t){
+//		t.preventDefault(), t.stopPropagation();
+//	});
 
 	/**
 	 * Touch events
@@ -2135,7 +2136,10 @@ jQuery(document).ready(function($) {
 		$(".media-item").parent().parent().parent().addClass('shows-img');
 	}
 
-
+	/**
+	 * Offscreen
+	 */
+        
 	// loop all zeynepjs menus for initialization
 	$('.zeynep').each(function () {
 		$(this).zeynep({});

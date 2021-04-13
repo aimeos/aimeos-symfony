@@ -5041,6 +5041,11 @@ body{
 	width: 100%;
 }
 
+.basket-mini-product .to-basket a {
+        color: #FFF !important;
+        color: var(--ai-bg, #FFF) !important;
+}
+
 .mini-basket-close {
 	margin: 0;
 	display: inline-block;
@@ -5114,7 +5119,6 @@ body{
 	border: none;
 	padding: .5rem 0;
 	width: calc(90% - 50px) !important;
-	top: 9.05em !important;
 }
 
 .aimeos .suggest-item {
@@ -5332,7 +5336,7 @@ body{
 	.zeynep a {
 		color: inherit;
 		display: block;
-		padding: .5em 1em;
+		padding: .25em 1em;
 		text-decoration: none;
 		transition: all 150ms;
 		position: relative;
@@ -5342,12 +5346,12 @@ body{
 
 	.zeynep .nochild > .item-links > a.item-link {
 		width: 100%;
-		padding: .5em 1em;
+		padding: .25em 1em;
 	}
 
 	.zeynep .level-2 > .nochild a.item-link {
 		width: 100%;
-		padding: .5em 0;
+		padding: .25em 1em;
 	}
 
 	/*Level-1 withchild*/
@@ -5468,11 +5472,17 @@ body{
 }
 
 @media (min-width:992px) {
-	.level-2 .cat-item {
+        
+        [class*="level-"]:not(.level-1) > .cat-item {
 		text-align: left;
+                margin: .25em 0 0;
+	}
+        
+        [class*="level-"]:not(.level-1) > .cat-item:last-child {
+                margin-bottom: .25em;
 	}
 
-	.data-link, .item-link, .btn-open.first, .submenu-header {
+	.item-links, .btn-open.first, .submenu-header {
 		display: none !important;
 	}
 
@@ -5511,6 +5521,17 @@ body{
 /*------------------------------Megamenu--------------------------------------*/
 
 @media (min-width:992px) {
+        .catalog-filter-tree .megamenu > .submenu > .item-container > .list-container {
+                display: flex !important;
+                flex-wrap: wrap;
+        }
+        
+        .megamenu > .submenu > .item-container > .list-container > .cat-item {
+                min-width: 33.3%;
+                flex: 1;
+                border-left: .5rem solid transparent;
+                border-right: .5rem solid transparent;
+        }
 
 	.catalog-filter .filter-sections:after{
 		position: relative;
@@ -5553,13 +5574,10 @@ body{
 
 	.catalog-filter-tree .category-lists div.level-1 > .cat-item > div.submenu > a.cat-item {
 		padding: 1rem 1.5rem;
-		text-transform: uppercase;
+		/*text-transform: uppercase;*/
 		font-weight: 600;
 	}
 
-	.catalog-filter-tree .level-1 > .cat-item > .submenu .list-container > .nochild > a.cat-item {
-		margin: .2rem 0;
-	}
 
 	.catalog-filter-tree .level-1 .megamenu > .submenu .list-container > .has-submenu > .submenu > .list-container > .nochild > a.cat-item {
 		margin: .4rem 0;
@@ -5598,7 +5616,7 @@ body{
 		display: none;
 		border-top: 2px solid #A00000;
 		border-color: var(--ai-primary, #A00000);
-		padding: 1rem 0;
+		padding: .5rem 0;
 	}
 
 	.catalog-filter-tree .has-submenu > .submenu .list-container > .has-submenu > .submenu {
@@ -5608,7 +5626,7 @@ body{
 		padding: 0;
 	}
 
-	.catalog-filter-tree .top-item.hover .submenu {
+	.catalog-filter-tree .top-item.hover > .submenu {
 		display: flex;
 		background-color: #FFF;
 		background-color: var(--ai-bg, #FFF);
@@ -5623,36 +5641,10 @@ body{
 		width: 100%
 	}
 
-	.catalog-filter-tree .megamenu > .submenu .level-2 > .has-submenu > a.cat-item {
+	.catalog-filter-tree .megamenu > .submenu .has-submenu > a.cat-item {
 		font-weight: 600;
 	}
 
-/*---------------------- MEGAMENU level-3 > ---------------------------------*/
-
-	.catalog-filter-tree .megamenu > .submenu .level-3 .has-submenu > a.cat-item {
-		margin: 0em 0 .5em 0;
-	}
-
-	.catalog-filter-tree .megamenu > .submenu .level-3 .has-submenu:first-child > a.cat-item {
-		margin: 0em 0 .5em 0;
-	}
-
-	.catalog-filter-tree .megamenu > .submenu .level-3 .has-submenu {
-		margin: 1.5em 0 1.5em 0;
-	}
-
-	.catalog-filter-tree .megamenu .level-3 > .has-submenu > .submenu > .list-container > .nochild > a.cat-item,
-	.catalog-filter-tree .megamenu .level-3 > .nochild > a.cat-item {
-		margin: .4em 0;
-	}
-
-	.catalog-filter-tree .has-submenu > a.cat-item {
-		text-transform: uppercase;
-	}
-
-	.catalog-filter-tree a.cat-item.nochild {
-		margin: .4em 0;
-	}
 }
 /*----------------------- Filter Container -----------------------------------*/
 .catalog-filter-attribute.col, .catalog-filter-price.col, .catalog-filter-supplier.col{
