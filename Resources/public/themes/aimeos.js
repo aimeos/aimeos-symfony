@@ -217,13 +217,13 @@ AimeosAccountHistory = {
 	 */
 	setupOrderShow: function() {
 
-		$(".account-history .history-item").on("click", function(ev) {
+		$(".account-history .history-item").on("click", '.action .btn', function(ev) {
 
 			var details = $(".account-history-order", ev.delegateTarget);
 
 			if(details.length === 0) {
 
-				$.get($(this).find('.action a.btn').attr('href'), function(data) {
+				$.get($(this).attr('href'), function(data) {
 
 					var doc = document.createElement("html");
 					doc.innerHTML = data;
@@ -1483,7 +1483,7 @@ AimeosCatalogFilter = {
 	 */
 	setupAttributeListsToggle: function() {
 
-		$(".catalog-filter-attribute .attribute-lists .attr-list").hide();
+		$(".catalog-filter-attribute .attribute-lists .fieldsets .attr-list").hide();
 
 		$(".catalog-filter-attribute fieldset").on("click", "legend", function(ev) {
 			$(".attr-list", ev.delegateTarget).slideToggle();
@@ -2139,7 +2139,7 @@ jQuery(document).ready(function($) {
 	/**
 	 * Offscreen
 	 */
-        
+
 	// loop all zeynepjs menus for initialization
 	$('.zeynep').each(function () {
 		$(this).zeynep({});

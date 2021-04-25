@@ -99,7 +99,7 @@ li.attr-item {
 }
 
 .basket th.label {
-	text-align: left;
+	text-align: start;
 }
 
 .basket td.quantity {
@@ -108,7 +108,7 @@ li.attr-item {
 }
 
 .basket td.price {
-	text-align: right;
+	text-align: end;
 	white-space: nowrap;
 }
 
