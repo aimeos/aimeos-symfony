@@ -16,7 +16,6 @@ jobs:
           MYSQL_PASSWORD: aimeos
     steps:
       - checkout
-      - run: composer req "symfony/symfony:~4.0" --no-update
       - restore_cache:
           keys:
             - php72-{{ checksum "composer.json" }}
@@ -38,7 +37,6 @@ jobs:
           MYSQL_PASSWORD: aimeos
     steps:
       - checkout
-      - run: composer req "symfony/symfony:~4.0" --no-update
       - restore_cache:
           keys:
             - php73-{{ checksum "composer.json" }}
@@ -60,7 +58,6 @@ jobs:
           MYSQL_PASSWORD: aimeos
     steps:
       - checkout
-      - run: composer req "symfony/symfony:~4.0" --no-update
       - restore_cache:
           keys:
             - php74-{{ checksum "composer.json" }}
