@@ -11,8 +11,6 @@ framework:
         resource: "%kernel.root_dir%/config/routing.yml"
     session:
         storage_id: session.storage.mock_file
-    templating:
-        engines: [twig]
 
 monolog:
     handlers:
