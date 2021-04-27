@@ -34,8 +34,8 @@ customize anything to your needs.
 
 This document is for the latest Aimeos Symfony **2020.10 release and later**.
 
+- Stable release: 2021.04 (Symfony 4.4)
 - LTS release: 2020.10 (Symfony 3.4 and 4.x)
-- Beta release: 2021.01 (Symfony 3.4 and 4.x)
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
@@ -118,15 +118,8 @@ The Aimeos Symfony e-commerce bundle is a composer based library that can be ins
 easiest by using [Composer](https://getcomposer.org). If you don't have an existing
 Symfony application, you can create a skeleton application using
 
-`composer create-project symfony/website-skeleton myshop`
-
-Ensure that Twig is configured for templating in the `framework` section of your
-`./config/packages/framework.yaml` file:
-
-```yaml
-framework:
-    templating:
-        engines: ['twig']
+```
+composer create-project symfony/website-skeleton:~4.4 myshop
 ```
 
 These settings need to be added to the `./config/packages/fos_user.yaml` file:
@@ -221,19 +214,17 @@ Then add these lines to your `composer.json` of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2020.10",
+        "aimeos/aimeos-symfony": "~2021.04",
         ...
     },
     "scripts": {
         "post-install-cmd": [
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::installBundle",
-            "Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateConfig",
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::setupDatabase",
             ...
         ],
         "post-update-cmd": [
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::installBundle",
-            "Aimeos\\ShopBundle\\Composer\\ScriptHandler::updateConfig",
             "Aimeos\\ShopBundle\\Composer\\ScriptHandler::setupDatabase",
             ...
         ]
