@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33b519d3c604be6aa80ef0f5ee5bc11e",
+    "content-hash": "9543f2585b1a7da739e16255fb3acb5d",
     "packages": [
         {
             "name": "aimeos/ai-admin-jqadm",
@@ -5530,16 +5530,16 @@
         },
         {
             "name": "symfony/security-core",
-            "version": "v4.4.21",
+            "version": "v4.4.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-core.git",
-                "reference": "19a7caa988be4f013669a057861a1d2a3eacbbf3"
+                "reference": "8188709909f1e980bd5d791aa9d85156204526e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security-core/zipball/19a7caa988be4f013669a057861a1d2a3eacbbf3",
-                "reference": "19a7caa988be4f013669a057861a1d2a3eacbbf3",
+                "url": "https://api.github.com/repos/symfony/security-core/zipball/8188709909f1e980bd5d791aa9d85156204526e9",
+                "reference": "8188709909f1e980bd5d791aa9d85156204526e9",
                 "shasum": ""
             },
             "require": {
@@ -5596,7 +5596,7 @@
             "description": "Symfony Security Component - Core Library",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/security-core/tree/v4.4.21"
+                "source": "https://github.com/symfony/security-core/tree/v4.4.23"
             },
             "funding": [
                 {
@@ -5612,7 +5612,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-10T13:26:08+00:00"
+            "time": "2021-05-12T12:42:28+00:00"
         },
         {
             "name": "symfony/security-csrf",
