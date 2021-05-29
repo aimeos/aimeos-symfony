@@ -1764,32 +1764,12 @@ AimeosCheckoutStandard = {
 
 		$(".checkout-standard-address .item-address").has(".header input:not(:checked)").find(".form-list").hide();
 
-		/* Initial state: Hide VAT ID if salution is not "company" */
-		$(".checkout-standard-address .form-list .salutation select").each(function(idx, elem) {
-			if($(elem).val() !== "company") {
-				$(this).parents(".form-list").find(".company,.vatid").hide();
-			}
-		});
-
 		/* Address form slide up/down when selected */
 		$(".checkout-standard-address-billing,.checkout-standard-address-delivery").on("click", ".header input",
 			function(ev) {
 				$(".form-list", ev.delegateTarget).slideUp(400);
 				$(".item-address", ev.delegateTarget).has(this).find(".form-list").slideDown(400);
 			});
-	},
-
-
-	/**
-	 * Shows company and VAT ID fields if salutation is "company", otherwise
-	 * hide the fields
-	 */
-	setupSalutationCompany: function() {
-
-		$(".checkout-standard-address .form-list").on("change", ".salutation select", function(ev) {
-			var fields = $(".company,.vatid", ev.delegateTarget);
-			$(this).val() === "company" ? fields.show() : fields.hide();
-		});
 	},
 
 
@@ -1926,7 +1906,6 @@ AimeosCheckoutStandard = {
 		this.setupAddressForms();
 		this.setupServiceForms();
 
-		this.setupSalutationCompany();
 		this.setupCountryState();
 		this.setupBirthdayPicker();
 
