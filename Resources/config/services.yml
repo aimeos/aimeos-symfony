@@ -48,10 +48,3 @@ services:
         class: Aimeos\ShopBundle\Command\SetupCommand
         tags:
             - { name: 'console.command', command: 'aimeos:setup' }
-
-    aimeos.csrf_listener:
-        class: Aimeos\ShopBundle\EventListener\CsrfListener
-        arguments:
-            - "@service_container"
-        tags:
-            - { name: kernel.event_listener, event: kernel.request }
