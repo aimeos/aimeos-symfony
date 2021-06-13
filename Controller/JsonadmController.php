@@ -130,7 +130,7 @@ class JsonadmController extends Controller
 	protected function createAdmin( string $site, string $resource, string $lang ) : \Aimeos\Admin\JsonAdm\Iface
 	{
 		$aimeos = $this->get( 'aimeos' )->get();
-		$templatePaths = $aimeos->getCustomPaths( 'admin/jsonadm/templates' );
+		$templatePaths = $aimeos->getTemplatePaths( 'admin/jsonadm/templates' );
 
 		$context = $this->get( 'aimeos.context' )->get( false, 'backend' );
 		$context->setI18n( $this->get( 'aimeos.i18n' )->get( array( $lang, 'en' ) ) );

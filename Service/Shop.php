@@ -35,7 +35,7 @@ class Shop
 		$this->context = $container->get( 'aimeos.context' )->get();
 
 		$langid = $this->context->getLocale()->getLanguageId();
-		$tmplPaths = $container->get( 'aimeos' )->get()->getCustomPaths( 'client/html/templates' );
+		$tmplPaths = $container->get( 'aimeos' )->get()->getTemplatePaths( 'client/html/templates' );
 
 		$view = $container->get( 'aimeos.view' )->create( $this->context, $tmplPaths, $langid );
 		$this->context->setView( $view );
