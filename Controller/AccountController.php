@@ -38,7 +38,7 @@ class AccountController extends Controller
 			$params['aibody'][$name] = $shop->get( $name )->getBody();
 		}
 
-		$response = $this->render( '@AimeosShop/Account/index.html.twig', $params )
+		$response = $this->render( '@AimeosShop/Account/index.html.twig', $params );
 		$response->headers->set( 'Cache-Control', 'no-store' );
 		return $response;
 	}
