@@ -71,8 +71,9 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
+		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
 
-		$client->request( 'GET', '/unittest/jqadm/delete/product/0' );
+		$client->request( 'POST', '/unittest/jqadm/delete/product/0', ['_token' => $token] );
 		$response = $client->getResponse();
 
 		$this->assertEquals( 302, $response->getStatusCode() );

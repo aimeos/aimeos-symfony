@@ -6,21 +6,21 @@ aimeos_shop_jqadm_file:
 aimeos_shop_jqadm_copy:
     path: /copy/{resource}/{id}
     defaults: { _controller: AimeosShopBundle:Jqadm:copy }
-    methods: [GET, POST]
+    methods: [GET]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jqadm_create:
     path: /create/{resource}
     defaults: { _controller: AimeosShopBundle:Jqadm:create }
-    methods: [GET, POST]
+    methods: [GET]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jqadm_delete:
     path: /delete/{resource}/{id}
     defaults: { _controller: AimeosShopBundle:Jqadm:delete, id: null }
-    methods: [GET, POST]
+    methods: [POST]
     requirements:
         resource: '[a-z\/]+'
 
