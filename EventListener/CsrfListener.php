@@ -10,6 +10,7 @@
 
 namespace Aimeos\ShopBundle\EventListener;
 
+use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\KernelEvent;
 use Symfony\Component\DependencyInjection\Container;
@@ -51,9 +52,10 @@ class CsrfListener
 			return;
 		}
 
-		$sessionToken = $this->container->get( 'security.csrf.token_manager' )->getToken( '_token' );
+		$csrf = $this->container->get( 'security.csrf.token_manager' );
+		$csrfToken = new CsrfToken( '_token', $request->request->get( '_token' ) );
 
-		if( $sessionToken && (string) $sessionToken !== (string) $request->request->get( '_token' ) ) {
+		if( !$csrf->isTokenValid( $csrfToken ) ) {
 			$event->setResponse( new Response( 'Page expired', 419 ) );
 		}
 	}
