@@ -72,7 +72,7 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'GET', '/unittest/jqadm/delete/product/0' );
+		$client->request( 'POST', '/unittest/jqadm/delete/product/0' );
 		$response = $client->getResponse();
 
 		$this->assertEquals( 302, $response->getStatusCode() );
