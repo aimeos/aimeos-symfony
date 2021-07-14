@@ -16,10 +16,11 @@ jobs:
           MYSQL_PASSWORD: aimeos
     steps:
       - checkout
+      - run: wget https://getcomposer.org/download/latest-stable/composer.phar -O composer
       - restore_cache:
           keys:
             - php72-{{ checksum "composer.json" }}
-      - run: composer update -n --prefer-dist
+      - run: php composer update -n --prefer-dist
       - save_cache:
           key: php72-{{ checksum "composer.json" }}
           paths: [./vendor]
@@ -37,10 +38,11 @@ jobs:
           MYSQL_PASSWORD: aimeos
     steps:
       - checkout
+      - run: wget https://getcomposer.org/download/latest-stable/composer.phar -O composer
       - restore_cache:
           keys:
             - php73-{{ checksum "composer.json" }}
-      - run: composer update -n --prefer-dist
+      - run: php composer update -n --prefer-dist
       - save_cache:
           key: php73-{{ checksum "composer.json" }}
           paths: [./vendor]
@@ -58,10 +60,11 @@ jobs:
           MYSQL_PASSWORD: aimeos
     steps:
       - checkout
+      - run: wget https://getcomposer.org/download/latest-stable/composer.phar -O composer
       - restore_cache:
           keys:
             - php74-{{ checksum "composer.json" }}
-      - run: composer update -n --prefer-dist
+      - run: php composer update -n --prefer-dist
       - save_cache:
           key: php74-{{ checksum "composer.json" }}
           paths: [./vendor]
