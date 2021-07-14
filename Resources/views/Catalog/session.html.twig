@@ -5,8 +5,7 @@
     {{ (aiheader['basket/mini'] ?? '' )|raw }}
     {{ (aiheader['catalog/search'] ?? '' )|raw }}
     {{ (aiheader['catalog/tree'] ?? '' )|raw }}
-    {{ (aiheader['catalog/home'] ?? '' )|raw }}
-    {{ (aiheader['cms/page'] ?? '' )|raw }}
+    {{ (aiheader['catalog/session'] ?? '' )|raw }}
 {% endblock %}
 
 {% block aimeos_head %}
@@ -20,6 +19,7 @@
 {% endblock %}
 
 {% block aimeos_body %}
-    {{ (aibody['catalog/home'] ?? '' )|raw }}
-    {{ (aibody['cms/page'] ?? '' )|raw }}
+    <div class="container-xl">
+        {{ (aibody['catalog/session'] ?? '' )|raw }}
+    </div>
 {% endblock %}

@@ -134,6 +134,28 @@ class CatalogController extends Controller
 
 
 	/**
+	 * Returns the html body part for the catalog session page.
+	 *
+	 * @return Response Response object containing the generated output
+	 */
+	public function sessionAction() : Response
+	{
+		$params = [];
+		$shop = $this->container->get( 'shop' );
+
+		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-session'] as $name )
+		{
+			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
+			$params['aibody'][$name] = $shop->get( $name )->getBody();
+		}
+
+		$response = $this->render( '@AimeosShop/Catalog/session.html.twig', $params );
+		$response->headers->set( 'Cache-Control', 'private, max-age=10' );
+		return $response;
+	}
+
+
+	/**
 	 * Returns the html body part for the catalog stock page.
 	 *
 	 * @return Response Response object containing the generated output

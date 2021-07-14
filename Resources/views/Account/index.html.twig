@@ -1,6 +1,8 @@
 {% extends '@AimeosShop/base.html.twig' %}
 
 {% block aimeos_header %}
+    <title>Profile</title>
+    {{ (aiheader['locale/select'] ?? '')|raw }}
     {{ (aiheader['basket/mini'] ?? '')|raw }}
     {{ (aiheader['account/profile'] ?? '')|raw }}
     {{ (aiheader['account/review'] ?? '')|raw }}
@@ -8,20 +10,30 @@
     {{ (aiheader['account/history'] ?? '')|raw }}
     {{ (aiheader['account/favorite'] ?? '')|raw }}
     {{ (aiheader['account/watch'] ?? '')|raw }}
+    {{ (aiheader['catalog/search'] ?? '')|raw }}
     {{ (aiheader['catalog/session'] ?? '')|raw }}
+    {{ (aiheader['catalog/tree'] ?? '')|raw }}
 {% endblock %}
 
 {% block aimeos_head %}
+    {{ (aibody['locale/select'] ?? '')|raw }}
     {{ (aibody['basket/mini'] ?? '')|raw }}
 {% endblock %}
 
+{% block aimeos_nav %}
+    {{ (aibody['catalog/tree'] ?? '')|raw }}
+    {{ (aibody['catalog/search'] ?? '')|raw }}
+{% endblock %}
+
 {% block aimeos_body %}
-    {{ (aibody['account/profile'] ?? '')|raw }}
-    {{ (aibody['account/review'] ?? '')|raw }}
-    {{ (aibody['account/subscription'] ?? '')|raw }}
-    {{ (aibody['account/history'] ?? '')|raw }}
-    {{ (aibody['account/favorite'] ?? '')|raw }}
-    {{ (aibody['account/watch'] ?? '')|raw }}
+    <div class="container">
+        {{ (aibody['account/profile'] ?? '')|raw }}
+        {{ (aibody['account/review'] ?? '')|raw }}
+        {{ (aibody['account/subscription'] ?? '')|raw }}
+        {{ (aibody['account/history'] ?? '')|raw }}
+        {{ (aibody['account/favorite'] ?? '')|raw }}
+        {{ (aibody['account/watch'] ?? '')|raw }}
+    </div>
 {% endblock %}
 
 {% block aimeos_aside %}

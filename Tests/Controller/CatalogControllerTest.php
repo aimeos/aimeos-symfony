@@ -213,6 +213,8 @@ class CatalogControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
 
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/shop/' );
+
 		$this->assertEquals( 1, $crawler->filter( '.catalog-session-seen .seen-item' )->count() );
 	}
 

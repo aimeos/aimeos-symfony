@@ -6,14 +6,23 @@
 {% endblock %}
 
 {% block aimeos_header %}
+    {{ (aiheader['locale/select'] ?? '')|raw }}
     {{ (aiheader['basket/mini'] ?? '')|raw }}
+    {{ (aiheader['catalog/tree'] ?? '')|raw }}
+    {{ (aiheader['catalog/search'] ?? '')|raw }}
     {{ (aiheader['catalog/stage'] ?? '')|raw }}
     {{ (aiheader['catalog/detail'] ?? '')|raw }}
     {{ (aiheader['catalog/session'] ?? '')|raw }}
 {% endblock %}
 
 {% block aimeos_head %}
+    {{ (aibody['locale/select'] ?? '')|raw }}
     {{ (aibody['basket/mini'] ?? '')|raw }}
+{% endblock %}
+
+{% block aimeos_nav %}
+    {{ (aibody['catalog/tree'] ?? '')|raw }}
+    {{ (aibody['catalog/search'] ?? '')|raw }}
 {% endblock %}
 
 {% block aimeos_stage %}
@@ -21,7 +30,9 @@
 {% endblock %}
 
 {% block aimeos_body %}
-    {{ (aibody['catalog/detail'] ?? '')|raw }}
+    <div class="container-xl">
+        {{ (aibody['catalog/detail'] ?? '')|raw }}
+    </div>
 {% endblock %}
 
 {% block aimeos_aside %}

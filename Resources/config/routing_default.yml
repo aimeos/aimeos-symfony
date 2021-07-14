@@ -15,8 +15,8 @@ aimeos_shop_confirm:
     defaults: { _controller: AimeosShopBundle:Checkout:confirm, code: null }
 
 aimeos_shop_session_pinned:
-    path: /pin/{pin_action}/{pin_id}/{d_name}
-    defaults: { _controller: AimeosShopBundle:Catalog:detail, d_name: '' }
+    path: /pin
+    defaults: { _controller: AimeosShopBundle:Catalog:session }
 
 aimeos_shop_suggest:
     path: /suggest

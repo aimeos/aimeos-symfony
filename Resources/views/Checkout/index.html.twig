@@ -1,9 +1,19 @@
- {% extends '@AimeosShop/base.html.twig' %}
+{% extends '@AimeosShop/base.html.twig' %}
 
- {% block aimeos_header %}
-     {{ aiheader['checkout/standard']|raw }}
- {% endblock %}
+{% block aimeos_header %}
+    <title>Checkout</title>
+    {{ aiheader['checkout/standard']|raw }}
+    {{ aiheader['catalog/search']|raw }}
+    {{ aiheader['catalog/tree']|raw }}
+{% endblock %}
 
- {% block aimeos_body %}
-     {{ aibody['checkout/standard']|raw }}
- {% endblock %}
+{% block aimeos_nav %}
+    {{ aibody['catalog/tree']|raw }}
+    {{ aibody['catalog/search']|raw }}
+{% endblock %}
+
+{% block aimeos_body %}
+    <div class="container">
+        {{ aibody['checkout/standard']|raw }}
+    <div>
+{% endblock %}

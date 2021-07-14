@@ -1,9 +1,19 @@
  {% extends '@AimeosShop/base.html.twig' %}
 
  {% block aimeos_header %}
-     {{ aiheader['checkout/confirm']|raw }}
+    <title>Thank you</title>
+    {{ aiheader['checkout/confirm']|raw }}
+    {{ aiheader['catalog/search']|raw }}
+    {{ aiheader['catalog/tree']|raw }}
+ {% endblock %}
+
+ {% block aimeos_nav %}
+    {{ aibody['catalog/tree']|raw }}
+    {{ aibody['catalog/search']|raw }}
  {% endblock %}
 
  {% block aimeos_body %}
-     {{ aibody['checkout/confirm']|raw }}
+    <div class="container">
+        {{ aibody['checkout/confirm']|raw }}
+    </div>
  {% endblock %}
