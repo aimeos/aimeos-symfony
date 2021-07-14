@@ -39,7 +39,7 @@ class ScriptHandler
 		}
 
 		self::executeCommand( $event, 'aimeos:setup', $options + $env );
-		self::executeCommand( $event, 'aimeos:cache', $env );
+		self::executeCommand( $event, 'aimeos:clear', $env );
 	}
 
 
