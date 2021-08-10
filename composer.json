@@ -24,6 +24,7 @@
     },
 	"require": {
 		"php": "~7.1",
+		"composer-runtime-api": "^2.1",
 		"aimeos/aimeos-core": "dev-master",
 		"aimeos/ai-gettext": "dev-master",
 		"aimeos/ai-monolog": "dev-master",
