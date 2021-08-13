@@ -185,7 +185,7 @@ Aimeos = {
 	setupContainerClose: function() {
 
 		/* Go back to underlying page when back or close button is clicked */
-		$("body").on("click", ".aimeos-container .btn-close", function(ev) {
+		$("body").on("click", ".aimeos-overlay, .aimeos-container .btn-close", function() {
 			return Aimeos.removeOverlay();
 		});
 
@@ -2209,10 +2209,6 @@ jQuery(function() {
 	 */
 	var $dropdowns = $('.top-item'); // Specifying the element is faster for older browsers
 
-	$('.has-submenu > .top-cat-item').on('click', function(t){
-		t.preventDefault(), t.stopPropagation();
-	});
-
 	/**
 	 * Touch events
 	 *
@@ -2300,6 +2296,13 @@ jQuery(function() {
 			$(this).data('zeynep').close()
 		})
 	});
+	$('.zeynep-overlay1').on('click', function () {
+		$(this).removeClass('open');
+		// close all zeynepjs menus
+		$('.zeynep.opened').each(function () {
+			$(this).data('zeynep').close();
+		})
+	});
 
 	// open first zeynepjs side menu
 	$('.btn-open.first').on('click', function () {
@@ -2308,10 +2311,12 @@ jQuery(function() {
 
 	$(".open-menu").on('click', function () {
 		$('.zeynep.first').data('zeynep').open();
+		$('.zeynep-overlay1').addClass('open');
 	});
 
 	$(".menu-close").on('click', function () {
 		$('.zeynep.first').data('zeynep').close();
+		$('.zeynep-overlay1').removeClass('open');
 	});
 
 	// open second zeynepjs side menu
@@ -2328,7 +2333,6 @@ jQuery(function() {
 	var rtl = $('html').attr("dir") == 'rtl';
 
 	$('.product .image-single').slick({
-		asNavFor: '.product .thumbs',
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		rtl: rtl,
