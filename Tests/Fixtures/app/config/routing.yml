@@ -3,11 +3,11 @@ fos_user_security_logout:
 
 
 aimeos_shop_terms:
-    path: /terms
+    path: /{site}/{locale}/{currency}/terms
     defaults: { _controller: AimeosShopBundle:Page:terms }
 
 aimeos_shop_privacy:
-    path: /privacy
+    path: /{site}/{locale}/{currency}/privacy
     defaults: { _controller: AimeosShopBundle:Page:privacy }
 
 

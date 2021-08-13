@@ -40,6 +40,12 @@ doctrine:
 
 aimeos_shop:
     disable_sites: false
+    client:
+        html:
+            catalog:
+                home:
+                    url:
+                        target: aimeos_shop_home
     mshop:
         customer:
             manager:
