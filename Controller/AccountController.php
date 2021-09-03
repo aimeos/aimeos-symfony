@@ -39,7 +39,7 @@ class AccountController extends Controller
 		}
 
 		$response = $this->render( '@AimeosShop/Account/index.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'no-store' );
+		$response->headers->set( 'Cache-Control', 'no-store, , max-age=0' );
 		return $response;
 	}
 

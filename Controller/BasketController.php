@@ -39,7 +39,7 @@ class BasketController extends Controller
 		}
 
 		$response = $this->render( '@AimeosShop/Basket/index.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'no-store' );
+		$response->headers->set( 'Cache-Control', 'no-store, max-age=0' );
 		return $response;
 	}
 
@@ -69,7 +69,7 @@ class BasketController extends Controller
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
 
 		$response = new Response( (string) $client->getBody() );
-		$response->headers->set( 'Cache-Control', 'no-store' );
+		$response->headers->set( 'Cache-Control', 'no-store, max-age=0' );
 		return $response;
 	}
 
@@ -85,7 +85,7 @@ class BasketController extends Controller
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
 
 		$response = new Response( (string) $client->getBody() );
-		$response->headers->set( 'Cache-Control', 'no-store' );
+		$response->headers->set( 'Cache-Control', 'no-store, max-age=0' );
 		return $response;
 	}
 
@@ -101,7 +101,7 @@ class BasketController extends Controller
 		$this->container->get( 'twig' )->addGlobal( 'aiheader', (string) $client->getHeader() );
 
 		$response = new Response( (string) $client->getBody() );
-		$response->headers->set( 'Cache-Control', 'no-store' );
+		$response->headers->set( 'Cache-Control', 'no-store, max-age=0' );
 		return $response;
 	}
 }
