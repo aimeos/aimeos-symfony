@@ -22,8 +22,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$json = json_decode( $response->getContent(), true );
 
-		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertNotNull( $json );
 		$this->assertArrayHasKey( 'resources', $json['meta'] );
 		$this->assertGreaterThan( 1, count( $json['meta']['resources'] ) );
 	}
@@ -39,8 +39,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$json = json_decode( $response->getContent(), true );
 
-		$this->assertNotNull( $json );
 		$this->assertEquals( 403, $response->getStatusCode() );
+		$this->assertNotNull( $json );
 		$this->assertArrayHasKey( 'errors', $json );
 	}
 
@@ -53,8 +53,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$json = json_decode( $response->getContent(), true );
 
-		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertNotNull( $json );
 		$this->assertEquals( 26, $json['meta']['total'] );
 		$this->assertEquals( 25, count( $json['data'] ) );
 	}
@@ -68,8 +68,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$json = json_decode( $response->getContent(), true );
 
-		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertNotNull( $json );
 		$this->assertEquals( 1, $json['meta']['total'] );
 		$this->assertEquals( 4, count( $json['data'] ) );
 	}
@@ -83,8 +83,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$json = json_decode( $response->getContent(), true );
 
-		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertNotNull( $json );
 		$this->assertEquals( 1, $json['meta']['total'] );
 		$this->assertEquals( 1, count( $json['data'] ) );
 	}
@@ -128,8 +128,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$json = json_decode( $response->getContent(), true );
 
-		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertNotNull( $json );
 		$this->assertEquals( 4, $json['meta']['total'] );
 		$this->assertEquals( 4, count( $json['data'] ) );
 	}
@@ -143,8 +143,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$json = json_decode( $response->getContent(), true );
 
-		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertNotNull( $json );
 		$this->assertEquals( 2, $json['meta']['total'] );
 		$this->assertEquals( 2, count( $json['data'] ) );
 	}
@@ -350,8 +350,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$json = json_decode( $response->getContent(), true );
 
-		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertNotNull( $json );
 		$this->assertEquals( 1, $json['meta']['total'] );
 		$this->assertEquals( 4, count( $json['data'] ) );
 	}
@@ -374,8 +374,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$json = json_decode( $response->getContent(), true );
 
-		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertNotNull( $json );
 		$this->assertEquals( 1, $json['meta']['total'] );
 		$this->assertEquals( 1, count( $json['data'] ) );
 	}
@@ -393,8 +393,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$json = json_decode( $response->getContent(), true );
 
-		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertNotNull( $json );
 		$this->assertEquals( 5, $json['meta']['total'] );
 		$this->assertEquals( 5, count( $json['data'] ) );
 	}
