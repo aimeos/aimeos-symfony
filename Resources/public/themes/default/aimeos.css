@@ -447,6 +447,17 @@ body .main-section {
 	border: 0;
 }
 
+.aimeos .minibutton.delete {
+	border: none;
+	background: none;
+}
+
+.aimeos .minibutton.delete:after {
+	font: normal normal normal 14px/1 bootstrap-icons;
+	font-size: 100%;
+	content: "\f5de";
+}
+
 .aimeos .button-group {
 	text-align: center;
 	padding: 1rem 0;
@@ -2098,17 +2109,23 @@ html.no-js .catalog-filter-price:hover .price-lists {
 	display: inline-block;
 	text-decoration: none;
 	vertical-align: middle;
+	background: none;
+	border: none;
 	width: 48px;
 	height: 48px;
+}
+
+.catalog-detail .catalog-actions form {
+	display: inline-block;
 }
 
 .catalog-detail .catalog-social .social-button-facebook:before,
 .catalog-detail .catalog-social .social-button-twitter:before{
 	display: inline-block;
 	position: relative;
+	left: 50%;
 	top: 50%;
 	transform: translateY(-50%) translateX(-50%);
-	left: 50%;
 }
 
 .catalog-detail .catalog-social .social-button-facebook:before {
@@ -2135,17 +2152,6 @@ html.no-js .catalog-filter-price:hover .price-lists {
 .catalog-detail .catalog-actions {
 	float: left;
 	margin: .5rem 0;
-}
-
-.catalog-detail .catalog-actions .actions-button-favorite:before,
-.catalog-detail .catalog-actions .actions-button-pin:before,
-.catalog-detail .catalog-actions .actions-button-watch:before{
-	position: relative;
-	display: inline-block;
-	top: 50%;
-	transform: translateY(-50%) translateX(-50%);
-	margin: 0 auto;
-	left: 50%;
 }
 
 .catalog-detail .catalog-actions .actions-button-favorite:before {
@@ -2705,6 +2711,22 @@ html.no-js .catalog-filter-price:hover .price-lists {
 
 
 /* Watched, favorite, suggested products and session items */
+
+.account-watch .minibutton.delete,
+.account-favorite .minibutton.delete,
+.catalog-session .minibutton.delete {
+	position: absolute;
+	right: 1%;
+	top: 1%;
+	z-index: 5;
+}
+
+.account-watch .price-list .rebatepercent,
+.account-favorite .price-list .rebatepercent,
+.catalog-session .price-list .rebatepercent {
+	display: none;
+}
+
 .account-watch,
 .account-favorite,
 .basket-related-bought,
@@ -3146,10 +3168,8 @@ html.no-js .catalog-filter-price:hover .price-lists {
 }
 
 .basket-standard-coupon .minibutton.delete:after {
-	font: normal normal normal 14px/1 FontAwesome;
-	font-size: 125%;
-	content: "\f2ed";
 	display: inline-block;
+	font-size: 125%;
 }
 
 @media (max-width: 480px) {
@@ -3218,13 +3238,6 @@ html.no-js .catalog-filter-price:hover .price-lists {
 	padding: 0 0.5rem;
 	line-height: 1;
 	width: 2rem;
-}
-
-.basket-bulk .minibutton.delete:after {
-	font: normal normal normal 14px/1 bootstrap-icons;
-	display: inline-block;
-	content: "\f5de";
-	font-size: 100%;
 }
 
 
@@ -3367,12 +3380,6 @@ html.no-js .catalog-filter-price:hover .price-lists {
 	position: absolute;
 	right: 1%;
 	top: 1%;
-}
-
-.checkout-standard-address .minibutton.delete:after {
-	font: normal normal normal 14px/1 FontAwesome;
-	font-size: 100%;
-	content: "\f00d";
 }
 
 .checkout-standard-address .item-address .modify {

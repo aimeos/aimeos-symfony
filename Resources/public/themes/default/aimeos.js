@@ -1332,16 +1332,17 @@ AimeosCatalog = {
 	 */
 	setupFavoriteAction: function() {
 
-		$(".catalog-actions .actions-button-favorite").on("click", function(ev) {
+		$(".catalog-actions .actions-favorite").on("submit", function(ev) {
 
+			ev.preventDefault();
 			Aimeos.createOverlay();
 
 			$.ajax({
-				url: $(this).attr("href"),
-				dataType: 'html',
-				headers: {
-					"X-Requested-With": "jQuery"
-				}
+				url: $(this).attr("action"),
+				data: new FormData(this),
+				processData: false,
+				contentType: false,
+				method: 'POST'
 			}).done(function(data) {
 
 				var doc = document.createElement("html");
@@ -1357,6 +1358,7 @@ AimeosCatalog = {
 
 			return false;
 		});
+
 	},
 
 
@@ -1365,16 +1367,17 @@ AimeosCatalog = {
 	 */
 	setupWatchAction: function() {
 
-		$(".catalog-actions .actions-button-watch").on("click", function(ev) {
+		$(".catalog-actions .actions-watch").on("click", function(ev) {
 
+			ev.preventDefault();
 			Aimeos.createOverlay();
 
 			$.ajax({
-				url: $(this).attr("href"),
-				dataType: 'html',
-				headers: {
-					"X-Requested-With": "jQuery"
-				}
+				url: $(this).attr("action"),
+				data: new FormData(this),
+				processData: false,
+				contentType: false,
+				method: 'POST'
 			}).done(function(data) {
 
 				var doc = document.createElement("html");
@@ -1799,7 +1802,7 @@ AimeosCatalogList = {
 						var nextPage = $(response);
 						var nextUrl = nextPage.find('.catalog-list-items').data( 'infinite-url' );
 
-						$('ul.list-items', list).append(nextPage.find('.catalog-list-items ul.list-items li.product'));
+						$('.list-items', list).append(nextPage.find('.catalog-list-items .list-items .product'));
 						list.data('infinite-url', nextUrl);
 						Aimeos.loadImages();
 						$(window).trigger('scroll');
