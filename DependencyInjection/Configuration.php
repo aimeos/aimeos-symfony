@@ -28,10 +28,10 @@ class Configuration implements ConfigurationInterface
 	 */
 	public function getConfigTreeBuilder()
 	{
-		$treeBuilder = new TreeBuilder();
-		$rootNode = $treeBuilder->root( 'aimeos_shop' );
+		$treeBuilder = new TreeBuilder( 'aimeos_shop' );
 
-		$rootNode
+		$treeBuilder
+			->getRootNode()
 			->children()
 				->booleanNode( 'disable_sites' )->defaultValue( true )->end()
 				->booleanNode( 'apc_enable' )->defaultValue( false )->end()
