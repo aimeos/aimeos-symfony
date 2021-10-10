@@ -198,8 +198,8 @@ class CatalogControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
 
-		$link = $crawler->filter( '.catalog-detail a.actions-button-pin' )->link();
-		$crawler = $client->click( $link );
+		$form = $crawler->filter( '.catalog-detail .actions-pin' )->form();
+		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.catalog-session-pinned .pinned-item' )->count() );
 	}
