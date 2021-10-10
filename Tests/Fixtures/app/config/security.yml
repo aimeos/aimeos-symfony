@@ -10,9 +10,7 @@ security:
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
         Aimeos\ShopBundle\Entity\User:
-            algorithm: sha1
-            encode_as_base64: false
-            iterations: 1
+            algorithm: bcrypt
 
     firewalls:
         login_firewall:
