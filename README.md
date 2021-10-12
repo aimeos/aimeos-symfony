@@ -29,7 +29,7 @@ customize anything to your needs.
 
 ## Installation
 
-This document is for the latest **Aimeos 2021.07** and **Symfony 4.4**.
+This document is for the latest **Aimeos 2021.10** and **Symfony 4.4**.
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
@@ -135,7 +135,7 @@ Then add these lines to your `composer.json` of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2021.07",
+        "aimeos/aimeos-symfony": "~2021.10",
         ...
     },
     "scripts": {
