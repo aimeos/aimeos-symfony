@@ -40,7 +40,6 @@ Symfony application, you can create a skeleton application using
 ```
 composer create-project symfony/website-skeleton:~4.4 myshop
 cd myshop
-composer req friendsofsymfony/user-bundle
 ```
 
 These settings need to be added to the `./config/packages/fos_user.yaml` file:
@@ -53,6 +52,14 @@ fos_user:
     from_email:
         address: "me@example.com"
         sender_name: "Test shop"
+```
+
+Also add these lines to your existing `./config/packages/framework.yaml` file:
+
+```yaml
+    templating:
+        engines:
+            twig
 ```
 
 The Aimeos components have to be configured as well to get authentication working correctly.
@@ -136,6 +143,7 @@ Then add these lines to your `composer.json` of your Symfony project:
     "minimum-stability": "dev",
     "require": {
         "aimeos/aimeos-symfony": "~2021.10",
+        "friendsofsymfony/user-bundle": "^2.2.2",
         ...
     },
     "scripts": {
