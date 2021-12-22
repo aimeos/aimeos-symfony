@@ -20,7 +20,7 @@ class CatalogControllerTest extends WebTestCase
 		$client->request( 'GET', '/unittest/de/EUR/shop/count' );
 		$content = $client->getResponse()->getContent();
 
-		$this->assertStringContainsString( '".catalog-filter-count li.cat-item"', $content );
+		$this->assertStringContainsString( '".catalog-filter-count .cat-item"', $content );
 		$this->assertStringContainsString( '".catalog-filter-attribute .attribute-lists li.attr-item"', $content );
 	}
 
