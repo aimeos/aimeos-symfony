@@ -47,7 +47,6 @@ Aimeos = {
 		var container = $(document.createElement("div"));
 		var btnclose = $(document.createElement("a"));
 
-		btnclose.text("X");
 		btnclose.addClass("minibutton");
 		btnclose.addClass("btn-close");
 
@@ -899,7 +898,7 @@ AimeosBasketMini = {
 					var product = prototype.clone();
 
 					product.data("urldata", csrf);
-					product.data("url", entry.links.self.href);
+					product.data("url", entry.links && entry.links.self && entry.links.self.href || '');
 
 					$(".name", product).html(entry.attributes['order.base.product.name']);
 					$(".quantity", product).html(entry.attributes['order.base.product.quantity']);
@@ -1789,7 +1788,7 @@ AimeosCatalogList = {
 				var list = $('.catalog-list-items').first();
 				var infiniteUrl = list.data('infinite-url');
 
-				if(infiniteUrl && list[0].getBoundingClientRect().bottom - $(window).height() * 3) {
+				if(infiniteUrl && list[0].getBoundingClientRect().bottom < $(window).height() * 3) {
 
 					list.data('infinite-url', '');
 
@@ -1804,7 +1803,13 @@ AimeosCatalogList = {
 
 						$('.list-items', list).append(nextPage.find('.catalog-list-items .list-items .product'));
 						list.data('infinite-url', nextUrl);
+						$(nextPage).filter( function (i,a){ return $(a).is('script.catalog-list-stock-script');}).each( function() {
+							var script = document.createElement('script');
+							script.src = $(this).attr("src");
+							document.head.appendChild(script);
+						});
 						Aimeos.loadImages();
+
 						$(window).trigger('scroll');
 					});
 				}
