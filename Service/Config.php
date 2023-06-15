@@ -38,19 +38,19 @@ class Config
 	 * Returns the config object
 	 *
 	 * @param string $type Configuration type ("frontend" or "backend")
-	 * @return \Aimeos\MW\Config\Iface Config object
+	 * @return \Aimeos\Base\Config\Iface Config object
 	 */
 	public function get( $type = 'frontend' )
 	{
 		$configPaths = $this->container->get( 'aimeos' )->get()->getConfigPaths();
 
-		$conf = new \Aimeos\MW\Config\PHPArray( [], $configPaths );
+		$conf = new \Aimeos\Base\Config\PHPArray( [], $configPaths );
 
 		$apc = (bool) $this->container->getParameter( 'aimeos_shop.apc_enable' );
 		$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
 
 		if( function_exists( 'apcu_store' ) === true && $apc === true ) {
-			$conf = new \Aimeos\MW\Config\Decorator\APC( $conf, $prefix );
+			$conf = new \Aimeos\Base\Config\Decorator\APC( $conf, $prefix );
 		}
 
 		$local = array(
@@ -62,11 +62,11 @@ class Config
 			'resource' => $this->container->getParameter( 'aimeos_shop.resource' ),
 		);
 
-		$config = new \Aimeos\MW\Config\Decorator\Memory( $conf, $local );
+		$config = new \Aimeos\Base\Config\Decorator\Memory( $conf, $local );
 		$settings = $this->container->getParameter( 'aimeos_shop.' . $type );
 
 		if( is_array( $settings ) && $settings !== [] ) {
-			$config = new \Aimeos\MW\Config\Decorator\Memory( $config, $settings );
+			$config = new \Aimeos\Base\Config\Decorator\Memory( $config, $settings );
 		}
 
 		return $config;

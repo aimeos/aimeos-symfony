@@ -39,7 +39,7 @@ class I18n
 	 * Creates new translation objects.
 	 *
 	 * @param array $languageIds List of two letter ISO language IDs
-	 * @return \Aimeos\MW\Translation\Interface[] List of translation objects
+	 * @return \Aimeos\Base\Translation\Interface[] List of translation objects
 	 */
 	public function get( array $languageIds )
 	{
@@ -49,19 +49,19 @@ class I18n
 		{
 			if( !isset( $this->i18n[$langid] ) )
 			{
-				$i18n = new \Aimeos\MW\Translation\Gettext( $i18nPaths, $langid );
+				$i18n = new \Aimeos\Base\Translation\Gettext( $i18nPaths, $langid );
 
 				$apc = (bool) $this->container->getParameter( 'aimeos_shop.apc_enable' );
 				$prefix = $this->container->getParameter( 'aimeos_shop.apc_prefix' );
 
 				if( function_exists( 'apcu_store' ) === true && $apc === true ) {
-					$i18n = new \Aimeos\MW\Translation\Decorator\APC( $i18n, $prefix );
+					$i18n = new \Aimeos\Base\Translation\Decorator\APC( $i18n, $prefix );
 				}
 
 				$translations = $this->container->getParameter( 'aimeos_shop.i18n' );
 
 				if( isset( $translations[$langid] ) ) {
-					$i18n = new \Aimeos\MW\Translation\Decorator\Memory( $i18n, $translations[$langid] );
+					$i18n = new \Aimeos\Base\Translation\Decorator\Memory( $i18n, $translations[$langid] );
 				}
 
 				$this->i18n[$langid] = $i18n;
