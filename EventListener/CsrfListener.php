@@ -47,7 +47,7 @@ class CsrfListener
 	{
 		$request = $event->getRequest();
 
-		if( !$event->isMasterRequest()
+		if( !$event->isMainRequest()
 			|| !in_array( $request->getMethod(), ['POST', 'PUT', 'PATCH', 'DELETE'] ) ) {
 			return;
 		}
