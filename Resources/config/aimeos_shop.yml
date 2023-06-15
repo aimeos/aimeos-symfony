@@ -1,6 +1,5 @@
 #apc_enable: false,
 apc_prefix: 'sf:'
-extdir: "%kernel.root_dir%/../ext"
 uploaddir: /
 
 page:
@@ -35,7 +34,7 @@ resource:
             collate: utf8mb4_unicode_ci
     fs:
         adapter: Standard
-        basedir: "%kernel.root_dir%/../web"
+        basedir: "%kernel.project_dir%/web"
         tempdir: "%kernel.cache_dir%"
         baseurl: "/"
     fs-admin:
