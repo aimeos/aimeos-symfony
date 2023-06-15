@@ -7,7 +7,7 @@ security:
         default:
             entity: { class: AimeosShopBundle:User, property: username }
 
-    encoders:
+    password_hashers:
         Symfony\Component\Security\Core\User\User: plaintext
         Aimeos\ShopBundle\Entity\User:
             algorithm: bcrypt
@@ -16,7 +16,6 @@ security:
         login_firewall:
             pattern:   ^/admin$
             provider: in_memory
-            anonymous: ~
             http_basic:
                 realm: "Admin Area"
         aimeos_jqadm:
@@ -32,7 +31,6 @@ security:
         secured_area:
             pattern:   ^/unittest
             provider: default
-            anonymous: ~
             http_basic:
                 realm: "Default"
 

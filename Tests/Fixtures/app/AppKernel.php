@@ -10,13 +10,12 @@ class AppKernel extends Kernel
 	/**
 	 * {@inheritdoc}
 	 */
-	public function registerBundles()
+	public function registerBundles() : Traversable|array
 	{
 		return array(
 			new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 			new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
 			new \Symfony\Bundle\SecurityBundle\SecurityBundle(),
-			new \Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
 			new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
 			new \Symfony\Bundle\MonologBundle\MonologBundle(),
 			new \Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -37,7 +36,7 @@ class AppKernel extends Kernel
 	/**
 	 * {@inheritdoc}
 	 */
-	public function getCacheDir()
+	public function getCacheDir() : string
 	{
 		return sys_get_temp_dir() . '/aimeos-symfony/cache';
 	}
@@ -46,7 +45,7 @@ class AppKernel extends Kernel
 	/**
 	 * {@inheritdoc}
 	 */
-	public function getLogDir()
+	public function getLogDir() : string
 	{
 		return sys_get_temp_dir() . '/aimeos-symfony/logs';
 	}

@@ -7,19 +7,18 @@ framework:
     form:            ~
     csrf_protection: ~
     test: ~
+    mailer:
+        dsn: 'null://null'
     router:
-        resource: "%kernel.root_dir%/config/routing.yml"
+        resource: "%kernel.project_dir%/config/routing.yml"
     session:
-        storage_id: session.storage.mock_file
+        handler_id: null
 
 monolog:
     handlers:
       main:
           type: stream
           level: debug
-
-swiftmailer:
-    disable_delivery: true
 
 twig:
     debug:            "%kernel.debug%"

@@ -1,7 +1,5 @@
 <?php
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
-
 
 setlocale( LC_ALL, 'en_US.UTF-8' );
 
@@ -29,5 +27,3 @@ if( !$autoload )
 	Visit http://getcomposer.org/ for more information.\n"
 	);
 }
-
-AnnotationRegistry::registerLoader( array( $autoload, 'loadClass' ) );
