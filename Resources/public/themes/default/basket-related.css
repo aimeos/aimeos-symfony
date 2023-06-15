@@ -1,0 +1,18 @@
+/* Related products to basket */
+
+.basket-related {
+	margin: 2rem 0;
+}
+
+.basket-related-bought .header {
+	border-bottom: 1px solid var(--ai-secondary);
+	text-transform: uppercase;
+	text-align: start;
+	font-weight: normal;
+	padding: 0.5rem 1rem;
+	color: var(--ai-secondary);
+}
+
+.basket-related h1 {
+	display: none;
+}
