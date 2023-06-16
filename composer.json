@@ -11,25 +11,14 @@
 		"forum": "https://aimeos.org/help",
 		"wiki": "https://aimeos.org/docs"
 	},
-	"repositories": [
-		{
-			"type": "git",
-			"url": "https://github.com/aimeos/php-coveralls"
-		}
-	],
 	"prefer-stable": true,
 	"minimum-stability": "dev",
-    "conflict": {
-        "symfony/http-foundation": "v5.2.0"
-    },
 	"require": {
-		"php": "~7.1",
+		"php": "^8.0.11",
 		"composer-runtime-api": "^2.1",
 		"aimeos/aimeos-core": "dev-master",
-		"aimeos/ai-gettext": "dev-master",
 		"aimeos/ai-monolog": "dev-master",
 		"aimeos/ai-symfony": "dev-master",
-		"aimeos/ai-swiftmailer": "dev-master",
 		"aimeos/ai-admin-jqadm": "dev-master",
 		"aimeos/ai-admin-jsonadm": "dev-master",
 		"aimeos/ai-controller-jobs": "dev-master",
@@ -38,26 +27,26 @@
 		"aimeos/ai-client-html": "dev-master",
 		"aimeos/ai-fosuser": "dev-master",
 		"aimeos/ai-twig": "dev-master",
-		"doctrine/common": "^2.8||^3.0",
-		"symfony/asset": "~3.4||~4.0||~5.0",
+		"doctrine/common": "^3.0",
+		"symfony/asset": "~6.0",
 		"symfony/monolog-bundle": "~3.0",
-		"symfony/form": "~3.4||~4.0||~5.0",
-		"symfony/framework-bundle": "~3.4||~4.0||~5.0",
-		"symfony/security-bundle": "~3.4||~4.0||~5.0",
-		"symfony/swiftmailer-bundle": "~3.0",
-		"symfony/templating": "~3.4||~4.0||~5.0",
-		"symfony/twig-bundle": "~3.4||~4.0||~5.0",
-		"symfony/psr-http-message-bridge": "~1.0",
-		"sensio/framework-extra-bundle": "~3.4||~4.0||~5.0",
+		"symfony/form": "~6.0",
+		"symfony/framework-bundle": "~6.0",
+		"symfony/security-bundle": "~6.0",
+		"symfony/mailer": "~6.0",
+		"symfony/templating": "~6.0",
+		"symfony/twig-bundle": "~6.0",
+		"symfony/psr-http-message-bridge": "~2.0",
+		"sensio/framework-extra-bundle": "~6.0",
 		"nyholm/psr7": "~1.0"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "~7.0||~8.0",
+		"phpunit/phpunit": "~10.0",
 		"php-coveralls/php-coveralls": "~2.0",
-		"doctrine/doctrine-bundle": "~1.2",
+		"doctrine/doctrine-bundle": "~2.0",
 		"doctrine/orm": "^2.2.3",
-		"symfony/browser-kit": "~3.4||~4.0||~5.0",
-		"symfony/css-selector": "~3.4||~4.0||~5.0"
+		"symfony/browser-kit": "~6.0",
+		"symfony/css-selector": "~6.0"
 	},
 	"autoload": {
 		"psr-4": { "Aimeos\\ShopBundle\\": "" }
@@ -67,7 +56,7 @@
 	},
 	"scripts": {
 		"post-update-cmd": [
-			"cp -r vendor/aimeos/ai-client-html/client/html/themes/* Resources/public/themes/"
+			"cp -r vendor/aimeos/ai-client-html/themes/client/html/* Resources/public/themes/"
 		]
 	}
 }
