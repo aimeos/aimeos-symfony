@@ -42,10 +42,10 @@ class Locale
 	/**
 	 * Returns the locale item for the current request
 	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
+	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return \Aimeos\MShop\Locale\Item\Iface Locale item object
 	 */
-	public function get( \Aimeos\MShop\Context\Item\Iface $context )
+	public function get( \Aimeos\MShop\ContextIface $context )
 	{
 		if( $this->locale === null )
 		{
@@ -67,11 +67,11 @@ class Locale
 	/**
 	 * Returns the locale item for the current request
 	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
+	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @param string $site Unique site code
 	 * @return \Aimeos\MShop\Locale\Item\Iface Locale item object
 	 */
-	public function getBackend( \Aimeos\MShop\Context\Item\Iface $context, $site )
+	public function getBackend( \Aimeos\MShop\ContextIface $context, $site )
 	{
 		$localeManager = \Aimeos\MShop::create( $context, 'locale' );
 

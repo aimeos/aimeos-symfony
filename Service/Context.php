@@ -226,6 +226,8 @@ class Context
 
 		if( $requestStack->getCurrentRequest() ) {
 			$context->setSession( new \Aimeos\Base\Session\Symfony( $requestStack->getSession() ) );
+		} else {
+			$context->setSession( new \Aimeos\Base\Session\None() );
 		}
 
 		return $context;

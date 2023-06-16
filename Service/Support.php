@@ -24,10 +24,10 @@ class Support
 	/**
 	 * Returns the closure for retrieving the user groups
 	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
+	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return array List of group codes the user is in
 	 */
-	public function getGroups( \Aimeos\MShop\Context\Item\Iface $context )
+	public function getGroups( \Aimeos\MShop\ContextIface $context )
 	{
 		$list = array();
 		$manager = \Aimeos\MShop::create( $context, 'customer/group' );

@@ -25,7 +25,7 @@ services:
         public: true
     aimeos.view:
         class: Aimeos\ShopBundle\Service\View
-        arguments: ["@request_stack","@service_container"]
+        arguments: ["@request_stack","@service_container", "@security.token_storage", "@security.csrf.token_manager", "@twig"]
         public: true
     shop:
         class: Aimeos\ShopBundle\Service\Shop
@@ -34,24 +34,27 @@ services:
 
     aimeos_account:
         class: Aimeos\ShopBundle\Command\AccountCommand
+        arguments: ["@service_container"]
         tags:
             - { name: 'console.command', command: 'aimeos:account' }
     aimeos_clear:
         class: Aimeos\ShopBundle\Command\ClearCommand
+        arguments: ["@service_container"]
         tags:
             - { name: 'console.command', command: 'aimeos:clear' }
     aimeos_jobs:
         class: Aimeos\ShopBundle\Command\JobsCommand
+        arguments: ["@service_container"]
         tags:
             - { name: 'console.command', command: 'aimeos:jobs' }
     aimeos_setup:
         class: Aimeos\ShopBundle\Command\SetupCommand
+        arguments: ["@service_container"]
         tags:
             - { name: 'console.command', command: 'aimeos:setup' }
 
     aimeos.csrf_listener:
         class: Aimeos\ShopBundle\EventListener\CsrfListener
-        arguments:
-            - "@service_container"
+        arguments: ["@service_container"]
         tags:
             - { name: kernel.event_listener, event: kernel.request }

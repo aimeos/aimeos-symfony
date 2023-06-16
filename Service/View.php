@@ -2,7 +2,7 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2015-2016
+ * @copyright Aimeos (aimeos.org), 2015-2023
  * @package symfony
  * @subpackage Service
  */
@@ -12,6 +12,8 @@ namespace Aimeos\ShopBundle\Service;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 
 /**
@@ -23,7 +25,10 @@ use Symfony\Component\DependencyInjection\Container;
 class View
 {
 	private $requestStack;
+	private $tokenManager;
+	private $tokenStorage;
 	private $container;
+	private $twig;
 
 
 	/**
@@ -32,29 +37,33 @@ class View
 	 * @param RequestStack $requestStack Current request stack
 	 * @param Container $container Container object to access parameters
 	 */
-	public function __construct( RequestStack $requestStack, Container $container )
+	public function __construct( RequestStack $requestStack, Container $container,
+		TokenStorageInterface $tokenStorage, CsrfTokenManagerInterface $tokenManager,
+		\Twig\Environment $twig )
 	{
 		$this->requestStack = $requestStack;
+		$this->tokenManager = $tokenManager;
+		$this->tokenStorage = $tokenStorage;
 		$this->container = $container;
+		$this->twig = $twig;
 	}
 
 
 	/**
 	 * Creates the view object for the HTML client.
 	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
+	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @param array $templatePaths List of base path names with relative template paths as key/value pairs
 	 * @param string|null $locale Code of the current language or null for no translation
 	 * @return \Aimeos\Base\View\Iface View object
 	 */
-	public function create( \Aimeos\MShop\Context\Item\Iface $context, array $templatePaths, $locale = null )
+	public function create( \Aimeos\MShop\ContextIface $context, array $templatePaths, $locale = null )
 	{
-		$twig = $this->container->get( 'twig' );
-		$engine = new \Aimeos\Base\View\Engine\Twig( $twig );
+		$engine = new \Aimeos\Base\View\Engine\Twig( $this->twig );
 		$view = new \Aimeos\Base\View\Standard( $templatePaths, array( '.html.twig' => $engine ) );
 
-		$config = $context->getConfig();
-		$session = $context->getSession();
+		$config = $context->config();
+		$session = $context->session();
 
 		$this->addCsrf( $view );
 		$this->addAccess( $view, $context );
@@ -67,7 +76,7 @@ class View
 		$this->addTranslate( $view, $locale );
 		$this->addUrl( $view );
 
-		$this->initTwig( $view, $twig );
+		$this->initTwig( $view, $this->twig );
 
 		return $view;
 	}
@@ -77,13 +86,12 @@ class View
 	 * Adds the "access" helper to the view object
 	 *
 	 * @param \Aimeos\Base\View\Iface $view View object
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context object
+	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return \Aimeos\Base\View\Iface Modified view object
 	 */
-	protected function addAccess( \Aimeos\Base\View\Iface $view, \Aimeos\MShop\Context\Item\Iface $context )
+	protected function addAccess( \Aimeos\Base\View\Iface $view, \Aimeos\MShop\ContextIface $context )
 	{
-		$container = $this->container;
-		$token = $this->container->get( 'security.token_storage' )->getToken();
+		$token = $this->tokenStorage->getToken();
 
 		if( is_object( $token ) && is_object( $token->getUser() )
 			&& in_array( 'ROLE_SUPER_ADMIN', (array) $token->getUser()->getRoles() ) )
@@ -92,6 +100,8 @@ class View
 		}
 		else
 		{
+			$container = $this->container;
+
 			$fcn = function() use ( $container, $context ) {
 				return $container->get( 'aimeos.support' )->getGroups( $context );
 			};
@@ -130,8 +140,13 @@ class View
 	 */
 	protected function addCsrf( \Aimeos\Base\View\Iface $view )
 	{
-		$token = $this->container->get( 'security.csrf.token_manager' )->getToken( '_token' );
-		$helper = new \Aimeos\Base\View\Helper\Csrf\Standard( $view, '_token', $token->getValue() );
+		try {
+			$token = $this->tokenManager->getToken( '_token' )->getValue();
+		} catch( \Symfony\Component\HttpFoundation\Exception\SessionNotFoundException $e ) {
+			$token = '';
+		}
+
+		$helper = new \Aimeos\Base\View\Helper\Csrf\Standard( $view, '_token', $token );
 		$view->addHelper( 'csrf', $helper );
 
 		return $view;
@@ -166,7 +181,7 @@ class View
 	protected function addParam( \Aimeos\Base\View\Iface $view )
 	{
 		$params = array();
-		$request = $this->requestStack->getMasterRequest();
+		$request = $this->requestStack->getMainRequest();
 
 		if( $request !== null ) {
 			$params = $request->request->all() + $request->query->all() + $request->attributes->get( '_route_params' );
@@ -187,11 +202,11 @@ class View
 	 */
 	protected function addRequest( \Aimeos\Base\View\Iface $view )
 	{
-		$request = $this->requestStack->getMasterRequest();
+		$request = $this->requestStack->getMainRequest();
 
 		if( $request !== null )
 		{
-			$helper = new \Aimeos\Base\View\Helper\Request\Symfony2( $view, $request );
+			$helper = new \Aimeos\Base\View\Helper\Request\Symfony( $view, $request );
 			$view->addHelper( 'request', $helper );
 		}
 
@@ -207,7 +222,7 @@ class View
 	 */
 	protected function addResponse( \Aimeos\Base\View\Iface $view )
 	{
-		$helper = new \Aimeos\Base\View\Helper\Response\Symfony2( $view );
+		$helper = new \Aimeos\Base\View\Helper\Response\Symfony( $view );
 		$view->addHelper( 'response', $helper );
 
 		return $view;
@@ -266,14 +281,14 @@ class View
 	{
 		$fixed = [];
 
-		if( $request = $this->requestStack->getMasterRequest() )
+		if( $request = $this->requestStack->getMainRequest() )
 		{
 			$fixed['site'] = $request->attributes->get( 'site', $request->query->get( 'site' ) );
 			$fixed['locale'] = $request->attributes->get( 'locale', $request->query->get( 'locale' ) );
 			$fixed['currency'] = $request->attributes->get( 'currency', $request->query->get( 'currency' ) );
 		}
 
-		$helper = new \Aimeos\Base\View\Helper\Url\Symfony2( $view, $this->container->get( 'router' ), array_filter( $fixed ) );
+		$helper = new \Aimeos\Base\View\Helper\Url\Symfony( $view, $this->container->get( 'router' ), array_filter( $fixed ) );
 		$view->addHelper( 'url', $helper );
 
 		return $view;
@@ -284,23 +299,23 @@ class View
 	 * Adds the Aimeos template functions for Twig
 	 *
 	 * @param \Aimeos\Base\View\Iface $view View object
-	 * @param \Twig_Environment $twig Twig environment object
+	 * @param \Twig\Environment $twig Twig environment object
 	 */
-	protected function initTwig( \Aimeos\Base\View\Iface $view, \Twig_Environment $twig )
+	protected function initTwig( \Aimeos\Base\View\Iface $view, \Twig\Environment $twig )
 	{
 		$fcn = function( $key, $default = null ) use ( $view ) {
 			return $view->config( $key, $default );
 		};
-		$twig->addFunction( new \Twig_SimpleFunction( 'aiconfig', $fcn ) );
+		$twig->addFunction( new \Twig\TwigFunction( 'aiconfig', $fcn ) );
 
 		$fcn = function( $singular, array $values = array(), $domain = 'client' ) use ( $view ) {
 			return vsprintf( $view->translate( $domain, $singular ), $values );
 		};
-		$twig->addFunction( new \Twig_SimpleFunction( 'aitrans', $fcn ) );
+		$twig->addFunction( new \Twig\TwigFunction( 'aitrans', $fcn ) );
 
 		$fcn = function( $singular, $plural, $number, array $values = array(), $domain = 'client' ) use ( $view ) {
 			return vsprintf( $view->translate( $domain, $singular, $plural, $number ), $values );
 		};
-		$twig->addFunction( new \Twig_SimpleFunction( 'aitransplural', $fcn ) );
+		$twig->addFunction( new \Twig\TwigFunction( 'aitransplural', $fcn ) );
 	}
 }
