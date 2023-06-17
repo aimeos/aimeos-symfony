@@ -36,7 +36,6 @@ class Configuration implements ConfigurationInterface
 				->booleanNode( 'disable_sites' )->defaultValue( true )->end()
 				->booleanNode( 'apc_enable' )->defaultValue( false )->end()
 				->scalarNode( 'apc_prefix' )->defaultValue( 'sf2:' )->end()
-				->scalarNode( 'extdir' )->end()
 				->scalarNode( 'uploaddir' )->end()
 				->variableNode( 'admin' )->defaultValue( array() )->end()
 				->variableNode( 'client' )->defaultValue( array() )->end()
