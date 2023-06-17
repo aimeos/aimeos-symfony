@@ -16,8 +16,10 @@ class JobsCommandTest extends WebTestCase
 		$kernel = $this->createKernel();
 		$kernel->boot();
 
+		$container = static::getContainer();
+
 		$application = new Application( $kernel );
-		$application->add( new Command\JobsCommand() );
+		$application->add( new Command\JobsCommand( $container ) );
 
 		$command = $application->find( 'aimeos:jobs' );
 		$commandTester = new CommandTester( $command );

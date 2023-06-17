@@ -10,7 +10,7 @@
 
 namespace Aimeos\ShopBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command as SfCommand;
 use Symfony\Component\Console\Input\InputInterface;
 
 
@@ -21,16 +21,16 @@ use Symfony\Component\Console\Input\InputInterface;
  * @package symfony
  * @subpackage Command
  */
-abstract class Command extends ContainerAwareCommand
+abstract class Command extends SfCommand
 {
 	/**
 	 * Returns the enabled site items which may be limited by the input arguments.
 	 *
-	 * @param \Aimeos\MShop\Context\Item\Iface $context Context item object
+	 * @param \Aimeos\MShop\ContextIface $context Context item object
 	 * @param InputInterface $input Input object
 	 * @return \Aimeos\Map List of site items implementing \Aimeos\MShop\Locale\Item\Site\Interface
 	 */
-	protected function getSiteItems( \Aimeos\MShop\Context\Item\Iface $context, InputInterface $input ) : \Aimeos\Map
+	protected function getSiteItems( \Aimeos\MShop\ContextIface $context, InputInterface $input ) : \Aimeos\Map
 	{
 		$manager = \Aimeos\MShop::create( $context, 'locale/site' );
 		$search = $manager->filter();

@@ -16,8 +16,10 @@ class SetupCommandTest extends WebTestCase
 		$kernel = $this->createKernel();
 		$kernel->boot();
 
+		$container = static::getContainer();
+
 		$application = new Application( $kernel );
-		$application->add( new Command\SetupCommand() );
+		$application->add( new Command\SetupCommand( $container ) );
 
 		$command = $application->find( 'aimeos:setup' );
 		$commandTester = new CommandTester( $command );

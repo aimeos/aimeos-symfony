@@ -2,7 +2,7 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014-2016
+ * @copyright Aimeos (aimeos.org), 2014-2023
  * @package symfony
  * @subpackage Command
  */
@@ -10,10 +10,12 @@
 
 namespace Aimeos\ShopBundle\Command;
 
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\DependencyInjection\Container;
 
 
 /**
@@ -22,9 +24,18 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @package symfony
  * @subpackage Command
  */
+#[AsCommand(name: 'aimeos:setup', description: 'Initialize or update the Aimeos database tables')]
 class SetupCommand extends Command
 {
+	private $container;
 	protected static $defaultName = 'aimeos:setup';
+
+
+	public function __construct( Container $container )
+	{
+		parent::__construct();
+		$this->container = $container;
+	}
 
 
 	/**
@@ -36,9 +47,9 @@ class SetupCommand extends Command
 		$this->setDescription( 'Initialize or update the Aimeos database tables' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site for updating database entries', 'default' );
 		$this->addArgument( 'tplsite', InputArgument::OPTIONAL, 'Template site for creating or updating database entries', 'default' );
-		$this->addOption( 'option', null, InputOption::VALUE_REQUIRED, 'Optional setup configuration, name and value are separated by ":" like "setup/default/demo:1"', array() );
-		$this->addOption( 'action', null, InputOption::VALUE_REQUIRED, 'Action name that should be executed, i.e. "migrate", "rollback", "clean"', 'migrate' );
-		$this->addOption( 'task', null, InputOption::VALUE_REQUIRED, 'Name of the setup task that should be executed', null );
+		$this->addOption( 'option', null, InputOption::VALUE_REQUIRED, 'Optional setup configuration, name and value are separated by ":" like "setup/default/demo:1"', [] );
+		$this->addOption( 'q', null, InputOption::VALUE_NONE, 'Quiet (suppress output)', null );
+		$this->addOption( 'v', null, InputOption::VALUE_OPTIONAL, 'Verbosity level', 'v' );
 	}
 
 
@@ -50,81 +61,42 @@ class SetupCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$ctx = $this->getContainer()->get( 'aimeos.context' )->get( false, 'command' );
-		$ctx->setEditor( 'aimeos:setup' );
-
-		$config = $ctx->getConfig();
 		$site = $input->getArgument( 'site' );
 		$tplsite = $input->getArgument( 'tplsite' );
-
-		$config->set( 'setup/site', $site );
-		$dbconfig = $this->getDbConfig( $config );
-		$this->setOptions( $config, $input );
 
 		\Aimeos\MShop::cache( false );
 		\Aimeos\MAdmin::cache( false );
 
-		$taskPaths = $this->getContainer()->get( 'aimeos' )->get()->getSetupPaths( $tplsite );
-		$manager = new \Aimeos\MW\Setup\Manager\Multiple( $ctx->getDatabaseManager(), $dbconfig, $taskPaths, $ctx );
+		$boostrap = $this->container->get( 'aimeos' )->get();
+		$ctx = $this->container->get( 'aimeos.context' )->get( false, 'command' );
 
 		$output->writeln( sprintf( 'Initializing or updating the Aimeos database tables for site <info>%1$s</info>', $site ) );
 
-		if( ( $task = $input->getOption( 'task' ) ) && is_array( $task ) ) {
-			$task = reset( $task );
-		}
+		\Aimeos\Setup::use( $boostrap )
+			->verbose( $input->getOption( 'q' ) ? '' : $input->getOption( 'v' ) )
+			->context( $this->addConfig( $ctx->setEditor( 'aimeos:setup' ), $input ) )
+			->up( $site, $tplsite );
 
-		switch( $input->getOption( 'action' ) )
-		{
-			case 'migrate':
-				$manager->migrate( $task );
-				break;
-			case 'rollback':
-				$manager->rollback( $task );
-				break;
-			case 'clean':
-				$manager->clean( $task );
-				break;
-			default:
-				throw new \Exception( sprintf( 'Invalid setup action "%1$s"', $input->getOption( 'action' ) ) );
-		}
+		return 0;
 	}
 
 
 	/**
-	 * Returns the database configuration from the config object.
+	 * Adds the configuration options from the input object to the given context
 	 *
-	 * @param \Aimeos\MW\Config\Iface $conf Config object
-	 * @return array Multi-dimensional associative list of database configuration parameters
-	 */
-	protected function getDbConfig( \Aimeos\MW\Config\Iface $conf ) : array
-	{
-		$dbconfig = $conf->get( 'resource', array() );
-
-		foreach( $dbconfig as $rname => $dbconf )
-		{
-			if( strncmp( $rname, 'db', 2 ) !== 0 ) {
-				unset( $dbconfig[$rname] );
-			} else {
-				$conf->set( 'resource/' . $rname . '/limit', 5 );
-			}
-		}
-
-		return $dbconfig;
-	}
-
-
-	/**
-	 * Extracts the configuration options from the input object and updates the configuration values in the config object.
-	 *
-	 * @param \Aimeos\MW\Config\Iface $conf Configuration object
+	 * @param \Aimeos\MShop\ContextIface $ctx Context object
 	 * @param InputInterface $input Input object
 	 */
-	protected function setOptions( \Aimeos\MW\Config\Iface $conf, InputInterface $input )
+	protected function addConfig( \Aimeos\MShop\ContextIface $ctx, InputInterface $input ) : \Aimeos\MShop\ContextIface
 	{
+		$config = $ctx->config();
+
 		foreach( (array) $input->getOption( 'option' ) as $option )
 		{
 			list( $name, $value ) = explode( ':', $option );
-			$conf->set( str_replace( '\\', '/', $name ), $value );
+			$config->set( $name, $value );
 		}
+
+		return $ctx;
 	}
 }

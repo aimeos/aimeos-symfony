@@ -10,9 +10,11 @@
 
 namespace Aimeos\ShopBundle\Command;
 
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\DependencyInjection\Container;
 
 
 /**
@@ -21,9 +23,18 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @package symfony
  * @subpackage Command
  */
+#[AsCommand(name: 'aimeos:jobs', description: 'Executes the job controllers')]
 class JobsCommand extends Command
 {
+	private $container;
 	protected static $defaultName = 'aimeos:jobs';
+
+
+	public function __construct( Container $container )
+	{
+		parent::__construct();
+		$this->container = $container;
+	}
 
 
 	/**
@@ -46,9 +57,9 @@ class JobsCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$context = $this->getContext();
-		$process = $context->getProcess();
-		$aimeos = $this->getContainer()->get( 'aimeos' )->get();
+		$context = $this->context();
+		$process = $context->process();
+		$aimeos = $this->container->get( 'aimeos' )->get();
 
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
 		$localeManager = \Aimeos\MShop::create( $context, 'locale' );
@@ -63,7 +74,7 @@ class JobsCommand extends Command
 			$localeItem->setCurrencyId( null );
 			$context->setLocale( $localeItem );
 
-			$config = $context->getConfig();
+			$config = $context->config();
 			foreach( $localeItem->getSiteItem()->getConfig() as $key => $value ) {
 				$config->set( $key, $value );
 			}
@@ -81,17 +92,18 @@ class JobsCommand extends Command
 		}
 
 		$process->wait();
+		return 0;
 	}
 
 
 	/**
 	 * Returns a context object
 	 *
-	 * @return \Aimeos\MShop\Context\Item\Iface Context object
+	 * @return \Aimeos\MShop\ContextIface Context object
 	 */
-	protected function getContext() : \Aimeos\MShop\Context\Item\Iface
+	protected function context() : \Aimeos\MShop\ContextIface
 	{
-		$container = $this->getContainer();
+		$container = $this->container;
 		$aimeos = $container->get( 'aimeos' )->get();
 		$context = $container->get( 'aimeos.context' )->get( false, 'command' );
 
@@ -100,7 +112,7 @@ class JobsCommand extends Command
 
 		$langManager = \Aimeos\MShop::create( $context, 'locale/language' );
 		$langids = $langManager->search( $langManager->filter( true ) )->keys()->toArray();
-		$i18n = $this->getContainer()->get( 'aimeos.i18n' )->get( $langids );
+		$i18n = $this->container->get( 'aimeos.i18n' )->get( $langids );
 
 		$context->setEditor( 'aimeos:jobs' );
 		$context->setView( $view );

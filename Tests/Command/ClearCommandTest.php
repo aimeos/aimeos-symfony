@@ -16,8 +16,10 @@ class ClearCommandTest extends WebTestCase
 		$kernel = $this->createKernel();
 		$kernel->boot();
 
+		$container = static::getContainer();
+
 		$application = new Application( $kernel );
-		$application->add( new Command\CacheCommand() );
+		$application->add( new Command\ClearCommand( $container ) );
 
 		$command = $application->find( 'aimeos:clear' );
 		$commandTester = new CommandTester( $command );

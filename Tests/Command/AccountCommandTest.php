@@ -16,8 +16,10 @@ class AccountCommandTest extends WebTestCase
 		$kernel = $this->createKernel();
 		$kernel->boot();
 
+		$container = static::getContainer();
+
 		$application = new Application( $kernel );
-		$application->add( new Command\AccountCommand() );
+		$application->add( new Command\AccountCommand( $container ) );
 
 		$command = $application->find( 'aimeos:account' );
 		$commandTester = new CommandTester( $command );
@@ -32,8 +34,10 @@ class AccountCommandTest extends WebTestCase
 		$kernel = $this->createKernel();
 		$kernel->boot();
 
+		$container = static::getContainer();
+
 		$application = new Application( $kernel );
-		$application->add( new Command\AccountCommand() );
+		$application->add( new Command\AccountCommand( $container ) );
 
 		$command = $application->find( 'aimeos:account' );
 		$commandTester = new CommandTester( $command );

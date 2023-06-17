@@ -10,9 +10,11 @@
 
 namespace Aimeos\ShopBundle\Command;
 
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\DependencyInjection\Container;
 
 
 /**
@@ -21,9 +23,18 @@ use Symfony\Component\Console\Output\OutputInterface;
  * @package symfony
  * @subpackage Command
  */
+#[AsCommand(name: 'aimeos:clear', description: 'Clears the content cache')]
 class ClearCommand extends Command
 {
-	protected static $defaultName = 'aimeos:cache';
+	private $container;
+	protected static $defaultName = 'aimeos:clear';
+
+
+	public function __construct( Container $container )
+	{
+		parent::__construct();
+		$this->container = $container;
+	}
 
 
 	/**
@@ -45,24 +56,10 @@ class ClearCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$context = $this->getContainer()->get( 'aimeos.context' )->get( false, 'command' );
+		$context = $this->container->get( 'aimeos.context' )->get( false, 'command' );
 		$context->setEditor( 'aimeos:clear' );
 
-		$localeManager = \Aimeos\MShop::create( $context, 'locale' );
-
-		foreach( $this->getSiteItems( $context, $input ) as $siteItem )
-		{
-			$localeItem = $localeManager->bootstrap( $siteItem->getCode(), '', '', false );
-
-			$lcontext = clone $context;
-			$lcontext->setLocale( $localeItem );
-
-			$cache = new \Aimeos\MAdmin\Cache\Proxy\Standard( $lcontext );
-			$lcontext->setCache( $cache );
-
-			$output->writeln( sprintf( 'Clearing the Aimeos cache for site <info>%1$s</info>', $siteItem->getCode() ) );
-
-			\Aimeos\MAdmin::create( $lcontext, 'cache' )->getCache()->clear();
-		}
+		\Aimeos\MAdmin::create( $context, 'cache' )->getCache()->clear();
+		return 0;
 	}
 }
