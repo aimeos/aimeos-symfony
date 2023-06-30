@@ -2,7 +2,7 @@
 
 <phpunit backupGlobals="false"
 	backupStaticAttributes="false"
-	bootstrap="Tests/bootstrap.php"
+	bootstrap="vendor/autoload.php"
 	convertErrorsToExceptions="true"
 	convertNoticesToExceptions="true"
 	convertWarningsToExceptions="true"
@@ -13,35 +13,28 @@
 		<!-- disable E_USER_DEPRECATED -->
 		<!-- -16385 is the same as -1 & ~E_USER_DEPRECATED -->
 		<ini name="error_reporting" value="-16385"/>
-		<server name="KERNEL_DIR" value="./Tests/Fixtures/app/" />
-		<server name="KERNEL_CLASS" value="AppKernel" />
+		<server name="KERNEL_DIR" value="./tests/Fixtures/app/" />
+		<server name="KERNEL_CLASS" value="\Aimeos\ShopBundle\Tests\Fixtures\AppKernel" />
 	</php>
 
 	<testsuites>
 		<testsuite name="command">
-			<file>./Tests/Command/SetupCommandTest.php</file>
-			<file>./Tests/Command/CacheCommandTest.php</file>
-			<file>./Tests/Command/JobsCommandTest.php</file>
-			<file>./Tests/Command/AccountCommandTest.php</file>
+			<file>./tests/Command/SetupCommandTest.php</file>
+			<file>./tests/Command/ClearCommandTest.php</file>
+			<file>./tests/Command/JobsCommandTest.php</file>
+			<file>./tests/Command/AccountCommandTest.php</file>
 		</testsuite>
 		<testsuite name="entity">
-			<directory>./Tests/Entity</directory>
+			<directory>./tests/Entity</directory>
 		</testsuite>
 		<testsuite name="controller">
-			<directory>./Tests/Controller</directory>
+			<directory>./tests/Controller</directory>
 		</testsuite>
 	</testsuites>
 
 	<filter>
 		<whitelist>
-			<directory suffix=".php">./</directory>
-			<exclude>
-				<directory>./Composer/</directory>
-				<directory>./Tests/</directory>
-				<directory>./Resources/</directory>
-				<directory>./vendor/</directory>
-				<directory>./ext/</directory>
-			</exclude>
+			<directory suffix=".php">src/</directory>
 		</whitelist>
 	</filter>
 </phpunit>

@@ -3,16 +3,16 @@ imports:
     - { resource: database.yml }
 
 framework:
+    test: true
     secret: aimeos
     form:            ~
     csrf_protection: ~
-    test: ~
     mailer:
         dsn: 'null://null'
     router:
         resource: "%kernel.project_dir%/config/routing.yml"
     session:
-        handler_id: null
+        enabled: true
 
 monolog:
     handlers:

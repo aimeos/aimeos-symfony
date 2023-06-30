@@ -38,7 +38,8 @@
 		"symfony/twig-bundle": "~6.0",
 		"symfony/psr-http-message-bridge": "~2.0",
 		"sensio/framework-extra-bundle": "~6.0",
-		"nyholm/psr7": "~1.0"
+		"nyholm/psr7": "~1.0",
+		"friendsofsymfony/user-bundle": "^3.1"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~10.0",
@@ -46,17 +47,18 @@
 		"doctrine/doctrine-bundle": "~2.0",
 		"doctrine/orm": "^2.2.3",
 		"symfony/browser-kit": "~6.0",
-		"symfony/css-selector": "~6.0"
+		"symfony/css-selector": "~6.0",
+		"symfony/test-pack": "^1.0"
 	},
 	"autoload": {
-		"psr-4": { "Aimeos\\ShopBundle\\": "" }
+		"psr-4": { "Aimeos\\ShopBundle\\": "src/" }
 	},
 	"autoload-dev": {
-		"files": ["Tests/Fixtures/app/AppKernel.php"]
+		"psr-4": { "Aimeos\\ShopBundle\\Tests\\": "tests/" }
 	},
 	"scripts": {
 		"post-update-cmd": [
-			"cp -r vendor/aimeos/ai-client-html/themes/client/html/* Resources/public/themes/"
+			"cp -r vendor/aimeos/ai-client-html/themes/client/html/* public/themes/"
 		]
 	}
 }

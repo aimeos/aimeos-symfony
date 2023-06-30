@@ -34,12 +34,31 @@ resource:
             collate: utf8mb4_unicode_ci
     fs:
         adapter: Standard
-        basedir: "%kernel.project_dir%/web"
+        basedir: "%kernel.project_dir%/public"
         tempdir: "%kernel.cache_dir%"
         baseurl: "/"
+    fs-media:
+        adapter: Standard
+        basedir: "%kernel.project_dir%/public/aimeos"
+        tempdir: "%kernel.cache_dir%"
+        baseurl: "/aimeos"
+    fs-mimeicon:
+        adapter: Standard
+        basedir: "%kernel.project_dir%/public/mimeicons"
+        tempdir: "%kernel.cache_dir%"
+        baseurl: "/mimeicons"
+    fs-theme:
+        adapter: Standard
+        basedir: "%kernel.project_dir%/public/theme"
+        tempdir: "%kernel.cache_dir%"
+        baseurl: "/theme"
     fs-admin:
         adapter: Standard
         basedir: "%kernel.cache_dir%/../admin"
+        tempdir: "%kernel.cache_dir%"
+    fs-export:
+        adapter: Standard
+        basedir: "%kernel.cache_dir%/../export"
         tempdir: "%kernel.cache_dir%"
     fs-import:
         adapter: Standard

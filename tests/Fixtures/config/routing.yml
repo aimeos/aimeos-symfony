@@ -1,7 +1,3 @@
-fos_user_security_logout:
-    path: /logout
-
-
 aimeos_shop_terms:
     path: /{site}/{locale}/{currency}/terms
     defaults: { _controller: AimeosShopBundle:Page:terms }

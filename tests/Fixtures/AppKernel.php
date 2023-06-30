@@ -1,5 +1,6 @@
 <?php
 
+namespace Aimeos\ShopBundle\Tests\Fixtures;
 
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
@@ -10,7 +11,7 @@ class AppKernel extends Kernel
 	/**
 	 * {@inheritdoc}
 	 */
-	public function registerBundles() : Traversable|array
+	public function registerBundles() : \Traversable|array
 	{
 		return array(
 			new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
