@@ -21,7 +21,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  * @package symfony
  * @subpackage DependencyInjection
  */
-class Configuration implements ConfigurationInterface
+final class Configuration implements ConfigurationInterface
 {
 	/**
 	 * {@inheritDoc}

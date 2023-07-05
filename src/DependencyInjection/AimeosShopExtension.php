@@ -2,7 +2,7 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014-2016
+ * @copyright Aimeos (aimeos.org), 2014-2023
  * @package symfony
  * @subpackage DependencyInjection
  */
@@ -15,7 +15,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 
 
@@ -26,7 +26,7 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
  * @package symfony
  * @subpackage DependencyInjection
  */
-class AimeosShopExtension extends Extension implements PrependExtensionInterface
+final class AimeosShopExtension extends Extension implements PrependExtensionInterface
 {
 	/**
 	 * {@inheritDoc}
