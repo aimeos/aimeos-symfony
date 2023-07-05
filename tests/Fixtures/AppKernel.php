@@ -14,7 +14,6 @@ class AppKernel extends Kernel
 	public function registerBundles() : \Traversable|array
 	{
 		return array(
-			new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 			new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
 			new \Symfony\Bundle\SecurityBundle\SecurityBundle(),
 			new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
