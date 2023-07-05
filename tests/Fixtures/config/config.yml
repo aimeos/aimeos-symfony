@@ -13,6 +13,7 @@ framework:
         resource: "%kernel.project_dir%/config/routing.yml"
     session:
         enabled: true
+    http_method_override: false
 
 monolog:
     handlers:

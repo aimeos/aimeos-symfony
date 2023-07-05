@@ -15,7 +15,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-class User implements UserInterface, \Serializable
+class User implements UserInterface
 {
 	#[ORM\Id]
 	#[ORM\Column(name: "id", type: "integer")]
@@ -182,10 +182,7 @@ class User implements UserInterface, \Serializable
 	}
 
 
-	/**
-	 * @see \Serializable::serialize()
-	 */
-	public function serialize()
+	public function __serialize()
 	{
 		return serialize( array(
 			$this->id,
@@ -195,10 +192,7 @@ class User implements UserInterface, \Serializable
 	}
 
 
-	/**
-	 * @see \Serializable::unserialize()
-	 */
-	public function unserialize( $serialized )
+	public function __unserialize( $serialized )
 	{
 		list (
 			$this->id,
