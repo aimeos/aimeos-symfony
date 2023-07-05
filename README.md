@@ -72,9 +72,9 @@ aimeos_shop:
     resource:
         fs:
             baseurl: "https://yourdomain.com/"
-            basedir: "%kernel.root_dir%/../public"
+            basedir: "%kernel.project_dir%/public"
         fs-admin:
-            basedir: "%kernel.root_dir%/../public/uploads"
+            basedir: "%kernel.project_dir%/public/uploads"
     mshop:
         customer:
             manager:
