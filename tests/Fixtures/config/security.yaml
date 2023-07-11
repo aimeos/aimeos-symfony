@@ -8,7 +8,7 @@ security:
             entity: { class: AimeosShopBundle:User, property: username }
 
     password_hashers:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Symfony\Component\Security\Core\User\InMemoryUser: plaintext
         Aimeos\ShopBundle\Entity\User:
             algorithm: bcrypt
 

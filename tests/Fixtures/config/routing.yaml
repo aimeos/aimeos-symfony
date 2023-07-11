@@ -1,0 +1,44 @@
+aimeos_shop_terms:
+    path: /{site}/{locale}/{currency}/terms
+    controller: Aimeos\ShopBundle\Controller\PageController::terms
+
+aimeos_shop_privacy:
+    path: /{site}/{locale}/{currency}/privacy
+    controller: Aimeos\ShopBundle\Controller\CheckoutController::privacy
+
+
+aimeos_shop_adm:
+    resource: "../../../config/routing_adm.yaml"
+
+aimeos_shop_jqadm:
+    resource: "../../../config/routing_jqadm.yaml"
+    prefix: /{site}/jqadm
+
+aimeos_shop_jsonadm:
+    resource: "../../../config/routing_jsonadm.yaml"
+    prefix: /{site}/jsonadm
+
+
+aimeos_shop_jsonapi:
+    resource: "../../../config/routing_jsonapi.yaml"
+    prefix: /{site}/{locale}/{currency}/jsonapi
+
+aimeos_shop_account:
+    resource: "../../../config/routing_account.yaml"
+    prefix:   /{site}/{locale}/{currency}/profile
+
+aimeos_shop_default:
+    resource: "../../../config/routing_default.yaml"
+    prefix:   /{site}/{locale}/{currency}/shop
+
+aimeos_shop_supplier:
+    resource: "../../../config/routing_supplier.yaml"
+    prefix:   /{site}/{locale}/{currency}/s
+
+aimeos_shop_update:
+    resource: "../../../config/routing_update.yaml"
+    prefix:   /{site}/{locale}/{currency}
+
+aimeos_shop_home:
+    path: /{site}/{locale}/{currency}/
+    controller: Aimeos\ShopBundle\Controller\CatalogController::homeAction

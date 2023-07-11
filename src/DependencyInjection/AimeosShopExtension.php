@@ -45,7 +45,7 @@ final class AimeosShopExtension extends Extension implements PrependExtensionInt
 		}
 
 		$loader = new Loader\YamlFileLoader( $container, new FileLocator( dirname( __DIR__, 2 ) . '/config' ) );
-		$loader->load( 'services.yml' );
+		$loader->load( 'services.yaml' );
 	}
 
 
@@ -56,7 +56,7 @@ final class AimeosShopExtension extends Extension implements PrependExtensionInt
 	 */
 	public function prepend( ContainerBuilder $container )
 	{
-		$configFile = dirname( __DIR__, 2 ) . '/config/aimeos_shop.yml';
+		$configFile = dirname( __DIR__, 2 ) . '/config/aimeos_shop.yaml';
 		$config = Yaml::parse( file_get_contents( $configFile ) );
 
 		$container->prependExtensionConfig( 'aimeos_shop', $config );

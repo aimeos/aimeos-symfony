@@ -1,6 +1,6 @@
 imports:
-    - { resource: security.yml }
-    - { resource: database.yml }
+    - { resource: security.yaml }
+    - { resource: database.yaml }
 
 framework:
     test: true
@@ -10,7 +10,7 @@ framework:
     mailer:
         dsn: 'null://null'
     router:
-        resource: "%kernel.project_dir%/config/routing.yml"
+        resource: "%kernel.project_dir%/tests/Fixtures/config/routing.yaml"
     session:
         enabled: true
     http_method_override: false
@@ -24,6 +24,9 @@ monolog:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    paths:
+        "%kernel.project_dir%/templates": AimeosShop
+        "%kernel.project_dir%/tests/Fixtures/templates": ~
 
 doctrine:
     dbal:
