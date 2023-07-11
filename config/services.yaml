@@ -1,4 +1,8 @@
 services:
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
     aimeos:
         class: Aimeos\ShopBundle\Service\Aimeos
         arguments: ["@service_container"]
@@ -58,3 +62,37 @@ services:
         arguments: ["@service_container"]
         tags:
             - { name: kernel.event_listener, event: kernel.request }
+
+    Aimeos\ShopBundle\Controller\AccountController:
+        calls:
+            - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\AdminController:
+        calls:
+            - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\BasketController:
+        calls:
+            - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\CatalogController:
+        calls:
+            - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\CheckoutController:
+        calls:
+            - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\JqadmController:
+        calls:
+            - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\JsonadmController:
+        calls:
+            - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\JsonapiController:
+        calls:
+            - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\LocaleController:
+        calls:
+            - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\PageController:
+        calls:
+            - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\SupplierController:
+        calls:
+            - setContainer: ["@service_container"]
