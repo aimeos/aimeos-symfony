@@ -1,6 +1,6 @@
 aimeos_shop_admin:
     path: /admin
-    defaults: { _controller: AimeosShopBundle:Admin:index }
+    controller: Aimeos\ShopBundle\Controller\AdminController::indexAction
 
 aimeos_shop_admin_check:
     path: /admin_check

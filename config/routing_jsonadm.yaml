@@ -1,41 +1,47 @@
 aimeos_shop_jsonadm_delete:
     path: /{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:delete, id: null }
+    controller: Aimeos\ShopBundle\Controller\JsonadmController::deleteAction
+    defaults: { id: null }
     methods: [DELETE]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jsonadm_get:
     path: /{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:get, id: null }
+    controller: Aimeos\ShopBundle\Controller\JsonadmController::getAction
+    defaults: { id: null }
     methods: [GET]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jsonadm_patch:
     path: /{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:patch, id: null }
+    controller: Aimeos\ShopBundle\Controller\JsonadmController::patchAction
+    defaults: { id: null }
     methods: [PATCH]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jsonadm_post:
     path: /{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:post, id: null }
+    controller: Aimeos\ShopBundle\Controller\JsonadmController::postAction
+    defaults: { id: null }
     methods: [POST]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jsonadm_put:
     path: /{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:put, id: null }
+    controller: Aimeos\ShopBundle\Controller\JsonadmController::putAction
+    defaults: { id: null }
     methods: [PUT]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jsonadm_options:
     path: /{resource}
-    defaults: { _controller: AimeosShopBundle:Jsonadm:options, resource: '' }
+    controller: Aimeos\ShopBundle\Controller\JsonadmController::optionsAction
+    defaults: { resource: '' }
     methods: [OPTIONS]
     requirements:
         resource: '.*'

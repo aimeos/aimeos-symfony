@@ -1,0 +1,50 @@
+aimeos_shop_basket:
+    path: /basket/{b_action}
+    controller: Aimeos\ShopBundle\Controller\BasketController::indexAction
+    defaults: { b_action: null }
+
+aimeos_shop_count:
+    path: /count
+    controller: Aimeos\ShopBundle\Controller\CatalogController::countAction
+    defaults: { _format: js }
+
+aimeos_shop_checkout:
+    path: /checkout/{c_step}
+    controller: Aimeos\ShopBundle\Controller\CheckoutController::indexAction
+    defaults: { c_step: null }
+
+aimeos_shop_confirm:
+    path: /confirm/{code}
+    controller: Aimeos\ShopBundle\Controller\CheckoutController::confirmAction
+    defaults: { code: null }
+
+aimeos_shop_session_pinned:
+    path: /pin
+    controller: Aimeos\ShopBundle\Controller\CatalogController::sessionAction
+
+aimeos_shop_suggest:
+    path: /suggest
+    controller: Aimeos\ShopBundle\Controller\CatalogController::suggestAction
+    defaults: { _format: json }
+
+aimeos_shop_stock:
+    path: /stock
+    controller: Aimeos\ShopBundle\Controller\CatalogController::stockAction
+    defaults: { _format: js }
+
+aimeos_shop_tree:
+    path: /{f_name}~{f_catid}
+    controller: Aimeos\ShopBundle\Controller\:CatalogController::treeAction
+    requirements:
+        f_name: '[^~]*'
+
+aimeos_shop_detail:
+    path: /{d_name}/{d_pos}/{d_prodid}
+    controller: Aimeos\ShopBundle\Controller\CatalogController::detailAction
+    defaults: { d_pos: null, d_prodid: null }
+    requirements:
+        d_pos: '[0-9]*'
+
+aimeos_shop_list:
+    path: ''
+    controller: Aimeos\ShopBundle\Controller\CatalogController::listAction

@@ -1,0 +1,30 @@
+aimeos_shop_jsonapi_delete:
+    path: /{resource}
+    controller: Aimeos\ShopBundle\Controller\JsonapiController::deleteAction
+    methods: [DELETE]
+
+aimeos_shop_jsonapi_get:
+    path: /{resource}
+    controller: Aimeos\ShopBundle\Controller\JsonapiController::getAction
+    methods: [GET]
+
+aimeos_shop_jsonapi_patch:
+    path: /{resource}
+    controller: Aimeos\ShopBundle\Controller\JsonapiController::patchAction
+    methods: [PATCH]
+
+aimeos_shop_jsonapi_post:
+    path: /{resource}
+    controller: Aimeos\ShopBundle\Controller\JsonapiController::postAction
+    methods: [POST]
+
+aimeos_shop_jsonapi_put:
+    path: /{resource}
+    controller: Aimeos\ShopBundle\Controller\JsonapiController::putAction
+    methods: [PUT]
+
+aimeos_shop_jsonapi_options:
+    path: /{resource}
+    controller: Aimeos\ShopBundle\Controller\JsonapiController::optionsAction
+    defaults: { resource: '' }
+    methods: [OPTIONS]

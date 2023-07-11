@@ -1,3 +1,0 @@
-aimeos_shop_update:
-    path: /update
-    defaults: { _controller: AimeosShopBundle:Checkout:update }

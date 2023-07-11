@@ -1,0 +1,17 @@
+aimeos_shop_account:
+    path: /
+    controller: Aimeos\ShopBundle\Controller\AccountController::indexAction
+
+aimeos_shop_account_favorite:
+    path: /favorite/{fav_action}/{fav_id}/{d_name}
+    controller: Aimeos\ShopBundle\Controller\AccountController::indexAction
+    defaults: { fav_action: '', fav_id: null, d_name: '' }
+
+aimeos_shop_account_watch:
+    path: /watch/{wat_action}/{wat_id}/{d_name}
+    controller: Aimeos\ShopBundle\Controller\AccountController::indexAction
+    defaults: { wat_action: '', wat_id: null, d_name: '' }
+
+aimeos_shop_account_download:
+    path: /download/{dl_id}
+    controller: Aimeos\ShopBundle\Controller\AccountController::downloadAction

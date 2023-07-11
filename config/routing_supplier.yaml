@@ -1,0 +1,4 @@
+aimeos_shop_supplier_detail:
+    path: /{s_name}/{f_supid}
+    controller: Aimeos\ShopBundle\Controller\SupplierController::detailAction
+    defaults: { s_name: null }

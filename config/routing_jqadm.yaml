@@ -1,53 +1,54 @@
 aimeos_shop_jqadm_file:
     path: /file/{type}
-    defaults: { _controller: AimeosShopBundle:Jqadm:file }
+    controller: Aimeos\ShopBundle\Controller\JqadmController::fileAction
     methods: [GET]
 
 aimeos_shop_jqadm_copy:
     path: /copy/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jqadm:copy }
+    controller: Aimeos\ShopBundle\Controller\JqadmController::copyAction
     methods: [GET]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jqadm_create:
     path: /create/{resource}
-    defaults: { _controller: AimeosShopBundle:Jqadm:create }
+    controller: Aimeos\ShopBundle\Controller\JqadmController::createAction
     methods: [GET]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jqadm_delete:
     path: /delete/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jqadm:delete, id: null }
+    controller: Aimeos\ShopBundle\Controller\JqadmController::deleteAction
+    defaults: { id: null }
     methods: [POST]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jqadm_export:
     path: /export/{resource}
-    defaults: { _controller: AimeosShopBundle:Jqadm:export }
+    controller: Aimeos\ShopBundle\Controller\JqadmController::exportAction
     methods: [GET]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jqadm_get:
     path: /get/{resource}/{id}
-    defaults: { _controller: AimeosShopBundle:Jqadm:get }
+    controller: Aimeos\ShopBundle\Controller\JqadmController::getAction
     methods: [GET]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jqadm_save:
     path: /save/{resource}
-    defaults: { _controller: AimeosShopBundle:Jqadm:save }
+    controller: Aimeos\ShopBundle\Controller\JqadmController::saveAction
     methods: [POST]
     requirements:
         resource: '[a-z\/]+'
 
 aimeos_shop_jqadm_search:
     path: /search/{resource}
-    defaults: { _controller: AimeosShopBundle:Jqadm:search }
+    controller: Aimeos\ShopBundle\Controller\JqadmController::searchAction
     methods: [GET, POST]
     requirements:
         resource: '[a-z\/]+'

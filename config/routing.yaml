@@ -1,0 +1,40 @@
+aimeos_shop_terms:
+    path: /terms
+    controller: Aimeos\ShopBundle\Controller\PageController::termsAction
+
+aimeos_shop_privacy:
+    path: /privacy
+    controller: Aimeos\ShopBundle\Controller\PageController::privacyAction
+
+
+aimeos_shop_adm:
+    resource: "./routing_adm.yaml"
+    prefix: /
+
+aimeos_shop_jqadm:
+    resource: "./routing_jqadm.yaml"
+    prefix: /admin/{site}/jqadm
+
+aimeos_shop_jsonadm:
+    resource: "./routing_jsonadm.yaml"
+    prefix: /admin/{site}/jsonadm
+
+aimeos_shop_jsonapi:
+    resource: "./routing_jsonapi.yaml"
+    prefix: /jsonapi
+
+aimeos_shop_account:
+    resource: "./routing_account.yaml"
+    prefix: /profile
+
+aimeos_shop_default:
+    resource: "./routing_default.yaml"
+    prefix: /shop
+
+aimeos_shop_supplier:
+    resource: "./routing_supplier.yaml"
+    prefix: /s
+
+aimeos_shop_update:
+    resource: "./routing_update.yaml"
+    prefix: /
