@@ -83,7 +83,7 @@ class AccountCommand extends Command
 		$manager = \Aimeos\MShop::create( $context, 'customer' );
 
 		try {
-			$item = $manager->find( $email );
+			$item = $manager->find( $email, ['customer/group'] );
 		} catch( \Aimeos\MShop\Exception $e ) {
 			$item = $manager->create();
 		}
