@@ -57,8 +57,8 @@ class ScriptHandler
 
 		if( isset( $options['symfony-app-dir'] ) )
 		{
-			self::updateConfigFile( $options['symfony-app-dir'] . '/config/config.yml' );
-			self::updateRoutingFile( $options['symfony-app-dir'] . '/config/routing.yml' );
+			self::updateConfigFile( $options['symfony-app-dir'] . '/config/config.yaml' );
+			self::updateRoutingFile( $options['symfony-app-dir'] . '/config/routing.yaml' );
 		}
 	}
 
@@ -284,7 +284,7 @@ class ScriptHandler
 		if( strpos( $content, 'aimeos_shop:' ) === false )
 		{
 			$content .= "\n" . 'aimeos_shop:
-    resource: "@AimeosShopBundle/Resources/config/routing.yml"
+    resource: "@AimeosShopBundle/Resources/config/routing.yaml"
     prefix: /';
 		}
 
@@ -296,7 +296,7 @@ class ScriptHandler
 	/**
 	 * Adds the AimeosShopBundle to the assetic section of the config file
 	 *
-	 * @param string &$content Content of the config.yml file
+	 * @param string &$content Content of the config.yaml file
 	 * @return bool True if modified, false if not
 	 */
 	protected static function addAsseticBundle( string &$content ) : bool
