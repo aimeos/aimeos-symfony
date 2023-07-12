@@ -34,7 +34,7 @@ class Shop
 	{
 		$this->context = $container->get( 'aimeos.context' )->get();
 
-		$langid = $this->context->getLocale()->getLanguageId();
+		$langid = $this->context->locale()->getLanguageId();
 		$tmplPaths = $container->get( 'aimeos' )->get()->getTemplatePaths( 'client/html/templates' );
 
 		$view = $container->get( 'aimeos.view' )->create( $this->context, $tmplPaths, $langid );
@@ -53,8 +53,8 @@ class Shop
 		if( !isset( $this->objects[$name] ) )
 		{
 			$client = \Aimeos\Client\Html::create( $this->context, $name );
-			$client->setView( $this->context->getView() );
-			$client->process();
+			$client->setView( $this->context->view() );
+			$client->init();
 
 			$this->objects[$name] = $client;
 		}
