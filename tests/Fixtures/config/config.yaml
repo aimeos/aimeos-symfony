@@ -3,7 +3,7 @@ imports:
     - { resource: database.yaml }
 
 framework:
-    test: true
+    test: ~
     secret: aimeos
     form:            ~
     csrf_protection: ~
@@ -12,7 +12,8 @@ framework:
     router:
         resource: "%kernel.project_dir%/tests/Fixtures/config/routing.yaml"
     session:
-        enabled: true
+        handler_id: ~
+        storage_factory_id: session.storage.factory.mock_file
     http_method_override: false
 
 monolog:
