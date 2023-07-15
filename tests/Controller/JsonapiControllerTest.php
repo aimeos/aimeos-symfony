@@ -3,7 +3,6 @@
 namespace Aimeos\ShopBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\HttpFoundation\Exception\SessionNotFoundException;
 use Symfony\Component\HttpFoundation\Request;
 
 
@@ -21,16 +20,6 @@ class JsonapiControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'test@example.com',
 			'PHP_AUTH_PW'   => 'unittest',
 		) );
-
-		$requestStack = self::getContainer()->get('request_stack');
-        try {
-            $requestStack->getSession();
-        } catch (SessionNotFoundException) {
-            $session = self::getContainer()->get('session.factory')->createSession();
-            $request = new Request();
-            $request->setSession($session);
-            $requestStack->push($request);
-        }
 	}
 
 
@@ -50,9 +39,10 @@ class JsonapiControllerTest extends WebTestCase
 
 	public function testPutAction()
 	{
-		$token = $this->client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
+		$this->client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
+		$json = json_decode( $this->client->getResponse()->getContent(), true );
 
-		$this->client->request( 'PUT', '/unittest/de/EUR/jsonapi/basket', ['_token' => $token] );
+		$this->client->request( 'PUT', '/unittest/de/EUR/jsonapi/basket', ['_token' => $json['meta']['csrf']['value']] );
 		$response = $this->client->getResponse();
 
 		$json = json_decode( $response->getContent(), true );
@@ -116,8 +106,8 @@ class JsonapiControllerTest extends WebTestCase
 
 		$this->assertNotNull( $json );
 		$this->assertEquals( 200, $response->getStatusCode() );
-		$this->assertEquals( 2, $json['meta']['total'] );
-		$this->assertEquals( 2, count( $json['data'] ) );
+		$this->assertEquals( 3, $json['meta']['total'] );
+		$this->assertEquals( 3, count( $json['data'] ) );
 		$this->assertArrayHasKey( 'id', $json['data'][0] );
 		$this->assertEquals( 'CNC', $json['data'][0]['attributes']['product.code'] );
 
@@ -164,10 +154,8 @@ class JsonapiControllerTest extends WebTestCase
 
 	public function testWorkflowCatalog()
 	{
-
 		$this->client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$optJson = json_decode( $this->client->getResponse()->getContent(), true );
-var_dump($this->client->getResponse()->getContent() );
 		$this->assertGreaterThan( 8, count( $optJson['meta']['resources'] ) );
 
 		// catalog root
@@ -215,7 +203,6 @@ var_dump($this->client->getResponse()->getContent() );
 
 	public function testWorkflowSearch()
 	{
-
 		$this->client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
 		$this->assertGreaterThan( 8, count( $json['meta']['resources'] ) );
@@ -223,27 +210,28 @@ var_dump($this->client->getResponse()->getContent() );
 		// product list for full text search
 		$this->client->request( 'GET', $json['meta']['resources']['product'], ['filter' => ['f_search' => 'cappuccino']] );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 1, count( $json['data'] ) );
+		$this->assertEquals( 2, count( $json['data'] ) );
 	}
 
 
 	public function testWorkflowBasketAddress()
 	{
-		$token = $this->client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
-
 		$this->client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
 		$this->assertGreaterThan( 8, count( $json['meta']['resources'] ) );
+		$token = $json['meta']['csrf']['value'];
+
+		$this->client->request( 'DELETE', $json['meta']['resources']['basket'], ['_token' => $token] );
 
 		// get empty basket
 		$this->client->request( 'GET', $json['meta']['resources']['basket'] );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
 		$this->assertEquals( 'basket', $json['data']['type'] );
 
-		$content = '{"data": {"id": "delivery", "attributes": {"order.base.address.firstname": "test"}}}';
-		$this->client->request( 'POST', $json['links']['basket/address']['href'], ['_token' => $token], [], [], $content );
+		$content = '{"data": {"id": "delivery", "attributes": {"order.address.firstname": "test"}}}';
+		$this->client->request( 'POST', $json['links']['basket.address']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 'basket/address', $json['included'][0]['type'] );
+		$this->assertEquals( 'basket.address', $json['included'][0]['type'] ?? null );
 
 		$this->client->request( 'DELETE', $json['included'][0]['links']['self']['href'], ['_token' => $token] );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
@@ -253,11 +241,12 @@ var_dump($this->client->getResponse()->getContent() );
 
 	public function testWorkflowBasketCoupon()
 	{
-		$token = $this->client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
-
 		$this->client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
 		$this->assertGreaterThan( 8, count( $json['meta']['resources'] ) );
+		$token = $json['meta']['csrf']['value'];
+
+		$this->client->request( 'DELETE', $json['meta']['resources']['basket'], ['_token' => $token] );
 
 		// product for code "CNC"
 		$this->client->request( 'GET', $json['meta']['resources']['product'], ['filter' => ['==' => ['product.code' => 'CNC']]] );
@@ -266,15 +255,15 @@ var_dump($this->client->getResponse()->getContent() );
 
 		// add product "CNC" as prerequisite
 		$content = '{"data": {"attributes": {"product.id": ' . $json['data'][0]['id'] . '}}}';
-		$this->client->request( 'POST', $json['data'][0]['links']['basket/product']['href'], ['_token' => $token], [], [], $content );
+		$this->client->request( 'POST', $json['data'][0]['links']['basket.product']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 'basket/product', $json['included'][0]['type'] );
+		$this->assertEquals( 'basket.product', $json['included'][0]['type'] ?? null );
 
 		// add coupon "GHIJ"
 		$content = '{"data": {"id": "GHIJ"}}';
-		$this->client->request( 'POST', $json['links']['basket/coupon']['href'], ['_token' => $token], [], [], $content );
+		$this->client->request( 'POST', $json['links']['basket.coupon']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 'basket/coupon', $json['included'][2]['type'] );
+		$this->assertEquals( 'basket.coupon', $json['included'][2]['type'] ?? null );
 
 		// remove coupon "GHIJ" again
 		$this->client->request( 'DELETE', $json['included'][2]['links']['self']['href'], ['_token' => $token] );
@@ -285,26 +274,27 @@ var_dump($this->client->getResponse()->getContent() );
 
 	public function testWorkflowBasketProduct()
 	{
-		$token = $this->client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
-
 		$this->client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
 		$this->assertGreaterThan( 8, count( $json['meta']['resources'] ) );
+		$token = $json['meta']['csrf']['value'];
+
+		$this->client->request( 'DELETE', $json['meta']['resources']['basket'], ['_token' => $token] );
 
 		// product for code "CNC"
 		$this->client->request( 'GET', $json['meta']['resources']['product'], ['filter' => ['f_search' => 'Cap']] );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 1, count( $json['data'] ) );
+		$this->assertEquals( 2, count( $json['data'] ) );
 
 		$content = '{"data": {"attributes": {"product.id": ' . $json['data'][0]['id'] . '}}}';
-		$this->client->request( 'POST', $json['data'][0]['links']['basket/product']['href'], ['_token' => $token], [], [], $content );
+		$this->client->request( 'POST', $json['data'][0]['links']['basket.product']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 'basket/product', $json['included'][0]['type'] );
+		$this->assertEquals( 'basket.product', $json['included'][0]['type'] ?? null );
 
 		$content = '{"data": {"attributes": {"quantity": 2}}}';
 		$this->client->request( 'PATCH', $json['included'][0]['links']['self']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 2, $json['included'][0]['attributes']['order.base.product.quantity'] );
+		$this->assertEquals( 2, $json['included'][0]['attributes']['order.product.quantity'] ?? null );
 
 		$this->client->request( 'DELETE', $json['included'][0]['links']['self']['href'], ['_token' => $token] );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
@@ -314,11 +304,12 @@ var_dump($this->client->getResponse()->getContent() );
 
 	public function testWorkflowBasketService()
 	{
-		$token = $this->client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
-
 		$this->client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
 		$this->assertGreaterThan( 8, count( $json['meta']['resources'] ) );
+		$token = $json['meta']['csrf']['value'];
+
+		$this->client->request( 'DELETE', $json['meta']['resources']['basket'], ['_token' => $token] );
 
 		// payment services
 		$this->client->request( 'GET', $json['meta']['resources']['service'], ['filter' => ['cs_type' => 'payment']] );
@@ -332,10 +323,11 @@ var_dump($this->client->getResponse()->getContent() );
 			'directdebit.bankcode' => 'ABCDEFGH',
 			'directdebit.bankname' => 'test bank',
 		]]];
-		$this->client->request( 'POST', $json['data'][1]['links']['basket/service']['href'], ['_token' => $token], [], [], json_encode( $content ) );
+		$this->client->request( 'POST', $json['data'][1]['links']['basket.service']['href'], ['_token' => $token], [], [], json_encode( $content ) );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 'basket/service', $json['included'][0]['type'] );
-		$this->assertEquals( 'directdebit-test', $json['included'][0]['attributes']['order.base.service.code'] );
+
+		$this->assertEquals( 'basket.service', $json['included'][0]['type'] ?? null );
+		$this->assertEquals( 'directdebit-test', $json['included'][0]['attributes']['order.service.code'] ?? null );
 		$this->assertEquals( 5, count( $json['included'][0]['attributes']['attribute'] ) );
 
 		$this->client->request( 'DELETE', $json['included'][0]['links']['self']['href'], ['_token' => $token] );
@@ -361,16 +353,12 @@ var_dump($this->client->getResponse()->getContent() );
 	public function testGetCustomerAddressActionAuthorized()
 	{
 		$this->client->request( 'GET', '/unittest/de/EUR/jsonapi/customer', [] );
-		$response = $this->client->getResponse();
-
-		$json = json_decode( $response->getContent(), true );
+		$json = json_decode( $this->client->getResponse()->getContent(), true );
 
 		$this->client->request( 'GET', $json['links']['customer/address']['href'], [] );
-		$response = $this->client->getResponse();
+		$json = json_decode( $this->client->getResponse()->getContent(), true );
 
-		$json = json_decode( $response->getContent(), true );
-
-		$this->assertEquals( 200, $response->getStatusCode() );
+		$this->assertEquals( 200, $this->client->getResponse()->getStatusCode() );
 		$this->assertNotNull( $json );
 		$this->assertEquals( 1, $json['meta']['total'] );
 		$this->assertEquals( 1, count( $json['data'] ) );
@@ -393,11 +381,12 @@ var_dump($this->client->getResponse()->getContent() );
 
 	public function testWorkflowOrder()
 	{
-		$token = $this->client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
-
 		$this->client->request( 'OPTIONS', '/unittest/de/EUR/jsonapi' );
 		$optJson = json_decode( $this->client->getResponse()->getContent(), true );
 		$this->assertGreaterThan( 8, count( $optJson['meta']['resources'] ) );
+		$token = $optJson['meta']['csrf']['value'];
+
+		$this->client->request( 'DELETE', $optJson['meta']['resources']['basket'], ['_token' => $token] );
 
 		// product for code "CNC"
 		$this->client->request( 'GET', $optJson['meta']['resources']['product'], ['filter' => ['==' => ['product.code' => 'CNC']]] );
@@ -406,9 +395,9 @@ var_dump($this->client->getResponse()->getContent() );
 
 		// add product "CNC"
 		$content = '{"data": {"attributes": {"product.id": ' . $json['data'][0]['id'] . '}}}';
-		$this->client->request( 'POST', $json['data'][0]['links']['basket/product']['href'], ['_token' => $token], [], [], $content );
+		$this->client->request( 'POST', $json['data'][0]['links']['basket.product']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 'basket/product', $json['included'][0]['type'] );
+		$this->assertEquals( 'basket.product', $json['included'][0]['type'] ?? null );
 
 		// delivery services
 		$this->client->request( 'GET', $optJson['meta']['resources']['service'], ['filter' => ['cs_type' => 'delivery']] );
@@ -417,9 +406,9 @@ var_dump($this->client->getResponse()->getContent() );
 
 		// add delivery service
 		$content = '{"data": {"id": "delivery", "attributes": {"service.id": ' . $json['data'][0]['id'] . '}}}';
-		$this->client->request( 'POST', $json['data'][0]['links']['basket/service']['href'], ['_token' => $token], [], [], $content );
+		$this->client->request( 'POST', $json['data'][0]['links']['basket.service']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 'basket/service', $json['included'][1]['type'] );
+		$this->assertEquals( 'basket.service', $json['included'][1]['type'] ?? null );
 
 		// payment services
 		$this->client->request( 'GET', $optJson['meta']['resources']['service'], ['filter' => ['cs_type' => 'payment']] );
@@ -428,30 +417,24 @@ var_dump($this->client->getResponse()->getContent() );
 
 		// add payment service
 		$content = '{"data": {"id": "payment", "attributes": {"service.id": ' . $json['data'][0]['id'] . '}}}';
-		$this->client->request( 'POST', $json['data'][0]['links']['basket/service']['href'], ['_token' => $token], [], [], $content );
+		$this->client->request( 'POST', $json['data'][0]['links']['basket.service']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 'basket/service', $json['included'][2]['type'] );
+		$this->assertEquals( 'basket.service', $json['included'][2]['type'] ?? null );
 
 		// add address
-		$content = '{"data": {"id": "payment", "attributes": {"order.base.address.firstname": "test"}}}';
-		$this->client->request( 'POST', $json['links']['basket/address']['href'], ['_token' => $token], [], [], $content );
+		$content = '{"data": {"id": "payment", "attributes": {"order.address.firstname": "test"}}}';
+		$this->client->request( 'POST', $json['links']['basket.address']['href'], ['_token' => $token], [], [], $content );
 		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( 'basket/address', $json['included'][3]['type'] );
+		$this->assertEquals( 'basket.address', $json['included'][3]['type'] ?? null );
 
 		// store basket
 		$this->client->request( 'POST', $json['data']['links']['self']['href'], ['_token' => $token] );
 		$basketJson = json_decode( $this->client->getResponse()->getContent(), true );
 		$this->assertEquals( true, ctype_digit( $basketJson['data']['id'] ) );
 
-		// add order
-		$content = '{"data": {"attributes": {"order.baseid": ' . $basketJson['data']['id'] . '}}}';
-		$this->client->request( 'POST', $basketJson['links']['order']['href'], ['_token' => $token], [], [], $content );
-		$json = json_decode( $this->client->getResponse()->getContent(), true );
-		$this->assertEquals( true, ctype_digit( $json['data']['id'] ) );
-
 
 		// delete created order
 		$context = static::$kernel->getContainer()->get( 'aimeos.context' )->get();
-		\Aimeos\MShop::create( $context, 'order/base' )->delete( $basketJson['data']['id'] );
+		\Aimeos\MShop::create( $context, 'order' )->delete( $basketJson['data']['id'] );
 	}
 }
