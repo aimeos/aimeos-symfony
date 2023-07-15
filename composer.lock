@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad9bf61f36313f0906e68c9c037727a2",
+    "content-hash": "8146ed7ff0f2cb904713574dec4cb140",
     "packages": [
         {
             "name": "aimeos/ai-admin-jqadm",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "75a9fd700cf31e4bcdfbc89ada8d28b7804c7c2f"
+                "reference": "b3bc399df1a887907a776cd628779d165d4e1b07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/75a9fd700cf31e4bcdfbc89ada8d28b7804c7c2f",
-                "reference": "75a9fd700cf31e4bcdfbc89ada8d28b7804c7c2f",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/b3bc399df1a887907a776cd628779d165d4e1b07",
+                "reference": "b3bc399df1a887907a776cd628779d165d4e1b07",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
                 "source": "https://github.com/aimeos/ai-admin-jqadm",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2023-07-02T10:38:48+00:00"
+            "time": "2023-07-11T10:54:56+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -117,12 +117,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-html.git",
-                "reference": "7bc5401714c230f29863786802396aadb84528d6"
+                "reference": "6b6afbfab310fc339b1220fa2ae8a744b73645a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/7bc5401714c230f29863786802396aadb84528d6",
-                "reference": "7bc5401714c230f29863786802396aadb84528d6",
+                "url": "https://api.github.com/repos/aimeos/ai-client-html/zipball/6b6afbfab310fc339b1220fa2ae8a744b73645a5",
+                "reference": "6b6afbfab310fc339b1220fa2ae8a744b73645a5",
                 "shasum": ""
             },
             "require": {
@@ -162,7 +162,7 @@
                 "source": "https://github.com/aimeos/ai-client-html",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2023-06-29T07:31:01+00:00"
+            "time": "2023-07-10T10:17:47+00:00"
         },
         {
             "name": "aimeos/ai-client-jsonapi",
@@ -170,12 +170,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "d26aae8f2f28d076dbc22370bc5decb0b0991443"
+                "reference": "ebb2baff6a6a834427d9ff175f53299cc514eb00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/d26aae8f2f28d076dbc22370bc5decb0b0991443",
-                "reference": "d26aae8f2f28d076dbc22370bc5decb0b0991443",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/ebb2baff6a6a834427d9ff175f53299cc514eb00",
+                "reference": "ebb2baff6a6a834427d9ff175f53299cc514eb00",
                 "shasum": ""
             },
             "require": {
@@ -214,7 +214,7 @@
                 "source": "https://github.com/aimeos/ai-client-jsonapi",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2023-05-19T09:27:40+00:00"
+            "time": "2023-07-13T07:34:52+00:00"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -273,12 +273,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "ca73a5a0640139ae4ee6836e83cb86d8e0a772e1"
+                "reference": "c3ad55b1edff0f146d7b817c2737552ab5e95d16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/ca73a5a0640139ae4ee6836e83cb86d8e0a772e1",
-                "reference": "ca73a5a0640139ae4ee6836e83cb86d8e0a772e1",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/c3ad55b1edff0f146d7b817c2737552ab5e95d16",
+                "reference": "c3ad55b1edff0f146d7b817c2737552ab5e95d16",
                 "shasum": ""
             },
             "require": {
@@ -317,7 +317,7 @@
                 "source": "https://github.com/aimeos/ai-controller-jobs",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2023-06-29T07:31:02+00:00"
+            "time": "2023-07-13T12:27:48+00:00"
         },
         {
             "name": "aimeos/ai-fosuser",
@@ -602,12 +602,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "7801d113347fa984ea40e844769eb29a0f15d083"
+                "reference": "29e583bd8ee72e1d9fee7fb73ca46d236f5b69b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/7801d113347fa984ea40e844769eb29a0f15d083",
-                "reference": "7801d113347fa984ea40e844769eb29a0f15d083",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/29e583bd8ee72e1d9fee7fb73ca46d236f5b69b9",
+                "reference": "29e583bd8ee72e1d9fee7fb73ca46d236f5b69b9",
                 "shasum": ""
             },
             "require": {
@@ -672,7 +672,7 @@
                 "source": "https://github.com/aimeos/aimeos-core",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2023-07-03T09:32:05+00:00"
+            "time": "2023-07-10T09:12:48+00:00"
         },
         {
             "name": "aimeos/macro",
@@ -1611,16 +1611,16 @@
         },
         {
             "name": "friendsofsymfony/user-bundle",
-            "version": "v3.1.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "89c18b6944adb12541f5b3b1ab39287b5336b375"
+                "reference": "8ccde38910033bf4a32782c91becb5efb453133e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/89c18b6944adb12541f5b3b1ab39287b5336b375",
-                "reference": "89c18b6944adb12541f5b3b1ab39287b5336b375",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/8ccde38910033bf4a32782c91becb5efb453133e",
+                "reference": "8ccde38910033bf4a32782c91becb5efb453133e",
                 "shasum": ""
             },
             "require": {
@@ -1696,9 +1696,9 @@
             "support": {
                 "docs": "https://symfony.com/doc/master/bundles/FOSUserBundle/index.html",
                 "issues": "https://github.com/FriendsOfSymfony/FOSUserBundle/issues",
-                "source": "https://github.com/FriendsOfSymfony/FOSUserBundle/tree/v3.1.0"
+                "source": "https://github.com/FriendsOfSymfony/FOSUserBundle/tree/v3.2.1"
             },
-            "time": "2022-10-26T09:10:52+00:00"
+            "time": "2023-07-06T10:38:55+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -8049,16 +8049,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.2.3",
+            "version": "10.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "35c8cac1734ede2ae354a6644f7088356ff5b08e"
+                "reference": "15a89f123d8ca9c1e1598d6d87a56a8bf28c72cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/35c8cac1734ede2ae354a6644f7088356ff5b08e",
-                "reference": "35c8cac1734ede2ae354a6644f7088356ff5b08e",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/15a89f123d8ca9c1e1598d6d87a56a8bf28c72cd",
+                "reference": "15a89f123d8ca9c1e1598d6d87a56a8bf28c72cd",
                 "shasum": ""
             },
             "require": {
@@ -8130,7 +8130,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.2.3"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.2.5"
             },
             "funding": [
                 {
@@ -8146,7 +8146,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-06-30T06:17:38+00:00"
+            "time": "2023-07-14T04:18:47+00:00"
         },
         {
             "name": "psr/http-client",
