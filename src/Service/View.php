@@ -181,7 +181,7 @@ class View
 	protected function addParam( \Aimeos\Base\View\Iface $view )
 	{
 		$params = array();
-		$request = $this->requestStack->getMainRequest();
+		$request = $this->requestStack->getCurrentRequest();
 
 		if( $request !== null ) {
 			$params = $request->request->all() + $request->query->all() + $request->attributes->get( '_route_params' );
@@ -202,7 +202,7 @@ class View
 	 */
 	protected function addRequest( \Aimeos\Base\View\Iface $view )
 	{
-		$request = $this->requestStack->getMainRequest();
+		$request = $this->requestStack->getCurrentRequest();
 
 		if( $request !== null )
 		{
@@ -281,7 +281,7 @@ class View
 	{
 		$fixed = [];
 
-		if( $request = $this->requestStack->getMainRequest() )
+		if( $request = $this->requestStack->getCurrentRequest() )
 		{
 			$fixed['site'] = $request->attributes->get( 'site', $request->query->get( 'site' ) );
 			$fixed['locale'] = $request->attributes->get( 'locale', $request->query->get( 'locale' ) );

@@ -50,7 +50,7 @@ class Locale
 		if( $this->locale === null )
 		{
 			$status = $this->container->getParameter( 'aimeos_shop.disable_sites' );
-			$request = $this->requestStack->getMainRequest();
+			$request = $this->requestStack->getCurrentRequest();
 
 			$site = $request->attributes->get( 'site', $request->query->get( 'site', 'default' ) );
 			$currency = $request->attributes->get( 'currency', $request->query->get( 'currency', '' ) );

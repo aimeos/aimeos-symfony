@@ -258,7 +258,7 @@ class Context
 		}
 
 		if( $username === '' && $this->container->has( 'request_stack' )
-			&& ( $request = $this->container->get( 'request_stack' )->getMainRequest() ) !== null
+			&& ( $request = $this->container->get( 'request_stack' )->getCurrentRequest() ) !== null
 		) {
 			$username = $request->getClientIp();
 		}
