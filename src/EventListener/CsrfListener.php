@@ -13,7 +13,7 @@ namespace Aimeos\ShopBundle\EventListener;
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\KernelEvent;
-use Symfony\Component\DependencyInjection\Container;
+use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 
 
 /**
@@ -24,7 +24,7 @@ use Symfony\Component\DependencyInjection\Container;
  */
 class CsrfListener
 {
-	private $container;
+	private $tokenManager;
 
 
 	/**
@@ -32,9 +32,9 @@ class CsrfListener
 	 *
 	 * @param Container $container Dependency injection container
 	 */
-	public function __construct( Container $container )
+	public function __construct( CsrfTokenManagerInterface $tokenManager )
 	{
-		$this->container = $container;
+		$this->tokenManager = $tokenManager;
 	}
 
 
@@ -47,15 +47,13 @@ class CsrfListener
 	{
 		$request = $event->getRequest();
 
-		if( !$event->isMainRequest()
-			|| !in_array( $request->getMethod(), ['POST', 'PUT', 'PATCH', 'DELETE'] ) ) {
+		if( !in_array( $request->getMethod(), ['POST', 'PUT', 'PATCH', 'DELETE'] ) ) {
 			return;
 		}
 
-		$csrf = $this->container->get( 'security.csrf.token_manager' );
 		$csrfToken = new CsrfToken( '_token', $request->request->get( '_token' ) );
 
-		if( !$csrf->isTokenValid( $csrfToken ) ) {
+		if( !$this->tokenManager->isTokenValid( $csrfToken ) ) {
 			$event->setResponse( new Response( 'Page expired', 419 ) );
 		}
 	}

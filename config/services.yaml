@@ -59,7 +59,7 @@ services:
 
     aimeos.csrf_listener:
         class: Aimeos\ShopBundle\EventListener\CsrfListener
-        arguments: ["@service_container"]
+        arguments: ["@security.csrf.token_manager"]
         tags:
             - { name: kernel.event_listener, event: kernel.request }
 
