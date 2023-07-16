@@ -10,7 +10,11 @@
 
 namespace Aimeos\ShopBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
+use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Psr\Http\Message\ServerRequestInterface;
 use Nyholm\Psr7\Factory\Psr17Factory;
 
@@ -21,101 +25,113 @@ use Nyholm\Psr7\Factory\Psr17Factory;
  * @package symfony
  * @subpackage Controller
  */
-class JsonadmController extends Controller
+class JsonadmController extends AbstractController
 {
 	/**
 	 * Deletes the resource object or a list of resource objects
 	 *
-	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param Request $request Request object
 	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
+	 * @return Response Response object containing the generated output
 	 */
-	public function deleteAction( ServerRequestInterface $request, string $resource,
-		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
+	public function deleteAction( Request $request, string $resource, string $site = 'default' ) : Response
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
-		return $client->delete( $request, ( new Psr17Factory )->createResponse() );
+		$req = $this->createRequest( $request );
+		$res = ( new Psr17Factory )->createResponse();
+
+		$client = $this->createAdmin( $site, $resource, $req->getAttribute( 'locale', 'en' ) );
+		return $this->createResponse( $client->delete( $req, $res ) );
 	}
 
 
 	/**
 	 * Returns the requested resource object or list of resource objects
 	 *
-	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param Request $request Request object
 	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
+	 * @return Response Response object containing the generated output
 	 */
-	public function getAction( ServerRequestInterface $request, string $resource,
-		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
+	public function getAction( Request $request, string $resource, string $site = 'default' ) : Response
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
-		return $client->get( $request, ( new Psr17Factory )->createResponse() );
+		$req = $this->createRequest( $request );
+		$res = ( new Psr17Factory )->createResponse();
+
+		$client = $this->createAdmin( $site, $resource, $req->getAttribute( 'locale', 'en' ) );
+		return $this->createResponse( $client->get( $req, $res ) );
 	}
 
 
 	/**
 	 * Updates a resource object or a list of resource objects
 	 *
-	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param Request $request Request object
 	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
+	 * @return Response Response object containing the generated output
 	 */
-	public function patchAction( ServerRequestInterface $request, string $resource,
-		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
+	public function patchAction( Request $request, string $resource, string $site = 'default' ) : Response
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
-		return $client->patch( $request, ( new Psr17Factory )->createResponse() );
+		$req = $this->createRequest( $request );
+		$res = ( new Psr17Factory )->createResponse();
+
+		$client = $this->createAdmin( $site, $resource, $req->getAttribute( 'locale', 'en' ) );
+		return $this->createResponse( $client->patch( $req, $res ) );
 	}
 
 
 	/**
 	 * Creates a new resource object or a list of resource objects
 	 *
-	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param Request $request Request object
 	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
+	 * @return Response Response object containing the generated output
 	 */
-	public function postAction( ServerRequestInterface $request, string $resource,
-		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
+	public function postAction( Request $request, string $resource, string $site = 'default' ) : Response
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
-		return $client->post( $request, ( new Psr17Factory )->createResponse() );
+		$req = $this->createRequest( $request );
+		$res = ( new Psr17Factory )->createResponse();
+
+		$client = $this->createAdmin( $site, $resource, $req->getAttribute( 'locale', 'en' ) );
+		return $this->createResponse( $client->post( $req, $res ) );
 	}
 
 
 	/**
 	 * Creates or updates a single resource object
 	 *
-	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param Request $request Request object
 	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
+	 * @return Response Response object containing the generated output
 	 */
-	public function putAction( ServerRequestInterface $request, string $resource,
-		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
+	public function putAction( Request $request, string $resource, string $site = 'default' ) : Response
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
-		return $client->put( $request, ( new Psr17Factory )->createResponse() );
+		$req = $this->createRequest( $request );
+		$res = ( new Psr17Factory )->createResponse();
+
+		$client = $this->createAdmin( $site, $resource, $req->getAttribute( 'locale', 'en' ) );
+		return $this->createResponse( $client->put( $req, $res ) );
 	}
 
 
 	/**
 	 * Returns the available HTTP verbs and the resource URLs
 	 *
-	 * @param \Psr\Http\Message\ServerRequestInterface $request Request object
+	 * @param Request $request Request object
 	 * @param string Resource location, e.g. "product/property/type"
 	 * @param string $site Unique site code
-	 * @return \Psr\Http\Message\ResponseInterface Response object containing the generated output
+	 * @return Response Response object containing the generated output
 	 */
-	public function optionsAction( ServerRequestInterface $request, string $resource = '',
-		string $site = 'default' ) : \Psr\Http\Message\ResponseInterface
+	public function optionsAction( Request $request, string $resource = '', string $site = 'default' ) : Response
 	{
-		$client = $this->createAdmin( $site, $resource, $request->getAttribute( 'locale', 'en' ) );
-		return $client->options( $request, ( new Psr17Factory )->createResponse() );
+		$req = $this->createRequest( $request );
+		$res = ( new Psr17Factory )->createResponse();
+
+		$client = $this->createAdmin( $site, $resource, $req->getAttribute( 'locale', 'en' ) );
+		return $this->createResponse( $client->options( $req, $res ) );
 	}
 
 
@@ -129,16 +145,32 @@ class JsonadmController extends Controller
 	 */
 	protected function createAdmin( string $site, string $resource, string $lang ) : \Aimeos\Admin\JsonAdm\Iface
 	{
-		$aimeos = $this->get( 'aimeos' )->get();
+		$aimeos = $this->container->get( 'aimeos' )->get();
 		$templatePaths = $aimeos->getTemplatePaths( 'admin/jsonadm/templates' );
 
-		$context = $this->get( 'aimeos.context' )->get( false, 'backend' );
-		$context->setI18n( $this->get( 'aimeos.i18n' )->get( array( $lang, 'en' ) ) );
-		$context->setLocale( $this->get( 'aimeos.locale' )->getBackend( $context, $site ) );
+		$context = $this->container->get( 'aimeos.context' )->get( false, 'backend' );
+		$context->setI18n( $this->container->get( 'aimeos.i18n' )->get( array( $lang, 'en' ) ) );
+		$context->setLocale( $this->container->get( 'aimeos.locale' )->getBackend( $context, $site ) );
 
-		$view = $this->get( 'aimeos.view' )->create( $context, $templatePaths, $lang );
+		$view = $this->container->get( 'aimeos.view' )->create( $context, $templatePaths, $lang );
 		$context->setView( $view );
 
 		return \Aimeos\Admin\JsonAdm::create( $context, $aimeos, $resource );
+	}
+
+
+	protected function createRequest( Request $reqest ) : \Psr\Http\Message\RequestInterface
+	{
+		$psr17Factory = new Psr17Factory();
+		$psrHttpFactory = new PsrHttpFactory( $psr17Factory, $psr17Factory, $psr17Factory, $psr17Factory );
+
+		return $psrHttpFactory->createRequest( $reqest );
+	}
+
+
+	protected function createResponse( \Psr\Http\Message\ResponseInterface $response ) : Response
+	{
+		$httpFoundationFactory = new HttpFoundationFactory();
+		return $httpFoundationFactory->createResponse( $response );
 	}
 }

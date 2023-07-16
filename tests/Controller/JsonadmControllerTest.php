@@ -17,7 +17,6 @@ class JsonadmControllerTest extends WebTestCase
 
 		$client->request( 'OPTIONS', '/unittest/jsonadm/product' );
 		$response = $client->getResponse();
-
 		$json = json_decode( $response->getContent(), true );
 
 		$this->assertNotNull( $json );
@@ -44,7 +43,10 @@ class JsonadmControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
-		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
+
+		$client->request( 'OPTIONS', '/unittest/jsonadm' );
+		$json = json_decode( $client->getResponse()->getContent(), true );
+		$token = $json['meta']['csrf']['value'];
 
 		$content = '{"data":{"type":"stock/type","attributes":{"stock.type.code":"symfony","stock.type.label":"symfony"}}}';
 		$client->request( 'POST', '/unittest/jsonadm/stock/type', ['_token' => $token], [], [], $content );
@@ -108,7 +110,10 @@ class JsonadmControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
-		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
+
+		$client->request( 'OPTIONS', '/unittest/jsonadm' );
+		$json = json_decode( $client->getResponse()->getContent(), true );
+		$token = $json['meta']['csrf']['value'];
 
 
 		$content = '{"data":[
