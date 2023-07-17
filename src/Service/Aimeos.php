@@ -57,7 +57,7 @@ class Aimeos
 	 */
 	public function getVersion()
 	{
-		$filename = dirname( $this->container->get( 'kernel' )->getRootDir() ) . DIRECTORY_SEPARATOR . 'composer.lock';
+		$filename = dirname( $this->container->get( 'kernel' )->getProjectDir() ) . DIRECTORY_SEPARATOR . 'composer.lock';
 
 		if( file_exists( $filename ) === true && ( $content = file_get_contents( $filename ) ) !== false
 			&& ( $content = json_decode( $content, true ) ) !== null && isset( $content['packages'] )

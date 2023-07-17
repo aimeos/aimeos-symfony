@@ -52,9 +52,9 @@ class Locale
 			$status = $this->container->getParameter( 'aimeos_shop.disable_sites' );
 			$request = $this->requestStack->getCurrentRequest();
 
-			$site = $request->attributes->get( 'site', $request->query->get( 'site', 'default' ) );
-			$currency = $request->attributes->get( 'currency', $request->query->get( 'currency', '' ) );
-			$lang = $request->attributes->get( 'locale', $request->query->get( 'locale', '' ) );
+			$site = $request->get( 'site', 'default' );
+			$currency = $request->get( 'currency', '' );
+			$lang = $request->get( 'locale', '' );
 
 			$localeManager = \Aimeos\MShop::create( $context, 'locale' );
 			$this->locale = $localeManager->bootstrap( $site, $lang, $currency, $status );
