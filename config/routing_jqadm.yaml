@@ -3,12 +3,23 @@ aimeos_shop_jqadm_file:
     controller: Aimeos\ShopBundle\Controller\JqadmController::fileAction
     methods: [GET]
 
+aimeos_shop_jqadm_batch:
+    path: /batch/{resource}
+    controller: Aimeos\ShopBundle\Controller\JqadmController::batchAction
+    methods: [GET]
+    requirements:
+        resource: '[a-z\/]+'
+        site: '[A-Za-z0-9\.\-\_]+'
+        locale: '[a-z]{2}(\_[A-Z]{2})?'
+
 aimeos_shop_jqadm_copy:
     path: /copy/{resource}/{id}
     controller: Aimeos\ShopBundle\Controller\JqadmController::copyAction
     methods: [GET]
     requirements:
         resource: '[a-z\/]+'
+        site: '[A-Za-z0-9\.\-\_]+'
+        locale: '[a-z]{2}(\_[A-Z]{2})?'
 
 aimeos_shop_jqadm_create:
     path: /create/{resource}
@@ -16,6 +27,8 @@ aimeos_shop_jqadm_create:
     methods: [GET]
     requirements:
         resource: '[a-z\/]+'
+        site: '[A-Za-z0-9\.\-\_]+'
+        locale: '[a-z]{2}(\_[A-Z]{2})?'
 
 aimeos_shop_jqadm_delete:
     path: /delete/{resource}/{id}
@@ -24,6 +37,8 @@ aimeos_shop_jqadm_delete:
     methods: [POST]
     requirements:
         resource: '[a-z\/]+'
+        site: '[A-Za-z0-9\.\-\_]+'
+        locale: '[a-z]{2}(\_[A-Z]{2})?'
 
 aimeos_shop_jqadm_export:
     path: /export/{resource}
@@ -31,6 +46,8 @@ aimeos_shop_jqadm_export:
     methods: [GET]
     requirements:
         resource: '[a-z\/]+'
+        site: '[A-Za-z0-9\.\-\_]+'
+        locale: '[a-z]{2}(\_[A-Z]{2})?'
 
 aimeos_shop_jqadm_get:
     path: /get/{resource}/{id}
@@ -38,6 +55,8 @@ aimeos_shop_jqadm_get:
     methods: [GET]
     requirements:
         resource: '[a-z\/]+'
+        site: '[A-Za-z0-9\.\-\_]+'
+        locale: '[a-z]{2}(\_[A-Z]{2})?'
 
 aimeos_shop_jqadm_save:
     path: /save/{resource}
@@ -45,6 +64,8 @@ aimeos_shop_jqadm_save:
     methods: [POST]
     requirements:
         resource: '[a-z\/]+'
+        site: '[A-Za-z0-9\.\-\_]+'
+        locale: '[a-z]{2}(\_[A-Z]{2})?'
 
 aimeos_shop_jqadm_search:
     path: /search/{resource}
@@ -52,3 +73,5 @@ aimeos_shop_jqadm_search:
     methods: [GET, POST]
     requirements:
         resource: '[a-z\/]+'
+        site: '[A-Za-z0-9\.\-\_]+'
+        locale: '[a-z]{2}(\_[A-Z]{2})?'

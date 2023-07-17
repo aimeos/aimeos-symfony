@@ -71,7 +71,10 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
-		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
+
+		$client->request( 'OPTIONS', '/unittest/jsonadm' );
+		$json = json_decode( $client->getResponse()->getContent(), true );
+		$token = $json['meta']['csrf']['value'];
 
 		$client->request( 'POST', '/unittest/jqadm/delete/product/0', ['_token' => $token] );
 		$response = $client->getResponse();
@@ -116,7 +119,10 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_USER' => 'admin',
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
-		$token = $client->getContainer()->get( 'security.csrf.token_manager' )->getToken( '_token' );
+
+		$client->request( 'OPTIONS', '/unittest/jsonadm' );
+		$json = json_decode( $client->getResponse()->getContent(), true );
+		$token = $json['meta']['csrf']['value'];
 
 		$client->request( 'POST', '/unittest/jqadm/save/product', ['item' => ['product.type' => 'default'], '_token' => $token] );
 		$response = $client->getResponse();

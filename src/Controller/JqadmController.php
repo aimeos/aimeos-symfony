@@ -12,8 +12,8 @@ namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
@@ -22,8 +22,17 @@ use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
  * @package symfony
  * @subpackage Controller
  */
-class JqadmController extends Controller
+class JqadmController extends AbstractController
 {
+	private $twig;
+
+
+	public function __construct( \Twig\Environment $twig )
+	{
+		$this->twig = $twig;
+	}
+
+
 	/**
 	 * Returns the JS file content
 	 *
@@ -34,7 +43,7 @@ class JqadmController extends Controller
 	{
 		$contents = '';
 		$files = array();
-		$aimeos = $this->get( 'aimeos' )->get();
+		$aimeos = $this->container->get( 'aimeos' )->get();
 
 		foreach( $aimeos->getCustomPaths( 'admin/jqadm' ) as $base => $paths )
 		{
@@ -62,6 +71,26 @@ class JqadmController extends Controller
 		}
 
 		return $response;
+	}
+
+
+	/**
+	 * Returns the HTML code for a batch of a resource object
+	 *
+	 * @param Request $request Symfony request object
+	 * @param string $resource Resource location, e.g. "product"
+	 * @param string $site Unique site code
+	 * @return Response Generated output
+	 */
+	public function batchAction( Request $request, $resource, $site = 'default' ) : Response
+	{
+		$cntl = $this->createAdmin( $request, $site, $resource );
+
+		if( ( $html = $cntl->batch() ) == '' ) {
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
+		}
+
+		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -217,17 +246,17 @@ class JqadmController extends Controller
 	{
 		$lang = $request->get( 'locale', 'en' );
 
-		$aimeos = $this->get( 'aimeos' )->get();
+		$aimeos = $this->container->get( 'aimeos' )->get();
 		$templatePaths = $aimeos->getTemplatePaths( 'admin/jqadm/templates' );
 
-		$context = $this->get( 'aimeos.context' )->get( false, 'backend' );
-		$context->setI18n( $this->get( 'aimeos.i18n' )->get( array( $lang, 'en' ) ) );
-		$context->setLocale( $this->get( 'aimeos.locale' )->getBackend( $context, $site ) );
+		$context = $this->container->get( 'aimeos.context' )->get( false, 'backend' );
+		$context->setI18n( $this->container->get( 'aimeos.i18n' )->get( array( $lang, 'en' ) ) );
+		$context->setLocale( $this->container->get( 'aimeos.locale' )->getBackend( $context, $site ) );
 
-		$view = $this->get( 'aimeos.view' )->create( $context, $templatePaths, $lang );
+		$view = $this->container->get( 'aimeos.view' )->create( $context, $templatePaths, $lang );
 
 		$view->aimeosType = 'Symfony';
-		$view->aimeosVersion = $this->get( 'aimeos' )->getVersion();
+		$view->aimeosVersion = $this->container->get( 'aimeos' )->getVersion();
 		$view->aimeosExtensions = implode( ',', $aimeos->getExtensions() );
 
 		$context->setView( $view );
@@ -244,11 +273,11 @@ class JqadmController extends Controller
 	 */
 	protected function getHtml( $content, $lang ) : Response
 	{
-		return $this->render( '@AimeosShop/Jqadm/index.html.twig', [
+		return new Response( $this->twig->render( '@AimeosShop/Jqadm/index.html.twig', [
 			'content' => $content,
 			'locale' => $lang,
 			'localeDir' => in_array( $lang, ['ar', 'az', 'dv', 'fa', 'he', 'ku', 'ur'] ) ? 'rtl' : 'ltr',
 			'theme' => ( $_COOKIE['aimeos_backend_theme'] ?? '' ) == 'dark' ? 'dark' : 'light'
-		] );
+		] ) );
 	}
 }
