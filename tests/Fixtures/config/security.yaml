@@ -5,7 +5,7 @@ security:
                 users:
                     admin: { password: adminpass, roles: [ 'ROLE_SUPER_ADMIN' ] }
         default:
-            entity: { class: AimeosShopBundle:User, property: username }
+            entity: { class: Aimeos\ShopBundle\Entity\User, property: username }
 
     password_hashers:
         Symfony\Component\Security\Core\User\InMemoryUser: plaintext

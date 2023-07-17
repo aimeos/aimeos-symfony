@@ -23,9 +23,9 @@ class UserTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetUsername()
+	public function testGetUserIdentifier()
 	{
-		$this->assertEquals( null, $this->object->getUsername() );
+		$this->assertEquals( null, $this->object->getUserIdentifier() );
 	}
 
 
@@ -51,18 +51,5 @@ class UserTest extends \PHPUnit\Framework\TestCase
 	{
 		$this->object->eraseCredentials();
 		$this->assertNull( $this->object->getPassword() );
-	}
-
-
-	public function testSerialize()
-	{
-		$this->assertEquals( 'a:3:{i:0;N;i:1;N;i:2;N;}', $this->object->serialize() );
-	}
-
-
-	public function testUnserialize()
-	{
-		$this->object->unserialize( 'a:3:{i:0;N;i:1;N;i:2;N;}' );
-		$this->assertNull( $this->object->getId() );
 	}
 }
