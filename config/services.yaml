@@ -78,6 +78,9 @@ services:
     Aimeos\ShopBundle\Controller\CheckoutController:
         calls:
             - setContainer: ["@service_container"]
+    Aimeos\ShopBundle\Controller\GraphqlController:
+        calls:
+            - setContainer: ["@service_container"]
     Aimeos\ShopBundle\Controller\JqadmController:
         calls:
             - setContainer: ["@service_container"]

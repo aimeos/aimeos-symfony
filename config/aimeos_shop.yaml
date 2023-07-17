@@ -73,6 +73,9 @@ resource:
         db: db
 
 admin:
+    graphql:
+        url:
+            target: aimeos_shop_graphql
     jqadm:
         url:
             copy:

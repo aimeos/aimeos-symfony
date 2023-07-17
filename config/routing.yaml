@@ -11,6 +11,10 @@ aimeos_shop_adm:
     resource: "./routing_adm.yaml"
     prefix: /
 
+aimeos_shop_graphql:
+    resource: "./routing_graphql.yaml"
+    prefix: /admin/{site}/graphql
+
 aimeos_shop_jqadm:
     resource: "./routing_jqadm.yaml"
     prefix: /admin/{site}/jqadm

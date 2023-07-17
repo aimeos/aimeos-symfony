@@ -10,6 +10,10 @@ aimeos_shop_privacy:
 aimeos_shop_adm:
     resource: "../../../config/routing_adm.yaml"
 
+aimeos_shop_graphql:
+    resource: "../../../config/routing_graphql.yaml"
+    prefix: /{site}/graphql
+
 aimeos_shop_jqadm:
     resource: "../../../config/routing_jqadm.yaml"
     prefix: /{site}/jqadm

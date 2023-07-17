@@ -1,0 +1,6 @@
+aimeos_shop_graphql:
+    path: /
+    controller: Aimeos\ShopBundle\Controller\GraphqlController::indexAction
+    methods: [POST]
+    requirements:
+        site: '[A-Za-z0-9\.\-]+'
