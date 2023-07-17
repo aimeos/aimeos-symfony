@@ -11,7 +11,8 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
@@ -20,7 +21,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @package symfony
  * @subpackage Controller
  */
-class AdminController extends Controller
+class AdminController extends AbstractController
 {
 	/**
 	 * Returns the initial HTML view for the admin interface.
@@ -28,7 +29,7 @@ class AdminController extends Controller
 	 * @param Request $request Symfony request object
 	 * @return Response Generated HTML page for the admin interface
 	 */
-	public function indexAction( Request $request ) : \Symfony\Component\HttpFoundation\Response
+	public function indexAction( Request $request, \Twig\Environment $twig ) : \Symfony\Component\HttpFoundation\Response
 	{
 		if( $this->hasRole( ['ROLE_ADMIN', 'ROLE_SUPER_ADMIN'] ) )
 		{
@@ -50,17 +51,17 @@ class AdminController extends Controller
 		}
 
 
-		$param = array( 'error' => '', 'username' => '' );
+		$params = array( 'error' => '', 'username' => '' );
 
-		if( $this->has( 'security.authentication_utils' ) )
+		if( $this->container->has( 'security.authentication_utils' ) )
 		{
-			$auth = $this->get( 'security.authentication_utils' );
+			$auth = $this->container->get( 'security.authentication_utils' );
 
-			$param['error'] = $auth->getLastAuthenticationError();
-			$param['username'] = $auth->getLastUsername();
+			$params['error'] = $auth->getLastAuthenticationError();
+			$params['username'] = $auth->getLastUsername();
 		}
 
-		return $this->render( '@AimeosShop/Admin/index.html.twig', $param );
+		return new Response( $twig->render( '@AimeosShop/Admin/index.html.twig', $params ) );
 	}
 
 
@@ -72,9 +73,9 @@ class AdminController extends Controller
 	 */
 	protected function hasRole( array $roles ) : bool
 	{
-		if( $this->has( 'security.authorization_checker' ) && $this->get( 'security.token_storage' )->getToken() )
+		if( $this->container->has( 'security.authorization_checker' ) && $this->container->get( 'security.token_storage' )->getToken() )
 		{
-			$checker = $this->get( 'security.authorization_checker' );
+			$checker = $this->container->get( 'security.authorization_checker' );
 
 			foreach( $roles as $role )
 			{
