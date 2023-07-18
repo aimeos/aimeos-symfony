@@ -34,7 +34,7 @@ aimeos_shop_stock:
 
 aimeos_shop_tree:
     path: /{f_name}~{f_catid}
-    controller: Aimeos\ShopBundle\Controller\:CatalogController::treeAction
+    controller: Aimeos\ShopBundle\Controller\CatalogController::treeAction
     requirements:
         f_name: '[^~]*'
 
