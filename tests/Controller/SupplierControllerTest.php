@@ -17,7 +17,12 @@ class SupplierControllerTest extends WebTestCase
 	public function testDetail()
 	{
 		$client = static::createClient();
-		$crawler = $client->request( 'GET', '/unittest/de/EUR/s/TestSupplier/123' );
+
+		$context = $this->getContainer()->get( 'aimeos.context' )->get( false );
+		$context->setLocale( $this->getContainer()->get( 'aimeos.locale' )->getBackend( $context, 'unittest' ) );
+		$supplier = \Aimeos\MShop::create( $context, 'supplier' )->find( 'unitSupplier001' );
+
+		$crawler = $client->request( 'GET', '/unittest/de/EUR/s/TestSupplier/' . $supplier->getId() );
 
 		$this->assertEquals( 1, $crawler->filter( '.supplier-detail' )->count() );
 	}
