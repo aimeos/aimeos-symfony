@@ -5,31 +5,9 @@
 version: 2
 
 jobs:
-  "php-7.2 / mysql-5.7":
+  "php-8.1 / mysql-5.7":
     docker:
-      - image: aimeos/ci-php:7.2
-      - image: circleci/mysql:5.7
-        environment:
-          MYSQL_ROOT_PASSWORD: rootpw
-          MYSQL_DATABASE: symfony
-          MYSQL_USER: aimeos
-          MYSQL_PASSWORD: aimeos
-    steps:
-      - checkout
-      - run: wget https://getcomposer.org/download/latest-stable/composer.phar -O composer
-      - restore_cache:
-          keys:
-            - php72-{{ checksum "composer.json" }}
-      - run: php composer update -n --prefer-dist
-      - save_cache:
-          key: php72-{{ checksum "composer.json" }}
-          paths: [./vendor]
-      - run: for i in `seq 1 10`; do nc -z 127.0.0.1 3306 && echo OK && exit 0; echo -n .; sleep 1; done
-      - run: ./vendor/bin/phpunit --coverage-clover coverage.xml
-
-  "php-7.3 / mysql-5.7":
-    docker:
-      - image: aimeos/ci-php:7.3
+      - image: aimeos/ci-php:8.1
       - image: circleci/mysql:5.7
         environment:
           MYSQL_ROOT_PASSWORD: rootpw
@@ -49,9 +27,9 @@ jobs:
       - run: for i in `seq 1 10`; do nc -z 127.0.0.1 3306 && echo OK && exit 0; echo -n .; sleep 1; done
       - run: ./vendor/bin/phpunit --coverage-clover coverage.xml
 
-  "php-7.4 / mysql-8.0":
+  "php-8.2 / mysql-8.0":
     docker:
-      - image: aimeos/ci-php:7.4
+      - image: aimeos/ci-php:8.2
       - image: circleci/mysql:8.0
         environment:
           MYSQL_ROOT_PASSWORD: rootpw
@@ -75,6 +53,5 @@ workflows:
   version: 2
   unittest:
     jobs:
-      - "php-7.2 / mysql-5.7"
-      - "php-7.3 / mysql-5.7"
-      - "php-7.4 / mysql-8.0"
+      - "php-8.1 / mysql-5.7"
+      - "php-8.2 / mysql-8.0"
