@@ -44,7 +44,7 @@ class Context
 	 * @param string $type Configuration type ("frontend" or "backend")
 	 * @return \Aimeos\MShop\ContextIface Context object
 	 */
-	public function get( $locale = true, $type = 'frontend' )
+	public function get( $locale = true, $type = 'frontend' ) : \Aimeos\MShop\ContextIface
 	{
 		$config = $this->container->get( 'aimeos.config' )->get( $type );
 
@@ -91,7 +91,7 @@ class Context
 	 * @param \Aimeos\MShop\ContextIface $context Context object including config
 	 * @return \Aimeos\MShop\ContextIface Modified context object
 	 */
-	protected function addCache( \Aimeos\MShop\ContextIface $context )
+	protected function addCache( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
 		$cache = (new \Aimeos\MAdmin\Cache\Manager\Standard( $context ))->getCache();
 
@@ -105,7 +105,7 @@ class Context
 	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return \Aimeos\MShop\ContextIface Modified context object
 	 */
-	protected function addDatabaseManager( \Aimeos\MShop\ContextIface $context )
+	protected function addDatabaseManager( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
 		$dbm = new \Aimeos\Base\DB\Manager\Standard( $context->config()->get( 'resource', [] ), 'DBAL' );
 
@@ -119,7 +119,7 @@ class Context
 	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return \Aimeos\MShop\ContextIface Modified context object
 	 */
-	protected function addFilesystemManager( \Aimeos\MShop\ContextIface $context )
+	protected function addFilesystemManager( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
 		$fs = new \Aimeos\Base\Filesystem\Manager\Standard( $context->config()->get( 'resource' ) );
 
@@ -133,7 +133,7 @@ class Context
 	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return \Aimeos\MShop\ContextIface Modified context object
 	 */
-	protected function addLogger( \Aimeos\MShop\ContextIface $context )
+	protected function addLogger( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
 		$logger = \Aimeos\MAdmin::create( $context, 'log' );
 
@@ -148,7 +148,7 @@ class Context
 	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return \Aimeos\MShop\ContextIface Modified context object
 	 */
-	protected function addMailer( \Aimeos\MShop\ContextIface $context )
+	protected function addMailer( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
 		$container = $this->container;
 		$mail = new \Aimeos\Base\Mail\Symfony( function() use ( $container ) { return $container->get( 'mailer' ); } );
@@ -163,7 +163,7 @@ class Context
 	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return \Aimeos\MShop\ContextIface Modified context object
 	 */
-	protected function addMessageQueueManager( \Aimeos\MShop\ContextIface $context )
+	protected function addMessageQueueManager( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
 		$mq = new \Aimeos\Base\MQueue\Manager\Standard( $context->config()->get( 'resource', [] ) );
 
@@ -201,7 +201,7 @@ class Context
 	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return \Aimeos\MShop\ContextIface Modified context object
 	 */
-	protected function addProcess( \Aimeos\MShop\ContextIface $context )
+	protected function addProcess( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
 		$config = $context->config();
 		$max = $config->get( 'pcntl_max', 4 );
@@ -220,7 +220,7 @@ class Context
 	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return \Aimeos\MShop\ContextIface Modified context object
 	 */
-	protected function addSession( \Aimeos\MShop\ContextIface $context )
+	protected function addSession( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
 		$requestStack = $this->container->get( 'request_stack' );
 
@@ -240,7 +240,7 @@ class Context
 	 * @param \Aimeos\MShop\ContextIface $context Context object
 	 * @return \Aimeos\MShop\ContextIface Modified context object
 	 */
-	protected function addUserGroups( \Aimeos\MShop\ContextIface $context )
+	protected function addUserGroups( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
 		$username = '';
 
