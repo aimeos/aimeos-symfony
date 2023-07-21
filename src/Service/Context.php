@@ -80,6 +80,7 @@ class Context
 
 		$this->addSession( $context );
 		$this->addUserGroups( $context );
+		$this->addToken( $context );
 
 		return $context;
 	}
@@ -231,6 +232,27 @@ class Context
 		}
 
 		return $context;
+	}
+
+
+	/**
+	 * Adds the session token to the context
+	 *
+	 * @param \Aimeos\MShop\ContextIface $context Context object
+	 * @return \Aimeos\MShop\ContextIface Modified context object
+	 */
+	protected function addToken( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
+	{
+		if( ( $token = $context->session()->get( 'token' ) ) === null )
+		{
+			$requestStack = $this->container->get( 'request_stack' );
+
+			if( $requestStack->getCurrentRequest() ) {
+				$context->session()->set( 'token', $token = $requestStack->getSession()->getId() );
+			}
+		}
+
+		return $context->setToken( $token );
 	}
 
 
