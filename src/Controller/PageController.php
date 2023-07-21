@@ -11,7 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
@@ -20,16 +20,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @package symfony
  * @subpackage Controller
  */
-class PageController extends Controller
+class PageController extends AbstractController
 {
 	/**
 	 * Returns the html for the privacy policy page.
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function privacyAction() : Response
+	public function privacyAction( \Twig\Environment $twig ) : Response
 	{
-		return $this->render( '@AimeosShop/Page/privacy.html.twig' );
+		return $twig->render( '@AimeosShop/Page/privacy.html.twig' );
 	}
 
 
@@ -38,8 +38,8 @@ class PageController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function termsAction() : Response
+	public function termsAction( \Twig\Environment $twig ) : Response
 	{
-		return $this->render( '@AimeosShop/Page/terms.html.twig' );
+		return $twig->render( '@AimeosShop/Page/terms.html.twig' );
 	}
 }
