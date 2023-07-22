@@ -246,10 +246,8 @@ class Context
 		if( ( $token = $context->session()->get( 'token' ) ) === null )
 		{
 			$requestStack = $this->container->get( 'request_stack' );
-
-			if( $requestStack->getCurrentRequest() ) {
-				$context->session()->set( 'token', $token = $requestStack->getSession()->getId() );
-			}
+			$token = $requestStack->getCurrentRequest() ? $requestStack->getSession()->getId() : '';
+			$context->session()->set( 'token', $token );
 		}
 
 		return $context->setToken( $token );
