@@ -11,7 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
@@ -20,28 +20,27 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @package symfony
  * @subpackage Controller
  */
-class BasketController extends Controller
+class BasketController extends AbstractController
 {
 	/**
 	 * Returns the html for the standard basket page.
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function indexAction() : Response
+	public function indexAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['basket-index'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Basket/index.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'no-store, max-age=0' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Basket/index.html.twig', $params ),
+			200, ['Cache-Control' => 'no-store, , max-age=0']
+		);
 	}
-
-
 }
