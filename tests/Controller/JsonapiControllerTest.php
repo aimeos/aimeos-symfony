@@ -98,7 +98,7 @@ class JsonapiControllerTest extends WebTestCase
 	public function testGetProductAction()
 	{
 
-		$params = ['filter' => ['f_search' => 'Cafe Noire Cap']];
+		$params = ['filter' => ['f_search' => 'Cafe Noire Cap'], 'sort' => 'product.code'];
 		$this->client->request( 'GET', '/unittest/de/EUR/jsonapi/product', $params );
 		$response = $this->client->getResponse();
 
