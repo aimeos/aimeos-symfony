@@ -38,7 +38,7 @@ class AppKernel extends Kernel
 	 */
 	public function getCacheDir() : string
 	{
-		return sys_get_temp_dir() . '/aimeos-symfony/cache';
+		return __DIR__ . '/var/cache';
 	}
 
 
@@ -47,6 +47,6 @@ class AppKernel extends Kernel
 	 */
 	public function getLogDir() : string
 	{
-		return sys_get_temp_dir() . '/aimeos-symfony/logs';
+		return __DIR__ . '/var/logs';
 	}
 }
