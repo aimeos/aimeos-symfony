@@ -193,14 +193,6 @@ client:
             target: aimeos_shop_jsonapi_options
 
 controller:
-    common:
-        media:
-            # Mime icon related settings
-            mimeicon:
-                # Directory where icons for the mime types stored. Must be relative to the path in "basedir"
-                directory: bundles/aimeosshop/mimeicons
-                # File extension of mime type icons
-                extension: .png
 
 i18n:
 
