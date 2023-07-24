@@ -121,26 +121,21 @@ class ScriptHandler
 	 */
 	protected static function executeCommand( Event $event, string $cmd, array $options = [] )
 	{
-		$php = escapeshellarg( self::getPhp() );
-		$console = escapeshellarg( self::getConsoleDir( $event ) . '/console' );
-		$cmd = escapeshellarg( $cmd );
-
-		foreach( $options as $key => $option ) {
-			$options[$key] = escapeshellarg( $option );
-		}
+		$php = self::getPhp();
+		$console = self::getConsoleDir( $event ) . '/console';
 
 		if( $event->getIO()->isDecorated() ) {
-			$console .= ' --ansi';
+			$options[] = '--ansi';
 		}
 
-		$process = new Process( $php . ' ' . $console . ' ' . $cmd . ' ' . implode( ' ', $options ), null, null, null, 3600 );
+		$process = new Process( [$php, $console, $cmd, ...$options], null, null, null, null );
 
 		$process->run( function( $type, $buffer ) use ( $event ) {
 			$event->getIO()->write( $buffer, false );
 		} );
 
 		if( !$process->isSuccessful() ) {
-			throw new \RuntimeException( sprintf( 'An error occurred when executing the "%s" command', escapeshellarg( $cmd ) ) );
+			throw new \RuntimeException( sprintf( 'An error occurred when executing the "%s" command', $cmd ) );
 		}
 	}
 
