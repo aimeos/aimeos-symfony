@@ -87,8 +87,7 @@ class ScriptHandler
 		$webdir = ( isset( $options['symfony-web-dir'] ) ? $options['symfony-web-dir'] : 'public' );
 
 		self::createDirectory( $securedir . '/secure' );
-		self::createDirectory( $webdir . '/preview' );
-		self::createDirectory( $webdir . '/files' );
+		self::createDirectory( $webdir . '/aimeos' );
 
 		self::join( $event );
 	}
