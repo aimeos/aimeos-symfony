@@ -1,5 +1,5 @@
 .phpunit.result.cache
 coveralls.json
 coverage.xml
+tests/Fixtures/var/
 vendor/
-ext/
