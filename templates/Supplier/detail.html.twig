@@ -9,17 +9,25 @@
     {{ (aiheader['catalog/lists'] ?? '')|raw }}
 {% endblock %}
 
-{% block aimeos_nav %}
-    {{ aibody['catalog/tree']|raw }}
-    {{ aibody['catalog/search']|raw }}
-{% endblock %}
-
-{% block aimeos_head %}
-    {{ (aibody['locale/select'] ?? '')|raw }}
+{% block aimeos_head_basket %}
     {{ (aibody['basket/mini'] ?? '')|raw }}
 {% endblock %}
 
+{% block aimeos_head_nav %}
+    {{ (aibody['catalog/tree'] ?? '')|raw }}
+{% endblock %}
+
+{% block aimeos_head_locale %}
+    {{ (aibody['locale/select'] ?? '')|raw }}
+{% endblock %}
+
+{% block aimeos_head_search %}
+    {{ (aibody['catalog/search'] ?? '')|raw }}
+{% endblock %}
+
 {% block aimeos_body %}
-    {{ (aibody['supplier/detail'] ?? '')|raw }}
-    {{ (aibody['catalog/lists'] ?? '')|raw }}
+    <div class="container-fluid">
+        {{ (aibody['supplier/detail'] ?? '')|raw }}
+        {{ (aibody['catalog/lists'] ?? '')|raw }}
+    </div>
 {% endblock %}

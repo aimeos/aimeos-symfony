@@ -4,33 +4,35 @@
     {{ (aiheader['locale/select'] ?? '' )|raw }}
     {{ (aiheader['basket/mini'] ?? '' )|raw }}
     {{ (aiheader['catalog/search'] ?? '' )|raw }}
+    {{ (aiheader['catalog/filter'] ?? '' )|raw }}
     {{ (aiheader['catalog/tree'] ?? '' )|raw }}
-    {{ (aiheader['catalog/price'] ?? '' )|raw }}
-    {{ (aiheader['catalog/supplier'] ?? '' )|raw }}
-    {{ (aiheader['catalog/attribute'] ?? '' )|raw }}
     {{ (aiheader['catalog/stage'] ?? '' )|raw }}
+    {{ (aiheader['catalog/session'] ?? '' )|raw }}
     {{ (aiheader['catalog/lists'] ?? '' )|raw }}
 {% endblock %}
 
-{% block aimeos_head %}
-    {{ (aibody['locale/select'] ?? '' )|raw }}
+{% block aimeos_head_basket %}
     {{ (aibody['basket/mini'] ?? '' )|raw }}
 {% endblock %}
 
-{% block aimeos_nav %}
+{% block aimeos_head_locale %}
+    {{ (aibody['locale/select'] ?? '' )|raw }}
+{% endblock %}
+
+{% block aimeos_head_nav %}
     {{ (aibody['catalog/tree'] ?? '' )|raw }}
+{% endblock %}
+
+{% block aimeos_head_search %}
     {{ (aibody['catalog/search'] ?? '' )|raw }}
 {% endblock %}
 
 {% block aimeos_body %}
+    {{ (aibody['catalog/stage'] ?? '' )|raw }}
     <div class="container-fluid">
         <div class="row">
             <aside class="col-lg-3">
-                <div class="catalog-filter-group">
-                    {{ (aibody['catalog/price'] ?? '' )|raw }}
-                    {{ (aibody['catalog/supplier'] ?? '' )|raw }}
-                    {{ (aibody['catalog/attribute'] ?? '' )|raw }}
-                </div>
+                {{ (aibody['catalog/filter'] ?? '' )|raw }}
                 {{ (aibody['catalog/session'] ?? '' )|raw }}
             </aside>
             <div class="col-lg-9">

@@ -28,17 +28,18 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbar-top">
-				{% block aimeos_nav %}{% endblock %}
+				{% block aimeos_head_nav %}{% endblock %}
 			</div>
 
-			{% block aimeos_head %}{% endblock %}
+			{% block aimeos_head_locale %}{% endblock %}
+			{% block aimeos_head_search %}{% endblock %}
+			{% block aimeos_head_basket %}{% endblock %}
 		</nav>
 
 		<div class="content">
 	        {% block aimeos_stage %}{% endblock %}
 			<main>
 	            {% block aimeos_body %}{% endblock %}
-	            {% block content %}{% endblock %}
 			</main>
 		</div>
 

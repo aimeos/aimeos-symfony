@@ -10,19 +10,22 @@
     {{ (aiheader['basket/related'] ?? '')|raw }}
 {% endblock %}
 
-{% block aimeos_head %}
+{% block aimeos_head_nav %}
+    {{ (aibody['catalog/tree'] ?? '')|raw }}
+{% endblock %}
+
+{% block aimeos_head_locale %}
     {{ (aibody['locale/select'] ?? '')|raw }}
 {% endblock %}
 
-{% block aimeos_nav %}
-    {{ (aibody['catalog/tree'] ?? '')|raw }}
+{% block aimeos_head_search %}
     {{ (aibody['catalog/search'] ?? '')|raw }}
 {% endblock %}
 
 {% block aimeos_body %}
-    <div class="container">
-        {{ (aibody['basket/bulk'] ?? '')|raw }}
+    <div class="container-fluid">
         {{ (aibody['basket/standard'] ?? '')|raw }}
+        {{ (aibody['basket/bulk'] ?? '')|raw }}
         {{ (aibody['basket/related'] ?? '')|raw }}
     </div>
 {% endblock %}

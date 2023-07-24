@@ -7,6 +7,7 @@
     {{ (aiheader['account/profile'] ?? '')|raw }}
     {{ (aiheader['account/review'] ?? '')|raw }}
     {{ (aiheader['account/subscription'] ?? '')|raw }}
+    {{ (aiheader['account/basket'] ?? '')|raw }}
     {{ (aiheader['account/history'] ?? '')|raw }}
     {{ (aiheader['account/favorite'] ?? '')|raw }}
     {{ (aiheader['account/watch'] ?? '')|raw }}
@@ -15,13 +16,19 @@
     {{ (aiheader['catalog/tree'] ?? '')|raw }}
 {% endblock %}
 
-{% block aimeos_head %}
-    {{ (aibody['locale/select'] ?? '')|raw }}
+{% block aimeos_head_basket %}
     {{ (aibody['basket/mini'] ?? '')|raw }}
 {% endblock %}
 
 {% block aimeos_nav %}
     {{ (aibody['catalog/tree'] ?? '')|raw }}
+{% endblock %}
+
+{% block aimeos_head_locale %}
+    {{ (aibody['locale/select'] ?? '')|raw }}
+{% endblock %}
+
+{% block aimeos_search %}
     {{ (aibody['catalog/search'] ?? '')|raw }}
 {% endblock %}
 
@@ -30,6 +37,7 @@
         {{ (aibody['account/profile'] ?? '')|raw }}
         {{ (aibody['account/review'] ?? '')|raw }}
         {{ (aibody['account/subscription'] ?? '')|raw }}
+        {{ (aibody['account/basket'] ?? '')|raw }}
         {{ (aibody['account/history'] ?? '')|raw }}
         {{ (aibody['account/favorite'] ?? '')|raw }}
         {{ (aibody['account/watch'] ?? '')|raw }}

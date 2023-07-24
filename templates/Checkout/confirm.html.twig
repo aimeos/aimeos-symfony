@@ -7,13 +7,16 @@
     {{ aiheader['catalog/tree']|raw }}
  {% endblock %}
 
- {% block aimeos_nav %}
-    {{ aibody['catalog/tree']|raw }}
-    {{ aibody['catalog/search']|raw }}
- {% endblock %}
+{% block aimeos_head_nav %}
+    {{ (aibody['catalog/tree'] ?? '')|raw }}
+{% endblock %}
 
- {% block aimeos_body %}
-    <div class="container">
+{% block aimeos_head_search %}
+    {{ (aibody['catalog/search'] ?? '')|raw }}
+{% endblock %}
+
+{% block aimeos_body %}
+    <div class="container-fluid">
         {{ aibody['checkout/confirm']|raw }}
     </div>
- {% endblock %}
+{% endblock %}

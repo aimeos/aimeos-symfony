@@ -8,18 +8,22 @@
     {{ (aiheader['catalog/session'] ?? '' )|raw }}
 {% endblock %}
 
-{% block aimeos_head %}
-    {{ (aibody['locale/select'] ?? '' )|raw }}
+{% block aimeos_head_basket %}
     {{ (aibody['basket/mini'] ?? '' )|raw }}
 {% endblock %}
 
-{% block aimeos_nav %}
+{% block aimeos_head_nav %}
+    {{ (aibody['locale/select'] ?? '' )|raw }}
+{% endblock %}
+
+{% block aimeos_head_locale %}
     {{ (aibody['catalog/tree'] ?? '' )|raw }}
+{% endblock %}
+
+{% block aimeos_head_search %}
     {{ (aibody['catalog/search'] ?? '' )|raw }}
 {% endblock %}
 
 {% block aimeos_body %}
-    <div class="container-xl">
-        {{ (aibody['catalog/session'] ?? '' )|raw }}
-    </div>
+    {{ (aibody['catalog/session'] ?? '' )|raw }}
 {% endblock %}
