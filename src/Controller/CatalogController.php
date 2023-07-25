@@ -11,7 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
@@ -20,28 +20,31 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @package symfony
  * @subpackage Controller
  */
-class CatalogController extends Controller
+class CatalogController extends AbstractController
 {
 	/**
 	 * Returns the view for the XHR response with the counts for the facetted search.
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function countAction() : Response
+	public function countAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-count'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Catalog/count.html.twig', $params );
-		$response->headers->set( 'Content-Type', 'application/javascript' );
-		$response->headers->set( 'Cache-Control', 'public, max-age=300' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Catalog/count.html.twig', $params ),
+			200, [
+				'Content-Type' => 'application/javascript',
+				'Cache-Control' => 'public, max-age=300'
+			]
+		);
 	}
 
 
@@ -50,20 +53,21 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function detailAction() : Response
+	public function detailAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-detail'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Catalog/detail.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'private, max-age=10' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Catalog/detail.html.twig', $params ),
+			200, ['Cache-Control' => 'private, max-age=10']
+		);
 	}
 
 
@@ -72,20 +76,21 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function listAction() : Response
+	public function listAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-list'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Catalog/list.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'private, max-age=10' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Catalog/list.html.twig', $params ),
+			200, ['Cache-Control' => 'private, max-age=10']
+		);
 	}
 
 
@@ -94,20 +99,21 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function homeAction() : Response
+	public function homeAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-home'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Catalog/home.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'private, max-age=10' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Catalog/home.html.twig', $params ),
+			200, ['Cache-Control' => 'private, max-age=10']
+		);
 	}
 
 
@@ -116,20 +122,21 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function treeAction() : Response
+	public function treeAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-tree'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Catalog/tree.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'private, max-age=10' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Catalog/tree.html.twig', $params ),
+			200, ['Cache-Control' => 'private, max-age=10']
+		);
 	}
 
 
@@ -138,20 +145,21 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function sessionAction() : Response
+	public function sessionAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-session'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Catalog/session.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'private, max-age=10' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Catalog/session.html.twig', $params ),
+			200, ['Cache-Control' => 'private, max-age=10']
+		);
 	}
 
 
@@ -160,21 +168,21 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function stockAction() : Response
+	public function stockAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-stock'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Catalog/stock.html.twig', $params );
-		$response->headers->set( 'Content-Type', 'application/javascript' );
-		$response->headers->set( 'Cache-Control', 'public, max-age=30' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Catalog/stock.html.twig', $params ),
+			200, ['Cache-Control' => 'public, max-age=30']
+		);
 	}
 
 
@@ -183,22 +191,23 @@ class CatalogController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function suggestAction() : Response
+	public function suggestAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['catalog-suggest'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Catalog/suggest.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'private, max-age=300' );
-		$response->headers->set( 'Content-Type', 'application/json' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Catalog/suggest.html.twig', $params ),
+			200, [
+				'Content-Type' => 'application/json',
+				'Cache-Control' => 'private, max-age=300'
+			]
+		);
 	}
-
-
 }
