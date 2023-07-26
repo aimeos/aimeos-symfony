@@ -52,14 +52,8 @@ fos_user:
     from_email:
         address: "me@example.com"
         sender_name: "Test shop"
-```
-
-Also add these lines to your existing `./config/packages/framework.yaml` file:
-
-```yaml
-    templating:
-        engines:
-            twig
+    service:
+        mailer: 'fos_user.mailer.noop'
 ```
 
 The Aimeos components have to be configured as well to get authentication working correctly.
@@ -87,7 +81,7 @@ To configure the Aimeos routing, create the file `./config/routes/aimeos_shop.ya
 
 ```yaml
 aimeos_shop:
-    resource: "@AimeosShopBundle/Resources/config/routing.yml"
+    resource: "@AimeosShopBundle/config/routing.yaml"
 ```
 
 The same applies for the FosUser bundle. Create the file `./config/routes/fos_user.yaml` containing:
@@ -117,18 +111,6 @@ If you want to use a database server other than MySQL, please have a look into t
 [supported database servers](https://aimeos.org/docs/latest/infrastructure/databases/)
 and their specific configuration.
 
-Symfony 4 uses an in-memory mail spooler by default which collects the e-mails and send them
-at the end. This can be problematic if there's an error because you e.g. forgot to add a
-sender address and all e-mail gets lost. The settings for sending e-mails immediately in
-`./config/packages/swiftmailer.yaml` are:
-
-```yaml
-swiftmailer:
-    url: '%env(MAILER_URL)%'
-    sender_address: <your@domain.com>
-#    spool: { type: 'memory' }
-```
-
 If you don't use Sendmail but SMTP for sending e-mails, you have to adapt the `MAILER_URL`
 configuration in your `.env` file, e.g.:
 
@@ -142,8 +124,8 @@ Then add these lines to your `composer.json` of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2021.10",
-        "friendsofsymfony/user-bundle": "^2.2.2",
+        "aimeos/aimeos-symfony": "~2023.10",
+        "friendsofsymfony/user-bundle": "^3.2",
         ...
     },
     "scripts": {
@@ -194,9 +176,9 @@ setup in `./config/packages/security.yaml` should look like this one:
 security:
     providers:
         aimeos:
-            entity: { class: AimeosShopBundle:FosUser, property: username }
+            entity: { class: Aimeos\ShopBundle\Entity\User, property: username }
 
-    encoders:
+    password_hashers:
         Aimeos\ShopBundle\Entity\FosUser: bcrypt
 
     firewalls:
