@@ -11,7 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
@@ -20,27 +20,28 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @package symfony
  * @subpackage Controller
  */
-class CheckoutController extends Controller
+class CheckoutController extends AbstractController
 {
 	/**
 	 * Returns the html for the checkout confirmation page.
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function confirmAction() : Response
+	public function confirmAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['checkout-confirm'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Checkout/confirm.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'no-store, max-age=0' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Checkout/confirm.html.twig', $params ),
+			200, ['Cache-Control' => 'no-store, , max-age=0']
+		);
 	}
 
 
@@ -49,20 +50,21 @@ class CheckoutController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function indexAction() : Response
+	public function indexAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['checkout-index'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Checkout/index.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'no-store, max-age=0' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Checkout/index.html.twig', $params ),
+			200, ['Cache-Control' => 'no-store, , max-age=0']
+		);
 	}
 
 
@@ -71,21 +73,20 @@ class CheckoutController extends Controller
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function updateAction() : Response
+	public function updateAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['checkout-update'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Checkout/update.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'no-store, max-age=0' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Checkout/update.html.twig', $params ),
+			200, ['Cache-Control' => 'no-store, , max-age=0']
+		);
 	}
-
-
 }

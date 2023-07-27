@@ -11,7 +11,7 @@
 namespace Aimeos\ShopBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
@@ -20,27 +20,28 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @package symfony
  * @subpackage Controller
  */
-class AccountController extends Controller
+class AccountController extends AbstractController
 {
 	/**
 	 * Returns the html for the "My account" page.
 	 *
 	 * @return Response Response object containing the generated output
 	 */
-	public function indexAction() : Response
+	public function indexAction( \Twig\Environment $twig ) : Response
 	{
 		$params = [];
 		$shop = $this->container->get( 'shop' );
 
 		foreach( $this->container->getParameter( 'aimeos_shop.page' )['account-index'] as $name )
 		{
-			$params['aiheader'][$name] = $shop->get( $name )->getHeader();
-			$params['aibody'][$name] = $shop->get( $name )->getBody();
+			$params['aiheader'][$name] = $shop->get( $name )->header();
+			$params['aibody'][$name] = $shop->get( $name )->body();
 		}
 
-		$response = $this->render( '@AimeosShop/Account/index.html.twig', $params );
-		$response->headers->set( 'Cache-Control', 'no-store, , max-age=0' );
-		return $response;
+		return new Response(
+			$twig->render( '@AimeosShop/Account/index.html.twig', $params ),
+			200, ['Cache-Control' => 'no-store, , max-age=0']
+		);
 	}
 
 
@@ -51,7 +52,7 @@ class AccountController extends Controller
 	 */
 	public function downloadAction() : Response
 	{
-		$response = $this->container->get( 'shop' )->get( 'account/download' )->getView()->response();
+		$response = $this->container->get( 'shop' )->get( 'account/download' )->view()->response();
 		return new Response( (string) $response->getBody(), $response->getStatusCode(), $response->getHeaders() );
 	}
 }
