@@ -49,9 +49,9 @@ resource:
         baseurl: "/mimeicons"
     fs-theme:
         adapter: Standard
-        basedir: "%kernel.project_dir%/public/theme"
+        basedir: "%kernel.project_dir%/public/bundles/aimeosshop/themes"
         tempdir: "%kernel.cache_dir%"
-        baseurl: "/theme"
+        baseurl: "/bundles/aimeosshop/themes"
     fs-admin:
         adapter: Standard
         basedir: "%kernel.cache_dir%/../admin"
