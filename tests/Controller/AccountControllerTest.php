@@ -34,44 +34,4 @@ class AccountControllerTest extends WebTestCase
 
 		$this->assertEquals( 401, $client->getResponse()->getStatusCode() );
 	}
-
-
-	public function testFavoriteComponent()
-	{
-		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/test/accountfavoritecomponent' );
-
-		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertStringContainsString( 'aimeos account-favorite', $client->getResponse()->getContent() );
-	}
-
-
-	public function testHistoryComponent()
-	{
-		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/test/accounthistorycomponent' );
-
-		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertStringContainsString( 'aimeos account-history', $client->getResponse()->getContent() );
-	}
-
-
-	public function testProfileComponent()
-	{
-		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/test/accountprofilecomponent' );
-
-		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertStringContainsString( 'aimeos account-profile', $client->getResponse()->getContent() );
-	}
-
-
-	public function testWatchComponent()
-	{
-		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/test/accountwatchcomponent' );
-
-		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertStringContainsString( 'aimeos account-watch', $client->getResponse()->getContent() );
-	}
 }

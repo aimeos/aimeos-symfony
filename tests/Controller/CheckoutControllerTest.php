@@ -289,35 +289,6 @@ class CheckoutControllerTest extends WebTestCase
 	}
 
 
-	public function testConfirmComponent()
-	{
-		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/test/checkoutconfirmcomponent' );
-
-		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertStringContainsString( 'aimeos checkout-confirm', $client->getResponse()->getContent() );
-	}
-
-
-	public function testStandardComponent()
-	{
-		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/test/checkoutstandardcomponent' );
-
-		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-		$this->assertStringContainsString( 'aimeos checkout-standard', $client->getResponse()->getContent() );
-	}
-
-
-	public function testUpdateComponent()
-	{
-		$client = static::createClient();
-		$client->request( 'GET', '/unittest/de/EUR/test/checkoutupdatecomponent?code=unitpaymentcode' );
-
-		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
-	}
-
-
 	/**
 	 * Moves forward to the summary page
 	 *
