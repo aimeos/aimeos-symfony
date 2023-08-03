@@ -8,8 +8,9 @@
 
 namespace Aimeos\ShopBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 
 /**
@@ -18,7 +19,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name: "fos_user",uniqueConstraints={@ORM\UniqueConstraint(name: "unq_fosus_username",columns={"username_canonical"}),@ORM\UniqueConstraint(name: "unq_fosus_confirmtoken",columns={"confirmation_token"}),@ORM\UniqueConstraint(name: "unq_fosus_email",columns={"email_canonical"})},indexes={@ORM\Index(name: "idx_fosus_langid", columns={"langid"}),@ORM\Index(name: "idx_fosus_last_first", columns={"lastname", "firstname"}),@ORM\Index(name: "idx_fosus_post_addr1", columns={"postal", "address1"}),@ORM\Index(name: "idx_fosus_post_city", columns={"postal", "city"}),@ORM\Index(name: "idx_fosus_lastname", columns={"lastname"}),@ORM\Index(name: "idx_fosus_address1", columns={"address1"}),@ORM\Index(name: "idx_fosus_city", columns={"city"})})
  */
-class FosUser extends BaseUser
+class FosUser extends BaseUser implements PasswordAuthenticatedUserInterface
 {
 	/**
 	 * @ORM\Id
@@ -187,15 +188,6 @@ class FosUser extends BaseUser
 	public function getSiteId() : ?string
 	{
 		return $this->siteid;
-	}
-
-
-	/**
-	 * @inheritDoc
-	 */
-	public function getSalt() : ?string
-	{
-		return $this->salt;
 	}
 
 

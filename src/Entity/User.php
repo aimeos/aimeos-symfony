@@ -206,15 +206,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 	/**
 	 * @inheritDoc
 	 */
-	public function getSalt() : ?string
-	{
-		return 'mshop';
-	}
-
-
-	/**
-	 * @inheritDoc
-	 */
 	public function getPassword() : ?string
 	{
 		return $this->password;
@@ -244,7 +235,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 			'id' => $this->id,
 			'username' => $this->username,
 			'password' => $this->password,
-		);
+		) + parent::__serialize();
 	}
 
 
@@ -253,5 +244,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 		$this->id = $data['id'] ?? null;
 		$this->username = $data['username'] ?? null;
 		$this->password = $data['password'] ?? null;
+
+		parent::__unserialize( $data );
 	}
 }
