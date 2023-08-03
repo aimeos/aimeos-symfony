@@ -154,11 +154,6 @@ client:
             tree:
                 url:
                     target: aimeos_shop_tree
-        common:
-            content:
-                baseurl: /
-            template:
-                baseurl: bundles/aimeosshop/elegance
         basket:
             standard:
                 url:
