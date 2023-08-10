@@ -14,142 +14,144 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 
 /**
- * Aimeos\ShopBundle\Entity\FosUser
- *
  * @ORM\Entity
- * @ORM\Table(name: "fos_user",uniqueConstraints={@ORM\UniqueConstraint(name: "unq_fosus_username",columns={"username_canonical"}),@ORM\UniqueConstraint(name: "unq_fosus_confirmtoken",columns={"confirmation_token"}),@ORM\UniqueConstraint(name: "unq_fosus_email",columns={"email_canonical"})},indexes={@ORM\Index(name: "idx_fosus_langid", columns={"langid"}),@ORM\Index(name: "idx_fosus_last_first", columns={"lastname", "firstname"}),@ORM\Index(name: "idx_fosus_post_addr1", columns={"postal", "address1"}),@ORM\Index(name: "idx_fosus_post_city", columns={"postal", "city"}),@ORM\Index(name: "idx_fosus_lastname", columns={"lastname"}),@ORM\Index(name: "idx_fosus_address1", columns={"address1"}),@ORM\Index(name: "idx_fosus_city", columns={"city"})})
+ * @ORM\Table("fos_user")
  */
 class FosUser extends BaseUser implements PasswordAuthenticatedUserInterface
 {
 	/**
 	 * @ORM\Id
-	 * @ORM\Column(type: "integer")
-	 * @ORM\GeneratedValue(strategy: "AUTO")
+	 * @ORM\Column("id")
 	 */
 	protected $id;
 
 	/**
-	 * @ORM\Column(name: "siteid", type: "string", length=255)
+	 * @ORM\Column("siteid")
 	 */
 	protected $siteid;
 
 	/**
-	 * @ORM\Column(name: "salutation", type: "string", length=8)
+	 * @ORM\Column("salutation")
 	 */
 	protected $salutation = '';
 
 	/**
-	 * @ORM\Column(name: "company", type: "string", length=100)
+	 * @ORM\Column("company")
 	 */
 	protected $company = '';
 
 	/**
-	 * @ORM\Column(name: "vatid", type: "string", length=32)
+	 * @ORM\Column("vatid")
 	 */
 	protected $vatid = '';
 
 	/**
-	 * @ORM\Column(name: "title", type: "string", length=64)
+	 * @ORM\Column("title")
 	 */
 	protected $title = '';
 
 	/**
-	 * @ORM\Column(name: "firstname", type: "string", length=64)
+	 * @ORM\Column("firstname")
 	 */
 	protected $firstname = '';
 
 	/**
-	 * @ORM\Column(name: "lastname", type: "string", length=64)
+	 * @ORM\Column("lastname")
 	 */
 	protected $lastname = '';
 
 	/**
-	 * @ORM\Column(name: "address1", type: "string", length=200)
+	 * @ORM\Column("address1")
 	 */
 	protected $address1 = '';
 
 	/**
-	 * @ORM\Column(name: "address2", type: "string", length=200)
+	 * @ORM\Column("address2")
 	 */
 	protected $address2 = '';
 
 	/**
-	 * @ORM\Column(name: "address3", type: "string", length=200)
+	 * @ORM\Column("address3")
 	 */
 	protected $address3 = '';
 
 	/**
-	 * @ORM\Column(name: "postal", type: "string", length=16)
+	 * @ORM\Column("postal")
 	 */
 	protected $postal = '';
 
 	/**
-	 * @ORM\Column(name: "city", type: "string", length=200)
+	 * @ORM\Column("city")
 	 */
 	protected $city = '';
 
 	/**
-	 * @ORM\Column(name: "state", type: "string", length=200)
+	 * @ORM\Column("state")
 	 */
 	protected $state = '';
 
 	/**
-	 * @ORM\Column(name: "langid", type: "string", length=5, nullable=true)
+	 * @ORM\Column("langid")
 	 */
-	protected $langid = '';
+	protected $langid = null;
 
 	/**
-	 * @ORM\Column(name: "countryid", type: "string", length=2, nullable=true, options={"fixed" = true})
+	 * @ORM\Column("countryid")
 	 */
-	protected $countryid = '';
+	protected $countryid = null;
 
 	/**
-	 * @ORM\Column(name: "telephone", type: "string", length=32)
+	 * @ORM\Column("telephone")
 	 */
 	protected $telephone = '';
 
 	/**
-	 * @ORM\Column(name: "telefax", type: "string", length=32)
+	 * @ORM\Column("telefax")
 	 */
 	protected $telefax = '';
 
 	/**
-	 * @ORM\Column(name: "website", type: "string", length=255)
+	 * @ORM\Column("mobile")
+	 */
+	protected $mobile = '';
+
+	/**
+	 * @ORM\Column("website")
 	 */
 	protected $website = '';
 
 	/**
-	 * @ORM\Column(name: "longitude", type: "decimal", precision=8, scale=6, nullable=true)
+	 * @ORM\Column("longitude")
 	 */
 	protected $longitude;
 
 	/**
-	 * @ORM\Column(name: "latitude", type: "decimal", precision=8, scale=6, nullable=true)
+	 * @ORM\Column("latitude")
 	 */
 	protected $latitude;
 
 	/**
-	 * @ORM\Column(name: "birthday", type: "date", nullable=true)
+	 * @ORM\Column("birthday")
 	 */
 	protected $birthday;
 
 	/**
-	 * @ORM\Column(name: "vdate", type: "date", nullable=true)
+	 * @ORM\Column("vdate")
 	 */
 	protected $vdate;
 
 	/**
-	 * @ORM\Column(name: "ctime", type: "datetime", nullable=true)
+	 * @ORM\Column("ctime")
 	 */
 	protected $ctime;
 
 	/**
-	 * @ORM\Column(name: "mtime", type: "datetime", nullable=true)
+	 * @ORM\Column("mtime")
 	 */
 	protected $mtime;
 
 	/**
-	 * @ORM\Column(name: "editor", type: "string", length=255)
+	 * @ORM\Column("editor")
 	 */
 	protected $editor = '';
 
@@ -540,6 +542,28 @@ class FosUser extends BaseUser implements PasswordAuthenticatedUserInterface
 	public function setTelefax( string $telefax )
 	{
 		$this->telefax = $telefax;
+	}
+
+
+	/**
+	 * Returns the mobile number.
+	 *
+	 * @return string Mobile number
+	 */
+	public function getMobile() : string
+	{
+		return (string) $this->mobile;
+	}
+
+
+	/**
+	 * Sets a new mobile number.
+	 *
+	 * @param string $mobile New mobile number
+	 */
+	public function setMobile( string $mobile )
+	{
+		$this->mobile = $mobile;
 	}
 
 

@@ -14,167 +14,164 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 
 /**
- * Aimeos\ShopBundle\Entity\User
- *
  * @ORM\Entity
- * @ORM\Table(name="mshop_customer",uniqueConstraints={@ORM\UniqueConstraint(name="unq_mscus_sid_code",columns={"siteid","code"})},indexes={@ORM\Index(name="idx_mscus_sid_langid", columns={"siteid", "langid"}),@ORM\Index(name="idx_mscus_sid_last_first", columns={"siteid", "lastname", "firstname"}),@ORM\Index(name="idx_mscus_sid_post_addr1", columns={"siteid", "postal", "address1"}),@ORM\Index(name="idx_mscus_sid_post_city", columns={"siteid", "postal", "city"}),@ORM\Index(name="idx_mscus_sid_city", columns={"siteid", "city"}),@ORM\Index(name="idx_mscus_sid_email", columns={"siteid", "email"})})
+ * @ORM\Table("mshop_customer")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
 	/**
-	 * @ORM\Column(type="integer")
 	 * @ORM\Id
-	 * @ORM\GeneratedValue(strategy="AUTO")
+	 * @ORM\Column("id")
 	 */
 	protected $id;
 
 	/**
-	 * @ORM\Column(name="siteid", type="string", length=255)
+	 * @ORM\Column("siteid")
 	 */
 	protected $siteid;
 
 	/**
-	 * @ORM\Column(type="string", length=255)
+	 * @ORM\Column("label")
 	 */
 	protected $label;
 
 	/**
-	 * @ORM\Column(name="code", type="string", length=255)
+	 * @ORM\Column("code")
 	 */
 	protected $username;
 
 	/**
-	 * @ORM\Column(name="password", type="string", length=255)
+	 * @ORM\Column("password")
 	 */
 	protected $password;
 
 	/**
-	 * @ORM\Column(name="status", type="smallint")
+	 * @ORM\Column("status")
 	 */
 	protected $isActive;
 
 	/**
-	 * @ORM\Column(name="salutation", type="string", length=8)
+	 * @ORM\Column("salutation")
 	 */
 	protected $salutation = '';
 
 	/**
-	 * @ORM\Column(name="company", type="string", length=100)
+	 * @ORM\Column("company")
 	 */
 	protected $company = '';
 
 	/**
-	 * @ORM\Column(name="vatid", type="string", length=32)
+	 * @ORM\Column("vatid")
 	 */
 	protected $vatid = '';
 
 	/**
-	 * @ORM\Column(name="title", type="string", length=64)
+	 * @ORM\Column("title")
 	 */
 	protected $title = '';
 
 	/**
-	 * @ORM\Column(name="firstname", type="string", length=64)
+	 * @ORM\Column("firstname")
 	 */
 	protected $firstname = '';
 
 	/**
-	 * @ORM\Column(name="lastname", type="string", length=64)
+	 * @ORM\Column("lastname")
 	 */
 	protected $lastname = '';
 
 	/**
-	 * @ORM\Column(name="address1", type="string", length=200)
+	 * @ORM\Column("address1")
 	 */
 	protected $address1 = '';
 
 	/**
-	 * @ORM\Column(name="address2", type="string", length=200)
+	 * @ORM\Column("address2")
 	 */
 	protected $address2 = '';
 
 	/**
-	 * @ORM\Column(name="address3", type="string", length=200)
+	 * @ORM\Column("address3")
 	 */
 	protected $address3 = '';
 
 	/**
-	 * @ORM\Column(name="postal", type="string", length=16)
+	 * @ORM\Column("postal")
 	 */
 	protected $postal = '';
 
 	/**
-	 * @ORM\Column(name="city", type="string", length=200)
+	 * @ORM\Column("city")
 	 */
 	protected $city = '';
 
 	/**
-	 * @ORM\Column(name="state", type="string", length=200)
+	 * @ORM\Column("state")
 	 */
 	protected $state = '';
 
 	/**
-	 * @ORM\Column(name="langid", type="string", length=5, nullable=true)
+	 * @ORM\Column("langid")
 	 */
-	protected $langid = '';
+	protected $langid;
 
 	/**
-	 * @ORM\Column(name="countryid", type="string", length=2, nullable=true, options={"fixed" = true})
+	 * @ORM\Column("countryid")
 	 */
-	protected $countryid = '';
+	protected $countryid;
 
 	/**
-	 * @ORM\Column(name="telephone", type="string", length=32)
+	 * @ORM\Column("telephone")
 	 */
 	protected $telephone = '';
 
 	/**
-	 * @ORM\Column(name="telefax", type="string", length=32)
+	 * @ORM\Column("telefax")
 	 */
 	protected $telefax = '';
 
 	/**
-	 * @ORM\Column(name="email", type="string", length=255)
+	 * @ORM\Column("email")
 	 */
 	protected $email = '';
 
 	/**
-	 * @ORM\Column(name="website", type="string", length=255)
+	 * @ORM\Column("website")
 	 */
 	protected $website = '';
 
 	/**
-	 * @ORM\Column(name="longitude", type="decimal", precision=8, scale=6, nullable=true)
+	 * @ORM\Column("longitude")
 	 */
 	protected $longitude;
 
 	/**
-	 * @ORM\Column(name="latitude", type="decimal", precision=8, scale=6, nullable=true)
+	 * @ORM\Column("latitude")
 	 */
 	protected $latitude;
 
 	/**
-	 * @ORM\Column(name="birthday", type="date", nullable=true)
+	 * @ORM\Column("birthday")
 	 */
 	protected $birthday;
 
 	/**
-	 * @ORM\Column(name="vdate", type="date", nullable=true)
+	 * @ORM\Column("vdate")
 	 */
 	protected $vdate;
 
 	/**
-	 * @ORM\Column(name="ctime", type="datetime")
+	 * @ORM\Column("ctime")
 	 */
 	protected $ctime;
 
 	/**
-	 * @ORM\Column(name="mtime", type="datetime")
+	 * @ORM\Column("mtime")
 	 */
 	protected $mtime;
 
 	/**
-	 * @ORM\Column(name="editor", type="string", length=255)
+	 * @ORM\Column("editor")
 	 */
 	protected $editor = '';
 
