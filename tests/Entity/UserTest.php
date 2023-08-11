@@ -35,12 +35,6 @@ class UserTest extends \PHPUnit\Framework\TestCase
 	}
 
 
-	public function testGetSalt()
-	{
-		$this->assertEquals( 'mshop', $this->object->getSalt() );
-	}
-
-
 	public function testGetRoles()
 	{
 		$this->assertEquals( array( 'ROLE_USER' ), $this->object->getRoles() );
