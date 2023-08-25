@@ -165,12 +165,6 @@ class FosUser extends BaseUser implements PasswordAuthenticatedUserInterface
 	}
 
 
-	public function getUserIdentifier() : string
-	{
-		return $this->code;
-	}
-
-
 	/**
 	 * Returns the user unique ID.
 	 *
