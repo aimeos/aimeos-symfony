@@ -176,7 +176,7 @@ setup in `./config/packages/security.yaml` should look like this one:
 security:
     providers:
         aimeos:
-            entity: { class: Aimeos\ShopBundle\Entity\User, property: username }
+            entity: { class: Aimeos\ShopBundle\Entity\FosUser, property: username }
 
     password_hashers:
         Aimeos\ShopBundle\Entity\FosUser: bcrypt
