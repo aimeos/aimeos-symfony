@@ -183,10 +183,8 @@ security:
 
     firewalls:
         aimeos_admin:
-            pattern:   ^/admin
-            anonymous: ~
+            pattern: ^/admin
             provider: aimeos
-            logout_on_user_change: true
             form_login:
                 login_path: /admin
                 check_path: /admin_check
@@ -195,8 +193,7 @@ security:
             form_login:
                 provider: aimeos
                 csrf_token_generator: security.csrf.token_manager
-            logout:       true
-            anonymous:    true
+            logout: true
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
