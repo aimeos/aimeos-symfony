@@ -1,0 +1,151 @@
+/*
+ * Shared CSS between website and e-mails
+ *
+ * @license LGPLv3, https://opensource.org/licenses/LGPL-3.0
+ * @copyright Aimeos (aimeos.org), 2014
+ */
+
+ a {
+	color: #282828;
+}
+
+.logo img {
+	max-width: 300px;
+	margin: auto;
+}
+
+
+li.attr-item {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+
+/* Account creation */
+
+.account-login .btn-primary tr {
+	background: #282828;
+}
+
+
+/* Common summary */
+.common-summary .item {
+	vertical-align: top;
+}
+
+.common-summary .content {
+	padding: 0.5em;
+	margin: 10px;
+}
+
+.common-summary .item h3 {
+	border-bottom: 1px solid #282828;
+	padding: 0.5em;
+	margin: 10px;
+}
+
+.common-summary .item h4 {
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 1em;
+	margin: 0.5em 0;
+	padding: 0;
+}
+
+.common-summary .item li {
+	vertical-align: top;
+	padding: 0;
+}
+
+.common-summary .item .name {
+	padding: 0.25em 0;
+	display: block;
+}
+
+.common-summary .item .value {
+	display: block;
+}
+
+.common-summary .item .attr-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 0.5;
+}
+
+.basket {
+	padding: 10px !important;
+}
+
+.basket th,
+.basket td {
+	vertical-align: middle;
+	padding: 0.5em;
+}
+
+.basket .header {
+	font-weight: bold;
+	background-color: #F6F6F6;
+	border-bottom: 1px solid #CCC;
+}
+
+.basket .body {
+	border-bottom: 1px solid #CCC;
+}
+
+.basket th.label {
+	text-align: start;
+}
+
+.basket td.quantity {
+	white-space: nowrap;
+	text-align: center;
+}
+
+.basket td.price {
+	text-align: end;
+	white-space: nowrap;
+}
+
+.basket .product .product-image {
+	max-height: 150px;
+}
+
+.basket .product .product-name {
+	margin: 0.5em 0;
+	display: block;
+}
+
+.basket .product .code,
+.basket .product .timeframe {
+	margin: 0.5em;
+}
+
+.basket .product .attr-list {
+	vertical-align: top;
+	margin: 0.5em;
+	padding: 0;
+}
+
+.basket .product li.attr-item {
+	display: inline;
+}
+
+.basket .product li.attr-item:not(:last-of-type) .value:after {
+	content: ",";
+}
+
+.basket .footer {
+	vertical-align: bottom;
+}
+
+.basket .subtotal {
+	font-weight: bold;
+}
+
+.basket .total {
+	border-top: 1px solid #CCC;
+	background-color: #F6F6F6;
+	font-weight: bold;
+}
