@@ -9,6 +9,7 @@
 
 namespace Aimeos\ShopBundle\Service;
 
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\DependencyInjection\Container;
 
 
@@ -23,6 +24,7 @@ class Context
 {
 	private static $context;
 	private $container;
+	private $security;
 	private $locale;
 
 
@@ -30,10 +32,12 @@ class Context
 	 * Initializes the context manager object
 	 *
 	 * @param Container $container Container object to access parameters
+	 * @param Security $security Security helper service
 	 */
-	public function __construct( Container $container )
+	public function __construct( Container $container, Security $security )
 	{
 		$this->container = $container;
+		$this->security = $security;
 	}
 
 
@@ -264,17 +268,20 @@ class Context
 	{
 		$username = '';
 
-		if( $this->container->has( 'security.token_storage' )
-			&& ( $token = $this->container->get( 'security.token_storage' )->getToken() ) !== null
-		) {
-			$username = $token->getUser()->getUserIdentifier();
-			$userid = $token->getUser()->getId();
-			$context->setUserId( $userid );
-			$context->setGroupIds( function() use ( $context, $userid )
+		if( $user = $this->security->getUser() )
+		{
+			$username = $user->getUserIdentifier();
+
+			if( method_exists( $user, 'getId' ) )
 			{
-				$manager = \Aimeos\MShop::create( $context, 'customer' );
-				return $manager->get( $userid, array( 'customer/group' ) )->getGroups();
-			} );
+				$userid = $user->getId();
+				$context->setUserId( $userid );
+				$context->setGroupIds( function() use ( $context, $userid )
+				{
+					$manager = \Aimeos\MShop::create( $context, 'customer' );
+					return $manager->get( $userid, array( 'customer/group' ) )->getGroups();
+				} );
+			}
 		}
 
 		if( $username === '' && $this->container->has( 'request_stack' )

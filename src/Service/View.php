@@ -9,6 +9,7 @@
 
 namespace Aimeos\ShopBundle\Service;
 
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\DependencyInjection\Container;
@@ -26,8 +27,8 @@ class View
 {
 	private $requestStack;
 	private $tokenManager;
-	private $tokenStorage;
 	private $container;
+	private $security;
 	private $twig;
 
 
@@ -38,13 +39,13 @@ class View
 	 * @param Container $container Container object to access parameters
 	 */
 	public function __construct( RequestStack $requestStack, Container $container,
-		TokenStorageInterface $tokenStorage, CsrfTokenManagerInterface $tokenManager,
+		Security $security, CsrfTokenManagerInterface $tokenManager,
 		\Twig\Environment $twig )
 	{
 		$this->requestStack = $requestStack;
 		$this->tokenManager = $tokenManager;
-		$this->tokenStorage = $tokenStorage;
 		$this->container = $container;
+		$this->security = $security;
 		$this->twig = $twig;
 	}
 
@@ -91,11 +92,9 @@ class View
 	 */
 	protected function addAccess( \Aimeos\Base\View\Iface $view, \Aimeos\MShop\ContextIface $context )
 	{
-		$token = $this->tokenStorage->getToken();
-
-		if( is_object( $token ) && is_object( $token->getUser() )
-			&& in_array( 'ROLE_SUPER_ADMIN', (array) $token->getUser()->getRoles() ) )
-		{
+		if( ( $user = $this->security->getUser() ) !== null
+			&& in_array( 'ROLE_SUPER_ADMIN', (array) $user->getRoles() )
+		) {
 			$helper = new \Aimeos\Base\View\Helper\Access\All( $view );
 		}
 		else

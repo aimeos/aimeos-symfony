@@ -13,7 +13,7 @@ services:
         public: true
     aimeos.context:
         class: Aimeos\ShopBundle\Service\Context
-        arguments: ["@service_container"]
+        arguments: ["@service_container", "@security.helper"]
         public: true
     aimeos.i18n:
         class: Aimeos\ShopBundle\Service\I18n
@@ -29,7 +29,7 @@ services:
         public: true
     aimeos.view:
         class: Aimeos\ShopBundle\Service\View
-        arguments: ["@request_stack","@service_container", "@security.token_storage", "@security.csrf.token_manager", "@twig"]
+        arguments: ["@request_stack","@service_container", "@security.helper", "@security.csrf.token_manager", "@twig"]
         public: true
     shop:
         class: Aimeos\ShopBundle\Service\Shop
