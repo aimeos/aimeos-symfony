@@ -2,7 +2,7 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014-2016
+ * @copyright Aimeos (aimeos.org), 2014-2023
  * @package symfony
  * @subpackage Service
  */
@@ -10,6 +10,7 @@
 namespace Aimeos\ShopBundle\Service;
 
 use Symfony\Bundle\SecurityBundle\Security;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\DependencyInjection\Container;
 
 
@@ -25,6 +26,7 @@ class Context
 	private static $context;
 	private $container;
 	private $security;
+	private $mailer;
 	private $locale;
 
 
@@ -34,10 +36,11 @@ class Context
 	 * @param Container $container Container object to access parameters
 	 * @param Security $security Security helper service
 	 */
-	public function __construct( Container $container, Security $security )
+	public function __construct( Container $container, Security $security, MailerInterface $mailer )
 	{
 		$this->container = $container;
 		$this->security = $security;
+		$this->mailer = $mailer;
 	}
 
 
@@ -155,8 +158,8 @@ class Context
 	 */
 	protected function addMailer( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
-		$container = $this->container;
-		$mail = new \Aimeos\Base\Mail\Symfony( function() use ( $container ) { return $container->get( 'mailer' ); } );
+		$mailer = $this->mailer;
+		$mail = new \Aimeos\Base\Mail\Symfony( function() use ( $mailer ) { return $mailer; } );
 
 		return $context->setMail( $mail );
 	}

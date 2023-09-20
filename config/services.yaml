@@ -13,7 +13,7 @@ services:
         public: true
     aimeos.context:
         class: Aimeos\ShopBundle\Service\Context
-        arguments: ["@service_container", "@security.helper"]
+        arguments: ["@service_container", "@security.helper", "@mailer"]
         public: true
     aimeos.i18n:
         class: Aimeos\ShopBundle\Service\I18n
