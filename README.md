@@ -29,7 +29,7 @@ customize anything to your needs.
 
 ## Installation
 
-This document is for the latest **Aimeos 2021.10** and **Symfony 4.4**.
+This document is for the latest **Aimeos 2023.10** and **Symfony 6.3+**.
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
