@@ -10,6 +10,9 @@
 	stopOnFailure="false">
 
 	<php>
+		<!-- disable E_USER_DEPRECATED -->
+		<ini name="error_reporting" value="16383"/>
+		<server name="APP_ENV" value="test" force="true" />
 		<server name="KERNEL_DIR" value="./tests/Fixtures" />
 		<server name="KERNEL_CLASS" value="\Aimeos\ShopBundle\Tests\Fixtures\AppKernel" />
 	</php>
