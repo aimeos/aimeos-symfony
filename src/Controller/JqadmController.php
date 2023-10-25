@@ -87,7 +87,7 @@ class JqadmController extends AbstractController
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->batch() ) == '' ) {
-			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
 		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
@@ -107,7 +107,7 @@ class JqadmController extends AbstractController
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->copy() ) == '' ) {
-			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
 		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
@@ -127,7 +127,7 @@ class JqadmController extends AbstractController
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->create() ) == '' ) {
-			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
 		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
@@ -147,7 +147,7 @@ class JqadmController extends AbstractController
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->delete() ) == '' ) {
-			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
 		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
@@ -167,7 +167,7 @@ class JqadmController extends AbstractController
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->export() ) == '' ) {
-			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
 		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
@@ -187,7 +187,7 @@ class JqadmController extends AbstractController
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->get() ) == '' ) {
-			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
 		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
@@ -207,7 +207,7 @@ class JqadmController extends AbstractController
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->save() ) == '' ) {
-			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
 		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
@@ -227,7 +227,7 @@ class JqadmController extends AbstractController
 		$cntl = $this->createAdmin( $request, $site, $resource );
 
 		if( ( $html = $cntl->search() ) == '' ) {
-			return ( new HttpFoundationFactory() )->createResponse( $cntl->getView()->response() );
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
 		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
