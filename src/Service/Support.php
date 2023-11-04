@@ -30,10 +30,10 @@ class Support
 	public function getGroups( \Aimeos\MShop\ContextIface $context )
 	{
 		$list = array();
-		$manager = \Aimeos\MShop::create( $context, 'customer/group' );
+		$manager = \Aimeos\MShop::create( $context, 'group' );
 
 		$search = $manager->filter();
-		$search->setConditions( $search->compare( '==', 'customer.group.id', $context->groups() ) );
+		$search->setConditions( $search->compare( '==', 'group.id', $context->groups() ) );
 
 		return $manager->search( $search )->getCode()->toArray();
 	}
