@@ -277,12 +277,12 @@ class Context
 
 			if( method_exists( $user, 'getId' ) )
 			{
-				$userid = $user->getId();
-				$context->setUserId( $userid );
-				$context->setGroupIds( function() use ( $context, $userid )
-				{
-					$manager = \Aimeos\MShop::create( $context, 'customer' );
-					return $manager->get( $userid, array( 'customer/group' ) )->getGroups();
+				$manager = \Aimeos\MShop::create( $context, 'customer' );
+				$item = $manager->get( $user->getId(), ['group'] );
+
+				$context->setUser( $item );
+				$context->setGroups( function() use ( $item ) {
+					return $item->getGroups();
 				} );
 			}
 		}
