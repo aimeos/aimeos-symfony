@@ -136,8 +136,8 @@ class AccountCommand extends Command
 		$site = $context->locale()->getSiteItem()->getCode();
 		$output->writeln( sprintf( 'Add "%1$s" group to user "%2$s" for site "%3$s"', $group, $user->getCode(), $site ) );
 
-		$groupId = $this->getGroupItem( $context, $group )->getId();
-		return $user->setGroups( array_merge( $user->getGroups(), [$groupId] ) );
+		$item = $this->getGroupItem( $context, $group );
+		return $user->setGroups( array_merge( $user->getGroups(), [$item->getId() => $item->getCode()] ) );
 	}
 
 

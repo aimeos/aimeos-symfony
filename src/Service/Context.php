@@ -277,17 +277,22 @@ class Context
 
 			if( method_exists( $user, 'getId' ) )
 			{
-				$manager = \Aimeos\MShop::create( $context, 'customer' );
-				$item = $manager->get( $user->getId(), ['group'] );
+				try
+				{
+					$userid = $user->getId();
 
-				$context->setUser( $item );
-				$context->setGroups( function() use ( $item ) {
-					return $item->getGroups();
-				} );
+					$context->setUser( function() use ( $context, $userid ) {
+						return \Aimeos\MShop::create( $context, 'customer' )->get( $userid, ['group'] );
+					} );
+
+					$context->setGroups( function() use ( $context ) {
+						return $context->user()?->getGroups() ?? [];
+					} );
+				}
+				catch( \Exception $e ) {} // avoid errors if user is assigned to another site
 			}
 		}
-
-		if( $username === '' && $this->container->has( 'request_stack' )
+		elseif( $this->container->has( 'request_stack' )
 			&& ( $request = $this->container->get( 'request_stack' )->getCurrentRequest() ) !== null
 		) {
 			$username = $request->getClientIp();

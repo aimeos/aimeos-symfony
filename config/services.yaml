@@ -23,10 +23,6 @@ services:
         class: Aimeos\ShopBundle\Service\Locale
         arguments: ["@request_stack","@service_container"]
         public: true
-    aimeos.support:
-        class: Aimeos\ShopBundle\Service\Support
-        arguments: []
-        public: true
     aimeos.view:
         class: Aimeos\ShopBundle\Service\View
         arguments: ["@request_stack","@service_container", "@security.helper", "@security.csrf.token_manager", "@twig"]
