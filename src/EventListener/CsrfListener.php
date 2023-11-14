@@ -51,7 +51,15 @@ class CsrfListener
 			return;
 		}
 
-		$csrfToken = new CsrfToken( '_token', $request->request->get( '_token' ) );
+		$token = '';
+
+		if( $request->request->has( '_token' ) ) {
+			$token = $request->request->get( '_token' );
+		} elseif( $request->query->has( '_token' ) ) {
+			$token = $request->query->get( '_token' );
+		}
+
+		$csrfToken = new CsrfToken( '_token', $token );
 
 		if( !$this->tokenManager->isTokenValid( $csrfToken ) ) {
 			$event->setResponse( new Response( 'Page expired', 419 ) );
