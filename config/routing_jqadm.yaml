@@ -58,6 +58,15 @@ aimeos_shop_jqadm_get:
         site: '[A-Za-z0-9\.\-\_]+'
         locale: '[a-z]{2}(\_[A-Z]{2})?'
 
+aimeos_shop_jqadm_import:
+    path: /import/{resource}
+    controller: Aimeos\ShopBundle\Controller\JqadmController::importAction
+    methods: [POST]
+    requirements:
+        resource: '[a-z\/]+'
+        site: '[A-Za-z0-9\.\-\_]+'
+        locale: '[a-z]{2}(\_[A-Z]{2})?'
+
 aimeos_shop_jqadm_save:
     path: /save/{resource}
     controller: Aimeos\ShopBundle\Controller\JqadmController::saveAction

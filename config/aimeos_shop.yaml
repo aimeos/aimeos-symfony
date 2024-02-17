@@ -90,6 +90,8 @@ admin:
                 target: aimeos_shop_jqadm_export
             get:
                 target: aimeos_shop_jqadm_get
+            import:
+                target: aimeos_shop_jqadm_import
             save:
                 target: aimeos_shop_jqadm_save
             search:

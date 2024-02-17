@@ -195,6 +195,26 @@ class JqadmController extends AbstractController
 
 
 	/**
+	 * Imports the requested resource object
+	 *
+	 * @param Request $request Symfony request object
+	 * @param string $resource Resource location, e.g. "product"
+	 * @param string $site Unique site code
+	 * @return Response Generated output
+	 */
+	public function importAction( Request $request, $resource, $site = 'default' ) : Response
+	{
+		$cntl = $this->createAdmin( $request, $site, $resource );
+
+		if( ( $html = $cntl->import() ) == '' ) {
+			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
+		}
+
+		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
+	}
+
+
+	/**
 	 * Saves a new resource object
 	 *
 	 * @param Request $request Symfony request object
