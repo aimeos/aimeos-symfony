@@ -90,7 +90,7 @@ class JqadmController extends AbstractController
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
-		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
+		return $this->getHtml( (string) $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -110,7 +110,7 @@ class JqadmController extends AbstractController
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
-		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
+		return $this->getHtml( (string) $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -130,7 +130,7 @@ class JqadmController extends AbstractController
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
-		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
+		return $this->getHtml( (string) $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -150,7 +150,7 @@ class JqadmController extends AbstractController
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
-		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
+		return $this->getHtml( (string) $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -170,7 +170,7 @@ class JqadmController extends AbstractController
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
-		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
+		return $this->getHtml( (string) $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -190,7 +190,7 @@ class JqadmController extends AbstractController
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
-		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
+		return $this->getHtml( (string) $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -210,7 +210,7 @@ class JqadmController extends AbstractController
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
-		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
+		return $this->getHtml( (string) $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -230,7 +230,7 @@ class JqadmController extends AbstractController
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
-		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
+		return $this->getHtml( (string) $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -250,7 +250,7 @@ class JqadmController extends AbstractController
 			return ( new HttpFoundationFactory() )->createResponse( $cntl->view()->response() );
 		}
 
-		return $this->getHtml( $html, $request->get( 'locale', 'en' ) );
+		return $this->getHtml( (string) $html, $request->get( 'locale', 'en' ) );
 	}
 
 
@@ -289,9 +289,10 @@ class JqadmController extends AbstractController
 	 * Returns the generated HTML code
 	 *
 	 * @param string $content Content from admin client
+	 * @param string $lang ISO language code
 	 * @return Response View for rendering the output
 	 */
-	protected function getHtml( $content, $lang ) : Response
+	protected function getHtml( string $content, string $lang ) : Response
 	{
 		return new Response( $this->twig->render( '@AimeosShop/Jqadm/index.html.twig', [
 			'content' => $content,
