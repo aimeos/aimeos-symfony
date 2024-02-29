@@ -8,13 +8,12 @@
 
 		<title>Aimeos administration interface</title>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css" />
 {% if localeDir == "rtl" %}
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.rtl.min.css">
+		<link rel="stylesheet" href="{{ path('aimeos_shop_jqadm_file', {'site': 'default', 'name': 'index-rtl-css', 'locale': 'en'}) }}">
 {% else %}
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ path('aimeos_shop_jqadm_file', {'site': 'default', 'name': 'index-ltr-css', 'locale': 'en'}) }}">
 {% endif %}
-		<link rel="stylesheet" href="{{ path('aimeos_shop_jqadm_file', {'site': 'default', 'type': 'css', 'locale': 'en'}) }}">
+		<link rel="stylesheet" href="{{ path('aimeos_shop_jqadm_file', {'site': 'default', 'name': 'index-css', 'locale': 'en'}) }}">
 		<style>
 			body.dark .btn-theme.dark-mode {display:none}
 			body.light .btn-theme.light-mode {display:none}
@@ -32,6 +31,6 @@
 
 {{content|raw}}
 
-		<script type="text/javascript" src="{{ path('aimeos_shop_jqadm_file', {'site': 'default', 'type': 'js', 'locale': 'en'}) }}"></script>
+		<script type="text/javascript" src="{{ path('aimeos_shop_jqadm_file', {'site': 'default', 'name': 'index-js', 'locale': 'en'}) }}"></script>
 	</body>
 </html>

@@ -36,10 +36,10 @@ class JqadmController extends AbstractController
 	/**
 	 * Returns the JS file content
 	 *
-	 * @param $type File type, i.e. "css" or "js"
+	 * @param $name File type, i.e. "index-css" or "index-js"
 	 * @return Response Response object
 	 */
-	public function fileAction( $type ) : Response
+	public function fileAction( $name ) : Response
 	{
 		$contents = '';
 		$files = array();
@@ -51,7 +51,7 @@ class JqadmController extends AbstractController
 			{
 				$jsbAbsPath = $base . '/' . $path;
 				$jsb2 = new \Aimeos\MW\Jsb2\Standard( $jsbAbsPath, dirname( $jsbAbsPath ) );
-				$files = array_merge( $files, $jsb2->getFiles( $type ) );
+				$files = array_merge( $files, $jsb2->getFiles( $name ) );
 			}
 		}
 
@@ -64,9 +64,9 @@ class JqadmController extends AbstractController
 
 		$response = new Response( $contents );
 
-		if( $type === 'js' ) {
+		if( str_ends_with( $name, 'js' ) ) {
 			$response->headers->set( 'Content-Type', 'application/javascript' );
-		} elseif( $type === 'css' ) {
+		} elseif( str_ends_with( $name, 'css' ) ) {
 			$response->headers->set( 'Content-Type', 'text/css' );
 		}
 

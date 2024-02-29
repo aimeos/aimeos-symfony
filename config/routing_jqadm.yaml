@@ -1,5 +1,5 @@
 aimeos_shop_jqadm_file:
-    path: /file/{type}
+    path: /file/{name}/{locale}
     controller: Aimeos\ShopBundle\Controller\JqadmController::fileAction
     methods: [GET]
 
