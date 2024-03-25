@@ -137,7 +137,7 @@ class AccountCommand extends Command
 		$output->writeln( sprintf( 'Add "%1$s" group to user "%2$s" for site "%3$s"', $group, $user->getCode(), $site ) );
 
 		$item = $this->getGroupItem( $context, $group );
-		return $user->setGroups( array_merge( $user->getGroups(), [$item->getId() => $item->getCode()] ) );
+		return $user->setGroups( $user->getGroups() + [$item->getId() => $item->getCode()] );
 	}
 
 
