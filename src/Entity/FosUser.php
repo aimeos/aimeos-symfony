@@ -238,7 +238,7 @@ class FosUser extends BaseUser implements PasswordAuthenticatedUserInterface
 	 */
 	public function getSalutation() : string
 	{
-		return $this->salutation ?? \Aimeos\MShop\Common\Item\Address\Base::SALUTATION_UNKNOWN;
+		return $this->salutation ?? '';
 	}
 
 
