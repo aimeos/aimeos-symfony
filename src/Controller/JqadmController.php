@@ -41,28 +41,17 @@ class JqadmController extends AbstractController
 	 */
 	public function fileAction( $name ) : Response
 	{
-		$contents = '';
-		$files = array();
+		$files = [];
 		$aimeos = $this->container->get( 'aimeos' )->get();
 
 		foreach( $aimeos->getCustomPaths( 'admin/jqadm' ) as $base => $paths )
 		{
-			foreach( $paths as $path )
-			{
-				$jsbAbsPath = $base . '/' . $path;
-				$jsb2 = new \Aimeos\MW\Jsb2\Standard( $jsbAbsPath, dirname( $jsbAbsPath ) );
-				$files = array_merge( $files, $jsb2->getFiles( $name ) );
+			foreach( $paths as $path ) {
+				$files[] = $base . '/' . $path;
 			}
 		}
 
-		foreach( $files as $file )
-		{
-			if( ( $content = file_get_contents( $file ) ) !== false ) {
-				$contents .= $content;
-			}
-		}
-
-		$response = new Response( $contents );
+		$response = new Response( \Aimeos\Admin\JQAdm\Bundle::get( $files, $name ) );
 
 		if( str_ends_with( $name, 'js' ) ) {
 			$response->headers->set( 'Content-Type', 'application/javascript' );
