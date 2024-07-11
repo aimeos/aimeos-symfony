@@ -260,7 +260,7 @@ class JqadmController extends AbstractController
 
 		$context = $this->container->get( 'aimeos.context' )->get( false, 'backend' );
 		$context->setI18n( $this->container->get( 'aimeos.i18n' )->get( array( $lang, 'en' ) ) );
-		$context->setLocale( $this->container->get( 'aimeos.locale' )->getBackend( $context, $site ) );
+		$context->setLocale( $this->container->get( 'aimeos.locale' )->getBackend( $context, $site )->setLanguageId( $lang ) );
 
 		$view = $this->container->get( 'aimeos.view' )->create( $context, $templatePaths, $lang );
 
