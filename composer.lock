@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "cf365191aae55d796fee0c70d44e46ef43cebddd"
+                "reference": "a452fc14d4d335cd61441781ad651ca1ef4af705"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/cf365191aae55d796fee0c70d44e46ef43cebddd",
-                "reference": "cf365191aae55d796fee0c70d44e46ef43cebddd",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/a452fc14d4d335cd61441781ad651ca1ef4af705",
+                "reference": "a452fc14d4d335cd61441781ad651ca1ef4af705",
                 "shasum": ""
             },
             "require": {
@@ -57,7 +57,7 @@
                 "source": "https://github.com/aimeos/ai-admin-jqadm",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2024-06-22T15:51:42+00:00"
+            "time": "2024-07-04T10:48:27+00:00"
         },
         {
             "name": "aimeos/ai-admin-jsonadm",
@@ -170,12 +170,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-client-jsonapi.git",
-                "reference": "4b878a94fe23e3ab5845a449efe38c8c52d6be9c"
+                "reference": "90a98a7932fb8b697f91958c1a49c771d4234568"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/4b878a94fe23e3ab5845a449efe38c8c52d6be9c",
-                "reference": "4b878a94fe23e3ab5845a449efe38c8c52d6be9c",
+                "url": "https://api.github.com/repos/aimeos/ai-client-jsonapi/zipball/90a98a7932fb8b697f91958c1a49c771d4234568",
+                "reference": "90a98a7932fb8b697f91958c1a49c771d4234568",
                 "shasum": ""
             },
             "require": {
@@ -214,7 +214,7 @@
                 "source": "https://github.com/aimeos/ai-client-jsonapi",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2024-06-19T10:38:25+00:00"
+            "time": "2024-07-06T12:28:52+00:00"
         },
         {
             "name": "aimeos/ai-controller-frontend",
@@ -273,12 +273,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-controller-jobs.git",
-                "reference": "73a94c2082d3ea88e334cb08724ad92cec6468b4"
+                "reference": "7969531c85b6d8863c9bb73fc0c232aa77a92950"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/73a94c2082d3ea88e334cb08724ad92cec6468b4",
-                "reference": "73a94c2082d3ea88e334cb08724ad92cec6468b4",
+                "url": "https://api.github.com/repos/aimeos/ai-controller-jobs/zipball/7969531c85b6d8863c9bb73fc0c232aa77a92950",
+                "reference": "7969531c85b6d8863c9bb73fc0c232aa77a92950",
                 "shasum": ""
             },
             "require": {
@@ -317,7 +317,7 @@
                 "source": "https://github.com/aimeos/ai-controller-jobs",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2024-06-18T17:47:08+00:00"
+            "time": "2024-07-01T10:26:50+00:00"
         },
         {
             "name": "aimeos/ai-fosuser",
@@ -432,12 +432,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-symfony.git",
-                "reference": "747c07d659a195010b60a03e5a211a505d5ed331"
+                "reference": "abd59b62bfbfd04f530b29300673be89e58b9e2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/747c07d659a195010b60a03e5a211a505d5ed331",
-                "reference": "747c07d659a195010b60a03e5a211a505d5ed331",
+                "url": "https://api.github.com/repos/aimeos/ai-symfony/zipball/abd59b62bfbfd04f530b29300673be89e58b9e2a",
+                "reference": "abd59b62bfbfd04f530b29300673be89e58b9e2a",
                 "shasum": ""
             },
             "require": {
@@ -481,7 +481,7 @@
                 "source": "https://github.com/aimeos/ai-symfony",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2024-06-12T10:09:33+00:00"
+            "time": "2024-07-01T10:28:30+00:00"
         },
         {
             "name": "aimeos/ai-twig",
@@ -540,12 +540,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-base.git",
-                "reference": "bf7ae7ecd23b199cf0eceb93cc96a6ca55ef77a1"
+                "reference": "8a2c3e3908a606c7d91cd2f43c44563db93651e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-base/zipball/bf7ae7ecd23b199cf0eceb93cc96a6ca55ef77a1",
-                "reference": "bf7ae7ecd23b199cf0eceb93cc96a6ca55ef77a1",
+                "url": "https://api.github.com/repos/aimeos/aimeos-base/zipball/8a2c3e3908a606c7d91cd2f43c44563db93651e3",
+                "reference": "8a2c3e3908a606c7d91cd2f43c44563db93651e3",
                 "shasum": ""
             },
             "require": {
@@ -594,7 +594,7 @@
                 "source": "https://github.com/aimeos/aimeos-base",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2024-06-08T09:29:59+00:00"
+            "time": "2024-07-01T10:20:39+00:00"
         },
         {
             "name": "aimeos/aimeos-core",
@@ -602,12 +602,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/aimeos-core.git",
-                "reference": "b123dd3ed8a6a23160d1724516c9bde304e1a2fb"
+                "reference": "1a7b8e24f591a220c33452fb39eb725f17283108"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/b123dd3ed8a6a23160d1724516c9bde304e1a2fb",
-                "reference": "b123dd3ed8a6a23160d1724516c9bde304e1a2fb",
+                "url": "https://api.github.com/repos/aimeos/aimeos-core/zipball/1a7b8e24f591a220c33452fb39eb725f17283108",
+                "reference": "1a7b8e24f591a220c33452fb39eb725f17283108",
                 "shasum": ""
             },
             "require": {
@@ -673,7 +673,7 @@
                 "source": "https://github.com/aimeos/aimeos-core",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2024-06-27T13:45:10+00:00"
+            "time": "2024-07-04T10:21:03+00:00"
         },
         {
             "name": "aimeos/macro",
@@ -1765,16 +1765,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "3.7.1",
+            "version": "3.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "137bdb356aacc01409d22aee3f0904497616cf3c"
+                "reference": "5451ff9f909c2fc836722e5ed6831b9f9a6db68c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/137bdb356aacc01409d22aee3f0904497616cf3c",
-                "reference": "137bdb356aacc01409d22aee3f0904497616cf3c",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/5451ff9f909c2fc836722e5ed6831b9f9a6db68c",
+                "reference": "5451ff9f909c2fc836722e5ed6831b9f9a6db68c",
                 "shasum": ""
             },
             "require": {
@@ -1821,7 +1821,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Intervention/image/issues",
-                "source": "https://github.com/Intervention/image/tree/3.7.1"
+                "source": "https://github.com/Intervention/image/tree/3.7.2"
             },
             "funding": [
                 {
@@ -1833,7 +1833,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-29T07:51:20+00:00"
+            "time": "2024-07-05T13:35:01+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7716,16 +7716,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.0.2",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "139676794dc1e9231bf7bcd123cfc0c99182cb13"
+                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/139676794dc1e9231bf7bcd123cfc0c99182cb13",
-                "reference": "139676794dc1e9231bf7bcd123cfc0c99182cb13",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/683130c2ff8c2739f4822ff7ac5c873ec529abd1",
+                "reference": "683130c2ff8c2739f4822ff7ac5c873ec529abd1",
                 "shasum": ""
             },
             "require": {
@@ -7736,7 +7736,7 @@
             },
             "require-dev": {
                 "ircmaxell/php-yacc": "^0.0.7",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+                "phpunit/phpunit": "^9.0"
             },
             "bin": [
                 "bin/php-parse"
@@ -7768,9 +7768,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.0.2"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.1.0"
             },
-            "time": "2024-03-05T20:51:40+00:00"
+            "time": "2024-07-01T20:03:41+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -8296,16 +8296,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.24",
+            "version": "10.5.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "5f124e3e3e561006047b532fd0431bf5bb6b9015"
+                "reference": "2425f713b2a5350568ccb1a2d3984841a23e83c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5f124e3e3e561006047b532fd0431bf5bb6b9015",
-                "reference": "5f124e3e3e561006047b532fd0431bf5bb6b9015",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2425f713b2a5350568ccb1a2d3984841a23e83c5",
+                "reference": "2425f713b2a5350568ccb1a2d3984841a23e83c5",
                 "shasum": ""
             },
             "require": {
@@ -8315,26 +8315,26 @@
                 "ext-mbstring": "*",
                 "ext-xml": "*",
                 "ext-xmlwriter": "*",
-                "myclabs/deep-copy": "^1.10.1",
-                "phar-io/manifest": "^2.0.3",
-                "phar-io/version": "^3.0.2",
+                "myclabs/deep-copy": "^1.12.0",
+                "phar-io/manifest": "^2.0.4",
+                "phar-io/version": "^3.2.1",
                 "php": ">=8.1",
-                "phpunit/php-code-coverage": "^10.1.5",
-                "phpunit/php-file-iterator": "^4.0",
-                "phpunit/php-invoker": "^4.0",
-                "phpunit/php-text-template": "^3.0",
-                "phpunit/php-timer": "^6.0",
-                "sebastian/cli-parser": "^2.0",
-                "sebastian/code-unit": "^2.0",
-                "sebastian/comparator": "^5.0",
-                "sebastian/diff": "^5.0",
-                "sebastian/environment": "^6.0",
-                "sebastian/exporter": "^5.1",
-                "sebastian/global-state": "^6.0.1",
-                "sebastian/object-enumerator": "^5.0",
-                "sebastian/recursion-context": "^5.0",
-                "sebastian/type": "^4.0",
-                "sebastian/version": "^4.0"
+                "phpunit/php-code-coverage": "^10.1.15",
+                "phpunit/php-file-iterator": "^4.1.0",
+                "phpunit/php-invoker": "^4.0.0",
+                "phpunit/php-text-template": "^3.0.1",
+                "phpunit/php-timer": "^6.0.0",
+                "sebastian/cli-parser": "^2.0.1",
+                "sebastian/code-unit": "^2.0.0",
+                "sebastian/comparator": "^5.0.1",
+                "sebastian/diff": "^5.1.1",
+                "sebastian/environment": "^6.1.0",
+                "sebastian/exporter": "^5.1.2",
+                "sebastian/global-state": "^6.0.2",
+                "sebastian/object-enumerator": "^5.0.0",
+                "sebastian/recursion-context": "^5.0.0",
+                "sebastian/type": "^4.0.0",
+                "sebastian/version": "^4.0.1"
             },
             "suggest": {
                 "ext-soap": "To be able to generate mocks based on WSDL files"
@@ -8377,7 +8377,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.24"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.27"
             },
             "funding": [
                 {
@@ -8393,7 +8393,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-06-20T13:09:54+00:00"
+            "time": "2024-07-10T11:48:06+00:00"
         },
         {
             "name": "psr/http-client",
