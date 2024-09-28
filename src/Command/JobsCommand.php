@@ -98,26 +98,6 @@ class JobsCommand extends Command
 
 
 	/**
-	 * Adds the configuration options from the input object to the given context
-	 *
-	 * @param \Aimeos\MShop\ContextIface $ctx Context object
-	 * @param InputInterface $input Input object
-	 */
-	protected function addConfig( \Aimeos\MShop\ContextIface $ctx, InputInterface $input ) : \Aimeos\MShop\ContextIface
-	{
-		$config = $ctx->config();
-
-		foreach( (array) $input->getOption( 'option' ) as $option )
-		{
-			list( $name, $value ) = explode( ':', $option );
-			$config->set( $name, $value );
-		}
-
-		return $ctx;
-	}
-
-
-	/**
 	 * Returns a context object
 	 *
 	 * @return \Aimeos\MShop\ContextIface Context object
@@ -135,8 +115,8 @@ class JobsCommand extends Command
 		$langids = $langManager->search( $langManager->filter( true ) )->keys()->toArray();
 		$i18n = $this->container->get( 'aimeos.i18n' )->get( $langids );
 
-		$context->setSession(new \Aimeos\Base\Session\None());
-		$context->setCache(new \Aimeos\Base\Cache\None());
+		$context->setSession( new \Aimeos\Base\Session\None() );
+		$context->setCache( new \Aimeos\Base\Cache\None() );
 
 		$context->setEditor( 'aimeos:jobs' );
 		$context->setView( $view );

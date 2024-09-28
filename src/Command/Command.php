@@ -24,6 +24,26 @@ use Symfony\Component\Console\Input\InputInterface;
 abstract class Command extends SfCommand
 {
 	/**
+	 * Adds the configuration options from the input object to the given context
+	 *
+	 * @param \Aimeos\MShop\ContextIface $ctx Context object
+	 * @param InputInterface $input Input object
+	 */
+	protected function addConfig( \Aimeos\MShop\ContextIface $ctx, InputInterface $input ) : \Aimeos\MShop\ContextIface
+	{
+		$config = $ctx->config();
+
+		foreach( (array) $input->getOption( 'option' ) as $option )
+		{
+			list( $name, $value ) = explode( ':', $option );
+			$config->set( $name, $value );
+		}
+
+		return $ctx;
+	}
+
+
+	/**
 	 * Returns the enabled site items which may be limited by the input arguments.
 	 *
 	 * @param \Aimeos\MShop\ContextIface $context Context item object
