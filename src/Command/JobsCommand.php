@@ -2,7 +2,7 @@
 
 /**
  * @license MIT, http://opensource.org/licenses/MIT
- * @copyright Aimeos (aimeos.org), 2014-2016
+ * @copyright Aimeos (aimeos.org), 2014-2024
  * @package symfony
  * @subpackage Command
  */
@@ -11,6 +11,7 @@
 namespace Aimeos\ShopBundle\Command;
 
 use Symfony\Component\Console\Attribute\AsCommand;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -58,9 +59,9 @@ class JobsCommand extends Command
 	 */
 	protected function execute( InputInterface $input, OutputInterface $output )
 	{
-		$context = $this->context();
-		$process = $context->process();
+		$context = $this->addConfig( $this->context(), $input );
 		$aimeos = $this->container->get( 'aimeos' )->get();
+		$process = $context->process();
 
 		$jobs = explode( ' ', $input->getArgument( 'jobs' ) );
 		$localeManager = \Aimeos\MShop::create( $context, 'locale' );
@@ -122,6 +123,6 @@ class JobsCommand extends Command
 		$context->setView( $view );
 		$context->setI18n( $i18n );
 
-		return $this->addConfig( $context );
+		return $context;
 	}
 }

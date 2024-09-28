@@ -159,7 +159,7 @@ class Context
 	protected function addMailer( \Aimeos\MShop\ContextIface $context ) : \Aimeos\MShop\ContextIface
 	{
 		$mailer = $this->mailer;
-		$mail = new \Aimeos\Base\Mail\Symfony( function() use ( $mailer ) { return $mailer; } );
+		$mail = new \Aimeos\Base\Mail\Manager\Symfony( function() use ( $mailer ) { return $mailer; } );
 
 		return $context->setMail( $mail );
 	}
