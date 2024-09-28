@@ -46,6 +46,7 @@ class JobsCommand extends Command
 		$this->setDescription( 'Executes the job controllers' );
 		$this->addArgument( 'jobs', InputArgument::REQUIRED, 'One or more job controller names like "admin/job customer/email/watch"' );
 		$this->addArgument( 'site', InputArgument::OPTIONAL, 'Site codes to execute the jobs for like "default unittest" (none for all)' );
+		$this->addOption( 'option', null, InputOption::VALUE_REQUIRED, 'Optional setup configuration, name and value are separated by ":" like "setup/default/demo:1"', [] );
 	}
 
 
@@ -97,6 +98,26 @@ class JobsCommand extends Command
 
 
 	/**
+	 * Adds the configuration options from the input object to the given context
+	 *
+	 * @param \Aimeos\MShop\ContextIface $ctx Context object
+	 * @param InputInterface $input Input object
+	 */
+	protected function addConfig( \Aimeos\MShop\ContextIface $ctx, InputInterface $input ) : \Aimeos\MShop\ContextIface
+	{
+		$config = $ctx->config();
+
+		foreach( (array) $input->getOption( 'option' ) as $option )
+		{
+			list( $name, $value ) = explode( ':', $option );
+			$config->set( $name, $value );
+		}
+
+		return $ctx;
+	}
+
+
+	/**
 	 * Returns a context object
 	 *
 	 * @return \Aimeos\MShop\ContextIface Context object
@@ -114,10 +135,13 @@ class JobsCommand extends Command
 		$langids = $langManager->search( $langManager->filter( true ) )->keys()->toArray();
 		$i18n = $this->container->get( 'aimeos.i18n' )->get( $langids );
 
+		$context->setSession(new \Aimeos\Base\Session\None());
+		$context->setCache(new \Aimeos\Base\Cache\None());
+
 		$context->setEditor( 'aimeos:jobs' );
 		$context->setView( $view );
 		$context->setI18n( $i18n );
 
-		return $context;
+		return $this->addConfig( $context );
 	}
 }
