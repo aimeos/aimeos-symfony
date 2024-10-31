@@ -38,7 +38,6 @@
 		"symfony/twig-bundle": "~6.0",
 		"symfony/psr-http-message-bridge": "~2.0",
 		"friendsofsymfony/user-bundle": "^3.1",
-		"doctrine/annotations": "^2.0",
 		"nyholm/psr7": "^1.0"
 	},
 	"require-dev": {
