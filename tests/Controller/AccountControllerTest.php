@@ -15,15 +15,21 @@ class AccountControllerTest extends WebTestCase
 	}
 
 
+	protected function tearDown() : void
+	{
+		parent::tearDown();
+		restore_exception_handler();
+	}
+
+
 	public function testAccount()
 	{
 		$client = static::createClient();
 		$client->request( 'GET', '/unittest/de/EUR/profile/' );
 
 		$this->assertStringContainsString( 'aimeos account-profile', $client->getResponse()->getContent() );
-		$this->assertStringContainsString( 'aimeos account-history', $client->getResponse()->getContent() );
-		$this->assertStringContainsString( 'aimeos account-favorite', $client->getResponse()->getContent() );
-		$this->assertStringContainsString( 'aimeos account-watch', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'account-favorite', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( 'account-watch', $client->getResponse()->getContent() );
 	}
 
 

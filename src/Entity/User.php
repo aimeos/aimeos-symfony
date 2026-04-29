@@ -13,166 +13,102 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 
-/**
- * @ORM\Entity
- * @ORM\Table("mshop_customer")
- */
+#[ORM\Entity]
+#[ORM\Table(name: "mshop_customer")]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
-	/**
-	 * @ORM\Id
-	 * @ORM\Column("id")
-	 */
+	#[ORM\Id]
+	#[ORM\Column(name: "id")]
 	protected $id;
 
-	/**
-	 * @ORM\Column("siteid")
-	 */
+	#[ORM\Column(name: "siteid")]
 	protected $siteid;
 
-	/**
-	 * @ORM\Column("label")
-	 */
+	#[ORM\Column(name: "label")]
 	protected $label;
 
-	/**
-	 * @ORM\Column("code")
-	 */
+	#[ORM\Column(name: "code")]
 	protected $username;
 
-	/**
-	 * @ORM\Column("password")
-	 */
+	#[ORM\Column(name: "password")]
 	protected $password;
 
-	/**
-	 * @ORM\Column("status")
-	 */
+	#[ORM\Column(name: "status")]
 	protected $isActive;
 
-	/**
-	 * @ORM\Column("salutation")
-	 */
+	#[ORM\Column(name: "salutation")]
 	protected $salutation = '';
 
-	/**
-	 * @ORM\Column("company")
-	 */
+	#[ORM\Column(name: "company")]
 	protected $company = '';
 
-	/**
-	 * @ORM\Column("vatid")
-	 */
+	#[ORM\Column(name: "vatid")]
 	protected $vatid = '';
 
-	/**
-	 * @ORM\Column("title")
-	 */
+	#[ORM\Column(name: "title")]
 	protected $title = '';
 
-	/**
-	 * @ORM\Column("firstname")
-	 */
+	#[ORM\Column(name: "firstname")]
 	protected $firstname = '';
 
-	/**
-	 * @ORM\Column("lastname")
-	 */
+	#[ORM\Column(name: "lastname")]
 	protected $lastname = '';
 
-	/**
-	 * @ORM\Column("address1")
-	 */
+	#[ORM\Column(name: "address1")]
 	protected $address1 = '';
 
-	/**
-	 * @ORM\Column("address2")
-	 */
+	#[ORM\Column(name: "address2")]
 	protected $address2 = '';
 
-	/**
-	 * @ORM\Column("address3")
-	 */
+	#[ORM\Column(name: "address3")]
 	protected $address3 = '';
 
-	/**
-	 * @ORM\Column("postal")
-	 */
+	#[ORM\Column(name: "postal")]
 	protected $postal = '';
 
-	/**
-	 * @ORM\Column("city")
-	 */
+	#[ORM\Column(name: "city")]
 	protected $city = '';
 
-	/**
-	 * @ORM\Column("state")
-	 */
+	#[ORM\Column(name: "state")]
 	protected $state = '';
 
-	/**
-	 * @ORM\Column("langid")
-	 */
+	#[ORM\Column(name: "langid")]
 	protected $langid;
 
-	/**
-	 * @ORM\Column("countryid")
-	 */
+	#[ORM\Column(name: "countryid")]
 	protected $countryid;
 
-	/**
-	 * @ORM\Column("telephone")
-	 */
+	#[ORM\Column(name: "telephone")]
 	protected $telephone = '';
 
-	/**
-	 * @ORM\Column("telefax")
-	 */
+	#[ORM\Column(name: "telefax")]
 	protected $telefax = '';
 
-	/**
-	 * @ORM\Column("email")
-	 */
+	#[ORM\Column(name: "email")]
 	protected $email = '';
 
-	/**
-	 * @ORM\Column("website")
-	 */
+	#[ORM\Column(name: "website")]
 	protected $website = '';
 
-	/**
-	 * @ORM\Column("longitude")
-	 */
+	#[ORM\Column(name: "longitude")]
 	protected $longitude;
 
-	/**
-	 * @ORM\Column("latitude")
-	 */
+	#[ORM\Column(name: "latitude")]
 	protected $latitude;
 
-	/**
-	 * @ORM\Column("birthday")
-	 */
+	#[ORM\Column(name: "birthday")]
 	protected $birthday;
 
-	/**
-	 * @ORM\Column("vdate")
-	 */
+	#[ORM\Column(name: "vdate")]
 	protected $vdate;
 
-	/**
-	 * @ORM\Column("ctime")
-	 */
+	#[ORM\Column(name: "ctime")]
 	protected $ctime;
 
-	/**
-	 * @ORM\Column("mtime")
-	 */
+	#[ORM\Column(name: "mtime")]
 	protected $mtime;
 
-	/**
-	 * @ORM\Column("editor")
-	 */
+	#[ORM\Column(name: "editor")]
 	protected $editor = '';
 
 
@@ -221,7 +157,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 	/**
 	 * @inheritDoc
 	 */
-	public function eraseCredentials()
+	public function eraseCredentials() : void
 	{
 	}
 

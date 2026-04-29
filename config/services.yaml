@@ -80,9 +80,6 @@ services:
     Aimeos\ShopBundle\Controller\JqadmController:
         calls:
             - setContainer: ["@service_container"]
-    Aimeos\ShopBundle\Controller\JsonadmController:
-        calls:
-            - setContainer: ["@service_container"]
     Aimeos\ShopBundle\Controller\JsonapiController:
         calls:
             - setContainer: ["@service_container"]

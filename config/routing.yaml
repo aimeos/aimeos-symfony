@@ -19,10 +19,6 @@ aimeos_shop_jqadm:
     resource: "./routing_jqadm.yaml"
     prefix: /admin/{site}/jqadm
 
-aimeos_shop_jsonadm:
-    resource: "./routing_jsonadm.yaml"
-    prefix: /admin/{site}/jsonadm
-
 aimeos_shop_jsonapi:
     resource: "./routing_jsonapi.yaml"
     prefix: /jsonapi

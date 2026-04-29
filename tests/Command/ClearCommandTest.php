@@ -11,6 +11,13 @@ use Aimeos\ShopBundle\Command;
 
 class ClearCommandTest extends WebTestCase
 {
+	protected function tearDown() : void
+	{
+		parent::tearDown();
+		restore_exception_handler();
+	}
+
+
 	public function testCacheCommand()
 	{
 		$kernel = $this->createKernel();

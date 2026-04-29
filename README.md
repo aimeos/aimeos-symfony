@@ -192,7 +192,7 @@ security:
             pattern: ^/
             form_login:
                 provider: aimeos
-                csrf_token_generator: security.csrf.token_manager
+                csrf_token_manager: security.csrf.token_manager
             logout: true
 
     access_control:

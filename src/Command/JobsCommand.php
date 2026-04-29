@@ -41,7 +41,7 @@ class JobsCommand extends Command
 	/**
 	 * Configures the command name and description.
 	 */
-	protected function configure()
+	protected function configure() : void
 	{
 		$this->setName( self::$defaultName );
 		$this->setDescription( 'Executes the job controllers' );
@@ -57,7 +57,7 @@ class JobsCommand extends Command
 	 * @param InputInterface $input Input object
 	 * @param OutputInterface $output Output object
 	 */
-	protected function execute( InputInterface $input, OutputInterface $output )
+	protected function execute( InputInterface $input, OutputInterface $output ) : int
 	{
 		$context = $this->addConfig( $this->context(), $input );
 		$aimeos = $this->container->get( 'aimeos' )->get();

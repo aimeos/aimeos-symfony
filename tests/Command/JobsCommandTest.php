@@ -11,6 +11,13 @@ use Aimeos\ShopBundle\Command;
 
 class JobsCommandTest extends WebTestCase
 {
+	protected function tearDown() : void
+	{
+		parent::tearDown();
+		restore_exception_handler();
+	}
+
+
 	public function testJobsCommand()
 	{
 		$kernel = $this->createKernel();
@@ -23,7 +30,7 @@ class JobsCommandTest extends WebTestCase
 
 		$command = $application->find( 'aimeos:jobs' );
 		$commandTester = new CommandTester( $command );
-		$commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest', 'jobs' => 'index/rebuild' ) );
+		$commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest', 'jobs' => 'admin/cache' ) );
 
 		$this->assertEquals( 0, $commandTester->getStatusCode() );
 	}

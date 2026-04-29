@@ -40,7 +40,7 @@ class ClearCommand extends Command
 	/**
 	 * Configures the command name and description.
 	 */
-	protected function configure()
+	protected function configure() : void
 	{
 		$this->setName( self::$defaultName );
 		$this->setDescription( 'Clears the content cache' );
@@ -54,7 +54,7 @@ class ClearCommand extends Command
 	 * @param InputInterface $input Input object
 	 * @param OutputInterface $output Output object
 	 */
-	protected function execute( InputInterface $input, OutputInterface $output )
+	protected function execute( InputInterface $input, OutputInterface $output ) : int
 	{
 		$context = $this->container->get( 'aimeos.context' )->get( false, 'command' );
 		$context->setEditor( 'aimeos:clear' );

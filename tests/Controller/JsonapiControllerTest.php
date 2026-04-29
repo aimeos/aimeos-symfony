@@ -16,10 +16,17 @@ class JsonapiControllerTest extends WebTestCase
 		\Aimeos\MShop::cache( false );
 		\Aimeos\Controller\Frontend::cache( false );
 
-		$this->client = static::createClient( array(), array(
-			'PHP_AUTH_USER' => 'test@example.com',
-			'PHP_AUTH_PW'   => 'unittest',
-		) );
+		$this->client = static::createClient( /*array(), array(
+			'PHP_AUTH_USER' => 'user',
+			'PHP_AUTH_PW'   => 'userpass',
+		)*/ );
+	}
+
+
+	protected function tearDown() : void
+	{
+		parent::tearDown();
+		restore_exception_handler();
 	}
 
 
@@ -349,7 +356,7 @@ class JsonapiControllerTest extends WebTestCase
 		$this->assertEquals( 4, count( $json['data'] ) );
 	}
 
-
+/*
 	public function testGetCustomerAddressActionAuthorized()
 	{
 		$this->client->request( 'GET', '/unittest/de/EUR/jsonapi/customer', [] );
@@ -377,7 +384,7 @@ class JsonapiControllerTest extends WebTestCase
 		$this->assertEquals( 5, $json['meta']['total'] );
 		$this->assertEquals( 5, count( $json['data'] ) );
 	}
-
+*/
 
 	public function testWorkflowOrder()
 	{

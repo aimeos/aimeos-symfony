@@ -41,7 +41,7 @@ class AccountCommand extends Command
 	/**
 	 * Configures the command name and description.
 	 */
-	protected function configure()
+	protected function configure() : void
 	{
 		$this->setName( self::$defaultName );
 		$this->setDescription( 'Creates new (admin) accounts' );
@@ -60,7 +60,7 @@ class AccountCommand extends Command
 	 * @param InputInterface $input Input object
 	 * @param OutputInterface $output Output object
 	 */
-	protected function execute( InputInterface $input, OutputInterface $output )
+	protected function execute( InputInterface $input, OutputInterface $output ) : int
 	{
 		$email = $input->getArgument( 'email' );
 

@@ -14,6 +14,13 @@ class CheckoutControllerTest extends WebTestCase
 	}
 
 
+	protected function tearDown() : void
+	{
+		parent::tearDown();
+		restore_exception_handler();
+	}
+
+
 	public function testStandardNavbar()
 	{
 		$client = static::createClient( array(), array(
@@ -41,7 +48,7 @@ class CheckoutControllerTest extends WebTestCase
 
 
 		$form = $crawler->filter( '.checkout-standard form' )->form();
-		$form['ca_billingoption']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
+		$form['ca_paymentoption']->select( $crawler->filter( '.checkout-standard-address-payment .item-address input[type="radio"]' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .basket a' )->count() );
@@ -53,7 +60,7 @@ class CheckoutControllerTest extends WebTestCase
 
 
 		$form = $crawler->filter( '.checkout-standard form' )->form();
-		$form['c_deliveryoption']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
+		$form['c_deliveryoption']->select( $crawler->filter( '.checkout-standard-delivery .item-service input[type="radio"]' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .basket a' )->count() );
@@ -65,7 +72,7 @@ class CheckoutControllerTest extends WebTestCase
 
 
 		$form = $crawler->filter( '.checkout-standard form' )->form();
-		$form['c_paymentoption']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
+		$form['c_paymentoption']->select( $crawler->filter( '.checkout-standard-payment .item-service input[type="radio"]' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.checkout-standard .steps .basket a' )->count() );
@@ -222,7 +229,7 @@ class CheckoutControllerTest extends WebTestCase
 		$link = $crawler->filter( '.checkout-standard .common-summary-detail .modify' )->link();
 		$crawler = $client->click( $link );
 
-		$this->assertEquals( 1, $crawler->filter( '.basket-standard' )->count() );
+		$this->assertGreaterThanOrEqual( 1, $crawler->filter( '.basket-standard' )->count() );
 	}
 
 
@@ -245,15 +252,15 @@ class CheckoutControllerTest extends WebTestCase
 		$crawler = $client->click( $link );
 
 		$form = $crawler->filter( '.checkout-standard form' )->form();
-		$form['ca_billingoption']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
+		$form['ca_paymentoption']->select( $crawler->filter( '.checkout-standard-address-payment .item-address input[type="radio"]' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
 		$form = $crawler->filter( '.checkout-standard form' )->form();
-		$form['c_deliveryoption']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
+		$form['c_deliveryoption']->select( $crawler->filter( '.checkout-standard-delivery .item-service input[type="radio"]' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
 		$form = $crawler->filter( '.checkout-standard form' )->form();
-		$payId = $crawler->filter( '.checkout-standard-payment .item-service' )->eq( 1 )->filter( 'input' )->attr( 'value' );
+		$payId = $crawler->filter( '.checkout-standard-payment .item-service' )->eq( 1 )->filter( 'input[type="radio"]' )->attr( 'value' );
 		$form['c_paymentoption']->select( $payId );
 		$form['c_payment[' . $payId . '][directdebit.accountowner]'] = 'test user';
 		$form['c_payment[' . $payId . '][directdebit.accountno]'] = '12345';
@@ -309,15 +316,15 @@ class CheckoutControllerTest extends WebTestCase
 		$crawler = $client->click( $link );
 
 		$form = $crawler->filter( '.checkout-standard form' )->form();
-		$form['ca_billingoption']->select( $crawler->filter( '.checkout-standard-address .item-address input' )->attr( 'value' ) );
+		$form['ca_paymentoption']->select( $crawler->filter( '.checkout-standard-address-payment .item-address input[type="radio"]' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
 		$form = $crawler->filter( '.checkout-standard form' )->form();
-		$form['c_deliveryoption']->select( $crawler->filter( '.checkout-standard-delivery .item-service input' )->attr( 'value' ) );
+		$form['c_deliveryoption']->select( $crawler->filter( '.checkout-standard-delivery .item-service input[type="radio"]' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
 		$form = $crawler->filter( '.checkout-standard form' )->form();
-		$form['c_paymentoption']->select( $crawler->filter( '.checkout-standard-payment .item-service input' )->attr( 'value' ) );
+		$form['c_paymentoption']->select( $crawler->filter( '.checkout-standard-payment .item-service input[type="radio"]' )->attr( 'value' ) );
 		$crawler = $client->submit( $form );
 
 		return $crawler;

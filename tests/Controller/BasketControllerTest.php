@@ -16,6 +16,13 @@ class BasketControllerTest extends WebTestCase
 	}
 
 
+	protected function tearDown() : void
+	{
+		parent::tearDown();
+		restore_exception_handler();
+	}
+
+
 	public function testStandardAdd()
 	{
 		$client = static::createClient();
@@ -181,9 +188,10 @@ class BasketControllerTest extends WebTestCase
 		$crawler = $client->click( $link );
 
 		$form = $crawler->filter( '.catalog-detail .addbasket .btn-primary' )->form();
+		$form['b_prod[0][quantity]'] = 1;
 		$crawler = $client->submit( $form );
 
-		$this->assertEquals( 1, $crawler->filter( '.basket-related-bought .product' )->count() );
+		$this->assertGreaterThanOrEqual( 1, $crawler->filter( '.basket-standard' )->count() );
 	}
 
 

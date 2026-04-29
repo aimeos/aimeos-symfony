@@ -23,11 +23,6 @@ security:
             provider: in_memory
             http_basic:
                 realm: "Admin Area"
-        aimeos_jsonadm:
-            pattern:    ^/unittest/jsonadm
-            provider: in_memory
-            http_basic:
-                realm: "Admin Area"
         secured_area:
             pattern:   ^/unittest
             provider: default
@@ -36,5 +31,4 @@ security:
 
     access_control:
         - { path: ^/unittest/jqadm, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
-        - { path: ^/unittest/jsonadm, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
         - { path: ^/unittest/de/EUR/shop/checkout, roles: ROLE_USER }

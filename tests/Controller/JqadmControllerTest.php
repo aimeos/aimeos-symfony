@@ -7,6 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class JqadmControllerTest extends WebTestCase
 {
+	protected function tearDown() : void
+	{
+		parent::tearDown();
+		restore_exception_handler();
+	}
+
+
 	public function testFileCss()
 	{
 		$client = static::createClient( array(), array(
@@ -72,9 +79,8 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'OPTIONS', '/unittest/jsonadm' );
-		$json = json_decode( $client->getResponse()->getContent(), true );
-		$token = $json['meta']['csrf']['value'];
+		$crawler = $client->request( 'GET', '/unittest/jqadm/search/product' );
+		$token = $crawler->filter( 'input[name="_token"]' )->first()->attr( 'value' );
 
 		$client->request( 'POST', '/unittest/jqadm/delete/product/0', ['_token' => $token] );
 		$response = $client->getResponse();
@@ -120,9 +126,8 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'OPTIONS', '/unittest/jsonadm' );
-		$json = json_decode( $client->getResponse()->getContent(), true );
-		$token = $json['meta']['csrf']['value'];
+		$crawler = $client->request( 'GET', '/unittest/jqadm/search/product' );
+		$token = $crawler->filter( 'input[name="_token"]' )->first()->attr( 'value' );
 
 		$client->request( 'POST', '/unittest/jqadm/save/product', ['item' => ['product.type' => 'default'], '_token' => $token] );
 		$response = $client->getResponse();

@@ -7,6 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class AdminControllerTest extends WebTestCase
 {
+	protected function tearDown() : void
+	{
+		parent::tearDown();
+		restore_exception_handler();
+	}
+
+
 	public function testIndex()
 	{
 		$client = static::createClient();

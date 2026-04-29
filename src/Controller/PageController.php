@@ -29,7 +29,7 @@ class PageController extends AbstractController
 	 */
 	public function privacyAction( \Twig\Environment $twig ) : Response
 	{
-		return $twig->render( '@AimeosShop/Page/privacy.html.twig' );
+		return new Response( $twig->render( '@AimeosShop/Page/privacy.html.twig' ) );
 	}
 
 
@@ -40,6 +40,6 @@ class PageController extends AbstractController
 	 */
 	public function termsAction( \Twig\Environment $twig ) : Response
 	{
-		return $twig->render( '@AimeosShop/Page/terms.html.twig' );
+		return new Response( $twig->render( '@AimeosShop/Page/terms.html.twig' ) );
 	}
 }

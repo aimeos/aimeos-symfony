@@ -14,6 +14,13 @@ class SupplierControllerTest extends WebTestCase
 	}
 
 
+	protected function tearDown() : void
+	{
+		parent::tearDown();
+		restore_exception_handler();
+	}
+
+
 	public function testDetail()
 	{
 		$client = static::createClient();

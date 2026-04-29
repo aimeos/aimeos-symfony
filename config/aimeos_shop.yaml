@@ -98,14 +98,9 @@ admin:
                 target: aimeos_shop_jqadm_search
     jsonadm:
         url:
-            target: aimeos_shop_jsonadm_get
-            config:
-                absoluteUri: true
+            target: aimeos_shop_graphql
             options:
-                target: aimeos_shop_jsonadm_options
-                config:
-                    absoluteUri: true
-
+                target: aimeos_shop_graphql
 client:
     html:
         account:

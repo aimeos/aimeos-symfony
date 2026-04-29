@@ -7,6 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class PageControllerTest extends WebTestCase
 {
+	protected function tearDown() : void
+	{
+		parent::tearDown();
+		restore_exception_handler();
+	}
+
+
 	public function testTerms()
 	{
 		$client = static::createClient();
