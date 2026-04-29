@@ -20,7 +20,6 @@
 		"aimeos/ai-monolog": "dev-master",
 		"aimeos/ai-symfony": "dev-master",
 		"aimeos/ai-admin-jqadm": "dev-master",
-		"aimeos/ai-admin-jsonadm": "dev-master",
 		"aimeos/ai-controller-jobs": "dev-master",
 		"aimeos/ai-controller-frontend": "dev-master",
 		"aimeos/ai-client-jsonapi": "dev-master",
