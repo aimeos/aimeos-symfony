@@ -39,6 +39,9 @@ doctrine:
         charset: utf8mb4
     orm:
         auto_mapping: true
+        mappings:
+            AimeosShopBundle:
+                type: attribute
 
 aimeos_shop:
     disable_sites: false
