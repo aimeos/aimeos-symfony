@@ -98,8 +98,8 @@ class BasketControllerTest extends WebTestCase
 		$crawler = $client->submit( $form );
 
 
-		$link = $crawler->filter( '.basket-standard .product-item .action .delete' )->link();
-		$crawler = $client->click( $link );
+		$form = $crawler->filter( '.basket-standard .product-item .action .delete' )->form();
+		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 0, $crawler->filter( '.basket-standard .product' )->count() );
 	}
@@ -118,14 +118,14 @@ class BasketControllerTest extends WebTestCase
 		$crawler = $client->submit( $form );
 
 
-		$link = $crawler->filter( '.basket-standard .product-item .quantity .change' )->link();
-		$crawler = $client->click( $link );
+		$form = $crawler->filter( '.basket-standard .product-item .quantity .change' )->form();
+		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 2, $crawler->filter( '.basket-standard .product-item .quantity .value' )->attr( 'value' ) );
 
 
-		$link = $crawler->filter( '.basket-standard .product-item .quantity .change' )->eq( 0 )->link();
-		$crawler = $client->click( $link );
+		$form = $crawler->filter( '.basket-standard .product-item .quantity .change' )->eq( 0 )->form();
+		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.basket-standard .product-item .quantity .value' )->attr( 'value' ) );
 	}
@@ -171,8 +171,8 @@ class BasketControllerTest extends WebTestCase
 		$this->assertEquals( 1, $crawler->filter( '.basket .product-name:contains("Geldwerter Nachlass")' )->count() );
 
 
-		$link = $crawler->filter( '.basket-standard-coupon .delete' )->link();
-		$crawler = $client->click( $link );
+		$form = $crawler->filter( '.basket-standard-coupon .delete' )->form();
+		$crawler = $client->submit( $form );
 
 		$this->assertEquals( 1, $crawler->filter( '.basket-standard .product-item' )->count() );
 	}
