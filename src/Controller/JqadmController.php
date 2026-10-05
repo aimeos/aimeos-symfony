@@ -64,6 +64,21 @@ class JqadmController extends AbstractController
 
 
 	/**
+	 * Returns the admin translations as JS file
+	 *
+	 * @param string $locale ISO language code, e.g. "de" or "de_CH"
+	 * @return Response Response object
+	 */
+	public function i18nAction( string $locale ) : Response
+	{
+		$i18n = $this->container->get( 'aimeos.i18n' )->get( [$locale] )[$locale];
+		$content = 'var Aimeos = {i18n: ' . json_encode( (object) $i18n->all( 'admin' ), JSON_UNESCAPED_UNICODE ) . '};';
+
+		return new Response( $content, 200, ['Content-Type' => 'application/javascript; charset=utf-8'] );
+	}
+
+
+	/**
 	 * Returns the HTML code for a batch of a resource object
 	 *
 	 * @param Request $request Symfony request object
