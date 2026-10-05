@@ -3,6 +3,14 @@ aimeos_shop_jqadm_file:
     controller: Aimeos\ShopBundle\Controller\JqadmController::fileAction
     methods: [GET]
 
+aimeos_shop_jqadm_i18n:
+    path: /i18n/{locale}
+    controller: Aimeos\ShopBundle\Controller\JqadmController::i18nAction
+    methods: [GET]
+    requirements:
+        site: '[A-Za-z0-9\.\-\_]+'
+        locale: '[a-z]{2}(\_[A-Z]{2})?'
+
 aimeos_shop_jqadm_batch:
     path: /batch/{resource}
     controller: Aimeos\ShopBundle\Controller\JqadmController::batchAction

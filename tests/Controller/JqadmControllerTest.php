@@ -42,6 +42,34 @@ class JqadmControllerTest extends WebTestCase
 	}
 
 
+	public function testI18n()
+	{
+		$client = static::createClient( array(), array(
+			'PHP_AUTH_USER' => 'admin',
+			'PHP_AUTH_PW'   => 'adminpass',
+		) );
+
+		$client->request( 'GET', '/unittest/jqadm/i18n/de' );
+
+		$this->assertEquals( 200, $client->getResponse()->getStatusCode() );
+		$this->assertStringStartsWith( 'var Aimeos = {i18n: {', $client->getResponse()->getContent() );
+		$this->assertStringContainsString( '"Save":"Speichern"', $client->getResponse()->getContent() );
+	}
+
+
+	public function testI18nInvalid()
+	{
+		$client = static::createClient( array(), array(
+			'PHP_AUTH_USER' => 'admin',
+			'PHP_AUTH_PW'   => 'adminpass',
+		) );
+
+		$client->request( 'GET', '/unittest/jqadm/i18n/invalid' );
+
+		$this->assertEquals( 404, $client->getResponse()->getStatusCode() );
+	}
+
+
 	public function testCopyAction()
 	{
 		$client = static::createClient( array(), array(
