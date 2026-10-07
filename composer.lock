@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "aimeos/ai-admin-jqadm",
-            "version": "2026.10.1",
+            "version": "2026.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aimeos/ai-admin-jqadm.git",
-                "reference": "f8dc3264285a08a7075a0b9445a7f389522ef0ea"
+                "reference": "620f47735cfadd223fe79e42e4cc24b22220fbdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/f8dc3264285a08a7075a0b9445a7f389522ef0ea",
-                "reference": "f8dc3264285a08a7075a0b9445a7f389522ef0ea",
+                "url": "https://api.github.com/repos/aimeos/ai-admin-jqadm/zipball/620f47735cfadd223fe79e42e4cc24b22220fbdb",
+                "reference": "620f47735cfadd223fe79e42e4cc24b22220fbdb",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,7 @@
                 "source": "https://github.com/aimeos/ai-admin-jqadm",
                 "wiki": "https://aimeos.org/docs"
             },
-            "time": "2026-10-05T08:41:00+00:00"
+            "time": "2026-10-06T11:44:51+00:00"
         },
         {
             "name": "aimeos/ai-client-html",
@@ -4212,16 +4212,16 @@
         },
         {
             "name": "symfony/polyfill-deepclone",
-            "version": "v1.43.0",
+            "version": "v1.43.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-deepclone.git",
-                "reference": "8db92c5508a3f7f82d8688d32f0a4868a26e58ad"
+                "reference": "aaba44b6ee7299ae65717811c55b57ab9bc0fedd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-deepclone/zipball/8db92c5508a3f7f82d8688d32f0a4868a26e58ad",
-                "reference": "8db92c5508a3f7f82d8688d32f0a4868a26e58ad",
+                "url": "https://api.github.com/repos/symfony/polyfill-deepclone/zipball/aaba44b6ee7299ae65717811c55b57ab9bc0fedd",
+                "reference": "aaba44b6ee7299ae65717811c55b57ab9bc0fedd",
                 "shasum": ""
             },
             "require": {
@@ -4275,7 +4275,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-deepclone/tree/v1.43.0"
+                "source": "https://github.com/symfony/polyfill-deepclone/tree/v1.43.1"
             },
             "funding": [
                 {
@@ -4295,7 +4295,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-30T09:07:27+00:00"
+            "time": "2026-10-06T19:46:18+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
@@ -7320,16 +7320,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "3.7.3",
+            "version": "3.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/orm.git",
-                "reference": "2637802f3bb695a88f54af1a6f0c2e76a4b523fb"
+                "reference": "84e21e325e3da22e46d7facbccdc9258f2332b1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/orm/zipball/2637802f3bb695a88f54af1a6f0c2e76a4b523fb",
-                "reference": "2637802f3bb695a88f54af1a6f0c2e76a4b523fb",
+                "url": "https://api.github.com/repos/doctrine/orm/zipball/84e21e325e3da22e46d7facbccdc9258f2332b1e",
+                "reference": "84e21e325e3da22e46d7facbccdc9258f2332b1e",
                 "shasum": ""
             },
             "require": {
@@ -7404,9 +7404,9 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/orm/issues",
-                "source": "https://github.com/doctrine/orm/tree/3.7.3"
+                "source": "https://github.com/doctrine/orm/tree/3.7.4"
             },
-            "time": "2026-09-26T21:45:25+00:00"
+            "time": "2026-10-05T18:31:26+00:00"
         },
         {
             "name": "doctrine/sql-formatter",
