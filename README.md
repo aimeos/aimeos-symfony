@@ -1,5 +1,5 @@
 <a href="https://aimeos.org/">
-    <img src="https://aimeos.org/fileadmin/template/icons/logo.png" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
+    <img src="https://aimeos.org/images/logo.png" alt="Aimeos logo" title="Aimeos" align="right" height="60" />
 </a>
 
 # Aimeos Symfony bundle
@@ -16,7 +16,7 @@ ultra fast e-commerce package for Symfony!  You can install it in your existing
 Symfony application within 5 minutes and can adapt, extend, overwrite and
 customize anything to your needs.
 
-[![Aimeos Symfony demo](https://aimeos.org/fileadmin/aimeos.org/images/aimeos-github.png)](http://symfony.demo.aimeos.org/)
+[![Aimeos Symfony demo](https://aimeos.org/images/aimeos-github.png)](http://symfony.demo.aimeos.org/)
 
 ## Table of content
 
