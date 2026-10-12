@@ -281,12 +281,12 @@ class Context
 				{
 					$userid = $user->getId();
 
-					$context->setUser( function() use ( $context, $userid ) {
-						return \Aimeos\MShop::create( $context, 'customer' )->get( $userid, ['group'] );
+					$context->setUser( function( ?\Aimeos\MShop\ContextIface $ctx = null ) use ( $context, $userid ) {
+						return \Aimeos\MShop::create( $ctx ?: $context, 'customer' )->get( $userid, ['group'] );
 					} );
 
-					$context->setGroups( function() use ( $context ) {
-						return $context->user()?->getGroups() ?? [];
+					$context->setGroups( function( ?\Aimeos\MShop\ContextIface $ctx = null ) use ( $context ) {
+						return ( $ctx ?: $context )->user()?->getGroups() ?? [];
 					} );
 				}
 				catch( \Exception $e ) {} // avoid errors if user is assigned to another site
