@@ -16,7 +16,7 @@ ultra fast e-commerce package for Symfony!  You can install it in your existing
 Symfony application within 5 minutes and can adapt, extend, overwrite and
 customize anything to your needs.
 
-[![Aimeos Symfony demo](https://aimeos.org/images/aimeos-github.png)](http://symfony.demo.aimeos.org/)
+[![Aimeos Symfony demo](https://aimeos.org/media/aimeos-github.png)](http://symfony.demo.aimeos.org/)
 
 ## Table of content
 
@@ -29,7 +29,7 @@ customize anything to your needs.
 
 ## Installation
 
-This document is for the latest **Aimeos 2023.10** and **Symfony 6.3+**.
+This document is for the latest **Aimeos 2026.10** and **Symfony 7.3+**.
 
 If you want to **upgrade between major versions**, please have a look into the [upgrade guide](https://aimeos.org/docs/Symfony/Upgrade)!
 
@@ -38,7 +38,7 @@ easiest by using [Composer](https://getcomposer.org). If you don't have an exist
 Symfony application, you can create a skeleton application using
 
 ```
-composer create-project symfony/website-skeleton:~4.4 myshop
+composer create-project symfony/website-skeleton:~6.0 myshop
 cd myshop
 ```
 
@@ -124,8 +124,8 @@ Then add these lines to your `composer.json` of your Symfony project:
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "aimeos/aimeos-symfony": "~2023.10",
-        "friendsofsymfony/user-bundle": "^3.2",
+        "aimeos/aimeos-symfony": "~2026.10",
+        "friendsofsymfony/user-bundle": "^4.0",
         ...
     },
     "scripts": {
