@@ -188,6 +188,19 @@ class FosUser extends BaseUser implements PasswordAuthenticatedUserInterface
 
 
 	/**
+	 * Sets the site ID of the user.
+	 *
+	 * @param string|null $siteid Site ID or empty string for super users
+	 * @return static Same object for fluent interface
+	 */
+	public function setSiteId( ?string $siteid ) : static
+	{
+		$this->siteid = $siteid;
+		return $this;
+	}
+
+
+	/**
 	 * Returns the company name.
 	 *
 	 * @return string Company name
