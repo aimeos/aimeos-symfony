@@ -45,4 +45,22 @@ class AccountCommandTest extends WebTestCase
 
 		$this->assertEquals( 0, $commandTester->getStatusCode() );
 	}
+
+
+	public function testAccountCommandSuper()
+	{
+		$kernel = $this->createKernel();
+		$kernel->boot();
+
+		$container = static::getContainer();
+
+		$application = new Application( $kernel );
+		$application->add( new Command\AccountCommand( $container ) );
+
+		$command = $application->find( 'aimeos:account' );
+		$commandTester = new CommandTester( $command );
+		$commandTester->execute( array( 'command' => $command->getName(), 'site' => 'unittest', 'email' => 'unitSuper@example.com', '--password' => 'test', '--super' => true ) );
+
+		$this->assertEquals( 0, $commandTester->getStatusCode() );
+	}
 }

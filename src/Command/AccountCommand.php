@@ -91,8 +91,8 @@ class AccountCommand extends Command
 		$item = $item->setCode( $email )->setLabel( $email )->setPassword( $password )->setStatus( 1 );
 		$item->getPaymentAddress()->setEmail( $email );
 
-		$manager->save( $this->addGroups( $input, $output, $context, $item ) );
-		$this->addRoles( $input, $email );
+		$item = $manager->save( $this->addGroups( $input, $output, $context, $item ) );
+		$this->addRoles( $input, $email, $item->getSiteId() );
 
 		return 0;
 	}
@@ -146,8 +146,9 @@ class AccountCommand extends Command
 	 *
 	 * @param InputInterface $input Input object
 	 * @param string $email Unique e-mail address
+	 * @param string $siteid Site ID of the account
 	 */
-	protected function addRoles( InputInterface $input, string $email )
+	protected function addRoles( InputInterface $input, string $email, string $siteid )
 	{
 		if( $this->container->has( 'fos_user.user_manager' ) )
 		{
@@ -157,10 +158,11 @@ class AccountCommand extends Command
 				throw new \RuntimeException( 'No user created' );
 			}
 
-			$fosUser->setSuperAdmin( false );
+			$fosUser->setSuperAdmin( false )->setSiteId( $siteid );
 
+			// super users have access to all sites and must not be editable by site admins
 			if( $input->getOption( 'super' ) ) {
-				$fosUser->setSuperAdmin( true );
+				$fosUser->setSuperAdmin( true )->setSiteId( '' );
 			}
 
 			if( $input->getOption( 'admin' ) || $input->getOption( 'editor' ) ) {
