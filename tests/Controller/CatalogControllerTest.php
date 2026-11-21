@@ -99,15 +99,13 @@ class CatalogControllerTest extends WebTestCase
 		$link = $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->link();
 		$crawler = $client->click( $link );
 
-		$this->assertEquals( 1, $crawler->filter( '.catalog-stage-breadcrumb li' )->count() );
+		$this->assertEquals( 3, $crawler->filter( '.catalog-stage-breadcrumb li' )->count() );
 
-		$link = $crawler->filter( '.catalog-stage-breadcrumb a' )->link();
+		$link = $crawler->filter( '.catalog-stage-breadcrumb a' )->last()->link();
 		$crawler = $client->click( $link );
 
-		// breadcrumb works differently in current versions
-		// $this->assertEquals( 1, $crawler->filter( '.catalog-list' )->count() );
-		// $this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->count() );
-		// $this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Cappuccino")' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.catalog-list' )->count() );
+		$this->assertEquals( 1, $crawler->filter( '.catalog-list-items .product a:contains("Cafe Noire Expresso")' )->count() );
 	}
 
 
