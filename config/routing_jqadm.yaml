@@ -14,7 +14,7 @@ aimeos_shop_jqadm_i18n:
 aimeos_shop_jqadm_batch:
     path: /batch/{resource}
     controller: Aimeos\ShopBundle\Controller\JqadmController::batchAction
-    methods: [GET]
+    methods: [POST]
     requirements:
         resource: '[a-z\/]+'
         site: '[A-Za-z0-9\.\-\_]+'
