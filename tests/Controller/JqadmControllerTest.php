@@ -124,7 +124,10 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'GET', '/unittest/jqadm/export/order' );
+		$crawler = $client->request( 'GET', '/unittest/jqadm/search/product' );
+		$token = $crawler->filter( 'input[name="_token"]' )->first()->attr( 'value' );
+
+		$client->request( 'POST', '/unittest/jqadm/export/order', ['_token' => $token] );
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );
