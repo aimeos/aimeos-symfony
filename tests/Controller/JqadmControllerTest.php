@@ -90,7 +90,11 @@ class JqadmControllerTest extends WebTestCase
 			'PHP_AUTH_PW'   => 'adminpass',
 		) );
 
-		$client->request( 'GET', '/unittest/jqadm/export/order' );
+		$client->request( 'OPTIONS', '/unittest/jsonadm' );
+		$json = json_decode( $client->getResponse()->getContent(), true );
+		$token = $json['meta']['csrf']['value'];
+
+		$client->request( 'POST', '/unittest/jqadm/export/order', ['_token' => $token] );
 		$response = $client->getResponse();
 
 		$this->assertEquals( 200, $response->getStatusCode() );

@@ -43,7 +43,7 @@ aimeos_shop_jqadm_delete:
 aimeos_shop_jqadm_export:
     path: /export/{resource}
     controller: Aimeos\ShopBundle\Controller\JqadmController::exportAction
-    methods: [GET]
+    methods: [POST]
     requirements:
         resource: '[a-z\/]+'
         site: '[A-Za-z0-9\.\-\_]+'
